@@ -101,7 +101,7 @@ _Research caveat: Nielsen Norman Group, Stanford, Gartner, and Ahrefs figures ca
 
 ## 7b. Partnerships
 
-- [ ] **CallRail:** book the call with Karina and Eric. Then send the corrected reply (drafted in the engine repo's `docs/HANDOFF-website-trust-sept25.md`). It fixes the product name and the "live integration" wording, and updates the validation to complete.
+- [ ] **CallRail:** book the call with Karina and Eric, then send the partnership reply (in the engine repo's `docs/HANDOFF-website-trust-sept25.md`). It's all positives, and every line is true.
 - [ ] Before the call: D9 + D10 built (if approved), and a one-paragraph listing description plus the logo ready.
 
 ---
