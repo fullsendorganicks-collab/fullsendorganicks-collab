@@ -109,6 +109,12 @@ h1.hero-title em{font-style:normal;color:#c4a040}
 .how-num-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;color:#cfdcf2;text-transform:uppercase;display:block;margin-bottom:10px;margin-top:-6px}
 .how-title{font-size:clamp(13px,1.5vw,15px);font-weight:500;color:#ffffff;margin-bottom:8px;line-height:1.3}
 .how-body{font-size:clamp(11px,1.2vw,13px);color:#ffffff;line-height:1.7}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,16px)}
+@media(max-width:900px){.cap-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.cap-grid{grid-template-columns:1fr}}
+.cap-grid .how-title{margin-bottom:10px}
+#how .how-grid{display:flex;flex-wrap:wrap;justify-content:center}
+#how .how-grid .how-card{flex:1 1 300px;max-width:350px}
 .explore-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(12px,2vw,20px)}
 .explore-card{background:rgba(7,21,48,.6);border:1px solid rgba(26,48,96,.8);border-radius:2px;padding:clamp(20px,3vw,32px);text-decoration:none;display:block;transition:all .25s;box-shadow:0 4px 24px rgba(0,0,0,.3);position:relative;overflow:hidden}
 .explore-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c4a040,transparent);opacity:0;transition:opacity .25s}
@@ -533,12 +539,12 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
       <div class="how-card">
         <span class="how-num">04</span><span class="how-num-label">Analyze</span>
         <div class="how-title">Warning signs, made visible</div>
-        <div class="how-body">Rising costs, refund and chargeback patterns, and shrinking margins are flagged so they don't stay buried.</div>
+        <div class="how-body">Rising costs, fraud, refund and chargeback patterns, and shrinking margins get flagged. Each campaign's close rate is projected forward, so a slide shows up before it hits your margin.</div>
       </div>
       <div class="how-card">
         <span class="how-num">05</span><span class="how-num-label">Direct</span>
         <div class="how-title">A clear recommendation per campaign</div>
-        <div class="how-body">Each campaign gets a plain recommendation, such as keep spending, hold, or cut back, with the numbers behind it.</div>
+        <div class="how-body">One of eight directives per campaign (scale, hold, cut, pause, quarantine, renegotiate, investigate, or flag), with the numbers and a confidence level behind it.</div>
       </div>
     </div>
     <div style="text-align:center;margin-top:clamp(16px,3vh,28px)">
@@ -550,6 +556,27 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
     </div>
   </div>
 </section>
+
+<section id="capabilities" style="background:#010914!important;border-top:1px solid #102040">
+  <div class="section-inner">
+    <div class="eyebrow">What It Does</div>
+    <h2 class="section-title fade-up">Everything CDAI does. <em>Every night.</em></h2>
+    <div class="rule fade-up"></div>
+    <p class="lead-text fade-up">The work an analyst would piece together by hand from five logins, done automatically for every campaign.</p>
+    <div class="cap-grid">
+      <div class="how-card"><div class="how-title">Real profit, per campaign</div><div class="how-body">True CPL, true CAC, and real margin after every fee, partner payout, refund, chargeback, operating cost, and compliance cost.</div></div>
+      <div class="how-card"><div class="how-title">Eight directives, every night</div><div class="how-body">Scale, hold, cut, pause, quarantine, renegotiate, investigate, or flag. It never cuts a campaign just because deals haven&rsquo;t closed yet.</div></div>
+      <div class="how-card"><div class="how-title">Confidence behind every call</div><div class="how-body">Thin data can&rsquo;t trigger a scale call, and calls don&rsquo;t flip-flop night to night. They change only when the numbers genuinely move.</div></div>
+      <div class="how-card"><div class="how-title">Matched to your sales cycle</div><div class="how-body">It reads a rolling window set to your industry&rsquo;s sales cycle (30 days by default), so no campaign is judged before its deals could close.</div></div>
+      <div class="how-card"><div class="how-title">Early warnings</div><div class="how-body">Fraud concentrating in a campaign&rsquo;s leads, slipping lead quality, chargeback spikes, and close rates projected forward before they hit your margin.</div></div>
+      <div class="how-card"><div class="how-title">Partner accountability</div><div class="how-body">Close rate, payouts, refunds, and chargebacks for every lead partner, each with a risk tier.</div></div>
+      <div class="how-card"><div class="how-title">Checks its own work</div><div class="how-body">Every night it rechecks recent calls against the raw numbers, and it grades past calls against what actually happened, with the dollar impact.</div></div>
+      <div class="how-card"><div class="how-title">Finds missing or broken data</div><div class="how-body">It flags stale feeds, revenue with no recorded spend, and campaigns missing from your ad platforms. Serious data problems stop that night&rsquo;s calls instead of driving them.</div></div>
+      <div class="how-card"><div class="how-title">Never guesses</div><div class="how-body">Referral and offline revenue is counted but never forced into a campaign. Personal data is scrubbed before anything is stored.</div></div>
+    </div>
+  </div>
+</section>
+
 
 <section style="background:var(--surface)!important;border-top:1px solid #102040">
   <div class="section-inner">
@@ -566,7 +593,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
     </div>
         <div style="margin-top:clamp(20px,3vh,28px);margin-bottom:clamp(24px,4vh,36px);padding:clamp(20px,3vw,32px);background:rgba(7,21,48,.6);border:1px solid rgba(11,175,146,.2);border-left:2px solid #0baf92;border-radius:2px">
       <div class="eyebrow" style="margin-bottom:14px">Validated</div>
-      <p style="font-family:'Inter',sans-serif;font-size:clamp(13px,1.5vw,15px);color:#ffffff;line-height:1.75;font-weight:300;margin-bottom:clamp(18px,2.5vh,24px)">Before CDAI ever touches a live account, its decisions are checked against verified outcomes: 1,352 decisions across nine businesses in seven industries. The results held up.</p>
+      <p style="font-family:'Inter',sans-serif;font-size:clamp(13px,1.5vw,15px);color:#ffffff;line-height:1.75;font-weight:300;margin-bottom:clamp(18px,2.5vh,24px)">Before release, CDAI&rsquo;s decisions were checked against verified outcomes: 1,352 decisions across nine businesses in seven industries. The results held up. And every night since, it rechecks its own math against the raw numbers.</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.5vw,24px)">
         <div>
           <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:400;color:#0baf92;display:block;line-height:1;margin-bottom:6px">95.2%</span>
@@ -658,10 +685,18 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
       </details>
       <details class="faq-item">
         <summary>How fast do I actually see results?</summary>
-        <div class="faq-answer">Your account and dashboard are ready seconds after you pay. Connect each tool with a click or an API key, and your first directives arrive on CDAI's next nightly run. HOLD, FLAG, and QUARANTINE can fire from day one on spend and lead data alone. SCALE and CUT need at least one closed sale first, since margin is mathematically undefined without revenue &mdash; that's arithmetic, not a slow rollout.</div>
+        <div class="faq-answer">Your account and dashboard are ready seconds after you pay. Connect each tool with a click or an API key, and your first directives arrive on CDAI's next nightly run. Each night it reads a rolling window matched to your sales cycle (30 days by default, longer for long-cycle industries). HOLD, FLAG, and QUARANTINE can fire from day one on spend and lead data alone. SCALE and CUT need at least one closed sale first, since margin is mathematically undefined without revenue &mdash; that's arithmetic, not a slow rollout.</div>
       </details>
       <details class="faq-item">
-        <summary>Is there a free way to try it?</summary>
+        <summary>What if my data is missing or wrong?</summary>
+            <div class="faq-answer">CDAI checks before it decides. Every night it looks for stale or broken data feeds, campaigns with revenue but no recorded spend, and campaigns that don&rsquo;t exist in your ad platforms. Serious data problems stop that night&rsquo;s directives instead of letting bad data drive a call. Anything that doesn&rsquo;t add up gets a FLAG for a person to review. Revenue it can&rsquo;t tie to a campaign, like referrals or offline sales, is kept separate instead of guessed at. And it rechecks its own math against the raw numbers every night.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Is my customers&rsquo; data safe?</summary>
+            <div class="faq-answer">CDAI is built to hold no consumer identity data. Names, emails, phone numbers, addresses, and similar fields are stripped before anything is stored. Emails are kept only as one-way hashes, used to match a sale to the lead that produced it. Payments run through Stripe.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Is there a free way to try it?</summary>
         <div class="faq-answer">Yes. The free Distortion Audit runs one of your campaigns (30-day lookback) through CDAI and shows you the gap between what your dashboard reports and what you actually paid. No consumer identity data needed, no commitment. <a href="#intake">Request it below &rarr;</a></div>
       </details>
       <details class="faq-item">
@@ -723,8 +758,8 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
         <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#e6edfb;line-height:1.5">Decisions Verified</span>
       </div>
       <div style="flex:1;min-width:150px;max-width:220px;text-align:center;padding:clamp(14px,2vw,18px) 12px;background:rgba(1,9,20,.4);border:1px solid rgba(26,48,96,.5);border-radius:2px">
-        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,32px);font-weight:400;color:#ffffff;display:block;line-height:1;margin-bottom:6px">Self-Serve</span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#e6edfb;line-height:1.5">Sign Up, Pay, and Connect on Your Own</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,32px);font-weight:400;color:#ffffff;display:block;line-height:1;margin-bottom:6px">Nightly</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#e6edfb;line-height:1.5">Math Rechecked Every Night</span>
       </div>
       <div style="flex:1;min-width:150px;max-width:220px;text-align:center;padding:clamp(14px,2vw,18px) 12px;background:rgba(1,9,20,.4);border:1px solid rgba(26,48,96,.5);border-radius:2px">
         <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,32px);font-weight:400;color:#c4a040;display:block;line-height:1;margin-bottom:6px">24 Hours</span>

@@ -25,7 +25,16 @@ _Last updated: Sept 25, 2026 (handoff written)_
 - [x] **Chat agent knowledge audit:** full capability loop added. Wrong claim fixed (INVESTIGATE/RENEGOTIATE numbers do exist); onboarding and free audit corrected. **Nick merges `docs/handoff-website-trust-sept25`.**
 0. [ ] **After merge: live test of VINDEX.** Claude runs ~15 real prospect/investor questions against the live bot. Nick reviews the answers.
 - [x] **Privacy fix merged** (PR #22): Meta lead forms no longer store names, emails, or phones. Open: Nick decides whether to strip PII keys from the 2,738 simulated-org rows.
-- [ ] **Hero H2 + subheading:** 3 options previewed (A/B/C, above the fold). Nick picks. **Nothing ships until he does.** The v4 pass (6-bullet list, card/FAQ changes) was **reverted as not approved**; its pieces are in `build_homepage.py` behind `APPLY_V4 = False`, to be proposed one at a time.
+- [x] **Homepage v5:**
+  - hero unchanged (H1 and H2 kept as-is; no extra subheading, to avoid overwhelming)
+  - new "What CDAI does" section (9 verified capability cards) below How It Works
+  - How It Works steps 4/5 expanded
+  - Validated wording fixed, with the nightly math recheck
+  - trust strip gets a "Nightly" card
+  - FAQs added: missing/wrong data, customer data safety, lookback
+  - How It Works shown as a 3+2 layout
+
+  **Nick reviews, then pastes `website/homepage.html`.**
 0. [ ] **Access:** connect the alloceraintelligence@gmail.com Gmail (the Control Tower inbox) if Nick wants Claude to read the nightly emails.
 
 1. [ ] **AI links section (ChatGPT / Claude / Perplexity / Grok):** Nick decides whether to restore it. It doesn't affect rankings (see the Ideas section below). It can go back in within minutes.
