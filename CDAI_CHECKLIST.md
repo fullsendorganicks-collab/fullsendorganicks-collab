@@ -26,7 +26,7 @@ _Last updated: Sept 25, 2026 (everything from the session consolidated)_
 - [ ] **D8. Apex status:** 0 ad-spend rows, no active campaigns, last directive Aug 13. *Ask Nick:* paused, churned, or investigate a sync problem?
 - [x] **D9 (CallRail part). LIVE Sept 25 (PR #28):** a saved CallRail key is now pulled every night. Still off: Ringba, Boberdoo, Bing, Stripe. Each needs its own fix first: Bing puts all spend under one campaign, Boberdoo's lead cost never reaches true cost, Stripe assumes a 7% fee, and Ringba drops partner payouts.
 - [x] **D10. LIVE Sept 25 (PR #28):** each CallRail call is matched to its ad campaign by its campaign tag. Unmatched calls stay unattributed. Tested with 30 checks.
-- [ ] **D2 for calls:** each CallRail call still adds $0.25 of "compliance cost" to its campaign. *Recommendation:* $0 for calls, since inbound calls have no consent-certificate cost.
+- [x] **D2 for calls. LIVE Sept 25 (PR #30):** CallRail calls now add $0 compliance cost. The other $0.25 defaults (Meta lead forms, Ringba, Boberdoo, CSV, webhook) are still open under D2.
 
 ---
 
