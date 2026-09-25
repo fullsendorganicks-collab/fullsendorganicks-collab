@@ -1,0 +1,1194 @@
+<!-- Allocera Intelligence homepage. Single Elementor HTML block.
+     Page title and meta tags are set in Rank Math, not here. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--deep:#1C3050;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#D63050}
+html{scroll-behavior:smooth}
+body{background:#010914!important;color:#ffffff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:clamp(60px,8vh,76px);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,64px);background:rgba(1,9,20,.95);border-bottom:1px solid #102040;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo{width:26px;height:26px;object-fit:contain;flex-shrink:0;display:block}
+.nav-name{font-size:clamp(12px,1.7vw,14px);font-weight:600;letter-spacing:.04em;color:#ffffff}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-links{display:flex;align-items:center;gap:clamp(20px,2.6vw,34px);list-style:none}
+.nav-links a{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;letter-spacing:.01em;color:#cfdcf2;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#ffffff}
+.nav-ai{display:inline-flex!important;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace!important;font-size:11px!important;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#DEBB6A!important;border:1px solid rgba(196,160,64,.45);padding:7px 14px;border-radius:20px;background:rgba(196,160,64,.08);transition:background .2s,border-color .2s,box-shadow .2s}
+.nav-ai:hover{background:rgba(196,160,64,.18);border-color:rgba(196,160,64,.8);box-shadow:0 0 14px rgba(196,160,64,.2);color:#f0d896!important}
+.nav-ai-dot{width:5px;height:5px;border-radius:50%;background:#DEBB6A;flex-shrink:0}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:linear-gradient(160deg,#2272ff,#1350d0);color:#fff;font-weight:600;border:none;border-top:1px solid rgba(255,255,255,.18);padding:10px 22px;border-radius:2px;cursor:pointer;transition:box-shadow .2s,filter .2s;text-decoration:none;white-space:nowrap;box-shadow:0 0 24px rgba(34,114,255,.7),0 0 8px rgba(34,114,255,.4),0 3px 10px rgba(0,0,0,.5)}
+.nav-cta:hover{filter:brightness(1.15);box-shadow:0 0 36px rgba(34,114,255,.9),0 0 14px rgba(34,114,255,.5),0 3px 14px rgba(0,0,0,.5)}
+.nav-portal{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#5a9aff;border:1px solid rgba(64,128,240,.65);padding:8px 16px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s,box-shadow .2s,color .2s;background:rgba(64,128,240,.1)}
+.nav-portal:hover{background:rgba(64,128,240,.18);border-color:rgba(64,128,240,.9);box-shadow:0 0 14px rgba(64,128,240,.25);color:#7ab5ff}
+.nav-start{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#8fa5c7;border:1px solid rgba(143,165,199,.3);padding:8px 14px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s,color .2s}
+.nav-start:hover{background:rgba(143,165,199,.1);border-color:rgba(143,165,199,.6);color:#cfdcf2}
+.nav-signup{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#010914;border:1px solid rgba(196,160,64,.9);padding:8px 16px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s,box-shadow .2s,filter .2s;background:linear-gradient(135deg,#C4A040,#A88830);box-shadow:0 0 14px rgba(196,160,64,.2)}
+.nav-signup:hover{filter:brightness(1.1);box-shadow:0 0 20px rgba(196,160,64,.35)}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:0 0;border:none;cursor:pointer;padding:4px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#ebf0ff;border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:clamp(52px,7vh,64px);left:0;right:0;z-index:99;background:rgba(1,9,20,.98);border-bottom:1px solid #102040;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;padding:16px 24px 24px;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#e6edfb;text-decoration:none;padding:14px 0;border-bottom:1px solid #102040;transition:color .2s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:#ffffff}
+.mobile-menu .mobile-cta{margin-top:12px;background:#1655d8;color:#fff;text-align:center;padding:16px;border-radius:2px;font-size:13px;font-weight:700;border:none;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+.mobile-menu .mobile-portal{color:#4080f0;text-align:center;padding:14px;border:1px solid rgba(64,128,240,.3);border-radius:3px;font-size:12px}
+.mobile-menu .mobile-signup{color:#010914;text-align:center;padding:14px;border:1px solid rgba(196,160,64,.9);border-radius:3px;font-size:12px;font-weight:700;background:linear-gradient(135deg,#C4A040,#A88830);text-transform:uppercase;letter-spacing:.06em}
+@media(max-width:1024px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-cta{display:none}}
+@media(max-width:768px){.nav-name{display:none}}
+@media(max-width:480px){.nav-portal{font-size:11px;padding:7px 12px}.nav-signup{font-size:11px;padding:7px 12px}}
+section{width:100%;padding:clamp(36px,5vh,64px) clamp(16px,5vw,80px);position:relative;background:#010914!important}
+section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 0,rgba(22,85,216,.04) 0,transparent 60%);pointer-events:none}
+.section-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:#c4a040;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,2vh,16px)}
+.eyebrow::before{content:'';width:16px;height:1px;background:#c4a040;display:block;flex-shrink:0}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4.5vw,52px);font-weight:300;line-height:1.1;color:#ffffff;margin-bottom:clamp(10px,2vh,16px)}
+h2.section-title em{font-style:italic;color:#8ab8ff}
+.rule{width:36px;height:1px;background:#1655d8;margin-bottom:clamp(16px,3vh,28px);display:block}
+.rule.gold{background:#c4a040}
+.lead-text{font-size:clamp(14px,1.8vw,17px);color:#f2f6ff;line-height:1.8;max-width:660px;margin-bottom:clamp(16px,3vh,28px);font-weight:300}
+.body-text{font-size:clamp(12px,1.4vw,14px);color:#e6edfb;line-height:1.8}
+#hero{min-height:100vh;padding-top:calc(clamp(52px,7vh,64px) + clamp(56px,9vh,100px));display:flex;align-items:center;background:#010914;position:relative}
+#hero::before{content:'';position:absolute;inset:0;background-image:url(https://alloceraintelligence.com/wp-content/uploads/2026/09/allocera-intelligence-hero-background-image.png);background-size:cover;background-position:top center;opacity:.40;z-index:0;pointer-events:none}
+#hero::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(1,9,20,.95) 0%,rgba(1,9,20,.90) 32%,rgba(1,9,20,.62) 58%,rgba(1,9,20,.80) 100%);z-index:0;pointer-events:none}
+#hero .section-inner{position:relative;z-index:1}
+.hero-inner{max-width:800px}
+.hero-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#c4a040;display:flex;align-items:center;gap:10px;margin-bottom:clamp(16px,3vh,24px)}
+.hero-kicker::before{content:'';width:16px;height:1px;background:#c4a040;display:block}
+h1.hero-title{font-family:'Inter',sans-serif;font-size:clamp(30px,5vw,64px);font-weight:700;line-height:1.08;color:#ffffff;margin-bottom:clamp(16px,3vh,24px);letter-spacing:-.025em}
+h1.hero-title em{font-style:normal;color:#c4a040}
+.hero-sub{font-size:clamp(14px,1.8vw,18px);color:#f2f6ff;line-height:1.75;max-width:620px;margin-bottom:clamp(28px,4vh,44px);font-weight:300}
+.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:clamp(36px,5vh,60px)}
+.btn-primary{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:.01em;text-transform:none;background:#1655d8;color:#fff;border:none;padding:16px 32px;border-radius:2px;cursor:pointer;transition:background .2s,box-shadow .2s;text-decoration:none;display:inline-block;box-shadow:0 0 24px rgba(22,85,216,.4)}
+.btn-primary:hover{background:#1d67f0;box-shadow:0 0 36px rgba(22,85,216,.6)}
+.btn-ghost{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#cfdcf2;text-decoration:none;border-bottom:1px solid #8fa5c7;padding-bottom:2px;transition:color .2s}
+.btn-ghost:hover{color:#ffffff}
+.btn-gold-outline{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#c4a040;border:1px solid rgba(196,160,64,.55);padding:14px 28px;border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s,color .2s;text-decoration:none;display:inline-block;line-height:1;white-space:nowrap}
+.btn-gold-outline:hover{background:rgba(196,160,64,.08);border-color:#c4a040;box-shadow:0 0 18px rgba(196,160,64,.2);color:#debb6a}
+.btn-ai{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:rgba(196,160,64,.1);color:#DEBB6A;border:1px solid rgba(196,160,64,.55);padding:14px 28px;border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s,color .2s;text-decoration:none;display:inline-flex;align-items:center;gap:9px;line-height:1;white-space:nowrap}
+.btn-ai:hover{background:rgba(196,160,64,.2);border-color:#c4a040;box-shadow:0 0 20px rgba(196,160,64,.3);color:#f0d896}
+.btn-ai-dot{width:6px;height:6px;border-radius:50%;background:#DEBB6A;flex-shrink:0}
+.hero-proof{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px);padding-top:clamp(24px,3vh,36px);border-top:1px solid #102040}
+.proof-item .p-num{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,38px);font-weight:400;color:#4080f0;line-height:1;display:block;margin-bottom:5px}
+.proof-item .p-num.white{color:#ffffff}
+.proof-item .p-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:#cfdcf2;letter-spacing:.08em;text-transform:uppercase;display:block;line-height:1.5}
+.hero-portal-link{margin-bottom:clamp(20px,3vh,32px)}
+.hero-portal-btn{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4080f0;text-decoration:none;border:1px solid rgba(64,128,240,.3);padding:12px 20px;border-radius:3px;background:rgba(64,128,240,.06);transition:background .2s,border-color .2s;width:100%;max-width:340px}
+.hero-portal-btn:hover{background:rgba(64,128,240,.12);border-color:rgba(64,128,240,.5)}
+.hero-portal-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;background:#0baf92;box-shadow:0 0 8px rgba(11,175,146,.7);animation:orb-pulse 2s ease-in-out infinite}
+@keyframes orb-pulse{0%,100%{box-shadow:0 0 8px rgba(11,175,146,.5)}50%{box-shadow:0 0 18px rgba(11,175,146,.9)}}
+.cpl-split{display:grid;grid-template-columns:1fr 1fr;gap:2px;border:1px solid #1a3060;border-radius:3px;overflow:hidden;margin-bottom:clamp(16px,3vh,24px)}
+@media(max-width:560px){.cpl-split{grid-template-columns:1fr}}
+.cpl-panel{padding:clamp(24px,3.5vw,44px) clamp(20px,3vw,36px);background:rgba(7,21,48,.8);backdrop-filter:blur(8px)}
+.cpl-panel.bad{border-left:2px solid #d63050}
+.cpl-panel.good{border-left:2px solid #0baf92}
+.cpl-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:10px}
+.cpl-panel.bad .cpl-tag{color:#ff5c7a}
+.cpl-panel.good .cpl-tag{color:#0baf92}
+.cpl-number{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,7vw,80px);font-weight:400;line-height:1;display:block;margin-bottom:8px}
+.cpl-panel.bad .cpl-number{color:#ff5c7a}
+.cpl-panel.good .cpl-number{color:#ffffff}
+.cpl-note{font-size:clamp(11px,1.3vw,13px);color:#e6edfb;display:block;line-height:1.5}
+.pill{display:inline-block;padding:3px 10px;border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-top:12px}
+.pill.red{background:rgba(214,48,80,.1);color:#ff5c7a;border:1px solid rgba(214,48,80,.25)}
+.pill.gold{background:rgba(196,160,64,.1);color:#c4a040;border:1px solid rgba(196,160,64,.25)}
+.callout{padding:clamp(14px,2vw,20px) clamp(16px,2.5vw,24px);background:rgba(22,85,216,.08);border:1px solid rgba(22,85,216,.25);border-left:2px solid #1655d8;border-radius:2px;margin-bottom:clamp(14px,2.5vh,22px);font-size:clamp(13px,1.6vw,15px);color:#f2f6ff;line-height:1.75}
+.callout strong{color:#4080f0;font-weight:500}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(8px,1.5vw,16px);margin-bottom:clamp(20px,3vh,32px)}
+.how-card{padding:clamp(20px,2.5vw,30px);background:rgba(7,21,48,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(64,128,240,.2);border-radius:2px;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);transition:border-color .2s,box-shadow .2s}
+.how-card:hover{border-color:rgba(64,128,240,.4);box-shadow:0 8px 48px rgba(22,85,216,.15),inset 0 1px 0 rgba(255,255,255,.08)}
+.how-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c4a040,#4080f0);opacity:.7}
+.how-num{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,52px);font-weight:300;color:#c4a040;line-height:1;display:block;margin-bottom:8px;opacity:.9}
+.how-num-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;color:#cfdcf2;text-transform:uppercase;display:block;margin-bottom:10px;margin-top:-6px}
+.how-title{font-size:clamp(13px,1.5vw,15px);font-weight:500;color:#ffffff;margin-bottom:8px;line-height:1.3}
+.how-body{font-size:clamp(11px,1.2vw,13px);color:#ffffff;line-height:1.7}
+.explore-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(12px,2vw,20px)}
+.explore-card{background:rgba(7,21,48,.6);border:1px solid rgba(26,48,96,.8);border-radius:2px;padding:clamp(20px,3vw,32px);text-decoration:none;display:block;transition:all .25s;box-shadow:0 4px 24px rgba(0,0,0,.3);position:relative;overflow:hidden}
+.explore-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c4a040,transparent);opacity:0;transition:opacity .25s}
+.explore-card:hover{border-color:rgba(196,160,64,.4);box-shadow:0 8px 40px rgba(196,160,64,.08);transform:translateY(-2px)}
+.explore-card:hover::before{opacity:1}
+.explore-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c4a040;display:block;margin-bottom:12px}
+.explore-title{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.5vw,24px);color:#ffffff;display:block;margin-bottom:8px;line-height:1.2}
+.explore-desc{display:block;font-size:clamp(12px,1.3vw,13px);color:#ffffff;line-height:1.65;margin-bottom:16px}
+.explore-link{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#4080f0}
+.outcomes-cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,20px)}
+@media(max-width:560px){.outcomes-cards{grid-template-columns:1fr}}
+#intake{background:#071530!important;border-top:1px solid #102040}
+#intake::before{display:none}
+.intake-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,80px)}
+@media(min-width:768px){.intake-grid{grid-template-columns:1fr 1fr}}
+.intake-info h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,32px);font-weight:300;color:#ffffff;margin-bottom:clamp(12px,2vh,20px);line-height:1.25}
+.intake-steps{display:flex;flex-direction:column;gap:clamp(10px,1.5vh,14px);margin-top:clamp(20px,3vh,32px)}
+.intake-step{display:flex;gap:14px;align-items:flex-start;padding:clamp(12px,1.5vh,16px);background:#010914;border:1px solid #102040;border-radius:2px}
+.intake-step-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:#6ea3ff;flex-shrink:0;padding-top:1px}
+.intake-step-title{font-size:clamp(12px,1.4vw,13px);font-weight:500;color:#ffffff;display:block;margin-bottom:3px}
+.intake-step-desc{font-size:clamp(11px,1.2vw,12px);color:#ffffff;line-height:1.55}
+.intake-form{display:flex;flex-direction:column;gap:clamp(12px,2vh,16px)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.5vw,14px)}
+@media(max-width:560px){.form-row{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#cfdcf2}
+.form-input,.form-select,.form-textarea{background:#010914;border:1px solid #1a3060;border-radius:2px;color:#ffffff;font-family:'Inter',sans-serif;font-size:clamp(12px,1.4vw,13px);padding:clamp(9px,1.3vh,12px) clamp(12px,1.5vw,14px);transition:border-color .2s,box-shadow .2s;width:100%;-webkit-appearance:none;appearance:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{outline:0;border-color:#1655d8;box-shadow:0 0 0 2px rgba(22,85,216,.15)}
+.form-input::placeholder,.form-textarea::placeholder{color:#9fb2d1}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23CFDCF2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;cursor:pointer}
+.form-select option{background:#010914;color:#ebf0ff}
+.form-textarea{resize:vertical;min-height:100px}
+.form-submit{background:#1655d8;color:#ffffff;border:none;border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:clamp(13px,2vh,16px) clamp(20px,3vw,28px);cursor:pointer;transition:background .2s,transform .1s;width:100%}
+.form-submit:hover{background:#1d67f0}
+.form-submit:active{transform:scale(.99)}
+.form-submit:disabled{opacity:.5;cursor:default}
+.form-success{display:none;text-align:center;padding:clamp(24px,4vh,40px);background:rgba(11,175,146,.06);border:1px solid rgba(11,175,146,.2);border-radius:2px}
+.form-success h4{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,28px);font-weight:300;color:#0baf92;margin-bottom:8px}
+.form-success p{font-size:clamp(12px,1.4vw,14px);color:#e6edfb}
+.form-error{display:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:#ff5c7a;letter-spacing:.06em;padding:10px 14px;background:rgba(214,48,80,.06);border:1px solid rgba(214,48,80,.2);border-radius:2px}
+.contact-phone{font-family:'JetBrains Mono',monospace;font-size:11px;color:#cfdcf2;letter-spacing:.08em;margin-bottom:16px}
+.contact-btn-group{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.contact-btn{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#cfdcf2;text-decoration:none;border:1px solid rgba(64,128,240,.3);padding:10px 16px;border-radius:3px;background:rgba(64,128,240,.06);transition:background .2s,border-color .2s,color .2s}
+.contact-btn:hover{background:rgba(64,128,240,.14);border-color:rgba(64,128,240,.6);color:#ffffff}
+.contact-btn svg{width:14px;height:14px;flex-shrink:0}
+.nav-contact{display:flex;align-items:center;gap:6px}
+.nav-contact-btn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(64,128,240,.3);border-radius:3px;background:rgba(64,128,240,.06);color:#7ab5ff;transition:background .2s,border-color .2s;flex-shrink:0}
+.nav-contact-btn:hover{background:rgba(64,128,240,.16);border-color:rgba(64,128,240,.6)}
+.nav-contact-btn svg{width:15px;height:15px}
+
+.hero-client{display:flex;align-items:flex-start;gap:12px;max-width:540px;margin:0 0 clamp(20px,3vh,28px);padding:12px 14px;border:1px solid rgba(11,175,146,.25);border-left:2px solid #0baf92;border-radius:2px;background:rgba(7,21,48,.55);text-decoration:none;transition:border-color .2s,background .2s}
+.hero-client:hover{border-color:rgba(11,175,146,.5);background:rgba(7,21,48,.8)}
+.hero-client-mark{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#0a8f78,#0baf92);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:#fff;flex-shrink:0}
+.hero-client-text{font-size:13px;line-height:1.6;color:#e6edfb}
+.hero-client-text strong{color:#fff;font-weight:600}
+.hero-client-link{color:#0baf92;white-space:nowrap;font-weight:500}
+.path-card{margin-top:clamp(14px,2vh,18px);padding:clamp(16px,2.2vw,22px);background:#010914;border:1px solid #1a3060;border-left:2px solid #1655d8;border-radius:2px}
+.path-card.gold{border-left-color:#c4a040}
+.path-card p{font-size:clamp(13px,1.5vw,14px);color:#e6edfb;line-height:1.7;margin:8px 0 14px}
+.path-card.gold p{margin-bottom:8px}
+.path-card p.path-note{font-size:12px;color:#0baf92;margin:0}
+.path-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6ea3ff}
+.path-card.gold .path-tag{color:#c4a040}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.6vw,26px);font-weight:400;color:#fff;line-height:1.25;margin-bottom:4px}
+.form-fine{font-size:12px;color:#cfdcf2;line-height:1.6}
+.form-fine a{color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)}
+.brand-row{display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.5vw,14px);flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:10px 16px;border:1px solid rgba(26,48,96,.6);border-radius:2px;background:rgba(1,9,20,.4);color:#cfdcf2;transition:border-color .25s,background .25s,color .25s}
+.brand svg{width:18px;height:18px;fill:currentColor;flex-shrink:0;transition:fill .25s}
+.brand span{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.01em;color:#e6edfb}
+.brand.wordmark span{font-weight:800;font-size:15px;letter-spacing:.02em;color:inherit}
+.brand:hover{border-color:rgba(196,160,64,.35);background:rgba(196,160,64,.04);color:var(--bc)}
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq-item{background:rgba(7,21,48,.6);border:1px solid #1a3060;border-radius:2px;overflow:hidden}
+.faq-item summary{padding:clamp(16px,2.5vw,20px) clamp(18px,3vw,24px);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Inter',sans-serif;font-size:clamp(14px,1.6vw,16px);font-weight:500;color:#ffffff}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-family:'JetBrains Mono',monospace;font-size:20px;color:#C4A040;flex-shrink:0;transition:transform .2s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item[open] summary{border-bottom:1px solid #1a3060}
+.faq-answer{padding:clamp(4px,1vh,8px) clamp(18px,3vw,24px) clamp(16px,2.5vw,20px);font-size:clamp(13px,1.5vw,15px);color:#e6edfb;line-height:1.7}
+.faq-answer a{color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)}
+
+footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #102040;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#010914}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-logo{width:18px;height:18px;object-fit:contain;flex-shrink:0}
+.footer-text{font-family:'JetBrains Mono',monospace;font-size:11px;color:#cfdcf2;letter-spacing:.08em}
+.footer-right{font-family:'JetBrains Mono',monospace;font-size:11px;color:#cfdcf2;letter-spacing:.06em;text-align:right}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.fade-up{opacity:1;transform:translateY(0)}}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:#010914}
+::-webkit-scrollbar-thumb{background:#1a3060;border-radius:2px}
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(1,9,20,.97);border-top:1px solid #1a3060;padding:12px 20px;align-items:center;justify-content:space-between;gap:12px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.sticky-cta.show{display:flex}
+.sticky-cta-text{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#c4a040;flex:1}
+.sticky-cta-btn{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:#1655d8;color:#ffffff;padding:10px 16px;border-radius:2px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background .2s}
+.sticky-cta-btn:hover{background:#1d67f0}
+@media(min-width:769px){.sticky-cta{display:none!important}}
+/* Hero two-column layout */
+.hero-two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,56px);align-items:center;width:100%}
+@media(max-width:960px){.hero-two-col{grid-template-columns:1fr}.margin-gap-grid{grid-template-columns:1fr!important}}
+.hero-left{max-width:560px}
+/* Distortion Calculator panel */
+.calc-panel{background:rgba(4,12,28,.72);border:1px solid rgba(64,128,240,.22);border-radius:2px;overflow:hidden;position:relative;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 0 0 1px rgba(196,160,64,.08) inset,0 32px 64px rgba(0,0,0,.45),0 0 48px rgba(22,85,216,.1)}
+.calc-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c4a040 0%,#1655d8 60%,transparent 100%);pointer-events:none;z-index:1}
+.calc-panel::-webkit-scrollbar{width:3px}
+.calc-panel::-webkit-scrollbar-thumb{background:#1a3060;border-radius:2px}
+.calc-head{padding:18px 20px 14px;border-bottom:1px solid rgba(16,32,64,.8);background:linear-gradient(180deg,rgba(196,160,64,.05) 0%,transparent 100%)}
+.calc-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#c4a040;display:block;margin-bottom:6px}
+.calc-title{font-size:14px;font-weight:600;color:#ffffff;display:block;margin-bottom:3px}
+.calc-sub{font-size:11px;color:#e6edfb;line-height:1.5}
+.calc-gate{padding:18px 20px}
+.calc-gate-fields{display:flex;flex-direction:column;gap:9px;margin-bottom:12px}
+.calc-gate .form-input{background:rgba(1,9,20,.55);border:1px solid rgba(26,48,96,.6);color:#ffffff;font-size:13px}
+.calc-gate .form-input:focus{background:rgba(1,9,20,.75);border-color:#1655d8;box-shadow:0 0 0 2px rgba(22,85,216,.1)}
+.calc-gate .form-input::placeholder{color:#9fb2d1}
+.calc-btn{width:100%;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:linear-gradient(135deg,#c4a040,#a88830);color:#010914;border:none;border-radius:2px;padding:13px 20px;cursor:pointer;transition:filter .2s,box-shadow .2s;font-weight:700;box-shadow:0 0 20px rgba(196,160,64,.25)}
+.calc-btn:hover{filter:brightness(1.12);box-shadow:0 0 28px rgba(196,160,64,.4)}
+.calc-btn:disabled{opacity:.5;cursor:default;filter:none}
+.calc-gate-status{font-family:'JetBrains Mono',monospace;font-size:11px;min-height:14px;margin-top:6px}
+.calc-gate-status.err{color:#ff5c7a}
+.calc-gate-status.ok{color:#0baf92}
+.calc-fineprint{font-size:11px;color:#cfdcf2;line-height:1.55;margin-top:10px}
+.calc-unlocked-bar{display:none;padding:8px 20px;background:rgba(11,175,146,.06);border-bottom:1px solid rgba(11,175,146,.15);font-family:'Inter',sans-serif;font-size:11px;font-weight:500;color:#0baf92;align-items:center;gap:8px}
+.calc-unlocked-bar.show{display:flex}
+.calc-u-dot{width:6px;height:6px;border-radius:50%;background:#0baf92;box-shadow:0 0 6px rgba(11,175,146,.7);flex-shrink:0}
+.calc-body{padding:18px 20px;display:none}
+.calc-body.unlocked{display:block}
+.calc-body:not(.unlocked) + .calc-out{display:none}
+.calc-field{margin-bottom:12px}
+.calc-field label{display:block;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;color:#e6edfb;margin-bottom:5px;letter-spacing:.01em}
+.calc-hint{display:block;font-size:11px;color:#cfdcf2;margin-top:3px}
+.calc-iw{display:flex;align-items:center;background:#010914;border:1px solid #1a3060;border-radius:2px;transition:border-color .15s}
+.calc-iw:focus-within{border-color:#1655d8}
+.calc-u{font-family:'JetBrains Mono',monospace;font-size:13px;color:#cfdcf2;padding:0 0 0 10px;user-select:none;flex-shrink:0}
+.calc-u.s{padding:0 10px 0 0;order:2}
+.calc-iw input{flex:1;border:none;background:transparent;font-family:'JetBrains Mono',monospace;font-size:14px;padding:10px 10px;color:#ffffff;font-weight:500;min-width:0}
+.calc-iw input:focus{outline:none}
+.calc-iw input.sr{order:1;text-align:right}
+.calc-divider{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#cfdcf2;padding:14px 0 10px;border-top:1px solid #102040;margin-top:4px}
+.calc-out{padding:16px 20px;background:rgba(1,9,20,.5);border-top:1px solid #102040}
+.calc-cpl-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.calc-cpl-card{padding:14px;border-radius:2px}
+.calc-cpl-card.rep{background:#071530;border:1px solid #1a3060}
+.calc-cpl-card.tru{background:rgba(214,48,80,.06);border:1px solid rgba(214,48,80,.3)}
+.calc-cpl-lbl{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:6px}
+.calc-cpl-card.rep .calc-cpl-lbl{color:#e6edfb}
+.calc-cpl-card.tru .calc-cpl-lbl{color:#ff5c7a}
+.calc-cpl-val{font-family:'JetBrains Mono',monospace;font-size:clamp(20px,2.2vw,28px);font-weight:700;display:block;line-height:1}
+.calc-cpl-card.rep .calc-cpl-val{color:#ffffff}
+.calc-cpl-card.tru .calc-cpl-val{color:#ff5c7a}
+.calc-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.calc-stat{background:#071530;border:1px solid #102040;padding:12px 14px;border-radius:2px}
+.calc-stat-lbl{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:#e6edfb;display:block;margin-bottom:4px}
+.calc-stat-val{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700}
+.calc-gap-box{background:rgba(22,85,216,.08);border:1px solid rgba(22,85,216,.2);border-left:2px solid #1655d8;padding:12px 14px;font-size:12px;color:#f2f6ff;line-height:1.65;border-radius:2px;min-height:40px}
+.calc-gap-box b{color:#4080f0;font-family:'JetBrains Mono',monospace}
+/* Reconciliation flow diagram */
+.explainer-wrap{margin:0 0 clamp(28px,4vh,40px)}
+.explainer-svg{width:100%;height:auto;display:block;overflow:visible}
+.flow-line{fill:none;stroke:url(#flowGrad);stroke-width:2;stroke-dasharray:6 9;animation:flowdash 1.1s linear infinite}
+.flow-node-rect{fill:#071530;stroke:#1a3060;stroke-width:1}
+.flow-engine-ring{fill:none;stroke:#c4a040;stroke-width:1.2;opacity:.55}
+.flow-engine-ring.pulse{animation:engpulse 2.4s ease-in-out infinite}
+.flow-engine-circle{fill:#0a1830;stroke:#c4a040;stroke-width:1.5}
+.flow-label{font-family:'JetBrains Mono',monospace;font-size:11px;fill:#e6edfb;letter-spacing:.02em}
+.flow-label.engine{fill:#c4a040;font-weight:600;font-size:12px}
+.flow-sub{font-family:'Inter',sans-serif;font-size:11px;fill:#8fa5c7}
+.flow-cap{font-family:'JetBrains Mono',monospace;font-size:11px;fill:#4080f0;letter-spacing:.1em;text-transform:uppercase}
+@keyframes flowdash{to{stroke-dashoffset:-30}}
+@keyframes engpulse{0%,100%{opacity:.35;stroke-width:1.2}50%{opacity:.8;stroke-width:2}}
+@media(max-width:640px){.explainer-svg .flow-label{font-size:13px}.explainer-svg .flow-sub{font-size:11px}.explainer-svg .flow-cap{font-size:12px}}
+.video-showcase{position:relative;border-radius:3px;overflow:hidden;border:1px solid rgba(64,128,240,.22);background:rgba(4,12,28,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 0 0 1px rgba(196,160,64,.08) inset,0 32px 64px rgba(0,0,0,.45),0 0 48px rgba(22,85,216,.1);margin:0 0 clamp(28px,4vh,40px)}
+.video-showcase::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c4a040 0%,#1655d8 60%,transparent 100%);z-index:2}
+.video-player{display:block;width:100%;aspect-ratio:16/9;background:#010914}
+</style>
+
+<nav>
+  <a class="nav-brand" href="/">
+    <img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence">
+    <span class="nav-name">Allocera Intelligence</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="/how-it-works">How It Works</a></li>
+      <li><a href="/proof">Proof</a></li>
+      <li><a href="#" id="cdai-ask-trigger" class="nav-ai"><span class="nav-ai-dot"></span>Ask CDAI</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://alloceraintelligence.com/home-sample/blog/">The Margin Gap</a></li>
+    </ul>
+    <a class="nav-signup" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <a class="nav-portal" href="https://cdai-portal.vercel.app" target="_blank">Client Portal</a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#problem" onclick="closeMobile()">The Problem</a>
+  <a href="/how-it-works" onclick="closeMobile()">How It Works</a>
+  <a href="/proof" onclick="closeMobile()">Proof</a>
+  <a href="#" id="cdai-ask-trigger-mobile" onclick="closeMobile()" style="color:#DEBB6A">&#9679; Ask CDAI</a>
+  <a href="/dashboard" onclick="closeMobile()">Dashboard</a>
+  <a href="/pricing" onclick="closeMobile()">Pricing</a>
+  <a href="/about" onclick="closeMobile()">About</a>
+  <a href="https://alloceraintelligence.com/home-sample/blog/" onclick="closeMobile()">The Margin Gap</a>
+  <a href="tel:+19196109288" onclick="closeMobile()">Call Us</a>
+  <a href="mailto:nick@alloceraintelligence.com" onclick="closeMobile()">Email Us</a>
+  <a href="https://cdai-portal.vercel.app/signup/" class="mobile-signup" onclick="closeMobile()">Get Started</a>
+  <a href="https://cdai-portal.vercel.app" target="_blank" class="mobile-portal">Client Portal</a>
+  <a href="#intake" class="mobile-cta" onclick="closeMobile()">Request a Free Audit</a>
+</div>
+
+<section id="hero">
+  <div class="section-inner">
+    <div class="hero-two-col">
+
+      <div class="hero-left">
+        <div class="hero-kicker" style="margin-bottom:16px">DETERMINISTIC ACQUISITION RECONCILIATION ENGINE</div>
+        <h1 class="hero-title">Know the <em>Truth</em> Behind Every Acquisition Dollar.</h1>
+        <p class="hero-sub" style="margin-bottom:clamp(20px,3vh,28px)">Your CRM and your ad platform don't agree on what a lead actually costs. CDAI reconciles them against your true cost &mdash; so you know what you're actually paying, what you're actually getting, and where your money should go next.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://cdai-portal.vercel.app/signup/">Get Started &rarr;</a>
+          <a class="btn-ai" href="#" id="hero-ask-trigger"><span class="btn-ai-dot"></span>Ask CDAI &rarr;</a>
+        </div>
+        <a class="hero-client" href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">
+          <span class="hero-client-mark">&#10003;</span>
+          <span class="hero-client-text"><strong>Validated on 1,352 decisions</strong> across 9 businesses in 7 industries: 98.0% accurate when it says scale, 95.2% when it says hold, and 100% of the math verified. <span class="hero-client-link">Read the validation report &rarr;</span></span>
+        </a>
+        <div class="hero-proof" style="margin-top:clamp(28px,4vh,40px)">
+          <div class="proof-item">
+            <span class="p-num">Any Spend</span>
+            <span class="p-label">Paid ads or bought leads, plus HubSpot or Salesforce. One CRM and one ad is enough.</span>
+          </div>
+          <div class="proof-item">
+            <span class="p-num white">Self-Serve</span>
+            <span class="p-label">Sign up, pay, and connect on your own</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="video-showcase" style="margin:0">
+          <video class="video-player" controls autoplay muted loop preload="auto" playsinline poster="https://alloceraintelligence.com/wp-content/uploads/2026/09/cdai-portal-video-poster.jpg">
+            <source src="https://alloceraintelligence.com/wp-content/uploads/2026/09/cdai-portal-video.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#e6edfb;margin-top:16px">CDAI &mdash; Capital, Decision, Accuracy, Intelligence</p>
+        <p style="text-align:center;margin-top:8px"><a href="/how-it-works" style="color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600">Watch the Full Walk Through &rarr;</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="tools" style="background:#010914!important;border-top:1px solid #102040;padding:clamp(40px,6vh,64px) clamp(16px,5vw,80px)">
+  <div class="section-inner">
+    <div class="margin-gap-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,48px);align-items:start">
+      <div>
+        <div class="calc-panel" id="calcPanel">
+          <div class="calc-head">
+            <span class="calc-eyebrow">Allocera Intelligence &mdash; Free Tool</span>
+            <span class="calc-title">True CAC &amp; CPL Calculator</span>
+            <span class="calc-sub">See your true CAC and CPL &mdash; not just what the platform reports.</span>
+          </div>
+          <div class="calc-gate" id="calcGateStep1">
+            <div class="calc-gate-fields">
+              <input class="form-input" type="text" id="cName" placeholder="First name" autocomplete="given-name">
+              <input class="form-input" type="text" id="cCompany" placeholder="Company" autocomplete="organization">
+              <input class="form-input" type="email" id="cEmail" placeholder="Business email" autocomplete="email">
+            </div>
+            <button class="calc-btn" id="calcSendCode">Send Verification Code</button>
+            <div class="calc-gate-status" id="calcStatus"></div>
+            <p class="calc-fineprint">By continuing you agree to be contacted by Allocera Intelligence about your results.</p>
+          </div>
+          <div class="calc-gate" id="calcGateStep2" style="display:none">
+            <p style="font-size:13px;color:#e6edfb;margin-bottom:14px;line-height:1.6">Code sent to <span id="calcEmailDisplay" style="color:#ffffff;font-weight:500"></span> &mdash; check your inbox.</p>
+            <div class="calc-gate-fields">
+              <input class="form-input" type="text" id="cCode" placeholder="6-digit code" inputmode="numeric" maxlength="6" style="font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:.3em;text-align:center;padding:14px">
+            </div>
+            <button class="calc-btn" id="calcVerify">Verify &amp; Unlock</button>
+            <div class="calc-gate-status" id="calcStatus2"></div>
+            <button style="background:none;border:none;color:#cfdcf2;font-size:11px;cursor:pointer;margin-top:10px;padding:0;text-decoration:underline" id="calcChangeEmail">Change email</button>
+          </div>
+          <div class="calc-unlocked-bar" id="calcBadge">
+            <span class="calc-u-dot"></span>
+            <span id="calcBadgeText"></span>
+          </div>
+          <div class="calc-body" id="calcBody">
+            <div class="calc-field">
+              <label>Ad spend (monthly)</label>
+              <div class="calc-iw"><span class="calc-u">$</span><input type="number" id="cAdSpend" placeholder="12500" min="0" inputmode="decimal"></div>
+            </div>
+            <div class="calc-field">
+              <label>Leads generated</label>
+              <div class="calc-iw"><input type="number" id="cLeads" placeholder="250" min="0" inputmode="numeric"></div>
+            </div>
+            <div class="calc-field">
+              <label>Net revenue from these leads</label>
+              <div class="calc-iw"><span class="calc-u">$</span><input type="number" id="cRevenue" placeholder="28000" min="0" inputmode="decimal"></div>
+            </div>
+            <div class="calc-divider">Costs your dashboard leaves out <span style="color:#cfdcf2;font-size:11px;letter-spacing:0;text-transform:none;font-family:'Inter',sans-serif;font-weight:400"> &mdash; leave blank if it doesn't apply</span></div>
+            <div class="calc-field">
+              <label>Platform fee <span class="calc-hint">~3% Meta / Google</span></label>
+              <div class="calc-iw"><input type="number" class="sr" id="cFeePct" value="3" min="0" step="0.1" inputmode="decimal"><span class="calc-u s">%</span></div>
+            </div>
+            <div class="calc-field">
+              <label>Broker / partner payouts</label>
+              <div class="calc-iw"><span class="calc-u">$</span><input type="number" id="cBroker" placeholder="0" min="0" inputmode="decimal"></div>
+            </div>
+            <div class="calc-field">
+              <label>Refunds</label>
+              <div class="calc-iw"><span class="calc-u">$</span><input type="number" id="cRefunds" placeholder="0" min="0" inputmode="decimal"></div>
+            </div>
+            <div class="calc-field">
+              <label>Chargebacks</label>
+              <div class="calc-iw"><span class="calc-u">$</span><input type="number" id="cChargebacks" placeholder="0" min="0" inputmode="decimal"></div>
+            </div>
+            <div class="calc-field">
+              <label>Compliance cost / lead <span class="calc-hint">TCPA/CCPA &mdash; default $0.25</span></label>
+              <div class="calc-iw"><span class="calc-u">$</span><input type="number" id="cCompliance" placeholder="0.25" min="0" step="0.01" inputmode="decimal"></div>
+            </div>
+            <div class="calc-field">
+              <label>Other variable costs</label>
+              <div class="calc-iw"><span class="calc-u">$</span><input type="number" id="cOther" placeholder="0" min="0" inputmode="decimal"></div>
+            </div>
+          </div>
+          <div class="calc-out">
+            <div class="calc-cpl-row">
+              <div class="calc-cpl-card rep">
+                <span class="calc-cpl-lbl">Dashboard reports</span>
+                <span class="calc-cpl-val" id="cReported">$0.00</span>
+              </div>
+              <div class="calc-cpl-card tru">
+                <span class="calc-cpl-lbl">Actually paying</span>
+                <span class="calc-cpl-val" id="cTrue">$0.00</span>
+              </div>
+            </div>
+            <div class="calc-stat-row">
+              <div class="calc-stat">
+                <span class="calc-stat-lbl">True margin</span>
+                <span class="calc-stat-val" id="cCm" style="color:#ffffff">0.0%</span>
+              </div>
+              <div class="calc-stat">
+                <span class="calc-stat-lbl">Hidden costs/mo</span>
+                <span class="calc-stat-val" id="cHidden" style="color:#ffffff">$0</span>
+              </div>
+            </div>
+            <div class="calc-gap-box" id="cGap"></div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:clamp(28px,4vh,44px) clamp(24px,4vw,40px);background:rgba(7,21,48,.6);border:1px solid rgba(196,160,64,.18);border-top:2px solid #C4A040;border-radius:2px;box-shadow:0 0 40px rgba(196,160,64,.06);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:#C4A040;text-transform:uppercase;margin-bottom:14px;">The Margin Gap &middot; Free Newsletter</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,30px);color:#ffffff;line-height:1.2;margin-bottom:10px;font-weight:400;">The real cost of every campaign.<br><em style="color:#e6edfb;font-style:italic;">Straight to your inbox.</em></p>
+        <p style="font-size:13px;color:#ffffff;line-height:1.65;margin-bottom:20px">Marketing margin intelligence for paid acquisition operators. The costs your dashboard never shows.</p>
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;">
+          <a href="https://allocera-intelligence.beehiiv.com/subscribe" target="_blank" rel="noopener" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:linear-gradient(135deg,#C4A040,#A88830);color:#010914;padding:14px 32px;border-radius:2px;text-decoration:none;white-space:nowrap;font-weight:600;" onmouseover="this.style.boxShadow='0 0 24px rgba(196,160,64,.35)'" onmouseout="this.style.boxShadow='none'">Subscribe Free &rarr;</a>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#cfdcf2;text-transform:uppercase;">No cost &middot; No spam &middot; Unsubscribe anytime</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="section-inner">
+    <div class="eyebrow">The Problem</div>
+    <h2 class="section-title fade-up">Your ad platform doesn't know <em>the whole story.</em></h2>
+    <div class="rule fade-up"></div>
+    <p class="lead-text fade-up">You see what you spent. You see how many leads came in. You see what your CRM says those leads are worth. But refunds, chargebacks, commissions, and partner payouts can completely change the picture, and with it your <a href="/true-cac/" style="color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)">true cost per lead</a>. If someone asked which of your campaigns is actually making you the most money, would you know?</p>
+    <div class="cpl-split">
+      <div class="cpl-panel bad">
+        <span class="cpl-tag">What your dashboard reports</span>
+        <span class="cpl-number" style="font-size:clamp(24px,3.6vw,38px)" id="cplReported">Part of the Story</span>
+        <span class="cpl-note">Cost per lead &mdash; platform-reported, before what happens after the click</span>
+        <span class="pill red">Incomplete</span>
+      </div>
+      <div class="cpl-panel good">
+        <span class="cpl-tag">What you are actually paying</span>
+        <span class="cpl-number" style="font-size:clamp(24px,3.6vw,38px)" id="cplActual">The Real Number</span>
+        <span class="cpl-note">True all-in cost &mdash; after broker fees, refunds, compliance &amp; chargebacks</span>
+        <span class="pill gold">Structural gap</span>
+      </div>
+    </div>
+    <p style="font-size:11px;color:#cfdcf2;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;margin-bottom:clamp(14px,2.5vh,22px)">See your real numbers in the calculator above.</p>
+    <div class="callout">
+      <strong>CDAI brings the numbers together</strong> so you can see what each campaign actually earns after the costs that normally get missed. See how CDAI works out your <a href="/calculate-contribution-margin/" style="color:#4080f0;text-decoration:none;border-bottom:1px solid rgba(64,128,240,.3)">true contribution margin</a>, or how it <a href="/triple-whale-vs-rockerbox-vs-allocera/" style="color:#4080f0;text-decoration:none;border-bottom:1px solid rgba(64,128,240,.3)">compares with existing attribution tools</a>.
+    </div>
+  </div>
+</section>
+
+<section id="how" style="background:var(--surface)!important">
+  <div class="section-inner">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="section-title fade-up">See your true cost per lead for every campaign and which ones to kill. <em>Know where to act.</em></h2>
+    <div class="rule fade-up"></div>
+    <p class="lead-text fade-up">CDAI connects your ad accounts and CRM, brings in the costs that normally get missed, and gives you a clear recommendation for each campaign.</p>
+    <div class="video-showcase">
+      <img class="video-player" style="object-fit:contain" src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="CDAI client portal &mdash; Your Campaign Directive Sheet, connected accounts and per-campaign directives" loading="eager" fetchpriority="high">
+    </div>
+    <p style="text-align:center;font-family:'Inter',sans-serif;font-size:clamp(13px,1.5vw,15px);font-weight:300;color:#e6edfb;margin-top:-8px;margin-bottom:clamp(28px,4vh,40px)">Every source flows in. One reconciled number &mdash; and one directive &mdash; flows out.</p>
+    <div class="how-grid">
+      <div class="how-card">
+        <span class="how-num">01</span><span class="how-num-label">Sign Up</span>
+        <div class="how-title">Pick a plan, connect your accounts</div>
+        <div class="how-body">Sign up, pay securely through Stripe, and you're in your dashboard seconds later. Connect each ad platform and CRM with a click. No sales call.</div>
+      </div>
+      <div class="how-card">
+        <span class="how-num">02</span><span class="how-num-label">Collect</span>
+        <div class="how-title">Your ad spend, leads, and sales in one place</div>
+        <div class="how-body">CDAI connects the advertising and CRM data you already have &mdash; what you spent, how many leads came in, what your CRM says they're worth.</div>
+      </div>
+      <div class="how-card">
+        <span class="how-num">03</span><span class="how-num-label">Calculate</span>
+        <div class="how-title">The costs that get missed, included</div>
+        <div class="how-body">Every industry loses money differently &mdash; refund patterns, broker fees, compliance costs, partner payouts, or something specific to your business. CDAI finds what's actually distorting your numbers, not a generic checklist, and combines it into <a href="/true-cost-per-lead/" style="color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)">true cost per lead for every campaign</a>. What you actually paid.</div>
+      </div>
+      <div class="how-card">
+        <span class="how-num">04</span><span class="how-num-label">Analyze</span>
+        <div class="how-title">Warning signs, made visible</div>
+        <div class="how-body">Rising costs, refund and chargeback patterns, and shrinking margins are flagged so they don't stay buried.</div>
+      </div>
+      <div class="how-card">
+        <span class="how-num">05</span><span class="how-num-label">Direct</span>
+        <div class="how-title">A clear recommendation per campaign</div>
+        <div class="how-body">Each campaign gets a plain recommendation, such as keep spending, hold, or cut back, with the numbers behind it.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:clamp(16px,3vh,28px)">
+      <a href="/how-it-works" class="btn-ghost">Full methodology &rarr;</a>
+    </div>
+    <div style="background:rgba(7,21,48,.6);border:1px solid rgba(196,160,64,.2);border-left:2px solid #c4a040;border-radius:2px;padding:clamp(16px,2.5vw,24px);margin-top:clamp(24px,4vh,36px)">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#c4a040;margin-bottom:8px">Built on your numbers</div>
+      <div style="font-size:clamp(12px,1.4vw,14px);color:#ffffff;line-height:1.75">CDAI works from your real ad, CRM, and cost data and shows the math, so you can check every number yourself.</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)!important;border-top:1px solid #102040">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">The Outcomes</div>
+    <h2 class="section-title fade-up">Know what to keep. <em>Know what to kill.</em></h2>
+    <div class="rule fade-up"></div>
+    <p style="font-size:clamp(14px,1.7vw,17px);color:#f2f6ff;line-height:1.8;margin-bottom:clamp(24px,4vh,36px);font-weight:300">Spend more where it makes sense. Pull back where it doesn't. Know the difference.</p>
+    <div class="outcomes-cards">
+      <div style="background:var(--bg);border:1px solid #1a3060;border-radius:2px;padding:clamp(14px,2vw,20px)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#0baf92;margin-bottom:8px">Scale Winners</div><div style="font-size:clamp(11px,1.3vw,13px);color:#ffffff;line-height:1.6">See which campaigns are worth more of your budget.</div></div>
+      <div style="background:var(--bg);border:1px solid #1a3060;border-radius:2px;padding:clamp(14px,2vw,20px)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#ff5c7a;margin-bottom:8px">Cut Losers</div><div style="font-size:clamp(11px,1.3vw,13px);color:#ffffff;line-height:1.6">See which campaigns are costing more than they return.</div></div>
+      <div style="background:var(--bg);border:1px solid #1a3060;border-radius:2px;padding:clamp(14px,2vw,20px)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c4a040;margin-bottom:8px">Know the Truth</div><div style="font-size:clamp(11px,1.3vw,13px);color:#ffffff;line-height:1.6">See your true cost per lead after the costs that normally get missed.</div></div>
+      <div style="background:var(--bg);border:1px solid #1a3060;border-radius:2px;padding:clamp(14px,2vw,20px)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4080f0;margin-bottom:8px">Save Time</div><div style="font-size:clamp(11px,1.3vw,13px);color:#ffffff;line-height:1.6">No more piecing numbers together by hand.</div></div>
+      <div style="background:var(--bg);border:1px solid #1a3060;border-radius:2px;padding:clamp(14px,2vw,20px);grid-column:1/-1"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b48be0;margin-bottom:8px">Reduce Risk</div><div style="font-size:clamp(11px,1.3vw,13px);color:#ffffff;line-height:1.6">Keep refund, chargeback, and compliance costs in the picture.</div></div>
+    </div>
+    <div style="margin-top:clamp(32px,5vh,48px);margin-bottom:clamp(24px,4vh,36px);padding:clamp(20px,3vw,32px);background:rgba(7,21,48,.6);border:1px solid rgba(196,160,64,.2);border-left:2px solid #c4a040;border-radius:2px">
+          <div style="margin-top:clamp(20px,3vh,28px);margin-bottom:clamp(24px,4vh,36px);padding:clamp(20px,3vw,32px);background:rgba(7,21,48,.6);border:1px solid rgba(11,175,146,.2);border-left:2px solid #0baf92;border-radius:2px">
+      <div class="eyebrow" style="margin-bottom:14px">Validated</div>
+      <p style="font-family:'Inter',sans-serif;font-size:clamp(13px,1.5vw,15px);color:#ffffff;line-height:1.75;font-weight:300;margin-bottom:clamp(18px,2.5vh,24px)">Before CDAI ever touches a live account, its decisions are checked against verified outcomes: 1,352 decisions across nine businesses in seven industries. The results held up.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.5vw,24px)">
+        <div>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:400;color:#0baf92;display:block;line-height:1;margin-bottom:6px">95.2%</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#cfdcf2;line-height:1.6;display:block">Accurate when it says hold steady</span>
+        </div>
+        <div>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:400;color:#0baf92;display:block;line-height:1;margin-bottom:6px">98.0%</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#cfdcf2;line-height:1.6;display:block">Accurate telling you to spend more</span>
+        </div>
+        <div>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:400;color:#0baf92;display:block;line-height:1;margin-bottom:6px">100%</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#cfdcf2;line-height:1.6;display:block">Every dollar checked twice &mdash; zero mismatches</span>
+        </div>
+      </div>
+      <p style="font-size:clamp(11px,1.3vw,13px);color:#cfdcf2;line-height:1.75;margin-top:clamp(18px,2.5vh,24px)">Along the way, this process found a real gap in how one of its calls was graded &mdash; found it, fixed it, and proved the fix, before it ever reached a client. <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/" style="color:#4080f0;text-decoration:none;border-bottom:1px solid rgba(64,128,240,.3)">Read the full validation report &rarr;</a></p>
+    </div>
+    <div class="eyebrow fade-up">Client Reviews</div>
+    <div class="how-grid">
+      <div class="how-card">
+        <span class="how-num-label">Client Review</span>
+        <div class="how-body" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,1.7vw,18px);color:#ffffff;line-height:1.7;margin-bottom:18px">&ldquo;CDAI gave us visibility into our paid acquisition that we simply didn&rsquo;t have before. Instead of looking at separate numbers across our advertising and CRM systems, we could see the actual economics of our campaigns and get a clear directive on what needed attention. The fact that the engine runs automatically and bases its decisions on the underlying data made it especially useful for our team.&rdquo;</div>
+        <div class="how-title" style="margin-bottom:2px">Sid Smith</div>
+        <span class="how-num-label" style="margin-top:0;margin-bottom:0">Apex Care Solutions LLC</span>
+      </div>
+      <div class="how-card">
+        <span class="how-num-label">Client Review</span>
+        <div class="how-body" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,1.7vw,18px);color:#ffffff;line-height:1.7;margin-bottom:18px">&ldquo;What stood out to me about Allocera was that it wasn&rsquo;t just another reporting dashboard. CDAI connected the data, reconciled the numbers, and surfaced campaigns that needed attention without us having to manually dig through multiple platforms. Having a clear, data-driven directive made it much easier to understand where our advertising dollars were actually going.&rdquo;</div>
+        <div class="how-title" style="margin-bottom:2px">Rebecca Acer</div>
+        <span class="how-num-label" style="margin-top:0;margin-bottom:0">Apex Care Solutions LLC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#010914!important">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Explore CDAI</div>
+    <h2 class="section-title fade-up">Go deeper <em>before you decide.</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="explore-grid">
+      <a href="/dashboard" class="explore-card">
+        <span class="explore-label">Live Dashboard</span>
+        <span class="explore-title">One view of every campaign.</span>
+        <span class="explore-desc">The view your team works from.</span>
+        <span class="explore-link">View Dashboard &rarr;</span>
+      </a>
+      <a href="/how-it-works" class="explore-card">
+        <span class="explore-label">How It Works</span>
+        <span class="explore-title">The full method, step by step.</span>
+        <span class="explore-desc">How CDAI reconciles your ad spend and CRM into one number per campaign.</span>
+        <span class="explore-link">See How It Works &rarr;</span>
+      </a>
+      <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/" class="explore-card">
+        <span class="explore-label">Validation Report</span>
+        <span class="explore-title">1,352 directives, checked twice.</span>
+        <span class="explore-desc">Real numbers, real fixes, real limits — nothing hidden.</span>
+        <span class="explore-link">Read the Report &rarr;</span>
+      </a>
+      <a href="/pricing" class="explore-card">
+        <span class="explore-label">Pricing</span>
+        <span class="explore-title">Transparent. No surprises.</span>
+        <span class="explore-desc">Audits from $2,500. Retainers from $1,500/mo. Audit fees credit 100% toward a retainer started within 30 days.</span>
+        <span class="explore-link">View Pricing &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--surface)!important;border-top:1px solid #102040">
+  <div class="section-inner">
+    <div class="eyebrow fade-up" style="justify-content:center">FAQ</div>
+    <h2 class="section-title fade-up" style="text-align:center;margin-bottom:clamp(20px,3vh,28px)">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What is CDAI, exactly?</summary>
+        <div class="faq-answer">CDAI is a deterministic, rules-based directive engine &mdash; not a predictive model. It reconciles your ad spend, CRM, and revenue data into one true number per campaign (true cost, true margin), then automatically issues one of eight directives every night: SCALE, HOLD, CUT, PAUSE, QUARANTINE, RENEGOTIATE, INVESTIGATE, or FLAG. Same inputs always produce the same output &mdash; no guessing.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Who is CDAI for?</summary>
+        <div class="faq-answer">Any business running paid ads and/or buying leads, with <strong>HubSpot or Salesforce</strong> as its CRM. One CRM and one ad is enough: CDAI will still show you your true cost per lead and true customer acquisition cost. The CRM matters because it's where a lead turns into revenue. Leads that only pass through a call-tracking or lead-buying platform, with no HubSpot or Salesforce record behind them, can't be tied back to what they earned.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How accurate is it, really?</summary>
+        <div class="faq-answer">98.0% on SCALE, 95.2% on HOLD, and 100% math verification &mdash; every dollar checked twice against raw data, zero mismatches. PAUSE is 85.2% and FLAG is 70.9%. Validated on 1,352 scored decisions across 9 businesses in 7 industries, run in a controlled environment and checked against the production database. Every number is in the report, including the weaker ones. <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">Read the full validation report &rarr;</a></div>
+      </details>
+      <details class="faq-item">
+        <summary>Does CDAI automatically pause my ad spend?</summary>
+        <div class="faq-answer">No &mdash; and that's by design. CDAI tells you exactly what's true and issues a directive; a human decides what to do with it. CUT and PAUSE directives are advisory today: CDAI won't silently touch your ad accounts. You keep the wheel.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How fast do I actually see results?</summary>
+        <div class="faq-answer">Your account and dashboard are ready seconds after you pay. Connect each tool with a click or an API key, and your first directives arrive on CDAI's next nightly run. HOLD, FLAG, and QUARANTINE can fire from day one on spend and lead data alone. SCALE and CUT need at least one closed sale first, since margin is mathematically undefined without revenue &mdash; that's arithmetic, not a slow rollout.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a free way to try it?</summary>
+        <div class="faq-answer">Yes. The free Distortion Audit runs one of your campaigns (30-day lookback) through CDAI and shows you the gap between what your dashboard reports and what you actually paid. No consumer identity data needed, no commitment. <a href="#intake">Request it below &rarr;</a></div>
+      </details>
+      <details class="faq-item">
+        <summary>What does it cost?</summary>
+        <div class="faq-answer">Paid Distortion Audits start at $2,500. Ongoing retainers start at $1,500/mo and scale with your ad spend. Paid audit fees credit 100% toward a retainer started within 30 days. <a href="/pricing">See full pricing &rarr;</a></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="intake">
+  <div class="section-inner">
+    <div class="intake-grid">
+      <div class="intake-info">
+        <div class="eyebrow">Get Started</div>
+        <h3>Start today, or see your gap free first.</h3>
+        <div class="path-card">
+          <span class="path-tag">Self-serve &middot; no sales call</span>
+          <p>Sign up, pay through Stripe, and you're in your dashboard seconds later. Connect each tool with one click (Meta, Google Ads, LinkedIn, HubSpot, Salesforce) or an API key (Ringba, CallRail, Boberdoo, Bing, Stripe). Your first directives arrive on CDAI's next nightly run. No sales call.</p>
+          <a class="btn-primary" href="https://cdai-portal.vercel.app/signup/">Get Started &rarr;</a>
+        </div>
+        <div class="path-card gold">
+          <span class="path-tag">Free Distortion Audit</span>
+          <p>We run one campaign (30-day lookback) through CDAI and show you what your dashboard misses. Delivered in 5&ndash;7 business days, longer if tracking isn't set up yet. No consumer identity data, no commitment.</p>
+          <p class="path-note">Paid audit fees credit 100% toward any retainer started within 30 days.</p>
+        </div>
+      </div>
+      <div>
+        <form class="intake-form" id="intakeForm" novalidate>
+          <div class="form-title">Request your free audit, or ask us anything</div>
+          <div class="form-group"><label class="form-label" for="name">Name *</label><input class="form-input" type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required></div>
+          <div class="form-group"><label class="form-label" for="email">Work Email *</label><input class="form-input" type="email" id="email" name="email" placeholder="you@yourcompany.com" autocomplete="email" required></div>
+          <div class="form-group"><label class="form-label" for="company">Company *</label><input class="form-input" type="text" id="company" name="company" placeholder="Your company" autocomplete="organization" required></div>
+          <div class="form-group"><label class="form-label" for="message">Anything we should know? <span style="text-transform:none;letter-spacing:0">(optional)</span></label><textarea class="form-textarea" id="message" name="message" placeholder="Which ad platforms and CRM you use, rough monthly spend, what you want to find out." style="min-height:80px"></textarea></div>
+          <input type="hidden" name="source" value="Homepage: free audit / contact">
+          <div class="form-error" id="formError">Please fill in all required fields.</div>
+          <button class="form-submit" type="submit" id="formSubmit">Request Free Audit</button>
+          <p class="form-fine">We reply within 24 hours. Prefer to talk now? <a href="tel:+19196109288">(919) 610-9288</a> or <a href="mailto:nick@alloceraintelligence.com">nick@alloceraintelligence.com</a></p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h4>Request received</h4>
+          <p>We&rsquo;ll reach out within 24 hours. Check your email for a confirmation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="width:100%;padding:clamp(32px,5vh,52px) clamp(16px,5vw,64px);background:linear-gradient(180deg,#040c1e 0%,#071530 100%);border-top:1px solid #1a3060;border-bottom:1px solid #102040">
+  <div style="max-width:1100px;margin:0 auto">
+
+    <div style="display:flex;align-items:stretch;justify-content:center;gap:clamp(10px,2vw,18px);flex-wrap:wrap;margin-bottom:clamp(28px,4vh,40px)">
+      <div style="flex:1;min-width:150px;max-width:220px;text-align:center;padding:clamp(14px,2vw,18px) 12px;background:rgba(1,9,20,.4);border:1px solid rgba(26,48,96,.5);border-radius:2px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,32px);font-weight:400;color:#4080f0;display:block;line-height:1;margin-bottom:6px">Secure</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#e6edfb;line-height:1.5">Checkout Through Stripe</span>
+      </div>
+      <div style="flex:1;min-width:150px;max-width:220px;text-align:center;padding:clamp(14px,2vw,18px) 12px;background:rgba(1,9,20,.4);border:1px solid rgba(26,48,96,.5);border-radius:2px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,32px);font-weight:400;color:#0baf92;display:block;line-height:1;margin-bottom:6px">1,352</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#e6edfb;line-height:1.5">Decisions Verified</span>
+      </div>
+      <div style="flex:1;min-width:150px;max-width:220px;text-align:center;padding:clamp(14px,2vw,18px) 12px;background:rgba(1,9,20,.4);border:1px solid rgba(26,48,96,.5);border-radius:2px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,32px);font-weight:400;color:#ffffff;display:block;line-height:1;margin-bottom:6px">Self-Serve</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#e6edfb;line-height:1.5">Sign Up, Pay, and Connect on Your Own</span>
+      </div>
+      <div style="flex:1;min-width:150px;max-width:220px;text-align:center;padding:clamp(14px,2vw,18px) 12px;background:rgba(1,9,20,.4);border:1px solid rgba(26,48,96,.5);border-radius:2px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,32px);font-weight:400;color:#c4a040;display:block;line-height:1;margin-bottom:6px">24 Hours</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#e6edfb;line-height:1.5">Response to Audit Requests</span>
+      </div>
+    </div>
+
+    <div style="text-align:center">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#cfdcf2;margin-bottom:clamp(14px,2vh,20px)">Featured, Listed &amp; Powered By</div>
+      <div class="brand-row">
+        <a class="brand" href="https://www.crunchbase.com/organization/allocera-intelligence-llc" target="_blank" rel="noopener" style="--bc:#0288D1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 0H2.4A2.41 2.41 0 0 0 0 2.4v19.2A2.41 2.41 0 0 0 2.4 24h19.2a2.41 2.41 0 0 0 2.4-2.4V2.4A2.41 2.41 0 0 0 21.6 0zM7.045 14.465A2.11 2.11 0 0 0 9.84 13.42h1.66a3.69 3.69 0 1 1 0-1.75H9.84a2.11 2.11 0 1 0-2.795 2.795zm11.345.845a3.55 3.55 0 0 1-1.06.63 3.68 3.68 0 0 1-3.39-.38v.38h-1.51V5.37h1.5v4.11a3.74 3.74 0 0 1 1.8-.63H16a3.67 3.67 0 0 1 2.39 6.46zm-.223-2.766a2.104 2.104 0 1 1-4.207 0 2.104 2.104 0 0 1 4.207 0z"/></svg><span>Crunchbase</span></a>
+        <a class="brand" href="https://www.linkedin.com/company/allocera-intelligence-llc" target="_blank" rel="noopener" style="--bc:#0A66C2"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z"/></svg><span>LinkedIn</span></a>
+        <a class="brand" href="https://www.indiehackers.com/AlloceraCDAI" target="_blank" rel="noopener" style="--bc:#ffffff"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0V0Zm5.4 17.2h2.4V6.8H5.4v10.4Zm4.8 0h2.4v-4h3.6v4h2.4V6.8h-2.4v4h-3.6v-4h-2.4v10.4Z"/></svg><span>Indie Hackers</span></a>
+        <a class="brand wordmark" href="https://www.f6s.com/allocera-intelligence" target="_blank" rel="noopener" style="--bc:#FF6B4A"><span>F6S</span></a>
+        <a class="brand" href="https://stripe.com" target="_blank" rel="noopener" style="--bc:#635BFF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"/></svg><span>Payments by Stripe</span></a>
+      </div>
+      <div style="margin-top:clamp(16px,2.5vh,24px);line-height:0">
+        <a href="https://smollaunch.com" target="_blank" rel="noopener">
+  <img src="https://smollaunch.com/badges/featured-dark.svg" alt="Allocera Intelligence — Featured on Smol Launch" loading="lazy" width="250" height="60" />
+</a>
+      </div>
+      <div style="margin-top:clamp(22px,3.5vh,32px)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#cfdcf2;margin-bottom:clamp(12px,2vh,16px)">Listed On</div>
+        <div style="display:flex;align-items:stretch;justify-content:center;gap:clamp(10px,2vw,16px);flex-wrap:wrap">
+          <a href="https://www.g2.com/products/allocera-cdai/reviews" target="_blank" rel="noopener" aria-label="Allocera CDAI on G2" style="display:inline-flex;align-items:center;gap:14px;text-decoration:none;padding:14px 22px;min-width:200px;border:1px solid rgba(26,48,96,.6);border-top:2px solid #FF492C;border-radius:2px;background:rgba(7,21,48,.6);box-shadow:0 4px 24px rgba(0,0,0,.3);transition:border-color .25s,box-shadow .25s,transform .25s" onmouseover="this.style.borderColor='rgba(196,160,64,.4)';this.style.boxShadow='0 8px 40px rgba(196,160,64,.08)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(26,48,96,.6)';this.style.boxShadow='0 4px 24px rgba(0,0,0,.3)';this.style.transform='none'"><svg role="img" viewBox="0 0 24 24" width="30" height="30" fill="#FF492C" aria-hidden="true" style="flex-shrink:0"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24Zm.122 5.143c.45 0 .9.044 1.342.132l-1.342 2.806C9.962 8.08 8.203 9.84 8.203 12s1.76 3.92 3.92 3.92c.937 0 1.844-.338 2.553-.951l1.483 2.572A6.856 6.856 0 0 1 5.266 12a6.856 6.856 0 0 1 6.856-6.856Zm3.498.49a1.262 1.262 0 0 1 .026 0c.427 0 .792.113 1.101.34.31.229.466.546.466.946 0 .639-.36 1.03-1.035 1.376l-.377.191c-.403.204-.602.385-.657.706h2.05v.85h-3.101v-.144c0-.526.103-.96.314-1.306.211-.345.576-.65 1.102-.917l.242-.117c.427-.216.538-.401.538-.625 0-.266-.228-.458-.6-.458-.44 0-.773.228-1.004.694l-.592-.595c.13-.279.338-.502.619-.675a1.7 1.7 0 0 1 .908-.266Zm-2.094 5.388h3.394l1.697 2.937-1.697 2.94-1.697-2.94H11.83l1.696-2.937Z"/></svg><span style="display:flex;flex-direction:column;gap:3px;text-align:left"><span style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#ffffff;letter-spacing:.01em;line-height:1.1">G2</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#cfdcf2">Vendor Profile</span></span></a>
+          <a href="https://alternativeto.net/software/allocera-intelligence-cdai/about/" target="_blank" rel="noopener" aria-label="Allocera CDAI on AlternativeTo" style="display:inline-flex;align-items:center;gap:14px;text-decoration:none;padding:14px 22px;min-width:200px;border:1px solid rgba(26,48,96,.6);border-top:2px solid #0289D5;border-radius:2px;background:rgba(7,21,48,.6);box-shadow:0 4px 24px rgba(0,0,0,.3);transition:border-color .25s,box-shadow .25s,transform .25s" onmouseover="this.style.borderColor='rgba(196,160,64,.4)';this.style.boxShadow='0 8px 40px rgba(196,160,64,.08)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(26,48,96,.6)';this.style.boxShadow='0 4px 24px rgba(0,0,0,.3)';this.style.transform='none'"><svg role="img" viewBox="0 0 24 24" width="30" height="30" fill="#0289D5" aria-hidden="true" style="flex-shrink:0"><path d="M12 .416C18.398.416 23.584 5.602 23.584 12S18.398 23.584 12 23.584.416 18.397.416 12 5.602.416 12 .416M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.616 0 12 0m6.509 18.136-.056.012q.051.177.094.345l.202.812q.688-.639 1.249-1.394c-.305.036-.618.074-.923.117-.188.026-.372.066-.567.108zm.931-4.295c-3.783-.612-7.762.613-10.989 2.561-.757.457-1.59.91-2.129 1.632-.368.494-.561 1.081-.679 1.68q.464.381.975.704l.002-.099c.013-.41.064-.827.229-1.206.182-.42.478-.679.843-.938.756-.538 1.598-.967 2.412-1.392.055-.03.134-.029.202-.043.015.062.048.125.043.185-.02.283-.014.567-.007.85.022 1.016.088 2.032.157 3.047q.035.525.072 1.049.693.096 1.391.097a9.94 9.94 0 0 0 6.093-2.074l-.425-1.471q-.009-.032-.02-.063l-.064.017c-1.237.343-2.495.826-3.845 1.476l-.036.018c-.059.031-.14.074-.237.074h-.002c-.118 0-.278-.065-.34-.189-.064-.128-.017-.305.064-.398.066-.075.152-.121.22-.158l.038-.02a18.3 18.3 0 0 1 3.913-1.63l-.07-.179c-.101-.26-.205-.53-.32-.789-.148-.333-.317-.666-.48-.988l-.084-.167c-.054-.107-.109-.248-.055-.388a.34.34 0 0 1 .205-.192c.175-.064.436.065.511.214.415.816.77 1.546 1.087 2.23l.029.056.047-.008a9 9 0 0 1 2.342-.229 10 10 0 0 0 .886-1.91c-.545-.699-1.194-1.231-1.98-1.358zm2.428-2.827a8 8 0 0 0-.098-.649q-.046-.24-.096-.478c-.036-.171-.066-.344-.109-.514a9.2 9.2 0 0 0-1.158-2.73 9 9 0 0 0-.867-1.165 10 10 0 0 0-1.026-1.015 10.2 10.2 0 0 0-5.943-2.409 10 10 0 0 0-1.47.013 9.8 9.8 0 0 0-2.922.716 9 9 0 0 0-.709.33q-.164.085-.325.175a10.1 10.1 0 0 0-5.017 7.83c-.05.942.017 1.886.194 2.813h-.001s.191 1.124.298 1.334c.526 1.989 1.443 3.744 2.648 3.419a.167.167 0 0 0 .111-.208q-.003-.011-.008-.021a.95.95 0 0 1-.523-.377c-.666-1.117 2.723-3.509 7.351-5.269 4.252-1.619 8.091-2.144 8.965-1.285.173.141.24.376.168.588a3.03 3.03 0 0 1-.934 1.43.19.19 0 0 0 0 .269.18.18 0 0 0 .244.011 3.54 3.54 0 0 0 1.17-1.682c.028-.085.034-.187.045-.276a3.8 3.8 0 0 0 .011-.851zM6.253 14.668c-.566.402-1.553 1.122-1.967 1.925-.161.31-.312.069-.406-.107a10 10 0 0 1-.541-1.518l-.001-.003c-.066-.241-.282-1.04-.303-1.277l.001-.001a10.8 10.8 0 0 1-.187-2.638 9.35 9.35 0 0 1 4.635-7.227 10 10 0 0 1 .715-.362c.236-.107 1.191-.463.246.375a8.4 8.4 0 0 0-2.727 5.482c-.092 1.076.221 3.091.773 4.57.173.463.031.592-.238.782zM17.46 9.7a.44.44 0 0 1-.296.193c-1.068.149-2.12.398-3.14.745a.45.45 0 0 1-.356-.044.44.44 0 0 1-.203-.295l-.08-.369a.2.2 0 0 1 .114-.227 12.6 12.6 0 0 1 3.736-.863.19.19 0 0 1 .198.157l.084.354c.03.119.01.246-.057.349m2.032-1.876a.166.166 0 0 1-.183.106c-2.948-.438-7.069 1.073-7.069 1.073a17.7 17.7 0 0 0-4.049 1.912.493.493 0 0 1-.754-.319 8 8 0 0 1-.131-1.14 5.8 5.8 0 0 1 .575-3.012q.04-.078.087-.154a.1.1 0 0 1 .018-.037l.015-.025.035-.06.017-.027c1.429-2.34 4.636-3.273 7.197-2.511a7.43 7.43 0 0 1 3.335 2.123c.141.165 1.09 1.485.907 2.071m-1.533-1.599-.002.005a4 4 0 0 0-1.907-1.67 5.84 5.84 0 0 0-2.824-.43 3.8 3.8 0 0 0-1 .22.14.14 0 0 0-.097.148.135.135 0 0 0 .132.117 8.3 8.3 0 0 1 2.177.058c2.651.53 3.5 1.806 3.593 1.856.027.013.058-.013.045-.039a3 3 0 0 0-.117-.265"/></svg><span style="display:flex;flex-direction:column;gap:3px;text-align:left"><span style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#ffffff;letter-spacing:.01em;line-height:1.1">AlternativeTo</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#cfdcf2">Software Listing</span></span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">
+    <img class="footer-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence">
+    <span class="footer-text">Allocera Intelligence &middot; CDAI Engine &middot; alloceraintelligence.com</span>
+  </div>
+  <span class="footer-right">&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions" style="color:var(--dim);text-decoration:none">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms" style="color:var(--dim);text-decoration:none">Terms of Service</a> &middot; Built by <a href="https://fullsendorganicks.com/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;border-bottom:1px solid rgba(74,100,136,.4)">FSO</a></span>
+</footer>
+
+<div class="sticky-cta" id="stickyCTA">
+  <span class="sticky-cta-text">See your true CPL</span>
+  <a href="#intake" class="sticky-cta-btn">Free Audit &rarr;</a>
+</div>
+
+<script>
+(function(){
+  function svh(){document.documentElement.style.setProperty('--vh',window.innerHeight*.01+'px')}
+  svh();window.addEventListener('resize',svh);
+
+  if(!('IntersectionObserver' in window)){document.querySelectorAll('.fade-up').forEach(function(el){el.classList.add('visible')})}
+  else{var obs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});}
+
+  var toggle=document.getElementById('navToggle'),menu=document.getElementById('mobileMenu');
+  toggle.addEventListener('click',function(){toggle.classList.toggle('open');menu.classList.toggle('open')});
+  function closeMobile(){toggle.classList.remove('open');menu.classList.remove('open')}
+  window.closeMobile=closeMobile;
+  document.addEventListener('click',function(e){if(!toggle.contains(e.target)&&!menu.contains(e.target))closeMobile()});
+
+  var stickyCTA=document.getElementById('stickyCTA');
+  var intakeEl=document.getElementById('intake');
+  window.addEventListener('scroll',function(){
+    var scrolled=window.scrollY>400;
+    var intakeTop=intakeEl.getBoundingClientRect().top;
+    var intakeVisible=intakeTop<window.innerHeight;
+    if(scrolled&&!intakeVisible){stickyCTA.classList.add('show')}
+    else{stickyCTA.classList.remove('show')}
+  });
+
+  // Intake form — Formspree (unchanged from original)
+  document.getElementById('intakeForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var form=this,err=document.getElementById('formError'),btn=document.getElementById('formSubmit'),valid=true;
+    form.querySelectorAll('[required]').forEach(function(f){var v=f.value.trim();if(!v||(f.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))){valid=false;f.style.borderColor='#D63050'}else{f.style.borderColor=''}});
+    if(!valid){err.textContent='Please add your name, a valid work email, and your company.';err.style.display='block';return}
+    err.style.display='none';btn.disabled=true;btn.textContent='Submitting...';
+    fetch('https://formspree.io/f/xwvwlzzq',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    .then(function(r){return r.json()})
+    .then(function(res){
+      if(res.ok||res.success){form.style.display='none';document.getElementById('formSuccess').style.display='block'}
+      else{btn.disabled=false;btn.textContent='Request Free Audit';err.textContent='Submission failed. Please email nick@alloceraintelligence.com directly.';err.style.display='block'}
+    })
+    .catch(function(){btn.disabled=false;btn.textContent='Request Free Audit';err.textContent='Network error. Please email nick@alloceraintelligence.com directly.';err.style.display='block'});
+  });
+})();
+
+// Distortion Calculator
+(function(){
+  var API='https://cdai-calculator.onrender.com';
+  var leadId=null,saveTimer=null;
+  var snap={inputs:{},results:{}};
+
+  // Anonymous funnel-entry ping — fires once when the calculator panel
+  // first scrolls into view, before any info is entered. No PII sent.
+  // Lets us see viewed -> started (OTP requested) -> verified (lead)
+  // instead of only ever seeing who completed the whole funnel.
+  (function(){
+    var panel=document.getElementById('calcPanel');
+    if(!panel||!('IntersectionObserver' in window)) return;
+    var sid='cdai_calc_sid';
+    var sessionId=sessionStorage.getItem(sid);
+    if(!sessionId){
+      sessionId=(crypto.randomUUID?crypto.randomUUID():(Date.now()+'-'+Math.random().toString(36).slice(2)));
+      sessionStorage.setItem(sid,sessionId);
+    }
+    var pinged=false;
+    var viewObs=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting&&!pinged){
+          pinged=true;
+          fetch(API+'/calculator-view',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({session_id:sessionId})}).catch(function(){});
+          viewObs.disconnect();
+        }
+      });
+    },{threshold:.4});
+    viewObs.observe(panel);
+  })();
+
+  var ids=['cAdSpend','cLeads','cRevenue','cFeePct','cBroker','cRefunds','cChargebacks','cCompliance','cOther'];
+  var els={};
+  ids.forEach(function(id){
+    els[id]=document.getElementById(id);
+    if(els[id]) els[id].addEventListener('input',calc);
+  });
+
+  function fm(n){return'$'+n.toFixed(2)}
+  function fr(n){return'$'+Math.round(n).toLocaleString('en-US')}
+
+  function calc(){
+    var s=parseFloat(els.cAdSpend.value)||0;
+    var l=parseFloat(els.cLeads.value)||0;
+    var r=parseFloat(els.cRevenue.value)||0;
+    var fp=parseFloat(els.cFeePct.value)||0;
+    var br=parseFloat(els.cBroker.value)||0;
+    var rf=parseFloat(els.cRefunds.value)||0;
+    var cb=parseFloat(els.cChargebacks.value)||0;
+    var cp=parseFloat(els.cCompliance.value)||0;
+    var ot=parseFloat(els.cOther.value)||0;
+    var fees=s*(fp/100);
+    var comp=cp*l;
+    var tc=s+fees+br+rf+cb+comp+ot;
+    var rcpl=l>0?s/l:0;
+    var tcpl=l>0?tc/l:0;
+    var hc=tc-s;
+    var cm=r-tc;
+    var cmp=r>0?(cm/r)*100:0;
+    var gap=rcpl>0?((tcpl-rcpl)/rcpl)*100:0;
+    document.getElementById('cReported').textContent=fm(rcpl);
+    document.getElementById('cTrue').textContent=fm(tcpl);
+    document.getElementById('cHidden').textContent=fr(hc);
+    var cmel=document.getElementById('cCm');
+    cmel.textContent=(cmp>=0?'+':'')+cmp.toFixed(1)+'%';
+    cmel.style.color=cmp>=0?'#0BAF92':'#ff5c7a';
+    var gel=document.getElementById('cGap');
+    if(l>0&&s>0&&gap>0){gel.innerHTML='True CPL is <b>'+gap.toFixed(0)+'% higher</b> than reported &mdash; <b>'+fm(tcpl-rcpl)+'/lead</b>, or <b>'+fr(hc)+'/mo</b> in hidden costs.';}
+    else if(l>0&&s>0){gel.textContent='Reported and true CPL are roughly aligned based on these inputs.';}
+    else{gel.textContent='';}
+    snap={inputs:{adSpend:s,leads:l,revenue:r,feePct:fp,brokerPayouts:br,refunds:rf,chargebacks:cb,complianceCost:cp,variableCosts:ot},results:{reportedCpl:rcpl,trueCpl:tcpl,trueCost:tc,hiddenCosts:hc,cm:cm,cmPct:cmp,cplGapPct:gap}};
+    if(leadId){clearTimeout(saveTimer);saveTimer=setTimeout(save,900)}
+  }
+
+  function save(){
+    if(!leadId) return;
+    fetch(API+'/calculator-lead/'+leadId,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify(snap)})
+    .then(function(r){if(!r.ok)console.error('[CDAI Calculator] Autosave failed — lead',leadId,'status',r.status)})
+    .catch(function(e){console.error('[CDAI Calculator] Autosave network error — lead',leadId,e)});
+  }
+
+  document.getElementById('calcSendCode').addEventListener('click',function(){
+    var n=document.getElementById('cName').value.trim();
+    var co=document.getElementById('cCompany').value.trim();
+    var em=document.getElementById('cEmail').value.trim();
+    var st=document.getElementById('calcStatus');
+    st.className='calc-gate-status';
+    if(!n||!co||!em||em.indexOf('@')<0){st.textContent='Please fill in all fields with a valid email.';st.classList.add('err');return;}
+    var btn=document.getElementById('calcSendCode');
+    btn.disabled=true;btn.textContent='Sending code...';
+    fetch(API+'/calculator-send-code',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,company:co,email:em})})
+    .then(function(r){if(!r.ok)throw new Error();return r.json();})
+    .then(function(){
+      document.getElementById('calcGateStep1').style.display='none';
+      document.getElementById('calcGateStep2').style.display='block';
+      document.getElementById('calcEmailDisplay').textContent=em;
+      document.getElementById('cCode').focus();
+    })
+    .catch(function(){st.textContent='Something went wrong. Please try again.';st.classList.add('err');btn.disabled=false;btn.textContent='Send Verification Code';});
+  });
+
+  document.getElementById('calcVerify').addEventListener('click',function(){
+    var n=document.getElementById('cName').value.trim();
+    var co=document.getElementById('cCompany').value.trim();
+    var em=document.getElementById('cEmail').value.trim();
+    var code=document.getElementById('cCode').value.trim();
+    var st=document.getElementById('calcStatus2');
+    st.className='calc-gate-status';
+    if(!code||code.length<6){st.textContent='Please enter the 6-digit code from your email.';st.classList.add('err');return;}
+    var btn=document.getElementById('calcVerify');
+    btn.disabled=true;btn.textContent='Verifying...';
+    fetch(API+'/calculator-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign({name:n,company:co,email:em,code:code},snap))})
+    .then(function(r){if(!r.ok)return r.json().then(function(d){throw new Error(d.detail||'error')});return r.json();})
+    .then(function(d){
+      leadId=d.id;
+      document.getElementById('calcGateStep2').style.display='none';
+      document.getElementById('calcBody').classList.add('unlocked');
+      var b=document.getElementById('calcBadge');
+      b.classList.add('show');
+      document.getElementById('calcBadgeText').textContent='Unlocked for '+em+' — results saved as you go';
+    })
+    .catch(function(e){
+      var msg=e.message==='Invalid or expired code'?'Invalid or expired code — please try again or request a new one.':'Something went wrong. Please try again.';
+      st.textContent=msg;st.classList.add('err');btn.disabled=false;btn.textContent='Verify & Unlock';
+    });
+  });
+
+  document.getElementById('calcChangeEmail').addEventListener('click',function(){
+    document.getElementById('calcGateStep2').style.display='none';
+    document.getElementById('calcGateStep1').style.display='block';
+    document.getElementById('calcSendCode').disabled=false;
+    document.getElementById('calcSendCode').textContent='Send Verification Code';
+    document.getElementById('calcStatus').textContent='';
+    document.getElementById('cCode').value='';
+  });
+
+  calc();
+})();
+</script>
+
+<!-- ============ Ask CDAI chat widget ============ -->
+<style>
+  #cdai-chat-overlay{position:fixed;inset:0;background:rgba(1,9,20,.5);opacity:0;pointer-events:none;transition:opacity .25s ease;z-index:9998}
+  #cdai-chat-overlay.open{opacity:1;pointer-events:auto}
+  #cdai-chat-panel{position:fixed;top:0;right:0;height:100%;width:min(420px,100vw);background:#010914;border-left:1px solid #102040;box-shadow:-20px 0 60px rgba(0,0,0,.4);transform:translateX(100%);transition:transform .3s ease;z-index:9999;display:flex;flex-direction:column;font-family:'Inter',sans-serif}
+  #cdai-chat-panel.open{transform:translateX(0)}
+  #cdai-chat-head{padding:20px 20px 16px;border-bottom:1px solid #102040;display:flex;align-items:center;justify-content:space-between}
+  #cdai-chat-head .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#C4A040}
+  #cdai-chat-head h3{margin:4px 0 0;color:#fff;font-size:17px;font-weight:500}
+  #cdai-chat-close{background:none;border:none;color:#cfdcf2;font-size:22px;cursor:pointer;line-height:1;padding:4px}
+  #cdai-chat-close:hover{color:#fff}
+  #cdai-chat-body{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+  .cdai-msg{max-width:88%;padding:11px 14px;border-radius:10px;font-size:13.5px;line-height:1.55;white-space:pre-wrap}
+  .cdai-msg.user{align-self:flex-end;background:#C4A040;color:#010914;border-bottom-right-radius:2px}
+  .cdai-msg.assistant{align-self:flex-start;background:rgba(255,255,255,.06);color:#e6edfb;border:1px solid #102040;border-bottom-left-radius:2px}
+  .cdai-action-card{align-self:flex-start;max-width:88%;display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;border:1px solid rgba(196,160,64,.35);background:rgba(196,160,64,.08);color:#C4A040;text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.02em;cursor:pointer}
+  .cdai-action-card:hover{background:rgba(196,160,64,.16)}
+  .cdai-typing{align-self:flex-start;color:#7d8ba8;font-size:12px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em}
+  #cdai-chat-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 14px}
+  .cdai-chip{border:1px solid #102040;background:rgba(255,255,255,.03);color:#cfdcf2;font-size:11.5px;padding:7px 12px;border-radius:20px;cursor:pointer;font-family:'Inter',sans-serif}
+  .cdai-chip:hover{border-color:#C4A040;color:#fff}
+  #cdai-chat-input-row{display:flex;gap:8px;padding:14px 20px 20px;border-top:1px solid #102040}
+  #cdai-chat-input{flex:1;background:rgba(255,255,255,.04);border:1px solid #102040;border-radius:8px;padding:11px 12px;color:#fff;font-size:13.5px;font-family:'Inter',sans-serif;resize:none}
+  #cdai-chat-input:focus{outline:none;border-color:#C4A040}
+  #cdai-chat-send{background:linear-gradient(135deg,#C4A040,#A88830);border:none;color:#010914;font-weight:700;font-size:12px;padding:0 18px;border-radius:8px;cursor:pointer}
+  #cdai-chat-send:disabled{opacity:.5;cursor:default}
+  @media(max-width:480px){#cdai-chat-panel{width:100vw}}
+</style>
+
+<div id="cdai-chat-overlay"></div>
+<div id="cdai-chat-panel" role="dialog" aria-label="Ask CDAI">
+  <div id="cdai-chat-head">
+    <div>
+      <div class="eyebrow">Allocera Intelligence</div>
+      <h3>Ask CDAI</h3>
+    </div>
+    <button id="cdai-chat-close" aria-label="Close">&times;</button>
+  </div>
+  <div id="cdai-chat-body"></div>
+  <div id="cdai-chat-chips"></div>
+  <div id="cdai-chat-input-row">
+    <textarea id="cdai-chat-input" rows="1" placeholder="Ask anything about CDAI..."></textarea>
+    <button id="cdai-chat-send">Send</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var API_URL = "https://cdai-engine.onrender.com/chat/message";
+  var STARTER_CHIPS = [
+    "How accurate is it?",
+    "What does it cost?",
+    "How is this different from Northbeam or Rockerbox?",
+    "How do I get started?"
+  ];
+
+  var panel = document.getElementById("cdai-chat-panel");
+  var overlay = document.getElementById("cdai-chat-overlay");
+  var body = document.getElementById("cdai-chat-body");
+  var chipsWrap = document.getElementById("cdai-chat-chips");
+  var input = document.getElementById("cdai-chat-input");
+  var sendBtn = document.getElementById("cdai-chat-send");
+  var closeBtn = document.getElementById("cdai-chat-close");
+  var opened = false;
+
+  function getSessionId() {
+    try {
+      var id = localStorage.getItem("cdai_chat_session_id");
+      if (!id) {
+        id = crypto.randomUUID();
+        localStorage.setItem("cdai_chat_session_id", id);
+      }
+      return id;
+    } catch (e) {
+      return crypto.randomUUID(); // storage blocked (private mode etc.) — still works, just won't persist
+    }
+  }
+
+  function escapeHtml(s) {
+    var d = document.createElement("div");
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  // The model writes basic markdown (bold, the odd link); this widget's
+  // display is otherwise plain text, so without this "**word**" shows up as
+  // literal asterisks instead of bold. Escape first so nothing in the
+  // model's own output (or a user's typed message, if ever routed through
+  // here) can inject real HTML -- only our own **/*_* patterns get replaced
+  // with actual tags afterward.
+  function renderInline(text) {
+    var escaped = escapeHtml(text);
+    escaped = escaped.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    escaped = escaped.replace(/(^|[\s(])\*(?!\s)(.+?)(?<!\s)\*(?=[\s).,!?]|$)/g, "$1<em>$2</em>");
+    return escaped;
+  }
+
+  function addMessage(role, text) {
+    var div = document.createElement("div");
+    div.className = "cdai-msg " + role;
+    if (role === "assistant") {
+      div.innerHTML = renderInline(text);
+    } else {
+      div.textContent = text;
+    }
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+    return div;
+  }
+
+  function addActionCard(action) {
+    var el;
+    if (action.type === "navigate") {
+      el = document.createElement("a");
+      el.href = action.url;
+      el.textContent = "→ " + action.label;
+    } else if (action.type === "open_calculator") {
+      el = document.createElement("button");
+      el.textContent = "→ Open the CAC/CPL Calculator";
+      el.onclick = function () {
+        closePanel();
+        var target = document.getElementById("calcPanel");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "center" });
+        } else {
+          window.location.href = "/#tools";
+        }
+      };
+    } else if (action.type === "start_signup") {
+      el = document.createElement("a");
+      el.href = "https://cdai-portal.vercel.app/signup/";
+      el.target = "_blank";
+      el.rel = "noopener";
+      el.textContent = "→ Start Setup";
+    } else if (action.type === "lead_captured") {
+      el = document.createElement("div");
+      el.textContent = "✓ Got it — noted for Nick.";
+    } else {
+      return;
+    }
+    el.className = "cdai-action-card";
+    body.appendChild(el);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function renderChips() {
+    chipsWrap.innerHTML = "";
+    STARTER_CHIPS.forEach(function (q) {
+      var chip = document.createElement("button");
+      chip.className = "cdai-chip";
+      chip.textContent = q;
+      chip.onclick = function () { sendMessage(q); };
+      chipsWrap.appendChild(chip);
+    });
+  }
+
+  function setBusy(busy) {
+    sendBtn.disabled = busy;
+    input.disabled = busy;
+  }
+
+  function sendMessage(text) {
+    text = (text || input.value).trim();
+    if (!text) return;
+    chipsWrap.innerHTML = "";
+    addMessage("user", text);
+    input.value = "";
+    setBusy(true);
+
+    var typing = document.createElement("div");
+    typing.className = "cdai-typing";
+    typing.textContent = "CDAI is thinking...";
+    body.appendChild(typing);
+    body.scrollTop = body.scrollHeight;
+
+    fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        session_id: getSessionId(),
+        message: text,
+        referrer: document.referrer || null,
+        landing_page: window.location.pathname,
+        user_agent: navigator.userAgent
+      })
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("bad status " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        typing.remove();
+        addMessage("assistant", data.reply);
+        (data.actions || []).forEach(addActionCard);
+      })
+      .catch(function () {
+        typing.remove();
+        addMessage("assistant", "Something didn't go through — try again, or email nick@alloceraintelligence.com directly.");
+      })
+      .finally(function () { setBusy(false); input.focus(); });
+  }
+
+  function openPanel() {
+    panel.classList.add("open");
+    overlay.classList.add("open");
+    if (!opened) {
+      opened = true;
+      addMessage("assistant", "Hey — I'm CDAI's assistant. Ask me anything about the engine, pricing, how it compares to other tools, or how setup works.");
+      renderChips();
+    }
+    setTimeout(function () { input.focus(); }, 300);
+  }
+
+  function closePanel() {
+    panel.classList.remove("open");
+    overlay.classList.remove("open");
+  }
+
+  document.addEventListener("click", function (e) {
+    if (e.target.closest && e.target.closest("#cdai-ask-trigger, #cdai-ask-trigger-mobile, #hero-ask-trigger")) {
+      e.preventDefault();
+      openPanel();
+    }
+  });
+  closeBtn.addEventListener("click", closePanel);
+  overlay.addEventListener("click", closePanel);
+  sendBtn.addEventListener("click", function () { sendMessage(); });
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+})();
+</script>
+<!-- ============ /Ask CDAI chat widget ============ -->
+
