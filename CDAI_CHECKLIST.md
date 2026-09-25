@@ -24,8 +24,17 @@ _Last updated: Sept 25, 2026 (handoff written)_
 0. [ ] **VINDEX trademark check** (Nick): a registered VINDEX mark exists (Vindex LLC, esports, serial 88671256).
 - [x] **Chat agent knowledge audit:** full capability loop added. Wrong claim fixed (INVESTIGATE/RENEGOTIATE numbers do exist); onboarding and free audit corrected. **Nick merges `docs/handoff-website-trust-sept25`.**
 0. [ ] **After merge: live test of VINDEX.** Claude runs ~15 real prospect/investor questions against the live bot. Nick reviews the answers.
-0. [ ] **PRIVACY FIX: merge first.** Meta lead forms were storing names, emails, and phones unscrubbed (`cdai-engine` branch `fix/meta-lead-pii-scrub`, tested). Then Nick decides whether Claude strips the PII keys from the 2,738 simulated-org rows.
-0. [ ] **Homepage subheading + capability list (preview sent):** Nick approves before it goes into `website/homepage.html`. The "personal data scrubbed" line only ships after the privacy fix is merged.
+- [x] **Privacy fix merged** (PR #22): Meta lead forms no longer store names, emails, or phones. Open: Nick decides whether to strip PII keys from the 2,738 simulated-org rows.
+- [x] **Homepage v4 built:**
+  - approved subheading and 6-point capability list
+  - How It Works undersell fixed (all 8 directives, fraud, close-rate projection)
+  - new Outcomes cards (partner accountability, catch problems early)
+  - "What if my data is missing or wrong?" and "Is my customers' data safe?" FAQs
+  - lookback wording; nightly math check in the trust strip
+  - two layout bugs fixed (stray box around Validated; orphaned card 05)
+  - permanent tag-balance check in the build
+
+  **Nick pastes `website/homepage.html`.**
 0. [ ] **Access:** connect the alloceraintelligence@gmail.com Gmail (the Control Tower inbox) if Nick wants Claude to read the nightly emails.
 
 1. [ ] **AI links section (ChatGPT / Claude / Perplexity / Grok):** Nick decides whether to restore it. It doesn't affect rankings (see the Ideas section below). It can go back in within minutes.
@@ -52,6 +61,15 @@ _Last updated: Sept 25, 2026 (handoff written)_
 - [ ] Delete the 19 old validation cron jobs on Render (`cdai-validation-*`, `cdai-distressed-partner-*`, `cdai-full-revalidation-run1`, `cdai-onboard-remaining6`). Their schedules name a specific day (e.g. `42 20 23 9 *`), so they'll run again every Sept 23 on the paid starter plan.
 
 ## Ideas backlog: proposed, not approved
+
+**Homepage conversion proposals (Sept 25 research: NN/g, Stanford, Gartner).** Nick says yes or no to each:
+- [ ] **Show the price level near the main CTA.** NN/g: price is buyers' #1 info need, and hiding it reads as evasive. Today it's only in an Explore card and the FAQ.
+- [ ] **Founder / real-company block.** Stanford credibility guidelines: show the real organization. Nick, 3 years building, photo, NC, phone. Needs Nick's photo and his OK on the wording.
+- [ ] **Sample report buyers can open without talking to anyone.** Stanford: make accuracy easy to verify. Gartner: 67% of B2B buyers prefer rep-free buying. A clearly labeled sample directive sheet or audit on a fictional business. Claude can build it.
+- [ ] **"15 minutes with the founder" booking option.** Gartner 2026: 69% of buyers validate AI-generated insights with a person. Needs Nick's free Calendly link.
+- [ ] **Date the proof** ("Validated Sept 2026"). NN/g: current content signals trust. Tiny and true.
+- [ ] **Get the two Apex reviews onto G2.** NN/g: connection to the rest of the web. Needs Apex.
+- [ ] **Site-wide consistency pass.** Gartner: 69% of buyers find inconsistencies between the website and sellers. Needs the WordPress export.
 
 Evidence-backed ideas for a bootstrapped founder. Nick says yes or no to each one before any work starts.
 
