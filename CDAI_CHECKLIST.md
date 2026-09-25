@@ -20,7 +20,7 @@ _Last updated: Sept 25, 2026 (handoff written)_
 - [x] **Handoff + memory updated:** `docs/HANDOFF-website-trust-sept25.md`, correction notice on the current manual, WORKLOG entry (`cdai-engine` branch `docs/handoff-website-trust-sept25`). **Nick merges.**
 - [x] **Dashboard trust fix built and tested** (`cdai-portal` branch `fix/honest-preliminary-dashboard`): no invented directives before the first run, no default HOLD, legend matches the engine. **Nick merges → Vercel deploys to production.**
 0. [ ] **Optional: run the first sync right after connecting**, so new users see their numbers the same day instead of waiting for 2 AM UTC. The engine already has `/sync/*` endpoints. Needs Nick's yes.
-- [x] **Chat agent named VINDEX** (final). Prompt identity plus homepage "Ask VINDEX" built. Nick merges `cdai-engine` `docs/handoff-website-trust-sept25` and pastes `website/homepage.html`.
+- [x] **Chat agent named VINDEX** (final). Prompt identity plus a "VINDEX" label above every chat reply; page labels stay "Ask CDAI". Nick merges `cdai-engine` `docs/handoff-website-trust-sept25` and pastes `website/homepage.html`.
 0. [ ] **VINDEX trademark check** (Nick): a registered VINDEX mark exists (Vindex LLC, esports, serial 88671256).
 0. [ ] **Chat agent full claims audit:** trace every price, timeframe, and number in its prompt to a source, the same way the homepage was checked.
 

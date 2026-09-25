@@ -297,7 +297,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
       <li><a href="#problem">The Problem</a></li>
       <li><a href="/how-it-works">How It Works</a></li>
       <li><a href="/proof">Proof</a></li>
-      <li><a href="#" id="cdai-ask-trigger" class="nav-ai"><span class="nav-ai-dot"></span>Ask VINDEX</a></li>
+      <li><a href="#" id="cdai-ask-trigger" class="nav-ai"><span class="nav-ai-dot"></span>Ask CDAI</a></li>
       <li><a href="/dashboard">Dashboard</a></li>
       <li><a href="/pricing">Pricing</a></li>
       <li><a href="/about">About</a></li>
@@ -313,7 +313,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
   <a href="#problem" onclick="closeMobile()">The Problem</a>
   <a href="/how-it-works" onclick="closeMobile()">How It Works</a>
   <a href="/proof" onclick="closeMobile()">Proof</a>
-  <a href="#" id="cdai-ask-trigger-mobile" onclick="closeMobile()" style="color:#DEBB6A">&#9679; Ask VINDEX</a>
+  <a href="#" id="cdai-ask-trigger-mobile" onclick="closeMobile()" style="color:#DEBB6A">&#9679; Ask CDAI</a>
   <a href="/dashboard" onclick="closeMobile()">Dashboard</a>
   <a href="/pricing" onclick="closeMobile()">Pricing</a>
   <a href="/about" onclick="closeMobile()">About</a>
@@ -335,7 +335,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
         <p class="hero-sub" style="margin-bottom:clamp(20px,3vh,28px)">Your CRM and your ad platform don't agree on what a lead actually costs. CDAI reconciles them against your true cost &mdash; so you know what you're actually paying, what you're actually getting, and where your money should go next.</p>
         <div class="hero-actions">
           <a class="btn-primary" href="https://cdai-portal.vercel.app/signup/">Get Started &rarr;</a>
-          <a class="btn-ai" href="#" id="hero-ask-trigger"><span class="btn-ai-dot"></span>Ask VINDEX &rarr;</a>
+          <a class="btn-ai" href="#" id="hero-ask-trigger"><span class="btn-ai-dot"></span>Ask CDAI &rarr;</a>
         </div>
         <a class="hero-client" href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">
           <span class="hero-client-mark">&#10003;</span>
@@ -970,6 +970,9 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
   .cdai-msg{max-width:88%;padding:11px 14px;border-radius:10px;font-size:13.5px;line-height:1.55;white-space:pre-wrap}
   .cdai-msg.user{align-self:flex-end;background:#C4A040;color:#010914;border-bottom-right-radius:2px}
   .cdai-msg.assistant{align-self:flex-start;background:rgba(255,255,255,.06);color:#e6edfb;border:1px solid #102040;border-bottom-left-radius:2px}
+  .cdai-msg-wrap{align-self:flex-start;max-width:88%;display:flex;flex-direction:column;gap:5px}
+  .cdai-msg-wrap .cdai-msg{max-width:100%}
+  .cdai-msg-name{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#C4A040;padding-left:2px}
   .cdai-action-card{align-self:flex-start;max-width:88%;display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;border:1px solid rgba(196,160,64,.35);background:rgba(196,160,64,.08);color:#C4A040;text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.02em;cursor:pointer}
   .cdai-action-card:hover{background:rgba(196,160,64,.16)}
   .cdai-typing{align-self:flex-start;color:#7d8ba8;font-size:12px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em}
@@ -985,18 +988,18 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
 </style>
 
 <div id="cdai-chat-overlay"></div>
-<div id="cdai-chat-panel" role="dialog" aria-label="Ask VINDEX">
+<div id="cdai-chat-panel" role="dialog" aria-label="Ask CDAI">
   <div id="cdai-chat-head">
     <div>
       <div class="eyebrow">Allocera Intelligence</div>
-      <h3>VINDEX</h3>
+      <h3>Ask CDAI</h3>
     </div>
     <button id="cdai-chat-close" aria-label="Close">&times;</button>
   </div>
   <div id="cdai-chat-body"></div>
   <div id="cdai-chat-chips"></div>
   <div id="cdai-chat-input-row">
-    <textarea id="cdai-chat-input" rows="1" placeholder="Ask VINDEX anything about CDAI..."></textarea>
+    <textarea id="cdai-chat-input" rows="1" placeholder="Ask anything about CDAI..."></textarea>
     <button id="cdai-chat-send">Send</button>
   </div>
 </div>
@@ -1057,10 +1060,18 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
     div.className = "cdai-msg " + role;
     if (role === "assistant") {
       div.innerHTML = renderInline(text);
+      var wrap = document.createElement("div");
+      wrap.className = "cdai-msg-wrap";
+      var name = document.createElement("div");
+      name.className = "cdai-msg-name";
+      name.textContent = "VINDEX";
+      wrap.appendChild(name);
+      wrap.appendChild(div);
+      body.appendChild(wrap);
     } else {
       div.textContent = text;
+      body.appendChild(div);
     }
-    body.appendChild(div);
     body.scrollTop = body.scrollHeight;
     return div;
   }
