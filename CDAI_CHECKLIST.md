@@ -9,21 +9,21 @@ _Last updated: Sept 25, 2026 (everything from the session consolidated)_
 
 ## 1. Do today (Nick)
 
-- [ ] **Paste the homepage.** Copy `website/homepage.html` (or `homepage-copy-paste.txt`) into the single Elementor HTML widget, replacing everything in it.
-- [ ] **Set the homepage title and description in Rank Math.** The block no longer carries its own, which fixes the doubled title.
+- [x] **Paste the homepage.** DONE Sept 25 (live on the site). Copy `website/homepage.html` (or `homepage-copy-paste.txt`) into the single Elementor HTML widget, replacing everything in it.
+- [x] **Set the homepage title and description in Rank Math.** DONE Sept 25. The block no longer carries its own, which fixes the doubled title.
 
 ---
 
 ## 2. Decisions for Nick (open; Claude acts only after a yes)
 
-- [ ] **D1. PAUSE 85.2%:** 71 of its 144 "right" calls improved by less than 2 points, all in the stress-test business. *Recommendation:* stop quoting it publicly until a minimum-improvement bar is added and it's re-scored.
+- [x] **D1. PAUSE 85.2%: KEEP QUOTING IT** (Nick, Sept 25). It's the real computed result: 144 of 169 PAUSE calls scored right, reproduced exactly.
 - [ ] **D2. Engine default costs:** CSV uploads add a 2.9–3% platform fee, and six lead paths add $0.25 per lead of compliance cost. Neither affects the validation or Apex. *Recommendation:* default both to $0 unless the client supplies real values; fix before the first client who uploads a CSV.
 - [ ] **D3. Calculator compliance hint:** it says "default $0.25", but the calculator actually uses $0. *Recommendation:* change it to "only if you pay for per-lead consent certificates".
 - [ ] **D4. The 2,738 simulated-business lead records** that still hold fake names and emails. *Recommendation:* strip them (it's test data).
 - [ ] **D5. Sync on connect:** run the first data pull right after a client connects, instead of waiting for 2 AM UTC. *Recommendation:* yes; new clients see numbers the same day.
 - [ ] **D6. AI links section** (ChatGPT/Claude/Perplexity/Grok) on the homepage. *Recommendation:* leave it off; no proven SEO effect, and it sends visitors away.
 - [ ] **D7. Intake form's job** now that self-serve is live. *Recommendation:* free-audit request now; "Partner with us / talk to Nick" once the free audit is in Stripe.
-- [ ] **D8. Apex status:** 0 ad-spend rows, no active campaigns, last directive Aug 13. *Ask Nick:* paused, churned, or investigate a sync problem?
+- [ ] **D8. Apex status:** still receiving leads (last lead Sept 24), but 0 ad-spend rows and 0 active campaigns, so no decisions since Aug 13 (live query, Sept 25). *Ask Nick:* is their ad spend paused, or should Claude investigate the Meta/Google connection?
 - [x] **D9 (CallRail part). LIVE Sept 25 (PR #28):** a saved CallRail key is now pulled every night. Still off: Ringba, Boberdoo, Bing, Stripe. Each needs its own fix first: Bing puts all spend under one campaign, Boberdoo's lead cost never reaches true cost, Stripe assumes a 7% fee, and Ringba drops partner payouts.
 - [x] **D10. LIVE Sept 25 (PR #28):** each CallRail call is matched to its ad campaign by its campaign tag. Unmatched calls stay unattributed. Tested with 30 checks.
 - [x] **D2 for calls. LIVE Sept 25 (PR #30):** CallRail calls now add $0 compliance cost. The other $0.25 defaults (Meta lead forms, Ringba, Boberdoo, CSV, webhook) are still open under D2.
@@ -52,7 +52,7 @@ _Last updated: Sept 25, 2026 (everything from the session consolidated)_
 
 ## 5. Rest of the website (51 URLs), one page at a time
 
-**Blocker (Nick, 2 minutes):** WordPress → Tools → Export → All content → send the XML file. It holds every page's text and its Rank Math fields.
+**WordPress export received (Sept 25).** Read-only audit, with proof for each finding, in `website/SITE_AUDIT.md`. Nothing on the site has been changed; every fix waits on Nick's yes.
 
 **Per page:** audit it against the engine, the validation report, GA, and Search Console. Nick says yes or no to each change, and Claude delivers the finished HTML block plus Rank Math fields.
 
@@ -102,14 +102,14 @@ _Research caveat: Nielsen Norman Group, Stanford, Gartner, and Ahrefs figures ca
 
 ## 7b. Partnerships
 
-- [x] **CallRail email sent** (Sept 25) with the logo and listing description. Next: the call with Karina and Eric.
+- [x] **CallRail email sent** (Sept 25) with the logo and listing description. The call with Karina and Eric is BOOKED.
 - [ ] Before the call: be ready to explain how you'll promote the integration (pricing page, integration docs, outreach).
 
 ---
 
 ## 8. Access that would help Claude (Nick)
 
-- [ ] **WordPress export**: needed for section 5.
+- [x] **WordPress export**: received Sept 25.
 - [ ] **Network allowlist** in the environment settings (cloud environment menu → Edit → Network access). Add `nngroup.com`, `gartner.com`, `support.google.com`, `facebook.com`, `wikipedia.org`, and your own site, so sources can be verified from the originals.
 - [ ] **Gmail for alloceraintelligence@gmail.com**, if you want Claude to read the Control Tower emails. The connected Gmail is fullsendorganicks@gmail.com.
 - [ ] **PageSpeed score**: run pagespeed.web.dev (mobile) on the live homepage and send the number.
