@@ -15,7 +15,11 @@ _Last updated: Sept 25, 2026 (claims audit)_
 
 ## Now (in order)
 
-0. [ ] **Newsletter cadence:** Nick confirms how often The Margin Gap actually goes out. The frequency claim stays off the page until then.
+- [x] Newsletter cadence: none yet. No issue has gone out; the signup is list-building. No frequency claim on the site.
+- [x] Self-serve copy verified against the portal code: account ready seconds after payment, one-click connections, first directives on the next nightly run.
+0. [ ] **Fix the portal's pre-run dashboard labels (bug):** before the first nightly run, the dashboard labels campaigns SCALE/HOLD/CUT using margin cutoffs alone, not the engine's logic. A campaign with no revenue shows CUT. Proposed fix: show plain margins marked "preliminary, first directives after tonight's run." Needs Nick's yes.
+0. [ ] **Optional: run the first sync right after connecting**, so new users see their numbers the same day instead of waiting for 2 AM UTC. The engine already has `/sync/*` endpoints. Needs Nick's yes.
+0. [ ] **Name the chat agent:** Nick picks. Research and options are in the chat.
 0. [ ] **Chat agent full claims audit:** trace every price, timeframe, and number in its prompt to a source, the same way the homepage was checked.
 
 1. [ ] **AI links section (ChatGPT / Claude / Perplexity / Grok):** Nick decides whether to restore it. It doesn't affect rankings (see the Ideas section below). It can go back in within minutes.
