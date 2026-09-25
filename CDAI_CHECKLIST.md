@@ -20,7 +20,10 @@ _Last updated: Sept 25, 2026 (handoff written)_
 - [x] **Handoff + memory updated:** `docs/HANDOFF-website-trust-sept25.md`, correction notice on the current manual, WORKLOG entry (`cdai-engine` branch `docs/handoff-website-trust-sept25`). **Nick merges.**
 - [x] **Dashboard trust fix built and tested** (`cdai-portal` branch `fix/honest-preliminary-dashboard`): no invented directives before the first run, no default HOLD, legend matches the engine. **Nick merges → Vercel deploys to production.**
 0. [ ] **Optional: run the first sync right after connecting**, so new users see their numbers the same day instead of waiting for 2 AM UTC. The engine already has `/sync/*` endpoints. Needs Nick's yes.
-0. [ ] **Name the chat agent:** Nick picks. Research and options are in the chat.
+0. [ ] **Chat agent → VINDEX:** Nick's choice ("Pacioli" rejected). Nick picks:
+   - (A) actually route the CDAI chat through VINDEX's `/v1/chat`, so "VINDEX" is literally true
+   - (B) name only, where it never claims to be the multi-model engine
+   - Either way: trademark check first. A registered VINDEX mark exists (esports, Vindex LLC).
 0. [ ] **Chat agent full claims audit:** trace every price, timeframe, and number in its prompt to a source, the same way the homepage was checked.
 
 1. [ ] **AI links section (ChatGPT / Claude / Perplexity / Grok):** Nick decides whether to restore it. It doesn't affect rankings (see the Ideas section below). It can go back in within minutes.
