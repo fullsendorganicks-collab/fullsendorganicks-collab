@@ -22,7 +22,9 @@ _Last updated: Sept 25, 2026 (handoff written)_
 0. [ ] **Optional: run the first sync right after connecting**, so new users see their numbers the same day instead of waiting for 2 AM UTC. The engine already has `/sync/*` endpoints. Needs Nick's yes.
 - [x] **Chat agent named VINDEX** (final). Prompt identity plus a "VINDEX" label above every chat reply; page labels stay "Ask CDAI". Nick merges `cdai-engine` `docs/handoff-website-trust-sept25` and pastes `website/homepage.html`.
 0. [ ] **VINDEX trademark check** (Nick): a registered VINDEX mark exists (Vindex LLC, esports, serial 88671256).
-0. [ ] **Chat agent full claims audit:** trace every price, timeframe, and number in its prompt to a source, the same way the homepage was checked.
+- [x] **Chat agent knowledge audit:** full capability loop added. Wrong claim fixed (INVESTIGATE/RENEGOTIATE numbers do exist); onboarding and free audit corrected. **Nick merges `docs/handoff-website-trust-sept25`.**
+0. [ ] **After merge: live test of VINDEX.** Claude runs ~15 real prospect/investor questions against the live bot. Nick reviews the answers.
+0. [ ] **Homepage undersells too (proposal):** it doesn't mention self-grading, confidence gating, close-rate projection, partner scorecard, or the budget model. Claude drafts a section; Nick approves before anything changes.
 
 1. [ ] **AI links section (ChatGPT / Claude / Perplexity / Grok):** Nick decides whether to restore it. It doesn't affect rankings (see the Ideas section below). It can go back in within minutes.
 2. [ ] **What the intake form should do now that self-serve is live:** Nick decides. Recommendation: it's the free audit request today. Once the free audit is in Stripe, it becomes a "Partner with us / talk to Nick" form for agencies and bigger accounts.
