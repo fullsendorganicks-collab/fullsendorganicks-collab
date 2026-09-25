@@ -14,10 +14,18 @@ _Last updated: Sept 25, 2026 (everything from the session consolidated)_
 
 ---
 
-## 2. Quick decisions (yes/no), then Claude does the work
+## 2. Decisions for Nick (open; Claude acts only after a yes)
 
-| # | Decision | Recommendation |
-|---|---|---|
+- [ ] **D1. PAUSE 85.2%:** 71 of its 144 "right" calls improved by less than 2 points, all in the stress-test business. *Recommendation:* stop quoting it publicly until a minimum-improvement bar is added and it's re-scored.
+- [ ] **D2. Engine default costs:** CSV uploads add a 2.9–3% platform fee, and six lead paths add $0.25 per lead of compliance cost. Neither affects the validation or Apex. *Recommendation:* default both to $0 unless the client supplies real values; fix before the first client who uploads a CSV.
+- [ ] **D3. Calculator compliance hint:** it says "default $0.25", but the calculator actually uses $0. *Recommendation:* change it to "only if you pay for per-lead consent certificates".
+- [ ] **D4. The 2,738 simulated-business lead records** that still hold fake names and emails. *Recommendation:* strip them (it's test data).
+- [ ] **D5. Sync on connect:** run the first data pull right after a client connects, instead of waiting for 2 AM UTC. *Recommendation:* yes; new clients see numbers the same day.
+- [ ] **D6. AI links section** (ChatGPT/Claude/Perplexity/Grok) on the homepage. *Recommendation:* leave it off; no proven SEO effect, and it sends visitors away.
+- [ ] **D7. Intake form's job** now that self-serve is live. *Recommendation:* free-audit request now; "Partner with us / talk to Nick" once the free audit is in Stripe.
+- [ ] **D8. Apex status:** 0 ad-spend rows, no active campaigns, last directive Aug 13. *Ask Nick:* paused, churned, or investigate a sync problem?
+
+---|---|---|
 | D1 | **PAUSE 85.2%**: 71 of its 144 "right" calls improved by less than 2 points (all in the stress-test business). | Stop quoting it publicly until a minimum-improvement bar is added and it's re-scored. |
 | D2 | **Engine default costs**: CSV uploads add a 2.9–3% platform fee, and six lead paths add $0.25 per lead of compliance cost. Neither affects the validation or Apex. | Default both to $0 unless the client supplies real values. Fix before the first client who uploads a CSV. |
 | D3 | **Calculator compliance hint** says "default $0.25", but the calculator actually uses $0. | Change the hint to "only if you pay for per-lead consent certificates". |
