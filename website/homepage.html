@@ -297,7 +297,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
       <li><a href="#problem">The Problem</a></li>
       <li><a href="/how-it-works">How It Works</a></li>
       <li><a href="/proof">Proof</a></li>
-      <li><a href="#" id="cdai-ask-trigger" class="nav-ai"><span class="nav-ai-dot"></span>Ask CDAI</a></li>
+      <li><a href="#" id="cdai-ask-trigger" class="nav-ai"><span class="nav-ai-dot"></span>Ask VINDEX</a></li>
       <li><a href="/dashboard">Dashboard</a></li>
       <li><a href="/pricing">Pricing</a></li>
       <li><a href="/about">About</a></li>
@@ -313,7 +313,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
   <a href="#problem" onclick="closeMobile()">The Problem</a>
   <a href="/how-it-works" onclick="closeMobile()">How It Works</a>
   <a href="/proof" onclick="closeMobile()">Proof</a>
-  <a href="#" id="cdai-ask-trigger-mobile" onclick="closeMobile()" style="color:#DEBB6A">&#9679; Ask CDAI</a>
+  <a href="#" id="cdai-ask-trigger-mobile" onclick="closeMobile()" style="color:#DEBB6A">&#9679; Ask VINDEX</a>
   <a href="/dashboard" onclick="closeMobile()">Dashboard</a>
   <a href="/pricing" onclick="closeMobile()">Pricing</a>
   <a href="/about" onclick="closeMobile()">About</a>
@@ -335,7 +335,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
         <p class="hero-sub" style="margin-bottom:clamp(20px,3vh,28px)">Your CRM and your ad platform don't agree on what a lead actually costs. CDAI reconciles them against your true cost &mdash; so you know what you're actually paying, what you're actually getting, and where your money should go next.</p>
         <div class="hero-actions">
           <a class="btn-primary" href="https://cdai-portal.vercel.app/signup/">Get Started &rarr;</a>
-          <a class="btn-ai" href="#" id="hero-ask-trigger"><span class="btn-ai-dot"></span>Ask CDAI &rarr;</a>
+          <a class="btn-ai" href="#" id="hero-ask-trigger"><span class="btn-ai-dot"></span>Ask VINDEX &rarr;</a>
         </div>
         <a class="hero-client" href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">
           <span class="hero-client-mark">&#10003;</span>
@@ -985,18 +985,18 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
 </style>
 
 <div id="cdai-chat-overlay"></div>
-<div id="cdai-chat-panel" role="dialog" aria-label="Ask CDAI">
+<div id="cdai-chat-panel" role="dialog" aria-label="Ask VINDEX">
   <div id="cdai-chat-head">
     <div>
       <div class="eyebrow">Allocera Intelligence</div>
-      <h3>Ask CDAI</h3>
+      <h3>VINDEX</h3>
     </div>
     <button id="cdai-chat-close" aria-label="Close">&times;</button>
   </div>
   <div id="cdai-chat-body"></div>
   <div id="cdai-chat-chips"></div>
   <div id="cdai-chat-input-row">
-    <textarea id="cdai-chat-input" rows="1" placeholder="Ask anything about CDAI..."></textarea>
+    <textarea id="cdai-chat-input" rows="1" placeholder="Ask VINDEX anything about CDAI..."></textarea>
     <button id="cdai-chat-send">Send</button>
   </div>
 </div>
@@ -1126,7 +1126,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
 
     var typing = document.createElement("div");
     typing.className = "cdai-typing";
-    typing.textContent = "CDAI is thinking...";
+    typing.textContent = "VINDEX is thinking...";
     body.appendChild(typing);
     body.scrollTop = body.scrollHeight;
 
@@ -1162,7 +1162,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
     overlay.classList.add("open");
     if (!opened) {
       opened = true;
-      addMessage("assistant", "Hey — I'm CDAI's assistant. Ask me anything about the engine, pricing, how it compares to other tools, or how setup works.");
+      addMessage("assistant", "Hey — I'm VINDEX, Allocera Intelligence's AI. Ask me anything about CDAI: the engine, pricing, how it compares to other tools, or how setup works.");
       renderChips();
     }
     setTimeout(function () { input.focus(); }, 300);
