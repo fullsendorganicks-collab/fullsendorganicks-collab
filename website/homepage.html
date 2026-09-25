@@ -109,8 +109,6 @@ h1.hero-title em{font-style:normal;color:#c4a040}
 .how-num-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;color:#cfdcf2;text-transform:uppercase;display:block;margin-bottom:10px;margin-top:-6px}
 .how-title{font-size:clamp(13px,1.5vw,15px);font-weight:500;color:#ffffff;margin-bottom:8px;line-height:1.3}
 .how-body{font-size:clamp(11px,1.2vw,13px);color:#ffffff;line-height:1.7}
-#how .how-grid{display:flex;flex-wrap:wrap;justify-content:center}
-#how .how-grid .how-card{flex:1 1 300px;max-width:350px}
 .explore-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(12px,2vw,20px)}
 .explore-card{background:rgba(7,21,48,.6);border:1px solid rgba(26,48,96,.8);border-radius:2px;padding:clamp(20px,3vw,32px);text-decoration:none;display:block;transition:all .25s;box-shadow:0 4px 24px rgba(0,0,0,.3);position:relative;overflow:hidden}
 .explore-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c4a040,transparent);opacity:0;transition:opacity .25s}
@@ -183,10 +181,6 @@ h1.hero-title em{font-style:normal;color:#c4a040}
 .brand span{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.01em;color:#e6edfb}
 .brand.wordmark span{font-weight:800;font-size:15px;letter-spacing:.02em;color:inherit}
 .brand:hover{border-color:rgba(196,160,64,.35);background:rgba(196,160,64,.04);color:var(--bc)}
-.hero-caps{list-style:none;display:grid;grid-template-columns:1fr;gap:9px;margin:0 0 clamp(22px,3vh,30px);padding:0;max-width:600px}
-.hero-caps li{position:relative;padding-left:26px;font-size:clamp(13px,1.4vw,15px);line-height:1.55;color:#e6edfb}
-.hero-caps li::before{content:'';position:absolute;left:0;top:.42em;width:14px;height:14px;border-radius:50%;background:rgba(11,175,146,.15);border:1px solid #0baf92}
-.hero-caps li::after{content:'';position:absolute;left:4.5px;top:calc(.42em + 3px);width:4px;height:7px;border:solid #0baf92;border-width:0 1.6px 1.6px 0;transform:rotate(45deg)}
 .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
 .faq-item{background:rgba(7,21,48,.6);border:1px solid #1a3060;border-radius:2px;overflow:hidden}
 .faq-item summary{padding:clamp(16px,2.5vw,20px) clamp(18px,3vw,24px);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Inter',sans-serif;font-size:clamp(14px,1.6vw,16px);font-weight:500;color:#ffffff}
@@ -338,15 +332,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
       <div class="hero-left">
         <div class="hero-kicker" style="margin-bottom:16px">DETERMINISTIC ACQUISITION RECONCILIATION ENGINE</div>
         <h1 class="hero-title">Know the <em>Truth</em> Behind Every Acquisition Dollar.</h1>
-        <p class="hero-sub" style="margin-bottom:14px">CDAI sits above your CRM and ad accounts, rebuilds every campaign&rsquo;s real profit and loss each night, and tells you exactly what to scale, hold, cut, or fix.</p>
-        <ul class="hero-caps">
-          <li>True CPL, true CAC, and real margin after every fee, payout, refund, and chargeback</li>
-          <li>A directive for every campaign, every night, with a confidence level behind each call</li>
-          <li>Catches trouble early: fraud, slipping lead quality, and close rates heading down</li>
-          <li>Rechecks its own math every night and grades its past calls against what actually happened</li>
-          <li>Finds missing or broken data, and accounts for referral and offline revenue without guessing</li>
-          <li>Personal data scrubbed before anything is stored</li>
-        </ul>
+        <p class="hero-sub" style="margin-bottom:clamp(20px,3vh,28px)">Your CRM and your ad platform don't agree on what a lead actually costs. CDAI reconciles them against your true cost &mdash; so you know what you're actually paying, what you're actually getting, and where your money should go next.</p>
         <div class="hero-actions">
           <a class="btn-primary" href="https://cdai-portal.vercel.app/signup/">Get Started &rarr;</a>
           <a class="btn-ai" href="#" id="hero-ask-trigger"><span class="btn-ai-dot"></span>Ask CDAI &rarr;</a>
@@ -547,12 +533,12 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
       <div class="how-card">
         <span class="how-num">04</span><span class="how-num-label">Analyze</span>
         <div class="how-title">Warning signs, made visible</div>
-        <div class="how-body">Rising costs, fraud, refund and chargeback patterns, and shrinking margins get flagged. Each campaign's close rate is projected forward, so a slide shows up before it hits your margin.</div>
+        <div class="how-body">Rising costs, refund and chargeback patterns, and shrinking margins are flagged so they don't stay buried.</div>
       </div>
       <div class="how-card">
         <span class="how-num">05</span><span class="how-num-label">Direct</span>
         <div class="how-title">A clear recommendation per campaign</div>
-        <div class="how-body">One of eight directives per campaign (scale, hold, cut, pause, quarantine, renegotiate, investigate, or flag), with the numbers and a confidence level behind it.</div>
+        <div class="how-body">Each campaign gets a plain recommendation, such as keep spending, hold, or cut back, with the numbers behind it.</div>
       </div>
     </div>
     <div style="text-align:center;margin-top:clamp(16px,3vh,28px)">
@@ -576,12 +562,11 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
       <div style="background:var(--bg);border:1px solid #1a3060;border-radius:2px;padding:clamp(14px,2vw,20px)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#ff5c7a;margin-bottom:8px">Cut Losers</div><div style="font-size:clamp(11px,1.3vw,13px);color:#ffffff;line-height:1.6">See which campaigns are costing more than they return.</div></div>
       <div style="background:var(--bg);border:1px solid #1a3060;border-radius:2px;padding:clamp(14px,2vw,20px)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c4a040;margin-bottom:8px">Know the Truth</div><div style="font-size:clamp(11px,1.3vw,13px);color:#ffffff;line-height:1.6">See your true cost per lead after the costs that normally get missed.</div></div>
       <div style="background:var(--bg);border:1px solid #1a3060;border-radius:2px;padding:clamp(14px,2vw,20px)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4080f0;margin-bottom:8px">Save Time</div><div style="font-size:clamp(11px,1.3vw,13px);color:#ffffff;line-height:1.6">No more piecing numbers together by hand.</div></div>
-      <div style="background:var(--bg);border:1px solid #1a3060;border-radius:2px;padding:clamp(14px,2vw,20px)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b48be0;margin-bottom:8px">Hold Partners Accountable</div><div style="font-size:clamp(11px,1.3vw,13px);color:#ffffff;line-height:1.6">See every partner&rsquo;s close rate, payouts, refunds, and chargebacks side by side.</div></div>
-      <div style="background:var(--bg);border:1px solid #1a3060;border-radius:2px;padding:clamp(14px,2vw,20px)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#ff9f5c;margin-bottom:8px">Catch Problems Early</div><div style="font-size:clamp(11px,1.3vw,13px);color:#ffffff;line-height:1.6">Fraud, slipping lead quality, and falling close rates get flagged early, not after the damage shows up in margin.</div></div>
+      <div style="background:var(--bg);border:1px solid #1a3060;border-radius:2px;padding:clamp(14px,2vw,20px);grid-column:1/-1"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b48be0;margin-bottom:8px">Reduce Risk</div><div style="font-size:clamp(11px,1.3vw,13px);color:#ffffff;line-height:1.6">Keep refund, chargeback, and compliance costs in the picture.</div></div>
     </div>
         <div style="margin-top:clamp(20px,3vh,28px);margin-bottom:clamp(24px,4vh,36px);padding:clamp(20px,3vw,32px);background:rgba(7,21,48,.6);border:1px solid rgba(11,175,146,.2);border-left:2px solid #0baf92;border-radius:2px">
       <div class="eyebrow" style="margin-bottom:14px">Validated</div>
-      <p style="font-family:'Inter',sans-serif;font-size:clamp(13px,1.5vw,15px);color:#ffffff;line-height:1.75;font-weight:300;margin-bottom:clamp(18px,2.5vh,24px)">Before release, CDAI&rsquo;s decisions were checked against verified outcomes: 1,352 decisions across nine businesses in seven industries. The results held up. And every night since, it rechecks its own math against the raw numbers.</p>
+      <p style="font-family:'Inter',sans-serif;font-size:clamp(13px,1.5vw,15px);color:#ffffff;line-height:1.75;font-weight:300;margin-bottom:clamp(18px,2.5vh,24px)">Before CDAI ever touches a live account, its decisions are checked against verified outcomes: 1,352 decisions across nine businesses in seven industries. The results held up.</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.5vw,24px)">
         <div>
           <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:400;color:#0baf92;display:block;line-height:1;margin-bottom:6px">95.2%</span>
@@ -673,15 +658,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
       </details>
       <details class="faq-item">
         <summary>How fast do I actually see results?</summary>
-        <div class="faq-answer">Your account and dashboard are ready seconds after you pay. Connect each tool with a click or an API key, and your first directives arrive on CDAI's next nightly run. Each night it reads a rolling window matched to your sales cycle (30 days by default, longer for long-cycle industries). HOLD, FLAG, and QUARANTINE can fire from day one on spend and lead data alone. SCALE and CUT need at least one closed sale first, since margin is mathematically undefined without revenue &mdash; that's arithmetic, not a slow rollout.</div>
-      </details>
-      <details class="faq-item">
-        <summary>What if my data is missing or wrong?</summary>
-        <div class="faq-answer">CDAI checks before it decides. Every night it looks for stale or broken data feeds, campaigns with revenue but no recorded spend, and campaigns that don&rsquo;t exist in your ad platforms. Serious data problems stop that night&rsquo;s directives instead of letting bad data drive a call. Anything that doesn&rsquo;t add up gets a FLAG for a person to review. Revenue it can&rsquo;t tie to a campaign, like referrals or offline sales, is kept separate instead of guessed at. And it rechecks its own math against the raw numbers every night.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Is my customers&rsquo; data safe?</summary>
-        <div class="faq-answer">CDAI is built to hold no consumer identity data. Names, emails, phone numbers, addresses, and similar fields are stripped before anything is stored. Emails are kept only as one-way hashes, used to match a sale to the lead that produced it. Payments run through Stripe.</div>
+        <div class="faq-answer">Your account and dashboard are ready seconds after you pay. Connect each tool with a click or an API key, and your first directives arrive on CDAI's next nightly run. HOLD, FLAG, and QUARANTINE can fire from day one on spend and lead data alone. SCALE and CUT need at least one closed sale first, since margin is mathematically undefined without revenue &mdash; that's arithmetic, not a slow rollout.</div>
       </details>
       <details class="faq-item">
         <summary>Is there a free way to try it?</summary>
@@ -746,8 +723,8 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
         <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#e6edfb;line-height:1.5">Decisions Verified</span>
       </div>
       <div style="flex:1;min-width:150px;max-width:220px;text-align:center;padding:clamp(14px,2vw,18px) 12px;background:rgba(1,9,20,.4);border:1px solid rgba(26,48,96,.5);border-radius:2px">
-        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,32px);font-weight:400;color:#ffffff;display:block;line-height:1;margin-bottom:6px">Nightly</span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#e6edfb;line-height:1.5">Math Rechecked Every Night</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,32px);font-weight:400;color:#ffffff;display:block;line-height:1;margin-bottom:6px">Self-Serve</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#e6edfb;line-height:1.5">Sign Up, Pay, and Connect on Your Own</span>
       </div>
       <div style="flex:1;min-width:150px;max-width:220px;text-align:center;padding:clamp(14px,2vw,18px) 12px;background:rgba(1,9,20,.4);border:1px solid rgba(26,48,96,.5);border-radius:2px">
         <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,32px);font-weight:400;color:#c4a040;display:block;line-height:1;margin-bottom:6px">24 Hours</span>
