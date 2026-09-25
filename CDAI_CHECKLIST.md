@@ -24,6 +24,8 @@ _Last updated: Sept 25, 2026 (everything from the session consolidated)_
 - [ ] **D6. AI links section** (ChatGPT/Claude/Perplexity/Grok) on the homepage. *Recommendation:* leave it off; no proven SEO effect, and it sends visitors away.
 - [ ] **D7. Intake form's job** now that self-serve is live. *Recommendation:* free-audit request now; "Partner with us / talk to Nick" once the free audit is in Stripe.
 - [ ] **D8. Apex status:** 0 ad-spend rows, no active campaigns, last directive Aug 13. *Ask Nick:* paused, churned, or investigate a sync problem?
+- [ ] **D9. Nightly sync for the API-key platforms:** clients can paste keys for Ringba, CallRail, Boberdoo, Bing, and Stripe, but no production code pulls their data (only HubSpot, Salesforce, Meta, Google, and LinkedIn sync nightly). No real client is affected today; only simulated businesses hold those keys. *Recommendation:* wire all five into the nightly run before calling CallRail "live" to CallRail's partner team.
+- [ ] **D10. CallRail per-campaign mapping:** today every CallRail call is assigned to one campaign. *Recommendation:* match each call to the ad campaign that drove it, using CallRail's own source data (fields verified against CallRail's API docs first).
 
 ---
 
@@ -94,6 +96,13 @@ _Research caveat: Nielsen Norman Group, Stanford, Gartner, and Ahrefs figures ca
 - [ ] Rotate other shared keys he could have seen (Resend, Stripe, Render).
 - [ ] Check the team member lists in Render and Supabase.
 - [ ] Delete the 19 old validation cron jobs on Render. Each has a fixed date in its schedule, so they re-run every year.
+
+---
+
+## 7b. Partnerships
+
+- [ ] **CallRail:** book the call with Karina and Eric. Then send the corrected reply (drafted in the engine repo's `docs/HANDOFF-website-trust-sept25.md`). It fixes the product name and the "live integration" wording, and updates the validation to complete.
+- [ ] Before the call: D9 + D10 built (if approved), and a one-paragraph listing description plus the logo ready.
 
 ---
 
