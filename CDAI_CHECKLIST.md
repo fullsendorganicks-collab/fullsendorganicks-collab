@@ -3,16 +3,20 @@
 Nick's running list. Claude keeps it current and checks items off as they ship.
 Rule: nothing gets built until Nick has seen it and said yes.
 
-_Last updated: Sept 25, 2026_
+_Last updated: Sept 25, 2026 (claims audit)_
 
 ## Done
 
 - [x] Former cofounder removed from all engine email, the repo, and memory (merged Sept 25)
 - [x] Chat agent and memory updated: no "7 cost layers", correct qualification rule, free audit kept, no "unproven" wording (merged Sept 25)
 - [x] Homepage v1: empty-space bug fixed, real logos, duplicate-title fix, 4-field form, FAQ
-- [x] Homepage v2 built: Apex appears only in the two reviews; the validation results lead in the hero. **Paste `homepage-final.html` into the Elementor block.**
+- [x] Homepage v2 built: Apex appears only in the two reviews; the validation results lead in the hero.
+- [x] Homepage v3: claims audit. Every claim traced to a source; three unprovable claims removed (newsletter cadence, "HOLD is its most common call", "live in about a day"). **Paste the latest `homepage-final.html`.**
 
 ## Now (in order)
+
+0. [ ] **Newsletter cadence:** Nick confirms how often The Margin Gap actually goes out. The frequency claim stays off the page until then.
+0. [ ] **Chat agent full claims audit:** trace every price, timeframe, and number in its prompt to a source, the same way the homepage was checked.
 
 1. [ ] **AI links section (ChatGPT / Claude / Perplexity / Grok):** Nick decides whether to restore it. It doesn't affect rankings (see the Ideas section below). It can go back in within minutes.
 2. [ ] **What the intake form should do now that self-serve is live:** Nick decides. Recommendation: it's the free audit request today. Once the free audit is in Stripe, it becomes a "Partner with us / talk to Nick" form for agencies and bigger accounts.
@@ -35,6 +39,7 @@ _Last updated: Sept 25, 2026_
 - [ ] Rotate the Supabase database password. It's hardcoded in `run_full_directive.py` and `time_engine.py`, and the former cofounder may know it.
 - [ ] Rotate other shared keys he could have seen (Resend, Stripe, Render)
 - [ ] Check the team member lists in Render and Supabase
+- [ ] Delete the 19 old validation cron jobs on Render (`cdai-validation-*`, `cdai-distressed-partner-*`, `cdai-full-revalidation-run1`, `cdai-onboard-remaining6`). Their schedules name a specific day (e.g. `42 20 23 9 *`), so they'll run again every Sept 23 on the paid starter plan.
 
 ## Ideas backlog: proposed, not approved
 
