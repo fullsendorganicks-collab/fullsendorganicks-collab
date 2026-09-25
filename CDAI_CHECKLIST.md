@@ -34,7 +34,8 @@ _Last updated: Sept 25, 2026 (handoff written)_
   - FAQs added: missing/wrong data, customer data safety, lookback
   - How It Works shown as a 3+2 layout
 
-  **Nick reviews, then pastes `website/homepage.html`.**
+  **FINAL:** blog nav links now point to `/blog/` (the sitemap URL, not the `/home-sample/` template path). The dead `/true-cost-per-lead/` link is removed. **Nick pastes `website/homepage.html` (or `homepage-copy-paste.txt`).**
+0. [ ] **Calculator platform-fee hint (Nick decides):** it says "~3% Meta / Google" and pre-fills 3%. Google and Meta charge no platform fee on US ads; their 2–5% surcharges apply only in certain countries (UK, France, Italy, Spain, Austria, Turkey). Proposed: default 0%, hint "only if your platform adds a fee, e.g. 2–5% EU/UK surcharges".
 0. [ ] **Access:** connect the alloceraintelligence@gmail.com Gmail (the Control Tower inbox) if Nick wants Claude to read the nightly emails.
 
 1. [ ] **AI links section (ChatGPT / Claude / Perplexity / Grok):** Nick decides whether to restore it. It doesn't affect rankings (see the Ideas section below). It can go back in within minutes.
