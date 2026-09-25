@@ -102,8 +102,8 @@ _Research caveat: Nielsen Norman Group, Stanford, Gartner, and Ahrefs figures ca
 
 ## 7b. Partnerships
 
-- [ ] **CallRail:** book the call with Karina and Eric (Eric is CallRail's partner marketing manager), then send the final email (full text in the engine repo's `docs/HANDOFF-website-trust-sept25.md`).
-- [ ] Before the call: have the logo and a one-paragraph listing description ready. The CallRail sync is live.
+- [x] **CallRail email sent** (Sept 25) with the logo and listing description. Next: the call with Karina and Eric.
+- [ ] Before the call: be ready to explain how you'll promote the integration (pricing page, integration docs, outreach).
 
 ---
 
