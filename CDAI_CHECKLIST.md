@@ -24,7 +24,9 @@ _Last updated: Sept 25, 2026 (handoff written)_
 0. [ ] **VINDEX trademark check** (Nick): a registered VINDEX mark exists (Vindex LLC, esports, serial 88671256).
 - [x] **Chat agent knowledge audit:** full capability loop added. Wrong claim fixed (INVESTIGATE/RENEGOTIATE numbers do exist); onboarding and free audit corrected. **Nick merges `docs/handoff-website-trust-sept25`.**
 0. [ ] **After merge: live test of VINDEX.** Claude runs ~15 real prospect/investor questions against the live bot. Nick reviews the answers.
-0. [ ] **Homepage undersells too (proposal):** it doesn't mention self-grading, confidence gating, close-rate projection, partner scorecard, or the budget model. Claude drafts a section; Nick approves before anything changes.
+0. [ ] **PRIVACY FIX: merge first.** Meta lead forms were storing names, emails, and phones unscrubbed (`cdai-engine` branch `fix/meta-lead-pii-scrub`, tested). Then Nick decides whether Claude strips the PII keys from the 2,738 simulated-org rows.
+0. [ ] **Homepage subheading + capability list (preview sent):** Nick approves before it goes into `website/homepage.html`. The "personal data scrubbed" line only ships after the privacy fix is merged.
+0. [ ] **Access:** connect the alloceraintelligence@gmail.com Gmail (the Control Tower inbox) if Nick wants Claude to read the nightly emails.
 
 1. [ ] **AI links section (ChatGPT / Claude / Perplexity / Grok):** Nick decides whether to restore it. It doesn't affect rankings (see the Ideas section below). It can go back in within minutes.
 2. [ ] **What the intake form should do now that self-serve is live:** Nick decides. Recommendation: it's the free audit request today. Once the free audit is in Stripe, it becomes a "Partner with us / talk to Nick" form for agencies and bigger accounts.
