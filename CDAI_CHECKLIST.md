@@ -35,7 +35,10 @@ _Last updated: Sept 25, 2026 (handoff written)_
   - How It Works shown as a 3+2 layout
 
   **FINAL:** blog nav links now point to `/blog/` (the sitemap URL, not the `/home-sample/` template path). The dead `/true-cost-per-lead/` link is removed. **Nick pastes `website/homepage.html` (or `homepage-copy-paste.txt`).**
-0. [ ] **Calculator platform-fee hint (Nick decides):** it says "~3% Meta / Google" and pre-fills 3%. Google and Meta charge no platform fee on US ads; their 2–5% surcharges apply only in certain countries (UK, France, Italy, Spain, Austria, Turkey). Proposed: default 0%, hint "only if your platform adds a fee, e.g. 2–5% EU/UK surcharges".
+- [x] **Calculator platform fee** is now 0% by default, with the hint "US ads on Meta & Google: 0%" (tested: $10k spend / 100 leads gives $100 reported and $100 true).
+0. [ ] **ENGINE: remove assumed costs (Nick decides).** CSV uploads add 2.9–3% platform fees, and six intake paths add $0.25 per lead in compliance cost. Proposal: default both to $0 unless real values are supplied. Real client unaffected; Demo org affected.
+0. [ ] **Apex status (Nick):** 0 ad-spend rows, no active campaigns, last directive Aug 13. Paused, churned, or a sync problem?
+0. [ ] **Calculator compliance hint (Nick decides):** it says "default $0.25", but the calculator actually uses $0 unless typed. Proposed text: "only if you pay for per-lead consent certificates".
 0. [ ] **Access:** connect the alloceraintelligence@gmail.com Gmail (the Control Tower inbox) if Nick wants Claude to read the nightly emails.
 
 1. [ ] **AI links section (ChatGPT / Claude / Perplexity / Grok):** Nick decides whether to restore it. It doesn't affect rankings (see the Ideas section below). It can go back in within minutes.
