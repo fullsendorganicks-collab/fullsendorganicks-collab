@@ -1237,3 +1237,117 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
 </script>
 <!-- ============ /Ask CDAI chat widget ============ -->
 
+
+<!-- ============ Analytics: GA4 (G-29J4V3VQ7B) + Tag Manager-ready events ============ -->
+<script>
+(function () {
+  var GA_ID = "G-29J4V3VQ7B";
+  window.dataLayer = window.dataLayer || [];
+
+  // Load GA4 only if the site doesn't already load it (avoids double-counting page views).
+  var hasGtag = typeof window.gtag === "function";
+  var hasTagScript = !!document.querySelector('script[src*="googletagmanager.com/gtag/js"], script[src*="googletagmanager.com/gtm.js"]');
+  if (!hasGtag && !hasTagScript) {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA_ID);
+  }
+
+  // One helper: pushes a Tag Manager event AND sends a GA4 event.
+  function track(name, params) {
+    params = params || {};
+    var dl = { event: "cdai_" + name };
+    for (var k in params) { if (Object.prototype.hasOwnProperty.call(params, k)) dl[k] = params[k]; }
+    window.dataLayer.push(dl);
+    if (typeof window.gtag === "function") window.gtag("event", name, params);
+  }
+  window.cdaiTrack = track;
+
+  function sectionOf(el) {
+    if (el.closest("#cdai-chat-panel")) return "chat";
+    if (el.closest("#stickyCTA")) return "sticky_bar";
+    if (el.closest("#mobileMenu")) return "mobile_menu";
+    if (el.closest("nav")) return "nav";
+    if (el.closest("footer")) return "footer";
+    var sec = el.closest("section[id]");
+    return sec ? sec.id : "page";
+  }
+  function label(el) {
+    return (el.getAttribute("aria-label") || el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 80);
+  }
+
+  // Every button and link click (no personal data is ever sent).
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest && e.target.closest("a, button");
+    if (!el) return;
+    var href = el.getAttribute("href") || "";
+    var p = { link_text: label(el), link_url: href, section: sectionOf(el) };
+
+    if (el.closest("#cdai-ask-trigger, #cdai-ask-trigger-mobile, #hero-ask-trigger")) { track("chat_open", p); return; }
+    if (el.closest("#cdai-chat-chips")) { track("chat_suggestion_click", p); return; }
+    if (el.id === "cdai-chat-send") { track("chat_message_sent", { section: "chat" }); return; }
+    if (el.id === "cdai-chat-close") { track("chat_close", { section: "chat" }); return; }
+    if (el.id === "calcSendCode") { track("calculator_code_requested", p); return; }
+    if (el.id === "calcVerify") { track("calculator_code_verified", p); return; }
+    if (el.id === "navToggle") { track("menu_open", p); return; }
+    if (el.id === "formSubmit") return; // tracked on form submit below
+
+    if (/cdai-portal\.vercel\.app\/signup/.test(href)) track("signup_click", p);
+    else if (/cdai-portal\.vercel\.app/.test(href)) track("portal_click", p);
+    else if (/\/pricing/.test(href)) track("pricing_click", p);
+    else if (/^#/.test(href)) track("scroll_link_click", p);
+    else if (/^mailto:/.test(href)) track("email_click", p);
+    else if (/^tel:/.test(href)) track("phone_click", p);
+    else track("button_click", p);
+  }, true);
+
+  // Chat: message sent with the Enter key.
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey && e.target && e.target.id === "cdai-chat-input" && e.target.value.trim()) {
+      track("chat_message_sent", { section: "chat" });
+    }
+  }, true);
+
+  // Free audit / contact form.
+  var form = document.getElementById("intakeForm");
+  if (form) {
+    form.addEventListener("submit", function () { track("form_submit", { form_name: "free_audit_contact", section: "intake" }); }, true);
+  }
+  var ok = document.getElementById("formSuccess");
+  if (ok && window.MutationObserver) {
+    var sent = false;
+    new MutationObserver(function () {
+      if (!sent && ok.offsetParent !== null) { sent = true; track("generate_lead", { form_name: "free_audit_contact", section: "intake" }); }
+    }).observe(ok, { attributes: true, attributeFilter: ["style", "class"] });
+  }
+
+  // Calculator: first time someone types a number.
+  var calc = document.getElementById("calcPanel");
+  if (calc) {
+    var started = false;
+    calc.addEventListener("input", function () {
+      if (!started) { started = true; track("calculator_start", { section: "calculator" }); }
+    }, true);
+  }
+
+  // Which sections people actually reach (each fires once per visit).
+  if ("IntersectionObserver" in window) {
+    var seen = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var id = en.target.id;
+        if (en.isIntersecting && !seen[id]) { seen[id] = true; track("section_view", { section: id }); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.4 });
+    ["hero", "tools", "problem", "how", "capabilities", "calcPanel", "faq", "intake"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  }
+})();
+</script>
+<!-- ============ /Analytics ============ -->

@@ -1,233 +1,323 @@
-# Allocera / CDAI: Game Plan
-
-Nick's running list. Claude keeps it current and checks items off as they ship.
-Rule: nothing gets built until Nick has seen it and said yes. Every public claim must be provable.
-
-_Last updated: Sept 26, 2026 (page rebuilds started)_
-
----
-
-## 1. Do today (Nick)
-
-- [x] **Paste the homepage.** DONE Sept 25 (live on the site). Copy `website/homepage.html` (or `homepage-copy-paste.txt`) into the single Elementor HTML widget, replacing everything in it.
-- [x] **Set the homepage title and description in Rank Math.** DONE Sept 25. The block no longer carries its own, which fixes the doubled title.
-
----
-
-## 2. Decisions for Nick (open; Claude acts only after a yes)
-
-- [x] **D1. PAUSE 85.2%: KEEP QUOTING IT** (Nick, Sept 25). It's the real computed result: 144 of 169 PAUSE calls scored right, reproduced exactly.
-- [ ] **D2. Engine default costs:** CSV uploads add a 2.9–3% platform fee, and six lead paths add $0.25 per lead of compliance cost. Neither affects the validation or Apex. *Recommendation:* default both to $0 unless the client supplies real values; fix before the first client who uploads a CSV.
-- [ ] **D3. Calculator compliance hint:** it says "default $0.25", but the calculator actually uses $0. *Recommendation:* change it to "only if you pay for per-lead consent certificates".
-- [ ] **D4. The 2,738 simulated-business lead records** that still hold fake names and emails. *Recommendation:* strip them (it's test data).
-- [ ] **D5. Sync on connect:** run the first data pull right after a client connects, instead of waiting for 2 AM UTC. *Recommendation:* yes; new clients see numbers the same day.
-- [ ] **D6. AI links section** (ChatGPT/Claude/Perplexity/Grok) on the homepage. *Recommendation:* leave it off; no proven SEO effect, and it sends visitors away.
-- [ ] **D7. Intake form's job** now that self-serve is live. *Recommendation:* free-audit request now; "Partner with us / talk to Nick" once the free audit is in Stripe.
-- [ ] **D8. Apex status:** still receiving leads (last lead Sept 24), but 0 ad-spend rows and 0 active campaigns, so no decisions since Aug 13 (live query, Sept 25). *Ask Nick:* is their ad spend paused, or should Claude investigate the Meta/Google connection?
-- [x] **D9 (CallRail part). LIVE Sept 25 (PR #28):** a saved CallRail key is now pulled every night. Still off: Ringba, Boberdoo, Bing, Stripe. Each needs its own fix first: Bing puts all spend under one campaign, Boberdoo's lead cost never reaches true cost, Stripe assumes a 7% fee, and Ringba drops partner payouts.
-- [x] **D10. LIVE Sept 25 (PR #28):** each CallRail call is matched to its ad campaign by its campaign tag. Unmatched calls stay unattributed. Tested with 30 checks.
-- [x] **D2 for calls. LIVE Sept 25 (PR #30):** CallRail calls now add $0 compliance cost. The other $0.25 defaults (Meta lead forms, Ringba, Boberdoo, CSV, webhook) are still open under D2.
-
----
-
-## 3. Product / engine (after decisions)
-
-- [ ] **Free Distortion Audit in Stripe**: create the product, wire checkout (`billing.py`), and add it to the pricing page.
-- [ ] **Live test of VINDEX** (the chat agent): run ~15 real prospect and investor questions against the live bot; Nick reviews the answers.
-- [ ] **Chat agent upgrades**: streaming replies, clear rules for handing off to Nick, and a weekly review of real transcripts.
-- [ ] **Manuals rewrite**: remove "7 cost layers", "no self-serve", the old acronym, and the stale integration counts from all manuals. A correction notice already sits at the top of the current one.
-- [ ] **VINDEX trademark check** (Nick): a registered VINDEX mark exists (Vindex LLC, esports, serial 88671256).
-
----
-
-## 4. Homepage video (90 seconds to 3 minutes)
-
-- [ ] Claude writes the script. Nick approves it.
-- [ ] Nick sends a screen recording of the portal, plus the logo and screenshots.
-- [ ] Voiceover: Nick's own voice (best for trust and YouTube search), or free text-to-speech in Clipchamp.
-- [ ] Claude renders a motion-graphics cut: free, 1080p, no watermark.
-- [ ] Publish on YouTube with "Allocera" and "CDAI" in the title and description, then embed it on the homepage.
-
----
-
-## 5. Rest of the website (51 URLs), one page at a time
-
-**WordPress export received (Sept 25).** Read-only audit, with proof for each finding, in `website/SITE_AUDIT.md`. Nothing on the site has been changed; every fix waits on Nick's yes.
-
-**Rebuilt so far** (files in `website/pages/`, each with its Rank Math box). Work down this list in order.
-
-| # | Page (URL) | Status | Nick's next step |
-|---|---|---|---|
-| 1 | `/net-marketing-contribution/` | LIVE, **91** | done |
-| 2 | `/calculate-contribution-margin/` | LIVE, **90** | done |
-| 3 | `/scale-hold-cut-pause-framework/` | LIVE, **89** | done |
-| 4 | `/triple-whale-vs-rockerbox-vs-allocera/` | LIVE, **90** | optional: drop "2026" from the SEO title later |
-| 5 | `/home-sample/northbeam-alternative/` | LIVE, **90** | done (slug kept) |
-| 6 | `/home-sample/rockerbox-alternative/` | LIVE (score not yet reported) | done (slug kept) |
-| 7 | `/cost-per-signed-case/` | LIVE, **90** | done |
-| 8 | `/blog/` (hub, Page ID 187) | LIVE, **72** (normal for a directory page) | done |
-| 9 | NEXT: `/30-day-retest-methodology/`, rebuilt around the Sept 2026 validation (89.5%) and replacing the fake 80% | not started | none |
-| 10 | `/seven-cost-layers/`: keep the URL (246 impressions) and write a NEW post on it (the concept is dead; the topic will be hidden marketing costs, stated plainly) | not started | none (no redirect anymore) |
-| 11 | `/pricing/` | ON HOLD | Nick is working out the free audit |
-
-- [ ] **Retire `/seven-cost-layers/`**: 301 it to `/calculate-contribution-margin/`. Its impressions come from unrelated searches ("sales layer cost", "layer cost"), it has 0 clicks, and the concept is retired.
-- **Rules:**
-  - No years or dates in titles or bylines.
-  - Keep the original slugs.
-  - Illustrative examples are labeled as such.
-  - Every external stat is linked to a source that was live in Google's results when the page was built.
-
-**GA4 (Allocera):** Measurement ID `G-29J4V3VQ7B`, Property ID 529325874, Account ID 388377967. OpenRush lost its GSC/GA4 link on Sept 26. Reconnect it at openrush.com/dashboard/connections.
-
-**Nick's WordPress fix list (settings only, no new content):**
-1. **Move the pages out of `/home-sample/` with 301 redirects.** Set each page's Parent to "(no parent)", then add a Rank Math redirect from the old URL to the new one:
-   - northbeam-alternative
-   - rockerbox-alternative
-   - contribution-margin-marketing (the validation report)
-   - allocera-intelligence-case-study-proof
-   - privacy-policy-and-terms-and-conditions
-   - terms
-   - data-deletion-instructions
-
-   After the moves, Claude updates the internal links on every rebuilt page.
-2. **Redirect** `/30-day-retest-methodology-2/` to `/tag-manager-real-roi/`. Don't redirect `/seven-cost-layers/`; it's getting a new post.
-3. **Categories:** every post is currently "Uncategorized". Create these categories and assign each post:
-   - Marketing Methodology
-   - Tool Comparisons
-   - Personal Injury Law
-   - Home Services
-   - More Industries
-4. **Turn off Comments and Pings** on posts (they attract spam and do nothing for SEO).
-5. **Delete "every two weeks"** from `/newsletter-welcome/` and `/roas-looks-good-campaigns-lose-money/`.
-6. **Turn on Rank Math's 404 Monitor.**
-8. **Schema:** the Pages default was set to "None" on Sept 26 (Posts stay Article → Blog Post). TOMORROW:
-   - Open Northbeam, Rockerbox, and the validation report (contribution-margin-marketing), and set each page's Rank Math → Schema to Article → Blog Post.
-   - Check Titles & Meta → Local SEO: Organization, "Allocera Intelligence", new logo.
-9. **Turn off Comments and Pings** on all posts (tomorrow).
-10. **Search Console:** export the URL lists for "Crawled – currently not indexed", "noindex", "404", and "Redirect error".
-11. **Send the Tag Manager container ID** (`GTM-XXXXXXX`).
-7. **Done Sept 26:** every page is now on Elementor Canvas. Leave the "Elementor Canvas" template as it is. It's why each page carries its own nav and footer.
-
-**Google index report (Sept 26 upload):**
-- 46 pages are indexed and 44 are not.
-- Why pages aren't indexed:
-  - 16 "Crawled, currently not indexed" (thin or duplicate; the rebuilds fix these)
-  - 17 redirects (normal)
-  - 4 "noindex"
-  - 2 alternate canonical
-  - 1 redirect error
-  - 2 not found (404)
-- The export only has the counts. Nick should export the URL lists for "Crawled, currently not indexed", "noindex", "404", and "Redirect error" (click each reason in Search Console, then Export).
-
-**Tag Manager: send the container ID (`GTM-XXXXXXX`).** Then Claude builds homepage tracking.  / GA4 event tracking on the homepage** (GA4 `G-29J4V3VQ7B`). Track:
-- every button
-- the free-audit and contact forms
-- the calculator
-- the chat bot
-- pricing page views
-
-Events push to `dataLayer`, so they work with GTM, and they also fire through `gtag` if it's loaded.
-
-**FULL PAGE-BY-PAGE FIX LIST: `website/FIX_LIST.md`** (41 pages, 3 tiers; the next build is `/30-day-retest-methodology/`, and Nick already sent its HTML).
-
-**Remaining site work (Sept 26 plan). Order: SEO and info first, then Tag Manager, then Stripe.**
-- **Batch 1: Nick, about 15 minutes in WordPress, no new pages.**
-  - Redirect `/seven-cost-layers/` to `/calculate-contribution-margin/`.
-  - Redirect `/30-day-retest-methodology-2/` to `/tag-manager-real-roi/` (it's an exact copy).
-  - Delete "every two weeks" from `/newsletter-welcome/` and `/roas-looks-good-campaigns-lose-money/`.
-  - Add Rank Math titles and descriptions to the privacy, terms, and data-deletion pages.
-  - Turn on Rank Math's 404 Monitor.
-- **Batch 2: pages Google ignores (wrong canonical, most still claim 80%). Claude rebuilds; Nick pastes.**
-  - `/55-directives-study/`: redirect to the validation report.
-  - `/30-day-retest-methodology/`: redirect to the validation report.
-  - `/true-cac/` and `/true-cac-2/`: merge into one rebuilt page.
-  - Rebuild `/tag-manager-real-roi/`.
-  - Rebuild `/allocera-vs-salesforce/`.
-  - Rebuild `/reconciling-pace-greensky-service-finance/`.
-  - Rebuild `/true-cost-closed-install/`.
-  - Fix the `/blog/` excerpt that still says 80%.
-- **Batch 3: pages that mention Apex (Nick decides).** `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/`, and `/marketing-margin-distortion-index/`.
-- **Batch 4: core pages.** Pricing (match Stripe), about, how-it-works, blog, and dashboard.
-- **Batch 5: the remaining ~20 industry posts.** Remove the seven-cost-layers framing and the doubled titles, and check their outside statistics.
-- **Tag Manager (after SEO):** track every homepage button, the forms, the calculator, the chat bot, and views of the pricing page. Needs the GTM container ID (`GTM-XXXXXXX`) and a way to put the GTM code in the site header.
-- **Stripe free audit:** being handled in another Claude Code session. The prompt is in `STRIPE_FREE_AUDIT_PROMPT.md`. Open question for Nick: the audit credit is "first 90 days" on the pricing page but "100% toward a retainer" on the homepage.
-
-**Per page:** audit it against the engine, the validation report, GA, and Search Console. Nick says yes or no to each change, and Claude delivers the finished HTML block plus Rank Math fields.
-
-**Order:**
-1. **Fix-first pages**
-   - `/55-directives-study/`: still claims the debunked 80%. Rewrite it around the Sept 2026 validation, or redirect it.
-   - Duplicate pages: `/true-cac/` + `/true-cac-2/`, and `/30-day-retest-methodology/` + `-2/`. Merge each pair and 301-redirect the extra.
-   - 404s: the "Page Not Found" page is the 2nd most-viewed page. Turn on Rank Math's 404 monitor and redirect each dead URL.
-   - Doubled titles: strip the pasted `<head>` from every page, as already done on the homepage.
-   - `/home-sample/` template paths: move those pages to clean URLs and 301 the old ones. This includes the validation report, terms, privacy, and the Northbeam/Rockerbox pages.
-   - `/proof/`: it's the Apex story. Keep it, rewrite it around the validation, or drop it from the nav.
-2. **Pages with real traffic**: pricing (add the free audit; match the site), about, how-it-works, blog, dashboard.
-3. **Closest to Google page 1**: `/scale-hold-cut-pause-framework/` (position 8.2), `/calculate-contribution-margin/` (109 impressions, position 20), `/triple-whale-vs-rockerbox-vs-allocera/`, and the Northbeam/Rockerbox alternative pages.
-4. **Long-tail industry pages** (HVAC, personal injury, senior living, and others): only after 1–3 show results.
-
----
-
-## 6. Growth ideas (proposed; Nick says yes or no to each)
-
-**Homepage conversion**
-- [ ] Show the price level near the main button. Retainers from $1,500/mo appear today only in an Explore card and the FAQ.
-- [ ] Founder block: Nick, 3 years building, photo, based in NC, phone. Needs a photo and Nick's OK on the wording.
-- [ ] Sample report visitors can open without talking to anyone (a clearly labeled fictional business).
-- [ ] "15 minutes with the founder" booking button (a free Calendly link).
-- [ ] Date the proof: "Validated Sept 2026".
-- [ ] Get the two Apex reviews onto G2.
-
-**AI search / SEO**
-- [ ] YouTube channel. The homepage video is the first upload.
-- [ ] Founder-voice answers on Reddit (r/PPC, r/marketing, r/smallbusiness).
-- [ ] Organization + SoftwareApplication schema on the homepage.
-- [ ] Check robots.txt allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended).
-- [ ] Keep content fresh, with visible dates on posts.
-
-_Research caveat: Nielsen Norman Group, Stanford, Gartner, and Ahrefs figures came from search results. Their original pages are blocked in this environment, so re-verify them from the source before quoting any of them publicly._
-
----
-
-## 7. Security (Nick)
-
-- [ ] Rotate the Supabase database password. It's hardcoded in `run_full_directive.py` and `time_engine.py`, and the former cofounder may know it.
-- [ ] Rotate other shared keys he could have seen (Resend, Stripe, Render).
-- [ ] Check the team member lists in Render and Supabase.
-- [ ] Delete the 19 old validation cron jobs on Render. Each has a fixed date in its schedule, so they re-run every year.
-
----
-
-## 7b. Partnerships
-
-- [x] **CallRail email sent** (Sept 25) with the logo and listing description. The call with Karina and Eric is BOOKED.
-- [ ] Before the call: be ready to explain how you'll promote the integration (pricing page, integration docs, outreach).
-
----
-
-## 8. Access that would help Claude (Nick)
-
-- [x] **WordPress export**: received Sept 25.
-- [ ] **Network allowlist** in the environment settings (cloud environment menu → Edit → Network access). Add `nngroup.com`, `gartner.com`, `support.google.com`, `facebook.com`, `wikipedia.org`, and your own site, so sources can be verified from the originals.
-- [ ] **Gmail for alloceraintelligence@gmail.com**, if you want Claude to read the Control Tower emails. The connected Gmail is fullsendorganicks@gmail.com.
-- [ ] **PageSpeed score**: run pagespeed.web.dev (mobile) on the live homepage and send the number.
-
----
-
-## Done (Sept 25, 2026)
-
-- [x] Former cofounder fully offboarded: engine email is staff-only; repo, docs, and memory cleaned (PR #16).
-- [x] Chat agent named **VINDEX** (a label above every reply; page buttons stay "Ask CDAI"). Full capability knowledge, honest identity rules, wrong facts fixed (PRs #15, #17, #18, #20, #21).
-- [x] **Dashboard trust fix LIVE** (portal PR #2): no fake directives before a client's first run.
-- [x] **SCALE scoring fix LIVE** (PR #24): the 98.0% rule is the production rule. Memory corrected (PR #25).
-- [x] **Privacy fix LIVE** (PR #22): Meta lead forms no longer store names, emails, or phones.
-- [x] **Math and accuracy re-verified read-only**: all 1,352 validation grades reproduced exactly. The $0.25 and CSV fee change nothing except PAUSE's thin results.
-- [x] **Homepage final**:
-  - hero kept
-  - "What CDAI does" section (9 verified cards)
-  - trust FAQs
-  - sitemap-verified links, dead link removed
-  - US-accurate calculator (0% platform fee)
-  - real logos
-  - no fake numbers
-- [x] Handoff doc, worklog, and a correction notice on the manual written. CLAUDE.md memory holds every verified fact and rule.
+<!doctype html><html><head><meta charset="utf-8"><title>CDAI Game Plan</title><style>body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#1a1a1a;font-size:11pt;line-height:1.45;margin:0}
+h1{font-size:22pt;border-bottom:3px solid #b8912f;padding-bottom:6px}h2{font-size:14pt;color:#7a5c12;margin-top:22px;border-bottom:1px solid #ddd;padding-bottom:3px}
+code{background:#f3f0e8;padding:1px 4px;border-radius:3px;font-size:9.5pt}hr{display:none}ul{padding-left:22px}
+li.task{list-style:none;margin-left:-20px;margin-bottom:5px}.box{display:inline-block;width:12px;height:12px;border:1.5px solid #555;border-radius:2px;margin-right:6px;vertical-align:-1px;font-size:10px;line-height:12px;text-align:center}
+li.done .box{background:#b8912f;border-color:#b8912f;color:#fff}li{margin-bottom:3px}</style></head><body><h1>Allocera / CDAI: Master List</h1>
+<p>Nick's running list. Claude keeps it current and checks items off as they ship.</p>
+<p><strong>Rules:</strong>
+- Nothing gets built until Nick has seen it and said yes.
+- Every public claim must be provable, and nothing proprietary goes on a public page.
+- No years or dates in titles or bylines.
+- Keep the original slugs.</p>
+<p><em>Last updated: Sept 26, 2026, from a full re-read of the whole chat, Sept 21 to 26.</em></p>
+<hr />
+<h2>A. Nick's list for tomorrow (WordPress / Google, no code)</h2>
+<ol>
+<li><strong>Paste the updated homepage.</strong> It's <code>website/homepage.html</code>, which is the live homepage plus the new tracking at the bottom. Nothing else changed. Paste it into the single Elementor HTML widget.</li>
+<li><strong>GA4 key events.</strong> In GA4 → Admin → Events, after the first visits come in, mark these as Key events:
+   - <code>generate_lead</code>
+   - <code>signup_click</code>
+   - <code>chat_open</code>
+   - <code>calculator_code_verified</code></li>
+<li><strong>Schema.</strong> Set Rank Math → Schema → <strong>Article → Blog Post</strong> on the Northbeam, Rockerbox, and validation report (contribution-margin-marketing) pages. The Pages default was already changed to "None" on Sept 26.</li>
+<li><strong>Company info.</strong> Rank Math → Titles &amp; Meta → Local SEO: set Organization, "Allocera Intelligence", and the new logo.</li>
+<li><strong>Comments and pings.</strong> Turn them off on every post.</li>
+<li><strong>One redirect.</strong> <code>/30-day-retest-methodology-2/</code> → <code>/tag-manager-real-roi/</code> (it's an exact copy). Don't redirect <code>/seven-cost-layers/</code>; it's getting a new post.</li>
+<li><strong>Delete "every two weeks"</strong> from <code>/newsletter-welcome/</code> and <code>/roas-looks-good-campaigns-lose-money/</code>. No newsletter has been sent yet.</li>
+<li><strong>Turn on Rank Math → 404 Monitor.</strong></li>
+<li><strong>Search Console exports.</strong> Click each reason and export its URL list:
+   - "Crawled – currently not indexed" (16)
+   - "noindex" (4)
+   - "404" (2)
+   - "Redirect error" (1)</li>
+<li><strong>Rank Math titles and descriptions</strong> for the privacy, terms, and data-deletion pages. They have none.</li>
+<li><strong>Categories (later).</strong> Every post is "Uncategorized". Create these and assign each post:<ul>
+<li>Marketing Methodology</li>
+<li>Tool Comparisons</li>
+<li>Personal Injury Law</li>
+<li>Home Services</li>
+<li>More Industries</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/home-sample/</code> pages (later, no rush).</strong> Set Parent to "(no parent)" on these 7, and add a 301 from each old URL:</p>
+<ul>
+<li>Northbeam</li>
+<li>Rockerbox</li>
+<li>validation report</li>
+<li>case study</li>
+<li>privacy</li>
+<li>terms</li>
+<li>data deletion</li>
+</ul>
+<p>Claude then updates every internal link.
+13. <strong>Tag Manager (optional).</strong> Tracking now runs straight into GA4. If you create a GTM container, send the <code>GTM-XXXXXXX</code> ID; the events already push to <code>dataLayer</code>, so GTM picks them up too.</p>
+</li>
+</ol>
+<p><strong>Done Sept 26:</strong> every page is on Elementor Canvas (leave it), and the schema defaults are fixed (Posts: Article → Blog Post; Pages: None).</p>
+<hr />
+<h2>B. Website pages (Claude builds, Nick pastes)</h2>
+<p>Full page-by-page list: <strong><code>website/FIX_LIST.md</code></strong> (41 pages still carry old or false info).</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Page</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>/net-marketing-contribution/</code></td>
+<td>LIVE, <strong>91</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>/calculate-contribution-margin/</code></td>
+<td>LIVE, <strong>90</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>/scale-hold-cut-pause-framework/</code></td>
+<td>LIVE, <strong>89</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>/triple-whale-vs-rockerbox-vs-allocera/</code></td>
+<td>LIVE, <strong>90</strong> (optional: drop "2026" from the SEO title)</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>/home-sample/northbeam-alternative/</code></td>
+<td>LIVE, <strong>90</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>/home-sample/rockerbox-alternative/</code></td>
+<td>LIVE (score not reported)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>/cost-per-signed-case/</code></td>
+<td>LIVE, <strong>90</strong></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>/blog/</code> (Nick's design, new content)</td>
+<td>LIVE, <strong>72</strong> (normal for a directory page)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Homepage</td>
+<td>LIVE. <strong>Tracking added Sept 26: paste it (A1).</strong></td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>NEXT: <code>/30-day-retest-methodology/</code></strong></td>
+<td>Rebuild around the Sept 2026 validation (89.5%) and remove the fake 80%. Nick sent the current HTML. Verify every "retest" claim against the engine first.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>/seven-cost-layers/</code></td>
+<td>New post at the same URL (246 impressions). The concept is dead; the new topic is hidden marketing costs, stated plainly.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>/55-directives-study/</code></td>
+<td>301 to the validation report (the whole page is the fake 80%)</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>/tag-manager-real-roi/</code>, <code>/allocera-vs-salesforce/</code>, <code>/true-cac/</code> + <code>/true-cac-2/</code> (merge)</td>
+<td>Full rebuilds (80%, seven layers, pasted head)</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>/marketing-margin-distortion-index/</code></td>
+<td><strong>Nick decides:</strong> rebuild or retire (80%, Apex, "2026" in the title, unsourced stats)</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>/proof/</code>, <code>/allocera-intelligence-case-study-proof/</code>, <code>/case-study-2-oauth-validation/</code></td>
+<td><strong>Nick decides:</strong> these are the Apex story. Rewrite around the validation, or retire.</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>/how-it-works/</code>, <code>/about/</code></td>
+<td>Full rebuilds</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>/dashboard/</code>, validation report, terms, newsletter welcome</td>
+<td>Light cleans or quick fixes</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>/pricing/</code></td>
+<td><strong>ON HOLD</strong> while the free audit is worked out</td>
+</tr>
+<tr>
+<td>19</td>
+<td>22 remaining blog posts</td>
+<td>Full rebuild if they have traffic, light clean if not (see FIX_LIST Tier 3)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What "light clean" means:</strong> keep the post and its design. Remove the pasted head, the seven layers, the 80%, Apex, the unsourced numbers, and the old "$2,500, don't pay if…" offer, and fix the links.</p>
+<p><strong>Google index (Sept 26):</strong> 46 pages indexed, 44 not. 16 are "crawled, not indexed", which the rebuilds fix. The rest need Nick's exports (A9).</p>
+<hr />
+<h2>C. Homepage tracking (added Sept 26, in <code>website/homepage.html</code>)</h2>
+<p>Everything reports to GA4 <code>G-29J4V3VQ7B</code>. It loads GA4 only if the site doesn't already, so page views never double-count. Every event also pushes to <code>dataLayer</code> for Tag Manager. No names, emails, or chat text are ever sent.</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>When it fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chat_open</code>, <code>chat_message_sent</code>, <code>chat_suggestion_click</code>, <code>chat_close</code></td>
+<td>VINDEX / Ask CDAI</td>
+</tr>
+<tr>
+<td><code>calculator_start</code>, <code>calculator_code_requested</code>, <code>calculator_code_verified</code></td>
+<td>Distortion calculator</td>
+</tr>
+<tr>
+<td><code>form_submit</code>, <code>generate_lead</code></td>
+<td>Free audit / contact form (<code>generate_lead</code> fires on success)</td>
+</tr>
+<tr>
+<td><code>signup_click</code>, <code>portal_click</code>, <code>pricing_click</code></td>
+<td>Get Started, Client Portal, and any pricing link</td>
+</tr>
+<tr>
+<td><code>button_click</code>, <code>scroll_link_click</code>, <code>email_click</code>, <code>phone_click</code>, <code>menu_open</code></td>
+<td>Every other button and link, with its text and section</td>
+</tr>
+<tr>
+<td><code>section_view</code></td>
+<td>Each homepage section a visitor reaches: hero, tools, problem, how, capabilities, calculator, FAQ, intake</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Views of the pricing page itself:</strong> GA4 → Reports → Pages and screens → <code>/pricing/</code>.</p>
+<p>Tested in a browser Sept 26: all events fired with 0 errors.</p>
+<hr />
+<h2>D. Decisions for Nick (open)</h2>
+<ul>
+<li><strong>D2. Engine default costs.</strong> CSV uploads add a 2.9–3% platform fee, and Meta lead forms, Ringba, Boberdoo, CSV, and webhook leads add $0.25 per lead of compliance cost. Neither affects the validation or Apex. CallRail is already $0.</li>
+<li><em>Recommendation:</em> default both to $0 unless the client supplies real values, before the first client who uploads a CSV.</li>
+<li><strong>D3. Calculator hint.</strong> It says "default $0.25", but the calculator actually uses $0.</li>
+<li><em>Recommendation:</em> reword it to "only if you pay for per-lead consent certificates".</li>
+<li><strong>D4. Fake names and emails.</strong> 2,738 simulated-business lead records still hold them.</li>
+<li><em>Recommendation:</em> strip them.</li>
+<li><strong>D5. Sync on connect.</strong> Run the first data pull as soon as a client connects, instead of waiting for 2 AM UTC.</li>
+<li><em>Recommendation:</em> yes.</li>
+<li><strong>D6. AI links section</strong> (ChatGPT/Claude/Perplexity/Grok). <strong>On Sept 25 Nick said he wanted it kept.</strong> It is NOT in the current homepage.</li>
+<li><em>Claude's view:</em> no proven SEO effect, and it sends visitors away.</li>
+<li>Nick decides. If yes, Claude adds it back.</li>
+<li><strong>D7. The intake form's job</strong> now that self-serve is live.</li>
+<li><em>Recommendation:</em> free-audit request now; "Partner with us / talk to Nick" once the free audit is settled.</li>
+<li><strong>D8. Apex.</strong> Still receiving leads (last one Sept 24), but 0 ad-spend rows and 0 active campaigns, so no decisions since Aug 13.</li>
+<li><em>Ask Nick:</em> is their ad spend paused, or should Claude check the connection?</li>
+<li><strong>Free audit credit wording.</strong> Pricing page: "first 90 days"; homepage: "100% toward a retainer". Pick one when the free audit is settled.</li>
+</ul>
+<hr />
+<h2>E. Engine and product (Claude, after a yes)</h2>
+<ul>
+<li class="task"><span class="box"></span> <strong>Free Distortion Audit in Stripe.</strong> Being handled in another Claude Code session; the prompt is in <code>STRIPE_FREE_AUDIT_PROMPT.md</code>. On hold while Nick works it out.</li>
+<li class="task"><span class="box"></span> <strong>Adapter fixes before turning on nightly sync</strong> (CallRail is already live, PR #28):</li>
+<li>Bing puts all spend under one campaign.</li>
+<li>Boberdoo's lead cost never reaches true cost.</li>
+<li>Stripe assumes a 7% fee.</li>
+<li>Ringba drops partner payouts.</li>
+<li class="task"><span class="box"></span> <strong>Digest email logo fix.</strong> Offered, awaiting a yes.</li>
+<li class="task"><span class="box"></span> <strong>Clean up the [SIM] nightly errors.</strong> Offered, awaiting a yes.</li>
+<li class="task"><span class="box"></span> <strong>VINDEX live test.</strong> Ask about 15 real prospect and investor questions; Nick reviews the answers.</li>
+<li>Must say: clients need HubSpot or Salesforce, and run paid ads and/or buy leads.</li>
+<li>Must never contradict the validation.</li>
+<li class="task"><span class="box"></span> <strong>VINDEX upgrades:</strong> streaming replies, clear hand-off-to-Nick rules, and a weekly transcript review.</li>
+<li class="task"><span class="box"></span> <strong>Manuals rewrite.</strong> Remove "7 cost layers", "no self-serve", the old acronym, the stale integration counts, and the 80%.</li>
+<li class="task"><span class="box"></span> <strong>VINDEX trademark check</strong> (Nick): a registered VINDEX mark exists (Vindex LLC, esports, serial 88671256).</li>
+<li class="task"><span class="box"></span> <strong>Competitive research.</strong> Offered, awaiting a yes.</li>
+</ul>
+<hr />
+<h2>F. Homepage video (Nick: "needs to be redone: good but cheap")</h2>
+<ul>
+<li class="task"><span class="box"></span> Claude writes the script (demo/explainer style, 90 seconds to 3 minutes). Nick approves it.</li>
+<li class="task"><span class="box"></span> Nick sends a screen recording of the portal, plus the logo and screenshots.</li>
+<li class="task"><span class="box"></span> Voiceover: Nick's own voice (best for trust), or free text-to-speech.</li>
+<li class="task"><span class="box"></span> Claude renders a motion-graphics cut (1080p, no watermark).</li>
+<li class="task"><span class="box"></span> Publish on YouTube with "Allocera" and "CDAI" in the title, then embed it at the top of the homepage. It must autoplay muted and load instantly.</li>
+</ul>
+<hr />
+<h2>G. Growth ideas (Nick says yes or no to each)</h2>
+<ul>
+<li class="task"><span class="box"></span> Show the price level ("from $1,500/mo") near the main button.</li>
+<li class="task"><span class="box"></span> Founder block: Nick, 3 years building, photo. Needs a photo and Nick's OK.</li>
+<li class="task"><span class="box"></span> A sample report visitors can open (a clearly labeled fictional business).</li>
+<li class="task"><span class="box"></span> "15 minutes with the founder" booking button (free Calendly).</li>
+<li class="task"><span class="box"></span> Date the proof: "Validated Sept 2026".</li>
+<li class="task"><span class="box"></span> Get the two Apex reviews onto G2.</li>
+<li class="task"><span class="box"></span> YouTube channel (the video is the first upload), and founder-voice answers on Reddit (r/PPC, r/marketing, r/smallbusiness).</li>
+<li class="task"><span class="box"></span> Organization + SoftwareApplication schema on the homepage.</li>
+<li class="task"><span class="box"></span> Check that robots.txt allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended).</li>
+<li class="task"><span class="box"></span> New posts for high-value keywords:</li>
+<li>"google ads optimization" (390/mo)</li>
+<li>"personal injury law firm marketing" (720/mo, CPC about $106)</li>
+</ul>
+<hr />
+<h2>H. Security (Nick; important)</h2>
+<ul>
+<li class="task"><span class="box"></span> <strong>Supabase service-role key:</strong> it was pasted in chat on Sept 21. Rotate it in Supabase → Settings → API, then update it everywhere it's used (Render env vars).</li>
+<li class="task"><span class="box"></span> <strong>Supabase database password:</strong> hardcoded in <code>run_full_directive.py</code> and <code>time_engine.py</code>, and the former cofounder may know it. Rotate it.</li>
+<li class="task"><span class="box"></span> <strong>Anthropic key pasted in chat on Sept 25:</strong> make sure it's revoked in the Anthropic console. The chat bot must only use the new key stored in Render (<code>ANTHROPIC_API_KEY_chat_bot</code>).</li>
+<li class="task"><span class="box"></span> Rotate other shared keys the former cofounder could have seen (Resend, Stripe, Render).</li>
+<li class="task"><span class="box"></span> Check the team member lists in Render and Supabase.</li>
+<li class="task"><span class="box"></span> Delete the 19 old validation cron jobs on Render (they re-run every year).</li>
+</ul>
+<hr />
+<h2>I. Partnerships</h2>
+<ul>
+<li class="task done"><span class="box">&#10003;</span> CallRail email sent Sept 25, with the logo and listing description. The call with Karina and Eric is <strong>booked</strong>.</li>
+<li class="task"><span class="box"></span> Before the call: be ready to explain how the integration will be promoted (pricing page, integration docs, outreach).</li>
+<li class="task"><span class="box"></span> Direction: partner with companies that already have the customers (CallRail first).</li>
+</ul>
+<hr />
+<h2>J. Access that would help Claude (Nick)</h2>
+<ul>
+<li class="task"><span class="box"></span> <strong>Network allowlist</strong> (cloud environment → Edit → Network access). Add your own site so Claude can check live pages, plus <code>support.google.com</code>, <code>nngroup.com</code>, <code>gartner.com</code>, <code>facebook.com</code>, and <code>wikipedia.org</code>.</li>
+<li class="task"><span class="box"></span> <strong>Gmail for alloceraintelligence@gmail.com</strong>, if Claude should read the Control Tower emails. The connected Gmail is fullsendorganicks@gmail.com.</li>
+<li class="task"><span class="box"></span> <strong>PageSpeed score:</strong> run pagespeed.web.dev (mobile) on the homepage and send the number.</li>
+</ul>
+<hr />
+<h2>Done</h2>
+<ul>
+<li class="task done"><span class="box">&#10003;</span> <strong>Sept 26:</strong></li>
+<li>8 pages rebuilt (scores above).</li>
+<li>Blog rebuilt on Nick's design.</li>
+<li>Every page moved to Elementor Canvas.</li>
+<li>Schema defaults fixed.</li>
+<li>Homepage tracking built and tested.</li>
+<li>Full fix list written.</li>
+<li>Stripe free-audit prompt written.</li>
+<li class="task done"><span class="box">&#10003;</span> <strong>Sept 25:</strong></li>
+<li>Homepage final and live: hero kept, "What CDAI does", trust FAQs, US-accurate calculator, real logos, no fake numbers.</li>
+<li>VINDEX chat live.</li>
+<li>Dashboard trust fix, SCALE fix (98.0%), privacy fix, CallRail nightly sync + campaign mapping, and $0 call compliance cost.</li>
+<li>Math re-verified: all 1,352 validation grades reproduced exactly.</li>
+<li>PAUSE 85.2%: keep quoting it (Nick).</li>
+<li class="task done"><span class="box">&#10003;</span> Former cofounder fully offboarded (PR #16).</li>
+</ul>
+<p><strong>Verified facts to reuse:</strong>
+- 89.5% overall (1,210/1,352), math 100%.
+- By decision: Scale 98.0%, Hold 95.2%, Pause 85.2%, Flag 70.9% (82 neutral), Cut 55.6%, Investigate 100%, Renegotiate 100%, Quarantine 12/12 caught.
+- CDAI = Capital, Decision, Accuracy, Intelligence.
+- Clients need HubSpot or Salesforce, plus paid ads and/or bought leads.
+- Self-serve is live.
+- Retainers start at $1,500/mo.
+- USA only.
+- Seven cost layers is dead.</p></body></html>
