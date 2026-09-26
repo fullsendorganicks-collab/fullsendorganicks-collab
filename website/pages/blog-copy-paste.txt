@@ -1,0 +1,253 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#blg{font-variant-numeric:lining-nums;--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#E0566B;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+#blg *{box-sizing:border-box}
+#blg a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(222,187,106,.35)}
+#blg a:hover{color:#fff;border-bottom-color:#fff}
+#blg .blg-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(1,9,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+#blg .blg-nav a{border:0}
+#blg .blg-brand{display:flex;align-items:center;gap:10px;color:var(--text)}
+#blg .blg-brand img{height:34px;width:auto;display:block}
+#blg .blg-brand span{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.02em}
+#blg .blg-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;margin:0;padding:0}
+#blg .blg-links a{color:var(--dim);font-size:14px;font-weight:500}
+#blg .blg-links a:hover{color:#fff}
+#blg .blg-cta{background:var(--gold);color:#010914!important;font-weight:600;font-size:14px;padding:9px 18px;border-radius:2px}
+#blg .blg-cta:hover{background:var(--gold2)}
+#blg .blg-burger{display:none;background:none;border:1px solid var(--border2);color:var(--text);font-size:18px;padding:4px 10px;border-radius:2px;cursor:pointer}
+#blg .blg-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+#blg .blg-hero{padding:clamp(44px,8vh,84px) 0 clamp(20px,4vh,36px);border-bottom:1px solid var(--border)}
+#blg .blg-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:0 0 16px}
+#blg h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 20px;color:#fff}
+#blg .blg-lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);line-height:1.65;margin:0 0 22px}
+#blg .blg-byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.04em}
+#blg h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.15;color:#fff;margin:clamp(48px,7vh,68px) 0 16px;scroll-margin-top:90px}
+#blg h3{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:30px 0 8px}
+#blg p{margin:0 0 18px;color:var(--muted)}
+#blg strong{color:#fff;font-weight:600}
+#blg ul,#blg ol{margin:0 0 20px;padding-left:22px;color:var(--muted)}
+#blg li{margin:0 0 9px}
+#blg .blg-box{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
+#blg .blg-box h3{margin-top:0}
+#blg .blg-box ul{margin-bottom:0}
+#blg .blg-toc{background:transparent;border:1px solid var(--border2);border-radius:2px;padding:20px 24px;margin:30px 0}
+#blg .blg-toc p{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
+#blg .blg-toc ol{margin:0;padding-left:20px}
+#blg .blg-toc li{margin:0 0 6px}
+#blg .blg-toc a{color:var(--dim);border:0}
+#blg .blg-toc a:hover{color:#fff}
+#blg .blg-formula{background:#04102a;border:1px solid var(--border2);border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.6vw,15px);line-height:1.9;color:#fff;overflow-x:auto}
+#blg .blg-formula .blg-f-main{color:var(--gold2);font-size:clamp(14px,1.8vw,17px);font-weight:500}
+#blg .blg-formula .blg-f-label{color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:10px}
+#blg .blg-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+#blg .blg-stat{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;text-align:center}
+#blg .blg-stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,46px);font-weight:600;color:var(--green);line-height:1}
+#blg .blg-stat span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.45}
+#blg .blg-steps{counter-reset:s;list-style:none;padding:0}
+#blg .blg-steps li{counter-increment:s;position:relative;padding:0 0 4px 50px;margin:0 0 18px}
+#blg .blg-steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border:1px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
+#blg .blg-table-wrap{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--border2);border-radius:2px}
+#blg table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+#blg th{background:var(--surface);color:#fff;text-align:left;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border2);font-size:13px;letter-spacing:.02em}
+#blg td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+#blg tr:last-child td{border-bottom:0}
+#blg td.blg-num{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#blg .blg-pos{color:var(--green)!important;font-weight:600}
+#blg .blg-neg{color:var(--red)!important;font-weight:600}
+#blg .blg-total td{color:#fff;font-weight:600;background:rgba(196,160,64,.07)}
+#blg .blg-note{font-size:14px;color:var(--dim)}
+#blg td.blg-acc{min-width:210px}
+#blg .blg-mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#blg .blg-cnt{font-size:14px;color:var(--dim);white-space:nowrap}
+#blg code{font-family:'JetBrains Mono',monospace;font-size:.9em;background:#04102a;border:1px solid var(--border2);padding:1px 6px;border-radius:2px;color:var(--gold2)}
+#blg .blg-sub{display:block;font-size:14px;color:var(--dim);margin-top:4px;line-height:1.5}
+#blg figure{margin:28px 0}
+#blg figure img{width:100%;height:auto;display:block;border:1px solid var(--border2);border-radius:2px}
+#blg figcaption{font-size:14px;color:var(--dim);margin-top:10px}
+#blg blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,28px);line-height:1.35;color:#fff}
+#blg .blg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
+#blg .blg-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 20px}
+#blg .blg-card h3{margin:0 0 6px;font-size:17px}
+#blg .blg-card p{margin:0;font-size:15px}
+#blg details{border:1px solid var(--border2);border-radius:2px;margin:0 0 12px;background:var(--surface)}
+#blg summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none}
+#blg summary::-webkit-details-marker{display:none}
+#blg summary::after{content:'+';float:right;color:var(--gold2);font-family:'JetBrains Mono',monospace}
+#blg details[open] summary::after{content:'–'}
+#blg details p{padding:0 20px 4px;margin:0 0 14px}
+#blg .blg-final{margin:clamp(56px,8vh,80px) 0 0;padding:clamp(28px,5vw,48px);background:linear-gradient(135deg,#071530,#04102a);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;text-align:center}
+#blg .blg-final h2{margin-top:0}
+#blg .blg-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+#blg .blg-btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:600;font-size:15px;border:1px solid var(--gold)!important;color:var(--gold2)}
+#blg .blg-btn.blg-primary{background:var(--gold);color:#010914!important}
+#blg .blg-btn:hover{background:var(--gold2);color:#010914!important}
+#blg .blg-footer{margin-top:clamp(56px,8vh,80px);padding:26px clamp(16px,4vw,48px);border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim)}
+#blg .blg-footer a{color:var(--dim);border:0}
+#blg .blg-footer img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
+@media (max-width:900px){
+#blg .blg-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:#010914;border-bottom:1px solid var(--border);padding:14px 20px;gap:14px}
+#blg .blg-links.blg-open{display:flex}
+#blg .blg-burger{display:block}
+}
+@media (max-width:640px){
+#blg{font-size:16px}
+#blg .blg-stats,#blg .blg-grid{grid-template-columns:1fr}
+#blg .blg-cta{display:none}
+}
+
+</style>
+<div id="blg">
+
+<nav class="blg-nav">
+  <a class="blg-brand" href="https://alloceraintelligence.com/">
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence logo" width="34" height="34">
+    <span>Allocera Intelligence</span>
+  </a>
+  <ul class="blg-links" id="blgLinks">
+    <li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li>
+    <li><a href="https://alloceraintelligence.com/proof/">Proof</a></li>
+    <li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li>
+    <li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li>
+    <li><a href="https://alloceraintelligence.com/about/">About</a></li>
+    <li><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></li>
+    <li><a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="blg-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <button class="blg-burger" id="blgBurger" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+
+<article class="blg-wrap">
+
+<header class="blg-hero">
+  <p class="blg-eyebrow">The Margin Gap &middot; Allocera Intelligence Blog</p>
+  <h1>Marketing ROI Blog: Profit Per Campaign, Not Just ROAS</h1>
+  <p class="blg-lead">Marketing ROI is more than return on ad spend. A campaign can show a strong ROAS and still lose money once refunds, lead partner payouts, fees, and the cost of delivering the work are counted. These guides show you how to measure real profit per campaign and per lead partner, in plain language, with worked examples you can copy.</p>
+  <p class="blg-byline">By Nick Baum, Founder of Allocera Intelligence</p>
+</header>
+
+<div class="blg-box">
+  <h3>Start here</h3>
+  <ul>
+    <li><a href="https://alloceraintelligence.com/net-marketing-contribution/">Net marketing contribution</a>: the metric that shows whether a campaign actually made money.</li>
+    <li><a href="https://alloceraintelligence.com/calculate-contribution-margin/">How to calculate contribution margin</a>: the step-by-step formula with a worked example.</li>
+    <li><a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">Marketing budget allocation</a>: four clear decisions for every campaign.</li>
+    <li><a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">Validation report</a>: how CDAI&rsquo;s decisions scored 89.5% accurate across 1,352 scored decisions.</li>
+  </ul>
+</div>
+
+<nav class="blg-toc" aria-label="Topics">
+  <p>Browse by topic</p>
+  <ol>
+    <li><a href="#methods">Marketing ROI methods and metrics</a></li>
+    <li><a href="#tools">Attribution tool comparisons</a></li>
+    <li><a href="#pi">Personal injury law</a></li>
+    <li><a href="#home">Home services</a></li>
+    <li><a href="#more">More industries</a></li>
+    <li><a href="#faq">FAQs</a></li>
+  </ol>
+</nav>
+
+<h2 id="methods">Marketing ROI Methods and Metrics</h2>
+<p>The foundations. Each guide covers one part of measuring marketing ROI as profit, not credit.</p>
+<div class="blg-grid">
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/net-marketing-contribution/">Net Marketing Contribution: The Metric That Replaces ROAS</a></h3><p>Why a 4.0 ROAS can still lose money, and the simple formula that shows what each campaign really adds.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/calculate-contribution-margin/">How to Calculate Contribution Margin for Marketing</a></h3><p>The full method, step by step, from revenue kept down to profit per campaign.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">Marketing Budget Allocation: 4 Smart Decisions Per Campaign</a></h3><p>When to scale, hold, cut, or pause a campaign, and how to decide with profit instead of credit.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/roas-looks-good-campaigns-lose-money/">Why ROAS Looks Good While Campaigns Lose Money</a></h3><p>The costs ROAS never sees, and how they turn a &ldquo;winning&rdquo; campaign into a losing one.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/true-marketing-roi/">True Marketing ROI: What Ad Platforms and CRMs Each Miss</a></h3><p>What Meta, Google, HubSpot, and Salesforce each measure well, and the profit question none of them answers alone.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/true-cac/">True Customer Acquisition Cost</a></h3><p>How dashboard cost per lead differs from what you really pay to win a customer.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/chargebacks-marketing-cost/">How Chargebacks Inflate Your Marketing Cost</a></h3><p>A sale counted in one month and charged back the next still sits in your ROAS. Here is how to account for it.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/tag-manager-real-roi/">Why Tag Manager Alone Won&rsquo;t Show Real ROI</a></h3><p>Tags track events. Profit needs costs that never pass through a tag. What each part of your stack is for.</p></div>
+</div>
+
+<h2 id="tools">Attribution Tool Comparisons</h2>
+<p>Honest comparisons of popular attribution tools: what each does well, who it&rsquo;s built for, and where a profit layer fits alongside it.</p>
+<div class="blg-grid">
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/triple-whale-vs-rockerbox-vs-allocera/">Triple Whale vs Rockerbox: An Honest Comparison</a></h3><p>Who each platform is built for, what it measures, and where Allocera adds profit per campaign.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/home-sample/northbeam-alternative/">Northbeam Alternative for Lead Gen</a></h3><p>What Northbeam does well, the main alternatives, and how to measure real profit when sales close in a CRM.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/home-sample/rockerbox-alternative/">Rockerbox Alternative for Lead Gen</a></h3><p>Four ways to measure marketing, and how to find which campaigns and lead partners make money.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/allocera-vs-salesforce/">Allocera and Salesforce Marketing Cloud</a></h3><p>How a CRM and a profit layer work together, and what each one is responsible for.</p></div>
+</div>
+
+<h2 id="pi">Personal Injury Law</h2>
+<p>For firms that buy leads and sign cases. Every guide focuses on cost and profit per signed case, not cost per lead.</p>
+<div class="blg-grid">
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/cost-per-signed-case/">Cost Per Signed Case: How PI Law Firms Find the True Number</a></h3><p>The formula, the costs most firms leave out, and profit per signed case by channel.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/personal-injury-ad-spend-attribution/">Personal Injury Ad Spend Attribution</a></h3><p>Why one blended cost per lead hides which campaigns sign cases and which burn budget.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/personal-injury-case-type-cac/">Personal Injury Case Type CAC</a></h3><p>Auto, premises, and malpractice cases carry very different values, so one cost target doesn&rsquo;t fit them all.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/personal-injury-settlement-lag/">Personal Injury Settlement Lag</a></h3><p>Fees arrive months after signing. How to judge campaigns without waiting a year.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/multi-state-pi-firm-attribution/">Multi-State PI Firm Attribution</a></h3><p>Different states are different ad markets. Why one national number hides the office that isn&rsquo;t working.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/mass-tort-lead-aggregator-economics/">Mass Tort Lead Aggregator Economics</a></h3><p>How shared leads change what a claimant really costs, and what to ask your aggregator.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/tcpa-compliance-cost-for-law-firms/">TCPA Compliance Cost for Law Firms Buying Leads</a></h3><p>Consent records and compliance review are part of what a bought lead really costs.</p></div>
+</div>
+
+<h2 id="home">Home Services</h2>
+<p>For HVAC, plumbing, and other contractors who measure success in booked and completed jobs.</p>
+<div class="blg-grid">
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/cost-per-booked-job-hvac-plumbing/">Cost Per Booked Job for HVAC and Plumbing</a></h3><p>The number that decides whether a campaign made money, and how to calculate it.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/hvac-customer-acquisition-cost/">HVAC Customer Acquisition Cost</a></h3><p>Adding back the call center, dispatch, software, and commissions that ad spend alone leaves out.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/hvac-customer-lifetime-value/">HVAC Customer Lifetime Value</a></h3><p>Why membership plans change what a new customer is worth, and what you can afford to pay for one.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/hvac-marketing-channel-mix/">HVAC Marketing Channel Mix</a></h3><p>Choosing the spend split by profit per channel, not the lowest cost per lead.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/hvac-seasonal-cost-per-lead/">HVAC Seasonal Cost Per Lead</a></h3><p>Why a flat monthly budget wastes money when lead costs swing with the seasons.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/angi-homeadvisor-lead-cost/">Angi and HomeAdvisor Lead Cost</a></h3><p>What a shared lead really costs per booked job once you account for competition on every lead.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/financing-fees-home-services/">How Financing Fees Eat Home Services Margin</a></h3><p>Merchant fees on financed jobs come out of margin. How to count them per campaign.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/reconciling-pace-greensky-service-finance/">Reconciling PACE, GreenSky, and Service Finance Fees</a></h3><p>Matching lender fees back to the campaigns that produced each financed job.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/true-cost-closed-install/">The True Cost of a Closed Install: Window and Door</a></h3><p>From cost per lead to cost per installed job, with every fee and refund counted.</p></div>
+</div>
+
+<h2 id="more">More Industries</h2>
+<p>The same profit-first approach to marketing ROI, applied to other lead-driven businesses.</p>
+<div class="blg-grid">
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/true-cost-per-move-in/">True Cost Per Move-In: Senior Living</a></h3><p>Referral fees and long sales cycles, and how to measure what each move-in really costs.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/cost-per-admission-addiction-treatment/">Cost Per Admission: Addiction Treatment</a></h3><p>From inquiry to admission, and the fallout steps a cost-per-lead view never shows.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/cost-per-enrolled-member-medicare-advantage/">Cost Per Enrolled Member: Medicare Advantage</a></h3><p>Enrollments, early disenrollment, and commission clawbacks, and what a retained member really costs.</p></div>
+  <div class="blg-card"><h3><a href="https://alloceraintelligence.com/marketing-margin-distortion-index/">The Marketing Margin Distortion Index</a></h3><p>How far dashboard cost per lead can drift from true acquisition cost, industry by industry.</p></div>
+</div>
+
+<h2 id="cdai">How Allocera CDAI Puts This Into Practice</h2>
+<p>Everything in these guides can be done by hand in a spreadsheet. CDAI (Capital, Decision, Accuracy, Intelligence) does it for you every night. It connects to Meta, Google Ads, LinkedIn, HubSpot, and Salesforce in one click, CallRail with an API key, and has built integrations for Ringba, Boberdoo, Bing, and Stripe, plus CSV import and a webhook. For every campaign and lead partner it calculates real profit and makes one of eight decisions: scale, hold, cut, pause, quarantine, renegotiate, investigate, or flag. You stay in control of every move.</p>
+<p>Before release, its decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>89.5% accurate overall (1,210 of 1,352 scored decisions)</strong>, with scale decisions at 98.0% and hold decisions at 95.2%. See the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">full validation report</a>, <a href="https://alloceraintelligence.com/how-it-works/">how it works</a>, and the <a href="https://alloceraintelligence.com/dashboard/">dashboard</a>.</p>
+
+<h2 id="faq">Marketing ROI FAQs</h2>
+<details>
+  <summary>What is marketing ROI?</summary>
+  <p>Marketing ROI is the return a business gets from its marketing compared with what it spent. The most useful version measures profit, meaning revenue kept minus every variable cost, not just revenue divided by ad spend.</p>
+</details>
+<details>
+  <summary>Is ROAS the same as marketing ROI?</summary>
+  <p>No. ROAS divides revenue by ad spend. It ignores refunds, lead partner payouts, fees, and the cost of delivering the work, so a campaign can have a strong ROAS and still lose money.</p>
+</details>
+<details>
+  <summary>Who are these guides for?</summary>
+  <p>Owners and marketing leads at businesses whose sales close in a CRM, especially those that buy leads or pay partners: law firms, home services, senior living, healthcare, insurance, and similar lead-driven companies.</p>
+</details>
+<details>
+  <summary>How do I start measuring profit per campaign?</summary>
+  <p>Start with <a href="https://alloceraintelligence.com/calculate-contribution-margin/">how to calculate contribution margin</a>. Pick one campaign, list every cost it creates, and subtract them from the revenue you actually kept.</p>
+</details>
+
+<section class="blg-final">
+  <h2>See Your Real Marketing ROI, Campaign by Campaign</h2>
+  <p>Connect the CRM and ad accounts you already use. CDAI shows, every night, which campaigns and lead partners make money and what to do next.</p>
+  <div class="blg-btns">
+    <a class="blg-btn blg-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <a class="blg-btn" href="https://alloceraintelligence.com/pricing/">Get a Free Distortion Audit</a>
+    <a class="blg-btn" href="https://alloceraintelligence.com/about/">About Allocera</a>
+  </div>
+</section>
+
+</article>
+
+<footer class="blg-footer">
+  <span><img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence" width="26" height="26">Allocera Intelligence &middot; CDAI Engine</span>
+  <span>&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/">Terms of Service</a></span>
+</footer>
+
+</div>
+<script>
+(function(){var b=document.getElementById('blgBurger'),l=document.getElementById('blgLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('blg-open');});}})();
+</script>

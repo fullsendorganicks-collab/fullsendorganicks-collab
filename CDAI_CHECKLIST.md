@@ -65,7 +65,8 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 | 5 | `/home-sample/northbeam-alternative/` | LIVE, **90** | optional: move to a clean URL with a 301 |
 | 6 | `/home-sample/rockerbox-alternative/` | LIVE (score not yet reported) | optional: move to a clean URL with a 301 |
 | 7 | `/cost-per-signed-case/` | LIVE, **90** | done |
-| 8 | next build: `/tcpa-compliance-cost-for-law-firms/` (99 impressions, position 25.5) | not started | none |
+| 8 | `/blog/` (hub, Page ID 187) | BUILT, **paste next** | paste `blog.html` and its Rank Math box |
+| 9 | next: `/pricing/` (after the Stripe session confirms free audit and credit wording) | not started | answer the credit question |
 
 - [ ] **Retire `/seven-cost-layers/`**: 301 it to `/calculate-contribution-margin/`. Its impressions come from unrelated searches ("sales layer cost", "layer cost"), it has 0 clicks, and the concept is retired.
 - **Rules:**
@@ -73,6 +74,8 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
   - Keep the original slugs.
   - Illustrative examples are labeled as such.
   - Every external stat is linked to a source that was live in Google's results when the page was built.
+
+**GA4 (Allocera):** Measurement ID `G-29J4V3VQ7B`, Property ID 529325874, Account ID 388377967. OpenRush lost its GSC/GA4 link on Sept 26. Reconnect it at openrush.com/dashboard/connections.
 
 **Remaining site work (Sept 26 plan). Order: SEO and info first, then Tag Manager, then Stripe.**
 - **Batch 1: Nick, about 15 minutes in WordPress, no new pages.**
