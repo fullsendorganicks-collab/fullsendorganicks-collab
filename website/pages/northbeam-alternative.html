@@ -1,0 +1,337 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#nba{font-variant-numeric:lining-nums;--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#E0566B;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+#nba *{box-sizing:border-box}
+#nba a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(222,187,106,.35)}
+#nba a:hover{color:#fff;border-bottom-color:#fff}
+#nba .nba-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(1,9,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+#nba .nba-nav a{border:0}
+#nba .nba-brand{display:flex;align-items:center;gap:10px;color:var(--text)}
+#nba .nba-brand img{height:34px;width:auto;display:block}
+#nba .nba-brand span{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.02em}
+#nba .nba-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;margin:0;padding:0}
+#nba .nba-links a{color:var(--dim);font-size:14px;font-weight:500}
+#nba .nba-links a:hover{color:#fff}
+#nba .nba-cta{background:var(--gold);color:#010914!important;font-weight:600;font-size:14px;padding:9px 18px;border-radius:2px}
+#nba .nba-cta:hover{background:var(--gold2)}
+#nba .nba-burger{display:none;background:none;border:1px solid var(--border2);color:var(--text);font-size:18px;padding:4px 10px;border-radius:2px;cursor:pointer}
+#nba .nba-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+#nba .nba-hero{padding:clamp(44px,8vh,84px) 0 clamp(20px,4vh,36px);border-bottom:1px solid var(--border)}
+#nba .nba-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:0 0 16px}
+#nba h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 20px;color:#fff}
+#nba .nba-lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);line-height:1.65;margin:0 0 22px}
+#nba .nba-byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.04em}
+#nba h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.15;color:#fff;margin:clamp(48px,7vh,68px) 0 16px;scroll-margin-top:90px}
+#nba h3{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:30px 0 8px}
+#nba p{margin:0 0 18px;color:var(--muted)}
+#nba strong{color:#fff;font-weight:600}
+#nba ul,#nba ol{margin:0 0 20px;padding-left:22px;color:var(--muted)}
+#nba li{margin:0 0 9px}
+#nba .nba-box{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
+#nba .nba-box h3{margin-top:0}
+#nba .nba-box ul{margin-bottom:0}
+#nba .nba-toc{background:transparent;border:1px solid var(--border2);border-radius:2px;padding:20px 24px;margin:30px 0}
+#nba .nba-toc p{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
+#nba .nba-toc ol{margin:0;padding-left:20px}
+#nba .nba-toc li{margin:0 0 6px}
+#nba .nba-toc a{color:var(--dim);border:0}
+#nba .nba-toc a:hover{color:#fff}
+#nba .nba-formula{background:#04102a;border:1px solid var(--border2);border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.6vw,15px);line-height:1.9;color:#fff;overflow-x:auto}
+#nba .nba-formula .nba-f-main{color:var(--gold2);font-size:clamp(14px,1.8vw,17px);font-weight:500}
+#nba .nba-formula .nba-f-label{color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:10px}
+#nba .nba-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+#nba .nba-stat{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;text-align:center}
+#nba .nba-stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,46px);font-weight:600;color:var(--green);line-height:1}
+#nba .nba-stat span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.45}
+#nba .nba-steps{counter-reset:s;list-style:none;padding:0}
+#nba .nba-steps li{counter-increment:s;position:relative;padding:0 0 4px 50px;margin:0 0 18px}
+#nba .nba-steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border:1px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
+#nba .nba-table-wrap{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--border2);border-radius:2px}
+#nba table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+#nba th{background:var(--surface);color:#fff;text-align:left;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border2);font-size:13px;letter-spacing:.02em}
+#nba td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+#nba tr:last-child td{border-bottom:0}
+#nba td.nba-num{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#nba .nba-pos{color:var(--green)!important;font-weight:600}
+#nba .nba-neg{color:var(--red)!important;font-weight:600}
+#nba .nba-total td{color:#fff;font-weight:600;background:rgba(196,160,64,.07)}
+#nba .nba-note{font-size:14px;color:var(--dim)}
+#nba td.nba-acc{min-width:210px}
+#nba .nba-mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#nba .nba-cnt{font-size:14px;color:var(--dim);white-space:nowrap}
+#nba code{font-family:'JetBrains Mono',monospace;font-size:.9em;background:#04102a;border:1px solid var(--border2);padding:1px 6px;border-radius:2px;color:var(--gold2)}
+#nba .nba-sub{display:block;font-size:14px;color:var(--dim);margin-top:4px;line-height:1.5}
+#nba figure{margin:28px 0}
+#nba figure img{width:100%;height:auto;display:block;border:1px solid var(--border2);border-radius:2px}
+#nba figcaption{font-size:14px;color:var(--dim);margin-top:10px}
+#nba blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,28px);line-height:1.35;color:#fff}
+#nba .nba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
+#nba .nba-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 20px}
+#nba .nba-card h3{margin:0 0 6px;font-size:17px}
+#nba .nba-card p{margin:0;font-size:15px}
+#nba details{border:1px solid var(--border2);border-radius:2px;margin:0 0 12px;background:var(--surface)}
+#nba summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none}
+#nba summary::-webkit-details-marker{display:none}
+#nba summary::after{content:'+';float:right;color:var(--gold2);font-family:'JetBrains Mono',monospace}
+#nba details[open] summary::after{content:'–'}
+#nba details p{padding:0 20px 4px;margin:0 0 14px}
+#nba .nba-final{margin:clamp(56px,8vh,80px) 0 0;padding:clamp(28px,5vw,48px);background:linear-gradient(135deg,#071530,#04102a);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;text-align:center}
+#nba .nba-final h2{margin-top:0}
+#nba .nba-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+#nba .nba-btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:600;font-size:15px;border:1px solid var(--gold)!important;color:var(--gold2)}
+#nba .nba-btn.nba-primary{background:var(--gold);color:#010914!important}
+#nba .nba-btn:hover{background:var(--gold2);color:#010914!important}
+#nba .nba-footer{margin-top:clamp(56px,8vh,80px);padding:26px clamp(16px,4vw,48px);border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim)}
+#nba .nba-footer a{color:var(--dim);border:0}
+#nba .nba-footer img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
+@media (max-width:900px){
+#nba .nba-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:#010914;border-bottom:1px solid var(--border);padding:14px 20px;gap:14px}
+#nba .nba-links.nba-open{display:flex}
+#nba .nba-burger{display:block}
+}
+@media (max-width:640px){
+#nba{font-size:16px}
+#nba .nba-stats,#nba .nba-grid{grid-template-columns:1fr}
+#nba .nba-cta{display:none}
+}
+
+</style>
+<div id="nba">
+
+<nav class="nba-nav">
+  <a class="nba-brand" href="https://alloceraintelligence.com/">
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence logo" width="34" height="34">
+    <span>Allocera Intelligence</span>
+  </a>
+  <ul class="nba-links" id="nbaLinks">
+    <li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li>
+    <li><a href="https://alloceraintelligence.com/proof/">Proof</a></li>
+    <li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li>
+    <li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li>
+    <li><a href="https://alloceraintelligence.com/about/">About</a></li>
+    <li><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></li>
+    <li><a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="nba-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <button class="nba-burger" id="nbaBurger" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+
+<article class="nba-wrap">
+
+<header class="nba-hero">
+  <p class="nba-eyebrow">The Margin Gap &middot; Tool Comparisons</p>
+  <h1>Northbeam Alternative for Lead Generation: When You Need Profit, Not Just Attribution</h1>
+  <p class="nba-lead">Looking for a Northbeam alternative usually means something isn&rsquo;t fitting. For ecommerce brands, the fix is often a different attribution tool. For lead generation and service businesses, the real gap is different: you need to know which campaigns made money after partner payouts, refunds, and fees, not just which ones earned the credit. This guide explains what Northbeam does well, the most common alternatives, and when you need a profit layer instead.</p>
+  <p class="nba-byline">By Nick Baum, Founder of Allocera Intelligence &middot; Updated September 2026 &middot; 12 min read</p>
+</header>
+
+<div class="nba-box">
+  <h3>Key takeaways</h3>
+  <ul>
+    <li>Northbeam is a marketing intelligence platform for ecommerce and direct-to-consumer brands, combining multi-touch attribution, media mix modeling, and incrementality testing.</li>
+    <li>The right Northbeam alternative depends on your business model: store orders, enterprise media mixes, or deals that close in a CRM.</li>
+    <li>For lead generation, the costs that decide profit (partner payouts, refunds, chargebacks, financing fees) arrive after the conversion.</li>
+    <li>In our example, a campaign with a 3.0 ROAS loses $6,500 once every cost is counted.</li>
+    <li>Allocera CDAI calculates profit per campaign every night and makes one clear decision for each. It can run alongside any attribution tool.</li>
+  </ul>
+</div>
+
+<nav class="nba-toc" aria-label="Table of contents">
+  <p>In this guide</p>
+  <ol>
+    <li><a href="#northbeam">What Northbeam does well</a></li>
+    <li><a href="#signs">Signs you need a Northbeam alternative</a></li>
+    <li><a href="#glance">Northbeam vs Allocera at a glance</a></li>
+    <li><a href="#options">Common Northbeam alternatives by use case</a></li>
+    <li><a href="#checklist">What to look for in a Northbeam alternative</a></li>
+    <li><a href="#example">Example: credit vs profit</a></li>
+    <li><a href="#cdai">Where Allocera CDAI fits</a></li>
+    <li><a href="#choose">How to choose</a></li>
+    <li><a href="#faq">FAQs</a></li>
+  </ol>
+</nav>
+
+<h2 id="northbeam">What Northbeam Does Well</h2>
+<p>Before choosing a Northbeam alternative, it helps to be clear about what Northbeam is good at. <a href="https://www.northbeam.io/" target="_blank" rel="noopener">Northbeam calls itself</a> &ldquo;the marketing intelligence platform for profitable&rdquo; growth, with a full suite of measurement: multi-touch attribution, incrementality, and media mix modeling.</p>
+<ul>
+  <li><strong>Multi-touch attribution</strong> shows which touchpoints across channels contributed to each conversion.</li>
+  <li><strong>Media mix modeling</strong> estimates how each channel contributes over time, including channels that are hard to track click by click.</li>
+  <li><strong>Incrementality testing.</strong> Northbeam says its <a href="https://www.northbeam.io/blog/introducing-incrementality-by-northbeam-automated-lift-testing-you-can-trust" target="_blank" rel="noopener">incrementality product</a> automates lift testing and unifies the results with its attribution and mix modeling. <a href="https://www.adexchanger.com/measurement/northbeam-adds-the-third-leg-of-the-attribution-stool-with-incrementality-testing/" target="_blank" rel="noopener">AdExchanger reported</a> in April 2026 that it launched with Meta and Google as test platforms.</li>
+</ul>
+<p>Independent reviews, such as <a href="https://saleshive.com/vendors/northbeam" target="_blank" rel="noopener">SalesHive&rsquo;s Northbeam review</a>, describe it as built for ecommerce and direct-to-consumer brands. If that is your business, Northbeam is a serious measurement platform, and you may only need a Northbeam alternative for reasons like budget or team fit.</p>
+
+<h2 id="signs">Signs You Need a Northbeam Alternative (or a Different Kind of Tool)</h2>
+<p>Most searches for a Northbeam alternative fall into two groups. Ecommerce brands usually want similar attribution at a different price or with a different interface. Lead generation and service businesses usually have a different problem entirely. You are in the second group if these sound familiar:</p>
+<ol class="nba-steps">
+  <li><strong>Your sale closes in a CRM, not a checkout.</strong> A signed case, a booked job, or a new resident is recorded in HubSpot or Salesforce, often weeks after the lead.</li>
+  <li><strong>You buy leads or pay partners.</strong> Lead vendors and partners take a payout on every lead or deal, and it varies by partner.</li>
+  <li><strong>Money comes back later.</strong> Refunds, cancellations, and chargebacks arrive long after the original conversion.</li>
+  <li><strong>You need a decision, not another dashboard.</strong> Your team wants to know what to do with each campaign tomorrow, not interpret a new set of charts.</li>
+</ol>
+<p>If that is you, switching from one attribution tool to another won&rsquo;t close the gap. The Northbeam alternative you need is a profit view that sits on top of the tools you already use.</p>
+
+<h2 id="glance">Northbeam vs Allocera at a Glance</h2>
+<p>Allocera isn&rsquo;t a copy of Northbeam, and it isn&rsquo;t trying to be. As a Northbeam alternative for lead generation, it answers a different question. Here is the comparison in one view.</p>
+<figure>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/northbeam-alternative-credit-vs-profit.png" alt="Northbeam alternative for lead generation comparing attribution credit and campaign profit" width="1200" height="630" loading="lazy">
+  <figcaption>Choosing a Northbeam alternative for lead generation starts here: attribution credit and campaign profit can point in opposite directions.</figcaption>
+</figure>
+<div class="nba-table-wrap">
+<table>
+  <thead><tr><th></th><th>Northbeam</th><th>Allocera CDAI</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Main question</strong></td><td>Which channels and touchpoints drive conversions, and what is incremental?</td><td>Did each campaign make money after every cost, and what should I do?</td></tr>
+    <tr><td><strong>Built for</strong></td><td>Ecommerce and direct-to-consumer brands</td><td>Businesses running paid ads or buying leads, with HubSpot or Salesforce</td></tr>
+    <tr><td><strong>Where revenue comes from</strong></td><td>Tracked conversions and orders</td><td>Closed deals in your CRM</td></tr>
+    <tr><td><strong>Core methods</strong></td><td>Multi-touch attribution, media mix modeling, incrementality testing</td><td>Contribution margin per campaign, eight nightly decisions</td></tr>
+    <tr><td><strong>Main output</strong></td><td>Measurement of channel impact</td><td>One decision per campaign, every night, with the numbers behind it</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="nba-note">Northbeam&rsquo;s description comes from its own website and blog, linked above. Features change, so check current plans with the vendor.</p>
+
+<h2 id="options">Common Northbeam Alternatives by Use Case</h2>
+<p>Roundups of Northbeam alternatives, such as <a href="https://research.com/software/alternatives/best-northbeam-alternatives" target="_blank" rel="noopener">this list from Research.com</a>, mostly feature other ecommerce attribution and analytics tools. The names that come up most often, and what each is usually chosen for:</p>
+<div class="nba-grid">
+  <div class="nba-card"><h3>Triple Whale</h3><p>An ecommerce analytics platform with attribution and profit tracking, often chosen by Shopify brands. See our <a href="https://alloceraintelligence.com/triple-whale-vs-rockerbox-vs-allocera/">Triple Whale vs Rockerbox comparison</a>.</p></div>
+  <div class="nba-card"><h3>Rockerbox</h3><p>Unified measurement for larger brands: attribution, mix modeling, and incrementality testing. It is now part of DoubleVerify.</p></div>
+  <div class="nba-card"><h3>Other attribution tools</h3><p>Polar Analytics, ThoughtMetric, Cometly, Hyros, and others appear in most roundups, each with a different focus and price point.</p></div>
+  <div class="nba-card"><h3>Allocera CDAI</h3><p>Not an attribution tool. A profit layer for businesses whose revenue closes in a CRM, with one decision per campaign every night.</p></div>
+</div>
+<p>If you run an online store and just want a different attribution tool, compare the first three directly with their vendors. If your revenue closes in a CRM and profit is your blind spot, read on.</p>
+
+<h2 id="checklist">What to Look for in a Northbeam Alternative for Lead Generation</h2>
+<p>If you sell through leads, judge any Northbeam alternative against the way your money actually moves. These six questions separate tools that fit lead generation from tools built for store checkouts.</p>
+<h3>1. Does it read revenue from your CRM?</h3>
+<p>Your real revenue is the signed case, the booked job, or the move-in recorded in HubSpot or Salesforce. A tool that only sees a conversion pixel or an ad platform&rsquo;s reported value is measuring a proxy, not the money you kept.</p>
+<h3>2. Can it wait for deals to close?</h3>
+<p>Lead generation sales cycles run days to months. A tool that judges a campaign after a week will cut campaigns whose deals simply haven&rsquo;t closed yet. Look for a rolling window you can match to your sales cycle.</p>
+<h3>3. Does it count partner payouts per campaign?</h3>
+<p>If you buy leads, the partner payout can be the largest cost after ad spend. It has to be tied to the campaign and the partner that produced each lead, not spread evenly across the month.</p>
+<h3>4. Does it tie refunds and chargebacks back to the original campaign?</h3>
+<p>Money that comes back weeks later should reduce the profit of the campaign that produced the sale, not whichever month it lands in. Otherwise your worst campaigns look fine and your best look worse.</p>
+<h3>5. Does it tell you what to do?</h3>
+<p>Measurement is only useful if someone acts on it. Ask whether the tool gives a clear recommendation for each campaign, with the numbers behind it, or leaves your team to interpret charts. <a href="https://www.hubspot.com/glossary/return-on-ad-spend" target="_blank" rel="noopener">ROAS</a> alone is not a decision.</p>
+<h3>6. Does it refuse to act on bad data?</h3>
+<p>Broken tracking and stale feeds happen. A good Northbeam alternative for lead generation should flag missing or suspicious data and hold its recommendations until the data is fixed, instead of confidently telling you to scale a campaign on numbers that are wrong.</p>
+
+<h2 id="example">Northbeam Alternative Example: Credit vs Profit</h2>
+<p>Here is an illustrative lead generation campaign that shows why a Northbeam alternative for lead generation has to measure profit, not just credit. The attribution view credits it with $150,000 in closed revenue on $50,000 of ad spend, a 3.0 ROAS. The credit is accurate. Now follow the money:</p>
+<div class="nba-table-wrap">
+<table>
+  <thead><tr><th>Line</th><th>Amount</th></tr></thead>
+  <tbody>
+    <tr><td>Closed revenue credited to the campaign</td><td class="nba-num">$150,000</td></tr>
+    <tr><td>Refunds and chargebacks</td><td class="nba-num nba-neg">&minus;$15,000</td></tr>
+    <tr><td>Revenue actually kept</td><td class="nba-num">$135,000</td></tr>
+    <tr><td>Cost to deliver the work (50% of revenue kept)</td><td class="nba-num nba-neg">&minus;$67,500</td></tr>
+    <tr><td>Ad spend</td><td class="nba-num nba-neg">&minus;$50,000</td></tr>
+    <tr><td>Lead partner payouts</td><td class="nba-num nba-neg">&minus;$20,000</td></tr>
+    <tr><td>Financing, payment, and compliance fees</td><td class="nba-num nba-neg">&minus;$4,000</td></tr>
+    <tr class="nba-total"><td>Contribution margin</td><td class="nba-num nba-neg">&minus;$6,500 (&minus;4.8%)</td></tr>
+  </tbody>
+</table>
+</div>
+<p>On an attribution dashboard, a 3.0 ROAS looks healthy. After every cost, this campaign loses $6,500 a month. Scaling it would make the loss bigger. The fix might be renegotiating the partner payout or cutting spend, and neither decision is visible from attribution credit alone. For more on the costs that hide here, see <a href="https://alloceraintelligence.com/chargebacks-marketing-cost/">how chargebacks inflate true marketing cost</a>, <a href="https://alloceraintelligence.com/financing-fees-home-services/">how financing fees eat home services margin</a>, and <a href="https://alloceraintelligence.com/tcpa-compliance-cost-for-law-firms/">TCPA compliance costs for law firms buying leads</a>.</p>
+<p>The math behind this is <a href="https://alloceraintelligence.com/calculate-contribution-margin/">contribution margin</a>: revenue you actually kept, minus every variable cost of winning it. The <a href="https://corporatefinanceinstitute.com/resources/accounting/contribution-margin-after-marketing-cmam/" target="_blank" rel="noopener">Corporate Finance Institute</a> calls the marketing version contribution margin after marketing. Our guide to <a href="https://alloceraintelligence.com/net-marketing-contribution/">net marketing contribution</a> and <a href="https://alloceraintelligence.com/roas-looks-good-campaigns-lose-money/">why ROAS can look good while campaigns lose money</a> go deeper.</p>
+
+<h2 id="cdai">Where Allocera CDAI Fits as a Northbeam Alternative</h2>
+<p>CDAI (Capital, Decision, Accuracy, Intelligence) is the engine behind Allocera Intelligence. It isn&rsquo;t an attribution tool. It works alongside your CRM, your ad accounts, and any attribution tool you already use, and it answers the profit question for every campaign, every night. For lead generation and service businesses, that makes it a different kind of Northbeam alternative: the profit layer, not another attribution model.</p>
+<p><strong>It connects to your existing stack.</strong> Meta, Google Ads, LinkedIn, HubSpot, and Salesforce connect in one click. CallRail connects with an API key. There are also built integrations for Ringba, Boberdoo, Bing, and Stripe, plus CSV import and a webhook for any other system. You can start with one CRM and one ad account; see <a href="https://alloceraintelligence.com/how-it-works/">how it works</a>.</p>
+<p><strong>Then, every night, for every campaign, it:</strong></p>
+<ul>
+  <li><strong>Calculates real profit.</strong> True cost per lead, true customer acquisition cost, and real margin after every fee, partner payout, refund, chargeback, operating cost, and compliance cost.</li>
+  <li><strong>Makes one of eight decisions:</strong> scale, hold, cut, pause, quarantine, renegotiate, investigate, or flag, with the numbers and a confidence level behind it. You stay in control of every move. Our guide to <a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">marketing budget allocation</a> explains each one.</li>
+  <li><strong>Judges each campaign on the right timeline.</strong> It uses a rolling window matched to your sales cycle (30 days by default), and it never cuts a campaign just because deals haven&rsquo;t closed yet.</li>
+  <li><strong>Holds partners accountable.</strong> Close rate, payouts, refunds, and chargebacks for every lead partner, each with a risk tier.</li>
+  <li><strong>Stops on bad data.</strong> Serious data problems stop that night&rsquo;s calls instead of driving them, and referral or offline revenue is counted but never forced into a campaign.</li>
+</ul>
+
+<h3>Validated before release</h3>
+<p>Before release, CDAI&rsquo;s decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>89.5% accurate overall (1,210 of 1,352 scored decisions)</strong>, with the underlying math matching 100%. Every decision type:</p>
+<div class="nba-table-wrap">
+<table>
+  <thead><tr><th>Decision</th><th>What it tells you</th><th>Accuracy</th></tr></thead>
+  <tbody>
+    <tr><td>Scale</td><td>Spend more here</td><td class="nba-acc"><span class="nba-mono nba-pos">98.0%</span> <span class="nba-cnt">(818 of 835)</span></td></tr>
+    <tr><td>Hold</td><td>Keep this steady</td><td class="nba-acc"><span class="nba-mono nba-pos">95.2%</span> <span class="nba-cnt">(40 of 42)</span></td></tr>
+    <tr><td>Pause</td><td>Stop this now</td><td class="nba-acc"><span class="nba-mono nba-pos">85.2%</span> <span class="nba-cnt">(144 of 169)</span></td></tr>
+    <tr><td>Flag</td><td>A person should look at this</td><td class="nba-acc"><span class="nba-mono">70.9%</span> <span class="nba-cnt">(200 of 282)</span><span class="nba-sub">The other 82 were neutral; none were wrong.</span></td></tr>
+    <tr><td>Cut</td><td>Reduce spend</td><td class="nba-acc"><span class="nba-mono">55.6%</span> <span class="nba-cnt">(5 of 9)</span><span class="nba-sub">All misses came from one deliberately extreme stress-test business.</span></td></tr>
+    <tr><td>Investigate</td><td>Something needs a closer look</td><td class="nba-acc"><span class="nba-mono nba-pos">100%</span> <span class="nba-cnt">(2 of 2)</span></td></tr>
+    <tr><td>Renegotiate</td><td>A partner is taking too much</td><td class="nba-acc"><span class="nba-mono nba-pos">100%</span> <span class="nba-cnt">(1 of 1)</span></td></tr>
+    <tr><td>Quarantine</td><td>Suspicious data, kept out of decisions</td><td class="nba-acc"><span class="nba-sub" style="margin-top:0">Caught correctly in all 12 cases. The outcome depends on a person acting on it, so these 12 count as misses in the overall number.</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p>Read the full method and results in our <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>.</p>
+
+<h2 id="choose">How to Choose the Right Northbeam Alternative</h2>
+<p>Start with where your revenue is recorded and which mistake costs you the most.</p>
+<div class="nba-grid">
+  <div class="nba-card"><h3>Stay with Northbeam if&hellip;</h3><p>You are an ecommerce or direct-to-consumer brand and it measures your channels well. A different attribution tool may not change much.</p></div>
+  <div class="nba-card"><h3>Pick another attribution tool if&hellip;</h3><p>You run an online store and want a different price, interface, or focus. Compare Triple Whale, Rockerbox, and the others directly.</p></div>
+  <div class="nba-card"><h3>Choose Allocera CDAI if&hellip;</h3><p>Your sales close in HubSpot or Salesforce, you buy leads or pay partners, and you need profit per campaign with a clear decision every night.</p></div>
+  <div class="nba-card"><h3>Use both if&hellip;</h3><p>You need both answers. Attribution tells you who gets credit; CDAI tells you whether the campaign made money. They don&rsquo;t conflict.</p></div>
+</div>
+<p>Industry guides show what the profit question looks like in practice: <a href="https://alloceraintelligence.com/cost-per-signed-case/">personal injury law</a>, <a href="https://alloceraintelligence.com/cost-per-booked-job-hvac-plumbing/">HVAC and plumbing</a>, <a href="https://alloceraintelligence.com/true-cost-per-move-in/">senior living</a>, and <a href="https://alloceraintelligence.com/angi-homeadvisor-lead-cost/">bought leads from Angi and HomeAdvisor</a>.</p>
+
+<h2 id="faq">Northbeam Alternative FAQs</h2>
+<details>
+  <summary>What is the best Northbeam alternative?</summary>
+  <p>It depends on your business. Ecommerce brands usually compare other attribution tools such as Triple Whale, Rockerbox, and Polar Analytics. Lead generation and service businesses whose revenue closes in a CRM often need a profit layer like Allocera CDAI rather than another attribution model.</p>
+</details>
+<details>
+  <summary>What does Northbeam do?</summary>
+  <p>Northbeam is a marketing intelligence platform that combines multi-touch attribution, media mix modeling, and incrementality testing to show which channels and campaigns drive conversions.</p>
+</details>
+<details>
+  <summary>Is Northbeam good for lead generation?</summary>
+  <p>Northbeam is built mainly for ecommerce and direct-to-consumer brands. If your revenue closes in a CRM weeks after the lead and your biggest costs are partner payouts, refunds, and fees, check how any attribution tool handles that before you buy.</p>
+</details>
+<details>
+  <summary>Does Northbeam offer incrementality testing?</summary>
+  <p>Yes. Northbeam launched an incrementality product that automates lift testing and combines results with its attribution and mix modeling. AdExchanger reported in April 2026 that it started with Meta and Google as test platforms.</p>
+</details>
+<details>
+  <summary>Is Allocera a replacement for Northbeam?</summary>
+  <p>Not in the attribution sense. CDAI doesn&rsquo;t assign credit to touchpoints. It calculates profit per campaign from your ad accounts and CRM and makes one decision per campaign each night. It can run alongside Northbeam; it doesn&rsquo;t connect to Northbeam directly.</p>
+</details>
+<details>
+  <summary>What is incrementality testing?</summary>
+  <p>Incrementality testing checks whether a campaign or channel caused sales that would not have happened anyway, usually by comparing a group that saw the ads with a group that didn&rsquo;t. It answers &ldquo;did this ad cause the sale?&rdquo; rather than &ldquo;did this ad make money?&rdquo;</p>
+</details>
+<details>
+  <summary>What is contribution margin in marketing?</summary>
+  <p>Contribution margin is the revenue a campaign actually kept, minus every variable cost of winning it: ad spend, partner payouts, the cost to deliver the work, and fees. It shows whether a campaign added profit or took it away, which ROAS and attribution credit can&rsquo;t show on their own.</p>
+</details>
+<details>
+  <summary>Why can a campaign with a good ROAS lose money?</summary>
+  <p>ROAS divides revenue by ad spend and ignores everything else. Refunds, the cost to deliver the work, partner payouts, and fees can turn a 3.0 ROAS into a loss, as the example above shows.</p>
+</details>
+
+<section class="nba-final">
+  <h2>Find Out Which Campaigns Actually Make You Money</h2>
+  <p>Looking for a Northbeam alternative because the numbers don&rsquo;t match your bank account? Keep the tools you like and add the profit layer. CDAI connects to the CRM and ad accounts you already use and tells you, every night, whether each campaign made money and what to do next.</p>
+  <div class="nba-btns">
+    <a class="nba-btn nba-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <a class="nba-btn" href="https://alloceraintelligence.com/pricing/">Get a Free Distortion Audit</a>
+    <a class="nba-btn" href="https://alloceraintelligence.com/dashboard/">See the Dashboard</a>
+  </div>
+</section>
+
+</article>
+
+<footer class="nba-footer">
+  <span><img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence" width="26" height="26">Allocera Intelligence &middot; CDAI Engine</span>
+  <span>&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/">Terms of Service</a></span>
+</footer>
+
+</div>
+<script>
+(function(){var b=document.getElementById('nbaBurger'),l=document.getElementById('nbaLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('nba-open');});}})();
+</script>

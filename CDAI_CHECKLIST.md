@@ -58,6 +58,8 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 - [x] **Page 1: `/net-marketing-contribution/`**: live, Rank Math **91/100** (Sept 26).
 - [x] **Page 2: `/calculate-contribution-margin/`**: live, Rank Math **90/100** (Sept 26).
 - [x] **Page 3: `/scale-hold-cut-pause-framework/`** (original slug kept): live, Rank Math **89/100** (Sept 26).
+- [ ] **Page 5: `/home-sample/northbeam-alternative/`**: built Sept 26. Recommend moving it to `/northbeam-alternative/` with a 301 redirect.
+- [ ] **Retire `/seven-cost-layers/`**: 301 it to `/calculate-contribution-margin/`. Its impressions come from unrelated searches ("sales layer cost", "layer cost"), it has 0 clicks, and the concept is retired.
 - [ ] **Page 4: `/triple-whale-vs-rockerbox-vs-allocera/`**: built Sept 26. It's the #2 page for impressions (689), and the rebuild removes the 80% claim and false competitor claims.
 
 **Per page:** audit it against the engine, the validation report, GA, and Search Console. Nick says yes or no to each change, and Claude delivers the finished HTML block plus Rank Math fields.
