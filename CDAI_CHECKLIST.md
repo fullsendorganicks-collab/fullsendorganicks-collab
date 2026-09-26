@@ -100,6 +100,12 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 4. **Turn off Comments and Pings** on posts (they attract spam and do nothing for SEO).
 5. **Delete "every two weeks"** from `/newsletter-welcome/` and `/roas-looks-good-campaigns-lose-money/`.
 6. **Turn on Rank Math's 404 Monitor.**
+8. **Schema:** the Pages default was set to "None" on Sept 26 (Posts stay Article → Blog Post). TOMORROW:
+   - Open Northbeam, Rockerbox, and the validation report (contribution-margin-marketing), and set each page's Rank Math → Schema to Article → Blog Post.
+   - Check Titles & Meta → Local SEO: Organization, "Allocera Intelligence", new logo.
+9. **Turn off Comments and Pings** on all posts (tomorrow).
+10. **Search Console:** export the URL lists for "Crawled – currently not indexed", "noindex", "404", and "Redirect error".
+11. **Send the Tag Manager container ID** (`GTM-XXXXXXX`).
 7. **Done Sept 26:** every page is now on Elementor Canvas. Leave the "Elementor Canvas" template as it is. It's why each page carries its own nav and footer.
 
 **Google index report (Sept 26 upload):**
