@@ -8,14 +8,23 @@ Nick's running list. Claude keeps it current and checks items off as they ship.
 - No years or dates in titles or bylines.
 - Keep the original slugs.
 
-_Last updated: Sept 26, 2026, from a full re-read of the whole chat, Sept 21 to 26._
+_Last updated: Sept 26, 2026 (late), after the engine fixes Nick approved and the homepage AI section was restored._
 
 ---
 
 ## A. Nick's list for tomorrow (WordPress / Google, no code)
 
-1. **Paste the updated homepage.** It's `website/homepage.html`, which is the live homepage plus the new tracking at the bottom. Nothing else changed. Paste it into the single Elementor HTML widget.
-2. **GA4 key events.** In GA4 → Admin → Events, after the first visits come in, mark these as Key events:
+1. **Paste the updated homepage** (`website/homepage.html`) into the single Elementor HTML widget. Compared with the live page, three things changed:
+   - The **Ask AI section** (ChatGPT, Claude, Perplexity, Grok, with real logos) is back, just above the FAQ.
+   - **F6S** now shows its real logo instead of plain text.
+   - **Tracking** is added at the bottom.
+
+   The "Featured, Listed & Powered By" section (Crunchbase, LinkedIn, Indie Hackers, F6S, Stripe, Smol Launch, G2, AlternativeTo) was already on the page and is kept.
+2. **Merge these engine PRs** after you've read each one; all are tested:
+   - **#33** Bing + labels: https://github.com/fullsendorganicks-collab/cdai-engine/pull/33
+   - **#34** Digest logo: https://github.com/fullsendorganicks-collab/cdai-engine/pull/34
+   - **#35** Test-business errors: https://github.com/fullsendorganicks-collab/cdai-engine/pull/35
+2b. **GA4 key events.** In GA4 → Admin → Events, after the first visits come in, mark these as Key events:
    - `generate_lead`
    - `signup_click`
    - `chat_open`
@@ -111,17 +120,25 @@ Tested in a browser Sept 26: all events fired with 0 errors.
   - *Recommendation:* default both to $0 unless the client supplies real values, before the first client who uploads a CSV.
 - **D3. Calculator hint.** It says "default $0.25", but the calculator actually uses $0.
   - *Recommendation:* reword it to "only if you pay for per-lead consent certificates".
-- **D4. Fake names and emails.** 2,738 simulated-business lead records still hold them.
-  - *Recommendation:* strip them.
-- **D5. Sync on connect.** Run the first data pull as soon as a client connects, instead of waiting for 2 AM UTC.
-  - *Recommendation:* yes.
-- **D6. AI links section** (ChatGPT/Claude/Perplexity/Grok). **On Sept 25 Nick said he wanted it kept.** It is NOT in the current homepage.
-  - *Claude's view:* no proven SEO effect, and it sends visitors away.
-  - Nick decides. If yes, Claude adds it back.
+- ~~D4. Fake names and emails~~ **DONE Sept 26:** removed from all 2,738 test-business records (8 test businesses). 0 real-client rows were touched, and 0 records with names or emails remain.
+- **D5. Sync on connect.** Today, when a new client connects Meta, Google, or their CRM, nothing is pulled until the nightly run at 2 AM UTC (about 10 PM Eastern). A client who signs up at 9 AM sees an empty dashboard all day. "Sync on connect" means the first pull starts the moment they click Connect, so they see their numbers within minutes.
+  - *Recommendation:* yes. It's the first impression for every self-serve client.
+  - Say yes and Claude builds and tests it.
+- ~~D6. AI links section~~ **DONE:** Nick said yes, and it's back in `website/homepage.html` with real logos and click tracking.
 - **D7. The intake form's job** now that self-serve is live.
   - *Recommendation:* free-audit request now; "Partner with us / talk to Nick" once the free audit is settled.
-- **D8. Apex.** Still receiving leads (last one Sept 24), but 0 ad-spend rows and 0 active campaigns, so no decisions since Aug 13.
-  - *Ask Nick:* is their ad spend paused, or should Claude check the connection?
+- **D8. Apex: ROOT CAUSE FOUND (Sept 26, Render logs + database, read-only).**
+  - **What's wrong:** Apex's Meta sync fails every night with a database error (`campaigns_channel_id_fkey`). Apex's saved Meta settings point to a channel (`7acaf75a…`) that no longer exists; Apex only has one channel, `paid_search`. So no Meta spend has come in, and there have been no decisions since Aug 13.
+  - **Google:** every night the log also says "No Google Ads token found", because the saved Google settings don't match the Google token on file.
+  - **The fix:** repoint Apex's Meta and Google settings to a real channel. That's a small change to Apex's data, so **Claude needs Nick's explicit OK** (the standing rule is never to touch Apex data).
+  - **Optional code guard:** when a saved channel is missing, create it instead of failing. That would protect every future client.
+  - **Nick decides:** fix Apex (yes/no), and add the guard (yes/no).
+- **D9. Stripe, Boberdoo, Ringba accuracy fixes: NEEDS NICK (these would change validated numbers).** The Sept 2026 validation ran its data through these three adapters exactly as they are today, so changing how they count money would move the 89.5% results and would need a re-test.
+  - **Stripe** assumes a 7% processing fee on every sale. Real Stripe US pricing is about 2.9% + 30¢. Fixing it means every validated business shows higher margins.
+  - **Boberdoo:** the price paid for each lead lands only in dashboard CPL and is never counted in true cost. Fixing it means Boberdoo campaigns show higher costs, and those campaigns include the source of all 169 PAUSE results.
+  - **Boberdoo** also puts all leads under one campaign, regardless of which Boberdoo campaign they came from.
+  - **Ringba** drops partner payouts when a call has no partner ID.
+  - *Recommendation:* fix all four for real clients, then re-run the validation so the published numbers match. Claude does nothing until Nick says go.
 - **Free audit credit wording.** Pricing page: "first 90 days"; homepage: "100% toward a retainer". Pick one when the free audit is settled.
 
 ---
@@ -129,13 +146,12 @@ Tested in a browser Sept 26: all events fired with 0 errors.
 ## E. Engine and product (Claude, after a yes)
 
 - [ ] **Free Distortion Audit in Stripe.** Being handled in another Claude Code session; the prompt is in `STRIPE_FREE_AUDIT_PROMPT.md`. On hold while Nick works it out.
-- [ ] **Adapter fixes before turning on nightly sync** (CallRail is already live, PR #28):
-  - Bing puts all spend under one campaign.
-  - Boberdoo's lead cost never reaches true cost.
-  - Stripe assumes a 7% fee.
-  - Ringba drops partner payouts.
-- [ ] **Digest email logo fix.** Offered, awaiting a yes.
-- [ ] **Clean up the [SIM] nightly errors.** Offered, awaiting a yes.
+- [x] **Bing fixed (PR #33, awaiting merge).** Spend now lands per campaign, and a re-sync no longer counts the same spend twice (a second bug found along the way). 19/19 checks pass. Bing isn't live yet, and it wasn't part of the validation.
+- [x] **Ringba and Boberdoo leads are labeled correctly (PR #33).** A client's CSV re-upload can no longer delete them. No math changes. 6/6 checks pass.
+- [ ] **Stripe, Boberdoo, Ringba money fixes:** waiting on Nick (see D9).
+- [ ] **Turn on the nightly pull for Bing, Ringba, Boberdoo, and Stripe** once D9 is decided.
+- [x] **Digest email logo fixed (PR #34, awaiting merge).** Gmail blocks embedded images, so the logo showed broken; it now uses the logo hosted on the website. The health report also switched to the new logo.
+- [x] **Test-business nightly errors fixed (PR #35, awaiting merge).** The Salesforce sync no longer calls a fake address for the 9 test businesses, which was 27 errors every night.
 - [ ] **VINDEX live test.** Ask about 15 real prospect and investor questions; Nick reviews the answers.
   - Must say: clients need HubSpot or Salesforce, and run paid ads and/or buy leads.
   - Must never contradict the validation.
@@ -202,6 +218,11 @@ Tested in a browser Sept 26: all events fired with 0 errors.
 
 ## Done
 
+- [x] **Sept 26 (late):**
+  - Engine PRs #33, #34, #35 built and tested.
+  - Fake names and emails stripped from the test data.
+  - Apex root cause found.
+  - Homepage AI section restored, and F6S shows its real logo.
 - [x] **Sept 26:**
   - 8 pages rebuilt (scores above).
   - Blog rebuilt on Nick's design.
