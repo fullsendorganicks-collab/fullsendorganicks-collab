@@ -2,7 +2,9 @@
 
 **Source:** Nick's two WordPress exports (Sept 25 2026): 16 pages and 35 posts, 51 URLs in all. Each finding below names the pages it affects and the proof.
 
-**Nothing has been changed on the site.** Every fix waits on Nick's yes.
+**Every fix waits on Nick's yes.** Rebuilt pages (Sept 26):
+- `/net-marketing-contribution/`: live, Rank Math 91/100.
+- `/calculate-contribution-margin/`: built. Its rebuild also fixes this page's wrong canonical (A3b) and doubled title (A3), and removes false fee claims, double-counted refunds, exposed thresholds, and unsourced statistics.
 
 ---
 

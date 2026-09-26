@@ -3,7 +3,7 @@
 Nick's running list. Claude keeps it current and checks items off as they ship.
 Rule: nothing gets built until Nick has seen it and said yes. Every public claim must be provable.
 
-_Last updated: Sept 25, 2026 (everything from the session consolidated)_
+_Last updated: Sept 26, 2026 (page rebuilds started)_
 
 ---
 
@@ -53,6 +53,10 @@ _Last updated: Sept 25, 2026 (everything from the session consolidated)_
 ## 5. Rest of the website (51 URLs), one page at a time
 
 **WordPress export received (Sept 25).** Read-only audit, with proof for each finding, in `website/SITE_AUDIT.md`. Nothing on the site has been changed; every fix waits on Nick's yes.
+
+**Rebuilt so far** (files in `website/pages/`, each with its Rank Math box):
+- [x] **Page 1: `/net-marketing-contribution/`**: live, Rank Math **91/100** (Sept 26).
+- [ ] **Page 2: `/calculate-contribution-margin/`**: built and tested Sept 26. Nick uploads the chart image, pastes the block, and sets the Rank Math fields.
 
 **Per page:** audit it against the engine, the validation report, GA, and Search Console. Nick says yes or no to each change, and Claude delivers the finished HTML block plus Rank Math fields.
 

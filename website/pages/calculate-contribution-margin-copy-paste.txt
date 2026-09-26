@@ -1,0 +1,419 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#ccm{font-variant-numeric:lining-nums;--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#E0566B;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+#ccm *{box-sizing:border-box}
+#ccm a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(222,187,106,.35)}
+#ccm a:hover{color:#fff;border-bottom-color:#fff}
+#ccm .ccm-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(1,9,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+#ccm .ccm-nav a{border:0}
+#ccm .ccm-brand{display:flex;align-items:center;gap:10px;color:var(--text)}
+#ccm .ccm-brand img{height:34px;width:auto;display:block}
+#ccm .ccm-brand span{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.02em}
+#ccm .ccm-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;margin:0;padding:0}
+#ccm .ccm-links a{color:var(--dim);font-size:14px;font-weight:500}
+#ccm .ccm-links a:hover{color:#fff}
+#ccm .ccm-cta{background:var(--gold);color:#010914!important;font-weight:600;font-size:14px;padding:9px 18px;border-radius:2px}
+#ccm .ccm-cta:hover{background:var(--gold2)}
+#ccm .ccm-burger{display:none;background:none;border:1px solid var(--border2);color:var(--text);font-size:18px;padding:4px 10px;border-radius:2px;cursor:pointer}
+#ccm .ccm-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+#ccm .ccm-hero{padding:clamp(44px,8vh,84px) 0 clamp(20px,4vh,36px);border-bottom:1px solid var(--border)}
+#ccm .ccm-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:0 0 16px}
+#ccm h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 20px;color:#fff}
+#ccm .ccm-lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);line-height:1.65;margin:0 0 22px}
+#ccm .ccm-byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.04em}
+#ccm h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.15;color:#fff;margin:clamp(48px,7vh,68px) 0 16px;scroll-margin-top:90px}
+#ccm h3{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:30px 0 8px}
+#ccm p{margin:0 0 18px;color:var(--muted)}
+#ccm strong{color:#fff;font-weight:600}
+#ccm ul,#ccm ol{margin:0 0 20px;padding-left:22px;color:var(--muted)}
+#ccm li{margin:0 0 9px}
+#ccm .ccm-box{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
+#ccm .ccm-box h3{margin-top:0}
+#ccm .ccm-box ul{margin-bottom:0}
+#ccm .ccm-toc{background:transparent;border:1px solid var(--border2);border-radius:2px;padding:20px 24px;margin:30px 0}
+#ccm .ccm-toc p{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
+#ccm .ccm-toc ol{margin:0;padding-left:20px}
+#ccm .ccm-toc li{margin:0 0 6px}
+#ccm .ccm-toc a{color:var(--dim);border:0}
+#ccm .ccm-toc a:hover{color:#fff}
+#ccm .ccm-formula{background:#04102a;border:1px solid var(--border2);border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.6vw,15px);line-height:1.9;color:#fff;overflow-x:auto}
+#ccm .ccm-formula .ccm-f-main{color:var(--gold2);font-size:clamp(14px,1.8vw,17px);font-weight:500}
+#ccm .ccm-formula .ccm-f-label{color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:10px}
+#ccm .ccm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+#ccm .ccm-stat{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;text-align:center}
+#ccm .ccm-stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,46px);font-weight:600;color:var(--green);line-height:1}
+#ccm .ccm-stat span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.45}
+#ccm .ccm-steps{counter-reset:s;list-style:none;padding:0}
+#ccm .ccm-steps li{counter-increment:s;position:relative;padding:0 0 4px 50px;margin:0 0 18px}
+#ccm .ccm-steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border:1px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
+#ccm .ccm-table-wrap{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--border2);border-radius:2px}
+#ccm table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+#ccm th{background:var(--surface);color:#fff;text-align:left;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border2);font-size:13px;letter-spacing:.02em}
+#ccm td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+#ccm tr:last-child td{border-bottom:0}
+#ccm td.ccm-num{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#ccm .ccm-pos{color:var(--green)!important;font-weight:600}
+#ccm .ccm-neg{color:var(--red)!important;font-weight:600}
+#ccm .ccm-total td{color:#fff;font-weight:600;background:rgba(196,160,64,.07)}
+#ccm .ccm-note{font-size:14px;color:var(--dim)}
+#ccm td.ccm-acc{min-width:210px}
+#ccm .ccm-mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#ccm .ccm-cnt{font-size:14px;color:var(--dim);white-space:nowrap}
+#ccm code{font-family:'JetBrains Mono',monospace;font-size:.9em;background:#04102a;border:1px solid var(--border2);padding:1px 6px;border-radius:2px;color:var(--gold2)}
+#ccm .ccm-sub{display:block;font-size:14px;color:var(--dim);margin-top:4px;line-height:1.5}
+#ccm figure{margin:28px 0}
+#ccm figure img{width:100%;height:auto;display:block;border:1px solid var(--border2);border-radius:2px}
+#ccm figcaption{font-size:14px;color:var(--dim);margin-top:10px}
+#ccm blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,28px);line-height:1.35;color:#fff}
+#ccm .ccm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
+#ccm .ccm-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 20px}
+#ccm .ccm-card h3{margin:0 0 6px;font-size:17px}
+#ccm .ccm-card p{margin:0;font-size:15px}
+#ccm details{border:1px solid var(--border2);border-radius:2px;margin:0 0 12px;background:var(--surface)}
+#ccm summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none}
+#ccm summary::-webkit-details-marker{display:none}
+#ccm summary::after{content:'+';float:right;color:var(--gold2);font-family:'JetBrains Mono',monospace}
+#ccm details[open] summary::after{content:'–'}
+#ccm details p{padding:0 20px 4px;margin:0 0 14px}
+#ccm .ccm-final{margin:clamp(56px,8vh,80px) 0 0;padding:clamp(28px,5vw,48px);background:linear-gradient(135deg,#071530,#04102a);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;text-align:center}
+#ccm .ccm-final h2{margin-top:0}
+#ccm .ccm-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+#ccm .ccm-btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:600;font-size:15px;border:1px solid var(--gold)!important;color:var(--gold2)}
+#ccm .ccm-btn.ccm-primary{background:var(--gold);color:#010914!important}
+#ccm .ccm-btn:hover{background:var(--gold2);color:#010914!important}
+#ccm .ccm-footer{margin-top:clamp(56px,8vh,80px);padding:26px clamp(16px,4vw,48px);border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim)}
+#ccm .ccm-footer a{color:var(--dim);border:0}
+#ccm .ccm-footer img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
+@media (max-width:900px){
+#ccm .ccm-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:#010914;border-bottom:1px solid var(--border);padding:14px 20px;gap:14px}
+#ccm .ccm-links.ccm-open{display:flex}
+#ccm .ccm-burger{display:block}
+}
+@media (max-width:640px){
+#ccm{font-size:16px}
+#ccm .ccm-stats,#ccm .ccm-grid{grid-template-columns:1fr}
+#ccm .ccm-cta{display:none}
+}
+
+#ccm .ccm-calc{background:var(--surface);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
+#ccm .ccm-calc h3{margin-top:0}
+#ccm .ccm-tabs{display:flex;gap:8px;margin:0 0 18px;flex-wrap:wrap}
+#ccm .ccm-tab{background:transparent;border:1px solid var(--border2);color:var(--dim);font:600 14px 'Inter',sans-serif;padding:8px 14px;border-radius:2px;cursor:pointer}
+#ccm .ccm-tab.ccm-on{background:var(--gold);border-color:var(--gold);color:#010914}
+#ccm .ccm-fields{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+#ccm .ccm-fields label{display:block;font-size:13px;color:var(--dim);margin-bottom:6px}
+#ccm .ccm-fields input{width:100%;background:#04102a;border:1px solid var(--border2);color:#fff;font:500 16px 'JetBrains Mono',monospace;padding:10px 12px;border-radius:2px}
+#ccm .ccm-fields input:focus{outline:none;border-color:var(--gold)}
+#ccm .ccm-out{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+#ccm .ccm-out div{background:#04102a;border:1px solid var(--border);border-radius:2px;padding:14px;text-align:center}
+#ccm .ccm-out b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,38px);font-weight:600;color:var(--green);line-height:1.1}
+#ccm .ccm-out b.ccm-bad{color:var(--red)}
+#ccm .ccm-out span{display:block;font-size:13px;color:var(--dim);margin-top:6px}
+#ccm .ccm-hide{display:none}
+@media (max-width:640px){#ccm .ccm-fields,#ccm .ccm-out{grid-template-columns:1fr}}
+</style>
+<div id="ccm">
+
+<nav class="ccm-nav">
+  <a class="ccm-brand" href="https://alloceraintelligence.com/">
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence logo" width="34" height="34">
+    <span>Allocera Intelligence</span>
+  </a>
+  <ul class="ccm-links" id="ccmLinks">
+    <li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li>
+    <li><a href="https://alloceraintelligence.com/proof/">Proof</a></li>
+    <li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li>
+    <li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li>
+    <li><a href="https://alloceraintelligence.com/about/">About</a></li>
+    <li><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></li>
+    <li><a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="ccm-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <button class="ccm-burger" id="ccmBurger" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+
+<article class="ccm-wrap">
+
+<header class="ccm-hero">
+  <p class="ccm-eyebrow">The Margin Gap &middot; Marketing Profit</p>
+  <h1>How to Calculate Contribution Margin: Formulas, a Free Calculator, and a Real Campaign Example</h1>
+  <p class="ccm-lead">To calculate contribution margin, subtract your variable costs from your revenue. That one number shows how much of every sale is left to cover fixed costs and turn into profit. This guide covers the three standard formulas, gives you a calculator, and then shows how to calculate contribution margin for a marketing campaign, where most businesses get it wrong.</p>
+  <p class="ccm-byline">By Nick Baum, Founder of Allocera Intelligence &middot; Updated September 2026 &middot; 13 min read</p>
+</header>
+
+<div class="ccm-box">
+  <h3>Key takeaways</h3>
+  <ul>
+    <li><strong>Contribution margin = revenue &minus; variable costs.</strong> The contribution margin ratio is that number divided by revenue.</li>
+    <li>Per unit, it&rsquo;s selling price minus variable cost per unit. That tells you how many units you need to sell to break even.</li>
+    <li>For a marketing campaign, variable costs include the cost to deliver the work, ad spend, partner payouts, and fees, and revenue should be what you actually kept after refunds.</li>
+    <li>A campaign can show a 4.8 ROAS and only a 22% contribution margin. The worked example below shows exactly how.</li>
+    <li>CDAI calculates this for every campaign, every night, from the CRM and ad accounts you already use.</li>
+  </ul>
+</div>
+
+<nav class="ccm-toc" aria-label="Table of contents">
+  <p>In this guide</p>
+  <ol>
+    <li><a href="#what-is">What is contribution margin?</a></li>
+    <li><a href="#formulas">The contribution margin formulas</a></li>
+    <li><a href="#steps">How to calculate contribution margin, step by step</a></li>
+    <li><a href="#calculator">Contribution margin calculator</a></li>
+    <li><a href="#campaign">How to calculate contribution margin for a marketing campaign</a></li>
+    <li><a href="#compare">Contribution margin vs. gross margin vs. ROAS</a></li>
+    <li><a href="#mistakes">Five mistakes to avoid</a></li>
+    <li><a href="#good">What is a good contribution margin?</a></li>
+    <li><a href="#cdai">How CDAI calculates it on every campaign</a></li>
+    <li><a href="#faq">FAQs</a></li>
+  </ol>
+</nav>
+
+<h2 id="what-is">What Is Contribution Margin?</h2>
+<p>Contribution margin is the money left from a sale after you pay the costs that rise and fall with that sale. Those are your <strong>variable costs</strong>: materials, labor on the job, shipping, payment fees, sales commissions, and, for a marketing campaign, the cost of winning the customer.</p>
+<p>What is left &ldquo;contributes&rdquo; toward your <strong>fixed costs</strong>, like rent, salaries, and software, which you pay no matter how much you sell. Once fixed costs are covered, every extra dollar of contribution margin is profit. <a href="https://www.investopedia.com/terms/c/contributionmargin.asp" target="_blank" rel="noopener">Investopedia</a> and the standard <a href="https://courses.lumenlearning.com/wm-managerialaccounting/chapter/contribution-margin/" target="_blank" rel="noopener">managerial accounting texts</a> define it the same way.</p>
+<p>That is why finance teams love it. Revenue tells you how big a sale was. Contribution margin tells you whether it was worth making. (For the history and variations of the term, see <a href="https://en.wikipedia.org/wiki/Contribution_margin" target="_blank" rel="noopener">Wikipedia&rsquo;s entry on contribution margin</a>.)</p>
+<p>Before you calculate contribution margin, sort every cost into one of two buckets: does it go up when you sell more (variable), or would you pay it anyway (fixed)? Getting that split right matters more than any formula.</p>
+
+<h2 id="formulas">The Contribution Margin Formulas</h2>
+<p>You can calculate contribution margin three ways, and you will use all three. Each one answers a slightly different question.</p>
+<div class="ccm-formula">
+  <span class="ccm-f-label">Total contribution margin</span>
+  <span class="ccm-f-main">Contribution Margin = Revenue &minus; Variable Costs</span>
+  <span class="ccm-f-label">Contribution margin per unit</span>
+  CM per Unit = Selling Price per Unit &minus; Variable Cost per Unit
+  <span class="ccm-f-label">Contribution margin ratio (percentage)</span>
+  CM Ratio = Contribution Margin &divide; Revenue &times; 100
+  <span class="ccm-f-label">Break-even point (in units)</span>
+  Break-even Units = Fixed Costs &divide; CM per Unit
+</div>
+<ul>
+  <li><strong>Total contribution margin</strong> tells you how many dollars a product line, month, or campaign contributed.</li>
+  <li><strong>Contribution margin per unit</strong> tells you what each sale adds, which is what you need for pricing and break-even math.</li>
+  <li><strong>The contribution margin ratio</strong> tells you what share of every revenue dollar is left. It&rsquo;s the easiest way to compare products or campaigns of different sizes. <a href="https://www.xero.com/us/guides/contribution-margin-ratio/" target="_blank" rel="noopener">Xero&rsquo;s guide to the contribution margin ratio</a> walks through more examples.</li>
+</ul>
+
+<h2 id="steps">How to Calculate Contribution Margin, Step by Step</h2>
+<p>Here is how to calculate contribution margin for any product or service, using a simple example. You only need two numbers to start: revenue and variable costs.</p>
+<ol class="ccm-steps">
+  <li><strong>Find your revenue.</strong> A product sells for $50, and you sold 1,000 units: $50,000 in revenue.</li>
+  <li><strong>List every variable cost.</strong> Materials, labor, shipping, and payment fees come to $20 per unit: $20,000 in total.</li>
+  <li><strong>Subtract.</strong> $50,000 &minus; $20,000 = <strong>$30,000 total contribution margin</strong>, or $30 per unit.</li>
+  <li><strong>Divide by revenue for the ratio.</strong> $30,000 &divide; $50,000 = <strong>60%</strong>. Sixty cents of every dollar is left for fixed costs and profit.</li>
+  <li><strong>Use it for break-even.</strong> With $12,000 in fixed costs, you break even at $12,000 &divide; $30 = <strong>400 units</strong>. Every unit after that adds $30 of profit, so 1,000 units produce $18,000 in profit.</li>
+</ol>
+<p>That is the textbook way to calculate contribution margin. It works cleanly for products because the variable costs are easy to see. Marketing is harder, because the costs that decide a campaign&rsquo;s profit live in different systems. More on that below.</p>
+
+<h2 id="calculator">Contribution Margin Calculator</h2>
+<p>Use this free calculator to calculate contribution margin two ways: the standard version, or for a single marketing campaign. Switch tabs and type over the example numbers.</p>
+<div class="ccm-calc" id="ccmCalc">
+  <h3>Calculate contribution margin</h3>
+  <div class="ccm-tabs" role="tablist">
+    <button type="button" class="ccm-tab ccm-on" data-mode="basic">Standard</button>
+    <button type="button" class="ccm-tab" data-mode="campaign">Marketing campaign</button>
+  </div>
+  <div class="ccm-fields" data-panel="basic">
+    <div><label for="cBRev">Revenue ($)</label><input id="cBRev" type="number" inputmode="decimal" min="0" value="50000"></div>
+    <div><label for="cBVar">Total variable costs ($)</label><input id="cBVar" type="number" inputmode="decimal" min="0" value="20000"></div>
+  </div>
+  <div class="ccm-fields ccm-hide" data-panel="campaign">
+    <div><label for="cCRev">Closed revenue from the campaign ($)</label><input id="cCRev" type="number" inputmode="decimal" min="0" value="240000"></div>
+    <div><label for="cCRef">Refunds, cancellations &amp; chargebacks ($)</label><input id="cCRef" type="number" inputmode="decimal" min="0" value="48000"></div>
+    <div><label for="cCDel">Cost to deliver the work ($)</label><input id="cCDel" type="number" inputmode="decimal" min="0" value="86400"></div>
+    <div><label for="cCAd">Ad spend ($)</label><input id="cCAd" type="number" inputmode="decimal" min="0" value="50000"></div>
+    <div><label for="cCPar">Partner &amp; lead vendor payouts ($)</label><input id="cCPar" type="number" inputmode="decimal" min="0" value="6000"></div>
+    <div><label for="cCFee">Other variable costs: fees, financing, commissions ($)</label><input id="cCFee" type="number" inputmode="decimal" min="0" value="7000"></div>
+  </div>
+  <div class="ccm-out">
+    <div><b id="cOutCM">$30,000</b><span>Contribution margin</span></div>
+    <div><b id="cOutRatio">60.0%</b><span>Contribution margin ratio</span></div>
+  </div>
+  <p class="ccm-note" id="cOutNote" style="margin:14px 0 0">60 cents of every revenue dollar is left to cover fixed costs and profit.</p>
+</div>
+
+<h2 id="campaign">How to Calculate Contribution Margin for a Marketing Campaign</h2>
+<p>Most guides stop at products and units. But if you spend money on ads or buy leads, the question that matters most is whether each <strong>campaign</strong> made money. That is where contribution margin gets tricky, and where ad dashboards quietly mislead.</p>
+<p>To calculate contribution margin for a campaign, use the same formula with campaign-specific inputs. When you calculate contribution margin this way, the result is the profit a campaign really produced:</p>
+<ul>
+  <li><strong>Revenue</strong> is the revenue the campaign actually closed, minus refunds, cancellations, and chargebacks. It is not the conversion value an ad platform reports.</li>
+  <li><strong>Variable costs</strong> are everything that rose because of that campaign:
+    <ul>
+      <li>the cost to deliver the work it won</li>
+      <li>ad spend</li>
+      <li>lead vendor and partner payouts</li>
+      <li>payment and financing fees</li>
+      <li>sales commissions</li>
+      <li>compliance costs on bought leads</li>
+    </ul>
+  </li>
+</ul>
+<p>Some teams call the result &ldquo;contribution margin after marketing.&rdquo; The <a href="https://corporatefinanceinstitute.com/resources/accounting/contribution-margin-after-marketing-cmam/" target="_blank" rel="noopener">Corporate Finance Institute</a> describes it as contribution margin after deducting variable and marketing costs. Whatever you call it, it is the number that tells you whether to spend more. <a href="https://martech.org/contribution-margin-tell-marketing-makes-cents/" target="_blank" rel="noopener">MarTech makes the same case</a> for judging marketing on contribution margin rather than revenue.</p>
+
+<h3>Worked example: a $50,000 home services campaign</h3>
+<p>Here is an illustrative example with realistic numbers, the same ones preloaded in the calculator above. Follow along and you can calculate contribution margin for any campaign in about five minutes.</p>
+<figure>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/calculate-contribution-margin-campaign-example.png" alt="How to calculate contribution margin for a marketing campaign example" width="1200" height="630" loading="lazy">
+  <figcaption>When you calculate contribution margin properly, $240,000 of reported revenue and a 4.8 ROAS become $42,600 of contribution margin, a 22.2% ratio.</figcaption>
+</figure>
+<div class="ccm-table-wrap">
+<table>
+  <thead><tr><th>Line</th><th>Amount</th></tr></thead>
+  <tbody>
+    <tr><td>Closed revenue from the campaign</td><td class="ccm-num">$240,000</td></tr>
+    <tr><td>Refunds ($36,000) and chargebacks ($12,000)</td><td class="ccm-num ccm-neg">&minus;$48,000</td></tr>
+    <tr><td>Revenue actually kept</td><td class="ccm-num">$192,000</td></tr>
+    <tr><td>Cost to deliver the work (labor and materials, 45% of revenue kept)</td><td class="ccm-num ccm-neg">&minus;$86,400</td></tr>
+    <tr><td>Ad spend</td><td class="ccm-num ccm-neg">&minus;$50,000</td></tr>
+    <tr><td>Lead partner payouts</td><td class="ccm-num ccm-neg">&minus;$6,000</td></tr>
+    <tr><td>Financing fees on financed jobs</td><td class="ccm-num ccm-neg">&minus;$7,000</td></tr>
+    <tr class="ccm-total"><td>Contribution margin</td><td class="ccm-num ccm-pos">$42,600</td></tr>
+    <tr><td>Contribution margin ratio ($42,600 &divide; $192,000)</td><td class="ccm-num">22.2%</td></tr>
+    <tr><td>Dashboard ROAS ($240,000 &divide; $50,000)</td><td class="ccm-num">4.8&times;</td></tr>
+  </tbody>
+</table>
+</div>
+<p>On the ad dashboard, this campaign looks like a star: $240,000 in revenue on $50,000 in spend. The real picture is still profitable, but at a 22.2% contribution margin it earns about 22 cents on each dollar it brings in, not the 79 cents that &ldquo;revenue minus ad spend&rdquo; implies. That changes how aggressively it should be scaled, and it is exactly the kind of gap most owners never see.</p>
+
+<h2 id="compare">Contribution Margin vs. Gross Margin vs. ROAS</h2>
+<p>These three numbers get mixed up constantly. Here is how they differ:</p>
+<div class="ccm-table-wrap">
+<table>
+  <thead><tr><th>Metric</th><th>Formula</th><th>What it answers</th><th>What it leaves out</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Contribution margin</strong></td><td>Revenue &minus; all variable costs</td><td>Did this sale or campaign make money after the costs it created?</td><td>Fixed costs (by design)</td></tr>
+    <tr><td><strong>Gross margin</strong></td><td>(Revenue &minus; cost of goods sold) &divide; revenue</td><td>How profitable is what we sell, before selling costs?</td><td>Marketing, commissions, and other variable selling costs</td></tr>
+    <tr><td><strong>ROAS</strong></td><td>Revenue &divide; ad spend</td><td>How much revenue did each ad dollar bring in?</td><td>Cost to deliver, partner payouts, refunds, fees, and profit</td></tr>
+  </tbody>
+</table>
+</div>
+<p>That is why businesses that calculate contribution margin per campaign make better budget calls than those that stop at ROAS. <a href="https://www.hubspot.com/glossary/return-on-ad-spend" target="_blank" rel="noopener">HubSpot defines ROAS</a> as revenue for every dollar spent on advertising, a useful speed check but not a profit number. If you want a marketing-specific profit metric, see our guide to <a href="https://alloceraintelligence.com/net-marketing-contribution/">net marketing contribution</a>, which is closely related and built for measuring marketing&rsquo;s profit impact.</p>
+
+<h2 id="mistakes">Five Mistakes to Avoid When You Calculate Contribution Margin</h2>
+<p>Most errors come from the inputs, not the formula. Watch for these five whenever you calculate contribution margin:</p>
+<h3>1. Using reported revenue instead of revenue you kept</h3>
+<p>Refunds, cancellations, and chargebacks often arrive weeks after the sale. If you calculate contribution margin on the revenue number from the day of the sale, you overstate it every time.</p>
+<h3>2. Counting refunds twice</h3>
+<p>Subtract refunds and chargebacks from revenue <em>or</em> count them as a cost, never both. Double counting is one of the most common spreadsheet errors. In the example above it would turn a $42,600 contribution margin into a $5,400 loss on paper.</p>
+<h3>3. Stopping at ad spend</h3>
+<p>Ad spend is only one variable cost of a campaign. Lead vendor and partner payouts, financing and payment fees, commissions, and the cost to deliver the work all belong in the calculation.</p>
+<h3>4. Measuring the channel instead of the campaign</h3>
+<p>&ldquo;Paid social ran a 25% contribution margin&rdquo; can hide one campaign at 45% and another losing money. Budget moves campaign by campaign, so that is the level to measure.</p>
+<h3>5. Giving ads credit for revenue they didn&rsquo;t earn</h3>
+<p>Referral and word-of-mouth customers often get attributed to whatever ad they clicked last. That inflates the campaign&rsquo;s revenue, and its contribution margin along with it.</p>
+<p>More on hidden costs: <a href="https://alloceraintelligence.com/chargebacks-marketing-cost/">how chargebacks inflate true marketing cost</a> and <a href="https://alloceraintelligence.com/financing-fees-home-services/">how financing fees eat home services margin</a>. For a deeper look at the ROAS gap, see <a href="https://alloceraintelligence.com/roas-looks-good-campaigns-lose-money/">why ROAS can look good while campaigns lose money</a>.</p>
+
+<h2 id="good">What Is a Good Contribution Margin?</h2>
+<p>There is no single &ldquo;good&rdquo; number, because it depends on your fixed costs. A business with low overhead can thrive on a lower ratio. A business with a large team and office needs a higher one. The test is simple: your total contribution margin has to be bigger than your fixed costs, or you are losing money overall.</p>
+<p>What the ratio means is straightforward. A <strong>40% contribution margin</strong> means 40 cents of every revenue dollar is left after variable costs. A <strong>30% contribution margin</strong> leaves 30 cents. Whether that is &ldquo;good&rdquo; depends on whether those cents cover your overhead with room to spare, and on whether the number is rising or falling over time.</p>
+<p>For marketing campaigns, the most useful comparison is campaign against campaign. Once you calculate contribution margin for each one, the budget decisions get much clearer. Your highest-margin campaigns deserve more budget; the ones near zero deserve a hard look. That comparison only works if every campaign is measured the same way.</p>
+
+<h2 id="cdai">How CDAI Calculates Contribution Margin on Every Campaign, Every Night</h2>
+<p>Doing this by hand for one campaign is a spreadsheet exercise. Doing it for every campaign, every night, while refunds and chargebacks keep arriving, is a full-time job. CDAI (Capital, Decision, Accuracy, Intelligence), the engine behind Allocera Intelligence, does it automatically, working with the tools you already use. Instead of trying to calculate contribution margin in a spreadsheet after the money is spent, you see it every morning.</p>
+<p><strong>It connects to your existing stack.</strong> Meta, Google Ads, LinkedIn, HubSpot, and Salesforce connect in one click. CallRail connects with an API key. There are also built integrations for Ringba, Boberdoo, Bing, and Stripe, plus CSV import and a webhook for any other system. You can start with one CRM and one ad account; see <a href="https://alloceraintelligence.com/how-it-works/">how it works</a>.</p>
+<p><strong>Then, every night, for every campaign, it:</strong></p>
+<ul>
+  <li><strong>Calculates real profit.</strong> It takes the revenue each campaign actually closed and subtracts every real cost of winning it: ad spend, fees, partner payouts, refunds, chargebacks, compliance costs, and any operating costs you add, like fulfillment.</li>
+  <li><strong>Gives each campaign a clear decision:</strong> scale, hold, cut, pause, quarantine, renegotiate, investigate, or flag. You stay in control of every move.</li>
+  <li><strong>Judges each campaign on the right timeline.</strong> It uses a rolling window matched to your sales cycle (30 days by default), so nothing gets cut before its deals could close.</li>
+  <li><strong>Checks its own work.</strong> Every night it rechecks recent decisions against the raw numbers, and it grades past decisions against what actually happened, with the dollar impact.</li>
+  <li><strong>Never guesses.</strong> Referral and offline revenue is counted but never forced into a campaign. Data that doesn&rsquo;t add up gets flagged instead of acted on, and personal data is scrubbed before anything is stored.</li>
+</ul>
+<p>It works alongside your CRM and attribution tools, not instead of them. They tell you who the customer is and which touchpoint gets credit. CDAI tells you whether the campaign made money after every cost.</p>
+
+<h3>Validated before release</h3>
+<p>Before release, CDAI&rsquo;s decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>89.5% accurate overall (1,210 of 1,352 scored decisions)</strong>, with the underlying math matching 100%. Every decision type:</p>
+<div class="ccm-table-wrap">
+<table>
+  <thead><tr><th>Decision</th><th>What it tells you</th><th>Accuracy</th></tr></thead>
+  <tbody>
+    <tr><td>Scale</td><td>Spend more here</td><td class="ccm-acc"><span class="ccm-mono ccm-pos">98.0%</span> <span class="ccm-cnt">(818 of 835)</span></td></tr>
+    <tr><td>Hold</td><td>Keep this steady</td><td class="ccm-acc"><span class="ccm-mono ccm-pos">95.2%</span> <span class="ccm-cnt">(40 of 42)</span></td></tr>
+    <tr><td>Pause</td><td>Stop this now</td><td class="ccm-acc"><span class="ccm-mono ccm-pos">85.2%</span> <span class="ccm-cnt">(144 of 169)</span></td></tr>
+    <tr><td>Flag</td><td>A person should look at this</td><td class="ccm-acc"><span class="ccm-mono">70.9%</span> <span class="ccm-cnt">(200 of 282)</span><span class="ccm-sub">The other 82 were neutral; none were wrong.</span></td></tr>
+    <tr><td>Cut</td><td>Reduce spend</td><td class="ccm-acc"><span class="ccm-mono">55.6%</span> <span class="ccm-cnt">(5 of 9)</span><span class="ccm-sub">All misses came from one deliberately extreme stress-test business.</span></td></tr>
+    <tr><td>Investigate</td><td>Something needs a closer look</td><td class="ccm-acc"><span class="ccm-mono ccm-pos">100%</span> <span class="ccm-cnt">(2 of 2)</span></td></tr>
+    <tr><td>Renegotiate</td><td>A partner is taking too much</td><td class="ccm-acc"><span class="ccm-mono ccm-pos">100%</span> <span class="ccm-cnt">(1 of 1)</span></td></tr>
+    <tr><td>Quarantine</td><td>Suspicious data, kept out of decisions</td><td class="ccm-acc"><span class="ccm-sub" style="margin-top:0">Caught correctly in all 12 cases. The outcome depends on a person acting on it, so these 12 count as misses in the overall number.</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p>Read the full method and results in our <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>. Industry deep dives: <a href="https://alloceraintelligence.com/cost-per-booked-job-hvac-plumbing/">HVAC and plumbing</a>, <a href="https://alloceraintelligence.com/cost-per-signed-case/">personal injury law</a>, and <a href="https://alloceraintelligence.com/true-cost-per-move-in/">senior living</a>.</p>
+
+<h2 id="faq">Contribution Margin FAQs</h2>
+<details>
+  <summary>How do you calculate contribution margin?</summary>
+  <p>Subtract total variable costs from revenue. For example, $50,000 in revenue minus $20,000 in variable costs is a $30,000 contribution margin. Divide by revenue to get the ratio: $30,000 &divide; $50,000 = 60%.</p>
+</details>
+<details>
+  <summary>How do you calculate contribution margin per unit?</summary>
+  <p>Subtract the variable cost per unit from the selling price per unit. A product that sells for $50 with $20 of variable cost has a $30 contribution margin per unit. Divide your fixed costs by that number to find your break-even point in units.</p>
+</details>
+<details>
+  <summary>How do you calculate the contribution margin ratio?</summary>
+  <p>Divide contribution margin by revenue and multiply by 100. The ratio shows what share of every revenue dollar is left after variable costs. It&rsquo;s the best way to compare products or campaigns of different sizes.</p>
+</details>
+<details>
+  <summary>What is the difference between contribution margin and gross margin?</summary>
+  <p>Gross margin subtracts only the cost of goods sold. Contribution margin subtracts all variable costs, including selling and marketing costs that rise with each sale. That makes contribution margin the better number for deciding where to spend.</p>
+</details>
+<details>
+  <summary>What does a 40% contribution margin mean?</summary>
+  <p>It means 40 cents of every revenue dollar is left after variable costs, available to cover fixed costs and produce profit. Whether that is enough depends on your fixed costs.</p>
+</details>
+<details>
+  <summary>Is a 30% contribution margin good?</summary>
+  <p>It can be, depending on your overhead. A 30% ratio leaves 30 cents per revenue dollar. If that covers your fixed costs with room to spare and it is holding steady or rising, it is healthy for your business.</p>
+</details>
+<details>
+  <summary>Can I calculate contribution margin in Excel or Google Sheets?</summary>
+  <p>Yes. Put revenue in cell B1 and total variable costs in B2. Contribution margin is <code>=B1-B2</code>, and the ratio is <code>=(B1-B2)/B1</code> formatted as a percentage. The formula is easy. The hard part is keeping the inputs current when refunds, payouts, and fees live in different systems.</p>
+</details>
+<details>
+  <summary>What costs should I include when I calculate contribution margin for ads?</summary>
+  <p>Include every cost that rose because of the campaign: ad spend, lead vendor and partner payouts, the cost to deliver the work it won, payment and financing fees, sales commissions, and compliance costs on bought leads. Leave out fixed overhead like rent and salaries. Subtract refunds and chargebacks from revenue.</p>
+</details>
+<details>
+  <summary>Do refunds and chargebacks affect contribution margin?</summary>
+  <p>Yes. They reduce the revenue you actually kept. Subtract them from revenue once, never again as a cost, and tie them back to the campaign that produced the original sale.</p>
+</details>
+
+<section class="ccm-final">
+  <h2>Stop Calculating Contribution Margin by Hand</h2>
+  <p>Connect the CRM and ad accounts you already use. CDAI will calculate contribution margin for every campaign and tell you what to do about it, every night.</p>
+  <div class="ccm-btns">
+    <a class="ccm-btn ccm-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <a class="ccm-btn" href="https://alloceraintelligence.com/pricing/">Get a Free Distortion Audit</a>
+    <a class="ccm-btn" href="https://alloceraintelligence.com/net-marketing-contribution/">Read: Net Marketing Contribution</a>
+  </div>
+</section>
+
+</article>
+
+<footer class="ccm-footer">
+  <span><img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence" width="26" height="26">Allocera Intelligence &middot; CDAI Engine</span>
+  <span>&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/">Terms of Service</a></span>
+</footer>
+
+</div>
+<script>
+(function(){
+var b=document.getElementById('ccmBurger'),l=document.getElementById('ccmLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('ccm-open');});}
+var root=document.getElementById('ccmCalc');if(!root)return;var mode='basic';
+function v(id){var e=document.getElementById(id);var n=parseFloat(e&&e.value);return isFinite(n)?n:0;}
+function money(n){var s=Math.round(Math.abs(n)).toLocaleString('en-US');return (n<0?'-$':'$')+s;}
+function calc(){var rev,cm;
+ if(mode==='basic'){rev=v('cBRev');cm=rev-v('cBVar');}
+ else{rev=v('cCRev')-v('cCRef');cm=rev-v('cCDel')-v('cCAd')-v('cCPar')-v('cCFee');}
+ var r=rev>0?cm/rev*100:0;var o1=document.getElementById('cOutCM'),o2=document.getElementById('cOutRatio'),nt=document.getElementById('cOutNote');
+ o1.textContent=money(cm);o2.textContent=rev>0?r.toFixed(1)+'%':'-';
+ o1.className=cm<0?'ccm-bad':'';o2.className=cm<0?'ccm-bad':'';
+ nt.textContent=rev<=0?'Enter revenue above zero to see the ratio.':(cm<0?'This is losing money: variable costs are larger than the revenue kept.':Math.round(r)+' cents of every revenue dollar is left to cover fixed costs and profit.');}
+Array.prototype.forEach.call(root.querySelectorAll('.ccm-tab'),function(t){t.addEventListener('click',function(){mode=t.getAttribute('data-mode');
+ Array.prototype.forEach.call(root.querySelectorAll('.ccm-tab'),function(x){x.classList.toggle('ccm-on',x===t);});
+ Array.prototype.forEach.call(root.querySelectorAll('[data-panel]'),function(p){p.classList.toggle('ccm-hide',p.getAttribute('data-panel')!==mode);});calc();});});
+Array.prototype.forEach.call(root.querySelectorAll('input'),function(i){i.addEventListener('input',calc);});calc();
+})();
+</script>
