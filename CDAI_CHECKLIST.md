@@ -94,7 +94,7 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 - **Batch 4: core pages.** Pricing (match Stripe), about, how-it-works, blog, and dashboard.
 - **Batch 5: the remaining ~20 industry posts.** Remove the seven-cost-layers framing and the doubled titles, and check their outside statistics.
 - **Tag Manager (after SEO):** track every homepage button, the forms, the calculator, the chat bot, and views of the pricing page. Needs the GTM container ID (`GTM-XXXXXXX`) and a way to put the GTM code in the site header.
-- **Stripe:** Nick to say what needs updating (prices, plans, links).
+- **Stripe free audit:** being handled in another Claude Code session. The prompt is in `STRIPE_FREE_AUDIT_PROMPT.md`. Open question for Nick: the audit credit is "first 90 days" on the pricing page but "100% toward a retainer" on the homepage.
 
 **Per page:** audit it against the engine, the validation report, GA, and Search Console. Nick says yes or no to each change, and Claude delivers the finished HTML block plus Rank Math fields.
 
