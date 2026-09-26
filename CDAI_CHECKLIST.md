@@ -15,10 +15,7 @@ _Last updated: Sept 26, 2026 (late), after the engine fixes Nick approved and th
 ## A. Nick's list for tomorrow (WordPress / Google, no code)
 
 1. ~~Paste the updated homepage~~ **DONE Sept 26** (Rank Math 81).
-2. **Merge these engine PRs** after you've read each one; all are tested:
-   - **#33** Bing + labels: https://github.com/fullsendorganicks-collab/cdai-engine/pull/33
-   - **#34** Digest logo: https://github.com/fullsendorganicks-collab/cdai-engine/pull/34
-   - **#35** Test-business errors: https://github.com/fullsendorganicks-collab/cdai-engine/pull/35
+2. ~~Merge engine PRs #33, #34, #35~~ **MERGED Sept 26** (all tests pass on combined main). Memory updated (PR #36).
 2b. **GA4 key events.** In GA4 → Admin → Events, after the first visits come in, mark these as Key events:
    - `generate_lead`
    - `signup_click`
@@ -116,19 +113,25 @@ Tested in a browser Sept 26: all events fired with 0 errors.
 - **D3. Calculator hint.** It says "default $0.25", but the calculator actually uses $0.
   - *Recommendation:* reword it to "only if you pay for per-lead consent certificates".
 - ~~D4. Fake names and emails~~ **DONE Sept 26:** removed from all 2,738 test-business records (8 test businesses). 0 real-client rows were touched, and 0 records with names or emails remain.
-- **D5. Sync on connect.** Today, when a new client connects Meta, Google, or their CRM, nothing is pulled until the nightly run at 2 AM UTC (about 10 PM Eastern). A client who signs up at 9 AM sees an empty dashboard all day. "Sync on connect" means the first pull starts the moment they click Connect, so they see their numbers within minutes.
-  - *Recommendation:* yes. It's the first impression for every self-serve client.
-  - Say yes and Claude builds and tests it.
+- **D5. Sync on connect: Nick likes it; read-only analysis done Sept 26, awaiting his go to build.**
+  - **Critical gap found:** a self-serve client who connects Meta, Google, or LinkedIn in one click never gets their ad spend pulled, not even nightly. The nightly job only syncs orgs with a saved ad-account setting, and nothing creates that setting (only Apex has one, set by hand). HubSpot, Salesforce, and CallRail are fine.
+  - **The fix:** at connect, find the ad account, create the channel, save the setting, and run the first pull in the background. Directives stay on the nightly run.
+  - **Effect on accuracy scores:** none. The directive rules and the validation are untouched.
+  - **Trade-offs:**
+    - Meta and LinkedIn need an "which ad account?" picker when a login has several (Google already has one).
+    - The first pull is 90 days, so it has to run in the background.
+    - It adds a little load on the API server during the pull.
 - ~~D6. AI links section~~ **DONE:** Nick said yes, and it's back in `website/homepage.html` with real logos and click tracking.
 - **D7. The intake form's job** now that self-serve is live.
   - *Recommendation:* free-audit request now; "Partner with us / talk to Nick" once the free audit is settled.
-- **D8. Apex: ROOT CAUSE FOUND (Sept 26, Render logs + database, read-only).**
+- ~~D8. Apex~~ **CLOSED (Nick, Sept 26):** Apex is not running ads. It stays connected on purpose (to keep working API keys, and as proof of a connected client). The nightly Apex errors are expected. Don't touch Apex. Original finding, kept for reference:
+- **(ref) D8. Apex (Sept 26, Render logs + database, read-only).**
   - **What's wrong:** Apex's Meta sync fails every night with a database error (`campaigns_channel_id_fkey`). Apex's saved Meta settings point to a channel (`7acaf75a…`) that no longer exists; Apex only has one channel, `paid_search`. So no Meta spend has come in, and there have been no decisions since Aug 13.
   - **Google:** every night the log also says "No Google Ads token found", because the saved Google settings don't match the Google token on file.
   - **The fix:** repoint Apex's Meta and Google settings to a real channel. That's a small change to Apex's data, so **Claude needs Nick's explicit OK** (the standing rule is never to touch Apex data).
   - **Optional code guard:** when a saved channel is missing, create it instead of failing. That would protect every future client.
   - **Nick decides:** fix Apex (yes/no), and add the guard (yes/no).
-- **D9. Stripe, Boberdoo, Ringba accuracy fixes: NEEDS NICK (these would change validated numbers).** The Sept 2026 validation ran its data through these three adapters exactly as they are today, so changing how they count money would move the 89.5% results and would need a re-test.
+- **D9. Stripe, Boberdoo, Ringba accuracy fixes: DEFERRED by Nick (Sept 26).** Saved to the engine memory TODO. When they're picked up: test suite first, then re-run the validation. The Sept 2026 validation ran its data through these three adapters exactly as they are today, so changing how they count money would move the 89.5% results and would need a re-test.
   - **Stripe** assumes a 7% processing fee on every sale. Real Stripe US pricing is about 2.9% + 30¢. Fixing it means every validated business shows higher margins.
   - **Boberdoo:** the price paid for each lead lands only in dashboard CPL and is never counted in true cost. Fixing it means Boberdoo campaigns show higher costs, and those campaigns include the source of all 169 PAUSE results.
   - **Boberdoo** also puts all leads under one campaign, regardless of which Boberdoo campaign they came from.
