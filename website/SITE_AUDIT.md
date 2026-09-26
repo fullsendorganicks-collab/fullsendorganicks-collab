@@ -137,3 +137,24 @@ Nick's rule is that Apex appears only in the homepage reviews. The pages:
 - Third-party statistics and their sources (e.g. "LEXGRO 2026").
 - Claims on pricing, about, and how-it-works against the engine and the live pricing.
 - Internal links that point to URLs not in the export (possible 404s). The 404 log in Rank Math would confirm these.
+
+---
+
+## E. Live baseline (OpenRush, Sept 26 2026)
+
+This is the "before" snapshot, so every rebuilt page can be measured against it.
+
+- **Search index:** the domain ranks for **1 keyword** and gets **0 estimated organic visits a month**. The one ranking page is `/calculate-contribution-margin/`.
+- **Live crawl:** 51 URLs found in the sitemap and 13 audited, for an on-page score of 95.7.
+- **7 pages are ignored by crawlers as "canonicalized"**, because their pasted canonical points to another URL (confirms A3b):
+  - `/true-cac/`
+  - `/true-cac-2/`
+  - `/55-directives-study/`
+  - `/tag-manager-real-roi/`
+  - `/allocera-vs-salesforce/`
+  - `/true-cost-closed-install/`
+  - `/30-day-retest-methodology/`
+- **Doubled titles are confirmed live** (A3), e.g. `/about/` at 106 characters and `/cost-per-signed-case/` at 182. 11 of 13 audited pages have titles too long for Google to show in full.
+- `/newsletter-welcome/` is noindex. That's correct for a thank-you page, so no change is needed.
+- `/home-sample/terms/` has a 25-character meta description (A5).
+- `/scale-hold-cut-pause-framework/` ranks for 0 keywords, so moving it to a new URL costs nothing.
