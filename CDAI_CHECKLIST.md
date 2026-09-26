@@ -8,7 +8,28 @@ Nick's running list. Claude keeps it current and checks items off as they ship.
 - No years or dates in titles or bylines.
 - Keep the original slugs.
 
-_Last updated: Sept 26, 2026 (late), after the engine fixes Nick approved and the homepage AI section was restored._
+_Last updated: Sept 26, 2026 (night), after the engine fix build in the cloud session. **New session: read `HANDOFF-engine-fixes-sept26.md` (this repo) first.**_
+
+---
+
+## ⚠ Start here: engine fixes waiting for Nick's yes (built Sept 26 night, nothing live)
+
+Approval sheet: https://claude.ai/artifact/3hNXn12DXcbCd5Q8Nj3EyB · Full details: `HANDOFF-engine-fixes-sept26.md`
+
+- [ ] **D11. Pick one version of the onboarding fixes.** The local session's **PR #37** and the cloud session's branches overlap (F1/F2/F4/F6/Google redirect) and conflict, so only one set can be merged. *Recommendation:* cloud branches (they add Google/LinkedIn, pickers, portal screens), after the local session runs the live test suite on `integration/all-fixes-sept26`.
+- [ ] **S1. CRITICAL: close the live data exposure.** Two dashboard views can be read with the public key: 69 campaign rows across all 10 businesses, Apex included. Fix: 2 lines of SQL (`security/views-invoker`), tested 7/7. **Approve first.**
+- [ ] **S2. Clients read-only.** Clients could edit or delete their own engine data and read stored logins (`security/clients-read-only`), tested 15/15.
+- [ ] **F1+F2. Connect actually syncs + pulls history** (`feat/sync-on-connect`), 45/45. Needs one supervised live test with Nick's own Meta + HubSpot.
+- [ ] **F4. Industry at signup + dashboard setting** (`feat/industry-at-signup`), 15/15.
+- [ ] **F3. Dashboard shows the engine's own numbers** (`feat/dashboard-engine-numbers`), 12/12.
+- [ ] **F6. Test businesses out of the nightly job** (`fix/nightly-skip-test-orgs`), 9/9.
+- [ ] **D1. Client email bug + weekly cadence with urgent alerts** (`fix/digest-weekly-latest`), 13/13. It was showing old or duplicate decisions.
+- [ ] **F9a. Meta reconnect reminders** (`fix/reconnect-reminders`), 8/8.
+- [ ] **F9b. Keep the nightly PDF reports** (`fix/store-audit-reports`), 6/6.
+- [ ] **Portal branch** `feat/engine-numbers-industry-connect` (goes live after F1, F4, F3).
+- [ ] **F5. No assumed costs** (`fix/no-assumed-costs`), 14/14. **Held until the validation re-run** (at most 3 of 1,352 decisions change).
+- [ ] After approval: the full test suite once against live, then the connect test, then F5 last.
+- [ ] **Not built, Nick decides:** the reactivated-campaign data window (changes decision math); the unauthenticated connect link (needs design).
 
 ---
 
@@ -108,12 +129,12 @@ Tested in a browser Sept 26: all events fired with 0 errors.
 
 ## D. Decisions for Nick (open)
 
-- **D2. Engine default costs.** CSV uploads add a 2.9–3% platform fee, and Meta lead forms, Ringba, Boberdoo, CSV, and webhook leads add $0.25 per lead of compliance cost. Neither affects the validation or Apex. CallRail is already $0.
+- **D2. BUILT Sept 26 night (in F5, held for the validation re-run).** Engine default costs: CSV uploads add a 2.9–3% platform fee, and Meta lead forms, Ringba, Boberdoo, CSV, and webhook leads add $0.25 per lead of compliance cost. Neither affects the validation or Apex. CallRail is already $0.
   - *Recommendation:* default both to $0 unless the client supplies real values, before the first client who uploads a CSV.
 - **D3. Calculator hint.** It says "default $0.25", but the calculator actually uses $0.
   - *Recommendation:* reword it to "only if you pay for per-lead consent certificates".
 - ~~D4. Fake names and emails~~ **DONE Sept 26:** removed from all 2,738 test-business records (8 test businesses). 0 real-client rows were touched, and 0 records with names or emails remain.
-- **D5. Sync on connect: Nick likes it; read-only analysis done Sept 26, awaiting his go to build.**
+- **D5. Sync on connect: BUILT Sept 26 night** (`feat/sync-on-connect` + portal branch; also PR #37 from the local session; see D11). Original analysis:
   - **Critical gap found:** a self-serve client who connects Meta, Google, or LinkedIn in one click never gets their ad spend pulled, not even nightly. The nightly job only syncs orgs with a saved ad-account setting, and nothing creates that setting (only Apex has one, set by hand). HubSpot, Salesforce, and CallRail are fine.
   - **The fix:** at connect, find the ad account, create the channel, save the setting, and run the first pull in the background. Directives stay on the nightly run.
   - **Effect on accuracy scores:** none. The directive rules and the validation are untouched.
@@ -131,7 +152,7 @@ Tested in a browser Sept 26: all events fired with 0 errors.
   - **The fix:** repoint Apex's Meta and Google settings to a real channel. That's a small change to Apex's data, so **Claude needs Nick's explicit OK** (the standing rule is never to touch Apex data).
   - **Optional code guard:** when a saved channel is missing, create it instead of failing. That would protect every future client.
   - **Nick decides:** fix Apex (yes/no), and add the guard (yes/no).
-- **D9. Stripe, Boberdoo, Ringba accuracy fixes: DEFERRED by Nick (Sept 26).** Saved to the engine memory TODO. When they're picked up: test suite first, then re-run the validation. The Sept 2026 validation ran its data through these three adapters exactly as they are today, so changing how they count money would move the 89.5% results and would need a re-test.
+- **D9. Stripe, Boberdoo, Ringba accuracy fixes: BUILT Sept 26 night in F5** (`fix/no-assumed-costs`), held until the validation is re-run. Original note: Saved to the engine memory TODO. When they're picked up: test suite first, then re-run the validation. The Sept 2026 validation ran its data through these three adapters exactly as they are today, so changing how they count money would move the 89.5% results and would need a re-test.
   - **Stripe** assumes a 7% processing fee on every sale. Real Stripe US pricing is about 2.9% + 30¢. Fixing it means every validated business shows higher margins.
   - **Boberdoo:** the price paid for each lead lands only in dashboard CPL and is never counted in true cost. Fixing it means Boberdoo campaigns show higher costs, and those campaigns include the source of all 169 PAUSE results.
   - **Boberdoo** also puts all leads under one campaign, regardless of which Boberdoo campaign they came from.
@@ -195,6 +216,10 @@ Tested in a browser Sept 26: all events fired with 0 errors.
 - [ ] Rotate other shared keys the former cofounder could have seen (Resend, Stripe, Render).
 - [ ] Check the team member lists in Render and Supabase.
 - [ ] Delete the 19 old validation cron jobs on Render (they re-run every year).
+- [ ] **Render: move `allocera-control-tower` from `1 2 * * *` to `0 11 * * *`.** It currently runs while the engine is still mid-run (F7).
+- [ ] **Supabase secret key in plain text** in `cdai-admin-backend/README.md` (line 8): rotate it, then remove it from the file.
+- [ ] **Reconnect Apex's Meta login before Oct 10, 2026** (the token expires; Apex is kept connected for working keys).
+- [ ] **S1 data exposure:** see "Start here" (approve the fix first).
 
 ---
 
@@ -216,6 +241,11 @@ Tested in a browser Sept 26: all events fired with 0 errors.
 
 ## Done
 
+- [x] **Sept 26 (night, cloud session):**
+  - All blueprint findings built as 10 engine branches + 1 portal branch, pushed, not merged.
+  - 144 new test checks pass; existing tests unchanged vs main.
+  - Found and fixed (awaiting approval): the live data exposure (S1), clients able to write their own data (S2), the digest showing old decisions (D1).
+  - Handoff written: `HANDOFF-engine-fixes-sept26.md`.
 - [x] **Sept 26 (late):**
   - Engine PRs #33, #34, #35 built and tested.
   - Fake names and emails stripped from the test data.
