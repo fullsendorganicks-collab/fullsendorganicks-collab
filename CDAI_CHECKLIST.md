@@ -64,7 +64,7 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 | 4 | `/triple-whale-vs-rockerbox-vs-allocera/` | LIVE, **90** | optional: drop "2026" from the SEO title later |
 | 5 | `/home-sample/northbeam-alternative/` | LIVE, **90** | optional: move to a clean URL with a 301 |
 | 6 | `/home-sample/rockerbox-alternative/` | LIVE (score not yet reported) | optional: move to a clean URL with a 301 |
-| 7 | `/cost-per-signed-case/` | LIVE (score not yet reported) | done |
+| 7 | `/cost-per-signed-case/` | LIVE, **90** | done |
 | 8 | next build: `/tcpa-compliance-cost-for-law-firms/` (99 impressions, position 25.5) | not started | none |
 
 - [ ] **Retire `/seven-cost-layers/`**: 301 it to `/calculate-contribution-margin/`. Its impressions come from unrelated searches ("sales layer cost", "layer cost"), it has 0 clicks, and the concept is retired.
