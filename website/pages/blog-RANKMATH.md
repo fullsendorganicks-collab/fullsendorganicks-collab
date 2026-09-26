@@ -22,7 +22,7 @@ The new hub groups all live posts by topic, uses the new titles for the rebuilt 
 | Focus Keyword | `marketing ROI` |
 | SEO Title (54) | `Marketing ROI Blog: Profit Per Campaign, Not Just ROAS` |
 | Permalink | `blog` (unchanged) |
-| Meta Description (149) | `Marketing ROI guides that go past ROAS: contribution margin, true cost per lead, lead partner profit, and industry guides for law firms, HVAC, and more.` |
+| Meta Description (152) | `Marketing ROI guides that go past ROAS: contribution margin, true cost per lead, lead partner profit, and industry guides for law firms, HVAC, and more.` |
 | Schema | WebPage (or Article; hubs don't need BlogPosting) |
 
 ## Checks
