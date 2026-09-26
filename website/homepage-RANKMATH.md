@@ -16,9 +16,11 @@ Measured on `website/homepage.html`:
 - Its first appearance is 16% of the way down the page (Rank Math wants it in the first 10%).
 - No image alt text contains it.
 
-## Two small fixes to reach 83+ (Nick approves first; the hero is not touched)
+## Two small fixes (APPROVED + DONE Sept 26; the hero is not touched)
 1. **Image alt text (invisible to visitors):** portal image alt changes to "CDAI client portal showing true cost per lead and a decision for every campaign".
 2. **One new FAQ, "What is true cost per lead?":** a short, plain answer that also adds about 4 natural uses of the keyword.
 
 ## Watch-out: two other pages also target "true cost per lead"
 `/how-it-works/` ("How to Calculate True Cost Per Lead") and `/true-cac/` ("True Cost Per Lead: Why Your Dashboard Is Lying") compete with the homepage for the same search. When those pages are rebuilt, give each its own keyword.
+
+After the fixes: the keyword appears 9 times in about 2,360 words, and 1 image alt contains it. If the score is still under 83, the next step is changing the sticky bar text from "See your true CPL" to "See your true cost per lead" (Nick approves first).

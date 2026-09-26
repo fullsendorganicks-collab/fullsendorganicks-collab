@@ -517,7 +517,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
     <div class="rule fade-up"></div>
     <p class="lead-text fade-up">CDAI connects your ad accounts and CRM, brings in the costs that normally get missed, and gives you a clear recommendation for each campaign.</p>
     <div class="video-showcase">
-      <img class="video-player" style="object-fit:contain" src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="CDAI client portal &mdash; Your Campaign Directive Sheet, connected accounts and per-campaign directives" loading="eager" fetchpriority="high">
+      <img class="video-player" style="object-fit:contain" src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="CDAI client portal showing true cost per lead and a decision for every campaign" loading="eager" fetchpriority="high">
     </div>
     <p style="text-align:center;font-family:'Inter',sans-serif;font-size:clamp(13px,1.5vw,15px);font-weight:300;color:#e6edfb;margin-top:-8px;margin-bottom:clamp(28px,4vh,40px)">Every source flows in. One reconciled number &mdash; and one directive &mdash; flows out.</p>
     <div class="how-grid">
@@ -682,6 +682,10 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
       <details class="faq-item">
         <summary>What is CDAI, exactly?</summary>
         <div class="faq-answer">CDAI is a deterministic, rules-based directive engine &mdash; not a predictive model. It reconciles your ad spend, CRM, and revenue data into one true number per campaign (true cost, true margin), then automatically issues one of eight directives every night: SCALE, HOLD, CUT, PAUSE, QUARANTINE, RENEGOTIATE, INVESTIGATE, or FLAG. Same inputs always produce the same output &mdash; no guessing.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What is true cost per lead?</summary>
+        <div class="faq-answer">True cost per lead is what each lead actually costs you once everything is counted, not just the ad spend your ad platform reports. Your dashboard divides spend by leads. Your true cost per lead also counts what you pay lead partners, refunds, and the leads that never turn into a real customer. CDAI connects your CRM and ad accounts and shows your true cost per lead, and your true customer acquisition cost, for every campaign. <a href="https://alloceraintelligence.com/calculate-contribution-margin/">See how the math works &rarr;</a></div>
       </details>
       <details class="faq-item">
         <summary>Who is CDAI for?</summary>
