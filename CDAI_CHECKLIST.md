@@ -62,8 +62,8 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 | 2 | `/calculate-contribution-margin/` | LIVE, **90** | done |
 | 3 | `/scale-hold-cut-pause-framework/` | LIVE, **89** | done |
 | 4 | `/triple-whale-vs-rockerbox-vs-allocera/` | LIVE, **90** | optional: drop "2026" from the SEO title later |
-| 5 | `/home-sample/northbeam-alternative/` | LIVE, **90** | optional: move to a clean URL with a 301 |
-| 6 | `/home-sample/rockerbox-alternative/` | LIVE (score not yet reported) | optional: move to a clean URL with a 301 |
+| 5 | `/home-sample/northbeam-alternative/` | LIVE, **90** | done (slug kept) |
+| 6 | `/home-sample/rockerbox-alternative/` | LIVE (score not yet reported) | done (slug kept) |
 | 7 | `/cost-per-signed-case/` | LIVE, **90** | done |
 | 8 | `/blog/` (hub, Page ID 187) | BUILT, **paste next** | paste `blog.html` and its Rank Math box |
 | 9 | next: `/pricing/` (after the Stripe session confirms free audit and credit wording) | not started | answer the credit question |
