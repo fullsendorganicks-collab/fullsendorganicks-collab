@@ -5,6 +5,7 @@
 **Every fix waits on Nick's yes.** Rebuilt pages (Sept 26):
 - `/net-marketing-contribution/`: live, Rank Math 91/100.
 - `/scale-hold-cut-pause-framework/`: live with its original slug, Rank Math 89/100. Removes the retired 80% claim (A1), thresholds, confidence ranges, and the "five directives" error.
+- `/triple-whale-vs-rockerbox-vs-allocera/`: rebuilt, pending paste. Removes the retired 80% claim (A1) and false competitor claims (e.g. "Triple Whale can't reconcile costs", disproved by Triple Whale's own help center).
 - `/calculate-contribution-margin/`: live, Rank Math 90/100. Its rebuild also fixes this page's wrong canonical (A3b) and doubled title (A3), and removes false fee claims, double-counted refunds, exposed thresholds, and unsourced statistics.
 
 ---
