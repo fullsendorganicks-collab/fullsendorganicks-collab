@@ -1,4 +1,6 @@
-# Rank Math box: Page 3 (was /scale-hold-cut-pause-framework/)
+# Rank Math box: Page 3, /scale-hold-cut-pause-framework/
+
+**LIVE Sept 26 2026:** Nick kept the original slug. Rank Math scored it **89/100**. No redirect is needed.
 
 Page type: **Post**, ID 322, currently titled "Scale, Hold, Cut, Pause: A Directive Framework". Find it under **Posts**. Built Sept 26 2026.
 
