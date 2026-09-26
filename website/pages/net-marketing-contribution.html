@@ -1,0 +1,363 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#nmc{font-variant-numeric:lining-nums;--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#E0566B;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+#nmc *{box-sizing:border-box}
+#nmc a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(222,187,106,.35)}
+#nmc a:hover{color:#fff;border-bottom-color:#fff}
+#nmc .nmc-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(1,9,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+#nmc .nmc-nav a{border:0}
+#nmc .nmc-brand{display:flex;align-items:center;gap:10px;color:var(--text)}
+#nmc .nmc-brand img{height:34px;width:auto;display:block}
+#nmc .nmc-brand span{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.02em}
+#nmc .nmc-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;margin:0;padding:0}
+#nmc .nmc-links a{color:var(--dim);font-size:14px;font-weight:500}
+#nmc .nmc-links a:hover{color:#fff}
+#nmc .nmc-cta{background:var(--gold);color:#010914!important;font-weight:600;font-size:14px;padding:9px 18px;border-radius:2px}
+#nmc .nmc-cta:hover{background:var(--gold2)}
+#nmc .nmc-burger{display:none;background:none;border:1px solid var(--border2);color:var(--text);font-size:18px;padding:4px 10px;border-radius:2px;cursor:pointer}
+#nmc .nmc-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+#nmc .nmc-hero{padding:clamp(44px,8vh,84px) 0 clamp(20px,4vh,36px);border-bottom:1px solid var(--border)}
+#nmc .nmc-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:0 0 16px}
+#nmc h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 20px;color:#fff}
+#nmc .nmc-lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);line-height:1.65;margin:0 0 22px}
+#nmc .nmc-byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.04em}
+#nmc h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.15;color:#fff;margin:clamp(48px,7vh,68px) 0 16px;scroll-margin-top:90px}
+#nmc h3{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:30px 0 8px}
+#nmc p{margin:0 0 18px;color:var(--muted)}
+#nmc strong{color:#fff;font-weight:600}
+#nmc ul,#nmc ol{margin:0 0 20px;padding-left:22px;color:var(--muted)}
+#nmc li{margin:0 0 9px}
+#nmc .nmc-box{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
+#nmc .nmc-box h3{margin-top:0}
+#nmc .nmc-box ul{margin-bottom:0}
+#nmc .nmc-toc{background:transparent;border:1px solid var(--border2);border-radius:2px;padding:20px 24px;margin:30px 0}
+#nmc .nmc-toc p{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
+#nmc .nmc-toc ol{margin:0;padding-left:20px}
+#nmc .nmc-toc li{margin:0 0 6px}
+#nmc .nmc-toc a{color:var(--dim);border:0}
+#nmc .nmc-toc a:hover{color:#fff}
+#nmc .nmc-formula{background:#04102a;border:1px solid var(--border2);border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.6vw,15px);line-height:1.9;color:#fff;overflow-x:auto}
+#nmc .nmc-formula .nmc-f-main{color:var(--gold2);font-size:clamp(14px,1.8vw,17px);font-weight:500}
+#nmc .nmc-formula .nmc-f-label{color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:10px}
+#nmc .nmc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+#nmc .nmc-stat{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;text-align:center}
+#nmc .nmc-stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,46px);font-weight:600;color:var(--green);line-height:1}
+#nmc .nmc-stat span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.45}
+#nmc .nmc-steps{counter-reset:s;list-style:none;padding:0}
+#nmc .nmc-steps li{counter-increment:s;position:relative;padding:0 0 4px 50px;margin:0 0 18px}
+#nmc .nmc-steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border:1px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
+#nmc .nmc-table-wrap{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--border2);border-radius:2px}
+#nmc table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+#nmc th{background:var(--surface);color:#fff;text-align:left;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border2);font-size:13px;letter-spacing:.02em}
+#nmc td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+#nmc tr:last-child td{border-bottom:0}
+#nmc td.nmc-num{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#nmc .nmc-pos{color:var(--green)!important;font-weight:600}
+#nmc .nmc-neg{color:var(--red)!important;font-weight:600}
+#nmc .nmc-total td{color:#fff;font-weight:600;background:rgba(196,160,64,.07)}
+#nmc .nmc-note{font-size:14px;color:var(--dim)}
+#nmc td.nmc-acc{min-width:210px}
+#nmc .nmc-mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#nmc .nmc-cnt{font-size:14px;color:var(--dim);white-space:nowrap}
+#nmc .nmc-sub{display:block;font-size:14px;color:var(--dim);margin-top:4px;line-height:1.5}
+#nmc figure{margin:28px 0}
+#nmc figure img{width:100%;height:auto;display:block;border:1px solid var(--border2);border-radius:2px}
+#nmc figcaption{font-size:14px;color:var(--dim);margin-top:10px}
+#nmc blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,28px);line-height:1.35;color:#fff}
+#nmc .nmc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
+#nmc .nmc-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 20px}
+#nmc .nmc-card h3{margin:0 0 6px;font-size:17px}
+#nmc .nmc-card p{margin:0;font-size:15px}
+#nmc details{border:1px solid var(--border2);border-radius:2px;margin:0 0 12px;background:var(--surface)}
+#nmc summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none}
+#nmc summary::-webkit-details-marker{display:none}
+#nmc summary::after{content:'+';float:right;color:var(--gold2);font-family:'JetBrains Mono',monospace}
+#nmc details[open] summary::after{content:'–'}
+#nmc details p{padding:0 20px 4px;margin:0 0 14px}
+#nmc .nmc-final{margin:clamp(56px,8vh,80px) 0 0;padding:clamp(28px,5vw,48px);background:linear-gradient(135deg,#071530,#04102a);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;text-align:center}
+#nmc .nmc-final h2{margin-top:0}
+#nmc .nmc-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+#nmc .nmc-btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:600;font-size:15px;border:1px solid var(--gold)!important;color:var(--gold2)}
+#nmc .nmc-btn.nmc-primary{background:var(--gold);color:#010914!important}
+#nmc .nmc-btn:hover{background:var(--gold2);color:#010914!important}
+#nmc .nmc-footer{margin-top:clamp(56px,8vh,80px);padding:26px clamp(16px,4vw,48px);border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim)}
+#nmc .nmc-footer a{color:var(--dim);border:0}
+#nmc .nmc-footer img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
+@media (max-width:900px){
+#nmc .nmc-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:#010914;border-bottom:1px solid var(--border);padding:14px 20px;gap:14px}
+#nmc .nmc-links.nmc-open{display:flex}
+#nmc .nmc-burger{display:block}
+}
+@media (max-width:640px){
+#nmc{font-size:16px}
+#nmc .nmc-stats,#nmc .nmc-grid{grid-template-columns:1fr}
+#nmc .nmc-cta{display:none}
+}
+</style>
+
+<div id="nmc">
+
+<nav class="nmc-nav">
+  <a class="nmc-brand" href="https://alloceraintelligence.com/">
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence logo" width="34" height="34">
+    <span>Allocera Intelligence</span>
+  </a>
+  <ul class="nmc-links" id="nmcLinks">
+    <li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li>
+    <li><a href="https://alloceraintelligence.com/proof/">Proof</a></li>
+    <li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li>
+    <li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li>
+    <li><a href="https://alloceraintelligence.com/about/">About</a></li>
+    <li><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></li>
+    <li><a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="nmc-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <button class="nmc-burger" id="nmcBurger" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+
+<article class="nmc-wrap">
+
+<header class="nmc-hero">
+  <p class="nmc-eyebrow">The Margin Gap &middot; Marketing Profit</p>
+  <h1>Net Marketing Contribution: The Formula That Shows What Your Marketing Really Earns</h1>
+  <p class="nmc-lead">Net marketing contribution is the profit your marketing actually produces after you pay for what you sold and everything it cost to sell it. It is the most important number most businesses never see, because their ad dashboards were never built to show it.</p>
+  <p class="nmc-byline">By Nick Baum, Founder of Allocera Intelligence &middot; Updated September 2026 &middot; 12 min read</p>
+</header>
+
+<div class="nmc-box">
+  <h3>Key takeaways</h3>
+  <ul>
+    <li><strong>Net marketing contribution (NMC)</strong> = revenue &times; gross margin % &minus; marketing and sales expenses.</li>
+    <li>ROAS tells you how much revenue each ad dollar brought in. Net marketing contribution tells you how much <strong>profit</strong> it brought in.</li>
+    <li>A campaign with a 4.0 ROAS can lose money. A campaign with a 1.8 ROAS can be one of your best.</li>
+    <li>Your breakeven ROAS is 1 &divide; your gross margin %. Below that line, a campaign loses money on ad spend alone.</li>
+    <li>CDAI tracks this for every campaign, every night, using the CRM and ad accounts you already have.</li>
+  </ul>
+</div>
+
+<nav class="nmc-toc" aria-label="Table of contents">
+  <p>In this guide</p>
+  <ol>
+    <li><a href="#what-is">What is net marketing contribution?</a></li>
+    <li><a href="#formula">The net marketing contribution formula</a></li>
+    <li><a href="#calculate">How to calculate net marketing contribution, step by step</a></li>
+    <li><a href="#vs-roas">Net marketing contribution vs. ROAS</a></li>
+    <li><a href="#hidden">Why most businesses never see their real number</a></li>
+    <li><a href="#industries">Where it matters most</a></li>
+    <li><a href="#cdai">How CDAI tracks it on every campaign</a></li>
+    <li><a href="#faq">FAQs</a></li>
+  </ol>
+</nav>
+
+<h2 id="what-is">What Is Net Marketing Contribution?</h2>
+<p>Net marketing contribution (NMC) measures how much profit your marketing generates after two things are paid for: the cost of delivering what you sold, and the cost of marketing and selling it. What is left over is marketing&rsquo;s real contribution to the business. That is the money available to cover overhead and turn into profit.</p>
+<p>The metric comes from Roger J. Best&rsquo;s marketing textbook, <a href="https://www.pearson.com/en-us/subject-catalog/p/market-based-management/P200000005832/9780137515479" target="_blank" rel="noopener"><em>Market-Based Management</em></a>, published by Pearson. The book&rsquo;s own site walks through the same idea with a public-company example in its article on <a href="https://mbm-book.com/2024/03/how-can-companies-measure-the-profit-impact-of-their-marketing-budget/" target="_blank" rel="noopener">measuring the profit impact of a marketing budget</a>.</p>
+<p>The idea behind it is simple. Marketing should be judged on the profit it creates, not the revenue it touches.</p>
+<p>Most businesses still judge campaigns on revenue-based numbers like return on ad spend (ROAS) and cost per lead. Those numbers are not wrong. They just leave out the costs that decide whether a campaign actually made money. That gap is where marketing budgets quietly leak, and most owners never know it is happening.</p>
+
+<h2 id="formula">The Net Marketing Contribution Formula</h2>
+<p>Here is the formula, plus the three related numbers that make it useful day to day.</p>
+<div class="nmc-formula">
+  <span class="nmc-f-label">Net marketing contribution</span>
+  <span class="nmc-f-main">NMC = Revenue &times; Gross Margin % &minus; Marketing &amp; Sales Expenses</span>
+  <span class="nmc-f-label">Same thing, written another way</span>
+  NMC = Revenue &minus; Cost to Deliver &minus; Marketing &amp; Sales Expenses
+  <span class="nmc-f-label">Marketing return on sales (NMC as a % of revenue)</span>
+  Marketing ROS = NMC &divide; Revenue &times; 100
+  <span class="nmc-f-label">Marketing return on investment</span>
+  Marketing ROI = NMC &divide; Marketing &amp; Sales Expenses &times; 100
+  <span class="nmc-f-label">Breakeven ROAS</span>
+  Breakeven ROAS = 1 &divide; Gross Margin %
+</div>
+<p>Each piece in plain English:</p>
+<ul>
+  <li><strong>Revenue</strong> is the money you actually kept. Use closed revenue after refunds, cancellations, and chargebacks, not the number an ad platform reports as a &ldquo;conversion value.&rdquo;</li>
+  <li><strong>Gross margin %</strong> is the share of each sale left after the direct cost of delivering it: labor, materials, or product cost.</li>
+  <li><strong>Marketing and sales expenses</strong> are everything it took to win the business. That means ad spend plus lead vendor and partner payouts, agency fees, call tracking, sales commissions, and any processing or financing fees tied to the sale.</li>
+</ul>
+<p>Breakeven ROAS is the number most teams have never calculated, and it changes how you read every dashboard. It is the minimum ROAS a campaign needs just to cover its ad spend at your gross margin:</p>
+<div class="nmc-stats">
+  <div class="nmc-stat"><b>3.33&times;</b><span>Breakeven ROAS at a 30% gross margin</span></div>
+  <div class="nmc-stat"><b>2.5&times;</b><span>Breakeven ROAS at a 40% gross margin</span></div>
+  <div class="nmc-stat"><b>2.0&times;</b><span>Breakeven ROAS at a 50% gross margin</span></div>
+</div>
+<p>If your gross margin is 40%, every campaign below a 2.5 ROAS is losing money on ad spend alone, whatever color the dashboard shows. And that is before any other marketing cost is counted.</p>
+
+<h2 id="calculate">How to Calculate Net Marketing Contribution, Step by Step</h2>
+<p>You can calculate NMC for a whole business, a product line, or a single campaign. For budget decisions, the campaign level is where it matters most, because that is where money actually moves.</p>
+<ol class="nmc-steps">
+  <li><strong>Start with the revenue you kept.</strong> Take the closed revenue the campaign produced, then subtract refunds, cancellations, and chargebacks.</li>
+  <li><strong>Apply your gross margin.</strong> Multiply that revenue by your gross margin %, or subtract the direct cost of delivering the work. This is your gross profit.</li>
+  <li><strong>Add up every marketing and sales cost.</strong> Include ad spend, lead vendor or partner payouts, agency fees, call tracking, and any fees tied to the sale. Leave out overhead like rent. Net marketing contribution is what pays for that.</li>
+  <li><strong>Subtract.</strong> Gross profit minus marketing and sales expenses is your NMC.</li>
+  <li><strong>Turn it into ratios so you can compare.</strong> Divide by revenue for marketing ROS, and by marketing expenses for marketing ROI. Now a $5,000 campaign and a $50,000 campaign can be compared fairly.</li>
+</ol>
+
+<h3>Worked example: a home services campaign</h3>
+<p>Here is an illustrative example with realistic numbers. Run the same steps against one of your own campaigns.</p>
+<div class="nmc-table-wrap">
+<table>
+  <thead><tr><th>Line</th><th>Amount</th></tr></thead>
+  <tbody>
+    <tr><td>Ad spend</td><td class="nmc-num">$20,000</td></tr>
+    <tr><td>Jobs closed: 40 &times; $1,500 average ticket</td><td class="nmc-num">$60,000</td></tr>
+    <tr><td>Reported ROAS ($60,000 &divide; $20,000)</td><td class="nmc-num">3.0&times;</td></tr>
+    <tr><td>Two jobs cancelled after booking</td><td class="nmc-num nmc-neg">&minus;$3,000</td></tr>
+    <tr><td>Revenue actually kept</td><td class="nmc-num">$57,000</td></tr>
+    <tr><td>Gross profit at a 45% gross margin</td><td class="nmc-num">$25,650</td></tr>
+    <tr><td>Marketing and sales expenses: $20,000 ad spend + $1,200 lead partner fees</td><td class="nmc-num nmc-neg">&minus;$21,200</td></tr>
+    <tr class="nmc-total"><td>Net marketing contribution</td><td class="nmc-num nmc-pos">$4,450</td></tr>
+    <tr><td>Marketing ROS ($4,450 &divide; $57,000)</td><td class="nmc-num">7.8%</td></tr>
+    <tr><td>Marketing ROI ($4,450 &divide; $21,200)</td><td class="nmc-num">21.0%</td></tr>
+    <tr><td>Breakeven ROAS at a 45% gross margin</td><td class="nmc-num">2.22&times;</td></tr>
+  </tbody>
+</table>
+</div>
+<p>A 3.0 ROAS looks healthy on a dashboard. NMC tells a more useful story: this campaign is profitable, but only just. Two cancellations and $1,200 in partner fees took a large bite out of the profit. The right move is to hold this campaign and fix what is leaking, not to double its budget because the ROAS looked good.</p>
+
+<h2 id="vs-roas">Net Marketing Contribution vs. ROAS</h2>
+<p>Return on ad spend is revenue divided by ad spend. <a href="https://www.hubspot.com/glossary/return-on-ad-spend" target="_blank" rel="noopener">HubSpot</a>, the <a href="https://corporatefinanceinstitute.com/resources/valuation/return-on-ad-spend-guide-finance/" target="_blank" rel="noopener">Corporate Finance Institute</a>, and <a href="https://advertising.amazon.com/library/guides/return-on-ad-spend-roas" target="_blank" rel="noopener">Amazon Ads</a> all define it the same way: revenue generated for every dollar spent on advertising. It is a fast, useful signal. It is just not a profit number.</p>
+<p>ROAS leaves out four things that NMC includes:</p>
+<ul>
+  <li><strong>The cost to deliver what you sold.</strong> A $1,500 job that costs $1,200 to complete is a very different sale from one that costs $600. ROAS treats them the same.</li>
+  <li><strong>Every marketing cost beyond ad spend.</strong> Partner payouts, agency fees, and call tracking never show up in ROAS.</li>
+  <li><strong>Money that comes back later.</strong> Refunds, cancellations, and chargebacks still count as revenue in most ROAS reports.</li>
+  <li><strong>Deals that never close.</strong> Ad platforms often count a lead or a booked call as a conversion, whether or not it ever turned into paid revenue.</li>
+</ul>
+<blockquote>ROAS measures revenue. Net marketing contribution measures profit.</blockquote>
+<p>Here is what that difference looks like across four campaigns. To keep it simple, ad spend is the only marketing cost here, so NMC as a share of revenue is your gross margin % minus (1 &divide; ROAS).</p>
+<figure>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/net-marketing-contribution-vs-roas.png" alt="Net marketing contribution vs ROAS for four campaigns" width="1200" height="630" loading="lazy">
+  <figcaption>Ranked by ROAS, Campaign A looks like the winner. Ranked by net marketing contribution, it is the only campaign losing money.</figcaption>
+</figure>
+<div class="nmc-table-wrap">
+<table>
+  <thead><tr><th>Campaign</th><th>ROAS</th><th>Gross margin</th><th>Breakeven ROAS</th><th>NMC % of revenue</th><th>What ROAS says</th><th>What NMC says</th></tr></thead>
+  <tbody>
+    <tr><td>A</td><td class="nmc-num">4.0&times;</td><td class="nmc-num">20%</td><td class="nmc-num">5.0&times;</td><td class="nmc-num nmc-neg">&minus;5.0%</td><td>Best performer</td><td>Losing money</td></tr>
+    <tr><td>B</td><td class="nmc-num">2.5&times;</td><td class="nmc-num">55%</td><td class="nmc-num">1.82&times;</td><td class="nmc-num nmc-pos">+15.0%</td><td>Average</td><td>Top earner</td></tr>
+    <tr><td>C</td><td class="nmc-num">3.0&times;</td><td class="nmc-num">35%</td><td class="nmc-num">2.86&times;</td><td class="nmc-num nmc-pos">+1.7%</td><td>Strong</td><td>Barely breaking even</td></tr>
+    <tr><td>D</td><td class="nmc-num">1.8&times;</td><td class="nmc-num">65%</td><td class="nmc-num">1.54&times;</td><td class="nmc-num nmc-pos">+9.4%</td><td>Cut candidate</td><td>Solidly profitable</td></tr>
+  </tbody>
+</table>
+</div>
+<p>If this business moved budget by ROAS, it would pour more money into Campaign A, the only one losing money, and cut Campaign D, one of its best earners. That is the misallocation that revenue-only reporting creates, and it gets bigger as spend grows. For a deeper look, see <a href="https://alloceraintelligence.com/roas-looks-good-campaigns-lose-money/">why ROAS can look good while campaigns lose money</a>.</p>
+
+<h2 id="hidden">Why Most Businesses Never See Their Real Number</h2>
+<p>If this number is so useful, why isn&rsquo;t everyone tracking it? Because the numbers it needs live in different systems that were never designed to talk to each other.</p>
+<ul>
+  <li>Your <strong>ad platforms</strong> know spend, clicks, and the conversions they can see.</li>
+  <li>Your <strong>CRM</strong> knows which leads became deals and what those deals were worth.</li>
+  <li>Your <strong>call tracking</strong> knows which calls came in and which ones turned into jobs.</li>
+  <li>Your <strong>payment processor</strong> knows about refunds and chargebacks, often weeks later.</li>
+  <li>Your <strong>lead partners&rsquo; invoices</strong> know what you paid for each lead.</li>
+</ul>
+<p>None of these tools is doing anything wrong. Each one was built to do its own job well. Nobody built them to reconcile each other. So the true profit of a campaign has to be pieced together by hand, usually in a spreadsheet, usually after the budget has already been spent. The costs that slip through most often:</p>
+<div class="nmc-grid">
+  <div class="nmc-card"><h3>Refunds and cancellations</h3><p>They arrive after the sale, so the ad platform already counted the revenue.</p></div>
+  <div class="nmc-card"><h3>Chargebacks</h3><p>Disputed payments quietly reverse revenue your reports still show.</p></div>
+  <div class="nmc-card"><h3>Partner and lead payouts</h3><p>What you pay brokers or lead vendors rarely appears next to ad spend.</p></div>
+  <div class="nmc-card"><h3>Deals that never close</h3><p>A &ldquo;conversion&rdquo; on the dashboard is not the same as money in the bank.</p></div>
+  <div class="nmc-card"><h3>Referral revenue credited to ads</h3><p>Word-of-mouth customers get counted as paid wins, which flatters the wrong campaigns.</p></div>
+  <div class="nmc-card"><h3>Edited close dates</h3><p>When CRM dates get changed by hand, revenue shifts into the wrong period and the wrong campaign.</p></div>
+</div>
+<p>Any one of these can turn a campaign that looks profitable into one that loses money. Together, they explain why so many businesses feel like marketing is working while the bank account says otherwise. Our <a href="https://alloceraintelligence.com/calculate-contribution-margin/">contribution margin calculation guide</a> walks through how to account for each cost by hand.</p>
+
+<h2 id="industries">Where Net Marketing Contribution Matters Most</h2>
+<p>Net marketing contribution matters most in businesses where profit per sale varies widely, and where leads are bought, routed, or closed long after the click. That describes most service and lead-driven businesses:</p>
+<ul>
+  <li><strong>Home services:</strong> a full system replacement and a small repair can come from the same ad at very different margins. See <a href="https://alloceraintelligence.com/cost-per-booked-job-hvac-plumbing/">true cost per booked job for HVAC and plumbing</a>.</li>
+  <li><strong>Personal injury law:</strong> case types differ enormously in value, and many leads never become signed cases. See <a href="https://alloceraintelligence.com/cost-per-signed-case/">cost per signed case</a>.</li>
+  <li><strong>Senior living and healthcare:</strong> one move-in or admission can be worth far more than another, and sales cycles run long. See <a href="https://alloceraintelligence.com/true-cost-per-move-in/">true cost per move-in</a>.</li>
+  <li><strong>Insurance, mortgage, and solar:</strong> bought leads, partner payouts, and financing fees sit between the ad and the profit. See <a href="https://alloceraintelligence.com/financing-fees-home-services/">how financing fees eat margin</a>.</li>
+</ul>
+<p>In every one of these, a single blended ROAS hides which campaigns bring in high-margin work and which ones fill the pipeline with work that looks busy but earns little.</p>
+
+<h2 id="cdai">How CDAI Tracks Net Marketing Contribution on Every Campaign</h2>
+<p>CDAI (Capital, Decision, Accuracy, Intelligence) is the engine behind Allocera Intelligence. It does the reconciliation work described above automatically, and it works with the tools you already use instead of replacing them.</p>
+<p><strong>It connects to your existing stack.</strong> Meta, Google Ads, LinkedIn, HubSpot, and Salesforce connect in one click. CallRail connects with an API key. There are also built integrations for Ringba, Boberdoo, Bing, and Stripe, plus CSV import and a webhook for any other system. You can start with a single CRM and a single ad account.</p>
+<p><strong>Then, every night, for every campaign, it:</strong></p>
+<ul>
+  <li><strong>Calculates real profit.</strong> It takes the revenue each campaign actually closed and subtracts every real cost of winning it: ad spend, fees, partner payouts, refunds, chargebacks, compliance costs, and any operating costs you add, like fulfillment.</li>
+  <li><strong>Gives each campaign a clear decision:</strong> scale, hold, cut, pause, quarantine, renegotiate, investigate, or flag. You stay in control of every move.</li>
+  <li><strong>Judges each campaign on the right timeline.</strong> It uses a rolling window matched to your sales cycle (30 days by default), so nothing gets cut before its deals could close.</li>
+  <li><strong>Checks its own work.</strong> Every night it rechecks recent decisions against the raw numbers, and it grades past decisions against what actually happened, with the dollar impact.</li>
+  <li><strong>Never guesses.</strong> Referral and offline revenue is counted but never forced into a campaign. Data that doesn&rsquo;t add up gets flagged instead of acted on, and personal data is scrubbed before anything is stored.</li>
+</ul>
+<p>Textbook net marketing contribution is usually measured for a whole business or product line. CDAI applies the same idea to each campaign, which is the level where budget decisions actually happen.</p>
+<p>CDAI also plays well with attribution tools. Attribution decides which touchpoint gets credit for a sale. CDAI answers a different question: after every cost, did that campaign make money? Many teams will want both answers.</p>
+
+<h3>Validated before release</h3>
+<p>Before release, CDAI&rsquo;s decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>89.5% accurate overall (1,210 of 1,352 scored decisions)</strong>, with the underlying math matching 100%. Here is every decision type, with nothing left out:</p>
+<div class="nmc-table-wrap">
+<table>
+  <thead><tr><th>Decision</th><th>What it tells you</th><th>Accuracy</th></tr></thead>
+  <tbody>
+    <tr><td>Scale</td><td>Spend more here</td><td class="nmc-acc"><span class="nmc-mono nmc-pos">98.0%</span> <span class="nmc-cnt">(818 of 835)</span></td></tr>
+    <tr><td>Hold</td><td>Keep this steady</td><td class="nmc-acc"><span class="nmc-mono nmc-pos">95.2%</span> <span class="nmc-cnt">(40 of 42)</span></td></tr>
+    <tr><td>Pause</td><td>Stop this now</td><td class="nmc-acc"><span class="nmc-mono nmc-pos">85.2%</span> <span class="nmc-cnt">(144 of 169)</span></td></tr>
+    <tr><td>Flag</td><td>A person should look at this</td><td class="nmc-acc"><span class="nmc-mono">70.9%</span> <span class="nmc-cnt">(200 of 282)</span><span class="nmc-sub">The other 82 were neutral; none were wrong.</span></td></tr>
+    <tr><td>Cut</td><td>Reduce spend</td><td class="nmc-acc"><span class="nmc-mono">55.6%</span> <span class="nmc-cnt">(5 of 9)</span><span class="nmc-sub">All misses came from one deliberately extreme stress-test business.</span></td></tr>
+    <tr><td>Investigate</td><td>Something needs a closer look</td><td class="nmc-acc"><span class="nmc-mono nmc-pos">100%</span> <span class="nmc-cnt">(2 of 2)</span></td></tr>
+    <tr><td>Renegotiate</td><td>A partner is taking too much</td><td class="nmc-acc"><span class="nmc-mono nmc-pos">100%</span> <span class="nmc-cnt">(1 of 1)</span></td></tr>
+    <tr><td>Quarantine</td><td>Suspicious data, kept out of decisions</td><td class="nmc-acc"><span class="nmc-sub" style="margin-top:0">Caught correctly in all 12 cases. The outcome depends on a person acting on it, so these 12 count as misses in the overall number.</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p>You can read the full method and results in our <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>.</p>
+
+<h2 id="faq">Net Marketing Contribution FAQs</h2>
+<details>
+  <summary>How do I calculate my net marketing contribution?</summary>
+  <p>Multiply the revenue you kept by your gross margin %, then subtract your marketing and sales expenses. For example, $57,000 in revenue at a 45% gross margin is $25,650 in gross profit. Subtract $21,200 in marketing and sales costs and your net marketing contribution is $4,450.</p>
+</details>
+<details>
+  <summary>What is marketing contribution?</summary>
+  <p>Marketing contribution is the share of profit your marketing creates. Net marketing contribution makes it precise: it is gross profit minus marketing and sales expenses, the amount your marketing adds toward covering overhead and producing profit.</p>
+</details>
+<details>
+  <summary>What is the difference between net marketing contribution and contribution margin?</summary>
+  <p>Contribution margin is revenue minus all variable costs, usually measured for a product or a whole business (MarTech has a good <a href="https://martech.org/contribution-margin-tell-marketing-makes-cents/" target="_blank" rel="noopener">explainer on contribution margin for marketers</a>). Net marketing contribution focuses on marketing: gross profit minus marketing and sales expenses. At the campaign level, both answer the same question: did this spend make money after the costs it created?</p>
+</details>
+<details>
+  <summary>What is net marketing contribution percentage?</summary>
+  <p>Expressing net marketing contribution as a percentage of revenue is called marketing return on sales (marketing ROS): NMC &divide; revenue &times; 100. It lets you compare campaigns of very different sizes on equal footing.</p>
+</details>
+<details>
+  <summary>What is a good net marketing contribution?</summary>
+  <p>There is no universal benchmark, because gross margins and overhead differ by business. A positive net marketing contribution means a campaign covers its own costs and adds profit. The useful questions are whether it covers your share of overhead and whether it is rising or falling over time.</p>
+</details>
+<details>
+  <summary>Is ROAS still worth tracking?</summary>
+  <p>Yes. ROAS is a fast signal of how efficiently ads turn into revenue. Pair it with your breakeven ROAS and your net marketing contribution, so a strong-looking ROAS never hides a campaign that is losing money.</p>
+</details>
+<details>
+  <summary>Do I need software to track net marketing contribution?</summary>
+  <p>Not for a handful of campaigns. A spreadsheet works. It gets hard to keep up when your data is spread across ad platforms, a CRM, call tracking, and payment tools, and when refunds keep arriving after the fact. That is the work CDAI automates every night.</p>
+</details>
+
+<section class="nmc-final">
+  <h2>See Your Net Marketing Contribution on Every Campaign</h2>
+  <p>Connect the CRM and ad accounts you already use. CDAI shows what each campaign really earns, and what to do about it, every night.</p>
+  <div class="nmc-btns">
+    <a class="nmc-btn nmc-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <a class="nmc-btn" href="https://alloceraintelligence.com/pricing/">Get a Free Distortion Audit</a>
+    <a class="nmc-btn" href="https://alloceraintelligence.com/how-it-works/">See How It Works</a>
+  </div>
+</section>
+
+</article>
+
+<footer class="nmc-footer">
+  <span><img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence" width="26" height="26">Allocera Intelligence &middot; CDAI Engine</span>
+  <span>&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/">Terms of Service</a></span>
+</footer>
+
+</div>
+<script>
+(function(){var b=document.getElementById('nmcBurger'),l=document.getElementById('nmcLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('nmc-open');});}})();
+</script>

@@ -58,6 +58,27 @@ This line was already removed from the homepage for the same reason.
 
 **Fix:** the same one used on the homepage.
 
+### A3b. Canonical tags pointing to the wrong URL: 12 pages (high priority)
+
+**Proof:** each page's pasted `<head>` has a `rel="canonical"` tag naming a different address than the page itself. Rank Math outputs its own correct canonical, so Google receives two conflicting answers.
+
+| Page | Its pasted canonical says |
+|---|---|
+| `/calculate-contribution-margin/` (the site's top page for search impressions) | `/blog/calculate-contribution-margin` |
+| `/55-directives-study/` | `/blog/55-directives-scored-methodology` |
+| `/true-cost-closed-install/` | `/blog/true-cost-closed-install-window-door` |
+| `/30-day-retest-methodology/` | `/blog/30-day-retest-methodology` |
+| `/30-day-retest-methodology-2/` | `/blog/tag-manager-real-roi` |
+| `/tag-manager-real-roi/` | `/blog/tag-manager-real-roi` |
+| `/reconciling-pace-greensky-service-finance/` | `/blog/reconciling-pace-greensky-service-finance` |
+| `/allocera-vs-salesforce/` | `/blog/allocera-vs-salesforce` |
+| `/true-cac/` | `/blog/true-cac` |
+| `/true-cac-2/` | `/true-cac/` |
+| `/home-sample/rockerbox-alternative/` | `/rockerbox-alternative/` |
+| `/home-sample/northbeam-alternative/` | `/northbeam-alternative/` |
+
+**Fix:** remove the pasted `<head>`, the same fix as A3.
+
 ### A4. Duplicate content and titles
 
 - **`/30-day-retest-methodology-2/` duplicates `/tag-manager-real-roi/`.** Its text is word-for-word identical to that page (exact string match), but it carries the Rank Math title "Directive Accuracy: 30-Day Retest Beats Gut-Feel". So it's a duplicate article under the wrong URL and title.
