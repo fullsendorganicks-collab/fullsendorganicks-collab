@@ -74,6 +74,28 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
   - Illustrative examples are labeled as such.
   - Every external stat is linked to a source that was live in Google's results when the page was built.
 
+**Remaining site work (Sept 26 plan). Order: SEO and info first, then Tag Manager, then Stripe.**
+- **Batch 1: Nick, about 15 minutes in WordPress, no new pages.**
+  - Redirect `/seven-cost-layers/` to `/calculate-contribution-margin/`.
+  - Redirect `/30-day-retest-methodology-2/` to `/tag-manager-real-roi/` (it's an exact copy).
+  - Delete "every two weeks" from `/newsletter-welcome/` and `/roas-looks-good-campaigns-lose-money/`.
+  - Add Rank Math titles and descriptions to the privacy, terms, and data-deletion pages.
+  - Turn on Rank Math's 404 Monitor.
+- **Batch 2: pages Google ignores (wrong canonical, most still claim 80%). Claude rebuilds; Nick pastes.**
+  - `/55-directives-study/`: redirect to the validation report.
+  - `/30-day-retest-methodology/`: redirect to the validation report.
+  - `/true-cac/` and `/true-cac-2/`: merge into one rebuilt page.
+  - Rebuild `/tag-manager-real-roi/`.
+  - Rebuild `/allocera-vs-salesforce/`.
+  - Rebuild `/reconciling-pace-greensky-service-finance/`.
+  - Rebuild `/true-cost-closed-install/`.
+  - Fix the `/blog/` excerpt that still says 80%.
+- **Batch 3: pages that mention Apex (Nick decides).** `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/`, and `/marketing-margin-distortion-index/`.
+- **Batch 4: core pages.** Pricing (match Stripe), about, how-it-works, blog, and dashboard.
+- **Batch 5: the remaining ~20 industry posts.** Remove the seven-cost-layers framing and the doubled titles, and check their outside statistics.
+- **Tag Manager (after SEO):** track every homepage button, the forms, the calculator, the chat bot, and views of the pricing page. Needs the GTM container ID (`GTM-XXXXXXX`) and a way to put the GTM code in the site header.
+- **Stripe:** Nick to say what needs updating (prices, plans, links).
+
 **Per page:** audit it against the engine, the validation report, GA, and Search Console. Nick says yes or no to each change, and Claude delivers the finished HTML block plus Rank Math fields.
 
 **Order:**
