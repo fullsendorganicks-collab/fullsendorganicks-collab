@@ -8,7 +8,7 @@ The old hub carried:
 - unsourced statistics such as "8 to 12 times", "3 to 5 times", "30 to 70 percent", and "78 percent"
 - cards for pages being retired
 
-The new hub groups all live posts by topic, uses the new titles for the rebuilt pages, and gives every card a claim-free summary.
+**Built on Nick's existing blog design** (same CSS, cards, and nav style). Only the content changed. The new hub groups all live posts by topic, uses the new titles for the rebuilt pages, and gives every card a claim-free summary.
 
 **Left off the hub on purpose** (they are being redirected or merged):
 - `/seven-cost-layers/`
@@ -26,7 +26,10 @@ The new hub groups all live posts by topic, uses the new titles for the rebuilt 
 | Schema | WebPage (or Article; hubs don't need BlogPosting) |
 
 ## Checks
-- About 1,300 words. The keyword appears 12 times (0.9%), including in the H1, the first sentence, and the H2s.
-- 8 H2s.
-- 38 internal links, covering every live post. There are no outside statistics, so no external links are needed. Rank Math may deduct a few points for that, which is fine on a hub page.
+- H1: "Marketing ROI, Measured as Profit". About 1,470 words, 10 uses of the keyword.
+- 6 H2s (topic groups + FAQ); card titles are H3s.
+- Northbeam and Rockerbox cards added (they were missing).
+- The pasted `<head>` was removed (this fixes the doubled title and canonical).
+- The Case Study nav link (the Apex page) was replaced with Proof.
+- 40+ internal links, covering every live post. There are no outside statistics, so no external links are needed. Rank Math may deduct a few points for that, which is fine on a hub page.
 - Renders on desktop and phone with no sideways scroll.

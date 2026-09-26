@@ -77,6 +77,38 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 
 **GA4 (Allocera):** Measurement ID `G-29J4V3VQ7B`, Property ID 529325874, Account ID 388377967. OpenRush lost its GSC/GA4 link on Sept 26. Reconnect it at openrush.com/dashboard/connections.
 
+**Nick's WordPress fix list (settings only, no new content):**
+1. **Move the pages out of `/home-sample/` with 301 redirects.** Set each page's Parent to "(no parent)", then add a Rank Math redirect from the old URL to the new one:
+   - northbeam-alternative
+   - rockerbox-alternative
+   - contribution-margin-marketing (the validation report)
+   - allocera-intelligence-case-study-proof
+   - privacy-policy-and-terms-and-conditions
+   - terms
+   - data-deletion-instructions
+
+   After the moves, Claude updates the internal links on every rebuilt page.
+2. **Redirect** `/seven-cost-layers/` to `/calculate-contribution-margin/`, and `/30-day-retest-methodology-2/` to `/tag-manager-real-roi/`.
+3. **Categories:** every post is currently "Uncategorized". Create these categories and assign each post:
+   - Marketing Methodology
+   - Tool Comparisons
+   - Personal Injury Law
+   - Home Services
+   - More Industries
+4. **Turn off Comments and Pings** on posts (they attract spam and do nothing for SEO).
+5. **Delete "every two weeks"** from `/newsletter-welcome/` and `/roas-looks-good-campaigns-lose-money/`.
+6. **Turn on Rank Math's 404 Monitor.**
+7. **Leave the "Elementor Canvas" template as it is.** It's why each page carries its own nav and footer.
+
+**NEXT after the blog page: Tag Manager / GA4 event tracking on the homepage** (GA4 `G-29J4V3VQ7B`). Track:
+- every button
+- the free-audit and contact forms
+- the calculator
+- the chat bot
+- pricing page views
+
+Events push to `dataLayer`, so they work with GTM, and they also fire through `gtag` if it's loaded.
+
 **Remaining site work (Sept 26 plan). Order: SEO and info first, then Tag Manager, then Stripe.**
 - **Batch 1: Nick, about 15 minutes in WordPress, no new pages.**
   - Redirect `/seven-cost-layers/` to `/calculate-contribution-margin/`.
