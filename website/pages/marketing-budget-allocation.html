@@ -1,0 +1,354 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#mba{font-variant-numeric:lining-nums;--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#E0566B;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+#mba *{box-sizing:border-box}
+#mba a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(222,187,106,.35)}
+#mba a:hover{color:#fff;border-bottom-color:#fff}
+#mba .mba-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(1,9,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+#mba .mba-nav a{border:0}
+#mba .mba-brand{display:flex;align-items:center;gap:10px;color:var(--text)}
+#mba .mba-brand img{height:34px;width:auto;display:block}
+#mba .mba-brand span{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.02em}
+#mba .mba-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;margin:0;padding:0}
+#mba .mba-links a{color:var(--dim);font-size:14px;font-weight:500}
+#mba .mba-links a:hover{color:#fff}
+#mba .mba-cta{background:var(--gold);color:#010914!important;font-weight:600;font-size:14px;padding:9px 18px;border-radius:2px}
+#mba .mba-cta:hover{background:var(--gold2)}
+#mba .mba-burger{display:none;background:none;border:1px solid var(--border2);color:var(--text);font-size:18px;padding:4px 10px;border-radius:2px;cursor:pointer}
+#mba .mba-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+#mba .mba-hero{padding:clamp(44px,8vh,84px) 0 clamp(20px,4vh,36px);border-bottom:1px solid var(--border)}
+#mba .mba-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:0 0 16px}
+#mba h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 20px;color:#fff}
+#mba .mba-lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);line-height:1.65;margin:0 0 22px}
+#mba .mba-byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.04em}
+#mba h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.15;color:#fff;margin:clamp(48px,7vh,68px) 0 16px;scroll-margin-top:90px}
+#mba h3{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:30px 0 8px}
+#mba p{margin:0 0 18px;color:var(--muted)}
+#mba strong{color:#fff;font-weight:600}
+#mba ul,#mba ol{margin:0 0 20px;padding-left:22px;color:var(--muted)}
+#mba li{margin:0 0 9px}
+#mba .mba-box{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
+#mba .mba-box h3{margin-top:0}
+#mba .mba-box ul{margin-bottom:0}
+#mba .mba-toc{background:transparent;border:1px solid var(--border2);border-radius:2px;padding:20px 24px;margin:30px 0}
+#mba .mba-toc p{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
+#mba .mba-toc ol{margin:0;padding-left:20px}
+#mba .mba-toc li{margin:0 0 6px}
+#mba .mba-toc a{color:var(--dim);border:0}
+#mba .mba-toc a:hover{color:#fff}
+#mba .mba-formula{background:#04102a;border:1px solid var(--border2);border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.6vw,15px);line-height:1.9;color:#fff;overflow-x:auto}
+#mba .mba-formula .mba-f-main{color:var(--gold2);font-size:clamp(14px,1.8vw,17px);font-weight:500}
+#mba .mba-formula .mba-f-label{color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:10px}
+#mba .mba-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+#mba .mba-stat{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;text-align:center}
+#mba .mba-stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,46px);font-weight:600;color:var(--green);line-height:1}
+#mba .mba-stat span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.45}
+#mba .mba-steps{counter-reset:s;list-style:none;padding:0}
+#mba .mba-steps li{counter-increment:s;position:relative;padding:0 0 4px 50px;margin:0 0 18px}
+#mba .mba-steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border:1px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
+#mba .mba-table-wrap{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--border2);border-radius:2px}
+#mba table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+#mba th{background:var(--surface);color:#fff;text-align:left;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border2);font-size:13px;letter-spacing:.02em}
+#mba td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+#mba tr:last-child td{border-bottom:0}
+#mba td.mba-num{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#mba .mba-pos{color:var(--green)!important;font-weight:600}
+#mba .mba-neg{color:var(--red)!important;font-weight:600}
+#mba .mba-total td{color:#fff;font-weight:600;background:rgba(196,160,64,.07)}
+#mba .mba-note{font-size:14px;color:var(--dim)}
+#mba td.mba-acc{min-width:210px}
+#mba .mba-mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#mba .mba-cnt{font-size:14px;color:var(--dim);white-space:nowrap}
+#mba code{font-family:'JetBrains Mono',monospace;font-size:.9em;background:#04102a;border:1px solid var(--border2);padding:1px 6px;border-radius:2px;color:var(--gold2)}
+#mba .mba-sub{display:block;font-size:14px;color:var(--dim);margin-top:4px;line-height:1.5}
+#mba figure{margin:28px 0}
+#mba figure img{width:100%;height:auto;display:block;border:1px solid var(--border2);border-radius:2px}
+#mba figcaption{font-size:14px;color:var(--dim);margin-top:10px}
+#mba blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,28px);line-height:1.35;color:#fff}
+#mba .mba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
+#mba .mba-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 20px}
+#mba .mba-card h3{margin:0 0 6px;font-size:17px}
+#mba .mba-card p{margin:0;font-size:15px}
+#mba details{border:1px solid var(--border2);border-radius:2px;margin:0 0 12px;background:var(--surface)}
+#mba summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none}
+#mba summary::-webkit-details-marker{display:none}
+#mba summary::after{content:'+';float:right;color:var(--gold2);font-family:'JetBrains Mono',monospace}
+#mba details[open] summary::after{content:'–'}
+#mba details p{padding:0 20px 4px;margin:0 0 14px}
+#mba .mba-final{margin:clamp(56px,8vh,80px) 0 0;padding:clamp(28px,5vw,48px);background:linear-gradient(135deg,#071530,#04102a);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;text-align:center}
+#mba .mba-final h2{margin-top:0}
+#mba .mba-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+#mba .mba-btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:600;font-size:15px;border:1px solid var(--gold)!important;color:var(--gold2)}
+#mba .mba-btn.mba-primary{background:var(--gold);color:#010914!important}
+#mba .mba-btn:hover{background:var(--gold2);color:#010914!important}
+#mba .mba-footer{margin-top:clamp(56px,8vh,80px);padding:26px clamp(16px,4vw,48px);border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim)}
+#mba .mba-footer a{color:var(--dim);border:0}
+#mba .mba-footer img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
+@media (max-width:900px){
+#mba .mba-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:#010914;border-bottom:1px solid var(--border);padding:14px 20px;gap:14px}
+#mba .mba-links.mba-open{display:flex}
+#mba .mba-burger{display:block}
+}
+@media (max-width:640px){
+#mba{font-size:16px}
+#mba .mba-stats,#mba .mba-grid{grid-template-columns:1fr}
+#mba .mba-cta{display:none}
+}
+
+#mba .mba-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.06em;padding:2px 8px;border-radius:2px;white-space:nowrap}
+#mba .mba-t-scale{background:rgba(11,175,146,.15);color:#3fd6b6}
+#mba .mba-t-hold{background:rgba(196,160,64,.16);color:var(--gold2)}
+#mba .mba-t-cut{background:rgba(224,86,107,.12);color:#F08A9A}
+#mba .mba-t-pause{background:rgba(224,86,107,.25);color:#ffb0bc}
+</style>
+<div id="mba">
+
+<nav class="mba-nav">
+  <a class="mba-brand" href="https://alloceraintelligence.com/">
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence logo" width="34" height="34">
+    <span>Allocera Intelligence</span>
+  </a>
+  <ul class="mba-links" id="mbaLinks">
+    <li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li>
+    <li><a href="https://alloceraintelligence.com/proof/">Proof</a></li>
+    <li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li>
+    <li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li>
+    <li><a href="https://alloceraintelligence.com/about/">About</a></li>
+    <li><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></li>
+    <li><a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="mba-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <button class="mba-burger" id="mbaBurger" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+
+<article class="mba-wrap">
+
+<header class="mba-hero">
+  <p class="mba-eyebrow">The Margin Gap &middot; Budget Decisions</p>
+  <h1>Marketing Budget Allocation: How to Decide Which Campaigns to Scale, Hold, Cut, or Pause</h1>
+  <p class="mba-lead">Marketing budget allocation is how you decide where every marketing dollar goes. Most advice stops at splitting money between channels. But profit is won or lost one campaign at a time, and the campaign with the best-looking dashboard is often not the one making you the most money. This guide shows you how to allocate your budget by real profit, and when each campaign should be scaled, held, cut, or paused.</p>
+  <p class="mba-byline">By Nick Baum, Founder of Allocera Intelligence &middot; Updated September 2026 &middot; 13 min read</p>
+</header>
+
+<div class="mba-box">
+  <h3>Key takeaways</h3>
+  <ul>
+    <li>Marketing budget allocation happens at two levels: how much you spend in total, and which campaigns get it.</li>
+    <li>Channel rules like 70/20/10 set the big buckets, but they can&rsquo;t tell you which campaigns inside a channel are losing money.</li>
+    <li>Allocate by each campaign&rsquo;s contribution margin (profit after every variable cost), not by ROAS.</li>
+    <li>Every campaign needs one clear call: scale, hold, cut, or pause. Four more calls (flag, investigate, renegotiate, quarantine) catch problems most owners miss.</li>
+    <li>In our example, the campaign with the best ROAS ranks second on profit, and one campaign is losing money despite a 3.0 ROAS.</li>
+  </ul>
+</div>
+
+<nav class="mba-toc" aria-label="Table of contents">
+  <p>In this guide</p>
+  <ol>
+    <li><a href="#what-is">What is marketing budget allocation?</a></li>
+    <li><a href="#how-much">How much should you spend on marketing?</a></li>
+    <li><a href="#rules">Why the 70/20/10 rule isn&rsquo;t enough</a></li>
+    <li><a href="#profit">Allocate by profit per campaign, not ROAS</a></li>
+    <li><a href="#four">The four core decisions: scale, hold, cut, pause</a></li>
+    <li><a href="#more">Four more decisions most owners never make</a></li>
+    <li><a href="#example">Example: reallocating $60,000 a month</a></li>
+    <li><a href="#review">How often to review your allocation</a></li>
+    <li><a href="#mistakes">Five mistakes to avoid</a></li>
+    <li><a href="#cdai">How CDAI does it every night</a></li>
+    <li><a href="#faq">FAQs</a></li>
+  </ol>
+</nav>
+
+<h2 id="what-is">What Is Marketing Budget Allocation?</h2>
+<p>Marketing budget allocation is the process of deciding how much to spend on marketing and where that money goes. It happens at two levels:</p>
+<ul>
+  <li><strong>The total budget.</strong> How much of your revenue goes to marketing at all.</li>
+  <li><strong>The split.</strong> How that budget is divided between channels (search, social, bought leads, display) and, inside each channel, between individual campaigns.</li>
+</ul>
+<p>Most guides spend their time on the first level and the channel split. That&rsquo;s useful for planning. But the decisions that actually change your profit happen at the campaign level, because that is where money is added, reduced, or switched off every week.</p>
+<p>Good marketing budget allocation answers one question for every campaign you run: <strong>should the next dollar go here, or somewhere else?</strong> Answering it well takes the right number, and ROAS is usually the wrong one.</p>
+
+<h2 id="how-much">How Much Should You Spend on Marketing?</h2>
+<p>There is no universal percentage, but benchmarks help. <a href="https://www.gartner.com/en/articles/cmo-spend" target="_blank" rel="noopener">Gartner&rsquo;s 2026 CMO Spend Survey</a> puts the average marketing budget at 7.8% of company revenue. That survey asks CMOs, so it skews toward larger companies with dedicated marketing departments.</p>
+<p>For a small or mid-sized business, the better test is simpler: <strong>spend more wherever an extra dollar of marketing returns more than a dollar of profit, and less wherever it doesn&rsquo;t.</strong> A benchmark tells you what others spend. Your own campaign profit tells you what you should spend.</p>
+<p>That is why the two levels of marketing budget allocation, the total and the split, can&rsquo;t really be separated. If you know which campaigns are profitable and which are not, the right total budget becomes much easier to see.</p>
+
+<h2 id="rules">Why the 70/20/10 Rule Isn&rsquo;t Enough for Marketing Budget Allocation</h2>
+<p>The most common marketing budget allocation rule is 70/20/10: about 70% to proven channels, 20% to growing ones, and 10% to experiments. <a href="https://www.smartinsights.com/marketing-planning/marketing-models/using-the-702010-rule-in-marketing/" target="_blank" rel="noopener">Smart Insights explains the model</a> as a way to split spending into three differently sized areas so priorities are clear.</p>
+<p>It&rsquo;s a reasonable way to balance safe bets against new ones. The problem is what it can&rsquo;t see. A rule like 70/20/10 works at the channel level, and channels are averages.</p>
+<p>&ldquo;Paid search is working&rdquo; can hide one campaign earning 33 cents on every dollar and another losing money. If you allocate by channel, the losing campaign keeps its budget because its neighbors are carrying it. Budget moves campaign by campaign, so that is the level your marketing budget allocation has to reach.</p>
+<p>A good template also can&rsquo;t account for your costs. Two businesses with the same 70/20/10 split can have completely different results once refunds, partner payouts, and the cost to deliver the work are counted.</p>
+
+<h2 id="profit">Allocate by Profit per Campaign, Not by ROAS</h2>
+<p>Most ad dashboards rank campaigns by ROAS. <a href="https://www.hubspot.com/glossary/return-on-ad-spend" target="_blank" rel="noopener">HubSpot defines ROAS</a> as the revenue earned for every dollar spent on advertising. It&rsquo;s a fast efficiency check, but it&rsquo;s not profit. It leaves out:</p>
+<ul>
+  <li>refunds, cancellations, and chargebacks that arrive after the sale</li>
+  <li>the cost to deliver the work the campaign won</li>
+  <li>lead vendor and partner payouts</li>
+  <li>payment and financing fees</li>
+  <li>commissions and compliance costs</li>
+</ul>
+<p>The number that includes all of that is <strong>contribution margin</strong>: revenue you actually kept, minus every variable cost of winning it. The <a href="https://corporatefinanceinstitute.com/resources/accounting/contribution-margin-after-marketing-cmam/" target="_blank" rel="noopener">Corporate Finance Institute</a> calls the marketing version contribution margin after marketing, and <a href="https://martech.org/contribution-margin-tell-marketing-makes-cents/" target="_blank" rel="noopener">MarTech argues</a> that marketing should be judged on it rather than on revenue.</p>
+<p>When you base marketing budget allocation on contribution margin, the ranking of your campaigns often changes completely. Our guides on <a href="https://alloceraintelligence.com/calculate-contribution-margin/">how to calculate contribution margin</a> and <a href="https://alloceraintelligence.com/net-marketing-contribution/">net marketing contribution</a> walk through the math step by step. The short version: allocate budget to the campaigns that keep the most profit per dollar, not the ones that report the most revenue.</p>
+
+<h2 id="four">The Four Core Budget Decisions: Scale, Hold, Cut, Pause</h2>
+<p>Once you know each campaign&rsquo;s profit, marketing budget allocation comes down to four decisions. Every campaign should have exactly one of them at any given time.</p>
+<h3><span class="mba-tag mba-t-scale">SCALE</span> Spend more here</h3>
+<p>The campaign is clearly profitable after every cost, the numbers are steady, and there is enough data to trust them. Scale in steps rather than all at once. Profit per dollar usually changes as spend rises, and big jumps can disrupt the ad platform itself. <a href="https://www.facebook.com/business/help/942374239243867" target="_blank" rel="noopener">Meta&rsquo;s help center notes</a> that pausing an ad set is a &ldquo;significant edit&rdquo; and that budget changes can be too, which can send delivery back into its <a href="https://www.facebook.com/business/help/112167992830700" target="_blank" rel="noopener">learning phase</a>.</p>
+<h3><span class="mba-tag mba-t-hold">HOLD</span> Keep this steady</h3>
+<p>The campaign is profitable, but not clearly improving, or the data is still thin. Holding is an active decision: keep the budget where it is and let more results come in before moving money in either direction.</p>
+<h3><span class="mba-tag mba-t-cut">CUT</span> Reduce spend</h3>
+<p>The campaign is barely earning its keep, or its profit is sliding. Cutting reduces the budget without switching it off, so you stop overspending while you find out whether it can recover.</p>
+<h3><span class="mba-tag mba-t-pause">PAUSE</span> Stop this now</h3>
+<p>The campaign is losing money after its deals have had time to close, or something is badly wrong, like a surge in fraud or chargebacks. Every extra day of spend makes the loss bigger, so the budget goes to zero until the problem is understood.</p>
+<p><strong>The timing rule that matters most:</strong> never judge a campaign before its sales could have closed. A campaign with a 60-day sales cycle will look like a loser at day 20. We cover this for law firms in <a href="https://alloceraintelligence.com/personal-injury-settlement-lag/">why 30-day CAC dashboards fail on personal injury cases</a>, and the same logic applies to any business where deals take time.</p>
+
+<h2 id="more">Four More Decisions Most Owners Never Make</h2>
+<p>Scale, hold, cut, and pause cover the budget itself. But some of the most expensive problems in marketing aren&rsquo;t budget problems. They are data problems or partner problems, and they need a different kind of decision:</p>
+<div class="mba-grid">
+  <div class="mba-card"><h3>Flag</h3><p>A person should look at this. The numbers don&rsquo;t add up, and acting on them automatically could do damage.</p></div>
+  <div class="mba-card"><h3>Investigate</h3><p>Something changed and needs a closer look before any money moves.</p></div>
+  <div class="mba-card"><h3>Renegotiate</h3><p>A lead partner or vendor is taking too much of the margin. The fix is a conversation, not a budget cut.</p></div>
+  <div class="mba-card"><h3>Quarantine</h3><p>The data looks suspicious, so it&rsquo;s kept out of every decision until it&rsquo;s cleared.</p></div>
+</div>
+<p>These matter because, in marketing budget allocation, a wrong budget call made on bad data is worse than no call at all. If you buy leads, the renegotiate decision alone can be worth more than any budget shift. See how <a href="https://alloceraintelligence.com/chargebacks-marketing-cost/">chargebacks inflate true marketing cost</a> and how <a href="https://alloceraintelligence.com/financing-fees-home-services/">financing fees eat home services margin</a> for two costs that quietly change these calls.</p>
+
+<h2 id="example">Marketing Budget Allocation Example: Reallocating $60,000 a Month</h2>
+<p>Here is an illustrative marketing budget allocation example for a home services business spending $60,000 a month across four campaigns. The cost to deliver the work runs 45% of the revenue kept. Watch how the ROAS ranking and the profit ranking disagree.</p>
+<figure>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/marketing-budget-allocation-example.png" alt="Marketing budget allocation example comparing ROAS and profit for four campaigns" width="1200" height="630" loading="lazy">
+  <figcaption>A marketing budget allocation based on ROAS would favor Campaign B. Based on profit, Campaign A earns three times as much.</figcaption>
+</figure>
+<div class="mba-table-wrap">
+<table>
+  <thead><tr><th>Campaign</th><th>Ad spend</th><th>ROAS</th><th>Revenue kept</th><th>Contribution margin</th><th>Decision</th></tr></thead>
+  <tbody>
+    <tr><td>A. Search: emergency repair</td><td class="mba-num">$20,000</td><td class="mba-num">5.5&times;</td><td class="mba-num">$105,000</td><td class="mba-num mba-pos">$34,750 (33.1%)</td><td><span class="mba-tag mba-t-scale">SCALE</span></td></tr>
+    <tr><td>B. Bought leads: partner network</td><td class="mba-num">$15,000</td><td class="mba-num">6.4&times;</td><td class="mba-num">$75,000</td><td class="mba-num mba-pos">$11,250 (15.0%)</td><td><span class="mba-tag mba-t-hold">HOLD</span></td></tr>
+    <tr><td>C. Display: brand awareness</td><td class="mba-num">$10,000</td><td class="mba-num">2.4&times;</td><td class="mba-num">$22,000</td><td class="mba-num">$1,100 (5.0%)</td><td><span class="mba-tag mba-t-cut">CUT</span></td></tr>
+    <tr><td>D. Social: financing promo</td><td class="mba-num">$15,000</td><td class="mba-num">3.0&times;</td><td class="mba-num">$33,000</td><td class="mba-num mba-neg">&minus;$850 (&minus;2.6%)</td><td><span class="mba-tag mba-t-pause">PAUSE</span></td></tr>
+    <tr class="mba-total"><td>Total</td><td class="mba-num">$60,000</td><td class="mba-num">4.6&times;</td><td class="mba-num">$235,000</td><td class="mba-num">$46,250 (19.7%)</td><td></td></tr>
+  </tbody>
+</table>
+</div>
+<p>How the numbers were built:</p>
+<ul>
+  <li><strong>Campaign A</strong> reported $110,000 in revenue and lost $5,000 to refunds. After $47,250 to deliver the work, $20,000 in ad spend, and $3,000 in fees, it kept $34,750.</li>
+  <li><strong>Campaign B</strong> has the best ROAS at 6.4, but $21,000 of its $96,000 came back as refunds and chargebacks. Partner payouts ($9,000) and financing fees ($6,000) take another $15,000. It&rsquo;s profitable, but at less than half the rate of A.</li>
+  <li><strong>Campaign C</strong> brings in $24,000, loses $2,000 to refunds, and keeps just $1,100 after costs.</li>
+  <li><strong>Campaign D</strong> reports $45,000 on $15,000 of spend, a 3.0 ROAS that beats C. But $12,000 in refunds and chargebacks plus $4,000 in fees push it below zero.</li>
+</ul>
+<p>A ROAS-based marketing budget allocation would move money toward B, keep D, and cut C first. A profit-based one scales A, holds B (and looks hard at that partner payout), cuts C, and pauses D, assuming its deals have had time to close.</p>
+<p>One honest caveat: moving money into Campaign A only helps if A keeps its margin as spend rises. That is why scaling happens in steps and gets rechecked, never in one big jump. These decisions are illustrative. A real decision should also weigh how much data there is, which way the numbers are trending, and the sales cycle.</p>
+
+<h2 id="review">How Often to Review Your Marketing Budget Allocation</h2>
+<p>Most businesses review their marketing budget allocation monthly or quarterly, when the books close. By then, a losing campaign has already spent a month or more of budget.</p>
+<p>The better rhythm is to watch every campaign continuously, then move money only when the numbers genuinely change. Two rules keep that from turning into constant tinkering:</p>
+<ul>
+  <li><strong>Match the window to your sales cycle.</strong> Judge each campaign over a rolling window long enough for its deals to close. For many businesses, 30 days is a sensible default. For others, like HVAC in peak season or law firms with long case timelines, it needs to be longer. See <a href="https://alloceraintelligence.com/hvac-seasonal-cost-per-lead/">why flat HVAC budgets waste money</a> and <a href="https://alloceraintelligence.com/hvac-marketing-channel-mix/">what the right HVAC channel mix looks like</a>.</li>
+  <li><strong>Don&rsquo;t flip-flop.</strong> A decision should change only when the numbers move enough to matter. Scaling on Monday and cutting on Wednesday wastes money and confuses the ad platforms.</li>
+</ul>
+
+<h2 id="mistakes">Five Marketing Budget Allocation Mistakes to Avoid</h2>
+<h3>1. Allocating by ROAS alone</h3>
+<p>ROAS ignores every cost after the click. As the example shows, the highest-ROAS campaign can be far from the most profitable. Our breakdown of <a href="https://alloceraintelligence.com/roas-looks-good-campaigns-lose-money/">why ROAS can look good while campaigns lose money</a> goes deeper.</p>
+<h3>2. Stopping at the channel level</h3>
+<p>Channel averages hide losing campaigns. Take your marketing budget allocation down to the campaign, because that is where money actually moves.</p>
+<h3>3. Judging campaigns too early</h3>
+<p>Cutting a campaign before its deals could close punishes your slowest-converting, often most valuable, customers.</p>
+<h3>4. Ignoring what happens after the sale</h3>
+<p>Refunds, chargebacks, and partner payouts arrive weeks later, often in systems your marketing team never sees. Leave them out and your best-looking campaign may be your worst.</p>
+<h3>5. Acting on data you haven&rsquo;t checked</h3>
+<p>Broken tracking, stale feeds, and suspicious leads can make any campaign look like a star or a disaster. Check the data before you move the money.</p>
+
+<h2 id="cdai">How CDAI Handles Marketing Budget Allocation Every Night</h2>
+<p>Doing marketing budget allocation this way by hand means pulling numbers from your ad accounts, your CRM, your payment processor, and your lead partners, then rebuilding the math every time something changes. CDAI (Capital, Decision, Accuracy, Intelligence), the engine behind Allocera Intelligence, does it automatically, working with the tools you already use.</p>
+<p><strong>It connects to your existing stack.</strong> Meta, Google Ads, LinkedIn, HubSpot, and Salesforce connect in one click. CallRail connects with an API key. There are also built integrations for Ringba, Boberdoo, Bing, and Stripe, plus CSV import and a webhook for any other system. You can start with one CRM and one ad account; see <a href="https://alloceraintelligence.com/how-it-works/">how it works</a>.</p>
+<p><strong>Then, every night, for every campaign, it:</strong></p>
+<ul>
+  <li><strong>Calculates real profit.</strong> True cost per lead, true customer acquisition cost, and real margin after every fee, partner payout, refund, chargeback, operating cost, and compliance cost.</li>
+  <li><strong>Makes one of eight decisions:</strong> scale, hold, cut, pause, quarantine, renegotiate, investigate, or flag, with the numbers and a confidence level behind it. You stay in control of every move.</li>
+  <li><strong>Waits for enough evidence.</strong> Thin data can&rsquo;t trigger a scale call, and calls don&rsquo;t flip-flop night to night. They change only when the numbers genuinely move.</li>
+  <li><strong>Judges each campaign on the right timeline.</strong> It uses a rolling window matched to your sales cycle (30 days by default), and it never cuts a campaign just because deals haven&rsquo;t closed yet.</li>
+  <li><strong>Holds partners accountable.</strong> Close rate, payouts, refunds, and chargebacks for every lead partner, each with a risk tier.</li>
+  <li><strong>Stops on bad data.</strong> It flags stale feeds, revenue with no recorded spend, and campaigns missing from your ad platforms. Serious data problems stop that night&rsquo;s calls instead of driving them.</li>
+</ul>
+<p>It works alongside your CRM and attribution tools, not instead of them. They tell you who the customer is and which touchpoint gets credit. CDAI tells you whether each campaign made money after every cost, and what to do about it. The <a href="https://alloceraintelligence.com/dashboard/">dashboard</a> shows every campaign&rsquo;s decision in one view.</p>
+
+<h3>Validated before release</h3>
+<p>Before release, CDAI&rsquo;s decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>89.5% accurate overall (1,210 of 1,352 scored decisions)</strong>, with the underlying math matching 100%. Every decision type:</p>
+<div class="mba-table-wrap">
+<table>
+  <thead><tr><th>Decision</th><th>What it tells you</th><th>Accuracy</th></tr></thead>
+  <tbody>
+    <tr><td>Scale</td><td>Spend more here</td><td class="mba-acc"><span class="mba-mono mba-pos">98.0%</span> <span class="mba-cnt">(818 of 835)</span></td></tr>
+    <tr><td>Hold</td><td>Keep this steady</td><td class="mba-acc"><span class="mba-mono mba-pos">95.2%</span> <span class="mba-cnt">(40 of 42)</span></td></tr>
+    <tr><td>Pause</td><td>Stop this now</td><td class="mba-acc"><span class="mba-mono mba-pos">85.2%</span> <span class="mba-cnt">(144 of 169)</span></td></tr>
+    <tr><td>Flag</td><td>A person should look at this</td><td class="mba-acc"><span class="mba-mono">70.9%</span> <span class="mba-cnt">(200 of 282)</span><span class="mba-sub">The other 82 were neutral; none were wrong.</span></td></tr>
+    <tr><td>Cut</td><td>Reduce spend</td><td class="mba-acc"><span class="mba-mono">55.6%</span> <span class="mba-cnt">(5 of 9)</span><span class="mba-sub">All misses came from one deliberately extreme stress-test business.</span></td></tr>
+    <tr><td>Investigate</td><td>Something needs a closer look</td><td class="mba-acc"><span class="mba-mono mba-pos">100%</span> <span class="mba-cnt">(2 of 2)</span></td></tr>
+    <tr><td>Renegotiate</td><td>A partner is taking too much</td><td class="mba-acc"><span class="mba-mono mba-pos">100%</span> <span class="mba-cnt">(1 of 1)</span></td></tr>
+    <tr><td>Quarantine</td><td>Suspicious data, kept out of decisions</td><td class="mba-acc"><span class="mba-sub" style="margin-top:0">Caught correctly in all 12 cases. The outcome depends on a person acting on it, so these 12 count as misses in the overall number.</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p>Read the full method and results in our <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>. Industry deep dives: <a href="https://alloceraintelligence.com/cost-per-booked-job-hvac-plumbing/">HVAC and plumbing</a>, <a href="https://alloceraintelligence.com/cost-per-signed-case/">personal injury law</a>, and <a href="https://alloceraintelligence.com/true-cost-per-move-in/">senior living</a>.</p>
+
+<h2 id="faq">Marketing Budget Allocation FAQs</h2>
+<details>
+  <summary>What is marketing budget allocation?</summary>
+  <p>It&rsquo;s the process of deciding how much to spend on marketing and how to divide that money between channels and campaigns. Done well, it puts each dollar where it earns the most profit.</p>
+</details>
+<details>
+  <summary>What is the 70/20/10 rule in marketing?</summary>
+  <p>It&rsquo;s a common budget split: about 70% to proven channels, 20% to growing ones, and 10% to experiments. It&rsquo;s a useful planning guide, but it works at the channel level and can&rsquo;t show which individual campaigns are losing money.</p>
+</details>
+<details>
+  <summary>What percentage of revenue should go to marketing?</summary>
+  <p>Gartner&rsquo;s 2026 CMO Spend Survey puts the average at 7.8% of company revenue, mostly among larger companies. For your business, the better guide is profit: keep adding budget where an extra dollar returns more than a dollar of profit.</p>
+</details>
+<details>
+  <summary>How do I decide which campaigns to scale?</summary>
+  <p>In a profit-based marketing budget allocation, scale campaigns that are clearly profitable after every cost, with steady results and enough data to trust. Increase spend in steps and recheck profit after each step, because returns usually change as spend grows.</p>
+</details>
+<details>
+  <summary>What is the difference between cutting and pausing a campaign?</summary>
+  <p>Cutting reduces the budget but keeps the campaign running, for campaigns that are barely profitable or sliding. Pausing stops spend completely, for campaigns that are losing money after their deals have had time to close, or that show serious problems like a fraud spike.</p>
+</details>
+<details>
+  <summary>How often should I change my marketing budget allocation?</summary>
+  <p>Review your marketing budget allocation continuously, but move money only when the numbers genuinely change. Judge each campaign over a window long enough for its deals to close, often 30 days or more.</p>
+</details>
+<details>
+  <summary>Can I allocate my marketing budget by ROAS?</summary>
+  <p>ROAS is a quick efficiency check, but it leaves out refunds, delivery costs, partner payouts, and fees. Two campaigns with the same ROAS can earn very different profits, so base your marketing budget allocation on contribution margin instead.</p>
+</details>
+<details>
+  <summary>Does CDAI change my ad budgets for me?</summary>
+  <p>CDAI gives every campaign a clear decision each night, with the numbers and a confidence level behind it. You stay in control of every move.</p>
+</details>
+
+<section class="mba-final">
+  <h2>Put Every Marketing Dollar Where It Earns the Most</h2>
+  <p>Turn marketing budget allocation into a nightly decision instead of a monthly guess. Connect the CRM and ad accounts you already use. CDAI will calculate real profit for every campaign and tell you whether to scale, hold, cut, or pause it, every night.</p>
+  <div class="mba-btns">
+    <a class="mba-btn mba-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <a class="mba-btn" href="https://alloceraintelligence.com/pricing/">Get a Free Distortion Audit</a>
+    <a class="mba-btn" href="https://alloceraintelligence.com/calculate-contribution-margin/">Read: Calculate Contribution Margin</a>
+  </div>
+</section>
+
+</article>
+
+<footer class="mba-footer">
+  <span><img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence" width="26" height="26">Allocera Intelligence &middot; CDAI Engine</span>
+  <span>&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/">Terms of Service</a></span>
+</footer>
+
+</div>
+<script>
+(function(){var b=document.getElementById('mbaBurger'),l=document.getElementById('mbaLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('mba-open');});}})();
+</script>

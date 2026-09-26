@@ -4,7 +4,8 @@
 
 **Every fix waits on Nick's yes.** Rebuilt pages (Sept 26):
 - `/net-marketing-contribution/`: live, Rank Math 91/100.
-- `/calculate-contribution-margin/`: built. Its rebuild also fixes this page's wrong canonical (A3b) and doubled title (A3), and removes false fee claims, double-counted refunds, exposed thresholds, and unsourced statistics.
+- `/scale-hold-cut-pause-framework/`: rebuilt as `/marketing-budget-allocation/` (pending Nick). Removes the retired 80% claim (A1), thresholds, confidence ranges, and the "five directives" error.
+- `/calculate-contribution-margin/`: live, Rank Math 90/100. Its rebuild also fixes this page's wrong canonical (A3b) and doubled title (A3), and removes false fee claims, double-counted refunds, exposed thresholds, and unsourced statistics.
 
 ---
 

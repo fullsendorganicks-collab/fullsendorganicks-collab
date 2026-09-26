@@ -56,7 +56,8 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 
 **Rebuilt so far** (files in `website/pages/`, each with its Rank Math box):
 - [x] **Page 1: `/net-marketing-contribution/`**: live, Rank Math **91/100** (Sept 26).
-- [ ] **Page 2: `/calculate-contribution-margin/`**: built and tested Sept 26. Nick uploads the chart image, pastes the block, and sets the Rank Math fields.
+- [x] **Page 2: `/calculate-contribution-margin/`**: live, Rank Math **90/100** (Sept 26).
+- [ ] **Page 3: `/scale-hold-cut-pause-framework/` → `/marketing-budget-allocation/`**: built and tested Sept 26. Nick decides on the new URL plus a 301 redirect, uploads the chart, pastes the block, and sets the Rank Math fields.
 
 **Per page:** audit it against the engine, the validation report, GA, and Search Console. Nick says yes or no to each change, and Claude delivers the finished HTML block plus Rank Math fields.
 
