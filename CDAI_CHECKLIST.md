@@ -65,8 +65,10 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 | 5 | `/home-sample/northbeam-alternative/` | LIVE, **90** | done (slug kept) |
 | 6 | `/home-sample/rockerbox-alternative/` | LIVE (score not yet reported) | done (slug kept) |
 | 7 | `/cost-per-signed-case/` | LIVE, **90** | done |
-| 8 | `/blog/` (hub, Page ID 187) | BUILT, **paste next** | paste `blog.html` and its Rank Math box |
-| 9 | next: `/pricing/` (after the Stripe session confirms free audit and credit wording) | not started | answer the credit question |
+| 8 | `/blog/` (hub, Page ID 187) | LIVE, **72** (normal for a directory page) | done |
+| 9 | NEXT: `/30-day-retest-methodology/`, rebuilt around the Sept 2026 validation (89.5%) and replacing the fake 80% | not started | none |
+| 10 | `/seven-cost-layers/`: keep the URL (246 impressions) and write a NEW post on it (the concept is dead; the topic will be hidden marketing costs, stated plainly) | not started | none (no redirect anymore) |
+| 11 | `/pricing/` | ON HOLD | Nick is working out the free audit |
 
 - [ ] **Retire `/seven-cost-layers/`**: 301 it to `/calculate-contribution-margin/`. Its impressions come from unrelated searches ("sales layer cost", "layer cost"), it has 0 clicks, and the concept is retired.
 - **Rules:**
@@ -88,7 +90,7 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
    - data-deletion-instructions
 
    After the moves, Claude updates the internal links on every rebuilt page.
-2. **Redirect** `/seven-cost-layers/` to `/calculate-contribution-margin/`, and `/30-day-retest-methodology-2/` to `/tag-manager-real-roi/`.
+2. **Redirect** `/30-day-retest-methodology-2/` to `/tag-manager-real-roi/`. Don't redirect `/seven-cost-layers/`; it's getting a new post.
 3. **Categories:** every post is currently "Uncategorized". Create these categories and assign each post:
    - Marketing Methodology
    - Tool Comparisons
@@ -98,9 +100,20 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 4. **Turn off Comments and Pings** on posts (they attract spam and do nothing for SEO).
 5. **Delete "every two weeks"** from `/newsletter-welcome/` and `/roas-looks-good-campaigns-lose-money/`.
 6. **Turn on Rank Math's 404 Monitor.**
-7. **Leave the "Elementor Canvas" template as it is.** It's why each page carries its own nav and footer.
+7. **Done Sept 26:** every page is now on Elementor Canvas. Leave the "Elementor Canvas" template as it is. It's why each page carries its own nav and footer.
 
-**NEXT after the blog page: Tag Manager / GA4 event tracking on the homepage** (GA4 `G-29J4V3VQ7B`). Track:
+**Google index report (Sept 26 upload):**
+- 46 pages are indexed and 44 are not.
+- Why pages aren't indexed:
+  - 16 "Crawled, currently not indexed" (thin or duplicate; the rebuilds fix these)
+  - 17 redirects (normal)
+  - 4 "noindex"
+  - 2 alternate canonical
+  - 1 redirect error
+  - 2 not found (404)
+- The export only has the counts. Nick should export the URL lists for "Crawled, currently not indexed", "noindex", "404", and "Redirect error" (click each reason in Search Console, then Export).
+
+**Tag Manager: send the container ID (`GTM-XXXXXXX`).** Then Claude builds homepage tracking.  / GA4 event tracking on the homepage** (GA4 `G-29J4V3VQ7B`). Track:
 - every button
 - the free-audit and contact forms
 - the calculator
