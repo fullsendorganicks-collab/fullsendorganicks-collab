@@ -128,6 +128,8 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 
 Events push to `dataLayer`, so they work with GTM, and they also fire through `gtag` if it's loaded.
 
+**FULL PAGE-BY-PAGE FIX LIST: `website/FIX_LIST.md`** (41 pages, 3 tiers; the next build is `/30-day-retest-methodology/`, and Nick already sent its HTML).
+
 **Remaining site work (Sept 26 plan). Order: SEO and info first, then Tag Manager, then Stripe.**
 - **Batch 1: Nick, about 15 minutes in WordPress, no new pages.**
   - Redirect `/seven-cost-layers/` to `/calculate-contribution-margin/`.
