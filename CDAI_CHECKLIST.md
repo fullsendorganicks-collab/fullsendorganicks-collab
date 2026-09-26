@@ -23,7 +23,6 @@ _Last updated: Sept 26, 2026 (late), after the engine fixes Nick approved and th
 2. **Merge these engine PRs** after you've read each one; all are tested:
    - **#33** Bing + labels: https://github.com/fullsendorganicks-collab/cdai-engine/pull/33
    - **#34** Digest logo: https://github.com/fullsendorganicks-collab/cdai-engine/pull/34
-     - **Before merging #34:** upload `website/allocera-logo-email.png` (your gold logo, email-sized) to WordPress → Media. Its address must come out as `https://alloceraintelligence.com/wp-content/uploads/2026/09/allocera-logo-email.png`. If WordPress gives it a different name, tell Claude.
    - **#35** Test-business errors: https://github.com/fullsendorganicks-collab/cdai-engine/pull/35
 2b. **GA4 key events.** In GA4 → Admin → Events, after the first visits come in, mark these as Key events:
    - `generate_lead`
