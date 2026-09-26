@@ -91,7 +91,7 @@ Full page-by-page list: **`website/FIX_LIST.md`** (41 pages still carry old or f
 | 7 | `/cost-per-signed-case/` | LIVE, **90** |
 | 8 | `/blog/` (Nick's design, new content) | LIVE, **72** (normal for a directory page) |
 | 9 | Homepage | LIVE, **81** (Nick: fine as is). Pasted Sept 26: Ask AI section back, F6S logo, tracking, the "What is true cost per lead?" FAQ. Rank Math box in `website/homepage-RANKMATH.md`. |
-| 10 | **NEXT: `/30-day-retest-methodology/`** | Rebuild around the Sept 2026 validation (89.5%) and remove the fake 80%. Nick sent the current HTML. Verify every "retest" claim against the engine first. |
+| 10 | `/30-day-retest-methodology/` | **BUILT, ready to paste** (`website/pages/30-day-retest-methodology.html` + RANKMATH). Focus keyword "marketing measurement". Every claim checked against the engine code. Includes GA4 tracking. |
 | 11 | `/seven-cost-layers/` | New post at the same URL (246 impressions). The concept is dead; the new topic is hidden marketing costs, stated plainly. |
 | 12 | `/55-directives-study/` | 301 to the validation report (the whole page is the fake 80%) |
 | 13 | `/tag-manager-real-roi/`, `/allocera-vs-salesforce/`, `/true-cac/` + `/true-cac-2/` (merge) | Full rebuilds (80%, seven layers, pasted head) |

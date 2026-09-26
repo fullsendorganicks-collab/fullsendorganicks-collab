@@ -12,6 +12,7 @@ This list comes from a scan of the WordPress export run on Sept 26. It covers al
 - Cost Per Signed Case
 - Blog
 - Homepage
+- 30-Day Retest (built, awaiting paste)
 
 **What the scan looks for:**
 - **80% claim:** the retired, never-computed "80% measured accuracy".
@@ -29,7 +30,7 @@ Two kinds of fix:
 ## Tier 1: false claims (fix first)
 | # | Page | Problems | Fix |
 |---|---|---|---|
-| 1 | `/30-day-retest-methodology/` | 80%, "55 of 56", seven layers, $2,500 guarantee, wrong `/blog/` links, pasted head | **Full rebuild (NEXT)**, built around the 89.5% validation. Nick sent the current HTML. |
+| 1 | `/30-day-retest-methodology/` | 80%, "55 of 56", seven layers, $2,500 guarantee, wrong `/blog/` links, pasted head | **REBUILT Sept 26 (night)**: `pages/30-day-retest-methodology.html` + RANKMATH. Waiting for Nick to paste it and report the score. |
 | 2 | `/55-directives-study/` | The whole page is the fake 80% | **301** to the validation report |
 | 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **301** to `/tag-manager-real-roi/` |
 | 4 | `/tag-manager-real-roi/` | 80%, seven layers, 14 unsourced stats, pasted head | Full rebuild (it also ties into the GTM work) |
