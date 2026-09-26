@@ -158,3 +158,32 @@ This is the "before" snapshot, so every rebuilt page can be measured against it.
 - `/newsletter-welcome/` is noindex. That's correct for a thank-you page, so no change is needed.
 - `/home-sample/terms/` has a 25-character meta description (A5).
 - `/scale-hold-cut-pause-framework/` ranks for 0 keywords, so moving it to a new URL costs nothing.
+
+## F. Search Console + GA4, measured (connected Sept 26 2026; data Jun 28 to Sep 25)
+
+**Search Console, last 3 months:**
+- **Totals:** 4,236 impressions, up from 718 in the previous 3 months (5.9 times as many). 24 clicks, up from 6. Average position 10.9.
+- **Top pages by impressions:**
+
+| Page | Impressions | Avg position | Clicks |
+|---|---|---|---|
+| `/calculate-contribution-margin/` | 1,460 | 10.1 | 1 (rebuilt Sept 26) |
+| `/triple-whale-vs-rockerbox-vs-allocera/` | 689 | 10.6 | 2 (still carries the retired 80% claim, A1) |
+| `/` | 268 | 2.4 | 10 |
+| `/seven-cost-layers/` | 246 | 10.9 | 0 (retired concept, but it earns impressions; rewrite, don't delete) |
+| `/home-sample/northbeam-alternative/` | 143 | 28.1 | 1 |
+| `/net-marketing-contribution/` | 125 | 6.7 | 0 (rebuilt) |
+| `/home-sample/rockerbox-alternative/` | 106 | 11.7 | 1 |
+| `/tcpa-compliance-cost-for-law-firms/` | 99 | 25.5 | 0 |
+| `/blog/` | 95 | 16.4 | 0 |
+
+- **Scale-hold-cut-pause page:** 42 impressions and 1 click. The only queries reported for it are brand searches.
+
+**GA4, last 3 months:**
+- 365 sessions and 239 users, down 33% from the previous period.
+- **By channel:**
+  - Direct: 279 sessions, 12.5s average engagement
+  - Organic search: 39 sessions, 46.1s average engagement (the best of any channel)
+  - Organic social: 31
+  - Referral: 9
+  - AI assistants: 3

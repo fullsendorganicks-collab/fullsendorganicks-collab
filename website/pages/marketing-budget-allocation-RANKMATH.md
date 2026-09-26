@@ -3,7 +3,8 @@
 Page type: **Post**, ID 322, currently titled "Scale, Hold, Cut, Pause: A Directive Framework". Find it under **Posts**. Built Sept 26 2026.
 
 ## Why the URL should change (Nick's call)
-- The old URL's keyword ("directive framework") gets essentially no searches. The page had 19 Search Console impressions in 6 months.
+- The old URL's keyword ("directive framework") gets essentially no searches.
+- Live Search Console (Sept 26): the page had 42 impressions and 1 click in the last 3 months, at an average position of 6.8. The only searches Google reports for it are brand searches ("allocera", "allocera intelligence"). It ranks for no topic keyword, and the 301 redirect carries the brand traffic to the new URL.
 - The new focus keyword, "marketing budget allocation", has real demand (about 90 US searches a month, low competition), and no other page on the site targets it.
 - Rank Math scores the keyword in the URL, so the permalink should match: `marketing-budget-allocation`.
 - The old URL's small ranking carries over through a 301 redirect (steps below).
