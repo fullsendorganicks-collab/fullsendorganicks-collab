@@ -21,9 +21,9 @@ Open the post in Elementor. Replace **everything** in its HTML widget with `calc
 |---|---|
 | Focus Keyword | `calculate contribution margin` |
 | Secondary keywords (optional, after a comma) | `how to calculate contribution margin, contribution margin formula, contribution margin ratio, contribution margin per unit` |
-| SEO Title (59 chars) | `Calculate Contribution Margin: 4 Easy Formulas + Calculator` |
+| SEO Title (59 chars) | `Calculate Contribution Margin: 3 Easy Formulas + Calculator` |
 | Permalink | `calculate-contribution-margin` (unchanged) |
-| Meta Description (155 chars) | `Calculate contribution margin in minutes with 4 easy formulas, a free calculator, and a real ad campaign example showing how a 4.8x ROAS can earn just 22%.` |
+| Meta Description (155 chars) | `Calculate contribution margin in minutes with 3 easy formulas, a free calculator, and a real ad campaign example showing how a 4.8x ROAS can earn just 22%.` |
 | Schema | Article → Blog Post |
 | Social (Facebook/X) image | the uploaded chart image |
 
