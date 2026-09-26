@@ -54,15 +54,25 @@ _Last updated: Sept 26, 2026 (page rebuilds started)_
 
 **WordPress export received (Sept 25).** Read-only audit, with proof for each finding, in `website/SITE_AUDIT.md`. Nothing on the site has been changed; every fix waits on Nick's yes.
 
-**Rebuilt so far** (files in `website/pages/`, each with its Rank Math box):
-- [x] **Page 1: `/net-marketing-contribution/`**: live, Rank Math **91/100** (Sept 26).
-- [x] **Page 2: `/calculate-contribution-margin/`**: live, Rank Math **90/100** (Sept 26).
-- [x] **Page 3: `/scale-hold-cut-pause-framework/`** (original slug kept): live, Rank Math **89/100** (Sept 26).
-- [x] **Page 5: Northbeam alternative**: live, Rank Math **90/100** (Sept 26).
-- [ ] **Page 6: `/home-sample/rockerbox-alternative/`**: built Sept 26.
-- **Rule going forward:** no years or dates in titles or bylines, so pages don't go stale. Recommend moving it to `/northbeam-alternative/` with a 301 redirect.
+**Rebuilt so far** (files in `website/pages/`, each with its Rank Math box). Work down this list in order.
+
+| # | Page (URL) | Status | Nick's next step |
+|---|---|---|---|
+| 1 | `/net-marketing-contribution/` | LIVE, **91** | done |
+| 2 | `/calculate-contribution-margin/` | LIVE, **90** | done |
+| 3 | `/scale-hold-cut-pause-framework/` | LIVE, **89** | done |
+| 4 | `/triple-whale-vs-rockerbox-vs-allocera/` | LIVE, **90** | optional: drop "2026" from the SEO title later |
+| 5 | `/home-sample/northbeam-alternative/` | LIVE, **90** | optional: move to a clean URL with a 301 |
+| 6 | `/home-sample/rockerbox-alternative/` | BUILT, **paste next** | paste `rockerbox-alternative.html` and its Rank Math box, then report the score |
+| 7 | `/cost-per-signed-case/` | BUILT, paste after 6 | paste `cost-per-signed-case.html` and its Rank Math box, then report the score |
+| 8 | next build: `/tcpa-compliance-cost-for-law-firms/` (99 impressions, position 25.5) | not started | none |
+
 - [ ] **Retire `/seven-cost-layers/`**: 301 it to `/calculate-contribution-margin/`. Its impressions come from unrelated searches ("sales layer cost", "layer cost"), it has 0 clicks, and the concept is retired.
-- [ ] **Page 4: `/triple-whale-vs-rockerbox-vs-allocera/`**: built Sept 26. It's the #2 page for impressions (689), and the rebuild removes the 80% claim and false competitor claims.
+- **Rules:**
+  - No years or dates in titles or bylines.
+  - Keep the original slugs.
+  - Illustrative examples are labeled as such.
+  - Every external stat is linked to a source that was live in Google's results when the page was built.
 
 **Per page:** audit it against the engine, the validation report, GA, and Search Console. Nick says yes or no to each change, and Claude delivers the finished HTML block plus Rank Math fields.
 

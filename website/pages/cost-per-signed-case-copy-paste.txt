@@ -1,0 +1,358 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#cps{font-variant-numeric:lining-nums;--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#E0566B;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+#cps *{box-sizing:border-box}
+#cps a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(222,187,106,.35)}
+#cps a:hover{color:#fff;border-bottom-color:#fff}
+#cps .cps-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(1,9,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+#cps .cps-nav a{border:0}
+#cps .cps-brand{display:flex;align-items:center;gap:10px;color:var(--text)}
+#cps .cps-brand img{height:34px;width:auto;display:block}
+#cps .cps-brand span{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.02em}
+#cps .cps-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;margin:0;padding:0}
+#cps .cps-links a{color:var(--dim);font-size:14px;font-weight:500}
+#cps .cps-links a:hover{color:#fff}
+#cps .cps-cta{background:var(--gold);color:#010914!important;font-weight:600;font-size:14px;padding:9px 18px;border-radius:2px}
+#cps .cps-cta:hover{background:var(--gold2)}
+#cps .cps-burger{display:none;background:none;border:1px solid var(--border2);color:var(--text);font-size:18px;padding:4px 10px;border-radius:2px;cursor:pointer}
+#cps .cps-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+#cps .cps-hero{padding:clamp(44px,8vh,84px) 0 clamp(20px,4vh,36px);border-bottom:1px solid var(--border)}
+#cps .cps-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:0 0 16px}
+#cps h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 20px;color:#fff}
+#cps .cps-lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);line-height:1.65;margin:0 0 22px}
+#cps .cps-byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.04em}
+#cps h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.15;color:#fff;margin:clamp(48px,7vh,68px) 0 16px;scroll-margin-top:90px}
+#cps h3{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:30px 0 8px}
+#cps p{margin:0 0 18px;color:var(--muted)}
+#cps strong{color:#fff;font-weight:600}
+#cps ul,#cps ol{margin:0 0 20px;padding-left:22px;color:var(--muted)}
+#cps li{margin:0 0 9px}
+#cps .cps-box{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
+#cps .cps-box h3{margin-top:0}
+#cps .cps-box ul{margin-bottom:0}
+#cps .cps-toc{background:transparent;border:1px solid var(--border2);border-radius:2px;padding:20px 24px;margin:30px 0}
+#cps .cps-toc p{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
+#cps .cps-toc ol{margin:0;padding-left:20px}
+#cps .cps-toc li{margin:0 0 6px}
+#cps .cps-toc a{color:var(--dim);border:0}
+#cps .cps-toc a:hover{color:#fff}
+#cps .cps-formula{background:#04102a;border:1px solid var(--border2);border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.6vw,15px);line-height:1.9;color:#fff;overflow-x:auto}
+#cps .cps-formula .cps-f-main{color:var(--gold2);font-size:clamp(14px,1.8vw,17px);font-weight:500}
+#cps .cps-formula .cps-f-label{color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:10px}
+#cps .cps-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+#cps .cps-stat{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;text-align:center}
+#cps .cps-stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,46px);font-weight:600;color:var(--green);line-height:1}
+#cps .cps-stat span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.45}
+#cps .cps-steps{counter-reset:s;list-style:none;padding:0}
+#cps .cps-steps li{counter-increment:s;position:relative;padding:0 0 4px 50px;margin:0 0 18px}
+#cps .cps-steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border:1px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
+#cps .cps-table-wrap{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--border2);border-radius:2px}
+#cps table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+#cps th{background:var(--surface);color:#fff;text-align:left;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border2);font-size:13px;letter-spacing:.02em}
+#cps td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+#cps tr:last-child td{border-bottom:0}
+#cps td.cps-num{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#cps .cps-pos{color:var(--green)!important;font-weight:600}
+#cps .cps-neg{color:var(--red)!important;font-weight:600}
+#cps .cps-total td{color:#fff;font-weight:600;background:rgba(196,160,64,.07)}
+#cps .cps-note{font-size:14px;color:var(--dim)}
+#cps td.cps-acc{min-width:210px}
+#cps .cps-mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#cps .cps-cnt{font-size:14px;color:var(--dim);white-space:nowrap}
+#cps code{font-family:'JetBrains Mono',monospace;font-size:.9em;background:#04102a;border:1px solid var(--border2);padding:1px 6px;border-radius:2px;color:var(--gold2)}
+#cps .cps-sub{display:block;font-size:14px;color:var(--dim);margin-top:4px;line-height:1.5}
+#cps figure{margin:28px 0}
+#cps figure img{width:100%;height:auto;display:block;border:1px solid var(--border2);border-radius:2px}
+#cps figcaption{font-size:14px;color:var(--dim);margin-top:10px}
+#cps blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,28px);line-height:1.35;color:#fff}
+#cps .cps-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
+#cps .cps-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 20px}
+#cps .cps-card h3{margin:0 0 6px;font-size:17px}
+#cps .cps-card p{margin:0;font-size:15px}
+#cps details{border:1px solid var(--border2);border-radius:2px;margin:0 0 12px;background:var(--surface)}
+#cps summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none}
+#cps summary::-webkit-details-marker{display:none}
+#cps summary::after{content:'+';float:right;color:var(--gold2);font-family:'JetBrains Mono',monospace}
+#cps details[open] summary::after{content:'–'}
+#cps details p{padding:0 20px 4px;margin:0 0 14px}
+#cps .cps-final{margin:clamp(56px,8vh,80px) 0 0;padding:clamp(28px,5vw,48px);background:linear-gradient(135deg,#071530,#04102a);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;text-align:center}
+#cps .cps-final h2{margin-top:0}
+#cps .cps-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+#cps .cps-btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:600;font-size:15px;border:1px solid var(--gold)!important;color:var(--gold2)}
+#cps .cps-btn.cps-primary{background:var(--gold);color:#010914!important}
+#cps .cps-btn:hover{background:var(--gold2);color:#010914!important}
+#cps .cps-footer{margin-top:clamp(56px,8vh,80px);padding:26px clamp(16px,4vw,48px);border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim)}
+#cps .cps-footer a{color:var(--dim);border:0}
+#cps .cps-footer img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
+@media (max-width:900px){
+#cps .cps-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:#010914;border-bottom:1px solid var(--border);padding:14px 20px;gap:14px}
+#cps .cps-links.cps-open{display:flex}
+#cps .cps-burger{display:block}
+}
+@media (max-width:640px){
+#cps{font-size:16px}
+#cps .cps-stats,#cps .cps-grid{grid-template-columns:1fr}
+#cps .cps-cta{display:none}
+}
+
+</style>
+<div id="cps">
+
+<nav class="cps-nav">
+  <a class="cps-brand" href="https://alloceraintelligence.com/">
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence logo" width="34" height="34">
+    <span>Allocera Intelligence</span>
+  </a>
+  <ul class="cps-links" id="cpsLinks">
+    <li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li>
+    <li><a href="https://alloceraintelligence.com/proof/">Proof</a></li>
+    <li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li>
+    <li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li>
+    <li><a href="https://alloceraintelligence.com/about/">About</a></li>
+    <li><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></li>
+    <li><a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="cps-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <button class="cps-burger" id="cpsBurger" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+
+<article class="cps-wrap">
+
+<header class="cps-hero">
+  <p class="cps-eyebrow">The Margin Gap &middot; Personal Injury Law</p>
+  <h1>Cost Per Signed Case: How Personal Injury Firms Find the True Number</h1>
+  <p class="cps-lead">Cost per signed case is what your firm actually pays to sign one new client, counting every dollar of marketing and intake it took to get there. Most personal injury firms track cost per lead instead, and cost per lead can point your budget in exactly the wrong direction. This guide gives you the cost per signed case formula, the costs most firms leave out, a worked example across three channels, and the next step most firms skip: profit per signed case.</p>
+  <p class="cps-byline">By Nick Baum, Founder of Allocera Intelligence &middot; 12 min read</p>
+</header>
+
+<div class="cps-box">
+  <h3>Key takeaways</h3>
+  <ul>
+    <li>Cost per signed case = everything you spent to get cases (ads, lead fees, intake) divided by retainers signed.</li>
+    <li>Published benchmarks disagree widely. One source puts general PI cost per signed case at $1,500 to $8,000. Your own number is the only one that matters.</li>
+    <li>In our example, the cheapest leads ($125 each) are nearly break-even, and the most expensive leads ($400 each) make the most money per case.</li>
+    <li>Cost per signed case is better than cost per lead, but it still isn&rsquo;t profit. You need the expected fee per case too.</li>
+    <li>Allocera CDAI calculates profit per campaign and lead partner every night from the CRM and ad accounts you already use.</li>
+  </ul>
+</div>
+
+<nav class="cps-toc" aria-label="Table of contents">
+  <p>In this guide</p>
+  <ol>
+    <li><a href="#what">What cost per signed case means</a></li>
+    <li><a href="#formula">The cost per signed case formula</a></li>
+    <li><a href="#benchmarks">What benchmarks say</a></li>
+    <li><a href="#missing">The costs most firms leave out</a></li>
+    <li><a href="#example">Worked example: three channels</a></li>
+    <li><a href="#profit">From cost per case to profit per case</a></li>
+    <li><a href="#blended">Why blended numbers hide losers</a></li>
+    <li><a href="#track">How to track it in your CRM</a></li>
+    <li><a href="#cdai">Where Allocera CDAI fits</a></li>
+    <li><a href="#mistakes">Five mistakes to avoid</a></li>
+    <li><a href="#faq">FAQs</a></li>
+  </ol>
+</nav>
+
+<h2 id="what">What Cost Per Signed Case Means (and Why Cost Per Lead Isn&rsquo;t It)</h2>
+<p>A lead is a phone call, a form fill, or a chat. A signed case is a client who signed your retainer. The gap between the two is where most personal injury marketing money disappears.</p>
+<p>Cost per lead tells you how cheaply a channel fills your intake queue. It says nothing about how many of those people had a real case, how long intake spent screening them, or how many signed. A channel with cheap leads and a low sign rate can cost far more per case than a channel with expensive leads that sign often.</p>
+<p>Cost per signed case fixes that by measuring the thing you actually want to buy. It&rsquo;s the personal injury version of customer acquisition cost, and it&rsquo;s the first number a managing partner should see when deciding where next month&rsquo;s budget goes. If you want the broader version for any business, see our guide to <a href="https://alloceraintelligence.com/true-cac/">true cost per lead</a> and how it rolls up into acquisition cost.</p>
+<div class="cps-stats">
+  <div class="cps-stat"><b>$183&ndash;$442</b><span>PI cost per lead by channel, per one agency&rsquo;s benchmarks</span></div>
+  <div class="cps-stat"><b>2%&ndash;25%</b><span>Reported PI lead-to-client conversion range, by lead source</span></div>
+  <div class="cps-stat"><b>33%&ndash;40%</b><span>Typical contingency fee range on a recovery</span></div>
+</div>
+<p class="cps-note">Sources: <a href="https://lexgro.com/insights/pi-cost-per-lead-benchmarks/" target="_blank" rel="noopener">LEXGRO PI cost per lead benchmarks</a>, <a href="https://injuryleadgen.com/resources/personal-injury-lead-conversion-rates" target="_blank" rel="noopener">InjuryLeadGen conversion rates</a>, <a href="https://www.superlawyers.com/resources/personal-injury-plaintiff/how-much-does-it-cost-to-hire-a-personal-injury-attorney/" target="_blank" rel="noopener">Super Lawyers on contingency fees</a>.</p>
+
+<h2 id="formula">The Cost Per Signed Case Formula</h2>
+<p>The basic cost per signed case formula is simple. The work is in deciding what goes on top of the fraction.</p>
+<div class="cps-formula">
+  <span class="cps-f-main">Cost per signed case = (Ad spend + Lead fees &minus; Lead refunds + Intake cost) &divide; Retainers signed</span>
+  <span class="cps-f-label">Calculate it per channel</span>
+  Google Ads, Local Services Ads, lead vendors, TV, referral partners: one cost per signed case each, never one blended figure.
+</div>
+<p>Work through it in this order:</p>
+<ol class="cps-steps">
+  <li><strong>Pick a time window.</strong> Use a window long enough for leads to sign. A lead from the last day of the month may sign two weeks later, so count retainers from leads that came in during the window, not retainers dated in it.</li>
+  <li><strong>Add up the marketing cost per channel.</strong> Ad spend from the ad platform, plus fees paid to lead vendors, minus any credits for returned leads.</li>
+  <li><strong>Add intake cost.</strong> The staff time, answering service, and call tracking it took to screen every lead from that channel, including the ones you turned down.</li>
+  <li><strong>Count signed retainers per channel.</strong> Pull these from your intake CRM, matched to the lead&rsquo;s original source.</li>
+  <li><strong>Divide.</strong> Total cost divided by signed retainers is your true cost per signed case for that channel.</li>
+</ol>
+
+<h2 id="benchmarks">What Cost Per Signed Case Benchmarks Say (and Why They Disagree)</h2>
+<p>Search for a personal injury cost per signed case benchmark and you&rsquo;ll find numbers that don&rsquo;t agree. That&rsquo;s not because someone is wrong. Market, case type, channel, and how each source counts cost all move the number.</p>
+<div class="cps-table-wrap">
+<table>
+  <thead><tr><th>Source</th><th>What it reports</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://lexgro.com/insights/pi-cost-per-lead-benchmarks/" target="_blank" rel="noopener">LEXGRO</a></td><td>PI cost per lead from $183 (SEO) to $442 (Google Ads)</td></tr>
+    <tr><td><a href="https://rankings.io/blog/personal-injury-lead-costs/" target="_blank" rel="noopener">Rankings.io</a></td><td>PI leads from $50 to $1,500+, with the average firm paying around $284 per lead</td></tr>
+    <tr><td><a href="https://firstpagesage.com/seo-blog/average-personal-injury-cost-per-lead-cpl/" target="_blank" rel="noopener">First Page Sage</a></td><td>PI cost per lead broken down by channel, case type, and US region</td></tr>
+    <tr><td><a href="https://injuryleadgen.com/resources/personal-injury-lead-conversion-rates" target="_blank" rel="noopener">InjuryLeadGen</a></td><td>Lead conversion from 2% to 25%, depending on source, exclusivity, and speed to contact</td></tr>
+    <tr><td><a href="https://www.masstortmarketingagency.com/personal-injury-lead-cost" target="_blank" rel="noopener">Mass Tort Marketing Agency</a></td><td>General PI cost per signed case of $1,500 to $8,000</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Look at the conversion row. A firm signing 2% of leads needs 50 leads per case. A firm signing 25% needs four. At the same cost per lead, that&rsquo;s a twelve-fold difference in cost per signed case. This is why a benchmark is a sanity check, not a target. The number that should drive your budget is your own cost per signed case, by channel, from your own intake data.</p>
+
+<h2 id="missing">The Costs Most Firms Leave Out</h2>
+<p>Even firms that calculate cost per signed case usually stop at ad spend divided by cases. That undercounts. Here&rsquo;s what belongs in the numerator:</p>
+<ul>
+  <li><strong>Intake labor on rejected leads.</strong> Every lead intake screens and turns down still costs staff time. Channels with low sign rates carry much more of this cost.</li>
+  <li><strong>Answering services and after-hours coverage.</strong> If you pay per call or per minute, allocate it to the channels that generate the calls.</li>
+  <li><strong>Call tracking and software.</strong> Tools like CallRail that attribute calls to campaigns are part of what it costs to acquire a case.</li>
+  <li><strong>Lead vendor fees and returns.</strong> Count the fees you paid and subtract credits for leads you returned. Returned leads still cost intake time.</li>
+  <li><strong>Compliance cost on bought leads.</strong> Consent records, scrubbing, and review time are real costs; see our breakdown of <a href="https://alloceraintelligence.com/tcpa-compliance-cost-for-law-firms/">TCPA compliance cost for law firms</a>.</li>
+  <li><strong>Agency management fees.</strong> If an agency charges a percentage of spend, the true media cost is higher than the platform shows.</li>
+</ul>
+<p>None of these show up in the ad platform. That&rsquo;s why a Google Ads dashboard can look healthy while the firm&rsquo;s P&amp;L doesn&rsquo;t. Our post on <a href="https://alloceraintelligence.com/personal-injury-ad-spend-attribution/">personal injury ad spend attribution</a> goes deeper on how blended cost per lead hides these gaps.</p>
+
+<h2 id="example">Cost Per Signed Case Example: Three Channels, One Month</h2>
+<p>This illustrative example uses round numbers, not client data. A firm spends $105,000 across three channels in a month and assumes $25 of intake cost for every lead it screens.</p>
+<figure>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/cost-per-signed-case-channels.png" alt="Cost per signed case example comparing Google Ads, Local Services Ads, and a lead vendor for a personal injury firm" width="1200" height="630" loading="lazy">
+  <figcaption>The channel with the cheapest leads isn&rsquo;t the channel with the cheapest cases, or the most profitable ones.</figcaption>
+</figure>
+<div class="cps-table-wrap">
+<table>
+  <thead><tr><th>Line</th><th>Google Ads</th><th>Local Services Ads</th><th>Lead vendor</th></tr></thead>
+  <tbody>
+    <tr><td>Spend or lead fees</td><td class="cps-num">$60,000</td><td class="cps-num">$20,000</td><td class="cps-num">$25,000</td></tr>
+    <tr><td>Cost per lead</td><td class="cps-num">$400</td><td class="cps-num">$200</td><td class="cps-num">$125</td></tr>
+    <tr><td>Leads</td><td class="cps-num">150</td><td class="cps-num">100</td><td class="cps-num">200</td></tr>
+    <tr><td>Credit for returned leads</td><td class="cps-num">&mdash;</td><td class="cps-num">&mdash;</td><td class="cps-num cps-pos">&minus;$2,500</td></tr>
+    <tr><td>Intake cost ($25 per lead)</td><td class="cps-num cps-neg">$3,750</td><td class="cps-num cps-neg">$2,500</td><td class="cps-num cps-neg">$5,000</td></tr>
+    <tr><td>Total cost</td><td class="cps-num">$63,750</td><td class="cps-num">$22,500</td><td class="cps-num">$27,500</td></tr>
+    <tr><td>Retainers signed</td><td class="cps-num">18 (12%)</td><td class="cps-num">20 (20%)</td><td class="cps-num">10 (5%)</td></tr>
+    <tr class="cps-total"><td>Cost per signed case</td><td class="cps-num">$3,542</td><td class="cps-num cps-pos">$1,125</td><td class="cps-num">$2,750</td></tr>
+  </tbody>
+</table>
+</div>
+<p>By cost per lead, the lead vendor looks best at $125 and Google Ads looks worst at $400. By cost per signed case, Local Services Ads win at $1,125, the vendor lands in the middle at $2,750, and Google Ads is the most expensive at $3,542. The blended cost per lead across all three is $233, and the blended cost per signed case is $2,370. Neither blended figure describes any real channel.</p>
+
+<h2 id="profit">From Cost Per Signed Case to Profit Per Signed Case</h2>
+<p>Here&rsquo;s where most analysis stops too early. A signed case isn&rsquo;t revenue. It turns into a fee only if the case resolves with a recovery, and the size of that fee depends on the case. Different channels bring in different kinds of cases.</p>
+<p>So the better question isn&rsquo;t &ldquo;what does a case cost?&rdquo; It&rsquo;s &ldquo;what does a case make?&rdquo; Multiply the average fee by the share of signed cases that resolve with a fee to get the expected fee per signed case, then subtract the cost per signed case.</p>
+<div class="cps-table-wrap">
+<table>
+  <thead><tr><th>Line</th><th>Google Ads</th><th>Local Services Ads</th><th>Lead vendor</th></tr></thead>
+  <tbody>
+    <tr><td>Average fee when a case resolves</td><td class="cps-num">$12,000</td><td class="cps-num">$9,000</td><td class="cps-num">$6,000</td></tr>
+    <tr><td>Signed cases that resolve with a fee</td><td class="cps-num">70%</td><td class="cps-num">70%</td><td class="cps-num">50%</td></tr>
+    <tr><td>Expected fee per signed case</td><td class="cps-num">$8,400</td><td class="cps-num">$6,300</td><td class="cps-num">$3,000</td></tr>
+    <tr><td>Cost per signed case</td><td class="cps-num cps-neg">&minus;$3,542</td><td class="cps-num cps-neg">&minus;$1,125</td><td class="cps-num cps-neg">&minus;$2,750</td></tr>
+    <tr><td>Profit per signed case</td><td class="cps-num cps-pos">$4,858</td><td class="cps-num cps-pos">$5,175</td><td class="cps-num">$250</td></tr>
+    <tr class="cps-total"><td>Contribution for the month</td><td class="cps-num cps-pos">$87,450</td><td class="cps-num cps-pos">$103,500</td><td class="cps-num">$2,500</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Now the picture flips again. Google Ads has the highest cost per signed case, but its cases carry larger fees, so it earns almost as much per case as Local Services Ads. The lead vendor, with the cheapest leads, is close to break-even. Cutting Google Ads because it &ldquo;costs too much per case&rdquo; would throw away $87,450 a month. The right moves: keep scaling Local Services Ads, hold Google Ads, and renegotiate with the vendor or cut it.</p>
+<p>This is <a href="https://alloceraintelligence.com/net-marketing-contribution/">net marketing contribution</a> applied to a law firm: what each channel adds after its costs. For the full method, see <a href="https://alloceraintelligence.com/calculate-contribution-margin/">how to calculate contribution margin</a>. Case mix matters too; our guide to <a href="https://alloceraintelligence.com/personal-injury-case-type-cac/">personal injury case type CAC</a> shows why one target doesn&rsquo;t fit every case type.</p>
+<p><strong>A note on timing.</strong> Personal injury fees can arrive months or years after signing. You can&rsquo;t wait that long to judge a campaign, so firms use expected fees based on their own history by channel and case type, then true them up as cases resolve. Read more on <a href="https://alloceraintelligence.com/personal-injury-settlement-lag/">personal injury settlement lag</a> and why 30-day dashboards mislead.</p>
+
+<h2 id="blended">Why Blended Numbers Hide the Losing Channel</h2>
+<p>In our example, the firm&rsquo;s blended cost per signed case is $2,370. That sounds fine. It sits inside the published range. But it averages a channel that earns $5,175 per case with one that earns $250. The average makes a weak channel look acceptable and gives no signal about where the next dollar should go.</p>
+<p>The same thing happens across offices and states. A multi-office firm that reports one number hides the office where marketing isn&rsquo;t working; see <a href="https://alloceraintelligence.com/multi-state-pi-firm-attribution/">multi-state PI firm attribution</a>. It happens with aggregators too: our breakdown of <a href="https://alloceraintelligence.com/mass-tort-lead-aggregator-economics/">mass tort lead aggregator economics</a> shows how blended cost per lead hides which sources pay off. And it&rsquo;s the same reason <a href="https://alloceraintelligence.com/roas-looks-good-campaigns-lose-money/">ROAS can look good while campaigns lose money</a>.</p>
+
+<h2 id="track">How to Track Cost Per Signed Case in Your CRM</h2>
+<p>You can&rsquo;t calculate cost per signed case by channel if a lead&rsquo;s source gets lost between the first call and the signed retainer. Four habits fix most of it:</p>
+<ol class="cps-steps">
+  <li><strong>Capture the source on every lead.</strong> Use UTM parameters on forms and tracked numbers on calls so every lead enters the CRM with its campaign attached.</li>
+  <li><strong>Keep the source when the lead converts.</strong> The signed case record should carry the same source as the original lead, not &ldquo;phone&rdquo; or &ldquo;walk-in.&rdquo;</li>
+  <li><strong>Log rejections with a reason.</strong> Knowing why intake turned a lead down by channel tells you whether the problem is targeting, the vendor, or intake speed.</li>
+  <li><strong>Record fees when cases resolve.</strong> Tie the final fee back to the case&rsquo;s original source so your expected-fee assumptions get more accurate every month.</li>
+</ol>
+<p>HubSpot and Salesforce can both hold this data, and call tracking like CallRail keeps the source on phone leads. When you model fees, remember that contingency terms are set by written agreement under professional conduct rules such as <a href="https://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/rule_1_5_fees/" target="_blank" rel="noopener">ABA Model Rule 1.5</a>, so use the fee percentages in your own retainers, not an industry average.</p>
+
+<h2 id="cdai">Where Allocera CDAI Fits</h2>
+<p>CDAI (Capital, Decision, Accuracy, Intelligence) is the engine behind Allocera Intelligence. It doesn&rsquo;t replace your intake CRM, your ad accounts, or your agency. It works alongside them and turns their data into profit per campaign and partner.</p>
+<p><strong>It connects to your existing stack.</strong> Meta, Google Ads, LinkedIn, HubSpot, and Salesforce connect in one click. CallRail connects with an API key. There are also built integrations for Ringba, Boberdoo, Bing, and Stripe, plus CSV import and a webhook for any other system. See <a href="https://alloceraintelligence.com/how-it-works/">how it works</a>.</p>
+<p><strong>Then, every night, for every campaign, it:</strong></p>
+<ul>
+  <li><strong>Calculates real profit.</strong> True cost per lead, true customer acquisition cost, and real margin after every fee, partner payout, refund, chargeback, operating cost, and compliance cost.</li>
+  <li><strong>Holds partners accountable.</strong> Close rate, payouts, refunds, and chargebacks for every lead partner, each with a risk tier.</li>
+  <li><strong>Makes one of eight decisions:</strong> scale, hold, cut, pause, quarantine, renegotiate, investigate, or flag, with the numbers and a confidence level behind it. You stay in control of every move. Our guide to <a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">marketing budget allocation</a> explains each one.</li>
+  <li><strong>Judges each campaign on the right timeline.</strong> It uses a rolling window matched to your sales cycle (30 days by default), and it never cuts a campaign just because deals haven&rsquo;t closed yet.</li>
+  <li><strong>Stops on bad data.</strong> Serious data problems stop that night&rsquo;s calls instead of driving them, and referral or offline revenue is counted but never forced into a campaign.</li>
+</ul>
+
+<h3>Validated before release</h3>
+<p>Before release, CDAI&rsquo;s decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>89.5% accurate overall (1,210 of 1,352 scored decisions)</strong>, with the underlying math matching 100%. Every decision type:</p>
+<div class="cps-table-wrap">
+<table>
+  <thead><tr><th>Decision</th><th>What it tells you</th><th>Accuracy</th></tr></thead>
+  <tbody>
+    <tr><td>Scale</td><td>Spend more here</td><td class="cps-acc"><span class="cps-mono cps-pos">98.0%</span> <span class="cps-cnt">(818 of 835)</span></td></tr>
+    <tr><td>Hold</td><td>Keep this steady</td><td class="cps-acc"><span class="cps-mono cps-pos">95.2%</span> <span class="cps-cnt">(40 of 42)</span></td></tr>
+    <tr><td>Pause</td><td>Stop this now</td><td class="cps-acc"><span class="cps-mono cps-pos">85.2%</span> <span class="cps-cnt">(144 of 169)</span></td></tr>
+    <tr><td>Flag</td><td>A person should look at this</td><td class="cps-acc"><span class="cps-mono">70.9%</span> <span class="cps-cnt">(200 of 282)</span><span class="cps-sub">The other 82 were neutral; none were wrong.</span></td></tr>
+    <tr><td>Cut</td><td>Reduce spend</td><td class="cps-acc"><span class="cps-mono">55.6%</span> <span class="cps-cnt">(5 of 9)</span><span class="cps-sub">All misses came from one deliberately extreme stress-test business.</span></td></tr>
+    <tr><td>Investigate</td><td>Something needs a closer look</td><td class="cps-acc"><span class="cps-mono cps-pos">100%</span> <span class="cps-cnt">(2 of 2)</span></td></tr>
+    <tr><td>Renegotiate</td><td>A partner is taking too much</td><td class="cps-acc"><span class="cps-mono cps-pos">100%</span> <span class="cps-cnt">(1 of 1)</span></td></tr>
+    <tr><td>Quarantine</td><td>Suspicious data, kept out of decisions</td><td class="cps-acc"><span class="cps-sub" style="margin-top:0">Caught correctly in all 12 cases. The outcome depends on a person acting on it, so these 12 count as misses in the overall number.</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p>Read the full method and results in our <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a> or on the <a href="https://alloceraintelligence.com/proof/">proof page</a>.</p>
+
+<h2 id="mistakes">Five Cost Per Signed Case Mistakes to Avoid</h2>
+<div class="cps-grid">
+  <div class="cps-card"><h3>1. Judging channels by cost per lead</h3><p>Cheap leads that rarely sign cost more per case than expensive leads that sign often.</p></div>
+  <div class="cps-card"><h3>2. Leaving out intake cost</h3><p>Screening rejected leads is real labor, and low-quality channels create most of it.</p></div>
+  <div class="cps-card"><h3>3. Reporting one blended number</h3><p>An average across channels, offices, or case types hides the one that&rsquo;s losing money.</p></div>
+  <div class="cps-card"><h3>4. Stopping at cost per signed case</h3><p>A case is worth its expected fee. Without that, you can cut your most profitable channel.</p></div>
+</div>
+<p><strong>5. Judging too early.</strong> Leads sign days or weeks after the first call, and fees arrive much later. Use a window that matches your intake cycle and update fee assumptions as cases resolve. Other industries have the same problem with different names: <a href="https://alloceraintelligence.com/cost-per-booked-job-hvac-plumbing/">cost per booked job</a> in HVAC, <a href="https://alloceraintelligence.com/true-cost-per-move-in/">cost per move-in</a> in senior living, and <a href="https://alloceraintelligence.com/cost-per-admission-addiction-treatment/">cost per admission</a> in addiction treatment.</p>
+
+<h2 id="faq">Cost Per Signed Case FAQs</h2>
+<details>
+  <summary>What is cost per signed case?</summary>
+  <p>Cost per signed case is the total cost to acquire one new client who signs a retainer: ad spend and lead fees, minus lead refunds, plus intake cost, divided by the number of retainers signed.</p>
+</details>
+<details>
+  <summary>What is a good cost per signed case for personal injury?</summary>
+  <p>Published benchmarks vary widely; one source puts general PI at $1,500 to $8,000. A &ldquo;good&rdquo; number is one that leaves profit after the expected fee per case, which depends on your case mix and market.</p>
+</details>
+<details>
+  <summary>How is cost per signed case different from cost per lead?</summary>
+  <p>Cost per lead counts every inquiry. Cost per signed case counts only clients who sign, and includes the cost of screening everyone who didn&rsquo;t.</p>
+</details>
+<details>
+  <summary>Should intake staff cost be included?</summary>
+  <p>Yes. Intake time spent on rejected leads is part of what it costs to sign a case, and it varies a lot by channel.</p>
+</details>
+<details>
+  <summary>How do I calculate profit per signed case?</summary>
+  <p>Multiply your average fee by the share of signed cases that resolve with a fee, then subtract your cost per signed case. Do it per channel.</p>
+</details>
+<details>
+  <summary>Can Allocera calculate this for my firm?</summary>
+  <p>CDAI connects to HubSpot, Salesforce, Google Ads, Meta, and CallRail, among others, and calculates profit per campaign and lead partner every night. You can start with one CRM and one ad account.</p>
+</details>
+
+<section class="cps-final">
+  <h2>Find Out What Each Channel Really Earns Per Case</h2>
+  <p>Stop judging personal injury marketing by cost per lead. CDAI connects to the CRM and ad accounts you already use and shows, every night, what each campaign and lead partner costs per signed case, what it earns, and what to do next.</p>
+  <div class="cps-btns">
+    <a class="cps-btn cps-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <a class="cps-btn" href="https://alloceraintelligence.com/pricing/">Get a Free Distortion Audit</a>
+    <a class="cps-btn" href="https://alloceraintelligence.com/dashboard/">See the Dashboard</a>
+  </div>
+</section>
+
+</article>
+
+<footer class="cps-footer">
+  <span><img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence" width="26" height="26">Allocera Intelligence &middot; CDAI Engine</span>
+  <span>&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/">Terms of Service</a></span>
+</footer>
+
+</div>
+<script>
+(function(){var b=document.getElementById('cpsBurger'),l=document.getElementById('cpsLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('cps-open');});}})();
+</script>
