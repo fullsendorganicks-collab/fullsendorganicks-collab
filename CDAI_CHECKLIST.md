@@ -14,12 +14,7 @@ _Last updated: Sept 26, 2026 (late), after the engine fixes Nick approved and th
 
 ## A. Nick's list for tomorrow (WordPress / Google, no code)
 
-1. **Paste the updated homepage** (`website/homepage.html`) into the single Elementor HTML widget. Compared with the live page, three things changed:
-   - The **Ask AI section** (ChatGPT, Claude, Perplexity, Grok, with real logos) is back, just above the FAQ.
-   - **F6S** now shows its real logo instead of plain text.
-   - **Tracking** is added at the bottom.
-
-   The "Featured, Listed & Powered By" section (Crunchbase, LinkedIn, Indie Hackers, F6S, Stripe, Smol Launch, G2, AlternativeTo) was already on the page and is kept.
+1. ~~Paste the updated homepage~~ **DONE Sept 26** (Rank Math 81).
 2. **Merge these engine PRs** after you've read each one; all are tested:
    - **#33** Bing + labels: https://github.com/fullsendorganicks-collab/cdai-engine/pull/33
    - **#34** Digest logo: https://github.com/fullsendorganicks-collab/cdai-engine/pull/34
@@ -77,7 +72,7 @@ Full page-by-page list: **`website/FIX_LIST.md`** (41 pages still carry old or f
 | 6 | `/home-sample/rockerbox-alternative/` | LIVE (score not reported) |
 | 7 | `/cost-per-signed-case/` | LIVE, **90** |
 | 8 | `/blog/` (Nick's design, new content) | LIVE, **72** (normal for a directory page) |
-| 9 | Homepage | LIVE. **Tracking added Sept 26: paste it (A1).** |
+| 9 | Homepage | LIVE, **81** (Nick: fine as is). Pasted Sept 26: Ask AI section back, F6S logo, tracking, the "What is true cost per lead?" FAQ. Rank Math box in `website/homepage-RANKMATH.md`. |
 | 10 | **NEXT: `/30-day-retest-methodology/`** | Rebuild around the Sept 2026 validation (89.5%) and remove the fake 80%. Nick sent the current HTML. Verify every "retest" claim against the engine first. |
 | 11 | `/seven-cost-layers/` | New post at the same URL (246 impressions). The concept is dead; the new topic is hidden marketing costs, stated plainly. |
 | 12 | `/55-directives-study/` | 301 to the validation report (the whole page is the fake 80%) |
