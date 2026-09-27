@@ -12,11 +12,27 @@ _Last updated: Sept 26, 2026 (night), after the engine fix build in the cloud se
 
 ---
 
-## ⚠ Website: do these when every page and post is finished (Nick, Sept 27)
+## ⚠ Website status (paused end of Sept 27)
 
-- [ ] **Redirects.** Every slug change needs a 301. The full list, plus a one-minute test, is in `website/REDIRECTS.md`: `seven-cost-layers` and `blog/seven-cost-layers` → `/marketing-costs/`, `55-directives-study` → `/roas-calculator/`, check `calculate-marketing-contribution-margin`, and every later change. Add a row the same day any slug changes.
-- [ ] **Link pass.** Re-scan every page for links to old slugs; the target is 0. As of Sept 27: 0 on rebuilt pages, and 17 older pages link to `/seven-cost-layers/`, fixed in each one's rebuild or clean.
+**13 pages live and done.** Scores: homepage 81, blog 72, scale/hold/cut 89, 30-day retest 82, marketing costs 89, ROAS calculator 90, offline conversion tracking (tag manager URL) 80, Salesforce Campaign Influence 89. Full table and the 30 remaining items are in `website/FIX_LIST.md`.
+
+**Next session starts with:** the `/true-cac/` + `/true-cac-2/` merge (full rebuild). Then Nick decides on #7 (margin distortion index) and #8 (proof/case-study pages): rebuild or retire.
+
+**Do these when every page and post is finished (Nick, Sept 27):**
+- [ ] **Redirects.** Every slug change needs a 301. The full list, plus a one-minute test, is in `website/REDIRECTS.md`:
+
+  | Old URL | New URL |
+  |---|---|
+  | `seven-cost-layers` and `blog/seven-cost-layers` | `/marketing-costs/` |
+  | `55-directives-study` | `/roas-calculator/` |
+  | `allocera-vs-salesforce` | `/salesforce-campaign-influence/` |
+  | `30-day-retest-methodology-2` | `/tag-manager-real-roi/` (then trash the duplicate) |
+  | `calculate-marketing-contribution-margin` | Check it lands on `/calculate-contribution-margin/` |
+
+  Add a row the same day any slug changes.
+- [ ] **Link pass.** Re-scan every page for links to old slugs; the target is 0. As of Sept 27: 0 on rebuilt pages. Older pages still linking to changed URLs get fixed in their own rebuild or clean.
 - [ ] **Blog page.** Rebuild and paste once, with final URLs (pending list in `website/FIX_LIST.md`).
+- [ ] **Optional:** GA4 tracking script on the 8 earlier rebuilt pages.
 
 ## ⚠ Start here: engine fixes waiting for Nick's yes (built Sept 26 night, nothing live)
 

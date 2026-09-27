@@ -2,20 +2,49 @@
 
 **Slug changes, redirects and links to old URLs: see `REDIRECTS.md`.** Update it the same day any slug changes.
 
-This list comes from a scan of the WordPress export run on Sept 26. It covers all 41 pages not yet rebuilt.
+This list comes from a scan of the WordPress export run on Sept 26 (all live pages).
 
-**Already fixed (9):**
-- Net Marketing Contribution
-- Calculate Contribution Margin
-- Scale Hold Cut Pause
-- Triple Whale vs Rockerbox
-- Northbeam Alternative
-- Rockerbox Alternative
-- Cost Per Signed Case
-- Blog
-- Homepage
-- 30-Day Retest (LIVE, 82)
-- Marketing Costs (LIVE, 89, now /marketing-costs/)
+## Where we are (end of Sept 27): paused for the night
+
+**Live and done (13), with Rank Math scores:**
+
+| Page | Score | Notes |
+|---|---|---|
+| Homepage | 81 | |
+| `/blog/` | 72 | Normal for a directory page. **Re-paste at the end** (pending list below). |
+| `/net-marketing-contribution/` | done | |
+| `/calculate-contribution-margin/` | done | |
+| `/scale-hold-cut-pause-framework/` | 89 | |
+| `/triple-whale-vs-rockerbox-vs-allocera/` | done | |
+| `/home-sample/northbeam-alternative/` | done | |
+| `/home-sample/rockerbox-alternative/` | done | |
+| `/cost-per-signed-case/` | done | |
+| `/30-day-retest-methodology/` | 82 | |
+| `/marketing-costs/` (was `/seven-cost-layers/`) | 89 | |
+| `/roas-calculator/` (was `/55-directives-study/`) | 90 | |
+| `/tag-manager-real-roi/` (now Offline Conversion Tracking) | 80 | Slug kept |
+| `/salesforce-campaign-influence/` (was `/allocera-vs-salesforce/`) | 89 | |
+
+**Next session starts here:** #6, merge `/true-cac/` + `/true-cac-2/` into one full rebuild. Then #7 and #8 need Nick's decision (rebuild or retire), then Tier 2.
+
+**Left to do: 30 items**
+- Tier 1:
+  - #6 true CAC merge
+  - #7 margin distortion index (Nick decides)
+  - #8 three proof/case-study pages (Nick decides)
+- Tier 2:
+  - #9 pricing (on hold)
+  - #10 How It Works (full rebuild)
+  - #11 About (full rebuild)
+  - #12 Dashboard (light clean)
+  - #13–15 quick fixes: validation report, terms, newsletter welcome
+- Tier 3: #17–37, which is 2 full rebuilds (#17 ROAS-looks-good, #18 TCPA) and 19 light cleans.
+
+**Saved for the very end (Nick, Sept 27): do these after every page and post is finished.**
+1. **Redirects:** add every 301 in `REDIRECTS.md` and run its one-minute test. So far: R1, R2, R3, R4 check, R5, R7.
+2. **Link pass:** re-scan every page for links to old slugs (target 0).
+3. **Blog page:** rebuild and paste once, with final URLs (pending list below).
+4. **Optional:** add the GA4 tracking script to the 8 pages rebuilt before tracking existed (Nick re-pastes them).
 
 **What the scan looks for:**
 - **80% claim:** the retired, never-computed "80% measured accuracy".
@@ -35,7 +64,7 @@ Two kinds of fix:
 - [x] Add card: Marketing Costs → `/marketing-costs/`
 - [x] Add card: 30-Day Retest → `/30-day-retest-methodology/`
 - [ ] Add card: ROAS Calculator → `/roas-calculator/`
-- [ ] Update card: Tag Manager → Offline Conversion Tracking (new title + final URL)
+- [ ] Update card: Tag Manager → Offline Conversion Tracking → `/tag-manager-real-roi/` (slug kept)
 - [ ] Update card: Allocera and Salesforce → Salesforce Campaign Influence → `/salesforce-campaign-influence/`
 - [ ] Remove cards for pages that get 301'd (e.g. `/30-day-retest-methodology-2/`, `/true-cac-2/`) and update titles/descriptions for every rebuilt page
 - [ ] Re-check every card link against the live URLs before handing over
@@ -43,7 +72,7 @@ Two kinds of fix:
 ## Tier 1: false claims (fix first)
 | # | Page | Problems | Fix |
 |---|---|---|---|
-| 1 | `/30-day-retest-methodology/` | 80%, "55 of 56", seven layers, $2,500 guarantee, wrong `/blog/` links, pasted head | **REBUILT Sept 26 (night)**: `pages/30-day-retest-methodology.html` + RANKMATH. Waiting for Nick to paste it and report the score. |
+| 1 | `/30-day-retest-methodology/` | 80%, "55 of 56", seven layers, $2,500 guarantee, wrong `/blog/` links, pasted head | **LIVE Sept 27, score 82.** |
 | 2 | `/55-directives-study/` | The whole page is the fake 80% | **LIVE Sept 27, score 90**, now at `/roas-calculator/` (brand-new ROAS calculator). 301 = R3 in `REDIRECTS.md`. |
 | 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **301 = R5 in `REDIRECTS.md`** → the new offline conversion tracking post's final URL; then trash the duplicate. |
 | 4 | `/tag-manager-real-roi/` | 80%, seven layers, 14 unsourced stats, pasted head | **LIVE Sept 27, score 80**, slug kept. New post "Offline Conversion Tracking". |

@@ -63,6 +63,8 @@ In WordPress: **Rank Math → Redirections → Add New**, then type **301 Perman
 | `/cost-per-booked-job-hvac-plumbing/` | `/seven-cost-layers/` | #32 |
 | `/angi-homeadvisor-lead-cost/` | `/seven-cost-layers/` | #37 |
 
+**`/allocera-vs-salesforce/`:** after R7 these links work. Two places still link to it: the blog page (card updated at the end) and `/true-cost-closed-install/` (fixed in its light clean, #19). No rebuilt page links to it.
+
 **`/55-directives-study/`:** no live page links to it any more. The only links were on the old versions of the blog, Northbeam, Rockerbox and scale/hold/cut/pause pages, all since replaced.
 
 **What the scan can't see:**
