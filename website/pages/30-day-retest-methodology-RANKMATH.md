@@ -16,7 +16,7 @@ Posts → search "retest" (the old title starts "The 30-Day Retest"). Delete the
 |---|---|
 | Focus Keyword | `marketing measurement` |
 | Secondary keywords | `30-day retest, marketing decision accuracy, measure marketing effectiveness, marketing attribution` |
-| SEO Title (62 chars) | `Marketing Measurement: How to Grade 8 Decisions Against Profit` (v2 after the first score of 79; adds a number) |
+| SEO Title (57 chars) | `Marketing Measurement: Grading 8 Decisions Against Profit` (v2 after the first score of 79; adds a number) |
 | Permalink | `30-day-retest-methodology` (unchanged) |
 | Meta Description (142 chars) | `Most marketing measurement never checks its own calls. See how CDAI grades every decision against real profit, and the 89.5% validated result.` |
 | Schema | Article → Blog Post |
