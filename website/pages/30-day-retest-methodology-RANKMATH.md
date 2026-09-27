@@ -16,14 +16,16 @@ Posts → search "retest" (the old title starts "The 30-Day Retest"). Delete the
 |---|---|
 | Focus Keyword | `marketing measurement` |
 | Secondary keywords | `30-day retest, marketing decision accuracy, measure marketing effectiveness, marketing attribution` |
-| SEO Title (51 chars) | `Marketing Measurement That Grades Its Own Decisions` |
+| SEO Title (62 chars) | `Marketing Measurement: How to Grade 8 Decisions Against Profit` (v2 after the first score of 79; adds a number) |
 | Permalink | `30-day-retest-methodology` (unchanged) |
 | Meta Description (142 chars) | `Most marketing measurement never checks its own calls. See how CDAI grades every decision against real profit, and the 89.5% validated result.` |
 | Schema | Article → Blog Post |
 
 **Keyword choice:** "marketing measurement" gets about 170 US searches a month, with a high ad value (about $46 per click), and the page answers it honestly. "Incrementality testing" gets more searches, but it's a different method CDAI doesn't use, so the page explains the difference instead of targeting it.
 
-**Score note:** Rank Math will dock a few points because the keyword isn't in the permalink. We keep the original slug (the rule), so expect the high 80s rather than 90+.
+**Score: 79 on the first paste (Sept 27).** Main gap: the keyword isn't in the permalink (we kept the original slug). v2 title adds a number. Optional, Nick's call: change the permalink to `marketing-measurement` + a 301 from the old URL (the old URL has only 11 impressions).
+
+**Original score note:** Rank Math will dock a few points because the keyword isn't in the permalink. We keep the original slug (the rule), so expect the high 80s rather than 90+.
 
 ## Checks
 - **Size:** about 2,480 words. The keyword appears 17 times (~1.4%), including in the H1, the first sentence, two H2s, the image alt text, the title and the description.
