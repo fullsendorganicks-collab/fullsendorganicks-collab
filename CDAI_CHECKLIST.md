@@ -12,6 +12,12 @@ _Last updated: Sept 26, 2026 (night), after the engine fix build in the cloud se
 
 ---
 
+## ⚠ Website: do these when every page and post is finished (Nick, Sept 27)
+
+- [ ] **Redirects.** Every slug change needs a 301. The full list, plus a one-minute test, is in `website/REDIRECTS.md`: `seven-cost-layers` and `blog/seven-cost-layers` → `/marketing-costs/`, `55-directives-study` → `/roas-calculator/`, check `calculate-marketing-contribution-margin`, and every later change. Add a row the same day any slug changes.
+- [ ] **Link pass.** Re-scan every page for links to old slugs; the target is 0. As of Sept 27: 0 on rebuilt pages, and 17 older pages link to `/seven-cost-layers/`, fixed in each one's rebuild or clean.
+- [ ] **Blog page.** Rebuild and paste once, with final URLs (pending list in `website/FIX_LIST.md`).
+
 ## ⚠ Start here: engine fixes waiting for Nick's yes (built Sept 26 night, nothing live)
 
 Approval sheet: https://claude.ai/artifact/3hNXn12DXcbCd5Q8Nj3EyB · Full details: `HANDOFF-engine-fixes-sept26.md`
@@ -93,7 +99,7 @@ Full page-by-page list: **`website/FIX_LIST.md`** (41 pages still carry old or f
 | 9 | Homepage | LIVE, **81** (Nick: fine as is). Pasted Sept 26: Ask AI section back, F6S logo, tracking, the "What is true cost per lead?" FAQ. Rank Math box in `website/homepage-RANKMATH.md`. |
 | 10 | `/30-day-retest-methodology/` | LIVE, **82** (79 → 82 after the title v2; the last points need the keyword in the permalink, Nick's call). Built (`website/pages/30-day-retest-methodology.html` + RANKMATH). Focus keyword "marketing measurement". Every claim checked against the engine code. Includes GA4 tracking. |
 | 11 | `/marketing-costs/` (was `/seven-cost-layers/`) | LIVE, **89**. New post, focus keyword "marketing costs"; permalink changed + 301 from the old URL. Built (`website/pages/seven-cost-layers.html` + RANKMATH + image). No "layers" wording anywhere. Includes GA4 tracking. |
-| 12 | `/55-directives-study/` | **BUILT Sept 27, awaiting paste.** Brand-new ROAS calculator page (not a 301, per Nick): working calculator with break-even ROAS + real profit for lead-gen. Focus "roas calculator" (1,300/mo, low competition). GSC: old URL 0 impressions. Recommended slug `roas-calculator` + 301 (Nick's call). GA4 tracking + `calculator_use` event. |
+| 12 | `/roas-calculator/` (was `/55-directives-study/`) | LIVE, **90**. Brand-new ROAS calculator page (not a 301, per Nick): working calculator with break-even ROAS + real profit for lead-gen. Focus "roas calculator" (1,300/mo). Slug changed; 301 from the old URL (R3 in `website/REDIRECTS.md`). GA4 tracking + `calculator_use` event. |
 | 13 | `/tag-manager-real-roi/`, `/allocera-vs-salesforce/`, `/true-cac/` + `/true-cac-2/` (merge) | Full rebuilds (80%, seven layers, pasted head) |
 | 14 | `/marketing-margin-distortion-index/` | **Nick decides:** rebuild or retire (80%, Apex, "2026" in the title, unsourced stats) |
 | 15 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | **Nick decides:** these are the Apex story. Rewrite around the validation, or retire. |

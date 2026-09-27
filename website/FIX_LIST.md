@@ -1,5 +1,7 @@
 # Website fix list: every page still carrying old, false, or unsourced info
 
+**Slug changes, redirects and links to old URLs: see `REDIRECTS.md`.** Update it the same day any slug changes.
+
 This list comes from a scan of the WordPress export run on Sept 26. It covers all 41 pages not yet rebuilt.
 
 **Already fixed (9):**
@@ -32,7 +34,7 @@ Two kinds of fix:
 `pages/blog.html` already has the first two. Paste only when Nick says the rebuild is finished.
 - [x] Add card: Marketing Costs → `/marketing-costs/`
 - [x] Add card: 30-Day Retest → `/30-day-retest-methodology/`
-- [ ] Add card: ROAS Calculator → final URL (`/roas-calculator/` if the slug changes)
+- [ ] Add card: ROAS Calculator → `/roas-calculator/`
 - [ ] Remove cards for pages that get 301'd (e.g. `/30-day-retest-methodology-2/`, `/true-cac-2/`) and update titles/descriptions for every rebuilt page
 - [ ] Re-check every card link against the live URLs before handing over
 
@@ -40,7 +42,7 @@ Two kinds of fix:
 | # | Page | Problems | Fix |
 |---|---|---|---|
 | 1 | `/30-day-retest-methodology/` | 80%, "55 of 56", seven layers, $2,500 guarantee, wrong `/blog/` links, pasted head | **REBUILT Sept 26 (night)**: `pages/30-day-retest-methodology.html` + RANKMATH. Waiting for Nick to paste it and report the score. |
-| 2 | `/55-directives-study/` | The whole page is the fake 80% | **BUILT Sept 27 (Nick: brand-new page, not a 301)**: ROAS calculator for lead-gen (`pages/55-directives-study.html` + RANKMATH + image). Focus "roas calculator" (1,300/mo). Recommended slug `roas-calculator` + 301 (Nick's call). Waiting for paste + score. |
+| 2 | `/55-directives-study/` | The whole page is the fake 80% | **LIVE Sept 27, score 90**, now at `/roas-calculator/` (brand-new ROAS calculator). 301 = R3 in `REDIRECTS.md`. |
 | 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **301** to `/tag-manager-real-roi/` |
 | 4 | `/tag-manager-real-roi/` | 80%, seven layers, 14 unsourced stats, pasted head | Full rebuild (it also ties into the GTM work) |
 | 5 | `/allocera-vs-salesforce/` | 80%, seven layers, "cannot" claims about Salesforce, pasted head | Full rebuild |

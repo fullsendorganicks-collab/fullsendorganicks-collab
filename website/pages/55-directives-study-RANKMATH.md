@@ -1,4 +1,6 @@
-# Rank Math box: /55-directives-study/ → new ROAS Calculator page
+# Rank Math box: /roas-calculator/ (was /55-directives-study/)
+
+**LIVE Sept 27: score 90.** Permalink changed to `roas-calculator`; 301 from the old URL = R3 in `website/REDIRECTS.md`.
 
 **What this replaces:** the old page's only subject was the fake "80%" study. This is a brand-new page: a working ROAS calculator built for lead-driven businesses (break-even ROAS + real profit), aimed at bringing in clients, not just a Rank Math score.
 
