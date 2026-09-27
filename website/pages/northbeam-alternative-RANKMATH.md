@@ -1,5 +1,8 @@
 # Rank Math box: /home-sample/northbeam-alternative/
 
+**v2, Sept 28: rebuilt in the site's own page design** (the original page's nav, hero background image, blue buttons, fade-ins, footer and FAQ schema). Same text, same Rank Math fields; only the look changed.
+
+
 **LIVE Sept 28: score 90.**
 
 **Sept 28 check:** the Sept 27 export shows this rebuild was never pasted. The old page (fake 80%, "cost layers", score 74) is still live.

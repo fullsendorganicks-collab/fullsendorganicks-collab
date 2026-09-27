@@ -1,163 +1,225 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-#abt{font-variant-numeric:lining-nums;--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#E0566B;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
-#abt *{box-sizing:border-box}
-#abt a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(222,187,106,.35)}
-#abt a:hover{color:#fff;border-bottom-color:#fff}
-#abt .abt-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(1,9,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-#abt .abt-nav a{border:0}
-#abt .abt-brand{display:flex;align-items:center;gap:10px;color:var(--text)}
-#abt .abt-brand img{height:34px;width:auto;display:block}
-#abt .abt-brand span{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.02em}
-#abt .abt-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;margin:0;padding:0}
-#abt .abt-links a{color:var(--dim);font-size:14px;font-weight:500}
-#abt .abt-links a:hover{color:#fff}
-#abt .abt-cta{background:var(--gold);color:#010914!important;font-weight:600;font-size:14px;padding:9px 18px;border-radius:2px}
-#abt .abt-cta:hover{background:var(--gold2)}
-#abt .abt-burger{display:none;background:none;border:1px solid var(--border2);color:var(--text);font-size:18px;padding:4px 10px;border-radius:2px;cursor:pointer}
-#abt .abt-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
-#abt .abt-hero{padding:clamp(44px,8vh,84px) 0 clamp(20px,4vh,36px);border-bottom:1px solid var(--border)}
-#abt .abt-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:0 0 16px}
-#abt h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 20px;color:#fff}
-#abt .abt-lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);line-height:1.65;margin:0 0 22px}
-#abt .abt-byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.04em}
-#abt h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.15;color:#fff;margin:clamp(48px,7vh,68px) 0 16px;scroll-margin-top:90px}
-#abt h3{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:30px 0 8px}
-#abt p{margin:0 0 18px;color:var(--muted)}
-#abt strong{color:#fff;font-weight:600}
-#abt ul,#abt ol{margin:0 0 20px;padding-left:22px;color:var(--muted)}
-#abt li{margin:0 0 9px}
-#abt .abt-box{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
-#abt .abt-box h3{margin-top:0}
-#abt .abt-box ul{margin-bottom:0}
-#abt .abt-toc{background:transparent;border:1px solid var(--border2);border-radius:2px;padding:20px 24px;margin:30px 0}
-#abt .abt-toc p{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
-#abt .abt-toc ol{margin:0;padding-left:20px}
-#abt .abt-toc li{margin:0 0 6px}
-#abt .abt-toc a{color:var(--dim);border:0}
-#abt .abt-toc a:hover{color:#fff}
-#abt .abt-formula{background:#04102a;border:1px solid var(--border2);border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.6vw,15px);line-height:1.9;color:#fff;overflow-x:auto}
-#abt .abt-formula .abt-f-main{color:var(--gold2);font-size:clamp(14px,1.8vw,17px);font-weight:500}
-#abt .abt-formula .abt-f-label{color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:10px}
-#abt .abt-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
-#abt .abt-stat{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;text-align:center}
-#abt .abt-stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,46px);font-weight:600;color:var(--green);line-height:1}
-#abt .abt-stat span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.45}
-#abt .abt-steps{counter-reset:s;list-style:none;padding:0}
-#abt .abt-steps li{counter-increment:s;position:relative;padding:0 0 4px 50px;margin:0 0 18px}
-#abt .abt-steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border:1px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
-#abt .abt-table-wrap{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--border2);border-radius:2px}
-#abt table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
-#abt table.abt-narrow{min-width:0}
-#abt th{background:var(--surface);color:#fff;text-align:left;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border2);font-size:13px;letter-spacing:.02em}
-#abt td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
-#abt tr:last-child td{border-bottom:0}
-#abt td.abt-num{font-family:'JetBrains Mono',monospace;white-space:nowrap}
-#abt .abt-pos{color:var(--green)!important;font-weight:600}
-#abt .abt-neg{color:var(--red)!important;font-weight:600}
-#abt .abt-total td{color:#fff;font-weight:600;background:rgba(196,160,64,.07)}
-#abt .abt-note{font-size:14px;color:var(--dim)}
-#abt td.abt-acc{min-width:210px}
-#abt .abt-mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
-#abt .abt-cnt{font-size:14px;color:var(--dim);white-space:nowrap}
-#abt .abt-sub{display:block;font-size:14px;color:var(--dim);margin-top:4px;line-height:1.5}
-#abt figure{margin:28px 0}
-#abt figure img{width:100%;height:auto;display:block;border:1px solid var(--border2);border-radius:2px}
-#abt figcaption{font-size:14px;color:var(--dim);margin-top:10px}
-#abt blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,28px);line-height:1.35;color:#fff}
-#abt .abt-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
-#abt .abt-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 20px}
-#abt .abt-card h3{margin:0 0 6px;font-size:17px}
-#abt .abt-card p{margin:0;font-size:15px}
-#abt details{border:1px solid var(--border2);border-radius:2px;margin:0 0 12px;background:var(--surface)}
-#abt summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none}
-#abt summary::-webkit-details-marker{display:none}
-#abt summary::after{content:'+';float:right;color:var(--gold2);font-family:'JetBrains Mono',monospace}
-#abt details[open] summary::after{content:'–'}
-#abt details p{padding:0 20px 4px;margin:0 0 14px}
-#abt .abt-final{margin:clamp(56px,8vh,80px) 0 0;padding:clamp(28px,5vw,48px);background:linear-gradient(135deg,#071530,#04102a);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;text-align:center}
-#abt .abt-final h2{margin-top:0}
-#abt .abt-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
-#abt .abt-btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:600;font-size:15px;border:1px solid var(--gold)!important;color:var(--gold2)}
-#abt .abt-btn.abt-primary{background:var(--gold);color:#010914!important}
-#abt .abt-btn:hover{background:var(--gold2);color:#010914!important}
-#abt .abt-footer{margin-top:clamp(56px,8vh,80px);padding:26px clamp(16px,4vw,48px);border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim)}
-#abt .abt-footer a{color:var(--dim);border:0}
-#abt .abt-footer img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
-@media (max-width:900px){
-#abt .abt-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:#010914;border-bottom:1px solid var(--border);padding:14px 20px;gap:14px}
-#abt .abt-links.abt-open{display:flex}
-#abt .abt-burger{display:block}
-}
-@media (max-width:640px){
-#abt{font-size:16px}
-#abt .abt-stats,#abt .abt-grid{grid-template-columns:1fr}
-#abt .abt-cta{display:none}
-}
+#abs *{box-sizing:border-box;margin:0;padding:0}
+#abs{--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#9AAECE;--dim:#4A6488;--deep:#1C3050;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#D63050}
+#abs{background:#010914!important;color:#ebf0ff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#abs nav{position:fixed;top:0;left:0;right:0;z-index:100;height:clamp(52px,7vh,64px);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,64px);background:rgba(1,9,20,.95);border-bottom:1px solid #102040;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+#abs .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+#abs .nav-logo{width:26px;height:26px;object-fit:contain;flex-shrink:0;display:block}
+#abs .nav-name{font-size:clamp(12px,1.7vw,14px);font-weight:600;letter-spacing:.04em;color:#ebf0ff}
+#abs .nav-right{display:flex;align-items:center;gap:12px}
+#abs .nav-links{display:flex;align-items:center;gap:clamp(16px,2.5vw,32px);list-style:none}
+#abs .nav-links a{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;text-decoration:none;transition:color .2s}
+#abs .nav-links a:hover,#abs .nav-links a.active{color:#c4a040}
+#abs .nav-cta{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:#1655d8;color:#ebf0ff;border:none;padding:9px 18px;border-radius:2px;cursor:pointer;transition:background .2s;text-decoration:none;white-space:nowrap}
+#abs .nav-cta:hover{background:#1d67f0}
+#abs .nav-portal{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4080f0;border:1px solid rgba(64,128,240,.35);padding:8px 16px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
+#abs .nav-portal:hover{background:rgba(64,128,240,.1);border-color:#4080f0}
+#abs .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:0 0;border:none;cursor:pointer;padding:4px;flex-shrink:0}
+#abs .nav-hamburger span{display:block;width:22px;height:2px;background:#ebf0ff;border-radius:2px;transition:transform .3s,opacity .3s}
+#abs .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#abs .nav-hamburger.open span:nth-child(2){opacity:0}
+#abs .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#abs .mobile-menu{display:none;position:fixed;top:clamp(52px,7vh,64px);left:0;right:0;z-index:99;background:rgba(1,9,20,.98);border-bottom:1px solid #102040;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;padding:16px 24px 24px;gap:4px}
+#abs .mobile-menu.open{display:flex}
+#abs .mobile-menu a{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#9aaece;text-decoration:none;padding:14px 0;border-bottom:1px solid #102040;transition:color .2s}
+#abs .mobile-menu a:last-child{border-bottom:none}
+#abs .mobile-menu a:hover{color:#ebf0ff}
+#abs .mobile-menu .mobile-cta{margin-top:12px;background:#1655d8;color:#fff;text-align:center;padding:16px;border-radius:2px;font-size:13px;font-weight:700;border:none;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+#abs .mobile-menu .mobile-portal{color:#4080f0;text-align:center;padding:14px;border:1px solid rgba(64,128,240,.3);border-radius:3px;font-size:12px}
+@media(max-width:768px){#abs .nav-links{display:none}
+#abs .nav-hamburger{display:flex}
+#abs .nav-cta{display:none}}
+@media(max-width:480px){#abs .nav-portal{font-size:9px;padding:7px 12px}}
+#abs section{width:100%;padding:clamp(72px,11vh,130px) clamp(16px,5vw,80px);position:relative;background:#010914!important}
+#abs section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 0,rgba(22,85,216,.04) 0,transparent 60%);pointer-events:none}
+#abs .section-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+#abs .eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;color:#c4a040;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,2vh,16px)}
+#abs .eyebrow::before{content:'';width:16px;height:1px;background:#c4a040;display:block;flex-shrink:0}
+#abs h1.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6.5vw,80px);font-weight:300;line-height:1.06;color:#ebf0ff;margin-bottom:clamp(16px,3vh,24px)}
+#abs h1.page-title em{font-style:italic;color:#8ab8ff}
+#abs h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4.5vw,52px);font-weight:300;line-height:1.1;color:#ebf0ff;margin-bottom:clamp(10px,2vh,16px)}
+#abs h2.section-title em{font-style:italic;color:#8ab8ff}
+#abs .rule{width:36px;height:1px;background:#1655d8;margin-bottom:clamp(16px,3vh,28px);display:block}
+#abs .rule.gold{background:#c4a040}
+#abs .lead-text{font-size:clamp(14px,1.8vw,17px);color:#b8c9e0;line-height:1.8;max-width:720px;margin-bottom:clamp(16px,3vh,28px);font-weight:300}
+#abs #page-hero{padding:calc(clamp(52px,7vh,64px) + clamp(60px,10vh,100px)) clamp(16px,5vw,80px) clamp(60px,10vh,100px);background:#010914;position:relative;border-bottom:1px solid #1a3060}
+#abs #page-hero::before{content:'';position:absolute;inset:0;background-image:url(https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png);background-size:cover;background-position:center;opacity:.18;z-index:0;pointer-events:none}
+#abs #page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 50%,rgba(22,85,216,.08) 0,transparent 70%);pointer-events:none}
+#abs #page-hero .section-inner{position:relative;z-index:1}
+#abs .btn-primary{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:.01em;text-transform:none;background:#1655d8;color:#fff;border:none;padding:16px 32px;border-radius:2px;cursor:pointer;transition:background .2s,box-shadow .2s;text-decoration:none;display:inline-block;box-shadow:0 0 24px rgba(22,85,216,.4)}
+#abs .btn-primary:hover{background:#1d67f0;box-shadow:0 0 36px rgba(22,85,216,.6)}
+#abs .btn-gold-outline{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;font-style:italic;background:#fff;color:#010914;border:2px solid #c4a040;padding:14px 32px;border-radius:2px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;line-height:1}
+#abs .btn-gold-outline:hover{background:#fdfaf4;border-color:#debb6a;box-shadow:0 0 20px rgba(196,160,64,.2)}
+#abs .dash-video-wrap{border-radius:3px;overflow:hidden;border:1px solid #1a3060;box-shadow:0 0 64px rgba(22,85,216,.12),0 0 120px rgba(22,85,216,.06);background:#000;margin-bottom:clamp(32px,5vh,56px)}
+#abs .dash-video-wrap video{display:block;width:100%;aspect-ratio:16/9;border:none}
+#abs .panel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#102040;border:1px solid #102040;border-radius:3px;overflow:hidden;margin-top:clamp(32px,5vh,56px)}
+@media(max-width:900px){#abs .panel-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){#abs .panel-grid{grid-template-columns:1fr}}
+#abs .panel-card{background:#010914;padding:clamp(16px,2vw,22px);position:relative;transition:background .2s}
+#abs .panel-card:hover{background:#050d1e}
+#abs .panel-live-badge{position:absolute;top:12px;right:12px;font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.1em;color:#0baf92;background:rgba(11,175,146,.1);border:1px solid rgba(11,175,146,.2);padding:2px 6px;border-radius:1px}
+#abs .panel-name{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#4a6488;display:block;margin-bottom:8px;padding-right:44px}
+#abs .panel-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(14px,2vw,20px);font-weight:400;line-height:1.2;display:block;margin-bottom:6px;color:#ebf0ff}
+#abs .panel-headline.blue{color:#4080f0}
+#abs .panel-headline.green{color:#0baf92}
+#abs .panel-headline.gold{color:#debb6a}
+#abs .panel-headline.red{color:#d63050}
+#abs .panel-desc{font-size:clamp(10px,1.1vw,12px);color:#4a6488;line-height:1.6}
+#abs .dir-badge{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.08em;padding:2px 6px;border-radius:1px;font-weight:600;display:inline-block;margin:2px 2px 2px 0}
+#abs .dir-badge.scale{background:rgba(11,175,146,.15);color:#0baf92;border:1px solid rgba(11,175,146,.3)}
+#abs .dir-badge.hold{background:rgba(196,160,64,.12);color:#debb6a;border:1px solid rgba(196,160,64,.25)}
+#abs .dir-badge.cut{background:rgba(214,48,80,.12);color:#d63050;border:1px solid rgba(214,48,80,.25)}
+#abs .dir-badge.pause{background:rgba(64,128,240,.1);color:#4080f0;border:1px solid rgba(64,128,240,.2)}
+#abs .dir-badge.flag{background:rgba(196,160,64,.08);color:#c4a040;border:1px solid rgba(196,160,64,.15)}
+#abs .int-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:clamp(20px,3vh,32px)}
+#abs .int-chip{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:.3rem .9rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:#9aaece;letter-spacing:.05em;transition:border-color .2s}
+#abs .int-chip:hover{border-color:rgba(22,85,216,.35);color:#b8c9e0}
+#abs .faq-item{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:clamp(16px,2.5vw,24px);margin-bottom:clamp(10px,1.5vh,14px)}
+#abs .faq-q{font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#ebf0ff;margin-bottom:10px}
+#abs .faq-a{font-size:clamp(11px,1.3vw,13px);color:#9aaece;line-height:1.75}
+#abs #intake{background:#071530!important;border-top:1px solid #102040}
+#abs #intake::before{display:none}
+#abs .intake-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,80px)}
+@media(min-width:768px){#abs .intake-grid{grid-template-columns:1fr 1fr}}
+#abs .intake-info h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,32px);font-weight:300;color:#ebf0ff;margin-bottom:clamp(12px,2vh,20px);line-height:1.25}
+#abs .intake-steps{display:flex;flex-direction:column;gap:clamp(10px,1.5vh,14px);margin-top:clamp(20px,3vh,32px)}
+#abs .intake-step{display:flex;gap:14px;align-items:flex-start;padding:clamp(12px,1.5vh,16px);background:#010914;border:1px solid #102040;border-radius:2px}
+#abs .intake-step-num{font-family:'JetBrains Mono',monospace;font-size:9px;color:#1655d8;flex-shrink:0;padding-top:1px}
+#abs .intake-step-title{font-size:clamp(12px,1.4vw,13px);font-weight:500;color:#ebf0ff;display:block;margin-bottom:3px}
+#abs .intake-step-desc{font-size:clamp(11px,1.2vw,12px);color:#7a95b8;line-height:1.55}
+#abs .intake-form{display:flex;flex-direction:column;gap:clamp(12px,2vh,16px)}
+#abs .form-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.5vw,14px)}
+@media(max-width:560px){#abs .form-row{grid-template-columns:1fr}}
+#abs .form-group{display:flex;flex-direction:column;gap:6px}
+#abs .form-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#4a6488}
+#abs .form-input,#abs .form-select,#abs .form-textarea{background:#010914;border:1px solid #1a3060;border-radius:2px;color:#ebf0ff;font-family:'Inter',sans-serif;font-size:clamp(12px,1.4vw,13px);padding:clamp(9px,1.3vh,12px) clamp(12px,1.5vw,14px);transition:border-color .2s,box-shadow .2s;width:100%;-webkit-appearance:none;appearance:none}
+#abs .form-input:focus,#abs .form-select:focus,#abs .form-textarea:focus{outline:0;border-color:#1655d8;box-shadow:0 0 0 2px rgba(22,85,216,.15)}
+#abs .form-input::placeholder,#abs .form-textarea::placeholder{color:#1c3050}
+#abs .form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234A6488'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;cursor:pointer}
+#abs .form-select option{background:#010914;color:#ebf0ff}
+#abs .form-textarea{resize:vertical;min-height:100px}
+#abs .form-submit{background:#1655d8;color:#ebf0ff;border:none;border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:clamp(13px,2vh,16px) clamp(20px,3vw,28px);cursor:pointer;transition:background .2s,transform .1s;width:100%}
+#abs .form-submit:hover{background:#1d67f0}
+#abs .form-submit:active{transform:scale(.99)}
+#abs .form-submit:disabled{opacity:.5;cursor:default}
+#abs .form-success{display:none;text-align:center;padding:clamp(24px,4vh,40px);background:rgba(11,175,146,.06);border:1px solid rgba(11,175,146,.2);border-radius:2px}
+#abs .form-success h4{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,28px);font-weight:300;color:#0baf92;margin-bottom:8px}
+#abs .form-success p{font-size:clamp(12px,1.4vw,14px);color:#7a95b8}
+#abs .form-error{display:none;font-family:'JetBrains Mono',monospace;font-size:9px;color:#d63050;letter-spacing:.06em;padding:10px 14px;background:rgba(214,48,80,.06);border:1px solid rgba(214,48,80,.2);border-radius:2px}
+#abs .contact-phone{font-family:'JetBrains Mono',monospace;font-size:10px;color:#4a6488;letter-spacing:.08em;margin-bottom:16px}
+#abs footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #102040;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#010914}
+#abs .footer-brand{display:flex;align-items:center;gap:10px}
+#abs .footer-logo{width:18px;height:18px;object-fit:contain;flex-shrink:0}
+#abs .footer-text{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.08em}
+#abs .footer-right{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.06em;text-align:right}
+#abs .fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+#abs .fade-up.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){#abs .fade-up{opacity:1;transform:translateY(0)}}
+#abs{background:#010914;color:#ebf0ff;font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+#abs a{color:#c4a040}
+#abs .prose{max-width:820px}
+#abs .prose p{font-size:clamp(14px,1.7vw,16px);color:#b8c9e0;line-height:1.8;margin-bottom:18px;font-weight:300}
+#abs .prose p strong,#abs .prose li strong{color:#ebf0ff;font-weight:600}
+#abs .prose a,#abs .faq-a a,#abs .panel-desc a{color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)}
+#abs .prose ul,#abs .prose ol{margin:0 0 20px 20px;color:#b8c9e0;font-size:clamp(14px,1.7vw,16px);line-height:1.8;font-weight:300}
+#abs .prose li{margin-bottom:8px}
+#abs .steps{list-style:none;margin:0 0 24px 0;padding:0;counter-reset:s;display:flex;flex-direction:column;gap:12px}
+#abs .steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;padding:clamp(12px,1.5vh,16px);background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;color:#b8c9e0;font-size:clamp(13px,1.5vw,15px);line-height:1.7}
+#abs .steps li::before{content:counter(s,decimal-leading-zero);font-family:'JetBrains Mono',monospace;font-size:10px;color:#4080f0;flex-shrink:0;padding-top:4px}
+#abs .table-wrap{overflow-x:auto;border:1px solid #1a3060;border-radius:3px;margin:clamp(20px,3vh,32px) 0;background:rgba(7,21,48,.5)}
+#abs table{width:100%;border-collapse:collapse;font-size:clamp(12px,1.4vw,14px);min-width:560px}
+#abs table.narrow{min-width:0}
+#abs th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#4a6488;padding:12px 14px;border-bottom:1px solid #1a3060;font-weight:500}
+#abs td{padding:12px 14px;border-bottom:1px solid #102040;color:#b8c9e0;vertical-align:top}
+#abs tr:last-child td{border-bottom:none}
+#abs td.num{font-family:'JetBrains Mono',monospace;color:#ebf0ff;white-space:nowrap}
+#abs .pos{color:#0baf92!important}#abs .neg{color:#d63050!important}
+#abs figure{margin:clamp(24px,4vh,40px) 0}
+#abs figure img{width:100%;display:block;border-radius:3px;border:1px solid #1a3060;box-shadow:0 0 64px rgba(22,85,216,.12)}
+#abs figcaption{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:#4a6488;margin-top:10px}
+#abs .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#102040;border:1px solid #102040;border-radius:3px;overflow:hidden;margin:clamp(24px,4vh,40px) 0}
+#abs .stat{background:#010914;padding:clamp(18px,2.5vw,28px);text-align:center}
+#abs .stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:300;color:#0baf92;line-height:1}
+#abs .stat span{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;margin-top:10px;line-height:1.6}
+@media(max-width:600px){#abs .stat-row{grid-template-columns:1fr}}
+#abs details.faq-item summary{list-style:none;cursor:pointer;font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#ebf0ff}
+#abs details.faq-item summary::-webkit-details-marker{display:none}
+#abs details.faq-item summary::after{content:'+';float:right;color:#c4a040;font-family:'JetBrains Mono',monospace}
+#abs details.faq-item[open] summary::after{content:'\2013'}
+#abs details.faq-item .faq-a{margin-top:10px}
+#abs .keybox{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-left:2px solid #c4a040;border-radius:2px;padding:clamp(18px,3vw,28px);margin:0 0 8px}
+#abs .keybox h3{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c4a040;margin-bottom:12px;font-weight:500}
+#abs .keybox ul{margin-bottom:0}
+#abs .formula{background:#04102a;border:1px solid #1a3060;border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(12px,1.5vw,14px);line-height:1.9;color:#ebf0ff;overflow-x:auto}
+#abs .formula .f-main{color:#debb6a;display:block}
+#abs .formula .f-label{color:#4a6488;font-size:9px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:10px}
+#abs tr.total td{color:#ebf0ff;font-weight:600;background:rgba(196,160,64,.06)}
+#abs .byline-site{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:#4a6488;margin-bottom:clamp(16px,3vh,24px)}
+#abs .note,#abs .sub,#abs .cnt{font-size:13px;color:#7a95b8}
+#abs .panel-grid h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20px;color:#debb6a;margin-bottom:6px}
+#abs .panel-card .panel-desc{color:#9aaece}
+#abs section.alt{padding-top:clamp(40px,6vh,64px);padding-bottom:0}
+#abs .final-cta{text-align:center}
+#abs .final-cta .lead-text{margin-left:auto;margin-right:auto}
+#abs .btn-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+#abs .final-cta .btn-row{justify-content:center}
 </style>
-<div id="abt">
+<div id="abs">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Allocera Intelligence?", "acceptedAnswer": {"@type": "Answer", "text": "Allocera Intelligence is the company behind CDAI, an engine that calculates the real profit of every marketing campaign after every cost and gives one clear decision per campaign every night."}}, {"@type": "Question", "name": "What does CDAI stand for?", "acceptedAnswer": {"@type": "Answer", "text": "Capital, Decision, Accuracy, Intelligence."}}, {"@type": "Question", "name": "Who founded Allocera Intelligence?", "acceptedAnswer": {"@type": "Answer", "text": "Nick Baum, a performance marketer with 6+ years in paid acquisition and measurement, founded Allocera Intelligence in April 2026 after running into the same cost gap again and again inside lead generation operations."}}, {"@type": "Question", "name": "Is CDAI an AI tool that predicts results?", "acceptedAnswer": {"@type": "Answer", "text": "No. CDAI’s numbers and decisions are calculated from your real spend, revenue, and costs, and every decision shows the numbers behind it. It then grades its own past decisions against what actually happened."}}, {"@type": "Question", "name": "Who is CDAI built for?", "acceptedAnswer": {"@type": "Answer", "text": "Businesses that run on leads and closed deals and spend enough on ads that the gap between the dashboard and real profit matters."}}, {"@type": "Question", "name": "How do I get started?", "acceptedAnswer": {"@type": "Answer", "text": "Sign up, choose your industry, and connect your ad accounts and CRM. Your first numbers arrive after the first nightly run. See pricing for plans."}}]}</script>
 
-<nav class="abt-nav">
-  <a class="abt-brand" href="https://alloceraintelligence.com/">
-    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence logo" width="34" height="34">
-    <span>Allocera Intelligence</span>
-  </a>
-  <ul class="abt-links" id="abtLinks">
-    <li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li>
-    <li><a href="https://alloceraintelligence.com/proof/">Proof</a></li>
-    <li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li>
-    <li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li>
-    <li><a href="https://alloceraintelligence.com/about/">About</a></li>
-    <li><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></li>
-    <li><a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a></li>
-  </ul>
-  <div style="display:flex;align-items:center;gap:10px">
-    <a class="abt-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
-    <button class="abt-burger" id="abtBurger" aria-label="Open menu">&#9776;</button>
+<nav>
+  <a class="nav-brand" href="https://alloceraintelligence.com/"><img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence CDAI Engine"><span class="nav-name">Allocera Intelligence</span></a>
+  <div class="nav-right">
+    <ul class="nav-links"><li><a href="https://alloceraintelligence.com/#problem">The Problem</a></li><li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li><li><a href="https://alloceraintelligence.com/proof/">Proof</a></li><li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li><li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li><li><a href="https://alloceraintelligence.com/about/" class="active">About</a></li><li><a href="https://alloceraintelligence.com/blog/">Blog</a></li></ul>
+    <a class="nav-portal" href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a>
+    <a class="nav-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <button class="nav-hamburger" id="absNavToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<div class="mobile-menu" id="absMobileMenu">
+  <a href="https://alloceraintelligence.com/#problem">The Problem</a><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a><a href="https://alloceraintelligence.com/proof/">Proof</a><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a><a href="https://alloceraintelligence.com/pricing/">Pricing</a><a href="https://alloceraintelligence.com/about/">About</a><a href="https://alloceraintelligence.com/blog/">Blog</a>
+  <a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener" class="mobile-portal">Client Portal</a>
+  <a href="https://cdai-portal.vercel.app/signup/" class="mobile-cta">Get Started</a>
+</div>
 
-<article class="abt-wrap">
-
-<header class="abt-hero">
-  <p class="abt-eyebrow">About</p>
-  <h1>About Allocera Intelligence: Built by an Operator Who Lived the Problem</h1>
-  <p class="abt-lead">Allocera Intelligence builds CDAI (Capital, Decision, Accuracy, Intelligence), an engine that shows businesses what each marketing campaign really made after every cost, and what to do with it next. Allocera Intelligence was founded in April 2026 in Florida by Nick Baum, a performance marketer who spent years inside lead generation operations watching good decisions get made on the wrong numbers.</p>
-  <div class="abt-btns" style="justify-content:flex-start">
-    <a class="abt-btn abt-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
-    <a class="abt-btn" href="https://alloceraintelligence.com/how-it-works/">How It Works</a>
+<section id="page-hero">
+  <div class="section-inner">
+    <div class="eyebrow">About</div>
+    <h1 class="page-title">About Allocera Intelligence: <em>Built by an Operator Who Lived the Problem</em></h1>
+    <p class="lead-text" style="color:#d0daf0">Allocera Intelligence builds CDAI (Capital, Decision, Accuracy, Intelligence), an engine that shows businesses what each marketing campaign really made after every cost, and what to do with it next. Allocera Intelligence was founded in April 2026 in Florida by Nick Baum, a performance marketer who spent years inside lead generation operations watching good decisions get made on the wrong numbers.</p>
+    <div class="btn-row">
+      <a href="https://cdai-portal.vercel.app/signup/" class="btn-primary">Get Started</a>
+      <a href="https://alloceraintelligence.com/how-it-works/" class="btn-gold-outline">How It Works &rarr;</a>
+    </div>
   </div>
-</header>
+</section>
 
-<nav class="abt-toc" aria-label="Table of contents">
-  <p>On this page</p>
-  <ol>
-    <li><a href="#why">Why Allocera Intelligence exists</a></li>
-    <li><a href="#founder">The founder</a></li>
-    <li><a href="#what">What we build</a></li>
-    <li><a href="#math">Math, not guesses</a></li>
-    <li><a href="#proof">Proof before promises</a></li>
-    <li><a href="#values">The 14 rules we run on</a></li>
-    <li><a href="#facts">Company facts</a></li>
-    <li><a href="#faq">FAQs</a></li>
-  </ol>
-</nav>
-
-<figure>
+<section class="alt"><div class="section-inner prose fade-up"><figure>
   <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/about-allocera-intelligence.png" alt="About Allocera Intelligence: founded April 2026 in Florida by Nick Baum, builder of the CDAI engine, 89.5% accuracy in pre-release validation" width="1600" height="800" loading="lazy">
   <figcaption>Allocera Intelligence at a glance.</figcaption>
-</figure>
-<h2 id="why">Why Allocera Intelligence Exists</h2>
-<p>Ad platforms report the costs they control: clicks, spend, and the leads their own tracking can see. The costs that decide whether a campaign makes money usually live somewhere else. Lead partners take payouts. Customers refund. Payments get charged back weeks later. Compliance and fulfillment cost money on every sale.</p>
-<p>When those costs are missing, the cost per lead used to decide where the next dollar goes is wrong, and it&rsquo;s wrong in the flattering direction. At real spend levels, that isn&rsquo;t a rounding error. It&rsquo;s a budget problem that compounds every month. Allocera Intelligence exists to close that gap: to put the real number, per campaign, in front of the person deciding where the money goes. Our guide to <a href="https://alloceraintelligence.com/marketing-costs/">marketing costs</a> shows what gets left out and why.</p>
+</figure></div></section>
 
-<h2 id="founder">The Founder: Nick Baum</h2>
-<p>Nick Baum is the founder of Allocera Intelligence and the builder of the CDAI engine. His background is in performance marketing, paid acquisition, and full-funnel measurement: building GA4 and Google Tag Manager setups, running Google and Meta campaigns, and tracking conversions for live, revenue-generating businesses, including ones in regulated industries.</p>
+<section id="why">
+  <div class="section-inner prose">
+    <h2 class="section-title fade-up">Why Allocera <em>Intelligence Exists</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="fade-up"><p>Ad platforms report the costs they control: clicks, spend, and the leads their own tracking can see. The costs that decide whether a campaign makes money usually live somewhere else. Lead partners take payouts. Customers refund. Payments get charged back weeks later. Compliance and fulfillment cost money on every sale.</p>
+<p>When those costs are missing, the cost per lead used to decide where the next dollar goes is wrong, and it&rsquo;s wrong in the flattering direction. At real spend levels, that isn&rsquo;t a rounding error. It&rsquo;s a budget problem that compounds every month. Allocera Intelligence exists to close that gap: to put the real number, per campaign, in front of the person deciding where the money goes. Our guide to <a href="https://alloceraintelligence.com/marketing-costs/">marketing costs</a> shows what gets left out and why.</p></div>
+  </div>
+</section>
+
+<section id="founder" style="background:#071530!important;border-top:1px solid #102040;border-bottom:1px solid #102040">
+  <div class="section-inner prose">
+    <div class="eyebrow fade-up">The Founder</div>
+    <h2 class="section-title fade-up">The Founder: <em>Nick Baum</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="fade-up"><p>Nick Baum is the founder of Allocera Intelligence and the builder of the CDAI engine. His background is in performance marketing, paid acquisition, and full-funnel measurement: building GA4 and Google Tag Manager setups, running Google and Meta campaigns, and tracking conversions for live, revenue-generating businesses, including ones in regulated industries.</p>
 <p>Working inside lead generation operations, he kept running into the same problem. The dashboards looked fine, the campaigns got scaled, and the money didn&rsquo;t show up where the reports said it would. CDAI is the tool he wanted and couldn&rsquo;t find.</p>
-<div class="abt-table-wrap">
-<table class="abt-narrow">
+<div class="table-wrap">
+<table class="narrow">
   <thead><tr><th>Background</th><th>Detail</th></tr></thead>
   <tbody>
     <tr><td>Performance marketing and paid acquisition</td><td>6+ years</td></tr>
@@ -168,57 +230,82 @@
     <tr><td>Google Ads Measurement Certification</td><td>Issued January 2026</td></tr>
   </tbody>
 </table>
-</div>
+</div></div>
+  </div>
+</section>
 
-<h2 id="what">What Allocera Intelligence Builds</h2>
-<p>The CDAI engine connects to the ad accounts, CRM, and other tools a business already uses. Meta, Google Ads, LinkedIn, HubSpot, and Salesforce connect in one click. Every night, for every campaign, it:</p>
+<section id="what">
+  <div class="section-inner prose">
+    <h2 class="section-title fade-up">What Allocera <em>Intelligence Builds</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="fade-up"><p>The CDAI engine connects to the ad accounts, CRM, and other tools a business already uses. Meta, Google Ads, LinkedIn, HubSpot, and Salesforce connect in one click. Every night, for every campaign, it:</p>
 <ul>
   <li><strong>Calculates real profit:</strong> the revenue each campaign actually closed, minus ad spend, fees, partner payouts, refunds, chargebacks, compliance costs, and any operating costs you add.</li>
   <li><strong>Makes one clear decision,</strong> such as scale, hold, cut, or pause, with the numbers and a confidence level behind it. You stay in control of every move.</li>
   <li><strong>Rechecks its own math</strong> and stops on bad data instead of making decisions from it.</li>
   <li><strong>Grades its past decisions</strong> once enough time has passed to judge them.</li>
 </ul>
-<p>It&rsquo;s built for businesses that run on leads and closed deals, where the gap between the dashboard and the bank account is widest. See <a href="https://alloceraintelligence.com/how-it-works/">how it works</a> step by step, or look at the <a href="https://alloceraintelligence.com/dashboard/">dashboard</a>.</p>
+<p>It&rsquo;s built for businesses that run on leads and closed deals, where the gap between the dashboard and the bank account is widest. See <a href="https://alloceraintelligence.com/how-it-works/">how it works</a> step by step, or look at the <a href="https://alloceraintelligence.com/dashboard/">dashboard</a>.</p></div>
+  </div>
+</section>
 
-<h2 id="math">Math, Not Guesses</h2>
-<p>There is a difference between a system that predicts and a system that calculates. CDAI&rsquo;s numbers and decisions are calculated from your real data: what you spent, what closed, and what it cost to get there. Every number traces back to its source, and every decision shows the numbers behind it.</p>
-<div class="abt-grid">
-  <div class="abt-card"><h3>A guess sounds like</h3><p>&ldquo;Based on patterns, this campaign looks profitable.&rdquo;</p></div>
-  <div class="abt-card"><h3>A calculation sounds like</h3><p>&ldquo;After payouts, refunds, and fees, this campaign made this much. Here is the decision, and here is why.&rdquo;</p></div>
+<section id="math" style="background:#071530!important;border-top:1px solid #102040;border-bottom:1px solid #102040">
+  <div class="section-inner">
+    <h2 class="section-title fade-up">Math, <em>Not Guesses</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="fade-up"><p>There is a difference between a system that predicts and a system that calculates. CDAI&rsquo;s numbers and decisions are calculated from your real data: what you spent, what closed, and what it cost to get there. Every number traces back to its source, and every decision shows the numbers behind it.</p>
+<div class="panel-grid">
+  <div class="panel-card"><span class="panel-headline gold">A guess sounds like</span><div class="panel-desc">&ldquo;Based on patterns, this campaign looks profitable.&rdquo;</div></div>
+  <div class="panel-card"><span class="panel-headline gold">A calculation sounds like</span><div class="panel-desc">&ldquo;After payouts, refunds, and fees, this campaign made this much. Here is the decision, and here is why.&rdquo;</div></div>
 </div>
-<p>That is also why CDAI grades itself. A calculation can be checked later against what actually happened, and our <a href="https://alloceraintelligence.com/30-day-retest-methodology/">30-day retest</a> explains how.</p>
+<p>That is also why CDAI grades itself. A calculation can be checked later against what actually happened, and our <a href="https://alloceraintelligence.com/30-day-retest-methodology/">30-day retest</a> explains how.</p></div>
+  </div>
+</section>
 
-<h2 id="proof">Proof Before Promises</h2>
-<p>Allocera Intelligence publishes its results instead of asking for trust. Before release, CDAI&rsquo;s decisions were checked in a controlled validation:</p>
-<div class="abt-stats">
-  <div class="abt-stat"><b>89.5%</b><span>accurate overall (1,210 of 1,352 scored decisions)</span></div>
-  <div class="abt-stat"><b>9</b><span>businesses across 7 industries</span></div>
-  <div class="abt-stat"><b>100%</b><span>math match, checked two ways</span></div>
+<section id="proof">
+  <div class="section-inner prose">
+    <h2 class="section-title fade-up">Proof <em>Before Promises</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="fade-up"><p>Allocera Intelligence publishes its results instead of asking for trust. Before release, CDAI&rsquo;s decisions were checked in a controlled validation:</p>
+<div class="stat-row">
+  <div class="stat"><b>89.5%</b><span>accurate overall (1,210 of 1,352 scored decisions)</span></div>
+  <div class="stat"><b>9</b><span>businesses across 7 industries</span></div>
+  <div class="stat"><b>100%</b><span>math match, checked two ways</span></div>
 </div>
-<p>Every result is in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>, and the <a href="https://alloceraintelligence.com/proof/">proof page</a> covers how CDAI was tested.</p>
+<p>Every result is in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>, and the <a href="https://alloceraintelligence.com/proof/">proof page</a> covers how CDAI was tested.</p></div>
+  </div>
+</section>
 
-<h2 id="values">The 14 Rules Allocera Intelligence Runs On</h2>
-<p>Most companies write values for a wall nobody reads. These are the ones that actually run the engine: the reason it refuses to guess, refuses to flatter, and refuses to publish a number it can&rsquo;t stand behind.</p>
-<div class="abt-grid">
-  <div class="abt-card"><h3>01 &middot; No Is Not a Word</h3><p>Built alone, no funding, no shortcuts. That doesn&rsquo;t change now.</p></div>
-  <div class="abt-card"><h3>02 &middot; Always Fullsend It</h3><p>An homage to where this started. No half-measures then, none now.</p></div>
-  <div class="abt-card"><h3>03 &middot; Be the Code</h3><p>Every rule the engine follows, we follow first.</p></div>
-  <div class="abt-card"><h3>04 &middot; Always in Fullsend Mode</h3><p>Full throttle, no coasting.</p></div>
-  <div class="abt-card"><h3>05 &middot; Math Is Math</h3><p>No black box, no &ldquo;trust me.&rdquo; Every number traces back by hand.</p></div>
-  <div class="abt-card"><h3>06 &middot; Break the Gate</h3><p>Ad platforms have graded their own homework for years. We give you a second opinion.</p></div>
-  <div class="abt-card"><h3>07 &middot; Complete, Don&rsquo;t Compete</h3><p>We don&rsquo;t fight the CRMs and ad platforms. We finish what they leave unanswered.</p></div>
-  <div class="abt-card"><h3>08 &middot; Verified, Not Assumed</h3><p>If it wasn&rsquo;t checked against a real number, it doesn&rsquo;t ship as a fact.</p></div>
-  <div class="abt-card"><h3>09 &middot; Own the Numbers</h3><p>The number is ours, and we stand behind it.</p></div>
-  <div class="abt-card"><h3>10 &middot; Honest, Not Hyped</h3><p>We&rsquo;d rather tell you the ugly truth than sell you a number that sounds good.</p></div>
-  <div class="abt-card"><h3>11 &middot; Earned, Not Given</h3><p>Trust is proof, built one correct call at a time.</p></div>
-  <div class="abt-card"><h3>12 &middot; Focused, Not Fractured</h3><p>One problem, solved completely, beats ten problems solved halfway.</p></div>
-  <div class="abt-card"><h3>13 &middot; The Gap Is Real</h3><p>For years, nobody could show you what each campaign really made. Now you can see it.</p></div>
-  <div class="abt-card"><h3>14 &middot; Demand the Highest Standard</h3><p>Good enough isn&rsquo;t. We hold the line even when no one&rsquo;s checking.</p></div>
-</div>
+<section id="values" style="background:#071530!important;border-top:1px solid #102040;border-bottom:1px solid #102040">
+  <div class="section-inner">
+    <h2 class="section-title fade-up">The 14 Rules <em>Allocera Intelligence Runs On</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="fade-up"><p>Most companies write values for a wall nobody reads. These are the ones that actually run the engine: the reason it refuses to guess, refuses to flatter, and refuses to publish a number it can&rsquo;t stand behind.</p>
+<div class="panel-grid">
+  <div class="panel-card"><span class="panel-headline gold">01 &middot; No Is Not a Word</span><div class="panel-desc">Built alone, no funding, no shortcuts. That doesn&rsquo;t change now.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">02 &middot; Always Fullsend It</span><div class="panel-desc">An homage to where this started. No half-measures then, none now.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">03 &middot; Be the Code</span><div class="panel-desc">Every rule the engine follows, we follow first.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">04 &middot; Always in Fullsend Mode</span><div class="panel-desc">Full throttle, no coasting.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">05 &middot; Math Is Math</span><div class="panel-desc">No black box, no &ldquo;trust me.&rdquo; Every number traces back by hand.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">06 &middot; Break the Gate</span><div class="panel-desc">Ad platforms have graded their own homework for years. We give you a second opinion.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">07 &middot; Complete, Don&rsquo;t Compete</span><div class="panel-desc">We don&rsquo;t fight the CRMs and ad platforms. We finish what they leave unanswered.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">08 &middot; Verified, Not Assumed</span><div class="panel-desc">If it wasn&rsquo;t checked against a real number, it doesn&rsquo;t ship as a fact.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">09 &middot; Own the Numbers</span><div class="panel-desc">The number is ours, and we stand behind it.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">10 &middot; Honest, Not Hyped</span><div class="panel-desc">We&rsquo;d rather tell you the ugly truth than sell you a number that sounds good.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">11 &middot; Earned, Not Given</span><div class="panel-desc">Trust is proof, built one correct call at a time.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">12 &middot; Focused, Not Fractured</span><div class="panel-desc">One problem, solved completely, beats ten problems solved halfway.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">13 &middot; The Gap Is Real</span><div class="panel-desc">For years, nobody could show you what each campaign really made. Now you can see it.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">14 &middot; Demand the Highest Standard</span><div class="panel-desc">Good enough isn&rsquo;t. We hold the line even when no one&rsquo;s checking.</div></div>
+</div></div>
+  </div>
+</section>
 
-<h2 id="facts">Allocera Intelligence Company Facts</h2>
-<div class="abt-table-wrap">
-<table class="abt-narrow">
+<section id="facts">
+  <div class="section-inner prose">
+    <h2 class="section-title fade-up">Allocera Intelligence <em>Company Facts</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="fade-up"><div class="table-wrap">
+<table class="narrow">
   <tbody>
     <tr><td>Company</td><td>Allocera Intelligence LLC</td></tr>
     <tr><td>Founded</td><td>April 2026</td></tr>
@@ -229,54 +316,96 @@
     <tr><td>Newsletter</td><td><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></td></tr>
   </tbody>
 </table>
-</div>
-
-<h2 id="faq">About Allocera Intelligence: FAQs</h2>
-<details>
-  <summary>What is Allocera Intelligence?</summary>
-  <p>Allocera Intelligence is the company behind CDAI, an engine that calculates the real profit of every marketing campaign after every cost and gives one clear decision per campaign every night.</p>
-</details>
-<details>
-  <summary>What does CDAI stand for?</summary>
-  <p>Capital, Decision, Accuracy, Intelligence.</p>
-</details>
-<details>
-  <summary>Who founded Allocera Intelligence?</summary>
-  <p>Nick Baum, a performance marketer with 6+ years in paid acquisition and measurement, founded Allocera Intelligence in April 2026 after running into the same cost gap again and again inside lead generation operations.</p>
-</details>
-<details>
-  <summary>Is CDAI an AI tool that predicts results?</summary>
-  <p>No. CDAI&rsquo;s numbers and decisions are calculated from your real spend, revenue, and costs, and every decision shows the numbers behind it. It then grades its own past decisions against what actually happened.</p>
-</details>
-<details>
-  <summary>Who is CDAI built for?</summary>
-  <p>Businesses that run on leads and closed deals and spend enough on ads that the gap between the dashboard and real profit matters.</p>
-</details>
-<details>
-  <summary>How do I get started?</summary>
-  <p>Sign up, choose your industry, and connect your ad accounts and CRM. Your first numbers arrive after the first nightly run. See <a href="https://alloceraintelligence.com/pricing/">pricing</a> for plans.</p>
-</details>
-
-<section class="abt-final">
-  <h2>See What Your Campaigns Really Made</h2>
-  <p>Connect the ad accounts and CRM you already use. CDAI calculates real profit for every campaign and gives you one clear decision for each, every night.</p>
-  <div class="abt-btns">
-    <a class="abt-btn abt-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
-    <a class="abt-btn" href="https://alloceraintelligence.com/pricing/">See Pricing</a>
-    <a class="abt-btn" href="https://alloceraintelligence.com/proof/">See the Proof</a>
+</div></div>
   </div>
 </section>
 
-</article>
+<section id="faq" style="background:#071530!important;border-top:1px solid #102040;border-bottom:1px solid #102040">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">About Allocera Intelligence</div>
+    <h2 class="section-title fade-up">About Allocera Intelligence: <em>FAQs</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="fade-up"><details class="faq-item"><summary>What is Allocera Intelligence?</summary><div class="faq-a">Allocera Intelligence is the company behind CDAI, an engine that calculates the real profit of every marketing campaign after every cost and gives one clear decision per campaign every night.</div></details>
+<details class="faq-item"><summary>What does CDAI stand for?</summary><div class="faq-a">Capital, Decision, Accuracy, Intelligence.</div></details>
+<details class="faq-item"><summary>Who founded Allocera Intelligence?</summary><div class="faq-a">Nick Baum, a performance marketer with 6+ years in paid acquisition and measurement, founded Allocera Intelligence in April 2026 after running into the same cost gap again and again inside lead generation operations.</div></details>
+<details class="faq-item"><summary>Is CDAI an AI tool that predicts results?</summary><div class="faq-a">No. CDAI&rsquo;s numbers and decisions are calculated from your real spend, revenue, and costs, and every decision shows the numbers behind it. It then grades its own past decisions against what actually happened.</div></details>
+<details class="faq-item"><summary>Who is CDAI built for?</summary><div class="faq-a">Businesses that run on leads and closed deals and spend enough on ads that the gap between the dashboard and real profit matters.</div></details>
+<details class="faq-item"><summary>How do I get started?</summary><div class="faq-a">Sign up, choose your industry, and connect your ad accounts and CRM. Your first numbers arrive after the first nightly run. See <a href="https://alloceraintelligence.com/pricing/">pricing</a> for plans.</div></details></div>
+  </div>
+</section>
 
-<footer class="abt-footer">
-  <span><img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence" width="26" height="26">Allocera Intelligence &middot; CDAI Engine</span>
-  <span>&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/">Terms of Service</a></span>
+<section id="intake" style="background:#071530!important">
+  <div class="section-inner">
+    <div class="intake-grid">
+      <div class="intake-info fade-up">
+        <div class="eyebrow">Get Started</div>
+        <h3>See What Your Campaigns Really Made</h3>
+        <p class="lead-text" style="font-size:clamp(13px,1.6vw,15px)">Connect the ad accounts and CRM you already use. CDAI calculates real profit for every campaign and gives you one clear decision for each, every night. Questions first? Send us a note and we&rsquo;ll get back to you.</p>
+        <div class="btn-row" style="margin-bottom:clamp(20px,3vh,28px)"><a href="https://cdai-portal.vercel.app/signup/" class="btn-primary">Get Started</a></div>
+        <div class="intake-steps">
+          <div class="intake-step"><span class="intake-step-num">01</span><div><span class="intake-step-title">Sign up and choose your industry</span><span class="intake-step-desc">Decisions are graded against your real sales cycle.</span></div></div>
+          <div class="intake-step"><span class="intake-step-num">02</span><div><span class="intake-step-title">Connect your accounts</span><span class="intake-step-desc">Ad accounts and CRM first; partner, call tracking, and payment tools when you&rsquo;re ready.</span></div></div>
+          <div class="intake-step"><span class="intake-step-num">03</span><div><span class="intake-step-title">Open your dashboard</span><span class="intake-step-desc">Real profit, true cost per lead, and one clear decision for every campaign.</span></div></div>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:.15s">
+        <form class="intake-form" id="absIntakeForm" novalidate>
+          <div class="contact-phone">Contact: 919-610-9288</div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" for="absFirst">First Name *</label><input class="form-input" type="text" id="absFirst" name="firstName" placeholder="First name" required></div>
+            <div class="form-group"><label class="form-label" for="absLast">Last Name *</label><input class="form-input" type="text" id="absLast" name="lastName" placeholder="Last name" required></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="absCompany">Company Name *</label><input class="form-input" type="text" id="absCompany" name="company" placeholder="Your company" required></div>
+          <div class="form-group"><label class="form-label" for="absEmail">Business Email *</label><input class="form-input" type="email" id="absEmail" name="email" placeholder="you@yourcompany.com" required></div>
+          <div class="form-group"><label class="form-label" for="absPhone">Phone Number</label><input class="form-input" type="tel" id="absPhone" name="phone" placeholder="(555) 000-0000"></div>
+          <div class="form-group">
+            <label class="form-label" for="absService">What do you need? *</label>
+            <select class="form-select" id="absService" name="service" required>
+              <option value="">Select one...</option>
+              <option value="free-distortion-audit">Free Distortion Audit</option>
+              <option value="get-started">Help getting started with CDAI</option>
+              <option value="pricing-question">A question about pricing</option>
+              <option value="partnership">Partnership or agency</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label" for="absMessage">Tell us about your campaigns</label><textarea class="form-textarea" id="absMessage" name="message" placeholder="What platforms are you running? Approximate monthly spend? What problem are you trying to solve?" style="min-height:80px"></textarea></div>
+          <div class="form-error" id="absFormError">Please fill in all required fields.</div>
+          <button class="form-submit" type="submit" id="absFormSubmit">Submit Request</button>
+        </form>
+        <div class="form-success" id="absFormSuccess"><h4>Request Received</h4><p>We&rsquo;ll review your submission and reach out within 24 hours.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand"><img class="footer-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence"><span class="footer-text">Allocera Intelligence &middot; CDAI Engine &middot; alloceraintelligence.com</span></div>
+  <span class="footer-right">&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/" style="color:var(--dim);text-decoration:none">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/" style="color:var(--dim);text-decoration:none">Terms of Service</a> &middot; Built by <a href="https://fullsendorganicks.com/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none">FSO</a></span>
 </footer>
-
 </div>
 <script>
-(function(){var b=document.getElementById('abtBurger'),l=document.getElementById('abtLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('abt-open');});}})();
+(function(){
+  var root=document.getElementById('abs'); if(!root) return;
+  var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  root.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
+  var toggle=document.getElementById('absNavToggle'),menu=document.getElementById('absMobileMenu');
+  function closeMobile(){toggle.classList.remove('open');menu.classList.remove('open')}
+  toggle.addEventListener('click',function(){toggle.classList.toggle('open');menu.classList.toggle('open')});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMobile)});
+  document.addEventListener('click',function(e){if(!toggle.contains(e.target)&&!menu.contains(e.target))closeMobile()});
+  var form=document.getElementById('absIntakeForm');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var err=document.getElementById('absFormError'),btn=document.getElementById('absFormSubmit'),valid=true;
+    form.querySelectorAll('[required]').forEach(function(f){if(!f.value.trim()){valid=false;f.style.borderColor='#D63050'}else{f.style.borderColor=''}});
+    if(!valid){err.textContent='Please fill in all required fields.';err.style.display='block';return}
+    err.style.display='none';btn.disabled=true;btn.textContent='Submitting...';
+    fetch('https://formspree.io/f/xwvwlzzq',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    .then(function(r){return r.json()})
+    .then(function(res){if(res.ok||res.success){form.style.display='none';document.getElementById('absFormSuccess').style.display='block'}else{btn.disabled=false;btn.textContent='Submit Request';err.textContent='Submission failed. Please email alloceraintelligence@gmail.com directly.';err.style.display='block'}})
+    .catch(function(){btn.disabled=false;btn.textContent='Submit Request';err.textContent='Network error. Please email alloceraintelligence@gmail.com directly.';err.style.display='block'});
+  });
+})();
 </script>
 
 <!-- ============ Analytics: GA4 (G-29J4V3VQ7B) + Tag Manager-ready events (article pages) ============ -->

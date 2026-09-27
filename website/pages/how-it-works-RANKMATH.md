@@ -1,5 +1,8 @@
 # Rank Math box: /how-it-works/ (page 451)
 
+**v2, Sept 28: rebuilt in the site's own page design** (the original page's nav, hero background image, blue buttons, fade-ins, footer and FAQ schema, your original process diagram restored in the hero, and the intake form). Same text, same Rank Math fields; only the look changed.
+
+
 **Old title:** How to Calculate True Cost Per Lead — CDAI Engine | Allocera Intelligence
 
 | Field | Value |

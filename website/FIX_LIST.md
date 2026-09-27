@@ -12,7 +12,7 @@
 - **Never:** the fake 80%, "cost layers", "never assumes costs".
 
 **Page design rule (Nick, Sept 28): every PAGE must match the site's design.** That means the original pages' nav, hero background image, blue buttons, fade-ins, footer, real videos and screenshots, FAQ schema, and intake form. Build pages with `sitestyle.py` (the scoped copy of the original page CSS). Posts keep the article style.
-- **Pages already done in the plain style get redone in the site style (content kept):** 451 How It Works, 483 About, 646 Rockerbox alternative, 654 Northbeam alternative.
+- **Pages already done in the plain style, redone in the site style Sept 28 (content kept; sent to Nick, re-paste pending):** 451 How It Works, 483 About, 646 Rockerbox alternative, 654 Northbeam alternative. Converter: `tosite.py`.
 - **Originals of every page are saved** in `website/originals/page-<ID>.html` (from the Sept 25 and Sept 27 exports), so nothing is lost.
 - The homepage and blog are already Nick's design.
 

@@ -1,5 +1,8 @@
 # Rank Math box: /home-sample/rockerbox-alternative/
 
+**v2, Sept 28: rebuilt in the site's own page design** (the original page's nav, hero background image, blue buttons, fade-ins, footer and FAQ schema). Same text, same Rank Math fields; only the look changed.
+
+
 Page type: **Page**, ID 646. Search Console: 106 impressions in the last 3 months, average position 11.7. No year appears in the title or the page (Nick's rule: no dates that go stale).
 
 ## Before you paste

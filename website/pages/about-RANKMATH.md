@@ -1,5 +1,8 @@
 # Rank Math box: /about/ (page 483)
 
+**v2, Sept 28: rebuilt in the site's own page design** (the original page's nav, hero background image, blue buttons, fade-ins, footer and FAQ schema, and the intake form). Same text, same Rank Math fields; only the look changed.
+
+
 **Old title:** About CDAI Engine — Allocera Intelligence | Nick Baum
 
 | Field | Value |
