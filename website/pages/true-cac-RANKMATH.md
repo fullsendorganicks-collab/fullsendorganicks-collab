@@ -1,5 +1,7 @@
 # Rank Math box: /true-cac/ (merges /true-cac/ + /true-cac-2/)
 
+**LIVE Sept 28: score 81, slug kept.** `/true-cac-2/` trashed; its 301 = R8 in `website/REDIRECTS.md`.
+
 **What this replaces:** two near-duplicate posts. Both carried:
 - the fake 80%
 - the "seven cost layers" framing

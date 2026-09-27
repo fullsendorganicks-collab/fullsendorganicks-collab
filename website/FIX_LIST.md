@@ -6,7 +6,7 @@ This list comes from a scan of the WordPress export run on Sept 26 (all live pag
 
 ## Where we are (end of Sept 27): paused for the night
 
-**Live and done (13), with Rank Math scores:**
+**Live and done (14), with Rank Math scores:**
 
 | Page | Score | Notes |
 |---|---|---|
@@ -24,8 +24,9 @@ This list comes from a scan of the WordPress export run on Sept 26 (all live pag
 | `/roas-calculator/` (was `/55-directives-study/`) | 90 | |
 | `/tag-manager-real-roi/` (now Offline Conversion Tracking) | 80 | Slug kept |
 | `/salesforce-campaign-influence/` (was `/allocera-vs-salesforce/`) | 89 | |
+| `/true-cac/` (Customer Acquisition Cost Formula; merged `-2`) | 81 | Slug kept |
 
-**Next session starts here:** #6 is built (true CAC, waiting for paste). Then #7 and #8 need Nick's decision (rebuild or retire), then Tier 2.
+**Next:** #7 and #8 wait on Nick's decision; working Tier 2 meanwhile (#10 How It Works). Then #7 and #8 need Nick's decision (rebuild or retire), then Tier 2.
 
 **Left to do: 30 items**
 - Tier 1:
@@ -78,7 +79,7 @@ Two kinds of fix:
 | 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **301 = R5 in `REDIRECTS.md`** → the new offline conversion tracking post's final URL; then trash the duplicate. |
 | 4 | `/tag-manager-real-roi/` | 80%, seven layers, 14 unsourced stats, pasted head | **LIVE Sept 27, score 80**, slug kept. New post "Offline Conversion Tracking". |
 | 5 | `/allocera-vs-salesforce/` | 80%, seven layers, "cannot" claims about Salesforce, pasted head | **LIVE Sept 27, score 89**, now at `/salesforce-campaign-influence/`. 301 = R7. |
-| 6 | `/true-cac/` + `/true-cac-2/` | 80%, seven layers, duplicate pair | **BUILT Sept 28**: one new post on `/true-cac/` "Customer Acquisition Cost Formula" with a true CAC calculator (`pages/true-cac.html` + RANKMATH + image). `-2` gets a 301 (R8). Recommended slug `customer-acquisition-cost-formula` (Nick's call). Waiting for paste + score. |
+| 6 | `/true-cac/` + `/true-cac-2/` | 80%, seven layers, duplicate pair | **LIVE Sept 28, score 81**, slug kept. `-2` trashed; 301 = R8. |
 | 7 | `/marketing-margin-distortion-index/` | 80%, Apex, "2026" in the title, many unsourced stats, "measured using CDAI" claim | Full rebuild, or retire. **Nick decides.** |
 | 8 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | Apex story | **Nick decides:** rewrite around the validation, or retire |
 
