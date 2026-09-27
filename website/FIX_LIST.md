@@ -27,7 +27,7 @@ If they don't match, stop before deleting anything.
 Redirect details are in `REDIRECTS.md`.
 
 ## Scoreboard
-- **Done and live:** 18
+- **Done and live:** 19
   - 15 rebuilt posts/pages
   - the homepage
   - the blog (which gets a final re-paste)
@@ -47,7 +47,7 @@ Redirect details are in `REDIRECTS.md`.
 ## B. Pages not touched yet (12), in build order
 | Order | Post ID | Edit link (click this) | Live URL (check it matches) | Search (3 mo) | Job |
 |---|---|---|---|---|---|
-| B1 | 451 | https://alloceraintelligence.com/wp-admin/post.php?post=451&action=edit | https://alloceraintelligence.com/how-it-works/ | 28 impr | **SENT Sept 28** (focus "marketing analytics software"). Waiting on score. |
+| B1 | 451 | https://alloceraintelligence.com/wp-admin/post.php?post=451&action=edit | https://alloceraintelligence.com/how-it-works/ | 28 impr | **DONE Sept 28: LIVE, score 80.** |
 | B2 | 483 | https://alloceraintelligence.com/wp-admin/post.php?post=483&action=edit | https://alloceraintelligence.com/about/ | 46 impr, 2 clicks | Full rebuild (has "cost layers") |
 | B3 | 478 | https://alloceraintelligence.com/wp-admin/post.php?post=478&action=edit | https://alloceraintelligence.com/dashboard/ | 35 impr, 1 click | Rebuild (has "cost layers") |
 | B4 | 457 | https://alloceraintelligence.com/wp-admin/post.php?post=457&action=edit | https://alloceraintelligence.com/proof/ | 16 impr | Full rebuild: validation first, provable Apex pilot story |
@@ -60,7 +60,20 @@ Redirect details are in `REDIRECTS.md`.
 | B11 | 173 | https://alloceraintelligence.com/wp-admin/post.php?post=173&action=edit | https://alloceraintelligence.com/home-sample/data-deletion-instructions/ | — | Check only |
 | B12 | 437 | https://alloceraintelligence.com/wp-admin/post.php?post=437&action=edit | https://alloceraintelligence.com/pricing/ | 52 impr | **ON HOLD (Nick)** |
 
-## C. Older posts not touched yet (21), in order of search impressions
+## C. Older posts not touched yet (21)
+
+**Not our ICP (Nick, Sept 28):** law firms, mass tort and insurance are not CDAI's ICP. When their posts come up in the list, each gets replaced with a brand-new ICP topic in the same post ID (never deleted):
+- 739 TCPA law firms
+- 703 PI ad spend
+- 715 PI case type CAC
+- 722 multi-state PI
+- 730 PI settlement lag
+- 758 mass tort
+- 556 Medicare Advantage
+
+Also flagged, not now: 501 cost per signed case (live, 90) is a law-firm topic. Raise it with Nick at the end.
+
+, in order of search impressions
 All 21 still have "cost layers" wording, and most link to old URLs (`/seven-cost-layers/`, `/true-cac-2/`, `/home-sample/…`). Each one gets rebuilt with its own keyword, checked against the pages already live so two pages don't compete for one keyword.
 
 | Order | Post ID | Edit link (click this) | Live URL (check it matches) | Search (3 mo) |
