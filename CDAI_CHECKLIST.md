@@ -128,6 +128,7 @@ Full page-by-page list: **`website/FIX_LIST.md`** (41 pages still carry old or f
 | 13b | `/salesforce-campaign-influence/` (was `/allocera-vs-salesforce/`) | LIVE, **89**. New post "Salesforce Campaign Influence". Slug changed; 301 = R7 in `website/REDIRECTS.md`. |
 | 13c | `/true-cac/` (merged `/true-cac-2/`) | LIVE, **81** (slug kept). New post "Customer Acquisition Cost Formula" + true CAC calculator. `/true-cac-2/` trashed; its 301 = R8 in `website/REDIRECTS.md`. |
 | 14 | `/average-cost-per-lead/` (was `/marketing-margin-distortion-index/`) | LIVE, **83**. Rebuilt as "Average Cost Per Lead by Industry". Slug changed; 301 = R10 in `website/REDIRECTS.md`. |
+| 14b | `/30-day-retest-methodology-2/` (post 252) | **BUILT Sept 28, awaiting paste + score.** Rebuilt (not deleted) as a new post "Lead Quality" (focus "lead quality", 260/mo, ~$9/click); links to the live 30-day retest post instead of duplicating it. Recommended slug `lead-quality` (301 = R11 if changed). |
 | 15 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | **Full rebuilds (Nick: never retire; Apex was a real pilot).** Keep the pilot story where it's provable, lead with the validation, and give each page its own purpose. |
 | 16 | `/how-it-works/`, `/about/` | Full rebuilds |
 | 17 | `/dashboard/`, validation report, terms, newsletter welcome | Light cleans or quick fixes |

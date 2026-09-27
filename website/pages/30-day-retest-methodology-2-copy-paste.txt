@@ -1,0 +1,367 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#lqm{font-variant-numeric:lining-nums;--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#E0566B;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+#lqm *{box-sizing:border-box}
+#lqm a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(222,187,106,.35)}
+#lqm a:hover{color:#fff;border-bottom-color:#fff}
+#lqm .lqm-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(1,9,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+#lqm .lqm-nav a{border:0}
+#lqm .lqm-brand{display:flex;align-items:center;gap:10px;color:var(--text)}
+#lqm .lqm-brand img{height:34px;width:auto;display:block}
+#lqm .lqm-brand span{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.02em}
+#lqm .lqm-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;margin:0;padding:0}
+#lqm .lqm-links a{color:var(--dim);font-size:14px;font-weight:500}
+#lqm .lqm-links a:hover{color:#fff}
+#lqm .lqm-cta{background:var(--gold);color:#010914!important;font-weight:600;font-size:14px;padding:9px 18px;border-radius:2px}
+#lqm .lqm-cta:hover{background:var(--gold2)}
+#lqm .lqm-burger{display:none;background:none;border:1px solid var(--border2);color:var(--text);font-size:18px;padding:4px 10px;border-radius:2px;cursor:pointer}
+#lqm .lqm-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+#lqm .lqm-hero{padding:clamp(44px,8vh,84px) 0 clamp(20px,4vh,36px);border-bottom:1px solid var(--border)}
+#lqm .lqm-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:0 0 16px}
+#lqm h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 20px;color:#fff}
+#lqm .lqm-lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);line-height:1.65;margin:0 0 22px}
+#lqm .lqm-byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.04em}
+#lqm h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.15;color:#fff;margin:clamp(48px,7vh,68px) 0 16px;scroll-margin-top:90px}
+#lqm h3{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:30px 0 8px}
+#lqm p{margin:0 0 18px;color:var(--muted)}
+#lqm strong{color:#fff;font-weight:600}
+#lqm ul,#lqm ol{margin:0 0 20px;padding-left:22px;color:var(--muted)}
+#lqm li{margin:0 0 9px}
+#lqm .lqm-box{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
+#lqm .lqm-box h3{margin-top:0}
+#lqm .lqm-box ul{margin-bottom:0}
+#lqm .lqm-toc{background:transparent;border:1px solid var(--border2);border-radius:2px;padding:20px 24px;margin:30px 0}
+#lqm .lqm-toc p{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
+#lqm .lqm-toc ol{margin:0;padding-left:20px}
+#lqm .lqm-toc li{margin:0 0 6px}
+#lqm .lqm-toc a{color:var(--dim);border:0}
+#lqm .lqm-toc a:hover{color:#fff}
+#lqm .lqm-formula{background:#04102a;border:1px solid var(--border2);border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.6vw,15px);line-height:1.9;color:#fff;overflow-x:auto}
+#lqm .lqm-formula .lqm-f-main{color:var(--gold2);font-size:clamp(14px,1.8vw,17px);font-weight:500}
+#lqm .lqm-formula .lqm-f-label{color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:10px}
+#lqm .lqm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+#lqm .lqm-stat{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;text-align:center}
+#lqm .lqm-stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,46px);font-weight:600;color:var(--green);line-height:1}
+#lqm .lqm-stat span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.45}
+#lqm .lqm-steps{counter-reset:s;list-style:none;padding:0}
+#lqm .lqm-steps li{counter-increment:s;position:relative;padding:0 0 4px 50px;margin:0 0 18px}
+#lqm .lqm-steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border:1px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
+#lqm .lqm-table-wrap{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--border2);border-radius:2px}
+#lqm table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+#lqm table.lqm-narrow{min-width:0}
+#lqm th{background:var(--surface);color:#fff;text-align:left;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border2);font-size:13px;letter-spacing:.02em}
+#lqm td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+#lqm tr:last-child td{border-bottom:0}
+#lqm td.lqm-num{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#lqm .lqm-pos{color:var(--green)!important;font-weight:600}
+#lqm .lqm-neg{color:var(--red)!important;font-weight:600}
+#lqm .lqm-total td{color:#fff;font-weight:600;background:rgba(196,160,64,.07)}
+#lqm .lqm-note{font-size:14px;color:var(--dim)}
+#lqm td.lqm-acc{min-width:210px}
+#lqm .lqm-mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#lqm .lqm-cnt{font-size:14px;color:var(--dim);white-space:nowrap}
+#lqm .lqm-sub{display:block;font-size:14px;color:var(--dim);margin-top:4px;line-height:1.5}
+#lqm figure{margin:28px 0}
+#lqm figure img{width:100%;height:auto;display:block;border:1px solid var(--border2);border-radius:2px}
+#lqm figcaption{font-size:14px;color:var(--dim);margin-top:10px}
+#lqm blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,28px);line-height:1.35;color:#fff}
+#lqm .lqm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
+#lqm .lqm-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 20px}
+#lqm .lqm-card h3{margin:0 0 6px;font-size:17px}
+#lqm .lqm-card p{margin:0;font-size:15px}
+#lqm details{border:1px solid var(--border2);border-radius:2px;margin:0 0 12px;background:var(--surface)}
+#lqm summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none}
+#lqm summary::-webkit-details-marker{display:none}
+#lqm summary::after{content:'+';float:right;color:var(--gold2);font-family:'JetBrains Mono',monospace}
+#lqm details[open] summary::after{content:'–'}
+#lqm details p{padding:0 20px 4px;margin:0 0 14px}
+#lqm .lqm-final{margin:clamp(56px,8vh,80px) 0 0;padding:clamp(28px,5vw,48px);background:linear-gradient(135deg,#071530,#04102a);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;text-align:center}
+#lqm .lqm-final h2{margin-top:0}
+#lqm .lqm-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+#lqm .lqm-btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:600;font-size:15px;border:1px solid var(--gold)!important;color:var(--gold2)}
+#lqm .lqm-btn.lqm-primary{background:var(--gold);color:#010914!important}
+#lqm .lqm-btn:hover{background:var(--gold2);color:#010914!important}
+#lqm .lqm-footer{margin-top:clamp(56px,8vh,80px);padding:26px clamp(16px,4vw,48px);border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim)}
+#lqm .lqm-footer a{color:var(--dim);border:0}
+#lqm .lqm-footer img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
+@media (max-width:900px){
+#lqm .lqm-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:#010914;border-bottom:1px solid var(--border);padding:14px 20px;gap:14px}
+#lqm .lqm-links.lqm-open{display:flex}
+#lqm .lqm-burger{display:block}
+}
+@media (max-width:640px){
+#lqm{font-size:16px}
+#lqm .lqm-stats,#lqm .lqm-grid{grid-template-columns:1fr}
+#lqm .lqm-cta{display:none}
+}
+</style>
+<div id="lqm">
+
+<nav class="lqm-nav">
+  <a class="lqm-brand" href="https://alloceraintelligence.com/">
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence logo" width="34" height="34">
+    <span>Allocera Intelligence</span>
+  </a>
+  <ul class="lqm-links" id="lqmLinks">
+    <li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li>
+    <li><a href="https://alloceraintelligence.com/proof/">Proof</a></li>
+    <li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li>
+    <li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li>
+    <li><a href="https://alloceraintelligence.com/about/">About</a></li>
+    <li><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></li>
+    <li><a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="lqm-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <button class="lqm-burger" id="lqmBurger" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+
+<article class="lqm-wrap">
+
+<header class="lqm-hero">
+  <p class="lqm-eyebrow">The Margin Gap &middot; Lead Generation</p>
+  <h1>Lead Quality: How to Measure It by What Each Lead Is Worth</h1>
+  <p class="lqm-lead">Lead quality is how likely a lead is to become a paying customer, and a customer who stays. Most guides measure it with scores and checklists. This one measures it in dollars: six lead quality metrics you can pull from your CRM, a worked example where the more expensive lead source earns seven times more per lead, and a simple process for judging every source by the profit it actually brings in.</p>
+  <p class="lqm-byline">By Nick Baum, Founder of Allocera Intelligence &middot; 9 min read</p>
+</header>
+
+<div class="lqm-box">
+  <h3>Key takeaways</h3>
+  <ul>
+    <li><strong>Lead quality</strong> is the chance a lead turns into a customer you keep. The only final test is what happens after the sale.</li>
+    <li>Measure it with six numbers: contact rate, qualified rate, close rate, time to close, refund rate, and profit per lead.</li>
+    <li>Cheap leads are not the same as good leads. In our example, $30 leads earn $6 each and $80 leads earn $46 each.</li>
+    <li>Judge each lead source only after your sales cycle has had time to play out, and keep checking as refunds come in.</li>
+  </ul>
+</div>
+
+<nav class="lqm-toc" aria-label="Table of contents">
+  <p>In this guide</p>
+  <ol>
+    <li><a href="#what">What is lead quality?</a></li>
+    <li><a href="#volume">Lead quality vs. lead volume</a></li>
+    <li><a href="#metrics">6 lead quality metrics</a></li>
+    <li><a href="#example">Example: the cheaper leads earn less</a></li>
+    <li><a href="#measure">How to measure lead quality, step by step</a></li>
+    <li><a href="#improve">How to improve lead quality</a></li>
+    <li><a href="#cdai">Measuring lead quality every night</a></li>
+    <li><a href="#faq">FAQs</a></li>
+  </ol>
+</nav>
+
+<h2 id="what">What Is Lead Quality?</h2>
+<p><a href="https://www.integrate.com/resources/blog/how-to-improve-lead-quality/" target="_blank" rel="noopener">Integrate</a> defines lead quality as &ldquo;the degree to which a lead is accurate, relevant, and ready for the next step in your revenue process.&rdquo; <a href="https://mailchimp.com/resources/lead-quality/" target="_blank" rel="noopener">Mailchimp</a> puts it more simply: lead quality &ldquo;identifies how likely a prospect is to buy your product or service.&rdquo;</p>
+<p>Both are right, and both describe a prediction. A lead that looks perfect on the form can still ghost your sales team, and a lead that looks thin can become your best customer. So the most useful definition is the one you can check later: <strong>a quality lead is one that became a paying customer and stayed one.</strong> Everything else, from lead scores to qualification checklists, is a way to guess that outcome early.</p>
+
+<h2 id="volume">Lead Quality vs. Lead Volume</h2>
+<p>Lead volume is easy to see. The ad platform counts every form and call, and a lower cost per lead feels like progress. Lead quality shows up weeks later, in the CRM, when deals close or don&rsquo;t.</p>
+<p>That timing gap is why so many budgets drift toward cheap leads. A campaign that doubles lead volume at half the price looks like a win on day one. If those leads rarely answer the phone, the real cost per customer can go up while the dashboard says it went down. Our guide to the <a href="https://alloceraintelligence.com/average-cost-per-lead/">average cost per lead</a> shows how a $66.69 lead can become a $437 customer once close rate, payouts, and refunds are counted.</p>
+
+<h2 id="metrics">6 Lead Quality Metrics That Tie to Profit</h2>
+<p>The guides that rank for this topic agree on the core measures. <a href="https://activeprospect.com/blog/how-to-measure-lead-quality/" target="_blank" rel="noopener">ActiveProspect</a> lists conversion rate from lead to opportunity or sale, contact rate, lead-to-sale velocity, and cost. <a href="https://www.searchinfluence.com/blog/from-cold-to-gold-how-to-measure-lead-quality/" target="_blank" rel="noopener">Search Influence</a> compares sources by &ldquo;conversion rates, cost per qualified lead, and long-term customer value.&rdquo; Here they are as six numbers, ending with the one that decides the rest:</p>
+<div class="lqm-table-wrap">
+<table>
+  <thead><tr><th>Metric</th><th>How to calculate it</th><th>What it tells you</th></tr></thead>
+  <tbody>
+    <tr><td>1. Contact rate</td><td>Leads you reached &divide; total leads</td><td>Whether the leads are real people who expect your call</td></tr>
+    <tr><td>2. Qualified rate</td><td>Leads that meet your criteria &divide; leads reached</td><td>Whether the source sends people you can actually serve</td></tr>
+    <tr><td>3. Close rate</td><td>Customers &divide; total leads</td><td>How many leads turn into revenue</td></tr>
+    <tr><td>4. Time to close</td><td>Average days from lead to sale</td><td>How fast the source turns into cash, and how long to wait before judging it</td></tr>
+    <tr><td>5. Refund rate</td><td>Customers who refund or cancel &divide; customers</td><td>Whether the sale sticks</td></tr>
+    <tr class="lqm-total"><td>6. Profit per lead</td><td>(Customers kept &times; profit per customer &minus; lead costs) &divide; leads</td><td>What each lead from this source is worth, in dollars</td></tr>
+  </tbody>
+</table>
+</div>
+<p>The first five explain <em>why</em> a source is good or bad. Profit per lead is the score that ranks them, because it combines price, close rate, and refunds into one number you can compare across every campaign and vendor.</p>
+
+<h2 id="example">Example: Why Lead Quality Beats a Cheap Cost Per Lead</h2>
+<p>This is an illustrative example, not client data. A business buys 100 leads from each of two sources. Each customer it keeps is worth $900 in profit before lead costs.</p>
+<figure>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/lead-quality-profit-per-lead-example.png" alt="Lead quality example: $30 leads from Source A earn $6 profit per lead, while $80 leads from Source B earn $46 profit per lead" width="1600" height="800" loading="lazy">
+  <figcaption>Illustrative example. The cheaper lead source earns less per lead.</figcaption>
+</figure>
+<div class="lqm-table-wrap">
+<table class="lqm-narrow">
+  <thead><tr><th></th><th>Source A</th><th>Source B</th></tr></thead>
+  <tbody>
+    <tr><td>Cost per lead</td><td class="lqm-num">$30</td><td class="lqm-num">$80</td></tr>
+    <tr><td>Lead cost (100 leads)</td><td class="lqm-num">$3,000</td><td class="lqm-num">$8,000</td></tr>
+    <tr><td>Close rate</td><td class="lqm-num">5%</td><td class="lqm-num">15%</td></tr>
+    <tr><td>Customers</td><td class="lqm-num">5</td><td class="lqm-num">15</td></tr>
+    <tr><td>Refunds</td><td class="lqm-num">1</td><td class="lqm-num">1</td></tr>
+    <tr><td>Customers kept</td><td class="lqm-num">4</td><td class="lqm-num">14</td></tr>
+    <tr><td>Cost per customer kept</td><td class="lqm-num">$750</td><td class="lqm-num">$571</td></tr>
+    <tr><td>Profit ($900 &times; customers kept &minus; lead cost)</td><td class="lqm-num">$600</td><td class="lqm-num">$4,600</td></tr>
+    <tr class="lqm-total"><td>Profit per lead</td><td class="lqm-num">$6</td><td class="lqm-num lqm-pos">$46</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Judged on cost per lead, Source A wins easily: its leads cost less than half as much. Judged on lead quality, it isn&rsquo;t close. Source B&rsquo;s customers cost less, and each of its leads earns more than seven times as much profit. Moving budget toward Source A because its leads are cheap would cut profit.</p>
+<p>If your leads come from vendors, add their payouts and fees to the lead cost. Our guide to <a href="https://alloceraintelligence.com/marketing-costs/">marketing costs</a> lists the costs ad dashboards don&rsquo;t see, and the <a href="https://alloceraintelligence.com/true-cac/">customer acquisition cost calculator</a> runs the cost-per-customer math with your own numbers.</p>
+
+<h2 id="measure">How to Measure Lead Quality, Step by Step</h2>
+<ol class="lqm-steps">
+  <li><strong>Write down what a qualified lead is.</strong> Service area, budget, need, timing: the handful of things that decide whether you can serve someone. Keep it short enough for your team to apply the same way every time.</li>
+  <li><strong>Tag every lead with its source.</strong> Campaign, keyword or audience, and vendor where there is one. Without the source on the lead, you can&rsquo;t measure lead quality by source at all.</li>
+  <li><strong>Record what happens next in your CRM.</strong> Reached or not, qualified or not, closed or lost, the sale amount, and any refund or cancellation later.</li>
+  <li><strong>Calculate the six metrics for each source.</strong> Rank sources by profit per lead, and use the other five to understand why a source is where it is.</li>
+  <li><strong>Wait for the sales cycle before you judge.</strong> A source measured after one week will look worse than it is if deals take a month to close. Our <a href="https://alloceraintelligence.com/30-day-retest-methodology/">30-day retest</a> explains why decisions should be checked once the outcome is known, not before.</li>
+</ol>
+<p>Once each source has a profit per lead, the budget decision follows: scale the sources that earn the most, hold the ones that break even, and cut or pause the ones that lose money. Our <a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">scale, hold, cut, pause framework</a> walks through each choice.</p>
+
+<h2 id="improve">How to Improve Lead Quality</h2>
+<ul>
+  <li><strong>Respond fast.</strong> Speed to lead is one of the most-cited factors in contact rate. <a href="https://www.leandata.com/blog/lead-response-time/" target="_blank" rel="noopener">LeanData</a> reports that responding within five minutes makes a team 21 times more effective than waiting 30 minutes. A slow response can make good leads look bad.</li>
+  <li><strong>Tell the ad platforms which leads became customers.</strong> Send qualified leads and closed sales back to Google and Meta so they look for more people like your buyers, not more form fills. Our guide to <a href="https://alloceraintelligence.com/tag-manager-real-roi/">offline conversion tracking</a> shows how.</li>
+  <li><strong>Ask one or two qualifying questions on the form.</strong> Service area or timing filters out leads you can&rsquo;t serve, at the cost of a few fewer leads.</li>
+  <li><strong>Cut sources by profit per lead, not cost per lead.</strong> Remove the keywords, audiences, and vendors whose leads rarely close, even when they&rsquo;re cheap.</li>
+  <li><strong>Hold vendors to quality.</strong> If you buy leads, track returns and close rate by vendor, and use those numbers when you negotiate price.</li>
+</ul>
+<p>For law firms, the same approach applies to cases instead of customers; see our guide to <a href="https://alloceraintelligence.com/cost-per-signed-case/">cost per signed case</a>.</p>
+
+<h2 id="cdai">Measuring Lead Quality Every Night</h2>
+<p>Measuring lead quality by source means joining your ad accounts, your CRM, your call tracking, and your vendor invoices, then keeping it current as deals close and refunds come in. CDAI (Capital, Decision, Accuracy, Intelligence), the engine behind Allocera Intelligence, does that automatically. Meta, Google Ads, LinkedIn, HubSpot, and Salesforce connect in one click. Every night, for every campaign, it:</p>
+<ul>
+  <li><strong>Calculates real profit,</strong> including true cost per lead and true customer acquisition cost. It takes the revenue each campaign actually closed and subtracts every real cost of winning it: ad spend, fees, partner payouts, refunds, chargebacks, compliance costs, and any operating costs you add, like fulfillment.</li>
+  <li><strong>Makes one clear decision,</strong> such as scale, hold, cut, or pause, with the numbers and a confidence level behind it. You stay in control of every move.</li>
+  <li><strong>Rechecks its own math</strong> and stops on bad data instead of making decisions from it.</li>
+  <li><strong>Grades its past decisions</strong> once enough time has passed to judge them.</li>
+</ul>
+<p>Before release, CDAI&rsquo;s decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>89.5% accurate overall (1,210 of 1,352 scored decisions)</strong>, with the math matching 100% when checked two ways. Every result is in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>. See <a href="https://alloceraintelligence.com/how-it-works/">how it works</a>, or try our <a href="https://alloceraintelligence.com/roas-calculator/">ROAS calculator</a>.</p>
+
+<h2 id="faq">Lead Quality FAQs</h2>
+<details>
+  <summary>How do you measure lead quality?</summary>
+  <p>Track each lead from its source to the outcome: contact rate, qualified rate, close rate, time to close, refund rate, and profit per lead. Rank sources by profit per lead, and judge them only after your normal sales cycle has passed.</p>
+</details>
+<details>
+  <summary>What is considered a good lead?</summary>
+  <p>One that fits what you sell, can be reached, and has a real need and timing. The final test is whether it became a paying customer who stayed. A good lead source is one whose leads earn more profit than they cost.</p>
+</details>
+<details>
+  <summary>How do you identify quality leads early?</summary>
+  <p>Look for signals that predict closing in your own data: they answer when you call back, they&rsquo;re in your service area, they have a clear need and timeline, and they came from a source whose past leads closed well. Check those signals against real outcomes over time.</p>
+</details>
+<details>
+  <summary>What is the 5 minute rule for leads?</summary>
+  <p>The idea that you should contact a new lead within five minutes of the inquiry, while their interest is fresh. LeanData reports that responding within five minutes makes a team 21 times more effective than waiting 30 minutes.</p>
+</details>
+<details>
+  <summary>What is a qualified vs. unqualified lead?</summary>
+  <p>A qualified lead meets the criteria you set for someone you can serve and who could buy, such as location, need, budget, and timing. An unqualified lead doesn&rsquo;t, or hasn&rsquo;t been checked yet. Qualified rate by source is one of the six lead quality metrics above.</p>
+</details>
+<details>
+  <summary>Is lead quality more important than lead quantity?</summary>
+  <p>For profit, usually yes. More leads only help if enough of them close and stay. In our example, the source with cheaper leads earned $6 per lead and the source with pricier, better leads earned $46.</p>
+</details>
+
+<section class="lqm-final">
+  <h2>See Which Lead Sources Actually Make You Money</h2>
+  <p>Connect the ad accounts and CRM you already use. CDAI measures true cost per customer and real profit for every campaign, and gives you one clear decision for each every night.</p>
+  <div class="lqm-btns">
+    <a class="lqm-btn lqm-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <a class="lqm-btn" href="https://alloceraintelligence.com/pricing/">See Pricing</a>
+    <a class="lqm-btn" href="https://alloceraintelligence.com/true-cac/">Try the CAC Calculator</a>
+  </div>
+</section>
+
+</article>
+
+<footer class="lqm-footer">
+  <span><img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence" width="26" height="26">Allocera Intelligence &middot; CDAI Engine</span>
+  <span>&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/">Terms of Service</a></span>
+</footer>
+
+</div>
+<script>
+(function(){var b=document.getElementById('lqmBurger'),l=document.getElementById('lqmLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('lqm-open');});}})();
+</script>
+
+<!-- ============ Analytics: GA4 (G-29J4V3VQ7B) + Tag Manager-ready events (article pages) ============ -->
+<script>
+(function () {
+  var GA_ID = "G-29J4V3VQ7B";
+  var PAGE = (location.pathname || "/").replace(/^\/|\/$/g, "") || "home";
+  window.dataLayer = window.dataLayer || [];
+
+  // Load GA4 only if the site doesn't already load it (never double-counts page views).
+  var hasGtag = typeof window.gtag === "function";
+  var hasTagScript = !!document.querySelector('script[src*="googletagmanager.com/gtag/js"], script[src*="googletagmanager.com/gtm.js"]');
+  if (!hasGtag && !hasTagScript) {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA_ID);
+  }
+
+  // Pushes a Tag Manager event and sends the same GA4 event. No personal data is ever sent.
+  function track(name, params) {
+    params = params || {};
+    params.page_slug = PAGE;
+    var dl = { event: "cdai_" + name };
+    for (var k in params) { if (Object.prototype.hasOwnProperty.call(params, k)) dl[k] = params[k]; }
+    window.dataLayer.push(dl);
+    if (typeof window.gtag === "function") window.gtag("event", name, params);
+  }
+
+  function sectionOf(el) {
+    if (el.closest("nav")) return "nav";
+    if (el.closest("footer")) return "footer";
+    if (el.closest("[class$='-final']")) return "final_cta";
+    var h = null, node = el;
+    while (node && node !== document.body) {
+      var prev = node.previousElementSibling;
+      while (prev) { if (/^H2$/.test(prev.tagName) && prev.id) { h = prev.id; break; } prev = prev.previousElementSibling; }
+      if (h) break;
+      node = node.parentElement;
+    }
+    return h || "intro";
+  }
+  function label(el) { return (el.getAttribute("aria-label") || el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 80); }
+
+  // Every link and button click.
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest && e.target.closest("a, button, summary");
+    if (!el) return;
+    if (el.tagName === "SUMMARY") { track("faq_open", { question: label(el) }); return; }
+    var href = el.getAttribute("href") || "";
+    var p = { link_text: label(el), link_url: href, section: sectionOf(el) };
+    if (/cdai-portal\.vercel\.app\/signup/.test(href)) track("signup_click", p);
+    else if (/cdai-portal\.vercel\.app/.test(href)) track("portal_click", p);
+    else if (/\/pricing/.test(href)) track("pricing_click", p);
+    else if (/contribution-margin-marketing/.test(href)) track("validation_report_click", p);
+    else if (/^#/.test(href)) track("toc_click", p);
+    else if (/^https?:\/\//.test(href) && href.indexOf(location.hostname) === -1) track("outbound_click", p);
+    else if (href) track("internal_link_click", p);
+    else track("button_click", p);
+  }, true);
+
+  // How far people read (25/50/75/100%), each once per visit.
+  var marks = [25, 50, 75, 100], hit = {};
+  function onScroll() {
+    var doc = document.documentElement;
+    var pct = Math.round(((window.scrollY || doc.scrollTop) + window.innerHeight) / doc.scrollHeight * 100);
+    marks.forEach(function (m) { if (pct >= m && !hit[m]) { hit[m] = true; track("scroll_depth", { percent: m }); } });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Which sections people reach (each H2, once per visit).
+  if ("IntersectionObserver" in window) {
+    var seen = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var id = en.target.id;
+        if (en.isIntersecting && id && !seen[id]) { seen[id] = true; track("section_view", { section: id }); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll("h2[id]").forEach(function (h) { io.observe(h); });
+  }
+})();
+</script>
+<!-- ============ /Analytics ============ -->

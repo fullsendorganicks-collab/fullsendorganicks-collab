@@ -16,12 +16,13 @@ In WordPress: **Rank Math → Redirections → Add New**, then type **301 Perman
 | R1 | `seven-cost-layers` | `https://alloceraintelligence.com/marketing-costs/` | Slug changed Sept 27 (score 89) | **Nick: confirm it's added** (instructions sent Sept 27) |
 | R2 | `blog/seven-cost-layers` | `https://alloceraintelligence.com/marketing-costs/` | 5 old posts link to this wrong path, which was already broken before the change; this rescues them | **To add** |
 | R3 | `55-directives-study` | `https://alloceraintelligence.com/roas-calculator/` | Slug changed Sept 27 (score 90) | **Nick: confirm it's added** |
-| R5 | `30-day-retest-methodology-2` | — | **Cancelled (Nick, Sept 28): never delete a page.** It gets rebuilt into a new post instead (fix list #3). | Not needed |
+| R5 | `30-day-retest-methodology-2` | — | **Cancelled (Nick, Sept 28): never delete a page.** Rebuilt Sept 28 as the new "Lead Quality" post (fix list #3); see R11 if the slug changes. | Not needed |
 | R6 | `tag-manager-real-roi` | — | Slug kept (Nick, Sept 27) | Not needed |
 | R7 | `allocera-vs-salesforce` | `https://alloceraintelligence.com/salesforce-campaign-influence/` | Slug changed Sept 27 (score 89) | **To add** |
 | R8 | `true-cac-2` | `https://alloceraintelligence.com/true-cac/` | Duplicate merged; Nick kept it trashed | **Nick adding it now (Sept 28)** |
 | R9 | `true-cac` | — | Slug kept (Nick, Sept 28) | Not needed |
 | R10 | `marketing-margin-distortion-index` | `https://alloceraintelligence.com/average-cost-per-lead/` | Slug changed Sept 28 (score 83) | **To add** |
+| R11 | `30-day-retest-methodology-2` | `https://alloceraintelligence.com/lead-quality/` | **Only if Nick changes the slug** (post 252 rebuilt as Lead Quality, Sept 28) | Waiting on Nick's slug choice |
 | R4 | `calculate-marketing-contribution-margin` | `https://alloceraintelligence.com/calculate-contribution-margin/` | Google still shows this old URL (1 impression, last 28 days). It isn't in the page list, so it's an old slug. | **Nick: open it once.** If it already lands on `/calculate-contribution-margin/`, mark done; if it shows a 404, add it. |
 
 **Planned (from the fix list, not done yet):**

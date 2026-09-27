@@ -29,12 +29,12 @@ This list comes from a scan of the WordPress export run on Sept 26 (all live pag
 | `/true-cac/` (Customer Acquisition Cost Formula; merged `-2`) | 81 | Slug kept |
 | `/average-cost-per-lead/` (was `/marketing-margin-distortion-index/`) | 83 | |
 
-**Next:** #3 (the -2 duplicate becomes a new post), then #8 proof pages, then Tier 2. Then #7 and #8 need Nick's decision (rebuild or retire), then Tier 2.
+**Now:** #3 built as "Lead Quality" (post 252), waiting on Nick's paste + score. **Next:** #8 proof pages (full rebuilds), then Tier 2.
 
 **Left to do: 30 items**
 - Tier 1:
   - #6 true CAC merge
-  - #3 `/30-day-retest-methodology-2/` → new post
+  - #3 `/30-day-retest-methodology-2/` → new post "Lead Quality" (**built Sept 28, awaiting paste + score**)
   - #7 margin distortion index (full rebuild)
   - #8 three proof/case-study pages (full rebuilds)
 - Tier 2:
@@ -81,7 +81,7 @@ Two kinds of fix:
 |---|---|---|---|
 | 1 | `/30-day-retest-methodology/` | 80%, "55 of 56", seven layers, $2,500 guarantee, wrong `/blog/` links, pasted head | **LIVE Sept 27, score 82.** |
 | 2 | `/55-directives-study/` | The whole page is the fake 80% | **LIVE Sept 27, score 90**, now at `/roas-calculator/` (brand-new ROAS calculator). 301 = R3 in `REDIRECTS.md`. |
-| 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **Full rebuild into a new post (Nick: never delete).** New topic, its own keyword, not a duplicate. |
+| 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **BUILT Sept 28: new post "Lead Quality: How to Measure It by What Each Lead Is Worth"** (focus "lead quality"). Files: `website/pages/30-day-retest-methodology-2*`. Recommended slug `lead-quality` (Nick's call; 301 = R11 if changed). |
 | 4 | `/tag-manager-real-roi/` | 80%, seven layers, 14 unsourced stats, pasted head | **LIVE Sept 27, score 80**, slug kept. New post "Offline Conversion Tracking". |
 | 5 | `/allocera-vs-salesforce/` | 80%, seven layers, "cannot" claims about Salesforce, pasted head | **LIVE Sept 27, score 89**, now at `/salesforce-campaign-influence/`. 301 = R7. |
 | 6 | `/true-cac/` + `/true-cac-2/` | 80%, seven layers, duplicate pair | **LIVE Sept 28, score 81**, slug kept. `-2` trashed; 301 = R8. |
