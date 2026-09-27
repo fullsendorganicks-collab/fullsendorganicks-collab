@@ -10,6 +10,7 @@ Having two posts with the same title and keyword splits what Google gives both. 
 
 ## Why this topic (live data, Sept 28)
 - **Your Search Console:** this -2 URL had 0 impressions in the last 3 months. The original `/30-day-retest-methodology/` had all 38, so the duplicate was doing nothing.
+- **Your GA4:** the -2 URL had 0 visits in the last 3 months. The original had 1.
 - **Keyword demand:**
 
   | Keyword | Searches/mo | Ad value | Competition |
