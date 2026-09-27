@@ -49,7 +49,7 @@ Redirect details are in `REDIRECTS.md`.
 |---|---|---|---|---|---|
 | B1 | 451 | https://alloceraintelligence.com/wp-admin/post.php?post=451&action=edit | https://alloceraintelligence.com/how-it-works/ | 28 impr | **DONE Sept 28: LIVE, score 80.** |
 | B2 | 483 | https://alloceraintelligence.com/wp-admin/post.php?post=483&action=edit | https://alloceraintelligence.com/about/ | 46 impr, 2 clicks | **DONE Sept 28: LIVE, score 82.** |
-| B3 | 478 | https://alloceraintelligence.com/wp-admin/post.php?post=478&action=edit | https://alloceraintelligence.com/dashboard/ | 35 impr, 1 click | Rebuild (has "cost layers") |
+| B3 | 478 | https://alloceraintelligence.com/wp-admin/post.php?post=478&action=edit | https://alloceraintelligence.com/dashboard/ | 35 impr, 1 click | **SENT Sept 28** (focus "marketing dashboard"). Waiting on score. |
 | B4 | 457 | https://alloceraintelligence.com/wp-admin/post.php?post=457&action=edit | https://alloceraintelligence.com/proof/ | 16 impr | Full rebuild: validation first, provable Apex pilot story |
 | B5 | 133 | https://alloceraintelligence.com/wp-admin/post.php?post=133&action=edit | https://alloceraintelligence.com/allocera-intelligence-case-study-proof/ | 23 impr | Full rebuild (has "cost layers"); its own purpose |
 | B6 | 342 | https://alloceraintelligence.com/wp-admin/post.php?post=342&action=edit | https://alloceraintelligence.com/case-study-2-oauth-validation/ | 12 impr | Full rebuild; its own purpose |
