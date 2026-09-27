@@ -8,6 +8,8 @@ The old hub carried:
 - unsourced statistics such as "8 to 12 times", "3 to 5 times", "30 to 70 percent", and "78 percent"
 - cards for pages being retired
 
+**Sept 27 update:** two new cards in "Start Here": Marketing Costs (`/marketing-costs/`) and the 30-Day Retest. Nothing else changed; Rank Math fields stay the same.
+
 **Built on Nick's existing blog design** (same CSS, cards, and nav style). Only the content changed. The new hub groups all live posts by topic, uses the new titles for the rebuilt pages, and gives every card a claim-free summary.
 
 **Left off the hub on purpose** (they are being redirected or merged):

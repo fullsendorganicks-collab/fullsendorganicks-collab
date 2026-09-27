@@ -1,4 +1,6 @@
-# Rank Math box: /seven-cost-layers/ (new post, same URL)
+# Rank Math box: /marketing-costs/ (was /seven-cost-layers/)
+
+**LIVE Sept 27: score 89.** Permalink changed to `marketing-costs`, with a 301 from `/seven-cost-layers/`. Added to the blog page the same day.
 
 Search Console: 246 impressions on the old post, all for off-topic searches like "sales layer cost" and "layer cost", so there's no useful traffic to protect. The old post was built on the retired "seven cost layers" framing. This is a brand-new post on a real search term, **marketing costs**. The words "seven", "layer" and "layers" appear nowhere on the page.
 

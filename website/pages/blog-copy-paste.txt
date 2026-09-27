@@ -339,6 +339,18 @@ body > * { position: relative !important; z-index: 1 !important; }
       <p class="card-desc">When to scale, hold, cut, or pause a campaign, and how to make each call with profit instead of credit.</p>
       <div class="card-meta">13 min read &middot; Budget Allocation</div>
     </a>
+    <a href="/marketing-costs/" class="blog-card featured">
+      <div class="card-tag">Costs</div>
+      <h3 class="card-title">Marketing Costs: What $10,000 in Ad Spend Really Costs You</h3>
+      <p class="card-desc">The full list of marketing costs your ad dashboard leaves out, with a worked example and how to count every cost per campaign.</p>
+      <div class="card-meta">10 min read &middot; Costs</div>
+    </a>
+    <a href="/30-day-retest-methodology/" class="blog-card featured">
+      <div class="card-tag">Methodology</div>
+      <h3 class="card-title">Marketing Measurement That Grades Its Own Decisions: The 30-Day Retest</h3>
+      <p class="card-desc">How CDAI goes back and grades every budget decision against the profit that followed, and the validated results.</p>
+      <div class="card-meta">11 min read &middot; Methodology</div>
+    </a>
     <a href="/roas-looks-good-campaigns-lose-money/" class="blog-card">
       <div class="card-tag">Marketing Methodology</div>
       <h3 class="card-title">Why ROAS Looks Good While Campaigns Lose Money</h3>
