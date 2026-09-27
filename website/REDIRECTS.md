@@ -18,6 +18,7 @@ In WordPress: **Rank Math → Redirections → Add New**, then type **301 Perman
 | R3 | `55-directives-study` | `https://alloceraintelligence.com/roas-calculator/` | Slug changed Sept 27 (score 90) | **Nick: confirm it's added** |
 | R5 | `30-day-retest-methodology-2` | the offline conversion tracking post's final URL (`/tag-manager-real-roi/`, or `/offline-conversion-tracking/` if the slug changes) | Exact duplicate of the old tag manager post with the fake 80% | **To add** when the new post is pasted; then trash the duplicate |
 | R6 | `tag-manager-real-roi` | `https://alloceraintelligence.com/offline-conversion-tracking/` | Only if Nick changes the slug | Pending Nick's slug decision |
+| R7 | `allocera-vs-salesforce` | `https://alloceraintelligence.com/salesforce-campaign-influence/` | Only if Nick changes the slug | Pending Nick's slug decision |
 | R4 | `calculate-marketing-contribution-margin` | `https://alloceraintelligence.com/calculate-contribution-margin/` | Google still shows this old URL (1 impression, last 28 days). It isn't in the page list, so it's an old slug. | **Nick: open it once.** If it already lands on `/calculate-contribution-margin/`, mark done; if it shows a 404, add it. |
 
 **Planned (from the fix list, not done yet):**
