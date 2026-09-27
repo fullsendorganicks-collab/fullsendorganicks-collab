@@ -23,7 +23,7 @@ Posts → search "retest" (the old title starts "The 30-Day Retest"). Delete the
 
 **Keyword choice:** "marketing measurement" gets about 170 US searches a month, with a high ad value (about $46 per click), and the page answers it honestly. "Incrementality testing" gets more searches, but it's a different method CDAI doesn't use, so the page explains the difference instead of targeting it.
 
-**Score: 79 on the first paste (Sept 27).** Main gap: the keyword isn't in the permalink (we kept the original slug). v2 title adds a number. Optional, Nick's call: change the permalink to `marketing-measurement` + a 301 from the old URL (the old URL has only 11 impressions).
+**Score: 82 (Sept 27).** 79 on the first paste, 82 after the v2 title (added a number). The remaining gap is the keyword not being in the permalink (we kept the original slug). Optional, Nick's call: change the permalink to `marketing-measurement` + a 301 from the old URL (the old URL has only 11 impressions).
 
 **Original score note:** Rank Math will dock a few points because the keyword isn't in the permalink. We keep the original slug (the rule), so expect the high 80s rather than 90+.
 

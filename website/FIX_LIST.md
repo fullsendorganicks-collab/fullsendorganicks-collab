@@ -12,7 +12,8 @@ This list comes from a scan of the WordPress export run on Sept 26. It covers al
 - Cost Per Signed Case
 - Blog
 - Homepage
-- 30-Day Retest (built, awaiting paste)
+- 30-Day Retest (LIVE, 82)
+- Marketing Costs at /seven-cost-layers/ (built, awaiting paste)
 
 **What the scan looks for:**
 - **80% claim:** the retired, never-computed "80% measured accuracy".
@@ -55,7 +56,7 @@ Listed in order of search impressions, then by how much is wrong.
 
 | # | Page | Fix |
 |---|---|---|
-| 16 | `/seven-cost-layers/` | **New post** at the same URL (246 impressions) |
+| 16 | `/seven-cost-layers/` | **BUILT Sept 27**: new "marketing costs" post (`pages/seven-cost-layers.html` + RANKMATH). Waiting for Nick to paste it and report the score. Recommended: permalink `marketing-costs` + 301 (Nick's call). |
 | 17 | `/roas-looks-good-campaigns-lose-money/` | Full rebuild ("every two weeks", 52 unsourced stats) |
 | 18 | `/tcpa-compliance-cost-for-law-firms/` | Full rebuild (99 impressions) |
 | 19 | `/true-cost-closed-install/` | Light clean (28 unsourced stats) |
