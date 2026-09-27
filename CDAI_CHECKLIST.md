@@ -16,7 +16,7 @@ _Last updated: Sept 26, 2026 (night), after the engine fix build in the cloud se
 
 **13 pages live and done.** Scores: homepage 81, blog 72, scale/hold/cut 89, 30-day retest 82, marketing costs 89, ROAS calculator 90, offline conversion tracking (tag manager URL) 80, Salesforce Campaign Influence 89. Full table and the 30 remaining items are in `website/FIX_LIST.md`.
 
-**Next session starts with:** the `/true-cac/` + `/true-cac-2/` merge (full rebuild). Then Nick decides on #7 (margin distortion index) and #8 (proof/case-study pages): rebuild or retire.
+**True CAC merge built Sept 28 (awaiting paste).** Next: Then Nick decides on #7 (margin distortion index) and #8 (proof/case-study pages): rebuild or retire.
 
 **Do these when every page and post is finished (Nick, Sept 27):**
 - [ ] **Redirects.** Every slug change needs a 301. The full list, plus a one-minute test, is in `website/REDIRECTS.md`:
@@ -118,7 +118,7 @@ Full page-by-page list: **`website/FIX_LIST.md`** (41 pages still carry old or f
 | 12 | `/roas-calculator/` (was `/55-directives-study/`) | LIVE, **90**. Brand-new ROAS calculator page (not a 301, per Nick): working calculator with break-even ROAS + real profit for lead-gen. Focus "roas calculator" (1,300/mo). Slug changed; 301 from the old URL (R3 in `website/REDIRECTS.md`). GA4 tracking + `calculator_use` event. |
 | 13 | `/tag-manager-real-roi/` | LIVE, **80** (slug kept). New post "Offline Conversion Tracking" (focus "offline conversion tracking"). `/30-day-retest-methodology-2/` gets a 301 to it (R5 in `website/REDIRECTS.md`). |
 | 13b | `/salesforce-campaign-influence/` (was `/allocera-vs-salesforce/`) | LIVE, **89**. New post "Salesforce Campaign Influence". Slug changed; 301 = R7 in `website/REDIRECTS.md`. |
-| 13c | `/true-cac/` + `/true-cac-2/` (merge) | Full rebuild (80%, seven layers, pasted head) |
+| 13c | `/true-cac/` + `/true-cac-2/` (merge) | **BUILT Sept 28, awaiting paste.** One new post on `/true-cac/`: "Customer Acquisition Cost Formula" + true CAC calculator (focus "customer acquisition cost formula", ~1,600/mo with the "how to calculate" variant). `/true-cac-2/` → 301 (R8). Recommended slug `customer-acquisition-cost-formula` (Nick's call). |
 | 14 | `/marketing-margin-distortion-index/` | **Nick decides:** rebuild or retire (80%, Apex, "2026" in the title, unsourced stats) |
 | 15 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | **Nick decides:** these are the Apex story. Rewrite around the validation, or retire. |
 | 16 | `/how-it-works/`, `/about/` | Full rebuilds |

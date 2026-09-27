@@ -19,13 +19,14 @@ In WordPress: **Rank Math → Redirections → Add New**, then type **301 Perman
 | R5 | `30-day-retest-methodology-2` | `https://alloceraintelligence.com/tag-manager-real-roi/` | Exact duplicate of the old tag manager post with the fake 80% | **To add** when the new post is pasted; then trash the duplicate |
 | R6 | `tag-manager-real-roi` | — | Slug kept (Nick, Sept 27) | Not needed |
 | R7 | `allocera-vs-salesforce` | `https://alloceraintelligence.com/salesforce-campaign-influence/` | Slug changed Sept 27 (score 89) | **To add** |
+| R8 | `true-cac-2` | the true CAC post's final URL (`/true-cac/`, or `/customer-acquisition-cost-formula/` if the slug changes) | Duplicate merged into `/true-cac/` | **To add** when the new post is pasted; then trash the duplicate |
+| R9 | `true-cac` | `https://alloceraintelligence.com/customer-acquisition-cost-formula/` | Only if Nick changes the slug | Pending Nick's slug decision |
 | R4 | `calculate-marketing-contribution-margin` | `https://alloceraintelligence.com/calculate-contribution-margin/` | Google still shows this old URL (1 impression, last 28 days). It isn't in the page list, so it's an old slug. | **Nick: open it once.** If it already lands on `/calculate-contribution-margin/`, mark done; if it shows a 404, add it. |
 
 **Planned (from the fix list, not done yet):**
 
 | # | Old URL | New URL | When |
 |---|---|---|---|
-| P2 | `true-cac-2` | `/true-cac/` | With the true CAC merge |
 | P3 | any future slug change | its new URL | Add a row the same day |
 
 **Not changed, no redirect needed:** `/scale-hold-cut-pause-framework/` still has its original slug (Search Console still shows it; `marketing-budget-allocation` never went live), and every other rebuilt page kept its slug.
