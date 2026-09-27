@@ -1,5 +1,7 @@
 # Website fix list: every page still carrying old, false, or unsourced info
 
+**Nick's rules (Sept 28):** never delete or retire a page; redo it into something that builds reach, authority and trust. The blog page is last. Apex was a real pilot: keep it where it's true (the Sid and Rebecca homepage reviews stay). Nothing sensitive or proprietary.
+
 **Slug changes, redirects and links to old URLs: see `REDIRECTS.md`.** Update it the same day any slug changes.
 
 This list comes from a scan of the WordPress export run on Sept 26 (all live pages).
@@ -26,13 +28,14 @@ This list comes from a scan of the WordPress export run on Sept 26 (all live pag
 | `/salesforce-campaign-influence/` (was `/allocera-vs-salesforce/`) | 89 | |
 | `/true-cac/` (Customer Acquisition Cost Formula; merged `-2`) | 81 | Slug kept |
 
-**Next:** #7 and #8 wait on Nick's decision; working Tier 2 meanwhile (#10 How It Works). Then #7 and #8 need Nick's decision (rebuild or retire), then Tier 2.
+**Next:** #7 margin distortion index (full rebuild), then #3 (the -2 duplicate becomes a new post), then #8 proof pages, then Tier 2. Then #7 and #8 need Nick's decision (rebuild or retire), then Tier 2.
 
 **Left to do: 30 items**
 - Tier 1:
   - #6 true CAC merge
-  - #7 margin distortion index (Nick decides)
-  - #8 three proof/case-study pages (Nick decides)
+  - #3 `/30-day-retest-methodology-2/` → new post
+  - #7 margin distortion index (full rebuild)
+  - #8 three proof/case-study pages (full rebuilds)
 - Tier 2:
   - #9 pricing (on hold)
   - #10 How It Works (full rebuild)
@@ -76,12 +79,12 @@ Two kinds of fix:
 |---|---|---|---|
 | 1 | `/30-day-retest-methodology/` | 80%, "55 of 56", seven layers, $2,500 guarantee, wrong `/blog/` links, pasted head | **LIVE Sept 27, score 82.** |
 | 2 | `/55-directives-study/` | The whole page is the fake 80% | **LIVE Sept 27, score 90**, now at `/roas-calculator/` (brand-new ROAS calculator). 301 = R3 in `REDIRECTS.md`. |
-| 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **301 = R5 in `REDIRECTS.md`** → the new offline conversion tracking post's final URL; then trash the duplicate. |
+| 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **Full rebuild into a new post (Nick: never delete).** New topic, its own keyword, not a duplicate. |
 | 4 | `/tag-manager-real-roi/` | 80%, seven layers, 14 unsourced stats, pasted head | **LIVE Sept 27, score 80**, slug kept. New post "Offline Conversion Tracking". |
 | 5 | `/allocera-vs-salesforce/` | 80%, seven layers, "cannot" claims about Salesforce, pasted head | **LIVE Sept 27, score 89**, now at `/salesforce-campaign-influence/`. 301 = R7. |
 | 6 | `/true-cac/` + `/true-cac-2/` | 80%, seven layers, duplicate pair | **LIVE Sept 28, score 81**, slug kept. `-2` trashed; 301 = R8. |
-| 7 | `/marketing-margin-distortion-index/` | 80%, Apex, "2026" in the title, many unsourced stats, "measured using CDAI" claim | Full rebuild, or retire. **Nick decides.** |
-| 8 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | Apex story | **Nick decides:** rewrite around the validation, or retire |
+| 7 | `/marketing-margin-distortion-index/` | 80%, Apex, "2026" in the title, many unsourced stats, "measured using CDAI" claim | **Full rebuild (Nick: never retire).** Same URL, new honest page. |
+| 8 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | Apex story with unprovable numbers | **Full rebuilds (Nick: never retire; Apex was a real pilot).** Keep the pilot story where it's provable, lead with the validation, one clear purpose per page. |
 
 ## Tier 2: pages people use to decide
 | # | Page | Problems | Fix |

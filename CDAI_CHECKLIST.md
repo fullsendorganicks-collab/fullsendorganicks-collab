@@ -4,9 +4,16 @@ Nick's running list. Claude keeps it current and checks items off as they ship.
 
 **Rules:**
 - Nothing gets built until Nick has seen it and said yes.
-- Every public claim must be provable, and nothing proprietary goes on a public page.
+- Every public claim must be provable, and nothing proprietary or sensitive goes on a public page (no thresholds, no internal data).
 - No years or dates in titles or bylines.
-- Keep the original slugs.
+- Keep the original slugs unless Nick chooses to change one (he decides per page; every change gets a 301 in `website/REDIRECTS.md`).
+
+**Website rules (Nick, Sept 28):**
+- **Never delete or retire a page or post.** Anything not needed gets completely redone into a new page that builds reach, authority, and trust.
+- **The blog page is last.** It gets rebuilt once, after every page and post, with every final title and slug.
+- **Apex was a real pilot.** It stays on the site where it's true: the Sid and Rebecca reviews stay on the homepage, and rebuilt proof pages can tell the pilot story using only provable facts. Never touch Apex data.
+- **Every page is built with the live tools** (Search Console, GA4, keyword research, live Google results), aimed at ranking in Google and winning clients, not just a Rank Math score. Each ships with a Rank Math box, GA4 tracking, an image, and a claims table.
+- **No "N layers" framing, no fake 80%, no claim that CDAI never assumes costs** (until F5 is merged).
 
 _Last updated: Sept 26, 2026 (night), after the engine fix build in the cloud session. **New session: read `HANDOFF-engine-fixes-sept26.md` (this repo) first.**_
 
@@ -26,7 +33,7 @@ _Last updated: Sept 26, 2026 (night), after the engine fix build in the cloud se
   | `seven-cost-layers` and `blog/seven-cost-layers` | `/marketing-costs/` |
   | `55-directives-study` | `/roas-calculator/` |
   | `allocera-vs-salesforce` | `/salesforce-campaign-influence/` |
-  | `30-day-retest-methodology-2` | `/tag-manager-real-roi/` (then trash the duplicate) |
+  | `true-cac-2` | `/true-cac/` (unless Nick restores it to rebuild) |
   | `calculate-marketing-contribution-margin` | Check it lands on `/calculate-contribution-margin/` |
 
   Add a row the same day any slug changes.
@@ -67,7 +74,7 @@ Approval sheet: https://claude.ai/artifact/3hNXn12DXcbCd5Q8Nj3EyB · Full detail
 3. **Schema.** Set Rank Math → Schema → **Article → Blog Post** on the Northbeam, Rockerbox, and validation report (contribution-margin-marketing) pages. The Pages default was already changed to "None" on Sept 26.
 4. **Company info.** Rank Math → Titles & Meta → Local SEO: set Organization, "Allocera Intelligence", and the new logo.
 5. **Comments and pings.** Turn them off on every post.
-6. **One redirect.** `/30-day-retest-methodology-2/` → the offline conversion tracking post's final URL (R5 in `website/REDIRECTS.md`; it's an exact copy). Don't redirect `/seven-cost-layers/`; it's getting a new post.
+6. **No redirect for `/30-day-retest-methodology-2/`** (Nick: never delete). It gets rebuilt into a new post. Don't redirect `/seven-cost-layers/`; it's getting a new post.
 7. **Delete "every two weeks"** from `/newsletter-welcome/` and `/roas-looks-good-campaigns-lose-money/`. No newsletter has been sent yet.
 8. **Turn on Rank Math → 404 Monitor.**
 9. **Search Console exports.** Click each reason and export its URL list:
@@ -116,17 +123,17 @@ Full page-by-page list: **`website/FIX_LIST.md`** (41 pages still carry old or f
 | 10 | `/30-day-retest-methodology/` | LIVE, **82** (79 → 82 after the title v2; the last points need the keyword in the permalink, Nick's call). Built (`website/pages/30-day-retest-methodology.html` + RANKMATH). Focus keyword "marketing measurement". Every claim checked against the engine code. Includes GA4 tracking. |
 | 11 | `/marketing-costs/` (was `/seven-cost-layers/`) | LIVE, **89**. New post, focus keyword "marketing costs"; permalink changed + 301 from the old URL. Built (`website/pages/seven-cost-layers.html` + RANKMATH + image). No "layers" wording anywhere. Includes GA4 tracking. |
 | 12 | `/roas-calculator/` (was `/55-directives-study/`) | LIVE, **90**. Brand-new ROAS calculator page (not a 301, per Nick): working calculator with break-even ROAS + real profit for lead-gen. Focus "roas calculator" (1,300/mo). Slug changed; 301 from the old URL (R3 in `website/REDIRECTS.md`). GA4 tracking + `calculator_use` event. |
-| 13 | `/tag-manager-real-roi/` | LIVE, **80** (slug kept). New post "Offline Conversion Tracking" (focus "offline conversion tracking"). `/30-day-retest-methodology-2/` gets a 301 to it (R5 in `website/REDIRECTS.md`). |
+| 13 | `/tag-manager-real-roi/` | LIVE, **80** (slug kept). New post "Offline Conversion Tracking" (focus "offline conversion tracking"). `/30-day-retest-methodology-2/` will be rebuilt into its own new post (no redirect). |
 | 13b | `/salesforce-campaign-influence/` (was `/allocera-vs-salesforce/`) | LIVE, **89**. New post "Salesforce Campaign Influence". Slug changed; 301 = R7 in `website/REDIRECTS.md`. |
 | 13c | `/true-cac/` (merged `/true-cac-2/`) | LIVE, **81** (slug kept). New post "Customer Acquisition Cost Formula" + true CAC calculator. `/true-cac-2/` trashed; its 301 = R8 in `website/REDIRECTS.md`. |
-| 14 | `/marketing-margin-distortion-index/` | **Nick decides:** rebuild or retire (80%, Apex, "2026" in the title, unsourced stats) |
-| 15 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | **Nick decides:** these are the Apex story. Rewrite around the validation, or retire. |
+| 14 | `/marketing-margin-distortion-index/` | **Full rebuild (Nick: never retire).** Same URL, new honest page (80%, false Apex claim, "2026" in the title, unsourced stats all go). |
+| 15 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | **Full rebuilds (Nick: never retire; Apex was a real pilot).** Keep the pilot story where it's provable, lead with the validation, and give each page its own purpose. |
 | 16 | `/how-it-works/`, `/about/` | Full rebuilds |
 | 17 | `/dashboard/`, validation report, terms, newsletter welcome | Light cleans or quick fixes |
 | 18 | `/pricing/` | **ON HOLD** while the free audit is worked out |
 | 19 | 22 remaining blog posts | Full rebuild if they have traffic, light clean if not (see FIX_LIST Tier 3) |
 
-**What "light clean" means:** keep the post and its design. Remove the pasted head, the seven layers, the 80%, Apex, the unsourced numbers, and the old "$2,500, don't pay if…" offer, and fix the links.
+**What "light clean" means:** keep the post and its design. Remove the pasted head, the seven layers, the 80%, any Apex claim that can't be proven, the unsourced numbers, and the old "$2,500, don't pay if…" offer, and fix the links.
 
 **Google index (Sept 26):** 46 pages indexed, 44 not. 16 are "crawled, not indexed", which the rebuilds fix. The rest need Nick's exports (A9).
 
