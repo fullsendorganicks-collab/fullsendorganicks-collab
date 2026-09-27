@@ -28,11 +28,19 @@ Two kinds of fix:
 - **Full rebuild:** new research and a new page, as done so far.
 - **Light clean:** keep the post and its design, but strip the pasted head, remove the retired framing and fake stats, and fix the links. About a third of the work of a rebuild.
 
+## Blog page: pending changes (ON HOLD until the rebuild is done, per Nick)
+`pages/blog.html` already has the first two. Paste only when Nick says the rebuild is finished.
+- [x] Add card: Marketing Costs → `/marketing-costs/`
+- [x] Add card: 30-Day Retest → `/30-day-retest-methodology/`
+- [ ] Add card: ROAS Calculator → final URL (`/roas-calculator/` if the slug changes)
+- [ ] Remove cards for pages that get 301'd (e.g. `/30-day-retest-methodology-2/`, `/true-cac-2/`) and update titles/descriptions for every rebuilt page
+- [ ] Re-check every card link against the live URLs before handing over
+
 ## Tier 1: false claims (fix first)
 | # | Page | Problems | Fix |
 |---|---|---|---|
 | 1 | `/30-day-retest-methodology/` | 80%, "55 of 56", seven layers, $2,500 guarantee, wrong `/blog/` links, pasted head | **REBUILT Sept 26 (night)**: `pages/30-day-retest-methodology.html` + RANKMATH. Waiting for Nick to paste it and report the score. |
-| 2 | `/55-directives-study/` | The whole page is the fake 80% | **301** to the validation report |
+| 2 | `/55-directives-study/` | The whole page is the fake 80% | **BUILT Sept 27 (Nick: brand-new page, not a 301)**: ROAS calculator for lead-gen (`pages/55-directives-study.html` + RANKMATH + image). Focus "roas calculator" (1,300/mo). Recommended slug `roas-calculator` + 301 (Nick's call). Waiting for paste + score. |
 | 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **301** to `/tag-manager-real-roi/` |
 | 4 | `/tag-manager-real-roi/` | 80%, seven layers, 14 unsourced stats, pasted head | Full rebuild (it also ties into the GTM work) |
 | 5 | `/allocera-vs-salesforce/` | 80%, seven layers, "cannot" claims about Salesforce, pasted head | Full rebuild |

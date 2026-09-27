@@ -1,0 +1,450 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#rca{font-variant-numeric:lining-nums;--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#E0566B;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+#rca *{box-sizing:border-box}
+#rca a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(222,187,106,.35)}
+#rca a:hover{color:#fff;border-bottom-color:#fff}
+#rca .rca-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(1,9,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+#rca .rca-nav a{border:0}
+#rca .rca-brand{display:flex;align-items:center;gap:10px;color:var(--text)}
+#rca .rca-brand img{height:34px;width:auto;display:block}
+#rca .rca-brand span{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.02em}
+#rca .rca-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;margin:0;padding:0}
+#rca .rca-links a{color:var(--dim);font-size:14px;font-weight:500}
+#rca .rca-links a:hover{color:#fff}
+#rca .rca-cta{background:var(--gold);color:#010914!important;font-weight:600;font-size:14px;padding:9px 18px;border-radius:2px}
+#rca .rca-cta:hover{background:var(--gold2)}
+#rca .rca-burger{display:none;background:none;border:1px solid var(--border2);color:var(--text);font-size:18px;padding:4px 10px;border-radius:2px;cursor:pointer}
+#rca .rca-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+#rca .rca-hero{padding:clamp(44px,8vh,84px) 0 clamp(20px,4vh,36px);border-bottom:1px solid var(--border)}
+#rca .rca-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:0 0 16px}
+#rca h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 20px;color:#fff}
+#rca .rca-lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);line-height:1.65;margin:0 0 22px}
+#rca .rca-byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.04em}
+#rca h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.15;color:#fff;margin:clamp(48px,7vh,68px) 0 16px;scroll-margin-top:90px}
+#rca h3{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:30px 0 8px}
+#rca p{margin:0 0 18px;color:var(--muted)}
+#rca strong{color:#fff;font-weight:600}
+#rca ul,#rca ol{margin:0 0 20px;padding-left:22px;color:var(--muted)}
+#rca li{margin:0 0 9px}
+#rca .rca-box{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
+#rca .rca-box h3{margin-top:0}
+#rca .rca-box ul{margin-bottom:0}
+#rca .rca-toc{background:transparent;border:1px solid var(--border2);border-radius:2px;padding:20px 24px;margin:30px 0}
+#rca .rca-toc p{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
+#rca .rca-toc ol{margin:0;padding-left:20px}
+#rca .rca-toc li{margin:0 0 6px}
+#rca .rca-toc a{color:var(--dim);border:0}
+#rca .rca-toc a:hover{color:#fff}
+#rca .rca-formula{background:#04102a;border:1px solid var(--border2);border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.6vw,15px);line-height:1.9;color:#fff;overflow-x:auto}
+#rca .rca-formula .rca-f-main{color:var(--gold2);font-size:clamp(14px,1.8vw,17px);font-weight:500}
+#rca .rca-formula .rca-f-label{color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:10px}
+#rca .rca-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+#rca .rca-stat{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;text-align:center}
+#rca .rca-stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,46px);font-weight:600;color:var(--green);line-height:1}
+#rca .rca-stat span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.45}
+#rca .rca-steps{counter-reset:s;list-style:none;padding:0}
+#rca .rca-steps li{counter-increment:s;position:relative;padding:0 0 4px 50px;margin:0 0 18px}
+#rca .rca-steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border:1px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
+#rca .rca-table-wrap{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--border2);border-radius:2px}
+#rca table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+#rca table.rca-narrow{min-width:0}
+#rca th{background:var(--surface);color:#fff;text-align:left;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border2);font-size:13px;letter-spacing:.02em}
+#rca td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+#rca tr:last-child td{border-bottom:0}
+#rca td.rca-num{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#rca .rca-pos{color:var(--green)!important;font-weight:600}
+#rca .rca-neg{color:var(--red)!important;font-weight:600}
+#rca .rca-total td{color:#fff;font-weight:600;background:rgba(196,160,64,.07)}
+#rca .rca-note{font-size:14px;color:var(--dim)}
+#rca td.rca-acc{min-width:210px}
+#rca .rca-mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#rca .rca-cnt{font-size:14px;color:var(--dim);white-space:nowrap}
+#rca .rca-sub{display:block;font-size:14px;color:var(--dim);margin-top:4px;line-height:1.5}
+#rca figure{margin:28px 0}
+#rca figure img{width:100%;height:auto;display:block;border:1px solid var(--border2);border-radius:2px}
+#rca figcaption{font-size:14px;color:var(--dim);margin-top:10px}
+#rca blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,28px);line-height:1.35;color:#fff}
+#rca .rca-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
+#rca .rca-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 20px}
+#rca .rca-card h3{margin:0 0 6px;font-size:17px}
+#rca .rca-card p{margin:0;font-size:15px}
+#rca details{border:1px solid var(--border2);border-radius:2px;margin:0 0 12px;background:var(--surface)}
+#rca summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none}
+#rca summary::-webkit-details-marker{display:none}
+#rca summary::after{content:'+';float:right;color:var(--gold2);font-family:'JetBrains Mono',monospace}
+#rca details[open] summary::after{content:'–'}
+#rca details p{padding:0 20px 4px;margin:0 0 14px}
+#rca .rca-final{margin:clamp(56px,8vh,80px) 0 0;padding:clamp(28px,5vw,48px);background:linear-gradient(135deg,#071530,#04102a);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;text-align:center}
+#rca .rca-final h2{margin-top:0}
+#rca .rca-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+#rca .rca-btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:600;font-size:15px;border:1px solid var(--gold)!important;color:var(--gold2)}
+#rca .rca-btn.rca-primary{background:var(--gold);color:#010914!important}
+#rca .rca-btn:hover{background:var(--gold2);color:#010914!important}
+#rca .rca-footer{margin-top:clamp(56px,8vh,80px);padding:26px clamp(16px,4vw,48px);border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim)}
+#rca .rca-footer a{color:var(--dim);border:0}
+#rca .rca-footer img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
+@media (max-width:900px){
+#rca .rca-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:#010914;border-bottom:1px solid var(--border);padding:14px 20px;gap:14px}
+#rca .rca-links.rca-open{display:flex}
+#rca .rca-burger{display:block}
+}
+@media (max-width:640px){
+#rca{font-size:16px}
+#rca .rca-stats,#rca .rca-grid{grid-template-columns:1fr}
+#rca .rca-cta{display:none}
+}
+#rca .rca-calc{background:var(--surface);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
+#rca .rca-calc h3{margin-top:0}
+#rca .rca-fields{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+#rca .rca-fields label{display:block;font-size:13px;color:var(--dim);margin-bottom:6px}
+#rca .rca-fields input{width:100%;background:#04102a;border:1px solid var(--border2);color:#fff;font:500 16px 'JetBrains Mono',monospace;padding:10px 12px;border-radius:2px}
+#rca .rca-fields input:focus{outline:none;border-color:var(--gold)}
+#rca .rca-out{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+#rca .rca-out div{background:#04102a;border:1px solid var(--border);border-radius:2px;padding:14px;text-align:center}
+#rca .rca-out b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,38px);font-weight:600;color:var(--green);line-height:1.1}
+#rca .rca-out b.rca-bad{color:var(--red)}
+#rca .rca-out span{display:block;font-size:13px;color:var(--dim);margin-top:6px}
+#rca .rca-hide{display:none}
+@media (max-width:640px){#rca .rca-fields,#rca .rca-out{grid-template-columns:1fr}}
+#rca .rca-verdict{margin:14px 0 0;padding:12px 14px;border-left:3px solid var(--green);background:rgba(11,175,146,.08)}
+#rca .rca-verdict.rca-lose{border-left-color:var(--red);background:rgba(224,86,107,.08)}
+@media (max-width:900px){#rca .rca-out{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){#rca .rca-fields{grid-template-columns:1fr}}
+
+</style>
+
+<div id="rca">
+
+<nav class="rca-nav">
+  <a class="rca-brand" href="https://alloceraintelligence.com/">
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence logo" width="34" height="34">
+    <span>Allocera Intelligence</span>
+  </a>
+  <ul class="rca-links" id="rcaLinks">
+    <li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li>
+    <li><a href="https://alloceraintelligence.com/proof/">Proof</a></li>
+    <li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li>
+    <li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li>
+    <li><a href="https://alloceraintelligence.com/about/">About</a></li>
+    <li><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></li>
+    <li><a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="rca-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <button class="rca-burger" id="rcaBurger" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+
+<article class="rca-wrap">
+
+<header class="rca-hero">
+  <p class="rca-eyebrow">The Margin Gap &middot; Free Tool</p>
+  <h1>ROAS Calculator: Find Your Break-Even ROAS and Real Profit</h1>
+  <p class="rca-lead">This ROAS calculator does more than divide revenue by ad spend. Add the costs your ad dashboard can&rsquo;t see, like fees, lead payouts, refunds, and the cost to deliver the work, and it shows your break-even ROAS and what the campaign really kept. Built for businesses that sell through leads, calls, and a CRM.</p>
+  <p class="rca-byline">By Nick Baum, Founder of Allocera Intelligence &middot; 9 min read</p>
+</header>
+
+<div class="rca-box">
+  <h3>Key takeaways</h3>
+  <ul>
+    <li><strong>ROAS</strong> = revenue &divide; ad spend. A 3.0 ROAS means $3 of revenue for every $1 of ads. It says nothing about profit.</li>
+    <li><strong>Break-even ROAS</strong> is the ROAS you need just to cover every other cost of the sale. Above it you make money; below it you lose money.</li>
+    <li>Two campaigns with the same 3.0 ROAS can have opposite results. In our example, one keeps $7,100 and the other loses $1,900.</li>
+    <li>For lead-driven businesses, the costs that decide profit (payouts, refunds, delivery) live outside the ad platform, so a basic ROAS calculator misses them.</li>
+  </ul>
+</div>
+
+<nav class="rca-toc" aria-label="Table of contents">
+  <p>In this guide</p>
+  <ol>
+    <li><a href="#calculator">Free ROAS calculator</a></li>
+    <li><a href="#formula">The ROAS formula</a></li>
+    <li><a href="#break-even">What break-even ROAS is</a></li>
+    <li><a href="#example">Same ROAS, opposite results</a></li>
+    <li><a href="#good">What is a good ROAS?</a></li>
+    <li><a href="#acos">ROAS vs ACoS</a></li>
+    <li><a href="#mislead">Where a basic ROAS calculator misleads</a></li>
+    <li><a href="#cdai">Tracking real ROAS for every campaign</a></li>
+    <li><a href="#faq">FAQs</a></li>
+  </ol>
+</nav>
+
+<h2 id="calculator">Free ROAS Calculator With Break-Even ROAS</h2>
+<p>Type over the example numbers with one campaign&rsquo;s results for a month. Leave any cost at zero if it doesn&rsquo;t apply. Everything runs in your browser; nothing you type is saved or sent anywhere.</p>
+<div class="rca-calc" id="rcaCalc">
+  <h3>Calculate ROAS, break-even ROAS, and real profit</h3>
+  <div class="rca-fields">
+    <div><label for="rAd">Ad spend ($)</label><input id="rAd" type="number" inputmode="decimal" min="0" value="10000"></div>
+    <div><label for="rRev">Closed revenue from the campaign ($)</label><input id="rRev" type="number" inputmode="decimal" min="0" value="30000"></div>
+    <div><label for="rAgency">Agency or management fees ($)</label><input id="rAgency" type="number" inputmode="decimal" min="0" value="1500"></div>
+    <div><label for="rPay">Partner &amp; lead vendor payouts ($)</label><input id="rPay" type="number" inputmode="decimal" min="0" value="0"></div>
+    <div><label for="rProc">Card processing fee (% of revenue)</label><input id="rProc" type="number" inputmode="decimal" min="0" step="0.1" value="3"></div>
+    <div><label for="rRef">Refunds &amp; chargebacks ($)</label><input id="rRef" type="number" inputmode="decimal" min="0" value="1500"></div>
+    <div><label for="rDel">Cost to deliver the work ($)</label><input id="rDel" type="number" inputmode="decimal" min="0" value="9000"></div>
+  </div>
+  <div class="rca-out">
+    <div><b id="oRoas">3.00</b><span>ROAS</span></div>
+    <div><b id="oBe">1.75</b><span>Break-even ROAS</span></div>
+    <div><b id="oProfit">$7,100</b><span>Real profit after every cost</span></div>
+    <div><b id="oPer">$0.71</b><span>Profit per $1 of ad spend</span></div>
+  </div>
+  <p class="rca-verdict" id="oNote">Your ROAS of 3.00 is above your break-even ROAS of 1.75, so this campaign keeps $7,100 after every cost.</p>
+</div>
+<h3>How to use this ROAS calculator</h3>
+<ol class="rca-steps">
+  <li><strong>Pick one campaign and one period,</strong> such as last month. A ROAS calculator is most useful campaign by campaign, not blended.</li>
+  <li><strong>Enter ad spend and closed revenue.</strong> Use revenue your CRM or payment processor recorded, not the ad platform&rsquo;s estimate.</li>
+  <li><strong>Add the costs of the sale:</strong> fees, lead payouts, processing, refunds, chargebacks, and the cost to deliver.</li>
+  <li><strong>Compare ROAS with break-even ROAS.</strong> If ROAS is higher, the campaign makes money. If it&rsquo;s lower, it loses money, however good the ROAS looks.</li>
+</ol>
+<p>The example numbers are the same illustrative campaign used in our guide to <a href="https://alloceraintelligence.com/marketing-costs/">marketing costs</a>. Want the contribution margin view instead? Use our <a href="https://alloceraintelligence.com/calculate-contribution-margin/">contribution margin calculator</a>.</p>
+
+<h2 id="formula">The ROAS Formula: How to Calculate ROAS</h2>
+<p>ROAS stands for return on ad spend. The formula is simple:</p>
+<p><strong>ROAS = revenue from ads &divide; ad spend</strong></p>
+<p>Spend $10,000 and bring in $30,000 of revenue, and your ROAS is 3.0. You&rsquo;ll also see it written as 3:1, 3x, or 300%. They all mean the same thing: $3 of revenue for every $1 of ads. A 4:1 ROAS means $4 of revenue for every $1 spent.</p>
+<p>That&rsquo;s all a basic ROAS calculator does, and most free ROAS calculators stop there. It&rsquo;s useful for comparing ads on the same platform, but it has a blind spot: it counts revenue, not what you keep. A ROAS number can&rsquo;t tell you whether a campaign made money until you know your break-even point.</p>
+
+<h2 id="break-even">What Is Break-Even ROAS?</h2>
+<p>Break-even ROAS is the ROAS at which a campaign exactly covers its costs, with zero profit and zero loss. <a href="https://funnelytics.io/tools/break-even-roas-calculator" target="_blank" rel="noopener">Funnelytics</a> describes it as the minimum return on ad spend at which ad-driven revenue covers your variable costs. The standard formula, as <a href="https://www.shopify.com/blog/break-even-roas-calculator" target="_blank" rel="noopener">Shopify&rsquo;s break-even ROAS guide</a> puts it, is 1 divided by your profit margin before ads:</p>
+<p><strong>Break-even ROAS = 1 &divide; margin before ad spend</strong></p>
+<p>&ldquo;Margin before ad spend&rdquo; is the share of revenue left after every cost of the sale except the ads. A 50% margin gives a break-even ROAS of 2.0. A 25% margin needs 4.0.</p>
+<h3>Break-even ROAS for lead-driven businesses</h3>
+<p>Most break-even ROAS calculators are built for online stores, so they ask for product cost and shipping. If you sell services through leads and a CRM, the costs are different:</p>
+<ul>
+  <li><strong>Agency or management fees</strong> for running the campaign.</li>
+  <li><strong>Partner and lead vendor payouts</strong> for bought leads, calls, or referrals.</li>
+  <li><strong>Card processing fees</strong> on the sales you close. <a href="https://stripe.com/pricing" target="_blank" rel="noopener">Stripe&rsquo;s standard US pricing</a>, for example, is 2.9% plus 30 cents per successful online card payment.</li>
+  <li><strong>Refunds and chargebacks</strong>, which often arrive weeks after the sale.</li>
+  <li><strong>The cost to deliver the work</strong>: labor, materials, or case costs.</li>
+</ul>
+<p>Subtract those from revenue, divide by revenue, and you have your margin before ads. The ROAS calculator at the top of this page does this for you. In the example, the other costs come to $12,900, leaving a 57% margin before ads and a break-even ROAS of 1.75.</p>
+
+<h2 id="example">Same ROAS, Opposite Results: Two Campaigns</h2>
+<p>This is an illustrative example, not client data. Both campaigns spend $10,000 and show a 3.0 ROAS in the ad account. The difference is everything the ad account can&rsquo;t see.</p>
+<figure>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/roas-calculator-same-roas-different-profit.png" alt="ROAS calculator example: two campaigns with the same 3.0 ROAS; one keeps $7,100 and the other loses $1,900 once payouts and delivery costs are counted" width="1600" height="800" loading="lazy">
+  <figcaption>Illustrative example. Same ROAS, different break-even points.</figcaption>
+</figure>
+<div class="rca-table-wrap">
+<table>
+  <thead><tr><th>Line</th><th>Campaign A</th><th>Campaign B</th></tr></thead>
+  <tbody>
+    <tr><td>Revenue</td><td class="rca-num">$30,000</td><td class="rca-num">$30,000</td></tr>
+    <tr><td>Ad spend</td><td class="rca-num">$10,000</td><td class="rca-num">$10,000</td></tr>
+    <tr><td><strong>ROAS</strong></td><td class="rca-num">3.0</td><td class="rca-num">3.0</td></tr>
+    <tr><td>Agency fee</td><td class="rca-num">$1,500</td><td class="rca-num">$1,500</td></tr>
+    <tr><td>Lead vendor payouts</td><td class="rca-num">$0</td><td class="rca-num">$6,000</td></tr>
+    <tr><td>Card processing (3%)</td><td class="rca-num">$900</td><td class="rca-num">$900</td></tr>
+    <tr><td>Refunds &amp; chargebacks</td><td class="rca-num">$1,500</td><td class="rca-num">$1,500</td></tr>
+    <tr><td>Cost to deliver</td><td class="rca-num">$9,000</td><td class="rca-num">$12,000</td></tr>
+    <tr><td>Margin before ads</td><td class="rca-num">57%</td><td class="rca-num">27%</td></tr>
+    <tr class="rca-total"><td>Break-even ROAS</td><td class="rca-num">1.75</td><td class="rca-num">3.70</td></tr>
+    <tr class="rca-total"><td>Real profit</td><td class="rca-num rca-pos">$7,100</td><td class="rca-num rca-neg">&minus;$1,900</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Campaign A clears its break-even ROAS easily. Campaign B needs a 3.70 ROAS just to break even, so its 3.0 loses money on every sale. In the ad account, they look identical. If you moved budget based on ROAS alone, you could easily feed the wrong one. Our <a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">scale, hold, cut, pause framework</a> shows how to turn numbers like these into a clear budget decision.</p>
+
+<h2 id="good">What Is a Good ROAS?</h2>
+<p>A good ROAS is one that is comfortably above <em>your</em> break-even ROAS. There isn&rsquo;t a single number that works for everyone, because the break-even point depends on your costs.</p>
+<p>Is a 2.5 ROAS good? For Campaign A above, yes: its break-even is 1.75, so 2.5 is profitable. For Campaign B, no: it needs 3.70 just to break even. The same ROAS can be great for one business and a loss for another. That&rsquo;s why generic ROAS benchmarks are risky to steer by.</p>
+<p>A better habit: run each campaign through the ROAS calculator, work out its break-even ROAS, then judge each one by how far above or below that line it sits. The gap between ROAS and break-even ROAS is where the profit is.</p>
+
+<h2 id="acos">ROAS vs ACoS</h2>
+<p>ACoS (advertising cost of sale) is the same relationship flipped over, and it&rsquo;s common on Amazon. As <a href="https://www.brandbuilderuni.com/blog/amazon-acos-vs-roas" target="_blank" rel="noopener">Brand Builder University&rsquo;s comparison</a> sets out, ACoS is ad spend &divide; ad sales and ROAS is sales &divide; ad spend. So one is 1 divided by the other:</p>
+<ul>
+  <li>25% ACoS = 4.0 ROAS</li>
+  <li>33% ACoS &asymp; 3.0 ROAS</li>
+  <li>50% ACoS = 2.0 ROAS</li>
+</ul>
+<p>With ACoS, lower is better. With ROAS, higher is better. Neither one includes the costs after the ad click, so both need a break-even check.</p>
+
+<h2 id="mislead">Where a Basic ROAS Calculator Can Mislead You</h2>
+<p>A basic ROAS calculator only knows two numbers. Here is what that leaves out, and how to fix it:</p>
+<ul>
+  <li><strong>Platform revenue isn&rsquo;t closed revenue.</strong> The &ldquo;conversion value&rdquo; in an ad account is an estimate. Use the revenue your CRM or payment processor actually recorded.</li>
+  <li><strong>Refunds and chargebacks arrive late.</strong> A campaign measured on day-one revenue always looks better than it is. Update the numbers as money comes back.</li>
+  <li><strong>Payouts and fees live elsewhere.</strong> Lead vendor invoices and processing fees never reach the ad platform, so they&rsquo;re easy to leave out.</li>
+  <li><strong>Judging too early.</strong> If your deals take weeks or months to close, a ROAS checked in the first week undercounts revenue. Match the window to your sales cycle; our <a href="https://alloceraintelligence.com/30-day-retest-methodology/">30-day retest</a> explains why.</li>
+  <li><strong>One number for many campaigns.</strong> A blended ROAS across campaigns can hide a losing campaign behind a winning one. Calculate each campaign on its own.</li>
+</ul>
+<p>For law firms, where cases take months to settle and lead costs are high, our guide to <a href="https://alloceraintelligence.com/cost-per-signed-case/">cost per signed case</a> walks through the same problem in detail.</p>
+
+<h2 id="cdai">Tracking Real ROAS for Every Campaign, Every Night</h2>
+<p>A ROAS calculator works for one campaign at a time. Keeping it current for every campaign, while refunds, payouts, and fees keep arriving, is the hard part. CDAI (Capital, Decision, Accuracy, Intelligence), the engine behind Allocera Intelligence, connects to the ad accounts, CRM, and other tools you already use, and every night, for every campaign, it:</p>
+<ul>
+  <li><strong>Calculates real profit.</strong> It takes the revenue each campaign actually closed and subtracts every real cost of winning it: ad spend, fees, partner payouts, refunds, chargebacks, compliance costs, and any operating costs you add, like fulfillment.</li>
+  <li><strong>Makes one clear decision,</strong> such as scale, hold, cut, or pause, with the numbers and a confidence level behind it. You stay in control of every move.</li>
+  <li><strong>Rechecks its own math</strong> and stops on bad data instead of making decisions from it.</li>
+  <li><strong>Grades its past decisions</strong> once enough time has passed to judge them.</li>
+</ul>
+<p>Before release, CDAI&rsquo;s decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>89.5% accurate overall (1,210 of 1,352 scored decisions)</strong>, with the math matching 100% when checked two ways. Every decision type, including the weaker ones, is in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>. See <a href="https://alloceraintelligence.com/how-it-works/">how it works</a>, or read why we measure <a href="https://alloceraintelligence.com/net-marketing-contribution/">net marketing contribution</a> instead of ROAS.</p>
+
+<h2 id="faq">ROAS Calculator FAQs</h2>
+<details>
+  <summary>How is ROAS calculated?</summary>
+  <p>Divide the revenue from your ads by what you spent on them. $30,000 of revenue from $10,000 of ad spend is a 3.0 ROAS. To know whether that&rsquo;s profitable, compare it with your break-even ROAS: 1 divided by your margin before ad spend.</p>
+</details>
+<details>
+  <summary>Is a 2.5 ROAS good?</summary>
+  <p>It depends on your break-even ROAS. If your margin before ads is 57%, your break-even is about 1.75, so 2.5 is profitable. If your margin before ads is 27%, you need about 3.70 to break even, so 2.5 loses money. Use the ROAS calculator above with your own costs.</p>
+</details>
+<details>
+  <summary>What does a 4:1 ROAS mean?</summary>
+  <p>It means $4 of revenue for every $1 of ad spend, also written as 4x or 400%. It&rsquo;s profitable only if your break-even ROAS is below 4.0, which means your margin before ads is above 25%.</p>
+</details>
+<details>
+  <summary>What ROAS is 25% ACoS?</summary>
+  <p>A 25% ACoS equals a 4.0 ROAS. ACoS is ad spend divided by ad sales, and ROAS is sales divided by ad spend, so each is 1 divided by the other.</p>
+</details>
+<details>
+  <summary>What should a ROAS calculator include?</summary>
+  <p>At minimum, ad spend and revenue. To tell you whether a campaign is profitable, a ROAS calculator also needs the other costs of the sale: fees, lead payouts, processing, refunds, chargebacks, and the cost to deliver. With those, it can show your break-even ROAS and real profit, as the calculator on this page does.</p>
+</details>
+<details>
+  <summary>What is break-even ROAS?</summary>
+  <p>The ROAS at which a campaign covers all its costs with nothing left over. Calculate it as 1 divided by your margin before ad spend. For lead-driven businesses, that margin should subtract fees, lead payouts, processing, refunds, chargebacks, and the cost to deliver the work.</p>
+</details>
+<details>
+  <summary>Should I judge campaigns by ROAS or by profit?</summary>
+  <p>Use ROAS to compare ads on the same platform, and profit to decide budget. A ROAS calculator with break-even ROAS gets you most of the way there. A campaign&rsquo;s real profit, after every cost, is what tells you whether to spend more, hold, or cut.</p>
+</details>
+
+<section class="rca-final">
+  <h2>See Real ROAS and Profit for Every Campaign</h2>
+  <p>Connect the ad accounts and CRM you already use. CDAI calculates what each campaign really keeps after every cost and gives you one clear decision for it every night.</p>
+  <div class="rca-btns">
+    <a class="rca-btn rca-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <a class="rca-btn" href="https://alloceraintelligence.com/pricing/">See Pricing</a>
+    <a class="rca-btn" href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">Read the Validation Report</a>
+  </div>
+</section>
+
+</article>
+
+<footer class="rca-footer">
+  <span><img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence" width="26" height="26">Allocera Intelligence &middot; CDAI Engine</span>
+  <span>&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/">Terms of Service</a></span>
+</footer>
+
+</div>
+<script>
+(function(){
+var b=document.getElementById('rcaBurger'),l=document.getElementById('rcaLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('rca-open');});}
+var root=document.getElementById('rcaCalc');if(!root)return;
+function v(id){var e=document.getElementById(id);var n=parseFloat(e&&e.value);return isFinite(n)&&n>0?n:0;}
+function money(n){var s=Math.round(Math.abs(n)).toLocaleString('en-US');return (n<0?'-$':'$')+s;}
+function x(n){return n.toFixed(2);}
+function set(id,t,bad){var e=document.getElementById(id);e.textContent=t;e.className=bad?'rca-bad':'';}
+function calc(){
+ var ad=v('rAd'),rev=v('rRev');
+ var other=v('rAgency')+v('rPay')+rev*v('rProc')/100+v('rRef')+v('rDel');
+ var pre=rev-other,profit=pre-ad,note=document.getElementById('oNote');
+ var roas=ad>0?rev/ad:0,be=pre>0?rev/pre:0;
+ set('oRoas',ad>0?x(roas):'-',false);
+ set('oBe',pre>0?x(be):'None',pre<=0);
+ set('oProfit',money(profit),profit<0);
+ var per=ad>0?profit/ad:0;
+ set('oPer',ad>0?(per<0?'-$':'$')+Math.abs(per).toFixed(2):'-',per<0);
+ if(ad<=0||rev<=0){note.textContent='Enter ad spend and revenue above zero to see your ROAS.';note.className='rca-verdict';return;}
+ if(pre<=0){note.textContent='No ROAS can make this campaign profitable: its costs other than ads are already larger than its revenue.';note.className='rca-verdict rca-lose';return;}
+ if(profit>=0){note.textContent='Your ROAS of '+x(roas)+' is above your break-even ROAS of '+x(be)+', so this campaign keeps '+money(profit)+' after every cost.';note.className='rca-verdict';}
+ else{note.textContent='Your ROAS of '+x(roas)+' is below your break-even ROAS of '+x(be)+', so this campaign loses '+money(-profit)+' after every cost.';note.className='rca-verdict rca-lose';}
+}
+var used=false;
+Array.prototype.forEach.call(root.querySelectorAll('input'),function(i){i.addEventListener('input',function(){calc();
+ if(!used){used=true;window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'cdai_calculator_use',calculator:'roas',page_slug:(location.pathname||'/').replace(/^\/|\/$/g,'')});
+  if(typeof window.gtag==='function')window.gtag('event','calculator_use',{calculator:'roas'});}});});
+calc();
+})();
+</script>
+
+<!-- ============ Analytics: GA4 (G-29J4V3VQ7B) + Tag Manager-ready events (article pages) ============ -->
+<script>
+(function () {
+  var GA_ID = "G-29J4V3VQ7B";
+  var PAGE = (location.pathname || "/").replace(/^\/|\/$/g, "") || "home";
+  window.dataLayer = window.dataLayer || [];
+
+  // Load GA4 only if the site doesn't already load it (never double-counts page views).
+  var hasGtag = typeof window.gtag === "function";
+  var hasTagScript = !!document.querySelector('script[src*="googletagmanager.com/gtag/js"], script[src*="googletagmanager.com/gtm.js"]');
+  if (!hasGtag && !hasTagScript) {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA_ID);
+  }
+
+  // Pushes a Tag Manager event and sends the same GA4 event. No personal data is ever sent.
+  function track(name, params) {
+    params = params || {};
+    params.page_slug = PAGE;
+    var dl = { event: "cdai_" + name };
+    for (var k in params) { if (Object.prototype.hasOwnProperty.call(params, k)) dl[k] = params[k]; }
+    window.dataLayer.push(dl);
+    if (typeof window.gtag === "function") window.gtag("event", name, params);
+  }
+
+  function sectionOf(el) {
+    if (el.closest("nav")) return "nav";
+    if (el.closest("footer")) return "footer";
+    if (el.closest("[class$='-final']")) return "final_cta";
+    var h = null, node = el;
+    while (node && node !== document.body) {
+      var prev = node.previousElementSibling;
+      while (prev) { if (/^H2$/.test(prev.tagName) && prev.id) { h = prev.id; break; } prev = prev.previousElementSibling; }
+      if (h) break;
+      node = node.parentElement;
+    }
+    return h || "intro";
+  }
+  function label(el) { return (el.getAttribute("aria-label") || el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 80); }
+
+  // Every link and button click.
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest && e.target.closest("a, button, summary");
+    if (!el) return;
+    if (el.tagName === "SUMMARY") { track("faq_open", { question: label(el) }); return; }
+    var href = el.getAttribute("href") || "";
+    var p = { link_text: label(el), link_url: href, section: sectionOf(el) };
+    if (/cdai-portal\.vercel\.app\/signup/.test(href)) track("signup_click", p);
+    else if (/cdai-portal\.vercel\.app/.test(href)) track("portal_click", p);
+    else if (/\/pricing/.test(href)) track("pricing_click", p);
+    else if (/contribution-margin-marketing/.test(href)) track("validation_report_click", p);
+    else if (/^#/.test(href)) track("toc_click", p);
+    else if (/^https?:\/\//.test(href) && href.indexOf(location.hostname) === -1) track("outbound_click", p);
+    else if (href) track("internal_link_click", p);
+    else track("button_click", p);
+  }, true);
+
+  // How far people read (25/50/75/100%), each once per visit.
+  var marks = [25, 50, 75, 100], hit = {};
+  function onScroll() {
+    var doc = document.documentElement;
+    var pct = Math.round(((window.scrollY || doc.scrollTop) + window.innerHeight) / doc.scrollHeight * 100);
+    marks.forEach(function (m) { if (pct >= m && !hit[m]) { hit[m] = true; track("scroll_depth", { percent: m }); } });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Which sections people reach (each H2, once per visit).
+  if ("IntersectionObserver" in window) {
+    var seen = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var id = en.target.id;
+        if (en.isIntersecting && id && !seen[id]) { seen[id] = true; track("section_view", { section: id }); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll("h2[id]").forEach(function (h) { io.observe(h); });
+  }
+})();
+</script>
+<!-- ============ /Analytics ============ -->

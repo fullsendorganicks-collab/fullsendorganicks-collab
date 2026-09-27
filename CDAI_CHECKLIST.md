@@ -89,11 +89,11 @@ Full page-by-page list: **`website/FIX_LIST.md`** (41 pages still carry old or f
 | 5 | `/home-sample/northbeam-alternative/` | LIVE, **90** |
 | 6 | `/home-sample/rockerbox-alternative/` | LIVE (score not reported) |
 | 7 | `/cost-per-signed-case/` | LIVE, **90** |
-| 8 | `/blog/` (Nick's design, new content) | LIVE, **72** (normal for a directory page). **Sept 27 update to paste:** adds Marketing Costs and the 30-Day Retest cards (`website/pages/blog.html`). |
+| 8 | `/blog/` (Nick's design, new content) | LIVE, **72** (normal for a directory page). **ON HOLD until the rebuild is done (Nick).** Pending list in `website/FIX_LIST.md` → "Blog page: pending changes". |
 | 9 | Homepage | LIVE, **81** (Nick: fine as is). Pasted Sept 26: Ask AI section back, F6S logo, tracking, the "What is true cost per lead?" FAQ. Rank Math box in `website/homepage-RANKMATH.md`. |
 | 10 | `/30-day-retest-methodology/` | LIVE, **82** (79 → 82 after the title v2; the last points need the keyword in the permalink, Nick's call). Built (`website/pages/30-day-retest-methodology.html` + RANKMATH). Focus keyword "marketing measurement". Every claim checked against the engine code. Includes GA4 tracking. |
 | 11 | `/marketing-costs/` (was `/seven-cost-layers/`) | LIVE, **89**. New post, focus keyword "marketing costs"; permalink changed + 301 from the old URL. Built (`website/pages/seven-cost-layers.html` + RANKMATH + image). No "layers" wording anywhere. Includes GA4 tracking. |
-| 12 | `/55-directives-study/` | 301 to the validation report (the whole page is the fake 80%) |
+| 12 | `/55-directives-study/` | **BUILT Sept 27, awaiting paste.** Brand-new ROAS calculator page (not a 301, per Nick): working calculator with break-even ROAS + real profit for lead-gen. Focus "roas calculator" (1,300/mo, low competition). GSC: old URL 0 impressions. Recommended slug `roas-calculator` + 301 (Nick's call). GA4 tracking + `calculator_use` event. |
 | 13 | `/tag-manager-real-roi/`, `/allocera-vs-salesforce/`, `/true-cac/` + `/true-cac-2/` (merge) | Full rebuilds (80%, seven layers, pasted head) |
 | 14 | `/marketing-margin-distortion-index/` | **Nick decides:** rebuild or retire (80%, Apex, "2026" in the title, unsourced stats) |
 | 15 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | **Nick decides:** these are the Apex story. Rewrite around the validation, or retire. |
