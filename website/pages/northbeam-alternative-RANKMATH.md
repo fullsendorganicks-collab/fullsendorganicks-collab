@@ -1,5 +1,7 @@
 # Rank Math box: /home-sample/northbeam-alternative/
 
+**LIVE Sept 28: score 90.**
+
 **Sept 28 check:** the Sept 27 export shows this rebuild was never pasted. The old page (fake 80%, "cost layers", score 74) is still live.
 
 **Updated Sept 28 to current rules:**

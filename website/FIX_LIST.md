@@ -25,11 +25,11 @@ If they don't match, stop before deleting anything.
 Redirect details are in `REDIRECTS.md`.
 
 ## Scoreboard
-- **Done and live:** 17
+- **Done and live:** 18
   - 15 rebuilt posts/pages
   - the homepage
   - the blog (which gets a final re-paste)
-- **Built but NOT live:** 1 (Northbeam)
+- **Built but NOT live:** 0 (Northbeam pasted Sept 28, score 90)
 - **Not touched yet:** 33
   - 12 pages
   - 21 older posts
@@ -38,7 +38,7 @@ Redirect details are in `REDIRECTS.md`.
 | # | Post ID / edit link | What's wrong (from the Sept 27 export) | Fix |
 |---|---|---|---|
 | A1 | https://alloceraintelligence.com/wp-admin/post.php?post=252&action=edit (live: /30-day-retest-methodology-2/) | The 30-Day Retest IS live here (score 82), but the slug is still `30-day-retest-methodology-2`. 7 pages link to `/30-day-retest-methodology/`. | Change the slug to `30-day-retest-methodology` (Nick did this Sept 28). The redirect checks (R11, R12) happen at the end with all the other redirects. |
-| A2 | https://alloceraintelligence.com/wp-admin/post.php?post=654&action=edit (live: /home-sample/northbeam-alternative/) | My rebuild (`pages/northbeam-alternative.html`) was never pasted. The old page with the fake 80% and "cost layers" is live (142 impressions, position 27.9, score 74). | **Sent Sept 28** (updated with GA4 tracking, no dated byline, new button). Waiting on Nick's paste + score. |
+| A2 | https://alloceraintelligence.com/wp-admin/post.php?post=654&action=edit (live: /home-sample/northbeam-alternative/) | My rebuild (`pages/northbeam-alternative.html`) was never pasted. The old page with the fake 80% and "cost layers" is live (142 impressions, position 27.9, score 74). | **DONE Sept 28: LIVE, score 90.** |
 | A3 | Featured image missing | 245 lead quality, 260 offline conversion, 267 contribution margin, 501 signed case, 506 avg cost per lead, 563 net marketing contribution, 850 validation report | Set each post's own image (the file names are in each RANKMATH box). |
 | A4 | https://alloceraintelligence.com/wp-admin/post.php?post=284&action=edit (live: /salesforce-campaign-influence/) | The WordPress title is still the old "Salesforce Marketing Cloud: The Margin Reconciliation Gap" | Change it to `Salesforce Campaign Influence: 4 Things Campaign ROI Misses` |
 
@@ -101,6 +101,7 @@ All 21 still have "cost layers" wording, and most link to old URLs (`/seven-cost
 | 322 | `/scale-hold-cut-pause-framework/` (Marketing Budget Allocation) | 89 | yes |
 | 308 | `/triple-whale-vs-rockerbox-vs-allocera/` | 90 | yes |
 | 646 | `/home-sample/rockerbox-alternative/` | 90 | yes |
+| 654 | `/home-sample/northbeam-alternative/` | 90 (Sept 28) | set Sept 28 |
 | 501 | `/cost-per-signed-case/` | 90 | **missing** |
 | 252 | `/30-day-retest-methodology-2/` → slug fix A1 | 82 | yes |
 | 301 | `/marketing-costs/` | 89 | yes |
