@@ -1,0 +1,1150 @@
+<p><!DOCTYPE html><br />
+<html lang="en"><br />
+<head><br />
+<meta charset="UTF-8"/><br />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/><br />
+<title>CDAI Engine Validation Case Study — Real Tests, Real Results | Allocera Intelligence</title><br />
+<meta name="description" content="Independent validation of the CDAI Engine on real business data. See how the engine detected data quality issues, refused to fabricate directives, and proved multi-tenant security isolation."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}<br />
+:root{<br />
+--bg-primary:#0A0E1A;--bg-secondary:#111827;--bg-surface:rgba(17,24,39,0.6);<br />
+--text-primary:#F9FAFB;--text-secondary:#D1D5DB;--text-muted:#9CA3AF;<br />
+--accent-blue:#3B82F6;--accent-blue-bright:#60A5FA;--accent-gold:#F59E0B;<br />
+--accent-green:#10B981;--accent-red:#EF4444;<br />
+--border:rgba(255,255,255,0.1);--border-bright:rgba(255,255,255,0.2);<br />
+}<br />
+html{scroll-behavior:smooth;}<br />
+body{background:#0A0E1A;color:#F9FAFB;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.7;position:relative;overflow-x:hidden;}<br />
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url('https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png');background-size:cover;background-position:center;background-attachment:fixed;opacity:0.4;z-index:-1;}<br />
+body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(10,14,26,0.5) 0%,rgba(10,14,26,0.85) 100%);z-index:-1;}<br />
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,14,26,0.95);border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}<br />
+.nav-container{max-width:1400px;margin:0 auto;padding:clamp(16px,2vw,24px) clamp(20px,5vw,60px);display:flex;align-items:center;justify-content:space-between;}<br />
+.nav-brand{display:flex;align-items:center;gap:16px;text-decoration:none;}<br />
+.nav-logo{width:clamp(36px,5vw,48px);height:clamp(36px,5vw,48px);object-fit:contain;flex-shrink:0;}<br />
+.nav-company{font-size:clamp(14px,1.8vw,18px);font-weight:600;letter-spacing:0.02em;color:#F9FAFB;}<br />
+.nav-back{font-size:clamp(12px,1.4vw,14px);font-weight:500;color:#60A5FA;text-decoration:none;padding:10px 20px;border:1px solid rgba(96,165,250,0.3);border-radius:6px;transition:all 0.3s ease;}<br />
+.nav-back:hover{background:rgba(59,130,246,0.1);border-color:#60A5FA;transform:translateY(-1px);}<br />
+main{max-width:1100px;margin:0 auto;padding:clamp(100px,15vh,140px) clamp(24px,5vw,60px) clamp(80px,12vh,120px);}<br />
+.hero{text-align:center;margin-bottom:clamp(60px,10vh,100px);}<br />
+h1{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,72px);font-weight:700;line-height:1.1;color:#F9FAFB;margin-bottom:clamp(20px,3vh,32px);letter-spacing:-0.02em;}<br />
+h1 em{font-style:italic;color:#60A5FA;}<br />
+.meta-grid{display:flex;gap:clamp(16px,3vw,32px);flex-wrap:wrap;justify-content:center;margin-bottom:clamp(32px,5vh,48px);padding-bottom:clamp(24px,4vh,40px);border-bottom:1px solid rgba(255,255,255,0.1);}<br />
+.meta-item{font-size:clamp(11px,1.3vw,13px);letter-spacing:0.08em;text-transform:uppercase;color:#9CA3AF;font-weight:500;}<br />
+.meta-item span{color:#60A5FA;font-weight:600;}<br />
+.lead{font-size:clamp(16px,2.2vw,20px);color:#D1D5DB;line-height:1.8;max-width:900px;margin:0 auto clamp(40px,6vh,60px);}<br />
+.not-this{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:clamp(24px,4vw,36px);margin:clamp(32px,5vh,48px) auto;max-width:800px;}<br />
+.not-this-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9CA3AF;font-weight:600;margin-bottom:16px;}<br />
+.not-this ul{list-style:none;padding:0;margin:0;}<br />
+.not-this ul li{font-size:clamp(13px,1.5vw,14px);color:#9CA3AF;padding:10px 0 10px 20px;border-bottom:1px solid rgba(255,255,255,0.05);position:relative;line-height:1.6;}<br />
+.not-this ul li:last-child{border-bottom:none;padding-bottom:0;}<br />
+.not-this ul li::before{content:'·';position:absolute;left:0;color:#4B5563;}<br />
+section{margin-bottom:clamp(60px,10vh,100px);}<br />
+h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:700;color:#F9FAFB;margin-bottom:clamp(24px,4vh,40px);line-height:1.2;letter-spacing:-0.01em;}<br />
+h3{font-family:'Inter',sans-serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#F9FAFB;margin:clamp(32px,5vh,48px) 0 clamp(16px,2.5vh,24px);letter-spacing:-0.01em;}<br />
+p{font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;margin-bottom:clamp(20px,3vh,28px);}<br />
+a.inline-link{color:#60A5FA;text-decoration:none;border-bottom:1px solid rgba(96,165,250,0.3);transition:all 0.2s ease;}<br />
+a.inline-link:hover{color:#93C5FD;border-bottom-color:#93C5FD;}<br />
+.test-grid{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,40px);margin:clamp(40px,6vh,60px) 0;}<br />
+@media(min-width:768px){.test-grid{grid-template-columns:1fr 1fr;}}<br />
+.test-card{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(24px,4vw,40px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:all 0.3s ease;position:relative;overflow:hidden;}<br />
+.test-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#10B981,#3B82F6);opacity:0;transition:opacity 0.3s ease;}<br />
+.test-card:hover{border-color:rgba(255,255,255,0.2);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3);}<br />
+.test-card:hover::before{opacity:1;}<br />
+.test-card.pass{border-left:3px solid #10B981;}<br />
+.test-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:inline-block;padding:6px 12px;background:rgba(16,185,129,0.1);color:#10B981;border-radius:4px;font-weight:600;}<br />
+.test-title{font-size:clamp(16px,2vw,20px);font-weight:700;color:#F9FAFB;margin-bottom:16px;line-height:1.3;}<br />
+.test-result{font-size:clamp(13px,1.5vw,14px);color:#D1D5DB;line-height:1.7;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);}<br />
+.callout{padding:clamp(24px,4vw,40px);background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.3);border-left:4px solid #3B82F6;border-radius:8px;margin:clamp(32px,5vh,48px) 0;}<br />
+.callout strong{color:#60A5FA;font-weight:600;}<br />
+.evidence{background:rgba(10,14,26,0.9);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:clamp(24px,4vw,36px);margin:clamp(32px,5vh,48px) 0;overflow-x:auto;}<br />
+.evidence-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9CA3AF;margin-bottom:16px;font-weight:600;}<br />
+.evidence-data{font-family:'Courier New',monospace;font-size:clamp(12px,1.4vw,13px);color:#D1D5DB;line-height:1.9;white-space:pre-wrap;}<br />
+.sql-block{background:rgba(10,14,26,0.95);border:1px solid rgba(96,165,250,0.2);border-left:3px solid #3B82F6;border-radius:8px;padding:clamp(20px,3vw,28px);margin:clamp(20px,3vh,28px) 0;overflow-x:auto;}<br />
+.sql-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#3B82F6;font-weight:700;margin-bottom:10px;}<br />
+.sql-query{font-family:'Courier New',monospace;font-size:clamp(11px,1.3vw,12px);color:#93C5FD;line-height:1.8;white-space:pre-wrap;margin-bottom:12px;}<br />
+.sql-result{font-family:'Courier New',monospace;font-size:clamp(11px,1.3vw,12px);color:#10B981;line-height:1.6;padding-top:12px;border-top:1px solid rgba(255,255,255,0.08);}<br />
+.sql-note{font-size:clamp(12px,1.4vw,13px);color:#9CA3AF;line-height:1.6;margin-top:10px;font-style:italic;}<br />
+code{background:rgba(10,14,26,0.8);padding:3px 8px;border-radius:4px;font-family:'Courier New',monospace;font-size:clamp(12px,1.3vw,13px);color:#60A5FA;border:1px solid rgba(96,165,250,0.3);}<br />
+ul{margin:clamp(20px,3vh,28px) 0;padding-left:clamp(24px,4vw,40px);}<br />
+li{position:relative;margin-bottom:12px;font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;padding-left:12px;}<br />
+li::before{content:'→';position:absolute;left:-20px;color:#3B82F6;font-weight:700;}<br />
+li strong{color:#F9FAFB;font-weight:600;}<br />
+.profile-card{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(24px,4vw,32px);margin:clamp(32px,5vh,48px) 0;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}<br />
+.profile-grid{display:grid;grid-template-columns:auto 1fr;gap:12px 28px;align-items:start;}<br />
+.profile-label{font-size:clamp(12px,1.4vw,13px);color:#9CA3AF;font-weight:500;padding-top:2px;white-space:nowrap;}<br />
+.profile-value{font-size:clamp(12px,1.4vw,13px);color:#D1D5DB;}<br />
+.profile-value strong{color:#F9FAFB;font-weight:600;}<br />
+.press-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}<br />
+.press-chip{display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);color:#F59E0B;text-decoration:none;transition:all 0.2s ease;}<br />
+.press-chip:hover{background:rgba(245,158,11,0.18);border-color:rgba(245,158,11,0.5);}<br />
+.comparison-table{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(24px,4vw,32px);margin:clamp(32px,5vh,48px) 0;overflow-x:auto;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}<br />
+table{width:100%;border-collapse:collapse;}<br />
+th{font-size:clamp(12px,1.4vw,13px);letter-spacing:0.08em;text-transform:uppercase;color:#9CA3AF;font-weight:600;text-align:left;padding:16px;border-bottom:1px solid rgba(255,255,255,0.1);}<br />
+td{font-size:clamp(13px,1.5vw,14px);color:#D1D5DB;padding:16px;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;}<br />
+tr:last-child td{border-bottom:none;}<br />
+td strong{color:#F9FAFB;font-weight:600;}<br />
+/* Pricing */<br />
+.pricing-table{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;margin-bottom:clamp(32px,5vh,48px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}<br />
+.pricing-table table{width:100%;border-collapse:collapse;}<br />
+.pricing-table th{font-size:clamp(11px,1.3vw,12px);letter-spacing:0.1em;text-transform:uppercase;color:#9CA3AF;font-weight:600;text-align:left;padding:16px 20px;background:rgba(10,14,26,0.4);border-bottom:1px solid rgba(255,255,255,0.1);}<br />
+.pricing-table td{font-size:clamp(13px,1.5vw,14px);color:#D1D5DB;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;}<br />
+.pricing-table tr:last-child td{border-bottom:none;}<br />
+.pricing-table td:first-child{color:#F9FAFB;font-weight:600;}<br />
+.pricing-table td.price{color:#60A5FA;font-weight:700;white-space:nowrap;}<br />
+.audit-steps{counter-reset:steps;margin:clamp(24px,4vh,32px) 0;padding:0;list-style:none;}<br />
+.audit-steps li{counter-increment:steps;padding:clamp(16px,2.5vw,20px) clamp(16px,2.5vw,20px) clamp(16px,2.5vw,20px) clamp(56px,7vw,68px);position:relative;margin-bottom:10px;background:rgba(17,24,39,0.5);border:1px solid rgba(255,255,255,0.07);border-radius:8px;font-size:clamp(13px,1.5vw,15px);color:#D1D5DB;line-height:1.7;}<br />
+.audit-steps li::before{content:counter(steps);position:absolute;left:18px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);border-radius:50%;font-size:12px;font-weight:700;color:#60A5FA;line-height:28px;text-align:center;}<br />
+.question-section{background:linear-gradient(135deg,rgba(245,158,11,0.08),rgba(59,130,246,0.08));border:1px solid rgba(245,158,11,0.3);border-radius:16px;padding:clamp(40px,6vw,60px);margin:clamp(60px,10vh,100px) 0;text-align:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}<br />
+.question-section h2{margin-top:0;margin-bottom:clamp(24px,4vh,32px);}<br />
+.question-box{background:rgba(10,14,26,0.6);border:2px solid rgba(245,158,11,0.4);border-radius:12px;padding:clamp(28px,5vw,48px);margin:clamp(24px,4vh,32px) auto;max-width:800px;}<br />
+.question-primary{font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#F59E0B;line-height:1.5;margin-bottom:clamp(24px,4vh,32px);}<br />
+.question-clarify{font-size:clamp(15px,2vw,18px);color:#D1D5DB;line-height:1.7;padding-top:clamp(20px,3vh,24px);border-top:1px solid rgba(255,255,255,0.1);}<br />
+.question-clarify em{color:#9CA3AF;font-style:italic;display:block;font-size:clamp(13px,1.6vw,15px);margin-bottom:12px;}<br />
+.target-profile{margin-top:clamp(32px,5vh,40px);text-align:left;}<br />
+.target-list{list-style:none;padding-left:0;margin:clamp(20px,3vh,28px) 0;}<br />
+.target-list li{padding-left:0;margin-bottom:16px;font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.7;}<br />
+.target-list li::before{content:'•';position:static;color:#F59E0B;margin-right:12px;font-weight:700;font-size:1.4em;}<br />
+.target-list li strong{color:#F9FAFB;}<br />
+.intro-note{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:8px;padding:clamp(20px,3vw,28px);margin-top:clamp(24px,4vh,32px);font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;}<br />
+.intro-note strong{color:#60A5FA;}<br />
+.cta-section{margin:clamp(60px,10vh,100px) 0;padding:clamp(40px,6vw,60px);background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(16,185,129,0.1));border:1px solid rgba(255,255,255,0.15);border-radius:16px;text-align:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}<br />
+.cta-section h2{margin-top:0;margin-bottom:clamp(16px,2.5vh,24px);}<br />
+.cta-section p{max-width:700px;margin-left:auto;margin-right:auto;margin-bottom:clamp(24px,4vh,32px);}<br />
+.btn-primary{display:inline-block;font-size:clamp(12px,1.5vw,14px);letter-spacing:0.08em;text-transform:uppercase;background:linear-gradient(135deg,#3B82F6,#2563EB);color:#F9FAFB;border:none;padding:16px 40px;border-radius:8px;cursor:pointer;transition:all 0.3s ease;text-decoration:none;font-weight:600;box-shadow:0 10px 30px rgba(59,130,246,0.3);}<br />
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(59,130,246,0.4);background:linear-gradient(135deg,#2563EB,#1D4ED8);}<br />
+footer{margin-top:clamp(60px,10vh,100px);padding-top:clamp(32px,5vh,48px);border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:clamp(12px,1.4vw,13px);color:#9CA3AF;line-height:1.6;}<br />
+footer a{color:#60A5FA;text-decoration:none;transition:color 0.2s ease;}<br />
+footer a:hover{color:#93C5FD;}<br />
+@media(max-width:768px){<br />
+.nav-company{display:none;}<br />
+.profile-grid{grid-template-columns:1fr;gap:8px;}<br />
+.profile-label::after{content:': ';}<br />
+.pricing-table td,.pricing-table th{padding:12px 14px;}<br />
+}<br />
+section{opacity:0;animation:fadeInUp 0.8s ease forwards;}<br />
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}<br />
+section:nth-child(1){animation-delay:0.1s;}section:nth-child(2){animation-delay:0.2s;}<br />
+section:nth-child(3){animation-delay:0.3s;}section:nth-child(4){animation-delay:0.4s;}<br />
+section:nth-child(5){animation-delay:0.5s;}section:nth-child(6){animation-delay:0.6s;}<br />
+section:nth-child(7){animation-delay:0.7s;}section:nth-child(8){animation-delay:0.8s;}<br />
+section:nth-child(9){animation-delay:0.9s;}section:nth-child(10){animation-delay:1.0s;}<br />
+section:nth-child(11){animation-delay:1.1s;}section:nth-child(12){animation-delay:1.2s;}<br />
+</style>
+<p></head><br />
+<body></p>
+<nav>
+<a href="https://alloceraintelligence.com"><br />
+<img src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence"/><br />
+Allocera Intelligence<br />
+</a><br />
+<a href="https://alloceraintelligence.com">← Back to Home</a><br />
+</nav>
+<p><main></p>
+<h1>The Engine That <em>Refuses to Lie</em></h1>
+<p>Document Type: Validation Case Study<br />
+Test Date: May 2026<br />
+Test Organizations: 2 Independent Businesses<br />
+Data Quality: Real-World, Flawed<br />
+Permission: Granted by All Parties</p>
+<p>Most marketing analytics tools display confident numbers on incomplete data. CDAI does the opposite: when the data isn't trustworthy, the engine flags it and refuses to issue directives. Here's what happened when we ran it on two real businesses with real data quality problems.</p>
+<p>This document is not</p>
+<ul>
+<li>Not a recovered-dollars story. CDAI's full margin output requires complete cost stack data. One of the two businesses below has incomplete cost data; the engine handled that correctly — which is the point.</li>
+<li>Not a third-party competitor takedown. Existing tools solve real problems. CDAI solves a different problem.</li>
+<li>Not a prospective claim. Everything below has happened. No projections, no pro-forma.</li>
+</ul>
+<section>
+<h2>The Question Every CFO Asks</h2>
+<p><strong>"How do I know your tool isn't just hallucinating numbers?"</strong></p>
+<p>It's the question that kills analytics deals. Sophisticated buyers — CFOs, in-house data teams, finance committees — have seen too many dashboards confidently display figures that don't survive a five-minute audit. The MarTech category is full of tools that calculate ROAS to two decimal places on data they don't actually have.</p>
+<p>CDAI was built specifically against that failure mode. The engine measures one thing — true contribution margin per campaign, after every cost layer the platforms don't report — and issues one of eight enforceable directives: <strong>SCALE</strong>, <strong>HOLD</strong>, <strong>CUT</strong>, <strong>PAUSE</strong>, <strong>QUARANTINE</strong>, <strong>RENEGOTIATE</strong>, <strong>INVESTIGATE</strong>, <strong>FLAG</strong>.</p>
+<p>This document is an operational record. Two real businesses, real data, real engine output. What the engine did. What it refused to do. Why both matter.</p>
+<p><a href="https://alloceraintelligence.com/home-sample/case-study-2-oauth-validation/" style="margin-top:24px;">Read Case Study #2: OAuth Validation</a><br />
+</section>
+<section>
+<h2>What CDAI Measures</h2>
+<p>Most marketing analytics tools answer the question: <em>"What did this campaign return in revenue divided by ad spend?"</em></p>
+<p>CDAI answers a different question: <em>"What did this campaign actually contribute to the bottom line, after every cost the platforms don't report?"</em></p>
+<h3>The Seven-Cost Stack</h3>
+<p>Platform-reported cost-per-lead and cost-per-acquisition reflect only the costs the platform controls — its own media spend. CDAI reconciles all seven cost layers visible in real lead-gen and acquisition operations:</p>
+<table>
+<thead>
+<tr>
+<th>Cost Layer</th>
+<th>Visible to Google / Meta?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Media spend</strong></td>
+<td>Yes — the only layer the platforms accurately report</td>
+</tr>
+<tr>
+<td><strong>2. Platform fees</strong></td>
+<td>Partial — platform-side fees only, not third-party tooling</td>
+</tr>
+<tr>
+<td><strong>3. Broker payouts</strong></td>
+<td>No — agency margin and lead vendor fees are invisible to platform reporting</td>
+</tr>
+<tr>
+<td><strong>4. Refunds</strong></td>
+<td>No — post-conversion refund data sits in finance systems, not ad systems</td>
+</tr>
+<tr>
+<td><strong>5. Chargebacks</strong></td>
+<td>No — payment processor data, weeks-to-months delayed</td>
+</tr>
+<tr>
+<td><strong>6. Compliance costs</strong></td>
+<td>No — TCPA, HIPAA, state-specific compliance overhead never enters ad reporting</td>
+</tr>
+<tr>
+<td><strong>7. Variable costs</strong></td>
+<td>No — intake fallout, sales close rate, fulfillment cost</td>
+</tr>
+</tbody>
+</table>
+<p>In real operations, the gap between what platforms report (layer 1, sometimes part of layer 2) and the true cost-per-bound-acquisition can be <strong>30 to 70 percent</strong>. The campaign that looks profitable on a Google Ads dashboard is often the campaign that's quietly destroying margin once the full cost stack is reconciled.</p>
+</section>
+<section>
+<h2>Test Case 1: FullSend Organicks LLC</h2>
+<p>Business<br />
+<strong><a href="https://fullsendorganicks.com/press-features-fullsend-organicks/" target="_blank" rel="noopener">FullSend Organicks LLC</a></strong><br />
+Industry<br />
+E-commerce, regulated product category — <a href="https://fullsendorganicks.com/embracing-the-enigma-why-mutant-mushrooms-matter/" target="_blank" rel="noopener">mushroom cultivation supplies</a>, 350+ strains<br />
+Reach<br />
+Ships to 60+ countries<br />
+Founded<br />
+2020 (5+ years operating)<br />
+Press<br />
+<a href="https://fullsendorganicks.com/press-features-fullsend-organicks/" target="_blank" rel="noopener">High Times</a><br />
+<a href="https://fullsendorganicks.com/press-features-fullsend-organicks/" target="_blank" rel="noopener">Reality Sandwich</a><br />
+<a href="https://fullsendorganicks.com/press-features-fullsend-organicks/" target="_blank" rel="noopener">Popular Science</a><br />
+<a href="https://fullsendorganicks.com/press-features-fullsend-organicks/" target="_blank" rel="noopener">Time</a><br />
+Owner<br />
+Nicholas G. Baum (also Founder of Allocera Intelligence) — permission to publish granted</p>
+<h3>The Test</h3>
+<p>The business ran a Google Search Ads campaign from August 31, 2025 to December 2, 2025. The campaign was complete (concluded), with full historical data exportable from Google Ads.</p>
+<p>Test Parameters<br />
+Data source:   Real exported Google Ads CSV<br />
+Campaign period: August 31, 2025 – December 2, 2025 (~94 days)<br />
+Total spend:   $2,112.17<br />
+Conversions:   37 reported<br />
+Ingestion method: Direct SQL via ingestion_pipeline.py<br />
+Data age at test: ~4 months stale</p>
+<h3>What the Engine Did</h3>
+<p>✓ Step 1: Ingestion<br />
+Successfully Loaded Real Platform Data<br />
+Engine connected to live Supabase production database. Real Google Ads export ingested via SQL into the campaigns table. Campaign and cost event records inserted with correct org_id binding. <strong>No errors.</strong> This confirms the engine can read real exported platform data — not just demo fixtures.<br />
+✓ Step 2: Calculation<br />
+Ran Directive Logic Without Runtime Error<br />
+Engine successfully read campaigns from the database, attempted contribution margin calculation, and ran the directive logic end-to-end without runtime error. The 0% CM result is a data-completeness condition — the engine reflected what it was given. A tool that confidently displays a margin figure on incomplete cost data is hallucinating. CDAI did not.<br />
+✓ Step 3: Health Monitor<br />
+Engine Refused to Issue Directives on Stale Data<br />
+Before issuing any directives, CDAI runs a health monitor evaluating data freshness, completeness, and integrity, then sets a single boolean: <code>directive_safe</code>.</p>
+<p>On this data, the monitor identified the campaign as approximately four months stale and set <code>directive_safe = FALSE</code>. <strong>The engine refused to issue directives.</strong></p>
+<p>A SCALE directive issued on stale data is worse than no directive at all — it tells a marketer to commit budget to a campaign whose underlying conditions may have changed. CDAI's health monitor exists specifically to prevent that failure mode.<br />
+✓ Step 4: Multi-Tenant Isolation<br />
+Zero Cross-Organization Data Leakage<br />
+The data was ingested into its own organization within the multi-tenant Supabase architecture. Row-Level Security policies were active. Subsequent queries filtering by org_id returned only this organization's data — no cross-organization data appeared, even when running against the same database containing other test organizations.<br />
+<strong>What This Validates:</strong><br />
+• CDAI ingests real exported platform data without modification or fabrication<br />
+• The engine does not invent values for cost layers that aren't populated<br />
+• The health monitor functions as a safety gate — directives do not issue on data the engine cannot stand behind<br />
+• Multi-tenant data isolation works on real data, not just architecture diagrams<br />
+</section>
+<section>
+<h2>Test Case 2: Apex Care Solutions LLC</h2>
+<p>Business<br />
+<strong>Apex Care Solutions LLC</strong><br />
+Industry<br />
+Healthcare services, senior care vertical<br />
+Location<br />
+North Carolina<br />
+Engagement<br />
+Active pilot client — migrating to compliant lead management<br />
+Onboarding<br />
+April 23, 2026 — permission to publish granted as part of pilot agreement<br />
+Campaigns<br />
+Calendly Instant Book · Community Education Event · In-Home Care Ad · New Leads Campaign · Open Rooms Now at Senior Care Home in Guilford County · Sensi Solo Care · Test - Sensi Solo Care</p>
+<h3>The Test</h3>
+<p>The business provided 3.5 months of Meta Ads Manager exports from January 1, 2026 to April 22, 2026, plus a CRM contacts file. The data represents a real-world condition: recent, operational, and with one critical attribution gap.</p>
+<p>Test Parameters<br />
+Campaigns ingested:  7<br />
+Cost events ingested: 8<br />
+Total Meta spend:  $2,414.12<br />
+Total impressions:  62,211<br />
+Lead records received: 276 contacts in CRM export<br />
+Lead records ingested: 0 — see analysis below</p>
+<h3>What the Engine Did</h3>
+<p>✓ Step 1: Multi-Tenant Setup<br />
+Production Architecture Verified<br />
+New organization created in the orgs table. Meta Ads channel created and bound to the org_id. Client user account created and linked via the client_users table. Row-Level Security policies confirmed active on every data table.</p>
+<p>Cross-tenant isolation verified: Apex's data was inserted into the same physical database already containing FullSend Organicks' data. Queries filtering by org_id returned only Apex data. <strong>The architectural isolation works on real client data — not just in test fixtures.</strong><br />
+✓ Step 2: Campaign &amp; Cost Ingestion<br />
+Data Preserved Exactly As Exported<br />
+Seven Meta campaigns ingested via SQL, all tagged with the correct org_id. Values preserved exactly as exported from Meta Ads Manager — no alterations, no inferred values, no fabricated columns to fill gaps.</p>
+<p>When a CSV has a missing column, the easy path is to fill it with a sensible default and keep going. <strong>CDAI does not.</strong><br />
+✓ Step 3: The Lead Attribution Gap<br />
+Engine Flagged Missing Attribution — Refused to Invent<br />
+The CRM contacts file contained 276 lead records. The Source column on every lead read <code>"Contact Import"</code> — no campaign attribution existed at the lead level.</p>
+<p>Without attribution, the engine cannot calculate true cost-per-lead by campaign or issue directives at the campaign level. <strong>The engine did not attempt to fabricate the attribution it lacked.</strong> Lead records were not ingested. The audit pipeline halted at the data quality gate.</p>
+<p>A weaker tool would have ingested the leads with null campaign_id values, used a heuristic to invent attribution, or issued directives anyway with a footnote. <strong>CDAI did none of those.</strong><br />
+✓ Step 4: Health Monitor<br />
+Refused to Issue Directives on Incomplete Data<br />
+With incomplete attribution upstream, the health monitor flagged the data set as not directive-safe. <code>directive_safe = FALSE</code>. No directives were issued.</p>
+<p>Same behavior as Test 1 — different trigger condition (stale data vs. missing attribution), identical engine response: <strong>refuse to issue directives the data cannot support.</strong><br />
+<strong>What This Validates:</strong><br />
+• Multi-tenant isolation works on real client data in production against a database already containing other organizations<br />
+• The engine does not fabricate attribution to fill gaps — it surfaces the gap as a finding<br />
+• The health monitor responds to multiple distinct integrity failure modes, not just one<br />
+• CDAI's data quality discipline is structural, not optional<br />
+</section>
+<section>
+<h2>The Verification Layer</h2>
+<p>Every number in this document is queryable. The three SQL queries below were run directly against the live Supabase production database. Nothing was asserted without a query to back it up.</p>
+<p>Query 1 — Campaign count and total spend<br />
+SELECT COUNT(*) as campaign_count, SUM(ce.spend) as total_spend<br />
+FROM campaigns c<br />
+JOIN cost_events ce ON ce.campaign_id = c.campaign_id<br />
+WHERE c.org_id = '8d9b345c-4617-4d6a-977a-8fea8684bc61';<br />
+→ campaign_count = 8,  total_spend = 2414.12<br />
+The 8 cost events against 7 campaigns is explained by Meta's export format: 'New Leads Campaign' ran as two separate ad sets. The $2,414.12 matches the source CSV exactly to the cent.<br />
+Query 2 — Lead record count<br />
+SELECT COUNT(*) as lead_count<br />
+FROM lead_events<br />
+WHERE org_id = '8d9b345c-4617-4d6a-977a-8fea8684bc61';<br />
+→ lead_count = 0<br />
+Zero lead records in the database. Confirmed. All 276 contacts in Apex's CRM export had 'Contact Import' as the source field — no campaign attribution. The engine correctly refused to ingest them.<br />
+Query 3 — Campaign names and status<br />
+SELECT campaign_id, name, status<br />
+FROM campaigns<br />
+WHERE org_id = '8d9b345c-4617-4d6a-977a-8fea8684bc61'<br />
+ORDER BY name;<br />
+→ 7 named campaigns returned:<br />
+   Calendly Instant Book · Community Education Event · In-Home Care Ad<br />
+   New Leads Campaign · Open Rooms Now at Senior Care Home in Guilford County<br />
+   Sensi Solo Care · Test - Sensi Solo Care<br />
+No blank-name row. The totals row in Meta's CSV export format was correctly excluded by the ingestion pipeline.<br />
+</section>
+<section>
+<h2>What These Two Tests Prove Together</h2>
+<p>Two real businesses. Two different industries. Two different platforms (Google Ads and Meta Ads). Two different data quality problems. <strong>One consistent engine behavior.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Test Dimension</th>
+<th>FullSend Organicks</th>
+<th>Apex Care Solutions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Platform</strong></td>
+<td>Google Ads</td>
+<td>Meta Ads</td>
+</tr>
+<tr>
+<td><strong>Industry</strong></td>
+<td>E-commerce</td>
+<td>Healthcare / senior care</td>
+</tr>
+<tr>
+<td><strong>Data Condition</strong></td>
+<td>Complete but ~4 months stale</td>
+<td>Recent but missing campaign attribution</td>
+</tr>
+<tr>
+<td><strong>Ingestion</strong></td>
+<td>Successful</td>
+<td>Successful (campaigns + costs); halted on lead attribution gap</td>
+</tr>
+<tr>
+<td><strong>Multi-Tenant Isolation</strong></td>
+<td>Verified</td>
+<td>Verified</td>
+</tr>
+<tr>
+<td><strong>Health Monitor</strong></td>
+<td><code>directive_safe = FALSE</code> (stale)</td>
+<td><code>directive_safe = FALSE</code> (incomplete)</td>
+</tr>
+<tr>
+<td><strong>Directives Issued</strong></td>
+<td>None — by design</td>
+<td>None — by design</td>
+</tr>
+<tr>
+<td><strong>Fabricated Values</strong></td>
+<td>Zero</td>
+<td>Zero</td>
+</tr>
+</tbody>
+</table>
+<h3>The Behavior Worth Naming</h3>
+<p>CDAI is built on a principle that's rare in the marketing analytics category: <strong>the engine refuses to issue an output it cannot stand behind.</strong></p>
+<p>The competitive landscape is full of tools that confidently display modeled conversions, attributed revenue, and projected ROAS — calculated on data with significant integrity issues, presented without any indication that the underlying inputs were incomplete or stale. Most CFOs evaluating these tools have learned to discount the headline numbers by 30 to 50 percent before believing them.</p>
+<p><strong>That refusal-to-fabricate behavior is the single most important property an analytics engine can have when the buyer is a CFO with budget authority and a long memory for tools that lied to them.</strong></p>
+</section>
+<section>
+<h2>What CDAI Looks Like With Complete Data</h2>
+<p>So that the integrity-first picture above isn't mistaken for a limitation, here's what CDAI's full output looks like when the cost stack is populated and the data is current.</p>
+<p>In a separate prior test, the engine was run against a complete data set — six campaigns, full seven-layer cost stack populated, all data current. The engine executed end-to-end without error and produced one directive per campaign across all eight directive types:</p>
+<ul>
+<li><strong>SCALE</strong> — campaigns where true contribution margin justified increased spend</li>
+<li><strong>HOLD</strong> — campaigns with developing data not yet conclusive</li>
+<li><strong>CUT</strong> — campaigns where true margin was negative once the full cost stack was reconciled, including one notable <strong>PAYOUT_BLEED</strong> case where reported CPL looked acceptable but true margin was significantly negative</li>
+<li><strong>PAUSE</strong> — campaigns showing anomalies under review</li>
+<li><strong>QUARANTINE</strong> — campaigns with fraud rate exceeding threshold</li>
+<li><strong>RENEGOTIATE</strong> — campaigns where partner payouts exceeded sustainable margin</li>
+<li><strong>INVESTIGATE</strong> — campaigns with refund or chargeback anomalies requiring review</li>
+<li><strong>FLAG</strong> — campaigns requiring human review due to data anomalies</li>
+</ul>
+<p>Each directive carries a numeric confidence score and a reason code. The directive sheet is the engine's primary client-facing artifact and is what every paying audit delivers.</p>
+<p>Production Evidence — Directive Issuance<br />
+directive_events table (live production database):<br />
+→ 121 directives issued across 2 organizations<br />
+→ Span: 32–39 days of directive coverage<br />
+→ All 8 directive types represented: SCALE, HOLD, CUT, PAUSE,<br />
+  QUARANTINE, RENEGOTIATE, INVESTIGATE, FLAG<br />
+→ All directives confidence-scored: HIGH, MEDIUM, LOW<br />
+→ Zero directives issued when directive_safe = FALSE<br />
+Production Evidence — Automated Health Checks<br />
+system_health table (May 7–8, 2026):<br />
+→ Health checks running automatically on scheduled intervals<br />
+→ 15+ automated entries confirmed with timestamps<br />
+→ All 5 check types executing: cost_freshness, lead_freshness,<br />
+  spend_reconciliation, attribution_integrity, directive_freshness<br />
+→ Scheduler deployed and operational via Render backend<br />
+</section>
+<section>
+<h2>Why This Matters to a Buyer</h2>
+<p>If you run paid acquisition at any meaningful scale — six figures monthly or more — three things follow directly from these tests.</p>
+<h3>One · Your reported cost-per-acquisition is structurally incomplete</h3>
+<p>The platforms report what they control. They do not reconcile broker margin, refunds, chargebacks, or compliance overhead. A campaign that looks profitable in your Google Ads or Meta dashboard is often the campaign that's destroying margin once the full cost stack is reconciled. The 30 to 70 percent gap between reported CPL and true cost-per-bound-acquisition is structural arithmetic — it compounds every month you don't measure it.</p>
+<h3>Two · The tools that say they fix this often don't</h3>
+<p>The contribution-margin-aware tools in market today are largely Shopify-native, optimized for ecommerce SKU economics. They do not handle lead-gen broker payouts, regulated-industry compliance overhead, multi-platform partner ecosystems, or refund-and-chargeback dynamics specific to high-ticket services. CDAI is built for these conditions specifically.</p>
+<h3>Three · The engine you choose has to refuse to lie</h3>
+<p>If your CFO is going to make capital allocation decisions on the engine's output, the engine has to be willing to tell you when it doesn't have enough data to recommend an action. CDAI does this. The two tests above — and the three verification queries — are the proof.</p>
+</section>
+<section>
+<h2>What's Next — Pricing &amp; How an Audit Runs</h2>
+<p>CDAI is operating commercially. The Distortion Audit is the entry point most clients use — a deliverable that produces a complete directive sheet from 90 days of your campaign data.</p>
+<h3>Distortion Audits (One-Time)</h3>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Scope</th>
+<th>Turnaround</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quick Audit</td>
+<td>Up to 50 campaigns · 1–2 platforms · 30-day lookback</td>
+<td>5–7 days</td>
+<td>$2,500</td>
+</tr>
+<tr>
+<td>Standard Audit</td>
+<td>Up to 150 campaigns · 2–3 platforms · 60-day lookback</td>
+<td>7–10 days</td>
+<td>$5,000</td>
+</tr>
+<tr>
+<td>Deep Audit</td>
+<td>150+ campaigns · All platforms · 90-day lookback · Full partner accountability · Budget reallocation</td>
+<td>10–14 days</td>
+<td>$10,000–$20,000</td>
+</tr>
+</tbody>
+</table>
+<h3>Ongoing Retainers</h3>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Verified Ad Spend</th>
+<th>What's Included</th>
+<th>Price/mo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Starter</td>
+<td>Up to $10K/mo</td>
+<td>Automated nightly sync · Monthly directive reports · Portal access · 30-day retest scoring · Email support</td>
+<td>$1,500</td>
+</tr>
+<tr>
+<td>Growth</td>
+<td>$10K–$50K/mo</td>
+<td>Everything in Starter · Weekly directive reports · Quality decay tracking · Budget reallocation modeling · Slack + monthly call</td>
+<td>$3,500</td>
+</tr>
+<tr>
+<td>Scale</td>
+<td>$50K–$150K/mo</td>
+<td>Everything in Growth · Daily directive refresh · Partner risk scoring · Custom reporting · Weekly strategy calls</td>
+<td>$8,000</td>
+</tr>
+<tr>
+<td>Enterprise</td>
+<td>$150K+/mo</td>
+<td>Everything in Scale · White-glove onboarding · Dedicated account lead · Custom integrations · SLA-backed support · Quarterly reviews</td>
+<td>$15,000+</td>
+</tr>
+</tbody>
+</table>
+<h3>How an Audit Runs</h3>
+<ol>
+<li>Mutual NDA signed, Service Provider Agreement signed.</li>
+<li>Client provides 90 days of CSV exports — Google Ads, Meta Ads, LinkedIn, partner channels — plus refund and chargeback data from finance systems and any partner payout records.</li>
+<li>CDAI ingests, runs the platform_detector to validate data integrity at the column level, runs the health monitor to confirm data is recent and complete, then executes the full audit pipeline.</li>
+<li>Within the agreed turnaround: a complete directive sheet — one directive per campaign, confidence-scored, reason-coded — plus the full distortion analysis showing where reported CPL is hiding true cost-per-acquisition.</li>
+<li>The audit deliverable is yours. No consumer PII enters the system at any stage.</li>
+</ol>
+</section>
+<h2>The Question That Reveals the Gap</h2>
+<p>"Do you know your actual cost per signed case after lead vendor margin, intake fallout, and chargebacks?"<br />
+<em>If they need a moment:</em><br />
+"Let me put it another way: Do you know your true cost per signed case after your lead vendor takes their margin, after prospects fall out during intake, and after refunds and chargebacks hit?"</p>
+<p><strong>The people to think about are anyone who runs or owns:</strong></p>
+<ul>
+<li><strong>A personal injury or mass tort law firm</strong> — spending on lead vendors like EvenUp, Axiom, or Litigation Leaders, or running their own Google/Meta campaigns</li>
+<li><strong>An insurance agency or Medicare brokerage</strong> — buying leads from aggregators or running direct acquisition</li>
+<li><strong>A senior care or assisted living facility</strong> — acquiring patients through lead vendors, referral networks, or paid ads</li>
+<li><strong>A home services company</strong> — roofing, solar, HVAC, water damage restoration — buying HomeAdvisor, Angi, or Thumbtack leads or running their own campaigns</li>
+<li><strong>Any business spending serious money buying leads from vendors</strong> — if they're writing five-figure monthly checks to lead sources and can't tell you the true cost per customer that actually closes and stays closed</li>
+</ul>
+<p><strong>Almost nobody can answer this question.</strong> That's the whole point. If anyone comes to mind, a warm intro is all we need — not asking for a pitch, just an introduction so we can ask them the question above.</p>
+<h2>See What Your Platform Isn't Telling You</h2>
+<p>Most businesses are making capital allocation decisions on numbers that are wrong by 30–70%. The gap between what your dashboard reports and what you're actually paying is structural arithmetic — it compounds every month you don't measure it.</p>
+<p>A 30-day distortion audit on your campaign data starts at <strong>$2,500</strong> and delivers within 7 days. If we don't surface margin distortion you weren't tracking, you don't pay.</p>
+<p><a href="https://alloceraintelligence.com#intake">Request a Distortion Audit</a></p>
+<section>
+<h2>Technical Architecture Summary</h2>
+<p>The CDAI Engine is deployed on:</p>
+<ul>
+<li><strong>Database:</strong> Supabase (PostgreSQL) with Row-Level Security policies — multi-tenant capable, 50+ clients simultaneously</li>
+<li><strong>Backend:</strong> Python on Render (Standard tier — no cold starts, sub-0.5s response)</li>
+<li><strong>Portal:</strong> React on Vercel (live at <a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">cdai-portal.vercel.app</a>)</li>
+<li><strong>Scheduler:</strong> Deployed and running automated health checks (2 AM UTC nightly sync)</li>
+<li><strong>Email Delivery:</strong> Operational via Resend — verified domain alloceraintelligence.com</li>
+<li><strong>Zero consumer PII stored in any table</strong></li>
+</ul>
+<p><strong>Full Methodology Available Under NDA:</strong> The detection logic, directive classification engine, and attribution reconciliation framework are original intellectual property. Complete technical disclosure is available to qualified clients and partners under signed NDA.<br />
+</section>
+<footer>
+Validation conducted May 2026 by Allocera Intelligence · Permission to publish granted by all parties referenced<br />
+Document Version 3.0 | <a href="https://alloceraintelligence.com">alloceraintelligence.com</a> · <a href="https://fullsendorganicks.com" target="_blank" rel="noopener">fullsendorganicks.com</a><br />
+</footer>
+<p></main><br />
+</body><br />
+</html></p>
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>CDAI Engine Validation Case Study — Real Tests, Real Results | Allocera Intelligence</title>
+<meta name="description" content="Independent validation of the CDAI Engine on real business data. See how the engine detected data quality issues, refused to fabricate directives, and proved multi-tenant security isolation."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+--bg-primary:#0A0E1A;--bg-secondary:#111827;--bg-surface:rgba(17,24,39,0.6);
+--text-primary:#F9FAFB;--text-secondary:#D1D5DB;--text-muted:#9CA3AF;
+--accent-blue:#3B82F6;--accent-blue-bright:#60A5FA;--accent-gold:#F59E0B;
+--accent-green:#10B981;--accent-red:#EF4444;
+--border:rgba(255,255,255,0.1);--border-bright:rgba(255,255,255,0.2);
+}
+html{scroll-behavior:smooth;}
+body{background:#0A0E1A;color:#F9FAFB;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.7;position:relative;overflow-x:hidden;}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url('https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png');background-size:cover;background-position:center;background-attachment:fixed;opacity:0.4;z-index:-1;}
+body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(10,14,26,0.5) 0%,rgba(10,14,26,0.85) 100%);z-index:-1;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,14,26,0.95);border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+.nav-container{max-width:1400px;margin:0 auto;padding:clamp(16px,2vw,24px) clamp(20px,5vw,60px);display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:16px;text-decoration:none;}
+.nav-logo{width:clamp(36px,5vw,48px);height:clamp(36px,5vw,48px);object-fit:contain;flex-shrink:0;}
+.nav-company{font-size:clamp(14px,1.8vw,18px);font-weight:600;letter-spacing:0.02em;color:#F9FAFB;}
+.nav-back{font-size:clamp(12px,1.4vw,14px);font-weight:500;color:#60A5FA;text-decoration:none;padding:10px 20px;border:1px solid rgba(96,165,250,0.3);border-radius:6px;transition:all 0.3s ease;}
+.nav-back:hover{background:rgba(59,130,246,0.1);border-color:#60A5FA;transform:translateY(-1px);}
+main{max-width:1100px;margin:0 auto;padding:clamp(100px,15vh,140px) clamp(24px,5vw,60px) clamp(80px,12vh,120px);}
+.hero{text-align:center;margin-bottom:clamp(60px,10vh,100px);}
+h1{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,72px);font-weight:700;line-height:1.1;color:#F9FAFB;margin-bottom:clamp(20px,3vh,32px);letter-spacing:-0.02em;}
+h1 em{font-style:italic;color:#60A5FA;}
+.meta-grid{display:flex;gap:clamp(16px,3vw,32px);flex-wrap:wrap;justify-content:center;margin-bottom:clamp(32px,5vh,48px);padding-bottom:clamp(24px,4vh,40px);border-bottom:1px solid rgba(255,255,255,0.1);}
+.meta-item{font-size:clamp(11px,1.3vw,13px);letter-spacing:0.08em;text-transform:uppercase;color:#9CA3AF;font-weight:500;}
+.meta-item span{color:#60A5FA;font-weight:600;}
+.lead{font-size:clamp(16px,2.2vw,20px);color:#D1D5DB;line-height:1.8;max-width:900px;margin:0 auto clamp(40px,6vh,60px);}
+.not-this{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:clamp(24px,4vw,36px);margin:clamp(32px,5vh,48px) auto;max-width:800px;}
+.not-this-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9CA3AF;font-weight:600;margin-bottom:16px;}
+.not-this ul{list-style:none;padding:0;margin:0;}
+.not-this ul li{font-size:clamp(13px,1.5vw,14px);color:#9CA3AF;padding:10px 0 10px 20px;border-bottom:1px solid rgba(255,255,255,0.05);position:relative;line-height:1.6;}
+.not-this ul li:last-child{border-bottom:none;padding-bottom:0;}
+.not-this ul li::before{content:'·';position:absolute;left:0;color:#4B5563;}
+section{margin-bottom:clamp(60px,10vh,100px);}
+h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:700;color:#F9FAFB;margin-bottom:clamp(24px,4vh,40px);line-height:1.2;letter-spacing:-0.01em;}
+h3{font-family:'Inter',sans-serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#F9FAFB;margin:clamp(32px,5vh,48px) 0 clamp(16px,2.5vh,24px);letter-spacing:-0.01em;}
+p{font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;margin-bottom:clamp(20px,3vh,28px);}
+a.inline-link{color:#60A5FA;text-decoration:none;border-bottom:1px solid rgba(96,165,250,0.3);transition:all 0.2s ease;}
+a.inline-link:hover{color:#93C5FD;border-bottom-color:#93C5FD;}
+.test-grid{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,40px);margin:clamp(40px,6vh,60px) 0;}
+@media(min-width:768px){.test-grid{grid-template-columns:1fr 1fr;}}
+.test-card{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(24px,4vw,40px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:all 0.3s ease;position:relative;overflow:hidden;}
+.test-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#10B981,#3B82F6);opacity:0;transition:opacity 0.3s ease;}
+.test-card:hover{border-color:rgba(255,255,255,0.2);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3);}
+.test-card:hover::before{opacity:1;}
+.test-card.pass{border-left:3px solid #10B981;}
+.test-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:inline-block;padding:6px 12px;background:rgba(16,185,129,0.1);color:#10B981;border-radius:4px;font-weight:600;}
+.test-title{font-size:clamp(16px,2vw,20px);font-weight:700;color:#F9FAFB;margin-bottom:16px;line-height:1.3;}
+.test-result{font-size:clamp(13px,1.5vw,14px);color:#D1D5DB;line-height:1.7;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);}
+.callout{padding:clamp(24px,4vw,40px);background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.3);border-left:4px solid #3B82F6;border-radius:8px;margin:clamp(32px,5vh,48px) 0;}
+.callout strong{color:#60A5FA;font-weight:600;}
+.evidence{background:rgba(10,14,26,0.9);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:clamp(24px,4vw,36px);margin:clamp(32px,5vh,48px) 0;overflow-x:auto;}
+.evidence-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9CA3AF;margin-bottom:16px;font-weight:600;}
+.evidence-data{font-family:'Courier New',monospace;font-size:clamp(12px,1.4vw,13px);color:#D1D5DB;line-height:1.9;white-space:pre-wrap;}
+.sql-block{background:rgba(10,14,26,0.95);border:1px solid rgba(96,165,250,0.2);border-left:3px solid #3B82F6;border-radius:8px;padding:clamp(20px,3vw,28px);margin:clamp(20px,3vh,28px) 0;overflow-x:auto;}
+.sql-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#3B82F6;font-weight:700;margin-bottom:10px;}
+.sql-query{font-family:'Courier New',monospace;font-size:clamp(11px,1.3vw,12px);color:#93C5FD;line-height:1.8;white-space:pre-wrap;margin-bottom:12px;}
+.sql-result{font-family:'Courier New',monospace;font-size:clamp(11px,1.3vw,12px);color:#10B981;line-height:1.6;padding-top:12px;border-top:1px solid rgba(255,255,255,0.08);}
+.sql-note{font-size:clamp(12px,1.4vw,13px);color:#9CA3AF;line-height:1.6;margin-top:10px;font-style:italic;}
+code{background:rgba(10,14,26,0.8);padding:3px 8px;border-radius:4px;font-family:'Courier New',monospace;font-size:clamp(12px,1.3vw,13px);color:#60A5FA;border:1px solid rgba(96,165,250,0.3);}
+ul{margin:clamp(20px,3vh,28px) 0;padding-left:clamp(24px,4vw,40px);}
+li{position:relative;margin-bottom:12px;font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;padding-left:12px;}
+li::before{content:'→';position:absolute;left:-20px;color:#3B82F6;font-weight:700;}
+li strong{color:#F9FAFB;font-weight:600;}
+.profile-card{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(24px,4vw,32px);margin:clamp(32px,5vh,48px) 0;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.profile-grid{display:grid;grid-template-columns:auto 1fr;gap:12px 28px;align-items:start;}
+.profile-label{font-size:clamp(12px,1.4vw,13px);color:#9CA3AF;font-weight:500;padding-top:2px;white-space:nowrap;}
+.profile-value{font-size:clamp(12px,1.4vw,13px);color:#D1D5DB;}
+.profile-value strong{color:#F9FAFB;font-weight:600;}
+.press-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.press-chip{display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);color:#F59E0B;text-decoration:none;transition:all 0.2s ease;}
+.press-chip:hover{background:rgba(245,158,11,0.18);border-color:rgba(245,158,11,0.5);}
+.comparison-table{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(24px,4vw,32px);margin:clamp(32px,5vh,48px) 0;overflow-x:auto;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+table{width:100%;border-collapse:collapse;}
+th{font-size:clamp(12px,1.4vw,13px);letter-spacing:0.08em;text-transform:uppercase;color:#9CA3AF;font-weight:600;text-align:left;padding:16px;border-bottom:1px solid rgba(255,255,255,0.1);}
+td{font-size:clamp(13px,1.5vw,14px);color:#D1D5DB;padding:16px;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+td strong{color:#F9FAFB;font-weight:600;}
+/* Pricing */
+.pricing-table{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;margin-bottom:clamp(32px,5vh,48px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.pricing-table table{width:100%;border-collapse:collapse;}
+.pricing-table th{font-size:clamp(11px,1.3vw,12px);letter-spacing:0.1em;text-transform:uppercase;color:#9CA3AF;font-weight:600;text-align:left;padding:16px 20px;background:rgba(10,14,26,0.4);border-bottom:1px solid rgba(255,255,255,0.1);}
+.pricing-table td{font-size:clamp(13px,1.5vw,14px);color:#D1D5DB;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;}
+.pricing-table tr:last-child td{border-bottom:none;}
+.pricing-table td:first-child{color:#F9FAFB;font-weight:600;}
+.pricing-table td.price{color:#60A5FA;font-weight:700;white-space:nowrap;}
+.audit-steps{counter-reset:steps;margin:clamp(24px,4vh,32px) 0;padding:0;list-style:none;}
+.audit-steps li{counter-increment:steps;padding:clamp(16px,2.5vw,20px) clamp(16px,2.5vw,20px) clamp(16px,2.5vw,20px) clamp(56px,7vw,68px);position:relative;margin-bottom:10px;background:rgba(17,24,39,0.5);border:1px solid rgba(255,255,255,0.07);border-radius:8px;font-size:clamp(13px,1.5vw,15px);color:#D1D5DB;line-height:1.7;}
+.audit-steps li::before{content:counter(steps);position:absolute;left:18px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);border-radius:50%;font-size:12px;font-weight:700;color:#60A5FA;line-height:28px;text-align:center;}
+.question-section{background:linear-gradient(135deg,rgba(245,158,11,0.08),rgba(59,130,246,0.08));border:1px solid rgba(245,158,11,0.3);border-radius:16px;padding:clamp(40px,6vw,60px);margin:clamp(60px,10vh,100px) 0;text-align:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.question-section h2{margin-top:0;margin-bottom:clamp(24px,4vh,32px);}
+.question-box{background:rgba(10,14,26,0.6);border:2px solid rgba(245,158,11,0.4);border-radius:12px;padding:clamp(28px,5vw,48px);margin:clamp(24px,4vh,32px) auto;max-width:800px;}
+.question-primary{font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#F59E0B;line-height:1.5;margin-bottom:clamp(24px,4vh,32px);}
+.question-clarify{font-size:clamp(15px,2vw,18px);color:#D1D5DB;line-height:1.7;padding-top:clamp(20px,3vh,24px);border-top:1px solid rgba(255,255,255,0.1);}
+.question-clarify em{color:#9CA3AF;font-style:italic;display:block;font-size:clamp(13px,1.6vw,15px);margin-bottom:12px;}
+.target-profile{margin-top:clamp(32px,5vh,40px);text-align:left;}
+.target-list{list-style:none;padding-left:0;margin:clamp(20px,3vh,28px) 0;}
+.target-list li{padding-left:0;margin-bottom:16px;font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.7;}
+.target-list li::before{content:'•';position:static;color:#F59E0B;margin-right:12px;font-weight:700;font-size:1.4em;}
+.target-list li strong{color:#F9FAFB;}
+.intro-note{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:8px;padding:clamp(20px,3vw,28px);margin-top:clamp(24px,4vh,32px);font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;}
+.intro-note strong{color:#60A5FA;}
+.cta-section{margin:clamp(60px,10vh,100px) 0;padding:clamp(40px,6vw,60px);background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(16,185,129,0.1));border:1px solid rgba(255,255,255,0.15);border-radius:16px;text-align:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.cta-section h2{margin-top:0;margin-bottom:clamp(16px,2.5vh,24px);}
+.cta-section p{max-width:700px;margin-left:auto;margin-right:auto;margin-bottom:clamp(24px,4vh,32px);}
+.btn-primary{display:inline-block;font-size:clamp(12px,1.5vw,14px);letter-spacing:0.08em;text-transform:uppercase;background:linear-gradient(135deg,#3B82F6,#2563EB);color:#F9FAFB;border:none;padding:16px 40px;border-radius:8px;cursor:pointer;transition:all 0.3s ease;text-decoration:none;font-weight:600;box-shadow:0 10px 30px rgba(59,130,246,0.3);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(59,130,246,0.4);background:linear-gradient(135deg,#2563EB,#1D4ED8);}
+footer{margin-top:clamp(60px,10vh,100px);padding-top:clamp(32px,5vh,48px);border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:clamp(12px,1.4vw,13px);color:#9CA3AF;line-height:1.6;}
+footer a{color:#60A5FA;text-decoration:none;transition:color 0.2s ease;}
+footer a:hover{color:#93C5FD;}
+@media(max-width:768px){
+.nav-company{display:none;}
+.profile-grid{grid-template-columns:1fr;gap:8px;}
+.profile-label::after{content:': ';}
+.pricing-table td,.pricing-table th{padding:12px 14px;}
+}
+section{opacity:0;animation:fadeInUp 0.8s ease forwards;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+section:nth-child(1){animation-delay:0.1s;}section:nth-child(2){animation-delay:0.2s;}
+section:nth-child(3){animation-delay:0.3s;}section:nth-child(4){animation-delay:0.4s;}
+section:nth-child(5){animation-delay:0.5s;}section:nth-child(6){animation-delay:0.6s;}
+section:nth-child(7){animation-delay:0.7s;}section:nth-child(8){animation-delay:0.8s;}
+section:nth-child(9){animation-delay:0.9s;}section:nth-child(10){animation-delay:1.0s;}
+section:nth-child(11){animation-delay:1.1s;}section:nth-child(12){animation-delay:1.2s;}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-container">
+<a href="https://alloceraintelligence.com" class="nav-brand">
+<img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence"/>
+<span class="nav-company">Allocera Intelligence</span>
+</a>
+<a href="https://alloceraintelligence.com" class="nav-back">← Back to Home</a>
+</div>
+</nav>
+
+<main>
+
+<div class="hero">
+<h1>The Engine That <em>Refuses to Lie</em></h1>
+<div class="meta-grid">
+<div class="meta-item">Document Type: <span>Validation Case Study</span></div>
+<div class="meta-item">Test Date: <span>May 2026</span></div>
+<div class="meta-item">Test Organizations: <span>2 Independent Businesses</span></div>
+<div class="meta-item">Data Quality: <span>Real-World, Flawed</span></div>
+<div class="meta-item">Permission: <span>Granted by All Parties</span></div>
+</div>
+<p class="lead">Most marketing analytics tools display confident numbers on incomplete data. CDAI does the opposite: when the data isn't trustworthy, the engine flags it and refuses to issue directives. Here's what happened when we ran it on two real businesses with real data quality problems.</p>
+<div class="not-this">
+<div class="not-this-title">This document is not</div>
+<ul>
+<li>Not a recovered-dollars story. CDAI's full margin output requires complete cost stack data. One of the two businesses below has incomplete cost data; the engine handled that correctly — which is the point.</li>
+<li>Not a third-party competitor takedown. Existing tools solve real problems. CDAI solves a different problem.</li>
+<li>Not a prospective claim. Everything below has happened. No projections, no pro-forma.</li>
+</ul>
+</div>
+</div>
+
+<section>
+<h2>The Question Every CFO Asks</h2>
+<p><strong>"How do I know your tool isn't just hallucinating numbers?"</strong></p>
+<p>It's the question that kills analytics deals. Sophisticated buyers — CFOs, in-house data teams, finance committees — have seen too many dashboards confidently display figures that don't survive a five-minute audit. The MarTech category is full of tools that calculate ROAS to two decimal places on data they don't actually have.</p>
+<p>CDAI was built specifically against that failure mode. The engine measures one thing — true contribution margin per campaign, after every cost layer the platforms don't report — and issues one of eight enforceable directives: <strong>SCALE</strong>, <strong>HOLD</strong>, <strong>CUT</strong>, <strong>PAUSE</strong>, <strong>QUARANTINE</strong>, <strong>RENEGOTIATE</strong>, <strong>INVESTIGATE</strong>, <strong>FLAG</strong>.</p>
+<p>This document is an operational record. Two real businesses, real data, real engine output. What the engine did. What it refused to do. Why both matter.</p>
+<a href="https://alloceraintelligence.com/home-sample/case-study-2-oauth-validation/" class="btn-primary" style="margin-top:24px;">Read Case Study #2: OAuth Validation</a>
+</section>
+
+<section>
+<h2>What CDAI Measures</h2>
+<p>Most marketing analytics tools answer the question: <em>"What did this campaign return in revenue divided by ad spend?"</em></p>
+<p>CDAI answers a different question: <em>"What did this campaign actually contribute to the bottom line, after every cost the platforms don't report?"</em></p>
+<h3>The Seven-Cost Stack</h3>
+<p>Platform-reported cost-per-lead and cost-per-acquisition reflect only the costs the platform controls — its own media spend. CDAI reconciles all seven cost layers visible in real lead-gen and acquisition operations:</p>
+<div class="comparison-table">
+<table>
+<thead><tr><th>Cost Layer</th><th>Visible to Google / Meta?</th></tr></thead>
+<tbody>
+<tr><td><strong>1. Media spend</strong></td><td>Yes — the only layer the platforms accurately report</td></tr>
+<tr><td><strong>2. Platform fees</strong></td><td>Partial — platform-side fees only, not third-party tooling</td></tr>
+<tr><td><strong>3. Broker payouts</strong></td><td>No — agency margin and lead vendor fees are invisible to platform reporting</td></tr>
+<tr><td><strong>4. Refunds</strong></td><td>No — post-conversion refund data sits in finance systems, not ad systems</td></tr>
+<tr><td><strong>5. Chargebacks</strong></td><td>No — payment processor data, weeks-to-months delayed</td></tr>
+<tr><td><strong>6. Compliance costs</strong></td><td>No — TCPA, HIPAA, state-specific compliance overhead never enters ad reporting</td></tr>
+<tr><td><strong>7. Variable costs</strong></td><td>No — intake fallout, sales close rate, fulfillment cost</td></tr>
+</tbody>
+</table>
+</div>
+<p>In real operations, the gap between what platforms report (layer 1, sometimes part of layer 2) and the true cost-per-bound-acquisition can be <strong>30 to 70 percent</strong>. The campaign that looks profitable on a Google Ads dashboard is often the campaign that's quietly destroying margin once the full cost stack is reconciled.</p>
+</section>
+
+<section>
+<h2>Test Case 1: FullSend Organicks LLC</h2>
+
+<div class="profile-card">
+<div class="profile-grid">
+<span class="profile-label">Business</span>
+<span class="profile-value"><strong><a href="https://fullsendorganicks.com/press-features-fullsend-organicks/" class="inline-link" target="_blank" rel="noopener">FullSend Organicks LLC</a></strong></span>
+
+<span class="profile-label">Industry</span>
+<span class="profile-value">E-commerce, regulated product category — <a href="https://fullsendorganicks.com/embracing-the-enigma-why-mutant-mushrooms-matter/" class="inline-link" target="_blank" rel="noopener">mushroom cultivation supplies</a>, 350+ strains</span>
+
+<span class="profile-label">Reach</span>
+<span class="profile-value">Ships to 60+ countries</span>
+
+<span class="profile-label">Founded</span>
+<span class="profile-value">2020 (5+ years operating)</span>
+
+<span class="profile-label">Press</span>
+<span class="profile-value">
+<div class="press-links">
+<a href="https://fullsendorganicks.com/press-features-fullsend-organicks/" class="press-chip" target="_blank" rel="noopener">High Times</a>
+<a href="https://fullsendorganicks.com/press-features-fullsend-organicks/" class="press-chip" target="_blank" rel="noopener">Reality Sandwich</a>
+<a href="https://fullsendorganicks.com/press-features-fullsend-organicks/" class="press-chip" target="_blank" rel="noopener">Popular Science</a>
+<a href="https://fullsendorganicks.com/press-features-fullsend-organicks/" class="press-chip" target="_blank" rel="noopener">Time</a>
+</div>
+</span>
+
+<span class="profile-label">Owner</span>
+<span class="profile-value">Nicholas G. Baum (also Founder of Allocera Intelligence) — permission to publish granted</span>
+</div>
+</div>
+
+<h3>The Test</h3>
+<p>The business ran a Google Search Ads campaign from August 31, 2025 to December 2, 2025. The campaign was complete (concluded), with full historical data exportable from Google Ads.</p>
+
+<div class="evidence">
+<div class="evidence-title">Test Parameters</div>
+<div class="evidence-data">Data source:   Real exported Google Ads CSV
+Campaign period: August 31, 2025 – December 2, 2025 (~94 days)
+Total spend:   $2,112.17
+Conversions:   37 reported
+Ingestion method: Direct SQL via ingestion_pipeline.py
+Data age at test: ~4 months stale</div>
+</div>
+
+<h3>What the Engine Did</h3>
+<div class="test-grid">
+<div class="test-card pass">
+<span class="test-label">✓ Step 1: Ingestion</span>
+<div class="test-title">Successfully Loaded Real Platform Data</div>
+<div class="test-result">Engine connected to live Supabase production database. Real Google Ads export ingested via SQL into the campaigns table. Campaign and cost event records inserted with correct org_id binding. <strong>No errors.</strong> This confirms the engine can read real exported platform data — not just demo fixtures.</div>
+</div>
+<div class="test-card pass">
+<span class="test-label">✓ Step 2: Calculation</span>
+<div class="test-title">Ran Directive Logic Without Runtime Error</div>
+<div class="test-result">Engine successfully read campaigns from the database, attempted contribution margin calculation, and ran the directive logic end-to-end without runtime error. The 0% CM result is a data-completeness condition — the engine reflected what it was given. A tool that confidently displays a margin figure on incomplete cost data is hallucinating. CDAI did not.</div>
+</div>
+<div class="test-card pass">
+<span class="test-label">✓ Step 3: Health Monitor</span>
+<div class="test-title">Engine Refused to Issue Directives on Stale Data</div>
+<div class="test-result">Before issuing any directives, CDAI runs a health monitor evaluating data freshness, completeness, and integrity, then sets a single boolean: <code>directive_safe</code>.<br><br>On this data, the monitor identified the campaign as approximately four months stale and set <code>directive_safe = FALSE</code>. <strong>The engine refused to issue directives.</strong><br><br>A SCALE directive issued on stale data is worse than no directive at all — it tells a marketer to commit budget to a campaign whose underlying conditions may have changed. CDAI's health monitor exists specifically to prevent that failure mode.</div>
+</div>
+<div class="test-card pass">
+<span class="test-label">✓ Step 4: Multi-Tenant Isolation</span>
+<div class="test-title">Zero Cross-Organization Data Leakage</div>
+<div class="test-result">The data was ingested into its own organization within the multi-tenant Supabase architecture. Row-Level Security policies were active. Subsequent queries filtering by org_id returned only this organization's data — no cross-organization data appeared, even when running against the same database containing other test organizations.</div>
+</div>
+</div>
+
+<div class="callout">
+<strong>What This Validates:</strong><br>
+• CDAI ingests real exported platform data without modification or fabrication<br>
+• The engine does not invent values for cost layers that aren't populated<br>
+• The health monitor functions as a safety gate — directives do not issue on data the engine cannot stand behind<br>
+• Multi-tenant data isolation works on real data, not just architecture diagrams
+</div>
+</section>
+
+<section>
+<h2>Test Case 2: Apex Care Solutions LLC</h2>
+
+<div class="profile-card">
+<div class="profile-grid">
+<span class="profile-label">Business</span>
+<span class="profile-value"><strong>Apex Care Solutions LLC</strong></span>
+
+<span class="profile-label">Industry</span>
+<span class="profile-value">Healthcare services, senior care vertical</span>
+
+<span class="profile-label">Location</span>
+<span class="profile-value">North Carolina</span>
+
+<span class="profile-label">Engagement</span>
+<span class="profile-value">Active pilot client — migrating to compliant lead management</span>
+
+<span class="profile-label">Onboarding</span>
+<span class="profile-value">April 23, 2026 — permission to publish granted as part of pilot agreement</span>
+
+<span class="profile-label">Campaigns</span>
+<span class="profile-value">Calendly Instant Book · Community Education Event · In-Home Care Ad · New Leads Campaign · Open Rooms Now at Senior Care Home in Guilford County · Sensi Solo Care · Test - Sensi Solo Care</span>
+</div>
+</div>
+
+<h3>The Test</h3>
+<p>The business provided 3.5 months of Meta Ads Manager exports from January 1, 2026 to April 22, 2026, plus a CRM contacts file. The data represents a real-world condition: recent, operational, and with one critical attribution gap.</p>
+
+<div class="evidence">
+<div class="evidence-title">Test Parameters</div>
+<div class="evidence-data">Campaigns ingested:  7
+Cost events ingested: 8
+Total Meta spend:  $2,414.12
+Total impressions:  62,211
+Lead records received: 276 contacts in CRM export
+Lead records ingested: 0 — see analysis below</div>
+</div>
+
+<h3>What the Engine Did</h3>
+<div class="test-grid">
+<div class="test-card pass">
+<span class="test-label">✓ Step 1: Multi-Tenant Setup</span>
+<div class="test-title">Production Architecture Verified</div>
+<div class="test-result">New organization created in the orgs table. Meta Ads channel created and bound to the org_id. Client user account created and linked via the client_users table. Row-Level Security policies confirmed active on every data table.<br><br>Cross-tenant isolation verified: Apex's data was inserted into the same physical database already containing FullSend Organicks' data. Queries filtering by org_id returned only Apex data. <strong>The architectural isolation works on real client data — not just in test fixtures.</strong></div>
+</div>
+<div class="test-card pass">
+<span class="test-label">✓ Step 2: Campaign &amp; Cost Ingestion</span>
+<div class="test-title">Data Preserved Exactly As Exported</div>
+<div class="test-result">Seven Meta campaigns ingested via SQL, all tagged with the correct org_id. Values preserved exactly as exported from Meta Ads Manager — no alterations, no inferred values, no fabricated columns to fill gaps.<br><br>When a CSV has a missing column, the easy path is to fill it with a sensible default and keep going. <strong>CDAI does not.</strong></div>
+</div>
+<div class="test-card pass">
+<span class="test-label">✓ Step 3: The Lead Attribution Gap</span>
+<div class="test-title">Engine Flagged Missing Attribution — Refused to Invent</div>
+<div class="test-result">The CRM contacts file contained 276 lead records. The Source column on every lead read <code>"Contact Import"</code> — no campaign attribution existed at the lead level.<br><br>Without attribution, the engine cannot calculate true cost-per-lead by campaign or issue directives at the campaign level. <strong>The engine did not attempt to fabricate the attribution it lacked.</strong> Lead records were not ingested. The audit pipeline halted at the data quality gate.<br><br>A weaker tool would have ingested the leads with null campaign_id values, used a heuristic to invent attribution, or issued directives anyway with a footnote. <strong>CDAI did none of those.</strong></div>
+</div>
+<div class="test-card pass">
+<span class="test-label">✓ Step 4: Health Monitor</span>
+<div class="test-title">Refused to Issue Directives on Incomplete Data</div>
+<div class="test-result">With incomplete attribution upstream, the health monitor flagged the data set as not directive-safe. <code>directive_safe = FALSE</code>. No directives were issued.<br><br>Same behavior as Test 1 — different trigger condition (stale data vs. missing attribution), identical engine response: <strong>refuse to issue directives the data cannot support.</strong></div>
+</div>
+</div>
+
+<div class="callout">
+<strong>What This Validates:</strong><br>
+• Multi-tenant isolation works on real client data in production against a database already containing other organizations<br>
+• The engine does not fabricate attribution to fill gaps — it surfaces the gap as a finding<br>
+• The health monitor responds to multiple distinct integrity failure modes, not just one<br>
+• CDAI's data quality discipline is structural, not optional
+</div>
+</section>
+
+<section>
+<h2>The Verification Layer</h2>
+<p>Every number in this document is queryable. The three SQL queries below were run directly against the live Supabase production database. Nothing was asserted without a query to back it up.</p>
+
+<div class="sql-block">
+<div class="sql-label">Query 1 — Campaign count and total spend</div>
+<div class="sql-query">SELECT COUNT(*) as campaign_count, SUM(ce.spend) as total_spend
+FROM campaigns c
+JOIN cost_events ce ON ce.campaign_id = c.campaign_id
+WHERE c.org_id = '8d9b345c-4617-4d6a-977a-8fea8684bc61';</div>
+<div class="sql-result">→ campaign_count = 8,  total_spend = 2414.12</div>
+<div class="sql-note">The 8 cost events against 7 campaigns is explained by Meta's export format: 'New Leads Campaign' ran as two separate ad sets. The $2,414.12 matches the source CSV exactly to the cent.</div>
+</div>
+
+<div class="sql-block">
+<div class="sql-label">Query 2 — Lead record count</div>
+<div class="sql-query">SELECT COUNT(*) as lead_count
+FROM lead_events
+WHERE org_id = '8d9b345c-4617-4d6a-977a-8fea8684bc61';</div>
+<div class="sql-result">→ lead_count = 0</div>
+<div class="sql-note">Zero lead records in the database. Confirmed. All 276 contacts in Apex's CRM export had 'Contact Import' as the source field — no campaign attribution. The engine correctly refused to ingest them.</div>
+</div>
+
+<div class="sql-block">
+<div class="sql-label">Query 3 — Campaign names and status</div>
+<div class="sql-query">SELECT campaign_id, name, status
+FROM campaigns
+WHERE org_id = '8d9b345c-4617-4d6a-977a-8fea8684bc61'
+ORDER BY name;</div>
+<div class="sql-result">→ 7 named campaigns returned:
+   Calendly Instant Book · Community Education Event · In-Home Care Ad
+   New Leads Campaign · Open Rooms Now at Senior Care Home in Guilford County
+   Sensi Solo Care · Test - Sensi Solo Care</div>
+<div class="sql-note">No blank-name row. The totals row in Meta's CSV export format was correctly excluded by the ingestion pipeline.</div>
+</div>
+</section>
+
+<section>
+<h2>What These Two Tests Prove Together</h2>
+<p>Two real businesses. Two different industries. Two different platforms (Google Ads and Meta Ads). Two different data quality problems. <strong>One consistent engine behavior.</strong></p>
+
+<div class="comparison-table">
+<table>
+<thead><tr><th>Test Dimension</th><th>FullSend Organicks</th><th>Apex Care Solutions</th></tr></thead>
+<tbody>
+<tr><td><strong>Platform</strong></td><td>Google Ads</td><td>Meta Ads</td></tr>
+<tr><td><strong>Industry</strong></td><td>E-commerce</td><td>Healthcare / senior care</td></tr>
+<tr><td><strong>Data Condition</strong></td><td>Complete but ~4 months stale</td><td>Recent but missing campaign attribution</td></tr>
+<tr><td><strong>Ingestion</strong></td><td>Successful</td><td>Successful (campaigns + costs); halted on lead attribution gap</td></tr>
+<tr><td><strong>Multi-Tenant Isolation</strong></td><td>Verified</td><td>Verified</td></tr>
+<tr><td><strong>Health Monitor</strong></td><td><code>directive_safe = FALSE</code> (stale)</td><td><code>directive_safe = FALSE</code> (incomplete)</td></tr>
+<tr><td><strong>Directives Issued</strong></td><td>None — by design</td><td>None — by design</td></tr>
+<tr><td><strong>Fabricated Values</strong></td><td>Zero</td><td>Zero</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>The Behavior Worth Naming</h3>
+<p>CDAI is built on a principle that's rare in the marketing analytics category: <strong>the engine refuses to issue an output it cannot stand behind.</strong></p>
+<p>The competitive landscape is full of tools that confidently display modeled conversions, attributed revenue, and projected ROAS — calculated on data with significant integrity issues, presented without any indication that the underlying inputs were incomplete or stale. Most CFOs evaluating these tools have learned to discount the headline numbers by 30 to 50 percent before believing them.</p>
+<p><strong>That refusal-to-fabricate behavior is the single most important property an analytics engine can have when the buyer is a CFO with budget authority and a long memory for tools that lied to them.</strong></p>
+</section>
+
+<section>
+<h2>What CDAI Looks Like With Complete Data</h2>
+<p>So that the integrity-first picture above isn't mistaken for a limitation, here's what CDAI's full output looks like when the cost stack is populated and the data is current.</p>
+<p>In a separate prior test, the engine was run against a complete data set — six campaigns, full seven-layer cost stack populated, all data current. The engine executed end-to-end without error and produced one directive per campaign across all eight directive types:</p>
+<ul>
+<li><strong>SCALE</strong> — campaigns where true contribution margin justified increased spend</li>
+<li><strong>HOLD</strong> — campaigns with developing data not yet conclusive</li>
+<li><strong>CUT</strong> — campaigns where true margin was negative once the full cost stack was reconciled, including one notable <strong>PAYOUT_BLEED</strong> case where reported CPL looked acceptable but true margin was significantly negative</li>
+<li><strong>PAUSE</strong> — campaigns showing anomalies under review</li>
+<li><strong>QUARANTINE</strong> — campaigns with fraud rate exceeding threshold</li>
+<li><strong>RENEGOTIATE</strong> — campaigns where partner payouts exceeded sustainable margin</li>
+<li><strong>INVESTIGATE</strong> — campaigns with refund or chargeback anomalies requiring review</li>
+<li><strong>FLAG</strong> — campaigns requiring human review due to data anomalies</li>
+</ul>
+<p>Each directive carries a numeric confidence score and a reason code. The directive sheet is the engine's primary client-facing artifact and is what every paying audit delivers.</p>
+
+<div class="evidence">
+<div class="evidence-title">Production Evidence — Directive Issuance</div>
+<div class="evidence-data">directive_events table (live production database):
+→ 121 directives issued across 2 organizations
+→ Span: 32–39 days of directive coverage
+→ All 8 directive types represented: SCALE, HOLD, CUT, PAUSE,
+  QUARANTINE, RENEGOTIATE, INVESTIGATE, FLAG
+→ All directives confidence-scored: HIGH, MEDIUM, LOW
+→ Zero directives issued when directive_safe = FALSE</div>
+</div>
+
+<div class="evidence">
+<div class="evidence-title">Production Evidence — Automated Health Checks</div>
+<div class="evidence-data">system_health table (May 7–8, 2026):
+→ Health checks running automatically on scheduled intervals
+→ 15+ automated entries confirmed with timestamps
+→ All 5 check types executing: cost_freshness, lead_freshness,
+  spend_reconciliation, attribution_integrity, directive_freshness
+→ Scheduler deployed and operational via Render backend</div>
+</div>
+</section>
+
+<section>
+<h2>Why This Matters to a Buyer</h2>
+<p>If you run paid acquisition at any meaningful scale — six figures monthly or more — three things follow directly from these tests.</p>
+
+<h3>One · Your reported cost-per-acquisition is structurally incomplete</h3>
+<p>The platforms report what they control. They do not reconcile broker margin, refunds, chargebacks, or compliance overhead. A campaign that looks profitable in your Google Ads or Meta dashboard is often the campaign that's destroying margin once the full cost stack is reconciled. The 30 to 70 percent gap between reported CPL and true cost-per-bound-acquisition is structural arithmetic — it compounds every month you don't measure it.</p>
+
+<h3>Two · The tools that say they fix this often don't</h3>
+<p>The contribution-margin-aware tools in market today are largely Shopify-native, optimized for ecommerce SKU economics. They do not handle lead-gen broker payouts, regulated-industry compliance overhead, multi-platform partner ecosystems, or refund-and-chargeback dynamics specific to high-ticket services. CDAI is built for these conditions specifically.</p>
+
+<h3>Three · The engine you choose has to refuse to lie</h3>
+<p>If your CFO is going to make capital allocation decisions on the engine's output, the engine has to be willing to tell you when it doesn't have enough data to recommend an action. CDAI does this. The two tests above — and the three verification queries — are the proof.</p>
+</section>
+
+<section>
+<h2>What's Next — Pricing &amp; How an Audit Runs</h2>
+
+<p>CDAI is operating commercially. The Distortion Audit is the entry point most clients use — a deliverable that produces a complete directive sheet from 90 days of your campaign data.</p>
+
+<h3>Distortion Audits (One-Time)</h3>
+<div class="pricing-table">
+<table>
+<thead><tr><th>Tier</th><th>Scope</th><th>Turnaround</th><th class="price">Price</th></tr></thead>
+<tbody>
+<tr>
+<td>Quick Audit</td>
+<td>Up to 50 campaigns · 1–2 platforms · 30-day lookback</td>
+<td>5–7 days</td>
+<td class="price">$2,500</td>
+</tr>
+<tr>
+<td>Standard Audit</td>
+<td>Up to 150 campaigns · 2–3 platforms · 60-day lookback</td>
+<td>7–10 days</td>
+<td class="price">$5,000</td>
+</tr>
+<tr>
+<td>Deep Audit</td>
+<td>150+ campaigns · All platforms · 90-day lookback · Full partner accountability · Budget reallocation</td>
+<td>10–14 days</td>
+<td class="price">$10,000–$20,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>Ongoing Retainers</h3>
+<div class="pricing-table">
+<table>
+<thead><tr><th>Tier</th><th>Verified Ad Spend</th><th>What's Included</th><th class="price">Price/mo</th></tr></thead>
+<tbody>
+<tr>
+<td>Starter</td>
+<td>Up to $10K/mo</td>
+<td>Automated nightly sync · Monthly directive reports · Portal access · 30-day retest scoring · Email support</td>
+<td class="price">$1,500</td>
+</tr>
+<tr>
+<td>Growth</td>
+<td>$10K–$50K/mo</td>
+<td>Everything in Starter · Weekly directive reports · Quality decay tracking · Budget reallocation modeling · Slack + monthly call</td>
+<td class="price">$3,500</td>
+</tr>
+<tr>
+<td>Scale</td>
+<td>$50K–$150K/mo</td>
+<td>Everything in Growth · Daily directive refresh · Partner risk scoring · Custom reporting · Weekly strategy calls</td>
+<td class="price">$8,000</td>
+</tr>
+<tr>
+<td>Enterprise</td>
+<td>$150K+/mo</td>
+<td>Everything in Scale · White-glove onboarding · Dedicated account lead · Custom integrations · SLA-backed support · Quarterly reviews</td>
+<td class="price">$15,000+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>How an Audit Runs</h3>
+<ol class="audit-steps">
+<li>Mutual NDA signed, Service Provider Agreement signed.</li>
+<li>Client provides 90 days of CSV exports — Google Ads, Meta Ads, LinkedIn, partner channels — plus refund and chargeback data from finance systems and any partner payout records.</li>
+<li>CDAI ingests, runs the platform_detector to validate data integrity at the column level, runs the health monitor to confirm data is recent and complete, then executes the full audit pipeline.</li>
+<li>Within the agreed turnaround: a complete directive sheet — one directive per campaign, confidence-scored, reason-coded — plus the full distortion analysis showing where reported CPL is hiding true cost-per-acquisition.</li>
+<li>The audit deliverable is yours. No consumer PII enters the system at any stage.</li>
+</ol>
+</section>
+
+<div class="question-section">
+<h2>The Question That Reveals the Gap</h2>
+<div class="question-box">
+<div class="question-primary">"Do you know your actual cost per signed case after lead vendor margin, intake fallout, and chargebacks?"</div>
+<div class="question-clarify">
+<em>If they need a moment:</em>
+"Let me put it another way: Do you know your true cost per signed case after your lead vendor takes their margin, after prospects fall out during intake, and after refunds and chargebacks hit?"
+</div>
+</div>
+<div class="target-profile">
+<p><strong>The people to think about are anyone who runs or owns:</strong></p>
+<ul class="target-list">
+<li><strong>A personal injury or mass tort law firm</strong> — spending on lead vendors like EvenUp, Axiom, or Litigation Leaders, or running their own Google/Meta campaigns</li>
+<li><strong>An insurance agency or Medicare brokerage</strong> — buying leads from aggregators or running direct acquisition</li>
+<li><strong>A senior care or assisted living facility</strong> — acquiring patients through lead vendors, referral networks, or paid ads</li>
+<li><strong>A home services company</strong> — roofing, solar, HVAC, water damage restoration — buying HomeAdvisor, Angi, or Thumbtack leads or running their own campaigns</li>
+<li><strong>Any business spending serious money buying leads from vendors</strong> — if they're writing five-figure monthly checks to lead sources and can't tell you the true cost per customer that actually closes and stays closed</li>
+</ul>
+<div class="intro-note"><strong>Almost nobody can answer this question.</strong> That's the whole point. If anyone comes to mind, a warm intro is all we need — not asking for a pitch, just an introduction so we can ask them the question above.</div>
+</div>
+</div>
+
+<div class="cta-section">
+<h2>See What Your Platform Isn't Telling You</h2>
+<p>Most businesses are making capital allocation decisions on numbers that are wrong by 30–70%. The gap between what your dashboard reports and what you're actually paying is structural arithmetic — it compounds every month you don't measure it.</p>
+<p>A 30-day distortion audit on your campaign data starts at <strong>$2,500</strong> and delivers within 7 days. If we don't surface margin distortion you weren't tracking, you don't pay.</p>
+<a href="https://alloceraintelligence.com#intake" class="btn-primary">Request a Distortion Audit</a>
+</div>
+
+<section>
+<h2>Technical Architecture Summary</h2>
+<p>The CDAI Engine is deployed on:</p>
+<ul>
+<li><strong>Database:</strong> Supabase (PostgreSQL) with Row-Level Security policies — multi-tenant capable, 50+ clients simultaneously</li>
+<li><strong>Backend:</strong> Python on Render (Standard tier — no cold starts, sub-0.5s response)</li>
+<li><strong>Portal:</strong> React on Vercel (live at <a href="https://cdai-portal.vercel.app" class="inline-link" target="_blank" rel="noopener">cdai-portal.vercel.app</a>)</li>
+<li><strong>Scheduler:</strong> Deployed and running automated health checks (2 AM UTC nightly sync)</li>
+<li><strong>Email Delivery:</strong> Operational via Resend — verified domain alloceraintelligence.com</li>
+<li><strong>Zero consumer PII stored in any table</strong></li>
+</ul>
+<div class="callout">
+<strong>Full Methodology Available Under NDA:</strong> The detection logic, directive classification engine, and attribution reconciliation framework are original intellectual property. Complete technical disclosure is available to qualified clients and partners under signed NDA.
+</div>
+</section>
+
+<footer>
+Validation conducted May 2026 by Allocera Intelligence · Permission to publish granted by all parties referenced<br>
+Document Version 3.0 | <a href="https://alloceraintelligence.com">alloceraintelligence.com</a> · <a href="https://fullsendorganicks.com" target="_blank" rel="noopener">fullsendorganicks.com</a>
+</footer>
+
+</main>
+</body>
+</html>

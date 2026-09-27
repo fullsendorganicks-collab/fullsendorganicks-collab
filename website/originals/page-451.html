@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How to Calculate True Cost Per Lead — CDAI Engine | Allocera Intelligence</title>
+<meta name="description" content="Learn how to calculate true cost per lead after every broker fee, refund, and hidden charge. CDAI reconciles all costs automatically and delivers one directive per campaign, every morning.">
+<meta property="og:title" content="How to Calculate True Cost Per Lead — CDAI Engine | Allocera Intelligence">
+<meta property="og:description" content="Learn how to calculate true cost per lead after every broker fee, refund, and hidden charge. CDAI reconciles all costs automatically and delivers one directive per campaign, every morning.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#9AAECE;--dim:#4A6488;--deep:#1C3050;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#D63050}
+html{scroll-behavior:smooth}
+body{background:#010914!important;color:#ebf0ff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:clamp(52px,7vh,64px);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,64px);background:rgba(1,9,20,.95);border-bottom:1px solid #102040;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo{width:26px;height:26px;object-fit:contain;flex-shrink:0;display:block}
+.nav-name{font-size:clamp(12px,1.7vw,14px);font-weight:600;letter-spacing:.04em;color:#ebf0ff}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-links{display:flex;align-items:center;gap:clamp(16px,2.5vw,32px);list-style:none}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:#c4a040}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:#1655d8;color:#ebf0ff;border:none;padding:9px 18px;border-radius:2px;cursor:pointer;transition:background .2s;text-decoration:none;white-space:nowrap}
+.nav-cta:hover{background:#1d67f0}
+.nav-portal{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4080f0;border:1px solid rgba(64,128,240,.35);padding:8px 16px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
+.nav-portal:hover{background:rgba(64,128,240,.1);border-color:#4080f0}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:0 0;border:none;cursor:pointer;padding:4px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#ebf0ff;border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:clamp(52px,7vh,64px);left:0;right:0;z-index:99;background:rgba(1,9,20,.98);border-bottom:1px solid #102040;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;padding:16px 24px 24px;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#9aaece;text-decoration:none;padding:14px 0;border-bottom:1px solid #102040;transition:color .2s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:#ebf0ff}
+.mobile-menu .mobile-cta{margin-top:12px;background:#1655d8;color:#fff;text-align:center;padding:16px;border-radius:2px;font-size:13px;font-weight:700;border:none;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+.mobile-menu .mobile-portal{color:#4080f0;text-align:center;padding:14px;border:1px solid rgba(64,128,240,.3);border-radius:3px;font-size:12px}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-cta{display:none}}
+@media(max-width:480px){.nav-portal{font-size:9px;padding:7px 12px}}
+section{width:100%;padding:clamp(72px,11vh,130px) clamp(16px,5vw,80px);position:relative;background:#010914!important}
+section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 0,rgba(22,85,216,.04) 0,transparent 60%);pointer-events:none}
+.section-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;color:#c4a040;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,2vh,16px)}
+.eyebrow::before{content:'';width:16px;height:1px;background:#c4a040;display:block;flex-shrink:0}
+h1.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6.5vw,80px);font-weight:300;line-height:1.06;color:#ebf0ff;margin-bottom:clamp(16px,3vh,24px)}
+h1.page-title em{font-style:italic;color:#8ab8ff}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4.5vw,52px);font-weight:300;line-height:1.1;color:#ebf0ff;margin-bottom:clamp(10px,2vh,16px)}
+h2.section-title em{font-style:italic;color:#8ab8ff}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,32px);font-weight:300;color:#ebf0ff;margin-bottom:12px;line-height:1.2}
+.rule{width:36px;height:1px;background:#1655d8;margin-bottom:clamp(16px,3vh,28px);display:block}
+.rule.gold{background:#c4a040}
+.lead-text{font-size:clamp(14px,1.8vw,17px);color:#b8c9e0;line-height:1.8;max-width:720px;margin-bottom:clamp(16px,3vh,28px);font-weight:300}
+.body-text{font-size:clamp(12px,1.4vw,14px);color:#7a95b8;line-height:1.8}
+#page-hero{padding:calc(clamp(52px,7vh,64px) + clamp(60px,10vh,100px)) clamp(16px,5vw,80px) clamp(60px,10vh,100px);background:#010914;position:relative;border-bottom:1px solid #1a3060}
+#page-hero::before{content:'';position:absolute;inset:0;background-image:url(https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png);background-size:cover;background-position:center;opacity:.18;z-index:0;pointer-events:none}
+#page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 50%,rgba(22,85,216,.08) 0,transparent 70%);pointer-events:none}
+#page-hero .section-inner{position:relative;z-index:1}
+.btn-primary{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:.01em;text-transform:none;background:#1655d8;color:#fff;border:none;padding:16px 32px;border-radius:2px;cursor:pointer;transition:background .2s,box-shadow .2s;text-decoration:none;display:inline-block;box-shadow:0 0 24px rgba(22,85,216,.4)}
+.btn-primary:hover{background:#1d67f0;box-shadow:0 0 36px rgba(22,85,216,.6)}
+.btn-gold-outline{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;font-style:italic;background:#fff;color:#010914;border:2px solid #c4a040;padding:14px 32px;border-radius:2px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;line-height:1}
+.btn-gold-outline:hover{background:#fdfaf4;border-color:#debb6a;box-shadow:0 0 20px rgba(196,160,64,.2)}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(12px,2vw,20px);margin-bottom:clamp(32px,5vh,56px)}
+.step-card{background:rgba(7,21,48,.7);backdrop-filter:blur(12px);border:1px solid rgba(64,128,240,.2);border-radius:2px;padding:clamp(20px,2.5vw,32px);position:relative;box-shadow:0 8px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);transition:border-color .2s,box-shadow .2s}
+.step-card:hover{border-color:rgba(64,128,240,.4);box-shadow:0 8px 48px rgba(22,85,216,.15)}
+.step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c4a040,#4080f0);opacity:.7}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5.5vw,60px);font-weight:300;color:#c4a040;line-height:1;display:block;margin-bottom:8px;opacity:.9}
+.step-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.16em;color:#4a6488;text-transform:uppercase;display:block;margin-bottom:12px}
+.step-title{font-size:clamp(14px,1.6vw,17px);font-weight:600;color:#ebf0ff;margin-bottom:10px;line-height:1.3}
+.step-body{font-size:clamp(12px,1.3vw,14px);color:#9aaece;line-height:1.75}
+.signal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(10px,1.5vw,16px)}
+.signal-card{background:rgba(7,21,48,.6);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:clamp(16px,2vw,24px);transition:border-color .2s}
+.signal-card:hover{border-color:rgba(64,128,240,.3)}
+.signal-num{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#4a6488;display:block;margin-bottom:8px}
+.signal-name{font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#ebf0ff;margin-bottom:6px}
+.signal-desc{font-size:clamp(11px,1.2vw,13px);color:#9aaece;line-height:1.65}
+.moat-scroll{overflow-x:auto;border:1px solid #102040;border-radius:2px;margin-top:clamp(24px,4vh,40px)}
+.moat-table{width:100%;min-width:520px;border-collapse:collapse}
+.moat-table th{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;padding:clamp(10px,1.4vw,14px) clamp(12px,1.8vw,16px);border-bottom:1px solid #102040;text-align:left;background:rgba(7,21,48,.9)}
+.moat-table th.cdai{color:#4080f0;background:rgba(22,85,216,.08)}
+.moat-table td{font-size:clamp(11px,1.3vw,13px);padding:clamp(9px,1.2vw,12px) clamp(12px,1.8vw,16px);border-bottom:1px solid #102040;vertical-align:middle}
+.moat-table tr:last-child td{border-bottom:none}
+.moat-table tr:nth-child(even) td{background:rgba(7,21,48,.4)}
+.moat-table td:first-child{color:#b8c9e0;font-weight:500}
+.moat-table td.cdai-col{background:rgba(22,85,216,.05)}
+.mc{color:#0baf92;font-family:'JetBrains Mono',monospace;font-size:13px}
+.mx{color:rgba(214,48,80,.5);font-family:'JetBrains Mono',monospace;font-size:13px}
+.mp{color:#4a6488;font-family:'JetBrains Mono',monospace;font-size:10px}
+.nda-block{display:flex;align-items:flex-start;gap:14px;padding:clamp(16px,2.5vw,28px);background:rgba(196,160,64,.05);border:1px solid rgba(196,160,64,.2);border-radius:2px;margin-top:clamp(24px,4vh,40px)}
+.nda-icon{font-size:20px;color:#c4a040;flex-shrink:0;padding-top:2px}
+.nda-title{font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#debb6a;display:block;margin-bottom:6px}
+.nda-desc{font-size:clamp(11px,1.3vw,13px);color:#7a95b8;line-height:1.7}
+.integration-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:clamp(20px,3vh,32px)}
+.int-chip{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:.3rem .9rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:#9aaece;letter-spacing:.05em;transition:border-color .2s}
+.int-chip:hover{border-color:rgba(22,85,216,.35);color:#b8c9e0}
+.faq-item{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:clamp(16px,2.5vw,24px);margin-bottom:clamp(10px,1.5vh,14px)}
+.faq-q{font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#ebf0ff;margin-bottom:10px}
+.faq-a{font-size:clamp(11px,1.3vw,13px);color:#9aaece;line-height:1.75}
+.page-img{width:100%;display:block;border-radius:2px;border:1px solid #1a3060;box-shadow:0 0 40px rgba(22,85,216,.1)}
+#intake{background:#071530!important;border-top:1px solid #102040}
+#intake::before{display:none}
+.intake-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,80px)}
+@media(min-width:768px){.intake-grid{grid-template-columns:1fr 1fr}}
+.intake-info h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,32px);font-weight:300;color:#ebf0ff;margin-bottom:clamp(12px,2vh,20px);line-height:1.25}
+.intake-steps{display:flex;flex-direction:column;gap:clamp(10px,1.5vh,14px);margin-top:clamp(20px,3vh,32px)}
+.intake-step{display:flex;gap:14px;align-items:flex-start;padding:clamp(12px,1.5vh,16px);background:#010914;border:1px solid #102040;border-radius:2px}
+.intake-step-num{font-family:'JetBrains Mono',monospace;font-size:9px;color:#1655d8;flex-shrink:0;padding-top:1px}
+.intake-step-title{font-size:clamp(12px,1.4vw,13px);font-weight:500;color:#ebf0ff;display:block;margin-bottom:3px}
+.intake-step-desc{font-size:clamp(11px,1.2vw,12px);color:#7a95b8;line-height:1.55}
+.intake-form{display:flex;flex-direction:column;gap:clamp(12px,2vh,16px)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.5vw,14px)}
+@media(max-width:560px){.form-row{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#4a6488}
+.form-input,.form-select,.form-textarea{background:#010914;border:1px solid #1a3060;border-radius:2px;color:#ebf0ff;font-family:'Inter',sans-serif;font-size:clamp(12px,1.4vw,13px);padding:clamp(9px,1.3vh,12px) clamp(12px,1.5vw,14px);transition:border-color .2s,box-shadow .2s;width:100%;-webkit-appearance:none;appearance:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{outline:0;border-color:#1655d8;box-shadow:0 0 0 2px rgba(22,85,216,.15)}
+.form-input::placeholder,.form-textarea::placeholder{color:#1c3050}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234A6488'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;cursor:pointer}
+.form-select option{background:#010914;color:#ebf0ff}
+.form-textarea{resize:vertical;min-height:100px}
+.form-submit{background:#1655d8;color:#ebf0ff;border:none;border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:clamp(13px,2vh,16px) clamp(20px,3vw,28px);cursor:pointer;transition:background .2s,transform .1s;width:100%}
+.form-submit:hover{background:#1d67f0}
+.form-submit:active{transform:scale(.99)}
+.form-submit:disabled{opacity:.5;cursor:default}
+.form-success{display:none;text-align:center;padding:clamp(24px,4vh,40px);background:rgba(11,175,146,.06);border:1px solid rgba(11,175,146,.2);border-radius:2px}
+.form-success h4{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,28px);font-weight:300;color:#0baf92;margin-bottom:8px}
+.form-success p{font-size:clamp(12px,1.4vw,14px);color:#7a95b8}
+.form-error{display:none;font-family:'JetBrains Mono',monospace;font-size:9px;color:#d63050;letter-spacing:.06em;padding:10px 14px;background:rgba(214,48,80,.06);border:1px solid rgba(214,48,80,.2);border-radius:2px}
+.contact-phone{font-family:'JetBrains Mono',monospace;font-size:10px;color:#4a6488;letter-spacing:.08em;margin-bottom:16px}
+footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #102040;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#010914}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-logo{width:18px;height:18px;object-fit:contain;flex-shrink:0}
+.footer-text{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.08em}
+.footer-right{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.06em;text-align:right}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.fade-up{opacity:1;transform:translateY(0)}}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#010914}::-webkit-scrollbar-thumb{background:#1a3060;border-radius:2px}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/">
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence CDAI Engine">
+    Allocera Intelligence
+  </a>
+    <ul>
+      <li><a href="/#problem">The Problem</a></li>
+      <li><a href="/how-it-works">How It Works</a></li>
+      <li><a href="/proof">Proof</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://alloceraintelligence.com/home-sample/blog/">Blog</a></li>
+    </ul>
+    <a href="https://cdai-portal.vercel.app" target="_blank">Client Portal</a>
+    <a href="#intake">Request Access</a>
+    <button id="navToggle" aria-label="Toggle menu"></button>
+</nav>
+  <a href="/#problem" onclick="closeMobile()">The Problem</a>
+  <a href="/how-it-works" onclick="closeMobile()">How It Works</a>
+  <a href="/proof" onclick="closeMobile()">Proof</a>
+  <a href="/dashboard" onclick="closeMobile()">Dashboard</a>
+  <a href="/pricing" onclick="closeMobile()">Pricing</a>
+  <a href="/about" onclick="closeMobile()">About</a>
+  <a href="https://alloceraintelligence.com/home-sample/blog/" onclick="closeMobile()">Blog</a>
+  <a href="https://cdai-portal.vercel.app" target="_blank">Client Portal</a>
+  <a href="#intake" onclick="closeMobile()">Request Access</a>
+<section id="page-hero">
+    How to Calculate True Cost Per Lead
+    <h1>How to calculate your true cost per lead. <em>Four steps. Every morning.</em></h1>
+    <p style="color:#d0daf0">To calculate true cost per lead you need more than what your ad platform reports. CDAI connects to every source — spend, fees, refunds, chargebacks — reconciles them into one verified number per campaign, and issues a clear directive. Automatically. Every morning. See the <a href="/proof" style="color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)">real client results</a> or view <a href="/pricing" style="color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)">pricing</a> when you're ready.</p>
+      <a href="#intake">Get Free Distortion Audit</a>
+      <a href="/pricing">View Pricing &rarr;</a>
+</section>
+<section>
+    The 4-Step Process
+    <h2>Collect. Calculate. Analyze. <em>Direct.</em></h2>
+    <p>Most companies cannot calculate true cost per lead because the data lives in four different places — ad platforms, CRMs, lead distribution systems, and financial records. CDAI pulls all of it together and does the math automatically.</p>
+        01
+        Collect
+        Every cost source. One place.
+        CDAI pulls data from every source — ad spend, leads, broker fees, refunds, compliance costs, and more. Meta, Google, LinkedIn, your CRM, call tracking (CallRail, Ringba), lead distribution (Boberdoo, LeadsPedia), Stripe, and your lead buyers. Setup takes hours, not weeks. No consumer PII enters the system at any point.
+        02
+        Calculate
+        True cost per lead. After everything.
+        CDAI calculates your true cost per lead and contribution margin after all 7 hidden cost layers: media spend, platform fees, broker payouts, post-conversion refunds, chargeback attribution, compliance costs, and variable overhead. Not what the platform reported. What actually left your business.
+        03
+        Analyze
+        Six warning signals. Caught weeks early.
+        CDAI monitors 6 structural distortion signals that appear weeks before standard reporting tools surface them. CPL inflation, lead quality decay, fraud concentration, chargeback spikes, margin compression, and payout bleed. Each signal is scored, tiered, and tracked against historical baselines.
+        04
+        Direct
+        One directive. No interpretation needed.
+        Scale, Hold, Cut, Quarantine, Renegotiate, Investigate, Pause, or Flag. One clear directive per campaign, delivered every morning. Confidence-scored, reason-coded, and tracked against verified outcomes 30 days later. Your team reads it and acts. No analyst required.
+      <img src="https://alloceraintelligence.com/wp-content/uploads/2026/06/B4457BA3-CEE4-42D0-88F9-7865404DB840.png" alt="How to calculate true cost per lead using CDAI Engine — Collect, Calculate, Analyze, Direct">
+</section>
+<section style="background:var(--surface)!important;border-top:1px solid #102040">
+    The 6 Distortion Signals
+    <h2>What CDAI catches <em>before your dashboard does.</em></h2>
+    <p>Standard reporting tools show you what happened. These six signals show you what's about to happen — weeks before it appears in any existing tool. According to <a href="https://business.google.com/us/advertising/" target="_blank" rel="noopener" style="color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)">Google Ads</a> and Meta's own documentation, platform-reported costs represent only the media spend — not the full cost of a lead acquisition.</p>
+        Signal 01
+        CPL Inflation
+        Platform-reported cost per lead is rising while true all-in cost is rising faster. The gap between what your dashboard shows and what you're actually paying is widening.
+        Signal 02
+        Lead Quality Decay
+        Close rates are declining on a rolling window. The leads are arriving but converting less. Cost per acquired customer is rising even when CPL looks stable.
+        Signal 03
+        Fraud Concentration
+        Anomalous traffic patterns consistent with click fraud, lead stuffing, or bot activity. Isolated before they dilute the broader campaign data.
+        Signal 04
+        Chargeback Spike
+        Chargeback rate is rising above baseline on a specific campaign or partner source. Financial exposure is building before it hits your accounting.
+        Signal 05
+        Margin Compression
+        Contribution margin is shrinking as a percentage of revenue, even when volume is holding. Hidden cost layers are eating the margin your dashboard doesn't show.
+        Signal 06
+        Payout Bleed
+        Partner or broker payout rates are creating a structural drag on margin. The economics of a partner relationship no longer work at current volumes or rates.
+</section>
+<section>
+    Platform Integrations
+    <h2>Every source CDAI connects to <em>automatically.</em></h2>
+    <p>CDAI connects directly via API — no manual CSV exports, no spreadsheets. Read-only access only. Consumer identity data is stripped before processing and cannot be stored by design.</p>
+      Meta AdsGoogle AdsLinkedIn AdsHubSpotSalesforceCallRailRingbaBoberdooLeadsPediaStripeGA4TrustedForm
+</section>
+<section style="background:var(--surface)!important;border-top:1px solid #102040">
+    Why CDAI vs. Everything Else
+    <h2>Not a reporting tool. <em>A decision engine.</em></h2>
+    <p>Attribution tools show you what happened. Agencies give you opinions. Spreadsheets break. CDAI is the only tool that automatically calculates true cost per lead across all 7 cost layers and issues one enforceable directive per campaign — every day.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th style="text-align:center">Attribution Tools</th>
+            <th style="text-align:center">Agencies</th>
+            <th style="text-align:center">CDAI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Calculates true cost per lead (all 7 layers)</td><td style="text-align:center">&#10007;</td><td style="text-align:center">Manual</td><td style="text-align:center">&#10003; Automated</td></tr>
+          <tr><td>Issues one enforceable directive per campaign</td><td style="text-align:center">&#10007;</td><td style="text-align:center">Manual</td><td style="text-align:center">&#10003; Automated</td></tr>
+          <tr><td>Detects distortion signals weeks in advance</td><td style="text-align:center">&#10007;</td><td style="text-align:center">&#10007;</td><td style="text-align:center">&#10003; 6 signals</td></tr>
+          <tr><td>Partner &amp; broker accountability scoring</td><td style="text-align:center">&#10007;</td><td style="text-align:center">&#10007;</td><td style="text-align:center">&#10003;</td></tr>
+          <tr><td>Tracks directive accuracy 30 days later</td><td style="text-align:center">&#10007;</td><td style="text-align:center">&#10007;</td><td style="text-align:center">&#10003;</td></tr>
+          <tr><td>Zero consumer PII stored</td><td style="text-align:center">&#10007;</td><td style="text-align:center">&#10007;</td><td style="text-align:center">&#10003; By design</td></tr>
+        </tbody>
+      </table>
+      &#128274;
+        Proprietary methodology — available under NDA only
+        The detection logic, directive classification engine, and attribution reconciliation framework are original intellectual property. The specific thresholds, weights, and signal detection methods that calculate true cost per lead are not disclosed publicly. Full methodology disclosure is available to qualified clients and partners under a signed NDA.
+</section>
+<section>
+    Common Questions
+    <h2>What people ask <em>about how it works.</em></h2>
+      How do you calculate true cost per lead with CDAI?CDAI connects to your ad platforms, CRM, and financial data via API. It adds media spend to all hidden cost layers — broker fees, refunds, chargebacks, compliance costs, and partner payouts — and calculates a true all-in cost per lead for every active campaign. This runs automatically every night.
+      How long does setup take?Setup typically takes hours, not weeks. CDAI connects via platform APIs — no manual CSV exports or spreadsheet maintenance required. Once connected, it runs automatically on your data cadence.
+      What are the 6 distortion signals?CPL inflation, lead quality decay, fraud concentration, chargeback spikes, margin compression, and payout bleed. Each signal is monitored on a rolling window and compared to verified baselines — surfaced weeks before they appear in any standard dashboard.
+      Is consumer data ever stored or visible?No. Consumer identity data — names, emails, phone numbers — is stripped by a built-in PII scrubber before any information is processed or stored. This cannot be disabled. What CDAI analyzes is campaign-level cost and outcome data only.
+</section>
+<section id="intake" style="background:#071530!important">
+        Client Intake
+        <h3>See your true cost per lead. Start free.</h3>
+        <p style="font-size:clamp(13px,1.6vw,15px)">One campaign. 30-day lookback. No consumer PII. We calculate your true cost per lead and show you the gap — free, in 5–7 business days.</p>
+          01Submit this formCampaign-level information only. No consumer PII required at this stage.
+          02Sign NDA and Service AgreementProtects your data before anything is shared. Required before any data access begins.
+          03Provide read access or CSV exportsGoogle Ads, Meta, refund history, chargeback data — 90 days minimum. Consumer identity data is stripped before processing and cannot be stored by design.
+          04Receive your Directive Sheet in 5&ndash;14 daysTrue cost per lead per campaign, distortion signals identified, and enforceable capital directives.
+        <form id="intakeForm" novalidate>
+          Contact: 919-610-9288
+            <label for="firstName">First Name *</label><input type="text" id="firstName" name="firstName" placeholder="First name" required>
+            <label for="lastName">Last Name *</label><input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+          <label for="company">Company Name *</label><input type="text" id="company" name="company" placeholder="Your company" required>
+          <label for="email">Business Email *</label><input type="email" id="email" name="email" placeholder="you@yourcompany.com" required>
+          <label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
+            <label for="service">Service Level *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service...</option>
+              <option value="free-distortion-audit">Free Distortion Audit — 1 Campaign, 30-Day Lookback (Free)</option>
+              <option value="quick-audit">Quick Audit — Up to 50 Campaigns ($2,500)</option>
+              <option value="standard-audit">Standard Audit — Up to 150 Campaigns ($5,000)</option>
+              <option value="deep-audit">Deep Audit — 150+ Campaigns ($10,000–$20,000)</option>
+              <option value="starter-retainer">Starter Retainer — Up to $10K/mo spend ($1,500/mo)</option>
+              <option value="growth-retainer">Growth Retainer — $10K–$50K/mo spend ($3,500/mo)</option>
+              <option value="scale-retainer">Scale Retainer — $50K–$150K/mo spend ($8,000/mo)</option>
+              <option value="enterprise-retainer">Enterprise Retainer — $150K+/mo spend ($15,000+/mo)</option>
+            </select>
+            <label>Who manages your ad accounts?</label>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:clamp(12px,1.4vw,13px);color:#b8c9e0"><input type="checkbox" name="account_manager" value="In-house" style="width:15px;height:15px;accent-color:#1655d8;cursor:pointer;flex-shrink:0"> In-house</label>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:clamp(12px,1.4vw,13px);color:#b8c9e0"><input type="checkbox" name="account_manager" value="Agency" style="width:15px;height:15px;accent-color:#1655d8;cursor:pointer;flex-shrink:0"> Agency</label>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:clamp(12px,1.4vw,13px);color:#b8c9e0"><input type="checkbox" name="account_manager" value="Both" style="width:15px;height:15px;accent-color:#1655d8;cursor:pointer;flex-shrink:0"> Both</label>
+          <label for="message">Tell us about your campaigns</label><textarea id="message" name="message" placeholder="What platforms are you running? Approximate monthly spend? What specific problem are you trying to solve?" style="min-height:80px"></textarea>
+          Please fill in all required fields.
+          <button type="submit" id="formSubmit">Submit Request</button>
+        </form>
+          <h4>Request Received</h4>
+          <p>We'll review your submission and reach out within 24 hours.</p>
+</section>
+<footer>
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence">
+    Allocera Intelligence &middot; CDAI Engine &middot; alloceraintelligence.com
+  &copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions" style="color:var(--dim);text-decoration:none">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms" style="color:var(--dim);text-decoration:none">Terms of Service</a> &middot; Built by <a href="https://fullsendorganicks.com/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none">FSO</a>
+</footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How to Calculate True Cost Per Lead — CDAI Engine | Allocera Intelligence</title>
+<meta name="description" content="Learn how to calculate true cost per lead after every broker fee, refund, and hidden charge. CDAI reconciles all costs automatically and delivers one directive per campaign, every morning.">
+<meta property="og:title" content="How to Calculate True Cost Per Lead — CDAI Engine | Allocera Intelligence">
+<meta property="og:description" content="Learn how to calculate true cost per lead after every broker fee, refund, and hidden charge. CDAI reconciles all costs automatically and delivers one directive per campaign, every morning.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you calculate true cost per lead?","acceptedAnswer":{"@type":"Answer","text":"To calculate true cost per lead, you must add media spend to all hidden costs: broker fees, post-conversion refunds, chargebacks, compliance costs, and partner payouts. CDAI automates this reconciliation across all platforms and delivers the result daily."}},{"@type":"Question","name":"What are the 6 distortion signals CDAI monitors?","acceptedAnswer":{"@type":"Answer","text":"CDAI monitors CPL inflation, lead quality decay, fraud concentration, chargeback spikes, margin compression, and payout bleed — all surfaced weeks before they appear in standard reporting tools."}},{"@type":"Question","name":"How long does CDAI setup take?","acceptedAnswer":{"@type":"Answer","text":"Setup typically takes hours, not weeks. CDAI connects to your ad platforms, CRM, and lead distribution infrastructure via API. No manual exports required once connected."}},{"@type":"Question","name":"What is the NDA requirement?","acceptedAnswer":{"@type":"Answer","text":"Full methodology disclosure is available to qualified clients under a signed NDA. The detection logic, directive classification engine, and attribution reconciliation framework are original intellectual property."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#9AAECE;--dim:#4A6488;--deep:#1C3050;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#D63050}
+html{scroll-behavior:smooth}
+body{background:#010914!important;color:#ebf0ff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:clamp(52px,7vh,64px);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,64px);background:rgba(1,9,20,.95);border-bottom:1px solid #102040;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo{width:26px;height:26px;object-fit:contain;flex-shrink:0;display:block}
+.nav-name{font-size:clamp(12px,1.7vw,14px);font-weight:600;letter-spacing:.04em;color:#ebf0ff}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-links{display:flex;align-items:center;gap:clamp(16px,2.5vw,32px);list-style:none}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:#c4a040}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:#1655d8;color:#ebf0ff;border:none;padding:9px 18px;border-radius:2px;cursor:pointer;transition:background .2s;text-decoration:none;white-space:nowrap}
+.nav-cta:hover{background:#1d67f0}
+.nav-portal{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4080f0;border:1px solid rgba(64,128,240,.35);padding:8px 16px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
+.nav-portal:hover{background:rgba(64,128,240,.1);border-color:#4080f0}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:0 0;border:none;cursor:pointer;padding:4px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#ebf0ff;border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:clamp(52px,7vh,64px);left:0;right:0;z-index:99;background:rgba(1,9,20,.98);border-bottom:1px solid #102040;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;padding:16px 24px 24px;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#9aaece;text-decoration:none;padding:14px 0;border-bottom:1px solid #102040;transition:color .2s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:#ebf0ff}
+.mobile-menu .mobile-cta{margin-top:12px;background:#1655d8;color:#fff;text-align:center;padding:16px;border-radius:2px;font-size:13px;font-weight:700;border:none;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+.mobile-menu .mobile-portal{color:#4080f0;text-align:center;padding:14px;border:1px solid rgba(64,128,240,.3);border-radius:3px;font-size:12px}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-cta{display:none}}
+@media(max-width:480px){.nav-portal{font-size:9px;padding:7px 12px}}
+section{width:100%;padding:clamp(72px,11vh,130px) clamp(16px,5vw,80px);position:relative;background:#010914!important}
+section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 0,rgba(22,85,216,.04) 0,transparent 60%);pointer-events:none}
+.section-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;color:#c4a040;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,2vh,16px)}
+.eyebrow::before{content:'';width:16px;height:1px;background:#c4a040;display:block;flex-shrink:0}
+h1.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6.5vw,80px);font-weight:300;line-height:1.06;color:#ebf0ff;margin-bottom:clamp(16px,3vh,24px)}
+h1.page-title em{font-style:italic;color:#8ab8ff}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4.5vw,52px);font-weight:300;line-height:1.1;color:#ebf0ff;margin-bottom:clamp(10px,2vh,16px)}
+h2.section-title em{font-style:italic;color:#8ab8ff}
+h3.sub-title{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,32px);font-weight:300;color:#ebf0ff;margin-bottom:12px;line-height:1.2}
+.rule{width:36px;height:1px;background:#1655d8;margin-bottom:clamp(16px,3vh,28px);display:block}
+.rule.gold{background:#c4a040}
+.lead-text{font-size:clamp(14px,1.8vw,17px);color:#b8c9e0;line-height:1.8;max-width:720px;margin-bottom:clamp(16px,3vh,28px);font-weight:300}
+.body-text{font-size:clamp(12px,1.4vw,14px);color:#7a95b8;line-height:1.8}
+#page-hero{padding:calc(clamp(52px,7vh,64px) + clamp(60px,10vh,100px)) clamp(16px,5vw,80px) clamp(60px,10vh,100px);background:#010914;position:relative;border-bottom:1px solid #1a3060}
+#page-hero::before{content:'';position:absolute;inset:0;background-image:url(https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png);background-size:cover;background-position:center;opacity:.18;z-index:0;pointer-events:none}
+#page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 50%,rgba(22,85,216,.08) 0,transparent 70%);pointer-events:none}
+#page-hero .section-inner{position:relative;z-index:1}
+.btn-primary{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:.01em;text-transform:none;background:#1655d8;color:#fff;border:none;padding:16px 32px;border-radius:2px;cursor:pointer;transition:background .2s,box-shadow .2s;text-decoration:none;display:inline-block;box-shadow:0 0 24px rgba(22,85,216,.4)}
+.btn-primary:hover{background:#1d67f0;box-shadow:0 0 36px rgba(22,85,216,.6)}
+.btn-gold-outline{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;font-style:italic;background:#fff;color:#010914;border:2px solid #c4a040;padding:14px 32px;border-radius:2px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;line-height:1}
+.btn-gold-outline:hover{background:#fdfaf4;border-color:#debb6a;box-shadow:0 0 20px rgba(196,160,64,.2)}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(12px,2vw,20px);margin-bottom:clamp(32px,5vh,56px)}
+.step-card{background:rgba(7,21,48,.7);backdrop-filter:blur(12px);border:1px solid rgba(64,128,240,.2);border-radius:2px;padding:clamp(20px,2.5vw,32px);position:relative;box-shadow:0 8px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);transition:border-color .2s,box-shadow .2s}
+.step-card:hover{border-color:rgba(64,128,240,.4);box-shadow:0 8px 48px rgba(22,85,216,.15)}
+.step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c4a040,#4080f0);opacity:.7}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5.5vw,60px);font-weight:300;color:#c4a040;line-height:1;display:block;margin-bottom:8px;opacity:.9}
+.step-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.16em;color:#4a6488;text-transform:uppercase;display:block;margin-bottom:12px}
+.step-title{font-size:clamp(14px,1.6vw,17px);font-weight:600;color:#ebf0ff;margin-bottom:10px;line-height:1.3}
+.step-body{font-size:clamp(12px,1.3vw,14px);color:#9aaece;line-height:1.75}
+.signal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(10px,1.5vw,16px)}
+.signal-card{background:rgba(7,21,48,.6);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:clamp(16px,2vw,24px);transition:border-color .2s}
+.signal-card:hover{border-color:rgba(64,128,240,.3)}
+.signal-num{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#4a6488;display:block;margin-bottom:8px}
+.signal-name{font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#ebf0ff;margin-bottom:6px}
+.signal-desc{font-size:clamp(11px,1.2vw,13px);color:#9aaece;line-height:1.65}
+.moat-scroll{overflow-x:auto;border:1px solid #102040;border-radius:2px;margin-top:clamp(24px,4vh,40px)}
+.moat-table{width:100%;min-width:520px;border-collapse:collapse}
+.moat-table th{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;padding:clamp(10px,1.4vw,14px) clamp(12px,1.8vw,16px);border-bottom:1px solid #102040;text-align:left;background:rgba(7,21,48,.9)}
+.moat-table th.cdai{color:#4080f0;background:rgba(22,85,216,.08)}
+.moat-table td{font-size:clamp(11px,1.3vw,13px);padding:clamp(9px,1.2vw,12px) clamp(12px,1.8vw,16px);border-bottom:1px solid #102040;vertical-align:middle}
+.moat-table tr:last-child td{border-bottom:none}
+.moat-table tr:nth-child(even) td{background:rgba(7,21,48,.4)}
+.moat-table td:first-child{color:#b8c9e0;font-weight:500}
+.moat-table td.cdai-col{background:rgba(22,85,216,.05)}
+.mc{color:#0baf92;font-family:'JetBrains Mono',monospace;font-size:13px}
+.mx{color:rgba(214,48,80,.5);font-family:'JetBrains Mono',monospace;font-size:13px}
+.mp{color:#4a6488;font-family:'JetBrains Mono',monospace;font-size:10px}
+.nda-block{display:flex;align-items:flex-start;gap:14px;padding:clamp(16px,2.5vw,28px);background:rgba(196,160,64,.05);border:1px solid rgba(196,160,64,.2);border-radius:2px;margin-top:clamp(24px,4vh,40px)}
+.nda-icon{font-size:20px;color:#c4a040;flex-shrink:0;padding-top:2px}
+.nda-title{font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#debb6a;display:block;margin-bottom:6px}
+.nda-desc{font-size:clamp(11px,1.3vw,13px);color:#7a95b8;line-height:1.7}
+.integration-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:clamp(20px,3vh,32px)}
+.int-chip{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:.3rem .9rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:#9aaece;letter-spacing:.05em;transition:border-color .2s}
+.int-chip:hover{border-color:rgba(22,85,216,.35);color:#b8c9e0}
+.faq-item{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:clamp(16px,2.5vw,24px);margin-bottom:clamp(10px,1.5vh,14px)}
+.faq-q{font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#ebf0ff;margin-bottom:10px}
+.faq-a{font-size:clamp(11px,1.3vw,13px);color:#9aaece;line-height:1.75}
+.page-img{width:100%;display:block;border-radius:2px;border:1px solid #1a3060;box-shadow:0 0 40px rgba(22,85,216,.1)}
+#intake{background:#071530!important;border-top:1px solid #102040}
+#intake::before{display:none}
+.intake-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,80px)}
+@media(min-width:768px){.intake-grid{grid-template-columns:1fr 1fr}}
+.intake-info h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,32px);font-weight:300;color:#ebf0ff;margin-bottom:clamp(12px,2vh,20px);line-height:1.25}
+.intake-steps{display:flex;flex-direction:column;gap:clamp(10px,1.5vh,14px);margin-top:clamp(20px,3vh,32px)}
+.intake-step{display:flex;gap:14px;align-items:flex-start;padding:clamp(12px,1.5vh,16px);background:#010914;border:1px solid #102040;border-radius:2px}
+.intake-step-num{font-family:'JetBrains Mono',monospace;font-size:9px;color:#1655d8;flex-shrink:0;padding-top:1px}
+.intake-step-title{font-size:clamp(12px,1.4vw,13px);font-weight:500;color:#ebf0ff;display:block;margin-bottom:3px}
+.intake-step-desc{font-size:clamp(11px,1.2vw,12px);color:#7a95b8;line-height:1.55}
+.intake-form{display:flex;flex-direction:column;gap:clamp(12px,2vh,16px)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.5vw,14px)}
+@media(max-width:560px){.form-row{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#4a6488}
+.form-input,.form-select,.form-textarea{background:#010914;border:1px solid #1a3060;border-radius:2px;color:#ebf0ff;font-family:'Inter',sans-serif;font-size:clamp(12px,1.4vw,13px);padding:clamp(9px,1.3vh,12px) clamp(12px,1.5vw,14px);transition:border-color .2s,box-shadow .2s;width:100%;-webkit-appearance:none;appearance:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{outline:0;border-color:#1655d8;box-shadow:0 0 0 2px rgba(22,85,216,.15)}
+.form-input::placeholder,.form-textarea::placeholder{color:#1c3050}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234A6488'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;cursor:pointer}
+.form-select option{background:#010914;color:#ebf0ff}
+.form-textarea{resize:vertical;min-height:100px}
+.form-submit{background:#1655d8;color:#ebf0ff;border:none;border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:clamp(13px,2vh,16px) clamp(20px,3vw,28px);cursor:pointer;transition:background .2s,transform .1s;width:100%}
+.form-submit:hover{background:#1d67f0}
+.form-submit:active{transform:scale(.99)}
+.form-submit:disabled{opacity:.5;cursor:default}
+.form-success{display:none;text-align:center;padding:clamp(24px,4vh,40px);background:rgba(11,175,146,.06);border:1px solid rgba(11,175,146,.2);border-radius:2px}
+.form-success h4{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,28px);font-weight:300;color:#0baf92;margin-bottom:8px}
+.form-success p{font-size:clamp(12px,1.4vw,14px);color:#7a95b8}
+.form-error{display:none;font-family:'JetBrains Mono',monospace;font-size:9px;color:#d63050;letter-spacing:.06em;padding:10px 14px;background:rgba(214,48,80,.06);border:1px solid rgba(214,48,80,.2);border-radius:2px}
+.contact-phone{font-family:'JetBrains Mono',monospace;font-size:10px;color:#4a6488;letter-spacing:.08em;margin-bottom:16px}
+footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #102040;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#010914}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-logo{width:18px;height:18px;object-fit:contain;flex-shrink:0}
+.footer-text{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.08em}
+.footer-right{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.06em;text-align:right}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.fade-up{opacity:1;transform:translateY(0)}}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#010914}::-webkit-scrollbar-thumb{background:#1a3060;border-radius:2px}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">
+    <img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence CDAI Engine">
+    <span class="nav-name">Allocera Intelligence</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/#problem">The Problem</a></li>
+      <li><a href="/how-it-works" class="active">How It Works</a></li>
+      <li><a href="/proof">Proof</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://alloceraintelligence.com/home-sample/blog/">Blog</a></li>
+    </ul>
+    <a class="nav-portal" href="https://cdai-portal.vercel.app" target="_blank">Client Portal</a>
+    <a class="nav-cta" href="#intake">Request Access</a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#problem" onclick="closeMobile()">The Problem</a>
+  <a href="/how-it-works" onclick="closeMobile()">How It Works</a>
+  <a href="/proof" onclick="closeMobile()">Proof</a>
+  <a href="/dashboard" onclick="closeMobile()">Dashboard</a>
+  <a href="/pricing" onclick="closeMobile()">Pricing</a>
+  <a href="/about" onclick="closeMobile()">About</a>
+  <a href="https://alloceraintelligence.com/home-sample/blog/" onclick="closeMobile()">Blog</a>
+  <a href="https://cdai-portal.vercel.app" target="_blank" class="mobile-portal">Client Portal</a>
+  <a href="#intake" class="mobile-cta" onclick="closeMobile()">Request Access</a>
+</div>
+
+<section id="page-hero">
+  <div class="section-inner">
+    <div class="eyebrow">How to Calculate True Cost Per Lead</div>
+    <h1 class="page-title">How to calculate your true cost per lead. <em>Four steps. Every morning.</em></h1>
+    <p class="lead-text" style="color:#d0daf0">To calculate true cost per lead you need more than what your ad platform reports. CDAI connects to every source — spend, fees, refunds, chargebacks — reconciles them into one verified number per campaign, and issues a clear directive. Automatically. Every morning. See the <a href="/proof" style="color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)">real client results</a> or view <a href="/pricing" style="color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)">pricing</a> when you're ready.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
+      <a href="#intake" class="btn-primary">Get Free Distortion Audit</a>
+      <a href="/pricing" class="btn-gold-outline">View Pricing &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="eyebrow fade-up">The 4-Step Process</div>
+    <h2 class="section-title fade-up">Collect. Calculate. Analyze. <em>Direct.</em></h2>
+    <div class="rule fade-up"></div>
+    <p class="lead-text fade-up">Most companies cannot calculate true cost per lead because the data lives in four different places — ad platforms, CRMs, lead distribution systems, and financial records. CDAI pulls all of it together and does the math automatically.</p>
+    <div class="step-grid fade-up">
+      <div class="step-card">
+        <span class="step-num">01</span>
+        <span class="step-label">Collect</span>
+        <div class="step-title">Every cost source. One place.</div>
+        <div class="step-body">CDAI pulls data from every source — ad spend, leads, broker fees, refunds, compliance costs, and more. Meta, Google, LinkedIn, your CRM, call tracking (CallRail, Ringba), lead distribution (Boberdoo, LeadsPedia), Stripe, and your lead buyers. Setup takes hours, not weeks. No consumer PII enters the system at any point.</div>
+      </div>
+      <div class="step-card">
+        <span class="step-num">02</span>
+        <span class="step-label">Calculate</span>
+        <div class="step-title">True cost per lead. After everything.</div>
+        <div class="step-body">CDAI calculates your true cost per lead and contribution margin after all 7 hidden cost layers: media spend, platform fees, broker payouts, post-conversion refunds, chargeback attribution, compliance costs, and variable overhead. Not what the platform reported. What actually left your business.</div>
+      </div>
+      <div class="step-card">
+        <span class="step-num">03</span>
+        <span class="step-label">Analyze</span>
+        <div class="step-title">Six warning signals. Caught weeks early.</div>
+        <div class="step-body">CDAI monitors 6 structural distortion signals that appear weeks before standard reporting tools surface them. CPL inflation, lead quality decay, fraud concentration, chargeback spikes, margin compression, and payout bleed. Each signal is scored, tiered, and tracked against historical baselines.</div>
+      </div>
+      <div class="step-card">
+        <span class="step-num">04</span>
+        <span class="step-label">Direct</span>
+        <div class="step-title">One directive. No interpretation needed.</div>
+        <div class="step-body">Scale, Hold, Cut, Quarantine, Renegotiate, Investigate, Pause, or Flag. One clear directive per campaign, delivered every morning. Confidence-scored, reason-coded, and tracked against verified outcomes 30 days later. Your team reads it and acts. No analyst required.</div>
+      </div>
+    </div>
+    <div class="fade-up" style="margin-top:clamp(24px,4vh,40px)">
+      <img src="https://alloceraintelligence.com/wp-content/uploads/2026/06/B4457BA3-CEE4-42D0-88F9-7865404DB840.png" alt="How to calculate true cost per lead using CDAI Engine — Collect, Calculate, Analyze, Direct" class="page-img">
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)!important;border-top:1px solid #102040">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">The 6 Distortion Signals</div>
+    <h2 class="section-title fade-up">What CDAI catches <em>before your dashboard does.</em></h2>
+    <div class="rule fade-up"></div>
+    <p class="lead-text fade-up">Standard reporting tools show you what happened. These six signals show you what's about to happen — weeks before it appears in any existing tool. According to <a href="https://business.google.com/us/advertising/" target="_blank" rel="noopener" style="color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)">Google Ads</a> and Meta's own documentation, platform-reported costs represent only the media spend — not the full cost of a lead acquisition.</p>
+    <div class="signal-grid fade-up">
+      <div class="signal-card">
+        <span class="signal-num">Signal 01</span>
+        <div class="signal-name">CPL Inflation</div>
+        <div class="signal-desc">Platform-reported cost per lead is rising while true all-in cost is rising faster. The gap between what your dashboard shows and what you're actually paying is widening.</div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-num">Signal 02</span>
+        <div class="signal-name">Lead Quality Decay</div>
+        <div class="signal-desc">Close rates are declining on a rolling window. The leads are arriving but converting less. Cost per acquired customer is rising even when CPL looks stable.</div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-num">Signal 03</span>
+        <div class="signal-name">Fraud Concentration</div>
+        <div class="signal-desc">Anomalous traffic patterns consistent with click fraud, lead stuffing, or bot activity. Isolated before they dilute the broader campaign data.</div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-num">Signal 04</span>
+        <div class="signal-name">Chargeback Spike</div>
+        <div class="signal-desc">Chargeback rate is rising above baseline on a specific campaign or partner source. Financial exposure is building before it hits your accounting.</div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-num">Signal 05</span>
+        <div class="signal-name">Margin Compression</div>
+        <div class="signal-desc">Contribution margin is shrinking as a percentage of revenue, even when volume is holding. Hidden cost layers are eating the margin your dashboard doesn't show.</div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-num">Signal 06</span>
+        <div class="signal-name">Payout Bleed</div>
+        <div class="signal-desc">Partner or broker payout rates are creating a structural drag on margin. The economics of a partner relationship no longer work at current volumes or rates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Platform Integrations</div>
+    <h2 class="section-title fade-up">Every source CDAI connects to <em>automatically.</em></h2>
+    <div class="rule fade-up"></div>
+    <p class="lead-text fade-up">CDAI connects directly via API — no manual CSV exports, no spreadsheets. Read-only access only. Consumer identity data is stripped before processing and cannot be stored by design.</p>
+    <div class="integration-row fade-up">
+      <span class="int-chip">Meta Ads</span><span class="int-chip">Google Ads</span><span class="int-chip">LinkedIn Ads</span><span class="int-chip">HubSpot</span><span class="int-chip">Salesforce</span><span class="int-chip">CallRail</span><span class="int-chip">Ringba</span><span class="int-chip">Boberdoo</span><span class="int-chip">LeadsPedia</span><span class="int-chip">Stripe</span><span class="int-chip">GA4</span><span class="int-chip">TrustedForm</span>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)!important;border-top:1px solid #102040">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Why CDAI vs. Everything Else</div>
+    <h2 class="section-title fade-up">Not a reporting tool. <em>A decision engine.</em></h2>
+    <div class="rule fade-up"></div>
+    <p class="lead-text fade-up">Attribution tools show you what happened. Agencies give you opinions. Spreadsheets break. CDAI is the only tool that automatically calculates true cost per lead across all 7 cost layers and issues one enforceable directive per campaign — every day.</p>
+    <div class="moat-scroll fade-up">
+      <table class="moat-table">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th style="text-align:center">Attribution Tools</th>
+            <th style="text-align:center">Agencies</th>
+            <th style="text-align:center" class="cdai">CDAI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Calculates true cost per lead (all 7 layers)</td><td style="text-align:center"><span class="mx">&#10007;</span></td><td style="text-align:center"><span class="mp">Manual</span></td><td style="text-align:center" class="cdai-col"><span class="mc">&#10003; Automated</span></td></tr>
+          <tr><td>Issues one enforceable directive per campaign</td><td style="text-align:center"><span class="mx">&#10007;</span></td><td style="text-align:center"><span class="mp">Manual</span></td><td style="text-align:center" class="cdai-col"><span class="mc">&#10003; Automated</span></td></tr>
+          <tr><td>Detects distortion signals weeks in advance</td><td style="text-align:center"><span class="mx">&#10007;</span></td><td style="text-align:center"><span class="mx">&#10007;</span></td><td style="text-align:center" class="cdai-col"><span class="mc">&#10003; 6 signals</span></td></tr>
+          <tr><td>Partner &amp; broker accountability scoring</td><td style="text-align:center"><span class="mx">&#10007;</span></td><td style="text-align:center"><span class="mx">&#10007;</span></td><td style="text-align:center" class="cdai-col"><span class="mc">&#10003;</span></td></tr>
+          <tr><td>Tracks directive accuracy 30 days later</td><td style="text-align:center"><span class="mx">&#10007;</span></td><td style="text-align:center"><span class="mx">&#10007;</span></td><td style="text-align:center" class="cdai-col"><span class="mc">&#10003;</span></td></tr>
+          <tr><td>Zero consumer PII stored</td><td style="text-align:center"><span class="mx">&#10007;</span></td><td style="text-align:center"><span class="mx">&#10007;</span></td><td style="text-align:center" class="cdai-col"><span class="mc">&#10003; By design</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="nda-block fade-up">
+      <span class="nda-icon">&#128274;</span>
+      <div>
+        <span class="nda-title">Proprietary methodology — available under NDA only</span>
+        <span class="nda-desc">The detection logic, directive classification engine, and attribution reconciliation framework are original intellectual property. The specific thresholds, weights, and signal detection methods that calculate true cost per lead are not disclosed publicly. Full methodology disclosure is available to qualified clients and partners under a signed NDA.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Common Questions</div>
+    <h2 class="section-title fade-up">What people ask <em>about how it works.</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="fade-up">
+      <div class="faq-item"><div class="faq-q">How do you calculate true cost per lead with CDAI?</div><div class="faq-a">CDAI connects to your ad platforms, CRM, and financial data via API. It adds media spend to all hidden cost layers — broker fees, refunds, chargebacks, compliance costs, and partner payouts — and calculates a true all-in cost per lead for every active campaign. This runs automatically every night.</div></div>
+      <div class="faq-item"><div class="faq-q">How long does setup take?</div><div class="faq-a">Setup typically takes hours, not weeks. CDAI connects via platform APIs — no manual CSV exports or spreadsheet maintenance required. Once connected, it runs automatically on your data cadence.</div></div>
+      <div class="faq-item"><div class="faq-q">What are the 6 distortion signals?</div><div class="faq-a">CPL inflation, lead quality decay, fraud concentration, chargeback spikes, margin compression, and payout bleed. Each signal is monitored on a rolling window and compared to verified baselines — surfaced weeks before they appear in any standard dashboard.</div></div>
+      <div class="faq-item"><div class="faq-q">Is consumer data ever stored or visible?</div><div class="faq-a">No. Consumer identity data — names, emails, phone numbers — is stripped by a built-in PII scrubber before any information is processed or stored. This cannot be disabled. What CDAI analyzes is campaign-level cost and outcome data only.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="intake" style="background:#071530!important">
+  <div class="section-inner">
+    <div class="intake-grid">
+      <div class="intake-info fade-up">
+        <div class="eyebrow">Client Intake</div>
+        <h3>See your true cost per lead. Start free.</h3>
+        <p class="lead-text" style="font-size:clamp(13px,1.6vw,15px)">One campaign. 30-day lookback. No consumer PII. We calculate your true cost per lead and show you the gap — free, in 5–7 business days.</p>
+        <div class="intake-steps">
+          <div class="intake-step"><span class="intake-step-num">01</span><div><span class="intake-step-title">Submit this form</span><span class="intake-step-desc">Campaign-level information only. No consumer PII required at this stage.</span></div></div>
+          <div class="intake-step"><span class="intake-step-num">02</span><div><span class="intake-step-title">Sign NDA and Service Agreement</span><span class="intake-step-desc">Protects your data before anything is shared. Required before any data access begins.</span></div></div>
+          <div class="intake-step"><span class="intake-step-num">03</span><div><span class="intake-step-title">Provide read access or CSV exports</span><span class="intake-step-desc">Google Ads, Meta, refund history, chargeback data — 90 days minimum. Consumer identity data is stripped before processing and cannot be stored by design.</span></div></div>
+          <div class="intake-step"><span class="intake-step-num">04</span><div><span class="intake-step-title">Receive your Directive Sheet in 5&ndash;14 days</span><span class="intake-step-desc">True cost per lead per campaign, distortion signals identified, and enforceable capital directives.</span></div></div>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:.15s">
+        <form class="intake-form" id="intakeForm" novalidate>
+          <div class="contact-phone">Contact: 919-610-9288</div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" for="firstName">First Name *</label><input class="form-input" type="text" id="firstName" name="firstName" placeholder="First name" required></div>
+            <div class="form-group"><label class="form-label" for="lastName">Last Name *</label><input class="form-input" type="text" id="lastName" name="lastName" placeholder="Last name" required></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="company">Company Name *</label><input class="form-input" type="text" id="company" name="company" placeholder="Your company" required></div>
+          <div class="form-group"><label class="form-label" for="email">Business Email *</label><input class="form-input" type="email" id="email" name="email" placeholder="you@yourcompany.com" required></div>
+          <div class="form-group"><label class="form-label" for="phone">Phone Number *</label><input class="form-input" type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required></div>
+          <div class="form-group">
+            <label class="form-label" for="service">Service Level *</label>
+            <select class="form-select" id="service" name="service" required>
+              <option value="">Select a service...</option>
+              <option value="free-distortion-audit">Free Distortion Audit — 1 Campaign, 30-Day Lookback (Free)</option>
+              <option value="quick-audit">Quick Audit — Up to 50 Campaigns ($2,500)</option>
+              <option value="standard-audit">Standard Audit — Up to 150 Campaigns ($5,000)</option>
+              <option value="deep-audit">Deep Audit — 150+ Campaigns ($10,000–$20,000)</option>
+              <option value="starter-retainer">Starter Retainer — Up to $10K/mo spend ($1,500/mo)</option>
+              <option value="growth-retainer">Growth Retainer — $10K–$50K/mo spend ($3,500/mo)</option>
+              <option value="scale-retainer">Scale Retainer — $50K–$150K/mo spend ($8,000/mo)</option>
+              <option value="enterprise-retainer">Enterprise Retainer — $150K+/mo spend ($15,000+/mo)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Who manages your ad accounts?</label>
+            <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:4px">
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:clamp(12px,1.4vw,13px);color:#b8c9e0"><input type="checkbox" name="account_manager" value="In-house" style="width:15px;height:15px;accent-color:#1655d8;cursor:pointer;flex-shrink:0"> In-house</label>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:clamp(12px,1.4vw,13px);color:#b8c9e0"><input type="checkbox" name="account_manager" value="Agency" style="width:15px;height:15px;accent-color:#1655d8;cursor:pointer;flex-shrink:0"> Agency</label>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:clamp(12px,1.4vw,13px);color:#b8c9e0"><input type="checkbox" name="account_manager" value="Both" style="width:15px;height:15px;accent-color:#1655d8;cursor:pointer;flex-shrink:0"> Both</label>
+            </div>
+          </div>
+          <div class="form-group"><label class="form-label" for="message">Tell us about your campaigns</label><textarea class="form-textarea" id="message" name="message" placeholder="What platforms are you running? Approximate monthly spend? What specific problem are you trying to solve?" style="min-height:80px"></textarea></div>
+          <div class="form-error" id="formError">Please fill in all required fields.</div>
+          <button class="form-submit" type="submit" id="formSubmit">Submit Request</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h4>Request Received</h4>
+          <p>We'll review your submission and reach out within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <img class="footer-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence">
+    <span class="footer-text">Allocera Intelligence &middot; CDAI Engine &middot; alloceraintelligence.com</span>
+  </div>
+  <span class="footer-right">&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions" style="color:var(--dim);text-decoration:none">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms" style="color:var(--dim);text-decoration:none">Terms of Service</a> &middot; Built by <a href="https://fullsendorganicks.com/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none">FSO</a></span>
+</footer>
+
+<script>
+(function(){
+  function svh(){document.documentElement.style.setProperty('--vh',window.innerHeight*.01+'px')}
+  svh();window.addEventListener('resize',svh);
+  var obs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
+  var toggle=document.getElementById('navToggle'),menu=document.getElementById('mobileMenu');
+  toggle.addEventListener('click',function(){toggle.classList.toggle('open');menu.classList.toggle('open')});
+  function closeMobile(){toggle.classList.remove('open');menu.classList.remove('open')}
+  window.closeMobile=closeMobile;
+  document.addEventListener('click',function(e){if(!toggle.contains(e.target)&&!menu.contains(e.target))closeMobile()});
+  document.getElementById('intakeForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var form=this,err=document.getElementById('formError'),btn=document.getElementById('formSubmit'),valid=true;
+    form.querySelectorAll('[required]').forEach(function(f){if(!f.value.trim()){valid=false;f.style.borderColor='#D63050'}else{f.style.borderColor=''}});
+    if(!valid){err.textContent='Please fill in all required fields.';err.style.display='block';return}
+    err.style.display='none';btn.disabled=true;btn.textContent='Submitting...';
+    fetch('https://formspree.io/f/xwvwlzzq',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    .then(function(r){return r.json()})
+    .then(function(res){
+      if(res.ok||res.success){form.style.display='none';document.getElementById('formSuccess').style.display='block'}
+      else{btn.disabled=false;btn.textContent='Submit Request';err.textContent='Submission failed. Please email alloceraintelligence@gmail.com directly.';err.style.display='block'}
+    })
+    .catch(function(){btn.disabled=false;btn.textContent='Submit Request';err.textContent='Network error. Please email alloceraintelligence@gmail.com directly.';err.style.display='block'});
+  });
+})();
+</script>
+</body>
+</html>

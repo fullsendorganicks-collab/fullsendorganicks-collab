@@ -1,5 +1,7 @@
 # Rank Math box: /dashboard/ (page 478)
 
+**v2, Sept 28: built in the site's own page design** (same nav, hero background, blue buttons, fade-ins and footer as the original page). It keeps the real dashboard video and screenshot, adds FAQ schema, and keeps the intake form. The form's service list no longer shows prices, since pricing is on hold.
+
 **Old title:** Campaign Analytics Dashboard — CDAI Engine | Allocera Intelligence
 
 | Field | Value |
@@ -17,7 +19,7 @@
 - keyword "dashboard"
 - the old description ("fourteen panels… every cost layer")
 
-**The old page had a free-audit intake form.** It's replaced by Get Started. Keep the form widget below the HTML block only if you want it.
+**Intake form:** kept, same Formspree endpoint. The service options are now: Free Distortion Audit, getting started, pricing question, partnership.
 
 ## Research (Sept 28)
 - **Keywords:**

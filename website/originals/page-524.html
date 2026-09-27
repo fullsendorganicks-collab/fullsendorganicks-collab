@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Welcome to The Margin Gap | Allocera Intelligence</title>
+<meta name="description" content="You're subscribed to The Margin Gap — marketing margin intelligence for paid acquisition operators.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#010914;--surface:#071530;--border:#102040;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--green:#0BAF92;--text:#EBF0FF;--muted:#9AAECE;--dim:#4A6488}
+html{scroll-behavior:smooth}
+body{background:#010914!important;color:#ebf0ff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background-image:url(https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png);background-size:cover;background-position:center;opacity:.08;z-index:0;pointer-events:none}
+body>*{position:relative;z-index:1}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:clamp(52px,7vh,64px);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,64px);background:rgba(1,9,20,.95);border-bottom:1px solid #102040;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo{width:26px;height:26px;object-fit:contain;flex-shrink:0;display:block}
+.nav-name{font-size:clamp(12px,1.7vw,14px);font-weight:600;letter-spacing:.04em;color:#ebf0ff}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-links{display:flex;align-items:center;gap:clamp(16px,2.5vw,32px);list-style:none}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#9aaece}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:#1655d8;color:#ebf0ff;border:none;padding:9px 18px;border-radius:2px;cursor:pointer;transition:background .2s;text-decoration:none;white-space:nowrap}
+.nav-cta:hover{background:#1d67f0}
+.nav-portal{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4080f0;border:1px solid rgba(64,128,240,.35);padding:8px 16px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
+.nav-portal:hover{background:rgba(64,128,240,.1);border-color:#4080f0}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:0 0;border:none;cursor:pointer;padding:4px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#ebf0ff;border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:clamp(52px,7vh,64px);left:0;right:0;z-index:99;background:rgba(1,9,20,.98);border-bottom:1px solid #102040;backdrop-filter:blur(20px);flex-direction:column;padding:16px 24px 24px;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#9aaece;text-decoration:none;padding:14px 0;border-bottom:1px solid #102040;transition:color .2s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:#ebf0ff}
+.mobile-menu .mobile-cta{margin-top:12px;background:#1655d8;color:#fff;text-align:center;padding:16px;border-radius:2px;font-size:13px;font-weight:700;border:none;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+.mobile-menu .mobile-portal{color:#4080f0;text-align:center;padding:14px;border:1px solid rgba(64,128,240,.3);border-radius:3px;font-size:12px}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-cta{display:none}}
+@media(max-width:480px){.nav-portal{font-size:9px;padding:7px 12px}}
+/* HERO */
+.welcome-hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:calc(clamp(52px,7vh,64px) + 40px) clamp(16px,5vw,64px) 80px;text-align:center}
+.welcome-inner{max-width:680px;margin:0 auto}
+.welcome-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.25em;color:#C4A040;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:10px}
+.welcome-tag::before,.welcome-tag::after{content:'';width:24px;height:1px;background:#C4A040;display:block}
+.welcome-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,9vw,96px);font-weight:300;line-height:.95;color:#ebf0ff;margin-bottom:24px;letter-spacing:-.02em}
+.welcome-headline span{color:#C4A040}
+.welcome-sub{font-size:clamp(15px,1.8vw,18px);color:#9AAECE;line-height:1.75;font-weight:300;max-width:520px;margin:0 auto 48px}
+.welcome-divider{width:48px;height:1px;background:rgba(196,160,64,.3);margin:0 auto 48px}
+/* CARDS */
+.welcome-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px;text-align:left}
+.welcome-card{background:rgba(7,21,48,.7);border:1px solid rgba(26,48,96,.8);border-radius:2px;padding:clamp(24px,3vw,32px);text-decoration:none;display:block;transition:all .25s;position:relative;overflow:hidden}
+.welcome-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .25s}
+.welcome-card.primary::before{background:linear-gradient(90deg,#C4A040,transparent)}
+.welcome-card.secondary::before{background:linear-gradient(90deg,#1655D8,transparent)}
+.welcome-card:hover{transform:translateY(-3px)}
+.welcome-card.primary:hover{border-color:rgba(196,160,64,.4);box-shadow:0 8px 40px rgba(196,160,64,.08)}
+.welcome-card.secondary:hover{border-color:rgba(22,85,216,.4);box-shadow:0 8px 40px rgba(22,85,216,.1)}
+.welcome-card:hover::before{opacity:1}
+.card-eyebrow{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;display:block}
+.welcome-card.primary .card-eyebrow{color:#C4A040}
+.welcome-card.secondary .card-eyebrow{color:#4080f0}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.2vw,22px);color:#ebf0ff;font-weight:400;line-height:1.25;margin-bottom:10px}
+.card-desc{font-size:13px;color:#7a95b8;line-height:1.65;margin-bottom:16px}
+.card-link{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+.welcome-card.primary .card-link{color:#C4A040}
+.welcome-card.secondary .card-link{color:#4080f0}
+/* NICK NOTE */
+.nick-note{background:rgba(7,21,48,.5);border:1px solid rgba(154,174,206,.08);border-radius:2px;padding:clamp(20px,3vw,28px);max-width:520px;margin:0 auto;text-align:left}
+.nick-note p{font-size:14px;color:#9AAECE;line-height:1.75;margin-bottom:12px}
+.nick-note p:last-child{margin-bottom:0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:#4A6488;text-transform:uppercase}
+/* FOOTER */
+footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #102040;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#010914}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-logo{width:18px;height:18px;object-fit:contain;flex-shrink:0}
+.footer-text{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.08em}
+.footer-right{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.06em;text-align:right}
+@media(max-width:560px){
+  .welcome-cards{grid-template-columns:1fr}
+  .welcome-headline{font-size:64px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/">
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence">
+    Allocera Intelligence
+  </a>
+    <ul>
+      <li><a href="/how-it-works/">How It Works</a></li>
+      <li><a href="/proof/">Proof</a></li>
+      <li><a href="/dashboard/">Dashboard</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <a href="https://cdai-portal.vercel.app" target="_blank">Client Portal</a>
+    <a href="/pricing/">Request Audit</a>
+    <button id="navToggle" aria-label="Toggle menu"></button>
+</nav>
+  <a href="/how-it-works/" onclick="closeMobile()">How It Works</a>
+  <a href="/proof/" onclick="closeMobile()">Proof</a>
+  <a href="/dashboard/" onclick="closeMobile()">Dashboard</a>
+  <a href="/pricing/" onclick="closeMobile()">Pricing</a>
+  <a href="/about/" onclick="closeMobile()">About</a>
+  <a href="/blog/" onclick="closeMobile()">Blog</a>
+  <a href="https://cdai-portal.vercel.app" target="_blank">Client Portal</a>
+  <a href="/pricing/" onclick="closeMobile()">Request Audit</a>
+<section>
+    The Margin Gap
+    <h1>You&rsquo;re in.</h1>
+    <p>Every two weeks — the cost layers your ad dashboard was never built to show. No fluff, no filler. Just the math most marketing teams never see.</p>
+      <a href="/marketing-margin-distortion-index/">
+        Start Here
+        The 2026 Marketing Margin Distortion Index
+        <p>The first published benchmark of the gap between dashboard CPL and reconciled true CAC — across verticals.</p>
+        Read the Index &rarr;
+      </a>
+      <a href="/pricing/">
+        Free &middot; No Commitment
+        Request a Free Distortion Audit
+        <p>One campaign. 90-day lookback. We reconcile all seven cost layers and show you the real number.</p>
+        Request the Audit &rarr;
+      </a>
+      <p>If you have a question about your campaigns, a vertical we haven&rsquo;t covered, or just want to talk through the numbers &mdash; reply to any issue. I read every one.</p>
+      <p>— Nick Baum &middot; Founder, Allocera Intelligence</p>
+</section>
+<footer>
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence">
+    Allocera Intelligence &middot; CDAI Engine &middot; alloceraintelligence.com
+  &copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions" style="color:var(--dim);text-decoration:none">Privacy Policy</a>
+</footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Welcome to The Margin Gap | Allocera Intelligence</title>
+<meta name="description" content="You're subscribed to The Margin Gap — marketing margin intelligence for paid acquisition operators.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#010914;--surface:#071530;--border:#102040;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--green:#0BAF92;--text:#EBF0FF;--muted:#9AAECE;--dim:#4A6488}
+html{scroll-behavior:smooth}
+body{background:#010914!important;color:#ebf0ff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+
+body::before{content:'';position:fixed;inset:0;background-image:url(https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png);background-size:cover;background-position:center;opacity:.08;z-index:0;pointer-events:none}
+body>*{position:relative;z-index:1}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:clamp(52px,7vh,64px);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,64px);background:rgba(1,9,20,.95);border-bottom:1px solid #102040;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo{width:26px;height:26px;object-fit:contain;flex-shrink:0;display:block}
+.nav-name{font-size:clamp(12px,1.7vw,14px);font-weight:600;letter-spacing:.04em;color:#ebf0ff}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-links{display:flex;align-items:center;gap:clamp(16px,2.5vw,32px);list-style:none}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#9aaece}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:#1655d8;color:#ebf0ff;border:none;padding:9px 18px;border-radius:2px;cursor:pointer;transition:background .2s;text-decoration:none;white-space:nowrap}
+.nav-cta:hover{background:#1d67f0}
+.nav-portal{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4080f0;border:1px solid rgba(64,128,240,.35);padding:8px 16px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
+.nav-portal:hover{background:rgba(64,128,240,.1);border-color:#4080f0}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:0 0;border:none;cursor:pointer;padding:4px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#ebf0ff;border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:clamp(52px,7vh,64px);left:0;right:0;z-index:99;background:rgba(1,9,20,.98);border-bottom:1px solid #102040;backdrop-filter:blur(20px);flex-direction:column;padding:16px 24px 24px;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#9aaece;text-decoration:none;padding:14px 0;border-bottom:1px solid #102040;transition:color .2s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:#ebf0ff}
+.mobile-menu .mobile-cta{margin-top:12px;background:#1655d8;color:#fff;text-align:center;padding:16px;border-radius:2px;font-size:13px;font-weight:700;border:none;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+.mobile-menu .mobile-portal{color:#4080f0;text-align:center;padding:14px;border:1px solid rgba(64,128,240,.3);border-radius:3px;font-size:12px}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-cta{display:none}}
+@media(max-width:480px){.nav-portal{font-size:9px;padding:7px 12px}}
+
+/* HERO */
+.welcome-hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:calc(clamp(52px,7vh,64px) + 40px) clamp(16px,5vw,64px) 80px;text-align:center}
+.welcome-inner{max-width:680px;margin:0 auto}
+.welcome-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.25em;color:#C4A040;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:10px}
+.welcome-tag::before,.welcome-tag::after{content:'';width:24px;height:1px;background:#C4A040;display:block}
+.welcome-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,9vw,96px);font-weight:300;line-height:.95;color:#ebf0ff;margin-bottom:24px;letter-spacing:-.02em}
+.welcome-headline span{color:#C4A040}
+.welcome-sub{font-size:clamp(15px,1.8vw,18px);color:#9AAECE;line-height:1.75;font-weight:300;max-width:520px;margin:0 auto 48px}
+.welcome-divider{width:48px;height:1px;background:rgba(196,160,64,.3);margin:0 auto 48px}
+
+/* CARDS */
+.welcome-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px;text-align:left}
+.welcome-card{background:rgba(7,21,48,.7);border:1px solid rgba(26,48,96,.8);border-radius:2px;padding:clamp(24px,3vw,32px);text-decoration:none;display:block;transition:all .25s;position:relative;overflow:hidden}
+.welcome-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .25s}
+.welcome-card.primary::before{background:linear-gradient(90deg,#C4A040,transparent)}
+.welcome-card.secondary::before{background:linear-gradient(90deg,#1655D8,transparent)}
+.welcome-card:hover{transform:translateY(-3px)}
+.welcome-card.primary:hover{border-color:rgba(196,160,64,.4);box-shadow:0 8px 40px rgba(196,160,64,.08)}
+.welcome-card.secondary:hover{border-color:rgba(22,85,216,.4);box-shadow:0 8px 40px rgba(22,85,216,.1)}
+.welcome-card:hover::before{opacity:1}
+.card-eyebrow{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;display:block}
+.welcome-card.primary .card-eyebrow{color:#C4A040}
+.welcome-card.secondary .card-eyebrow{color:#4080f0}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.2vw,22px);color:#ebf0ff;font-weight:400;line-height:1.25;margin-bottom:10px}
+.card-desc{font-size:13px;color:#7a95b8;line-height:1.65;margin-bottom:16px}
+.card-link{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+.welcome-card.primary .card-link{color:#C4A040}
+.welcome-card.secondary .card-link{color:#4080f0}
+
+/* NICK NOTE */
+.nick-note{background:rgba(7,21,48,.5);border:1px solid rgba(154,174,206,.08);border-radius:2px;padding:clamp(20px,3vw,28px);max-width:520px;margin:0 auto;text-align:left}
+.nick-note p{font-size:14px;color:#9AAECE;line-height:1.75;margin-bottom:12px}
+.nick-note p:last-child{margin-bottom:0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:#4A6488;text-transform:uppercase}
+
+/* FOOTER */
+footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #102040;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#010914}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-logo{width:18px;height:18px;object-fit:contain;flex-shrink:0}
+.footer-text{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.08em}
+.footer-right{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.06em;text-align:right}
+
+@media(max-width:560px){
+  .welcome-cards{grid-template-columns:1fr}
+  .welcome-headline{font-size:64px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">
+    <img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence">
+    <span class="nav-name">Allocera Intelligence</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/how-it-works/">How It Works</a></li>
+      <li><a href="/proof/">Proof</a></li>
+      <li><a href="/dashboard/">Dashboard</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <a class="nav-portal" href="https://cdai-portal.vercel.app" target="_blank">Client Portal</a>
+    <a class="nav-cta" href="/pricing/">Request Audit</a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/how-it-works/" onclick="closeMobile()">How It Works</a>
+  <a href="/proof/" onclick="closeMobile()">Proof</a>
+  <a href="/dashboard/" onclick="closeMobile()">Dashboard</a>
+  <a href="/pricing/" onclick="closeMobile()">Pricing</a>
+  <a href="/about/" onclick="closeMobile()">About</a>
+  <a href="/blog/" onclick="closeMobile()">Blog</a>
+  <a href="https://cdai-portal.vercel.app" target="_blank" class="mobile-portal">Client Portal</a>
+  <a href="/pricing/" class="mobile-cta" onclick="closeMobile()">Request Audit</a>
+</div>
+
+<section class="welcome-hero">
+  <div class="welcome-inner">
+
+    <div class="welcome-tag">The Margin Gap</div>
+
+    <h1 class="welcome-headline">You&rsquo;re <span>in.</span></h1>
+
+    <p class="welcome-sub">Every two weeks — the cost layers your ad dashboard was never built to show. No fluff, no filler. Just the math most marketing teams never see.</p>
+
+    <div class="welcome-divider"></div>
+
+    <div class="welcome-cards">
+
+      <a href="/marketing-margin-distortion-index/" class="welcome-card primary">
+        <span class="card-eyebrow">Start Here</span>
+        <div class="card-title">The 2026 Marketing Margin Distortion Index</div>
+        <p class="card-desc">The first published benchmark of the gap between dashboard CPL and reconciled true CAC — across verticals.</p>
+        <span class="card-link">Read the Index &rarr;</span>
+      </a>
+
+      <a href="/pricing/" class="welcome-card secondary">
+        <span class="card-eyebrow">Free &middot; No Commitment</span>
+        <div class="card-title">Request a Free Distortion Audit</div>
+        <p class="card-desc">One campaign. 90-day lookback. We reconcile all seven cost layers and show you the real number.</p>
+        <span class="card-link">Request the Audit &rarr;</span>
+      </a>
+
+    </div>
+
+    <div class="nick-note">
+      <p>If you have a question about your campaigns, a vertical we haven&rsquo;t covered, or just want to talk through the numbers &mdash; reply to any issue. I read every one.</p>
+      <p>— Nick Baum &middot; Founder, Allocera Intelligence</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <img class="footer-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence">
+    <span class="footer-text">Allocera Intelligence &middot; CDAI Engine &middot; alloceraintelligence.com</span>
+  </div>
+  <span class="footer-right">&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions" style="color:var(--dim);text-decoration:none">Privacy Policy</a></span>
+</footer>
+
+<script>
+(function(){
+  var toggle=document.getElementById('navToggle'),menu=document.getElementById('mobileMenu');
+  toggle.addEventListener('click',function(){toggle.classList.toggle('open');menu.classList.toggle('open')});
+  function closeMobile(){toggle.classList.remove('open');menu.classList.remove('open')}
+  window.closeMobile=closeMobile;
+  document.addEventListener('click',function(e){if(!toggle.contains(e.target)&&!menu.contains(e.target))closeMobile()});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>CDAI Engine OAuth Validation Case Study #2 | Allocera Intelligence</title>
+<meta name="description" content="See how the CDAI Engine validated OAuth authentication with real HubSpot data. 47 contacts tested, multi-tenant isolation verified, data quality proven in production. Complete CDAI Engine OAuth validation case study."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+--bg-primary:#0A0E1A;--bg-secondary:#111827;--bg-surface:rgba(17,24,39,0.6);
+--text-primary:#F9FAFB;--text-secondary:#D1D5DB;--text-muted:#9CA3AF;
+--accent-blue:#3B82F6;--accent-blue-bright:#60A5FA;--accent-gold:#F59E0B;
+--accent-green:#10B981;--accent-red:#EF4444;
+--border:rgba(255,255,255,0.1);--border-bright:rgba(255,255,255,0.2);
+}
+html{scroll-behavior:smooth;}
+body{background:#0A0E1A;color:#F9FAFB;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.7;position:relative;overflow-x:hidden;}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url('https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png');background-size:cover;background-position:center;background-attachment:fixed;opacity:0.4;z-index:-1;}
+body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(10,14,26,0.5) 0%,rgba(10,14,26,0.85) 100%);z-index:-1;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,14,26,0.95);border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+.nav-container{max-width:1400px;margin:0 auto;padding:clamp(16px,2vw,24px) clamp(20px,5vw,60px);display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:16px;text-decoration:none;}
+.nav-logo{width:clamp(36px,5vw,48px);height:clamp(36px,5vw,48px);object-fit:contain;flex-shrink:0;}
+.nav-company{font-size:clamp(14px,1.8vw,18px);font-weight:600;letter-spacing:0.02em;color:#F9FAFB;}
+.nav-back{font-size:clamp(12px,1.4vw,14px);font-weight:500;color:#60A5FA;text-decoration:none;padding:10px 20px;border:1px solid rgba(96,165,250,0.3);border-radius:6px;transition:all 0.3s ease;}
+.nav-back:hover{background:rgba(59,130,246,0.1);border-color:#60A5FA;transform:translateY(-1px);}
+main{max-width:1100px;margin:0 auto;padding:clamp(100px,15vh,140px) clamp(24px,5vw,60px) clamp(80px,12vh,120px);}
+.hero{text-align:center;margin-bottom:clamp(60px,10vh,100px);}
+h1{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,72px);font-weight:700;line-height:1.1;color:#F9FAFB;margin-bottom:clamp(20px,3vh,32px);letter-spacing:-0.02em;}
+h1 em{font-style:italic;color:#60A5FA;}
+.meta-grid{display:flex;gap:clamp(16px,3vw,32px);flex-wrap:wrap;justify-content:center;margin-bottom:clamp(32px,5vh,48px);padding-bottom:clamp(24px,4vh,40px);border-bottom:1px solid rgba(255,255,255,0.1);}
+.meta-item{font-size:clamp(11px,1.3vw,13px);letter-spacing:0.08em;text-transform:uppercase;color:#9CA3AF;font-weight:500;}
+.meta-item span{color:#60A5FA;font-weight:600;}
+.lead{font-size:clamp(16px,2.2vw,20px);color:#D1D5DB;line-height:1.8;max-width:900px;margin:0 auto clamp(40px,6vh,60px);}
+section{margin-bottom:clamp(60px,10vh,100px);}
+h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:700;color:#F9FAFB;margin-bottom:clamp(24px,4vh,40px);line-height:1.2;letter-spacing:-0.01em;}
+h3{font-family:'Inter',sans-serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#F9FAFB;margin:clamp(32px,5vh,48px) 0 clamp(16px,2.5vh,24px);letter-spacing:-0.01em;}
+p{font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;margin-bottom:clamp(20px,3vh,28px);}
+a.inline-link{color:#60A5FA;text-decoration:none;border-bottom:1px solid rgba(96,165,250,0.3);transition:all 0.2s ease;}
+a.inline-link:hover{color:#93C5FD;border-bottom-color:#93C5FD;}
+.test-grid{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,40px);margin:clamp(40px,6vh,60px) 0;}
+@media(min-width:768px){.test-grid{grid-template-columns:1fr 1fr;}}
+.test-card{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(24px,4vw,40px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:all 0.3s ease;position:relative;overflow:hidden;}
+.test-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#10B981,#3B82F6);opacity:0;transition:opacity 0.3s ease;}
+.test-card:hover{border-color:rgba(255,255,255,0.2);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3);}
+.test-card:hover::before{opacity:1;}
+.test-card.pass{border-left:3px solid #10B981;}
+.test-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:inline-block;padding:6px 12px;background:rgba(16,185,129,0.1);color:#10B981;border-radius:4px;font-weight:600;}
+.test-title{font-size:clamp(16px,2vw,20px);font-weight:700;color:#F9FAFB;margin-bottom:16px;line-height:1.3;}
+.test-result{font-size:clamp(13px,1.5vw,14px);color:#D1D5DB;line-height:1.7;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);}
+.callout{padding:clamp(24px,4vw,40px);background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.3);border-left:4px solid #3B82F6;border-radius:8px;margin:clamp(32px,5vh,48px) 0;}
+.callout strong{color:#60A5FA;font-weight:600;}
+.evidence{background:rgba(10,14,26,0.9);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:clamp(24px,4vw,36px);margin:clamp(32px,5vh,48px) 0;overflow-x:auto;}
+.evidence-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9CA3AF;margin-bottom:16px;font-weight:600;}
+.evidence-data{font-family:'Courier New',monospace;font-size:clamp(12px,1.4vw,13px);color:#D1D5DB;line-height:1.9;white-space:pre-wrap;}
+code{background:rgba(10,14,26,0.8);padding:3px 8px;border-radius:4px;font-family:'Courier New',monospace;font-size:clamp(12px,1.3vw,13px);color:#60A5FA;border:1px solid rgba(96,165,250,0.3);}
+ul{margin:clamp(20px,3vh,28px) 0;padding-left:clamp(24px,4vw,40px);}
+li{position:relative;margin-bottom:12px;font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;padding-left:12px;}
+li::before{content:'→';position:absolute;left:-20px;color:#3B82F6;font-weight:700;}
+li strong{color:#F9FAFB;font-weight:600;}
+.cta-section{margin:clamp(60px,10vh,100px) 0;padding:clamp(40px,6vw,60px);background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(16,185,129,0.1));border:1px solid rgba(255,255,255,0.15);border-radius:16px;text-align:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.cta-section h2{margin-top:0;margin-bottom:clamp(16px,2.5vh,24px);}
+.cta-section p{max-width:700px;margin-left:auto;margin-right:auto;margin-bottom:clamp(24px,4vh,32px);}
+.btn-primary{display:inline-block;font-size:clamp(12px,1.5vw,14px);letter-spacing:0.08em;text-transform:uppercase;background:linear-gradient(135deg,#3B82F6,#2563EB);color:#F9FAFB;border:none;padding:16px 40px;border-radius:8px;cursor:pointer;transition:all 0.3s ease;text-decoration:none;font-weight:600;box-shadow:0 10px 30px rgba(59,130,246,0.3);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(59,130,246,0.4);background:linear-gradient(135deg,#2563EB,#1D4ED8);}
+footer{margin-top:clamp(60px,10vh,100px);padding-top:clamp(32px,5vh,48px);border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:clamp(12px,1.4vw,13px);color:#9CA3AF;line-height:1.6;}
+footer a{color:#60A5FA;text-decoration:none;transition:color 0.2s ease;}
+footer a:hover{color:#93C5FD;}
+section{opacity:0;animation:fadeInUp 0.8s ease forwards;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+section:nth-child(1){animation-delay:0.1s;}section:nth-child(2){animation-delay:0.2s;}
+section:nth-child(3){animation-delay:0.3s;}section:nth-child(4){animation-delay:0.4s;}
+section:nth-child(5){animation-delay:0.5s;}section:nth-child(6){animation-delay:0.6s;}
+section:nth-child(7){animation-delay:0.7s;}section:nth-child(8){animation-delay:0.8s;}
+</style>
+</head>
+<body>
+<nav>
+<a href="https://alloceraintelligence.com">
+<img src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence"/>
+Allocera Intelligence
+</a>
+<a href="https://alloceraintelligence.com">← Back to Home</a>
+</nav>
+<main>
+<h1>CDAI Engine OAuth Validation: <em>Production Test Results</em></h1>
+Test Date: May 23, 2026
+Organization: Apex Care Solutions
+Platform: HubSpot
+Records Processed: 47 Contacts
+<p>The CDAI Engine OAuth validation demonstrates secure production testing with real client data. The engine successfully authenticated to HubSpot via OAuth, retrieved 47 real contacts, and enforced data quality standards. Multi-tenant isolation verified on production infrastructure with zero data leakage.</p>
+<section>
+<h2>CDAI Engine OAuth Validation: What This Test Proves</h2>
+<p>The CDAI Engine OAuth validation case study below showcases three critical production capabilities tested on real client data. This CDAI Engine OAuth validation was conducted within the Allocera Intelligence live environment. The CDAI Engine OAuth validation framework passed all requirements and demonstrated production-ready deployment.</p>
+<p>Read our first case study to see how CDAI Engine handles data quality enforcement with incomplete data across different platforms.</p>
+<a href="https://alloceraintelligence.com/home-sample/allocera-intelligence-case-study-proof/" style="margin-top:24px;">Read Case Study #1: Real Tests, Real Results</a>
+</section>
+<section>
+<h2>CDAI Engine OAuth Validation: Understanding OAuth Authentication</h2>
+<p>CDAI Engine OAuth validation proves the engine implements secure OAuth 2.0 authentication standards. According to <a href="https://oauth.net/" target="_blank" rel="noopener">OAuth standards</a>, the CDAI Engine OAuth flow separates client authentication from user credential exposure. This CDAI Engine OAuth implementation allows clients to authorize once while the engine manages token lifecycle securely.</p>
+<p>Unlike legacy API key approaches, the CDAI Engine OAuth validation demonstrates how modern SaaS products handle multi-tenant authentication. Each client's CDAI Engine OAuth token is stored independently and refreshed automatically without requiring credential re-entry.</p>
+</section>
+<section>
+<h2>CDAI Engine OAuth Validation: The Complete Test Results</h2>
+✓ OAuth Authentication
+Secure API Connection via Application Credentials
+The CDAI Engine OAuth validation began with successful authentication to HubSpot's OAuth 2.0 endpoint. The engine exchanged application-level credentials for an access token and stored that token securely in the multi-tenant database. This CDAI Engine OAuth authentication proved the engine authenticates using application credentials rather than user credentials, enabling scalable SaaS architecture.
+✓ Data Ingestion
+Successfully Retrieved 47 Real Contacts from Production HubSpot
+Using the CDAI Engine OAuth token, the engine queried HubSpot's Contacts API endpoint. The CDAI Engine OAuth integration successfully returned 47 contact records from Apex Care Solutions' production account. This CDAI Engine OAuth data ingestion confirmed the token has appropriate scopes and permissions for lead data retrieval.
+✓ Campaign Attribution Detection
+Tested Detection Logic Against Empty UTM Parameters
+The CDAI Engine OAuth validation tested campaign attribution detection on all 47 contacts. The engine's CDAI Engine OAuth detection logic identified that all 47 contacts had empty campaign attribution fields. Rather than inventing campaign assignments, the CDAI Engine OAuth system correctly flagged this as a data quality gap.
+✓ Health Monitor & Data Quality
+Refused to Issue Directives on Incomplete Data
+The CDAI Engine OAuth health monitor evaluated the incomplete attribution and set <code>directive_safe = FALSE</code>. No directives were issued. This CDAI Engine OAuth validation proves the engine's refusal-to-fabricate principle operates consistently. Multi-tenant isolation verified: this organization's data quality evaluation ran independently without affecting other organizations in the system.
+<strong>What This CDAI Engine OAuth Validation Proves:</strong><br>
+• CDAI Engine OAuth ingests real platform data without fabrication<br>
+• The engine does not invent values for missing data layers<br>
+• The health monitor functions as a safety gate — directives do not issue on unreliable data<br>
+• Multi-tenant data isolation works on real data in production
+</section>
+<section>
+<h2>CDAI Engine OAuth Validation: Production Evidence and Logs</h2>
+CDAI Engine OAuth Authentication Log
+2026-05-23 18:51:06 UTC
+[OAUTH] CDAI Engine OAuth authorization flow initiated
+→ Client redirected to HubSpot OAuth authorize endpoint
+→ Authorization code received from HubSpot
+→ Code exchanged for access_token via CDAI Engine OAuth callback
+CDAI Engine OAuth Token Storage:
+→ Stored in oauth_tokens table
+→ org_id: 8d9b345c-4617-4d6a-977a-8fea8684bc61
+→ platform: hubspot
+→ Token expires: 2026-05-24
+CDAI Engine OAuth Contact Ingestion Log
+2026-05-23 18:56:14 UTC
+[HUBSPOT] CDAI Engine OAuth sync initiated
+→ Retrieved 47 contacts via CDAI Engine OAuth token
+→ Campaign attribution detection started
+CDAI Engine OAuth Processing Results:
+→ All 47 contacts analyzed
+→ All 47 contacts missing campaign attribution
+→ Data quality gate enforced
+→ Zero records inserted (attribution requirement)
+CDAI Engine OAuth Sync Complete: 0 contacts ingested
+Result: Data integrity maintained
+</section>
+<section>
+<h2>CDAI Engine OAuth Validation: Enterprise Authorization Patterns</h2>
+<p>The CDAI Engine OAuth validation demonstrates patterns used by enterprise platforms like <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_permissions.htm" target="_blank" rel="noopener">Salesforce OAuth</a>. The CDAI Engine OAuth implementation separates authentication (who you are) from authorization (what you can access).</p>
+<p>This CDAI Engine OAuth approach is the industry standard for multi-tenant SaaS products. Each client's CDAI Engine OAuth token is scoped to their organization only. No client can access another client's data, even if they compromise the API endpoint.</p>
+<h3>Why CDAI Engine OAuth Matters</h3>
+<p>OAuth is the foundation of a scalable SaaS product. Without CDAI Engine OAuth, you're asking every client to give you their API credentials and manage them manually. With CDAI Engine OAuth, clients authorize once and you handle everything securely.</p>
+</section>
+<section>
+<h2>CDAI Engine OAuth Validation: Technical Architecture</h2>
+<p>The CDAI Engine OAuth implementation is built on production-grade multi-tenant architecture:</p>
+<ul>
+<li><strong>Database:</strong> Supabase (PostgreSQL) with Row-Level Security for CDAI Engine OAuth isolation</li>
+<li><strong>Backend:</strong> Python on Render with CDAI Engine OAuth endpoints</li>
+<li><strong>Token Storage:</strong> Dedicated oauth_tokens table with automatic expiration</li>
+<li><strong>Health Monitoring:</strong> Automated CDAI Engine OAuth checks running continuously</li>
+<li><strong>Security:</strong> Zero consumer PII stored. CDAI Engine OAuth compliant with data protection standards.</li>
+</ul>
+<p>The CDAI Engine OAuth framework supports multi-platform integration. OAuth implementations for Meta, Google Ads, and LinkedIn follow the same pattern as this CDAI Engine OAuth validation and will be tested in upcoming case studies.</p>
+</section>
+<h2>Ready for CDAI Engine OAuth Integration?</h2>
+<p>The CDAI Engine OAuth validation is complete and production-ready. Once your campaigns include proper UTM tracking, the CDAI Engine will automatically detect which platforms and campaigns generate true margin.</p>
+<a href="https://alloceraintelligence.com">← Back to Home</a>
+<footer>
+CDAI Engine OAuth Validation Case Study #2 | May 23, 2026<br>
+<a href="https://alloceraintelligence.com">Allocera Intelligence LLC</a> | True Contribution Margin Analytics
+</footer>
+</main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>CDAI Engine OAuth Validation Case Study #2 | Allocera Intelligence</title>
+<meta name="description" content="See how the CDAI Engine validated OAuth authentication with real HubSpot data. 47 contacts tested, multi-tenant isolation verified, data quality proven in production. Complete CDAI Engine OAuth validation case study."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+--bg-primary:#0A0E1A;--bg-secondary:#111827;--bg-surface:rgba(17,24,39,0.6);
+--text-primary:#F9FAFB;--text-secondary:#D1D5DB;--text-muted:#9CA3AF;
+--accent-blue:#3B82F6;--accent-blue-bright:#60A5FA;--accent-gold:#F59E0B;
+--accent-green:#10B981;--accent-red:#EF4444;
+--border:rgba(255,255,255,0.1);--border-bright:rgba(255,255,255,0.2);
+}
+html{scroll-behavior:smooth;}
+body{background:#0A0E1A;color:#F9FAFB;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.7;position:relative;overflow-x:hidden;}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url('https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png');background-size:cover;background-position:center;background-attachment:fixed;opacity:0.4;z-index:-1;}
+body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(10,14,26,0.5) 0%,rgba(10,14,26,0.85) 100%);z-index:-1;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,14,26,0.95);border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+.nav-container{max-width:1400px;margin:0 auto;padding:clamp(16px,2vw,24px) clamp(20px,5vw,60px);display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:16px;text-decoration:none;}
+.nav-logo{width:clamp(36px,5vw,48px);height:clamp(36px,5vw,48px);object-fit:contain;flex-shrink:0;}
+.nav-company{font-size:clamp(14px,1.8vw,18px);font-weight:600;letter-spacing:0.02em;color:#F9FAFB;}
+.nav-back{font-size:clamp(12px,1.4vw,14px);font-weight:500;color:#60A5FA;text-decoration:none;padding:10px 20px;border:1px solid rgba(96,165,250,0.3);border-radius:6px;transition:all 0.3s ease;}
+.nav-back:hover{background:rgba(59,130,246,0.1);border-color:#60A5FA;transform:translateY(-1px);}
+main{max-width:1100px;margin:0 auto;padding:clamp(100px,15vh,140px) clamp(24px,5vw,60px) clamp(80px,12vh,120px);}
+.hero{text-align:center;margin-bottom:clamp(60px,10vh,100px);}
+h1{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,72px);font-weight:700;line-height:1.1;color:#F9FAFB;margin-bottom:clamp(20px,3vh,32px);letter-spacing:-0.02em;}
+h1 em{font-style:italic;color:#60A5FA;}
+.meta-grid{display:flex;gap:clamp(16px,3vw,32px);flex-wrap:wrap;justify-content:center;margin-bottom:clamp(32px,5vh,48px);padding-bottom:clamp(24px,4vh,40px);border-bottom:1px solid rgba(255,255,255,0.1);}
+.meta-item{font-size:clamp(11px,1.3vw,13px);letter-spacing:0.08em;text-transform:uppercase;color:#9CA3AF;font-weight:500;}
+.meta-item span{color:#60A5FA;font-weight:600;}
+.lead{font-size:clamp(16px,2.2vw,20px);color:#D1D5DB;line-height:1.8;max-width:900px;margin:0 auto clamp(40px,6vh,60px);}
+section{margin-bottom:clamp(60px,10vh,100px);}
+h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:700;color:#F9FAFB;margin-bottom:clamp(24px,4vh,40px);line-height:1.2;letter-spacing:-0.01em;}
+h3{font-family:'Inter',sans-serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#F9FAFB;margin:clamp(32px,5vh,48px) 0 clamp(16px,2.5vh,24px);letter-spacing:-0.01em;}
+p{font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;margin-bottom:clamp(20px,3vh,28px);}
+a.inline-link{color:#60A5FA;text-decoration:none;border-bottom:1px solid rgba(96,165,250,0.3);transition:all 0.2s ease;}
+a.inline-link:hover{color:#93C5FD;border-bottom-color:#93C5FD;}
+.test-grid{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,40px);margin:clamp(40px,6vh,60px) 0;}
+@media(min-width:768px){.test-grid{grid-template-columns:1fr 1fr;}}
+.test-card{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(24px,4vw,40px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:all 0.3s ease;position:relative;overflow:hidden;}
+.test-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#10B981,#3B82F6);opacity:0;transition:opacity 0.3s ease;}
+.test-card:hover{border-color:rgba(255,255,255,0.2);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3);}
+.test-card:hover::before{opacity:1;}
+.test-card.pass{border-left:3px solid #10B981;}
+.test-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:inline-block;padding:6px 12px;background:rgba(16,185,129,0.1);color:#10B981;border-radius:4px;font-weight:600;}
+.test-title{font-size:clamp(16px,2vw,20px);font-weight:700;color:#F9FAFB;margin-bottom:16px;line-height:1.3;}
+.test-result{font-size:clamp(13px,1.5vw,14px);color:#D1D5DB;line-height:1.7;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);}
+.callout{padding:clamp(24px,4vw,40px);background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.3);border-left:4px solid #3B82F6;border-radius:8px;margin:clamp(32px,5vh,48px) 0;}
+.callout strong{color:#60A5FA;font-weight:600;}
+.evidence{background:rgba(10,14,26,0.9);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:clamp(24px,4vw,36px);margin:clamp(32px,5vh,48px) 0;overflow-x:auto;}
+.evidence-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9CA3AF;margin-bottom:16px;font-weight:600;}
+.evidence-data{font-family:'Courier New',monospace;font-size:clamp(12px,1.4vw,13px);color:#D1D5DB;line-height:1.9;white-space:pre-wrap;}
+code{background:rgba(10,14,26,0.8);padding:3px 8px;border-radius:4px;font-family:'Courier New',monospace;font-size:clamp(12px,1.3vw,13px);color:#60A5FA;border:1px solid rgba(96,165,250,0.3);}
+ul{margin:clamp(20px,3vh,28px) 0;padding-left:clamp(24px,4vw,40px);}
+li{position:relative;margin-bottom:12px;font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;padding-left:12px;}
+li::before{content:'→';position:absolute;left:-20px;color:#3B82F6;font-weight:700;}
+li strong{color:#F9FAFB;font-weight:600;}
+.cta-section{margin:clamp(60px,10vh,100px) 0;padding:clamp(40px,6vw,60px);background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(16,185,129,0.1));border:1px solid rgba(255,255,255,0.15);border-radius:16px;text-align:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.cta-section h2{margin-top:0;margin-bottom:clamp(16px,2.5vh,24px);}
+.cta-section p{max-width:700px;margin-left:auto;margin-right:auto;margin-bottom:clamp(24px,4vh,32px);}
+.btn-primary{display:inline-block;font-size:clamp(12px,1.5vw,14px);letter-spacing:0.08em;text-transform:uppercase;background:linear-gradient(135deg,#3B82F6,#2563EB);color:#F9FAFB;border:none;padding:16px 40px;border-radius:8px;cursor:pointer;transition:all 0.3s ease;text-decoration:none;font-weight:600;box-shadow:0 10px 30px rgba(59,130,246,0.3);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(59,130,246,0.4);background:linear-gradient(135deg,#2563EB,#1D4ED8);}
+footer{margin-top:clamp(60px,10vh,100px);padding-top:clamp(32px,5vh,48px);border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:clamp(12px,1.4vw,13px);color:#9CA3AF;line-height:1.6;}
+footer a{color:#60A5FA;text-decoration:none;transition:color 0.2s ease;}
+footer a:hover{color:#93C5FD;}
+section{opacity:0;animation:fadeInUp 0.8s ease forwards;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+section:nth-child(1){animation-delay:0.1s;}section:nth-child(2){animation-delay:0.2s;}
+section:nth-child(3){animation-delay:0.3s;}section:nth-child(4){animation-delay:0.4s;}
+section:nth-child(5){animation-delay:0.5s;}section:nth-child(6){animation-delay:0.6s;}
+section:nth-child(7){animation-delay:0.7s;}section:nth-child(8){animation-delay:0.8s;}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-container">
+<a href="https://alloceraintelligence.com" class="nav-brand">
+<img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence"/>
+<span class="nav-company">Allocera Intelligence</span>
+</a>
+<a href="https://alloceraintelligence.com" class="nav-back">← Back to Home</a>
+</div>
+</nav>
+
+<main>
+
+<div class="hero">
+<h1>CDAI Engine OAuth Validation: <em>Production Test Results</em></h1>
+<div class="meta-grid">
+<div class="meta-item">Test Date: <span>May 23, 2026</span></div>
+<div class="meta-item">Organization: <span>Apex Care Solutions</span></div>
+<div class="meta-item">Platform: <span>HubSpot</span></div>
+<div class="meta-item">Records Processed: <span>47 Contacts</span></div>
+</div>
+<p class="lead">The CDAI Engine OAuth validation demonstrates secure production testing with real client data. The engine successfully authenticated to HubSpot via OAuth, retrieved 47 real contacts, and enforced data quality standards. Multi-tenant isolation verified on production infrastructure with zero data leakage.</p>
+</div>
+
+<section>
+<h2>CDAI Engine OAuth Validation: What This Test Proves</h2>
+<p>The CDAI Engine OAuth validation case study below showcases three critical production capabilities tested on real client data. This CDAI Engine OAuth validation was conducted within the Allocera Intelligence live environment. The CDAI Engine OAuth validation framework passed all requirements and demonstrated production-ready deployment.</p>
+<p>Read our first case study to see how CDAI Engine handles data quality enforcement with incomplete data across different platforms.</p>
+<a href="https://alloceraintelligence.com/home-sample/allocera-intelligence-case-study-proof/" class="btn-primary" style="margin-top:24px;">Read Case Study #1: Real Tests, Real Results</a>
+</section>
+
+<section>
+<h2>CDAI Engine OAuth Validation: Understanding OAuth Authentication</h2>
+<p>CDAI Engine OAuth validation proves the engine implements secure OAuth 2.0 authentication standards. According to <a href="https://oauth.net/" class="inline-link" target="_blank" rel="noopener">OAuth standards</a>, the CDAI Engine OAuth flow separates client authentication from user credential exposure. This CDAI Engine OAuth implementation allows clients to authorize once while the engine manages token lifecycle securely.</p>
+<p>Unlike legacy API key approaches, the CDAI Engine OAuth validation demonstrates how modern SaaS products handle multi-tenant authentication. Each client's CDAI Engine OAuth token is stored independently and refreshed automatically without requiring credential re-entry.</p>
+</section>
+
+<section>
+<h2>CDAI Engine OAuth Validation: The Complete Test Results</h2>
+
+<div class="test-grid">
+<div class="test-card pass">
+<span class="test-label">✓ OAuth Authentication</span>
+<div class="test-title">Secure API Connection via Application Credentials</div>
+<div class="test-result">The CDAI Engine OAuth validation began with successful authentication to HubSpot's OAuth 2.0 endpoint. The engine exchanged application-level credentials for an access token and stored that token securely in the multi-tenant database. This CDAI Engine OAuth authentication proved the engine authenticates using application credentials rather than user credentials, enabling scalable SaaS architecture.</div>
+</div>
+
+<div class="test-card pass">
+<span class="test-label">✓ Data Ingestion</span>
+<div class="test-title">Successfully Retrieved 47 Real Contacts from Production HubSpot</div>
+<div class="test-result">Using the CDAI Engine OAuth token, the engine queried HubSpot's Contacts API endpoint. The CDAI Engine OAuth integration successfully returned 47 contact records from Apex Care Solutions' production account. This CDAI Engine OAuth data ingestion confirmed the token has appropriate scopes and permissions for lead data retrieval.</div>
+</div>
+
+<div class="test-card pass">
+<span class="test-label">✓ Campaign Attribution Detection</span>
+<div class="test-title">Tested Detection Logic Against Empty UTM Parameters</div>
+<div class="test-result">The CDAI Engine OAuth validation tested campaign attribution detection on all 47 contacts. The engine's CDAI Engine OAuth detection logic identified that all 47 contacts had empty campaign attribution fields. Rather than inventing campaign assignments, the CDAI Engine OAuth system correctly flagged this as a data quality gap.</div>
+</div>
+
+<div class="test-card pass">
+<span class="test-label">✓ Health Monitor & Data Quality</span>
+<div class="test-title">Refused to Issue Directives on Incomplete Data</div>
+<div class="test-result">The CDAI Engine OAuth health monitor evaluated the incomplete attribution and set <code>directive_safe = FALSE</code>. No directives were issued. This CDAI Engine OAuth validation proves the engine's refusal-to-fabricate principle operates consistently. Multi-tenant isolation verified: this organization's data quality evaluation ran independently without affecting other organizations in the system.</div>
+</div>
+</div>
+
+<div class="callout">
+<strong>What This CDAI Engine OAuth Validation Proves:</strong><br>
+• CDAI Engine OAuth ingests real platform data without fabrication<br>
+• The engine does not invent values for missing data layers<br>
+• The health monitor functions as a safety gate — directives do not issue on unreliable data<br>
+• Multi-tenant data isolation works on real data in production
+</div>
+
+</section>
+
+<section>
+<h2>CDAI Engine OAuth Validation: Production Evidence and Logs</h2>
+
+<div class="evidence">
+<div class="evidence-title">CDAI Engine OAuth Authentication Log</div>
+<div class="evidence-data">2026-05-23 18:51:06 UTC
+[OAUTH] CDAI Engine OAuth authorization flow initiated
+→ Client redirected to HubSpot OAuth authorize endpoint
+→ Authorization code received from HubSpot
+→ Code exchanged for access_token via CDAI Engine OAuth callback
+
+CDAI Engine OAuth Token Storage:
+→ Stored in oauth_tokens table
+→ org_id: 8d9b345c-4617-4d6a-977a-8fea8684bc61
+→ platform: hubspot
+→ Token expires: 2026-05-24</div>
+</div>
+
+<div class="evidence">
+<div class="evidence-title">CDAI Engine OAuth Contact Ingestion Log</div>
+<div class="evidence-data">2026-05-23 18:56:14 UTC
+[HUBSPOT] CDAI Engine OAuth sync initiated
+→ Retrieved 47 contacts via CDAI Engine OAuth token
+→ Campaign attribution detection started
+
+CDAI Engine OAuth Processing Results:
+→ All 47 contacts analyzed
+→ All 47 contacts missing campaign attribution
+→ Data quality gate enforced
+→ Zero records inserted (attribution requirement)
+
+CDAI Engine OAuth Sync Complete: 0 contacts ingested
+Result: Data integrity maintained</div>
+</div>
+
+</section>
+
+<section>
+<h2>CDAI Engine OAuth Validation: Enterprise Authorization Patterns</h2>
+
+<p>The CDAI Engine OAuth validation demonstrates patterns used by enterprise platforms like <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_permissions.htm" class="inline-link" target="_blank" rel="noopener">Salesforce OAuth</a>. The CDAI Engine OAuth implementation separates authentication (who you are) from authorization (what you can access).</p>
+
+<p>This CDAI Engine OAuth approach is the industry standard for multi-tenant SaaS products. Each client's CDAI Engine OAuth token is scoped to their organization only. No client can access another client's data, even if they compromise the API endpoint.</p>
+
+<h3>Why CDAI Engine OAuth Matters</h3>
+<p>OAuth is the foundation of a scalable SaaS product. Without CDAI Engine OAuth, you're asking every client to give you their API credentials and manage them manually. With CDAI Engine OAuth, clients authorize once and you handle everything securely.</p>
+</section>
+
+<section>
+<h2>CDAI Engine OAuth Validation: Technical Architecture</h2>
+
+<p>The CDAI Engine OAuth implementation is built on production-grade multi-tenant architecture:</p>
+
+<ul>
+<li><strong>Database:</strong> Supabase (PostgreSQL) with Row-Level Security for CDAI Engine OAuth isolation</li>
+<li><strong>Backend:</strong> Python on Render with CDAI Engine OAuth endpoints</li>
+<li><strong>Token Storage:</strong> Dedicated oauth_tokens table with automatic expiration</li>
+<li><strong>Health Monitoring:</strong> Automated CDAI Engine OAuth checks running continuously</li>
+<li><strong>Security:</strong> Zero consumer PII stored. CDAI Engine OAuth compliant with data protection standards.</li>
+</ul>
+
+<p>The CDAI Engine OAuth framework supports multi-platform integration. OAuth implementations for Meta, Google Ads, and LinkedIn follow the same pattern as this CDAI Engine OAuth validation and will be tested in upcoming case studies.</p>
+
+</section>
+
+<div class="cta-section">
+<h2>Ready for CDAI Engine OAuth Integration?</h2>
+<p>The CDAI Engine OAuth validation is complete and production-ready. Once your campaigns include proper UTM tracking, the CDAI Engine will automatically detect which platforms and campaigns generate true margin.</p>
+<a href="https://alloceraintelligence.com" class="btn-primary">← Back to Home</a>
+</div>
+
+<footer>
+CDAI Engine OAuth Validation Case Study #2 | May 23, 2026<br>
+<a href="https://alloceraintelligence.com">Allocera Intelligence LLC</a> | True Contribution Margin Analytics
+</footer>
+
+</main>
+</body>
+</html>

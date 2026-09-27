@@ -1,257 +1,410 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-#dsh{font-variant-numeric:lining-nums;--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#E0566B;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
-#dsh *{box-sizing:border-box}
-#dsh a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(222,187,106,.35)}
-#dsh a:hover{color:#fff;border-bottom-color:#fff}
-#dsh .dsh-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(1,9,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-#dsh .dsh-nav a{border:0}
-#dsh .dsh-brand{display:flex;align-items:center;gap:10px;color:var(--text)}
-#dsh .dsh-brand img{height:34px;width:auto;display:block}
-#dsh .dsh-brand span{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.02em}
-#dsh .dsh-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;margin:0;padding:0}
-#dsh .dsh-links a{color:var(--dim);font-size:14px;font-weight:500}
-#dsh .dsh-links a:hover{color:#fff}
-#dsh .dsh-cta{background:var(--gold);color:#010914!important;font-weight:600;font-size:14px;padding:9px 18px;border-radius:2px}
-#dsh .dsh-cta:hover{background:var(--gold2)}
-#dsh .dsh-burger{display:none;background:none;border:1px solid var(--border2);color:var(--text);font-size:18px;padding:4px 10px;border-radius:2px;cursor:pointer}
-#dsh .dsh-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
-#dsh .dsh-hero{padding:clamp(44px,8vh,84px) 0 clamp(20px,4vh,36px);border-bottom:1px solid var(--border)}
-#dsh .dsh-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:0 0 16px}
-#dsh h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 20px;color:#fff}
-#dsh .dsh-lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);line-height:1.65;margin:0 0 22px}
-#dsh .dsh-byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.04em}
-#dsh h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.15;color:#fff;margin:clamp(48px,7vh,68px) 0 16px;scroll-margin-top:90px}
-#dsh h3{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:30px 0 8px}
-#dsh p{margin:0 0 18px;color:var(--muted)}
-#dsh strong{color:#fff;font-weight:600}
-#dsh ul,#dsh ol{margin:0 0 20px;padding-left:22px;color:var(--muted)}
-#dsh li{margin:0 0 9px}
-#dsh .dsh-box{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
-#dsh .dsh-box h3{margin-top:0}
-#dsh .dsh-box ul{margin-bottom:0}
-#dsh .dsh-toc{background:transparent;border:1px solid var(--border2);border-radius:2px;padding:20px 24px;margin:30px 0}
-#dsh .dsh-toc p{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
-#dsh .dsh-toc ol{margin:0;padding-left:20px}
-#dsh .dsh-toc li{margin:0 0 6px}
-#dsh .dsh-toc a{color:var(--dim);border:0}
-#dsh .dsh-toc a:hover{color:#fff}
-#dsh .dsh-formula{background:#04102a;border:1px solid var(--border2);border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.6vw,15px);line-height:1.9;color:#fff;overflow-x:auto}
-#dsh .dsh-formula .dsh-f-main{color:var(--gold2);font-size:clamp(14px,1.8vw,17px);font-weight:500}
-#dsh .dsh-formula .dsh-f-label{color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:10px}
-#dsh .dsh-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
-#dsh .dsh-stat{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;text-align:center}
-#dsh .dsh-stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,46px);font-weight:600;color:var(--green);line-height:1}
-#dsh .dsh-stat span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.45}
-#dsh .dsh-steps{counter-reset:s;list-style:none;padding:0}
-#dsh .dsh-steps li{counter-increment:s;position:relative;padding:0 0 4px 50px;margin:0 0 18px}
-#dsh .dsh-steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border:1px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
-#dsh .dsh-table-wrap{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--border2);border-radius:2px}
-#dsh table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
-#dsh table.dsh-narrow{min-width:0}
-#dsh th{background:var(--surface);color:#fff;text-align:left;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border2);font-size:13px;letter-spacing:.02em}
-#dsh td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
-#dsh tr:last-child td{border-bottom:0}
-#dsh td.dsh-num{font-family:'JetBrains Mono',monospace;white-space:nowrap}
-#dsh .dsh-pos{color:var(--green)!important;font-weight:600}
-#dsh .dsh-neg{color:var(--red)!important;font-weight:600}
-#dsh .dsh-total td{color:#fff;font-weight:600;background:rgba(196,160,64,.07)}
-#dsh .dsh-note{font-size:14px;color:var(--dim)}
-#dsh td.dsh-acc{min-width:210px}
-#dsh .dsh-mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
-#dsh .dsh-cnt{font-size:14px;color:var(--dim);white-space:nowrap}
-#dsh .dsh-sub{display:block;font-size:14px;color:var(--dim);margin-top:4px;line-height:1.5}
-#dsh figure{margin:28px 0}
-#dsh figure img{width:100%;height:auto;display:block;border:1px solid var(--border2);border-radius:2px}
-#dsh figcaption{font-size:14px;color:var(--dim);margin-top:10px}
-#dsh blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,28px);line-height:1.35;color:#fff}
-#dsh .dsh-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
-#dsh .dsh-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 20px}
-#dsh .dsh-card h3{margin:0 0 6px;font-size:17px}
-#dsh .dsh-card p{margin:0;font-size:15px}
-#dsh details{border:1px solid var(--border2);border-radius:2px;margin:0 0 12px;background:var(--surface)}
-#dsh summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none}
-#dsh summary::-webkit-details-marker{display:none}
-#dsh summary::after{content:'+';float:right;color:var(--gold2);font-family:'JetBrains Mono',monospace}
-#dsh details[open] summary::after{content:'–'}
-#dsh details p{padding:0 20px 4px;margin:0 0 14px}
-#dsh .dsh-final{margin:clamp(56px,8vh,80px) 0 0;padding:clamp(28px,5vw,48px);background:linear-gradient(135deg,#071530,#04102a);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;text-align:center}
-#dsh .dsh-final h2{margin-top:0}
-#dsh .dsh-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
-#dsh .dsh-btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:600;font-size:15px;border:1px solid var(--gold)!important;color:var(--gold2)}
-#dsh .dsh-btn.dsh-primary{background:var(--gold);color:#010914!important}
-#dsh .dsh-btn:hover{background:var(--gold2);color:#010914!important}
-#dsh .dsh-footer{margin-top:clamp(56px,8vh,80px);padding:26px clamp(16px,4vw,48px);border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim)}
-#dsh .dsh-footer a{color:var(--dim);border:0}
-#dsh .dsh-footer img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
-@media (max-width:900px){
-#dsh .dsh-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:#010914;border-bottom:1px solid var(--border);padding:14px 20px;gap:14px}
-#dsh .dsh-links.dsh-open{display:flex}
-#dsh .dsh-burger{display:block}
-}
-@media (max-width:640px){
-#dsh{font-size:16px}
-#dsh .dsh-stats,#dsh .dsh-grid{grid-template-columns:1fr}
-#dsh .dsh-cta{display:none}
-}
+#dsh *{box-sizing:border-box;margin:0;padding:0}
+#dsh{--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#9AAECE;--dim:#4A6488;--deep:#1C3050;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#D63050}
+#dsh{background:#010914!important;color:#ebf0ff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#dsh nav{position:fixed;top:0;left:0;right:0;z-index:100;height:clamp(52px,7vh,64px);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,64px);background:rgba(1,9,20,.95);border-bottom:1px solid #102040;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+#dsh .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+#dsh .nav-logo{width:26px;height:26px;object-fit:contain;flex-shrink:0;display:block}
+#dsh .nav-name{font-size:clamp(12px,1.7vw,14px);font-weight:600;letter-spacing:.04em;color:#ebf0ff}
+#dsh .nav-right{display:flex;align-items:center;gap:12px}
+#dsh .nav-links{display:flex;align-items:center;gap:clamp(16px,2.5vw,32px);list-style:none}
+#dsh .nav-links a{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;text-decoration:none;transition:color .2s}
+#dsh .nav-links a:hover,#dsh .nav-links a.active{color:#c4a040}
+#dsh .nav-cta{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:#1655d8;color:#ebf0ff;border:none;padding:9px 18px;border-radius:2px;cursor:pointer;transition:background .2s;text-decoration:none;white-space:nowrap}
+#dsh .nav-cta:hover{background:#1d67f0}
+#dsh .nav-portal{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4080f0;border:1px solid rgba(64,128,240,.35);padding:8px 16px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
+#dsh .nav-portal:hover{background:rgba(64,128,240,.1);border-color:#4080f0}
+#dsh .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:0 0;border:none;cursor:pointer;padding:4px;flex-shrink:0}
+#dsh .nav-hamburger span{display:block;width:22px;height:2px;background:#ebf0ff;border-radius:2px;transition:transform .3s,opacity .3s}
+#dsh .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#dsh .nav-hamburger.open span:nth-child(2){opacity:0}
+#dsh .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#dsh .mobile-menu{display:none;position:fixed;top:clamp(52px,7vh,64px);left:0;right:0;z-index:99;background:rgba(1,9,20,.98);border-bottom:1px solid #102040;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;padding:16px 24px 24px;gap:4px}
+#dsh .mobile-menu.open{display:flex}
+#dsh .mobile-menu a{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#9aaece;text-decoration:none;padding:14px 0;border-bottom:1px solid #102040;transition:color .2s}
+#dsh .mobile-menu a:last-child{border-bottom:none}
+#dsh .mobile-menu a:hover{color:#ebf0ff}
+#dsh .mobile-menu .mobile-cta{margin-top:12px;background:#1655d8;color:#fff;text-align:center;padding:16px;border-radius:2px;font-size:13px;font-weight:700;border:none;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+#dsh .mobile-menu .mobile-portal{color:#4080f0;text-align:center;padding:14px;border:1px solid rgba(64,128,240,.3);border-radius:3px;font-size:12px}
+@media(max-width:768px){#dsh .nav-links{display:none}
+#dsh .nav-hamburger{display:flex}
+#dsh .nav-cta{display:none}}
+@media(max-width:480px){#dsh .nav-portal{font-size:9px;padding:7px 12px}}
+#dsh section{width:100%;padding:clamp(72px,11vh,130px) clamp(16px,5vw,80px);position:relative;background:#010914!important}
+#dsh section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 0,rgba(22,85,216,.04) 0,transparent 60%);pointer-events:none}
+#dsh .section-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+#dsh .eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;color:#c4a040;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,2vh,16px)}
+#dsh .eyebrow::before{content:'';width:16px;height:1px;background:#c4a040;display:block;flex-shrink:0}
+#dsh h1.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6.5vw,80px);font-weight:300;line-height:1.06;color:#ebf0ff;margin-bottom:clamp(16px,3vh,24px)}
+#dsh h1.page-title em{font-style:italic;color:#8ab8ff}
+#dsh h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4.5vw,52px);font-weight:300;line-height:1.1;color:#ebf0ff;margin-bottom:clamp(10px,2vh,16px)}
+#dsh h2.section-title em{font-style:italic;color:#8ab8ff}
+#dsh .rule{width:36px;height:1px;background:#1655d8;margin-bottom:clamp(16px,3vh,28px);display:block}
+#dsh .rule.gold{background:#c4a040}
+#dsh .lead-text{font-size:clamp(14px,1.8vw,17px);color:#b8c9e0;line-height:1.8;max-width:720px;margin-bottom:clamp(16px,3vh,28px);font-weight:300}
+#dsh #page-hero{padding:calc(clamp(52px,7vh,64px) + clamp(60px,10vh,100px)) clamp(16px,5vw,80px) clamp(60px,10vh,100px);background:#010914;position:relative;border-bottom:1px solid #1a3060}
+#dsh #page-hero::before{content:'';position:absolute;inset:0;background-image:url(https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png);background-size:cover;background-position:center;opacity:.18;z-index:0;pointer-events:none}
+#dsh #page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 50%,rgba(22,85,216,.08) 0,transparent 70%);pointer-events:none}
+#dsh #page-hero .section-inner{position:relative;z-index:1}
+#dsh .btn-primary{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:.01em;text-transform:none;background:#1655d8;color:#fff;border:none;padding:16px 32px;border-radius:2px;cursor:pointer;transition:background .2s,box-shadow .2s;text-decoration:none;display:inline-block;box-shadow:0 0 24px rgba(22,85,216,.4)}
+#dsh .btn-primary:hover{background:#1d67f0;box-shadow:0 0 36px rgba(22,85,216,.6)}
+#dsh .btn-gold-outline{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;font-style:italic;background:#fff;color:#010914;border:2px solid #c4a040;padding:14px 32px;border-radius:2px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;line-height:1}
+#dsh .btn-gold-outline:hover{background:#fdfaf4;border-color:#debb6a;box-shadow:0 0 20px rgba(196,160,64,.2)}
+#dsh .dash-video-wrap{border-radius:3px;overflow:hidden;border:1px solid #1a3060;box-shadow:0 0 64px rgba(22,85,216,.12),0 0 120px rgba(22,85,216,.06);background:#000;margin-bottom:clamp(32px,5vh,56px)}
+#dsh .dash-video-wrap video{display:block;width:100%;aspect-ratio:16/9;border:none}
+#dsh .panel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#102040;border:1px solid #102040;border-radius:3px;overflow:hidden;margin-top:clamp(32px,5vh,56px)}
+@media(max-width:900px){#dsh .panel-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){#dsh .panel-grid{grid-template-columns:1fr}}
+#dsh .panel-card{background:#010914;padding:clamp(16px,2vw,22px);position:relative;transition:background .2s}
+#dsh .panel-card:hover{background:#050d1e}
+#dsh .panel-live-badge{position:absolute;top:12px;right:12px;font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.1em;color:#0baf92;background:rgba(11,175,146,.1);border:1px solid rgba(11,175,146,.2);padding:2px 6px;border-radius:1px}
+#dsh .panel-name{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#4a6488;display:block;margin-bottom:8px;padding-right:44px}
+#dsh .panel-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(14px,2vw,20px);font-weight:400;line-height:1.2;display:block;margin-bottom:6px;color:#ebf0ff}
+#dsh .panel-headline.blue{color:#4080f0}
+#dsh .panel-headline.green{color:#0baf92}
+#dsh .panel-headline.gold{color:#debb6a}
+#dsh .panel-headline.red{color:#d63050}
+#dsh .panel-desc{font-size:clamp(10px,1.1vw,12px);color:#4a6488;line-height:1.6}
+#dsh .dir-badge{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.08em;padding:2px 6px;border-radius:1px;font-weight:600;display:inline-block;margin:2px 2px 2px 0}
+#dsh .dir-badge.scale{background:rgba(11,175,146,.15);color:#0baf92;border:1px solid rgba(11,175,146,.3)}
+#dsh .dir-badge.hold{background:rgba(196,160,64,.12);color:#debb6a;border:1px solid rgba(196,160,64,.25)}
+#dsh .dir-badge.cut{background:rgba(214,48,80,.12);color:#d63050;border:1px solid rgba(214,48,80,.25)}
+#dsh .dir-badge.pause{background:rgba(64,128,240,.1);color:#4080f0;border:1px solid rgba(64,128,240,.2)}
+#dsh .dir-badge.flag{background:rgba(196,160,64,.08);color:#c4a040;border:1px solid rgba(196,160,64,.15)}
+#dsh .int-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:clamp(20px,3vh,32px)}
+#dsh .int-chip{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:.3rem .9rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:#9aaece;letter-spacing:.05em;transition:border-color .2s}
+#dsh .int-chip:hover{border-color:rgba(22,85,216,.35);color:#b8c9e0}
+#dsh .faq-item{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:clamp(16px,2.5vw,24px);margin-bottom:clamp(10px,1.5vh,14px)}
+#dsh .faq-q{font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#ebf0ff;margin-bottom:10px}
+#dsh .faq-a{font-size:clamp(11px,1.3vw,13px);color:#9aaece;line-height:1.75}
+#dsh #intake{background:#071530!important;border-top:1px solid #102040}
+#dsh #intake::before{display:none}
+#dsh .intake-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,80px)}
+@media(min-width:768px){#dsh .intake-grid{grid-template-columns:1fr 1fr}}
+#dsh .intake-info h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,32px);font-weight:300;color:#ebf0ff;margin-bottom:clamp(12px,2vh,20px);line-height:1.25}
+#dsh .intake-steps{display:flex;flex-direction:column;gap:clamp(10px,1.5vh,14px);margin-top:clamp(20px,3vh,32px)}
+#dsh .intake-step{display:flex;gap:14px;align-items:flex-start;padding:clamp(12px,1.5vh,16px);background:#010914;border:1px solid #102040;border-radius:2px}
+#dsh .intake-step-num{font-family:'JetBrains Mono',monospace;font-size:9px;color:#1655d8;flex-shrink:0;padding-top:1px}
+#dsh .intake-step-title{font-size:clamp(12px,1.4vw,13px);font-weight:500;color:#ebf0ff;display:block;margin-bottom:3px}
+#dsh .intake-step-desc{font-size:clamp(11px,1.2vw,12px);color:#7a95b8;line-height:1.55}
+#dsh .intake-form{display:flex;flex-direction:column;gap:clamp(12px,2vh,16px)}
+#dsh .form-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.5vw,14px)}
+@media(max-width:560px){#dsh .form-row{grid-template-columns:1fr}}
+#dsh .form-group{display:flex;flex-direction:column;gap:6px}
+#dsh .form-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#4a6488}
+#dsh .form-input,#dsh .form-select,#dsh .form-textarea{background:#010914;border:1px solid #1a3060;border-radius:2px;color:#ebf0ff;font-family:'Inter',sans-serif;font-size:clamp(12px,1.4vw,13px);padding:clamp(9px,1.3vh,12px) clamp(12px,1.5vw,14px);transition:border-color .2s,box-shadow .2s;width:100%;-webkit-appearance:none;appearance:none}
+#dsh .form-input:focus,#dsh .form-select:focus,#dsh .form-textarea:focus{outline:0;border-color:#1655d8;box-shadow:0 0 0 2px rgba(22,85,216,.15)}
+#dsh .form-input::placeholder,#dsh .form-textarea::placeholder{color:#1c3050}
+#dsh .form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234A6488'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;cursor:pointer}
+#dsh .form-select option{background:#010914;color:#ebf0ff}
+#dsh .form-textarea{resize:vertical;min-height:100px}
+#dsh .form-submit{background:#1655d8;color:#ebf0ff;border:none;border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:clamp(13px,2vh,16px) clamp(20px,3vw,28px);cursor:pointer;transition:background .2s,transform .1s;width:100%}
+#dsh .form-submit:hover{background:#1d67f0}
+#dsh .form-submit:active{transform:scale(.99)}
+#dsh .form-submit:disabled{opacity:.5;cursor:default}
+#dsh .form-success{display:none;text-align:center;padding:clamp(24px,4vh,40px);background:rgba(11,175,146,.06);border:1px solid rgba(11,175,146,.2);border-radius:2px}
+#dsh .form-success h4{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,28px);font-weight:300;color:#0baf92;margin-bottom:8px}
+#dsh .form-success p{font-size:clamp(12px,1.4vw,14px);color:#7a95b8}
+#dsh .form-error{display:none;font-family:'JetBrains Mono',monospace;font-size:9px;color:#d63050;letter-spacing:.06em;padding:10px 14px;background:rgba(214,48,80,.06);border:1px solid rgba(214,48,80,.2);border-radius:2px}
+#dsh .contact-phone{font-family:'JetBrains Mono',monospace;font-size:10px;color:#4a6488;letter-spacing:.08em;margin-bottom:16px}
+#dsh footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #102040;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#010914}
+#dsh .footer-brand{display:flex;align-items:center;gap:10px}
+#dsh .footer-logo{width:18px;height:18px;object-fit:contain;flex-shrink:0}
+#dsh .footer-text{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.08em}
+#dsh .footer-right{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.06em;text-align:right}
+#dsh .fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+#dsh .fade-up.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){#dsh .fade-up{opacity:1;transform:translateY(0)}}
+#dsh{background:#010914;color:#ebf0ff;font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+#dsh a{color:#c4a040}
+#dsh .prose{max-width:820px}
+#dsh .prose p{font-size:clamp(14px,1.7vw,16px);color:#b8c9e0;line-height:1.8;margin-bottom:18px;font-weight:300}
+#dsh .prose p strong,#dsh .prose li strong{color:#ebf0ff;font-weight:600}
+#dsh .prose a,#dsh .faq-a a,#dsh .panel-desc a{color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)}
+#dsh .prose ul,#dsh .prose ol{margin:0 0 20px 20px;color:#b8c9e0;font-size:clamp(14px,1.7vw,16px);line-height:1.8;font-weight:300}
+#dsh .prose li{margin-bottom:8px}
+#dsh .steps{list-style:none;margin:0 0 24px 0;padding:0;counter-reset:s;display:flex;flex-direction:column;gap:12px}
+#dsh .steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;padding:clamp(12px,1.5vh,16px);background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;color:#b8c9e0;font-size:clamp(13px,1.5vw,15px);line-height:1.7}
+#dsh .steps li::before{content:counter(s,decimal-leading-zero);font-family:'JetBrains Mono',monospace;font-size:10px;color:#4080f0;flex-shrink:0;padding-top:4px}
+#dsh .table-wrap{overflow-x:auto;border:1px solid #1a3060;border-radius:3px;margin:clamp(20px,3vh,32px) 0;background:rgba(7,21,48,.5)}
+#dsh table{width:100%;border-collapse:collapse;font-size:clamp(12px,1.4vw,14px);min-width:560px}
+#dsh table.narrow{min-width:0}
+#dsh th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#4a6488;padding:12px 14px;border-bottom:1px solid #1a3060;font-weight:500}
+#dsh td{padding:12px 14px;border-bottom:1px solid #102040;color:#b8c9e0;vertical-align:top}
+#dsh tr:last-child td{border-bottom:none}
+#dsh td.num{font-family:'JetBrains Mono',monospace;color:#ebf0ff;white-space:nowrap}
+#dsh .pos{color:#0baf92!important}#dsh .neg{color:#d63050!important}
+#dsh figure{margin:clamp(24px,4vh,40px) 0}
+#dsh figure img{width:100%;display:block;border-radius:3px;border:1px solid #1a3060;box-shadow:0 0 64px rgba(22,85,216,.12)}
+#dsh figcaption{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:#4a6488;margin-top:10px}
+#dsh .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#102040;border:1px solid #102040;border-radius:3px;overflow:hidden;margin:clamp(24px,4vh,40px) 0}
+#dsh .stat{background:#010914;padding:clamp(18px,2.5vw,28px);text-align:center}
+#dsh .stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:300;color:#0baf92;line-height:1}
+#dsh .stat span{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;margin-top:10px;line-height:1.6}
+@media(max-width:600px){#dsh .stat-row{grid-template-columns:1fr}}
+#dsh details.faq-item summary{list-style:none;cursor:pointer;font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#ebf0ff}
+#dsh details.faq-item summary::-webkit-details-marker{display:none}
+#dsh details.faq-item summary::after{content:'+';float:right;color:#c4a040;font-family:'JetBrains Mono',monospace}
+#dsh details.faq-item[open] summary::after{content:'\2013'}
+#dsh details.faq-item .faq-a{margin-top:10px}
+#dsh .final-cta{text-align:center}
+#dsh .final-cta .lead-text{margin-left:auto;margin-right:auto}
+#dsh .btn-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+#dsh .final-cta .btn-row{justify-content:center}
 </style>
 <div id="dsh">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a marketing dashboard?","acceptedAnswer":{"@type":"Answer","text":"A marketing dashboard is a single view of your key marketing numbers from multiple channels. Most show clicks, leads, spend, and ROI. The CDAI dashboard adds real profit per campaign, true cost per lead, and one decision per campaign."}},{"@type":"Question","name":"Can you give me an example of a marketing dashboard?","acceptedAnswer":{"@type":"Answer","text":"The example on this page shows four campaigns with the platform's cost per lead, the true cost per lead, real profit over 30 days, and a scale, hold, cut, or pause decision with a confidence level."}},{"@type":"Question","name":"What are the three types of dashboards?","acceptedAnswer":{"@type":"Answer","text":"Operational dashboards track day-to-day activity, strategic dashboards track high-level goals for leaders, and analytical dashboards help dig into why numbers changed. The CDAI dashboard combines the profit view leaders need with a clear call on each campaign."}},{"@type":"Question","name":"How often does the CDAI dashboard update?","acceptedAnswer":{"@type":"Answer","text":"Every night. The engine pulls fresh data from your connected accounts, recalculates every campaign, and posts the new decisions before your day starts."}},{"@type":"Question","name":"Does the dashboard change my ads?","acceptedAnswer":{"@type":"Answer","text":"No. It recommends a decision for each campaign. You make every change in your ad accounts."}},{"@type":"Question","name":"How do I get access?","acceptedAnswer":{"@type":"Answer","text":"Sign up, choose your industry, and connect your ad accounts and CRM. Existing clients log in through the client portal."}}]}</script>
 
-<nav class="dsh-nav">
-  <a class="dsh-brand" href="https://alloceraintelligence.com/">
-    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence logo" width="34" height="34">
-    <span>Allocera Intelligence</span>
-  </a>
-  <ul class="dsh-links" id="dshLinks">
-    <li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li>
-    <li><a href="https://alloceraintelligence.com/proof/">Proof</a></li>
-    <li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li>
-    <li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li>
-    <li><a href="https://alloceraintelligence.com/about/">About</a></li>
-    <li><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></li>
-    <li><a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a></li>
-  </ul>
-  <div style="display:flex;align-items:center;gap:10px">
-    <a class="dsh-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
-    <button class="dsh-burger" id="dshBurger" aria-label="Open menu">&#9776;</button>
+<nav>
+  <a class="nav-brand" href="https://alloceraintelligence.com/"><img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence CDAI Engine"><span class="nav-name">Allocera Intelligence</span></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="https://alloceraintelligence.com/#problem">The Problem</a></li><li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li><li><a href="https://alloceraintelligence.com/proof/">Proof</a></li><li><a href="https://alloceraintelligence.com/dashboard/" class="active">Dashboard</a></li><li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li><li><a href="https://alloceraintelligence.com/about/">About</a></li><li><a href="https://alloceraintelligence.com/blog/">Blog</a></li>
+    </ul>
+    <a class="nav-portal" href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a>
+    <a class="nav-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <button class="nav-hamburger" id="dshNavToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
-<article class="dsh-wrap">
-
-<header class="dsh-hero">
-  <p class="dsh-eyebrow">Dashboard &middot; CDAI Engine</p>
-  <h1>A Marketing Dashboard That Shows Profit Per Campaign, Not Just Clicks</h1>
-  <p class="dsh-lead">A typical marketing dashboard shows clicks, leads, and spend. The CDAI dashboard shows what each campaign actually made after every cost, what its leads really cost, and one clear decision for every campaign, refreshed every night. Here is what&rsquo;s on it, with an example.</p>
-  <div class="dsh-btns" style="justify-content:flex-start">
-    <a class="dsh-btn dsh-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
-    <a class="dsh-btn" href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Login</a>
-  </div>
-</header>
-
-<nav class="dsh-toc" aria-label="Table of contents">
-  <p>On this page</p>
-  <ol>
-    <li><a href="#what">What a marketing dashboard should answer</a></li>
-    <li><a href="#example">Marketing dashboard example</a></li>
-    <li><a href="#views">What&rsquo;s on the CDAI dashboard</a></li>
-    <li><a href="#daily">How to use it each morning</a></li>
-    <li><a href="#compare">CDAI vs. a typical marketing dashboard</a></li>
-    <li><a href="#faq">FAQs</a></li>
-  </ol>
-</nav>
-
-<h2 id="what">What a Marketing Dashboard Should Answer</h2>
-<p><a href="https://www.wrike.com/marketing-guide/marketing-dashboard/" target="_blank" rel="noopener">Wrike</a> describes a marketing dashboard as a reporting tool that pulls key metrics from multiple channels into a single, easy-to-read view. In practice, most teams build one in their CRM or a reporting tool, filtered to show things like &ldquo;ad spend, ROI, clicks, form submissions, and traffic by source,&rdquo; as one <a href="https://community.hubspot.com/t5/Reporting-Analytics/How-Can-I-Build-a-Unified-Campaign-Dashboard-That-Combines/m-p/1215186/highlight/true" target="_blank" rel="noopener">HubSpot community answer</a> puts it.</p>
-<p>That view is useful, but it answers &ldquo;what happened in the ads?&rdquo; The owner of a lead-driven business needs three different answers:</p>
-<ol class="dsh-steps">
-  <li><strong>Did each campaign make money</strong> after partner payouts, refunds, chargebacks, fees, and the cost of delivering the work?</li>
-  <li><strong>What does a lead really cost,</strong> compared with what the ad platform says?</li>
-  <li><strong>What should I do with each campaign tomorrow?</strong></li>
-</ol>
-<p>The CDAI marketing dashboard is built around those three questions. The numbers come from the CDAI engine, which calculates them every night from your connected ad accounts, CRM, and other tools. See <a href="https://alloceraintelligence.com/how-it-works/">how it works</a> for the full process.</p>
-
-<h2 id="example">Marketing Dashboard Example</h2>
-<p>This is an illustrative example with sample numbers, not client data. It shows the core view: every campaign on one row, with the platform&rsquo;s number next to the real one and tonight&rsquo;s decision.</p>
-<figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/marketing-dashboard-example-profit-per-campaign.png" alt="Marketing dashboard example showing dashboard cost per lead, true cost per lead, real profit and a scale, hold, cut or pause decision for four campaigns" width="1600" height="800" loading="lazy">
-  <figcaption>Illustrative marketing dashboard example with sample data.</figcaption>
-</figure>
-<div class="dsh-table-wrap">
-<table>
-  <thead><tr><th>Campaign</th><th>Dashboard CPL</th><th>True CPL</th><th>Real profit (30 days)</th><th>Decision</th><th>Confidence</th></tr></thead>
-  <tbody>
-    <tr><td>Search: brand terms</td><td class="dsh-num">$38</td><td class="dsh-num">$46</td><td class="dsh-num dsh-pos">$9,400</td><td>Scale</td><td>High</td></tr>
-    <tr><td>Search: service terms</td><td class="dsh-num">$64</td><td class="dsh-num">$81</td><td class="dsh-num dsh-pos">$2,100</td><td>Hold</td><td>Medium</td></tr>
-    <tr><td>Social: lead form</td><td class="dsh-num">$22</td><td class="dsh-num">$41</td><td class="dsh-num dsh-neg">&minus;$600</td><td>Cut</td><td>Medium</td></tr>
-    <tr><td>Partner: bought leads</td><td class="dsh-num">$55</td><td class="dsh-num">$112</td><td class="dsh-num dsh-neg">&minus;$3,800</td><td>Pause</td><td>High</td></tr>
-  </tbody>
-</table>
+<div class="mobile-menu" id="dshMobileMenu">
+  <a href="https://alloceraintelligence.com/#problem">The Problem</a><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a><a href="https://alloceraintelligence.com/proof/">Proof</a><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a><a href="https://alloceraintelligence.com/pricing/">Pricing</a><a href="https://alloceraintelligence.com/about/">About</a><a href="https://alloceraintelligence.com/blog/">Blog</a>
+  <a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener" class="mobile-portal">Client Portal</a>
+  <a href="https://cdai-portal.vercel.app/signup/" class="mobile-cta">Get Started</a>
 </div>
-<p>On a normal marketing dashboard, the social lead form looks like the cheapest source at $22 a lead. Once refunds, payouts, and fees are counted, it costs $41 and loses money. The bought leads look reasonable at $55 until the partner payouts and returns are added. That&rsquo;s the gap the CDAI dashboard exists to show. Our guide to the <a href="https://alloceraintelligence.com/average-cost-per-lead/">average cost per lead</a> explains why the platform number runs low.</p>
 
-<h2 id="views">What&rsquo;s on the CDAI Marketing Dashboard</h2>
-<div class="dsh-grid">
-  <div class="dsh-card"><h3>Profit per campaign</h3><p>Revenue closed, true cost, real profit, and margin for every campaign, so winners and losers separate at a glance.</p></div>
-  <div class="dsh-card"><h3>Dashboard CPL vs. true CPL</h3><p>What the ad platform reports per lead, next to what each lead really cost after every expense.</p></div>
-  <div class="dsh-card"><h3>Tonight&rsquo;s decisions</h3><p>One call per campaign, such as scale, hold, cut, or pause, with the numbers and a confidence level behind it.</p></div>
-  <div class="dsh-card"><h3>Early warning signs</h3><p>Trends like close rates slipping or true cost per lead rising faster than the platform&rsquo;s number.</p></div>
-  <div class="dsh-card"><h3>Partner view</h3><p>If you buy leads or calls from partners, margin by partner shows which relationships pay and which drag.</p></div>
-  <div class="dsh-card"><h3>Decision history</h3><p>Past decisions and how they were graded once the results were in. Our <a href="https://alloceraintelligence.com/30-day-retest-methodology/">30-day retest</a> explains the grading.</p></div>
-</div>
-<p>Behind every view, CDAI rechecks its own math each night and stops on bad data instead of showing numbers it can&rsquo;t stand behind. You stay in control: the dashboard recommends, and you decide what changes in your ad accounts.</p>
-
-<h2 id="daily">How to Use the Marketing Dashboard Each Morning</h2>
-<ol class="dsh-steps">
-  <li><strong>Start with the decisions.</strong> Look at anything marked cut or pause first; that&rsquo;s where money is leaving.</li>
-  <li><strong>Check the CPL gap.</strong> A big difference between dashboard CPL and true CPL means costs outside the ad account are growing.</li>
-  <li><strong>Scale the proven winners.</strong> Add budget where real profit is strong and confidence is high.</li>
-  <li><strong>Watch the warning signs.</strong> A slipping close rate today becomes a losing campaign next month.</li>
-</ol>
-<p>Our <a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">scale, hold, cut, pause framework</a> goes deeper on turning each decision into a budget move, and the <a href="https://alloceraintelligence.com/lead-quality/">lead quality guide</a> covers what to do when a source&rsquo;s leads stop closing.</p>
-
-<h2 id="compare">CDAI vs. a Typical Marketing Dashboard</h2>
-<div class="dsh-table-wrap">
-<table>
-  <thead><tr><th></th><th>Typical marketing dashboard</th><th>CDAI dashboard</th></tr></thead>
-  <tbody>
-    <tr><td>Main numbers</td><td>Clicks, leads, spend, ROI from the ad platforms</td><td>Real profit, true cost per lead, and margin per campaign</td></tr>
-    <tr><td>Costs counted</td><td>Mostly ad spend</td><td>Ad spend, fees, partner payouts, refunds, chargebacks, compliance, and operating costs you add</td></tr>
-    <tr><td>What you do with it</td><td>Interpret charts and decide yourself</td><td>Read one clear decision per campaign, with the reasons</td></tr>
-    <tr><td>Setup</td><td>Build and maintain the reports</td><td>Connect your accounts; the engine fills it every night</td></tr>
-  </tbody>
-</table>
-</div>
-<p>Before release, the decisions behind this dashboard were checked in a controlled validation across 9 businesses in 7 industries: 89.5% accurate overall (1,210 of 1,352 scored decisions), with the math matching 100% when checked two ways. Every result is in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>.</p>
-
-<h2 id="faq">Marketing Dashboard FAQs</h2>
-<details>
-  <summary>What is a marketing dashboard?</summary>
-  <p>A marketing dashboard is a single view of your key marketing numbers from multiple channels. Most show clicks, leads, spend, and ROI. The CDAI dashboard adds real profit per campaign, true cost per lead, and one decision per campaign.</p>
-</details>
-<details>
-  <summary>Can you give me an example of a marketing dashboard?</summary>
-  <p>The example above shows four campaigns with the platform&rsquo;s cost per lead, the true cost per lead, real profit over 30 days, and a scale, hold, cut, or pause decision with a confidence level.</p>
-</details>
-<details>
-  <summary>What are the three types of dashboards?</summary>
-  <p>Operational dashboards track day-to-day activity, strategic dashboards track high-level goals for leaders, and analytical dashboards help dig into why numbers changed. The CDAI dashboard is built for the daily decision: it combines the profit view leaders need with a clear call on each campaign.</p>
-</details>
-<details>
-  <summary>How often does the CDAI dashboard update?</summary>
-  <p>Every night. The engine pulls fresh data from your connected accounts, recalculates every campaign, and posts the new decisions before your day starts.</p>
-</details>
-<details>
-  <summary>Does the dashboard change my ads?</summary>
-  <p>No. It recommends a decision for each campaign. You make every change in your ad accounts.</p>
-</details>
-<details>
-  <summary>How do I get access?</summary>
-  <p>Sign up, choose your industry, and connect your ad accounts and CRM. Existing clients log in through the client portal. See <a href="https://alloceraintelligence.com/pricing/">pricing</a> for plans.</p>
-</details>
-
-<section class="dsh-final">
-  <h2>See Your Campaigns on the Dashboard</h2>
-  <p>Connect the ad accounts and CRM you already use. Your first numbers arrive after the first nightly run: real profit, true cost per lead, and one clear decision for every campaign.</p>
-  <div class="dsh-btns">
-    <a class="dsh-btn dsh-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
-    <a class="dsh-btn" href="https://alloceraintelligence.com/pricing/">See Pricing</a>
-    <a class="dsh-btn" href="https://alloceraintelligence.com/how-it-works/">How It Works</a>
+<section id="page-hero">
+  <div class="section-inner">
+    <div class="eyebrow">Marketing Dashboard</div>
+    <h1 class="page-title">A marketing dashboard that shows <em>profit per campaign, not just clicks.</em></h1>
+    <p class="lead-text" style="color:#d0daf0">A typical marketing dashboard shows clicks, leads, and spend. The CDAI dashboard shows what each campaign actually made after every cost, what its leads really cost, and one clear decision for every campaign, refreshed every night. See it in action below, or read <a href="https://alloceraintelligence.com/how-it-works/" style="color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)">how it works</a>.</p>
+    <div class="btn-row">
+      <a href="https://cdai-portal.vercel.app/signup/" class="btn-primary">Get Started</a>
+      <a href="#demo" class="btn-gold-outline">See the Dashboard &rarr;</a>
+    </div>
   </div>
 </section>
 
-</article>
+<section id="demo" style="background:#071530!important;border-bottom:1px solid #102040">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Live Demo</div>
+    <h2 class="section-title fade-up">See the marketing dashboard <em>in action.</em></h2>
+    <div class="rule fade-up"></div>
+    <p class="lead-text fade-up">This is the CDAI dashboard your team opens each morning. Every campaign has its real numbers, a decision, and a confidence level behind it.</p>
+    <div class="dash-video-wrap fade-up">
+      <video autoplay muted loop playsinline controls preload="metadata" poster="https://alloceraintelligence.com/wp-content/uploads/2026/06/AC777057-09D7-4B2F-8F6D-784127A8530A.png">
+        <source src="https://alloceraintelligence.com/wp-content/uploads/2026/09/copy_174ECEF6-36D7-476D-81E8-BA2A63A27BA7.mov" type="video/mp4">
+      </video>
+    </div>
+    <figure class="fade-up">
+      <img src="https://alloceraintelligence.com/wp-content/uploads/2026/06/AC777057-09D7-4B2F-8F6D-784127A8530A.png" alt="CDAI marketing dashboard screenshot showing campaign profit, cost per lead and nightly decisions" loading="lazy">
+      <figcaption>The CDAI marketing dashboard.</figcaption>
+    </figure>
+  </div>
+</section>
 
-<footer class="dsh-footer">
-  <span><img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence" width="26" height="26">Allocera Intelligence &middot; CDAI Engine</span>
-  <span>&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/">Terms of Service</a></span>
+<section id="what">
+  <div class="section-inner prose">
+    <div class="eyebrow fade-up">The Right Questions</div>
+    <h2 class="section-title fade-up">What a marketing dashboard <em>should answer.</em></h2>
+    <div class="rule fade-up"></div>
+    <p class="fade-up"><a href="https://www.wrike.com/marketing-guide/marketing-dashboard/" target="_blank" rel="noopener">Wrike</a> describes a marketing dashboard as a reporting tool that pulls key metrics from multiple channels into a single, easy-to-read view. In practice, most teams build one in their CRM or a reporting tool, filtered to show things like &ldquo;ad spend, ROI, clicks, form submissions, and traffic by source,&rdquo; as one <a href="https://community.hubspot.com/t5/Reporting-Analytics/How-Can-I-Build-a-Unified-Campaign-Dashboard-That-Combines/m-p/1215186/highlight/true" target="_blank" rel="noopener">HubSpot community answer</a> puts it.</p>
+    <p class="fade-up">That view answers &ldquo;what happened in the ads?&rdquo; The owner of a lead-driven business needs three different answers:</p>
+    <ol class="steps fade-up">
+      <li><span><strong>Did each campaign make money</strong> after partner payouts, refunds, chargebacks, fees, and the cost of delivering the work?</span></li>
+      <li><span><strong>What does a lead really cost,</strong> compared with what the ad platform says?</span></li>
+      <li><span><strong>What should I do with each campaign tomorrow?</strong></span></li>
+    </ol>
+    <p class="fade-up">The CDAI marketing dashboard is built around those three questions. The numbers come from the CDAI engine, which calculates them every night from your connected ad accounts, CRM, and other tools.</p>
+  </div>
+</section>
+
+<section id="example" style="background:#071530!important;border-top:1px solid #102040;border-bottom:1px solid #102040">
+  <div class="section-inner prose">
+    <div class="eyebrow fade-up">Example</div>
+    <h2 class="section-title fade-up">Marketing dashboard <em>example.</em></h2>
+    <div class="rule gold fade-up"></div>
+    <p class="fade-up">This is an illustrative example with sample numbers, not client data. It shows the core view: every campaign on one row, with the platform&rsquo;s number next to the real one and tonight&rsquo;s decision.</p>
+    <figure class="fade-up">
+      <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/marketing-dashboard-example-profit-per-campaign.png" alt="Marketing dashboard example showing dashboard cost per lead, true cost per lead, real profit and a scale, hold, cut or pause decision for four campaigns" width="1600" height="800" loading="lazy">
+      <figcaption>Illustrative marketing dashboard example with sample data.</figcaption>
+    </figure>
+    <div class="table-wrap fade-up">
+    <table>
+      <thead><tr><th>Campaign</th><th>Dashboard CPL</th><th>True CPL</th><th>Real profit (30 days)</th><th>Decision</th><th>Confidence</th></tr></thead>
+      <tbody>
+        <tr><td>Search: brand terms</td><td class="num">$38</td><td class="num">$46</td><td class="num pos">$9,400</td><td><span class="dir-badge scale">SCALE</span></td><td>High</td></tr>
+        <tr><td>Search: service terms</td><td class="num">$64</td><td class="num">$81</td><td class="num pos">$2,100</td><td><span class="dir-badge hold">HOLD</span></td><td>Medium</td></tr>
+        <tr><td>Social: lead form</td><td class="num">$22</td><td class="num">$41</td><td class="num neg">&minus;$600</td><td><span class="dir-badge cut">CUT</span></td><td>Medium</td></tr>
+        <tr><td>Partner: bought leads</td><td class="num">$55</td><td class="num">$112</td><td class="num neg">&minus;$3,800</td><td><span class="dir-badge pause">PAUSE</span></td><td>High</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="fade-up">On a normal marketing dashboard, the social lead form looks like the cheapest source at $22 a lead. Once refunds, payouts, and fees are counted, it costs $41 and loses money. The bought leads look reasonable at $55 until partner payouts and returns are added. That&rsquo;s the gap the CDAI dashboard exists to show. Our guide to the <a href="https://alloceraintelligence.com/average-cost-per-lead/">average cost per lead</a> explains why the platform number runs low.</p>
+  </div>
+</section>
+
+<section id="views">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">What&rsquo;s On It</div>
+    <h2 class="section-title fade-up">Every view. <em>What it shows. Why it matters.</em></h2>
+    <div class="rule fade-up"></div>
+    <p class="lead-text fade-up">Each part of the CDAI marketing dashboard is built around a decision your team needs to make. Nothing decorative, and nothing that needs an analyst to interpret.</p>
+    <div class="panel-grid fade-up">
+      <div class="panel-card"><span class="panel-name">Campaign Profit</span><span class="panel-headline green">Revenue &minus; Cost = Profit</span><div class="panel-desc">Revenue closed, true cost, real profit, and margin for every campaign, so winners and losers separate at a glance.</div></div>
+      <div class="panel-card"><span class="panel-name">CPL Gap</span><span class="panel-headline red">Dashboard vs. True CPL</span><div class="panel-desc">What the ad platform reports per lead, next to what each lead really cost after every expense.</div></div>
+      <div class="panel-card"><span class="panel-name">Decisions</span><span class="panel-headline blue">One Call per Campaign</span><div style="display:flex;flex-wrap:wrap;gap:3px;margin:8px 0"><span class="dir-badge scale">SCALE</span><span class="dir-badge hold">HOLD</span><span class="dir-badge cut">CUT</span><span class="dir-badge pause">PAUSE</span></div><div class="panel-desc">Each with the numbers behind it and a confidence level. You stay in control of every move.</div></div>
+      <div class="panel-card"><span class="panel-name">Early Warnings</span><span class="panel-headline gold">Trends Before Losses</span><div class="panel-desc">Close rates slipping, or true cost per lead rising faster than the platform&rsquo;s number.</div></div>
+      <div class="panel-card"><span class="panel-name">Partner View</span><span class="panel-headline blue">Margin by Partner</span><div class="panel-desc">If you buy leads or calls, see which partner relationships pay and which drag margin down.</div></div>
+      <div class="panel-card"><span class="panel-name">Decision History</span><span class="panel-headline gold">Graded Once Results Are In</span><div class="panel-desc">Past decisions and how they were graded. Our <a href="https://alloceraintelligence.com/30-day-retest-methodology/">30-day retest</a> explains how.</div></div>
+    </div>
+    <p class="lead-text fade-up" style="margin-top:clamp(24px,4vh,40px)">Behind every view, CDAI rechecks its own math each night and stops on bad data instead of showing numbers it can&rsquo;t stand behind. The dashboard recommends; you decide what changes in your ad accounts.</p>
+  </div>
+</section>
+
+<section id="daily" style="background:var(--surface)!important;border-top:1px solid #102040">
+  <div class="section-inner prose">
+    <div class="eyebrow fade-up">Every Morning</div>
+    <h2 class="section-title fade-up">How to use the marketing dashboard <em>each morning.</em></h2>
+    <div class="rule fade-up"></div>
+    <ol class="steps fade-up">
+      <li><span><strong>Start with the decisions.</strong> Look at anything marked cut or pause first; that&rsquo;s where money is leaving.</span></li>
+      <li><span><strong>Check the CPL gap.</strong> A big difference between dashboard CPL and true CPL means costs outside the ad account are growing.</span></li>
+      <li><span><strong>Scale the proven winners.</strong> Add budget where real profit is strong and confidence is high.</span></li>
+      <li><span><strong>Watch the warning signs.</strong> A slipping close rate today becomes a losing campaign next month.</span></li>
+    </ol>
+    <p class="fade-up">Our <a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">scale, hold, cut, pause framework</a> goes deeper on turning each decision into a budget move, and the <a href="https://alloceraintelligence.com/lead-quality/">lead quality guide</a> covers what to do when a source&rsquo;s leads stop closing.</p>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="section-inner prose">
+    <div class="eyebrow fade-up">The Difference</div>
+    <h2 class="section-title fade-up">CDAI vs. a typical <em>marketing dashboard.</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="table-wrap fade-up">
+    <table>
+      <thead><tr><th></th><th>Typical marketing dashboard</th><th>CDAI dashboard</th></tr></thead>
+      <tbody>
+        <tr><td>Main numbers</td><td>Clicks, leads, spend, ROI from the ad platforms</td><td>Real profit, true cost per lead, and margin per campaign</td></tr>
+        <tr><td>Costs counted</td><td>Mostly ad spend</td><td>Ad spend, fees, partner payouts, refunds, chargebacks, compliance, and operating costs you add</td></tr>
+        <tr><td>What you do with it</td><td>Interpret charts and decide yourself</td><td>Read one clear decision per campaign, with the reasons</td></tr>
+        <tr><td>Setup</td><td>Build and maintain the reports</td><td>Connect your accounts; the engine fills it every night</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="fade-up">Before release, the decisions behind this dashboard were checked in a controlled validation. Every result is in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>.</p>
+    <div class="stat-row fade-up">
+      <div class="stat"><b>89.5%</b><span>accurate overall &middot; 1,210 of 1,352 decisions</span></div>
+      <div class="stat"><b>9</b><span>businesses across 7 industries</span></div>
+      <div class="stat"><b>100%</b><span>math match, checked two ways</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)!important;border-top:1px solid #102040">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Integrations</div>
+    <h2 class="section-title fade-up">Every source the dashboard <em>connects to.</em></h2>
+    <div class="rule fade-up"></div>
+    <p class="lead-text fade-up">Meta, Google Ads, LinkedIn, HubSpot, and Salesforce connect in one click. Other tools connect by API key, CSV upload, or webhook.</p>
+    <div class="int-row fade-up">
+      <span class="int-chip">Meta Ads</span><span class="int-chip">Google Ads</span><span class="int-chip">LinkedIn Ads</span><span class="int-chip">HubSpot</span><span class="int-chip">Salesforce</span><span class="int-chip">CallRail</span><span class="int-chip">Ringba</span><span class="int-chip">Boberdoo</span><span class="int-chip">Bing Ads</span><span class="int-chip">Stripe</span><span class="int-chip">CSV import</span><span class="int-chip">Webhook (any CRM)</span>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Common Questions</div>
+    <h2 class="section-title fade-up">Marketing dashboard <em>FAQs.</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="fade-up">
+      <details class="faq-item"><summary>What is a marketing dashboard?</summary><div class="faq-a">A marketing dashboard is a single view of your key marketing numbers from multiple channels. Most show clicks, leads, spend, and ROI. The CDAI dashboard adds real profit per campaign, true cost per lead, and one decision per campaign.</div></details>
+      <details class="faq-item"><summary>Can you give me an example of a marketing dashboard?</summary><div class="faq-a">The example above shows four campaigns with the platform&rsquo;s cost per lead, the true cost per lead, real profit over 30 days, and a scale, hold, cut, or pause decision with a confidence level.</div></details>
+      <details class="faq-item"><summary>What are the three types of dashboards?</summary><div class="faq-a">Operational dashboards track day-to-day activity, strategic dashboards track high-level goals for leaders, and analytical dashboards help dig into why numbers changed. The CDAI dashboard combines the profit view leaders need with a clear call on each campaign.</div></details>
+      <details class="faq-item"><summary>How often does the CDAI dashboard update?</summary><div class="faq-a">Every night. The engine pulls fresh data from your connected accounts, recalculates every campaign, and posts the new decisions before your day starts.</div></details>
+      <details class="faq-item"><summary>Does the dashboard change my ads?</summary><div class="faq-a">No. It recommends a decision for each campaign. You make every change in your ad accounts.</div></details>
+      <details class="faq-item"><summary>How do I get access?</summary><div class="faq-a">Sign up, choose your industry, and connect your ad accounts and CRM. Existing clients log in through the <a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">client portal</a>. See <a href="https://alloceraintelligence.com/pricing/">pricing</a> for plans.</div></details>
+    </div>
+  </div>
+</section>
+
+<section id="intake" style="background:#071530!important">
+  <div class="section-inner">
+    <div class="intake-grid">
+      <div class="intake-info fade-up">
+        <div class="eyebrow">Get Started</div>
+        <h3>See your campaigns on the dashboard.</h3>
+        <p class="lead-text" style="font-size:clamp(13px,1.6vw,15px)">Connect the ad accounts and CRM you already use, and your first numbers arrive after the first nightly run. Questions first? Send us a note and we&rsquo;ll get back to you.</p>
+        <div class="btn-row" style="margin-bottom:clamp(20px,3vh,28px)"><a href="https://cdai-portal.vercel.app/signup/" class="btn-primary">Get Started</a></div>
+        <div class="intake-steps">
+          <div class="intake-step"><span class="intake-step-num">01</span><div><span class="intake-step-title">Sign up and choose your industry</span><span class="intake-step-desc">Decisions are graded against your real sales cycle.</span></div></div>
+          <div class="intake-step"><span class="intake-step-num">02</span><div><span class="intake-step-title">Connect your accounts</span><span class="intake-step-desc">Ad accounts and CRM first; partner, call tracking, and payment tools when you&rsquo;re ready.</span></div></div>
+          <div class="intake-step"><span class="intake-step-num">03</span><div><span class="intake-step-title">Open your dashboard</span><span class="intake-step-desc">Real profit, true cost per lead, and one clear decision for every campaign.</span></div></div>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:.15s">
+        <form class="intake-form" id="dshIntakeForm" novalidate>
+          <div class="contact-phone">Contact: 919-610-9288</div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" for="dshFirst">First Name *</label><input class="form-input" type="text" id="dshFirst" name="firstName" placeholder="First name" required></div>
+            <div class="form-group"><label class="form-label" for="dshLast">Last Name *</label><input class="form-input" type="text" id="dshLast" name="lastName" placeholder="Last name" required></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="dshCompany">Company Name *</label><input class="form-input" type="text" id="dshCompany" name="company" placeholder="Your company" required></div>
+          <div class="form-group"><label class="form-label" for="dshEmail">Business Email *</label><input class="form-input" type="email" id="dshEmail" name="email" placeholder="you@yourcompany.com" required></div>
+          <div class="form-group"><label class="form-label" for="dshPhone">Phone Number</label><input class="form-input" type="tel" id="dshPhone" name="phone" placeholder="(555) 000-0000"></div>
+          <div class="form-group">
+            <label class="form-label" for="dshService">What do you need? *</label>
+            <select class="form-select" id="dshService" name="service" required>
+              <option value="">Select one...</option>
+              <option value="free-distortion-audit">Free Distortion Audit</option>
+              <option value="get-started">Help getting started with CDAI</option>
+              <option value="pricing-question">A question about pricing</option>
+              <option value="partnership">Partnership or agency</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label" for="dshMessage">Tell us about your campaigns</label><textarea class="form-textarea" id="dshMessage" name="message" placeholder="What platforms are you running? Approximate monthly spend? What problem are you trying to solve?" style="min-height:80px"></textarea></div>
+          <div class="form-error" id="dshFormError">Please fill in all required fields.</div>
+          <button class="form-submit" type="submit" id="dshFormSubmit">Submit Request</button>
+        </form>
+        <div class="form-success" id="dshFormSuccess"><h4>Request Received</h4><p>We&rsquo;ll review your submission and reach out within 24 hours.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand"><img class="footer-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence"><span class="footer-text">Allocera Intelligence &middot; CDAI Engine &middot; alloceraintelligence.com</span></div>
+  <span class="footer-right">&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/" style="color:var(--dim);text-decoration:none">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/" style="color:var(--dim);text-decoration:none">Terms of Service</a> &middot; Built by <a href="https://fullsendorganicks.com/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none">FSO</a></span>
 </footer>
-
 </div>
+
 <script>
-(function(){var b=document.getElementById('dshBurger'),l=document.getElementById('dshLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('dsh-open');});}})();
+(function(){
+  var root=document.getElementById('dsh'); if(!root) return;
+  var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  root.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
+  var toggle=document.getElementById('dshNavToggle'),menu=document.getElementById('dshMobileMenu');
+  function closeMobile(){toggle.classList.remove('open');menu.classList.remove('open')}
+  toggle.addEventListener('click',function(){toggle.classList.toggle('open');menu.classList.toggle('open')});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMobile)});
+  document.addEventListener('click',function(e){if(!toggle.contains(e.target)&&!menu.contains(e.target))closeMobile()});
+  var form=document.getElementById('dshIntakeForm');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var err=document.getElementById('dshFormError'),btn=document.getElementById('dshFormSubmit'),valid=true;
+    form.querySelectorAll('[required]').forEach(function(f){if(!f.value.trim()){valid=false;f.style.borderColor='#D63050'}else{f.style.borderColor=''}});
+    if(!valid){err.textContent='Please fill in all required fields.';err.style.display='block';return}
+    err.style.display='none';btn.disabled=true;btn.textContent='Submitting...';
+    fetch('https://formspree.io/f/xwvwlzzq',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    .then(function(r){return r.json()})
+    .then(function(res){if(res.ok||res.success){form.style.display='none';document.getElementById('dshFormSuccess').style.display='block'}else{btn.disabled=false;btn.textContent='Submit Request';err.textContent='Submission failed. Please email alloceraintelligence@gmail.com directly.';err.style.display='block'}})
+    .catch(function(){btn.disabled=false;btn.textContent='Submit Request';err.textContent='Network error. Please email alloceraintelligence@gmail.com directly.';err.style.display='block'});
+  });
+})();
 </script>
 
 <!-- ============ Analytics: GA4 (G-29J4V3VQ7B) + Tag Manager-ready events (article pages) ============ -->
