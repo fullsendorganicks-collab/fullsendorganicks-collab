@@ -6,6 +6,53 @@
 
 This list comes from a scan of the WordPress export run on Sept 26 (all live pages).
 
+## How I send every page from now on (added Sept 28, after the post 245/252 mix-up)
+
+Every paste instruction starts with three things, and you check all three before deleting anything:
+1. **The exact edit link**, by post ID (`post.php?post=ID&action=edit`). Never a title to search for.
+2. **The WordPress title you'll see in the editor** (often different from the SEO title).
+3. **The current slug you should see** in the permalink box. If the slug doesn't match, stop and tell me.
+
+**Audit of every page pasted so far (Sept 28):** the slugs Nick reported confirm the right post every time except one. Lead Quality went into post 245, which held the 30-Day Retest, instead of post 252. The 30-Day Retest HTML is saved in `website/pages/30-day-retest-methodology.html` and can go into a new post.
+
+**Posts and pages still to rebuild, by ID** (from the Sept 26 site export):
+
+| Type | ID | Slug you should see | WordPress title you should see | Edit link |
+|---|---|---|---|---|
+| page | 133 | `allocera-intelligence-case-study-proof` | Allocera Intelligence - Case Study - Proof | `alloceraintelligence.com/wp-admin/post.php?post=133&action=edit` |
+| page | 155 | `privacy-policy-and-terms-and-conditions` | Privacy Policy | `alloceraintelligence.com/wp-admin/post.php?post=155&action=edit` |
+| page | 162 | `terms` | Terms | `alloceraintelligence.com/wp-admin/post.php?post=162&action=edit` |
+| page | 173 | `data-deletion-instructions` | Data Deletion Instructions | `alloceraintelligence.com/wp-admin/post.php?post=173&action=edit` |
+| page | 342 | `case-study-2-oauth-validation` | CDAI Engine OAuth validation | `alloceraintelligence.com/wp-admin/post.php?post=342&action=edit` |
+| page | 437 | `pricing` | Paid Ads Audit Cost — CDAI Engine / Allocera Intelligence | `alloceraintelligence.com/wp-admin/post.php?post=437&action=edit` |
+| page | 451 | `how-it-works` | How to Calculate True Cost Per Lead — CDAI Engine / Allocera | `alloceraintelligence.com/wp-admin/post.php?post=451&action=edit` |
+| page | 457 | `proof` | Paid Advertising Case Study — CDAI Engine / Allocera Intelli | `alloceraintelligence.com/wp-admin/post.php?post=457&action=edit` |
+| page | 478 | `dashboard` | Campaign Analytics Dashboard — CDAI Engine / Allocera Intell | `alloceraintelligence.com/wp-admin/post.php?post=478&action=edit` |
+| page | 483 | `about` | About CDAI Engine — Allocera Intelligence / Nick Baum | `alloceraintelligence.com/wp-admin/post.php?post=483&action=edit` |
+| page | 524 | `newsletter-welcome` | Newsletter Welcome | `alloceraintelligence.com/wp-admin/post.php?post=524&action=edit` |
+| post | 233 | `true-cost-closed-install` | true-cost-closed-install | `alloceraintelligence.com/wp-admin/post.php?post=233&action=edit` |
+| post | 252 | `30-day-retest-methodology-2` | Directive Accuracy: 30-Day Retest Beats Gut-Feel | `alloceraintelligence.com/wp-admin/post.php?post=252&action=edit` |
+| post | 277 | `reconciling-pace-greensky-service-finance` | Merchant Fees: GreenSky, PACE, Service Finance Guide | `alloceraintelligence.com/wp-admin/post.php?post=277&action=edit` |
+| post | 315 | `financing-fees-home-services` | Financing Fees: How They Quietly Eat Home Services Margin | `alloceraintelligence.com/wp-admin/post.php?post=315&action=edit` |
+| post | 490 | `true-cost-per-move-in` | True Cost Per Move-In: Senior Living Margin Reconciliation / | `alloceraintelligence.com/wp-admin/post.php?post=490&action=edit` |
+| post | 530 | `roas-looks-good-campaigns-lose-money` | Why ROAS Looks Good But Campaigns Lose Money | `alloceraintelligence.com/wp-admin/post.php?post=530&action=edit` |
+| post | 549 | `cost-per-admission-addiction-treatment` | True Cost Per Admission: Addiction Treatment / Allocera | `alloceraintelligence.com/wp-admin/post.php?post=549&action=edit` |
+| post | 556 | `cost-per-enrolled-member-medicare-advantage` | True Cost Per Enrolled Member: Medicare Advantage / Allocera | `alloceraintelligence.com/wp-admin/post.php?post=556&action=edit` |
+| post | 576 | `chargebacks-marketing-cost` | How Chargebacks Inflate True Marketing Cost / Allocera | `alloceraintelligence.com/wp-admin/post.php?post=576&action=edit` |
+| post | 588 | `true-marketing-roi` | True Marketing ROI: Why These Platforms Get It Wrong / Alloc | `alloceraintelligence.com/wp-admin/post.php?post=588&action=edit` |
+| post | 703 | `personal-injury-ad-spend-attribution` | Personal Injury Ad Spend Attribution: Why Blended CPL Hides  | `alloceraintelligence.com/wp-admin/post.php?post=703&action=edit` |
+| post | 715 | `personal-injury-case-type-cac` | Personal Injury Case Type CAC: Why One Threshold Fails | `alloceraintelligence.com/wp-admin/post.php?post=715&action=edit` |
+| post | 722 | `multi-state-pi-firm-attribution` | Multi-State PI Firm Attribution: Why One Blended CAC Fails | `alloceraintelligence.com/wp-admin/post.php?post=722&action=edit` |
+| post | 730 | `personal-injury-settlement-lag` | Personal Injury Settlement Lag: Why 30-Day CAC Dashboards Fa | `alloceraintelligence.com/wp-admin/post.php?post=730&action=edit` |
+| post | 739 | `tcpa-compliance-cost-for-law-firms` | TCPA Compliance Cost for Law Firms Buying Leads | `alloceraintelligence.com/wp-admin/post.php?post=739&action=edit` |
+| post | 746 | `cost-per-booked-job-hvac-plumbing` | True Cost Per Booked Job for HVAC and Plumbing Contractors | `alloceraintelligence.com/wp-admin/post.php?post=746&action=edit` |
+| post | 758 | `mass-tort-lead-aggregator-economics` | Mass Tort Lead Aggregator Economics: Why Blended CPL Hides C | `alloceraintelligence.com/wp-admin/post.php?post=758&action=edit` |
+| post | 765 | `angi-homeadvisor-lead-cost` | Angi HomeAdvisor Lead Cost: The Real Cost Per Booked Job | `alloceraintelligence.com/wp-admin/post.php?post=765&action=edit` |
+| post | 772 | `hvac-seasonal-cost-per-lead` | HVAC Seasonal Cost Per Lead: Why Flat Budgets Waste Money /  | `alloceraintelligence.com/wp-admin/post.php?post=772&action=edit` |
+| post | 779 | `hvac-marketing-channel-mix` | HVAC Marketing Channel Mix: What the Right Spend Split Looks | `alloceraintelligence.com/wp-admin/post.php?post=779&action=edit` |
+| post | 786 | `hvac-customer-lifetime-value` | HVAC Customer Lifetime Value: Why Membership Plans Change th | `alloceraintelligence.com/wp-admin/post.php?post=786&action=edit` |
+| post | 793 | `hvac-customer-acquisition-cost` | True HVAC Customer Acquisition Cost: Why It Runs 3x CPL | `alloceraintelligence.com/wp-admin/post.php?post=793&action=edit` |
+
 ## Where we are (end of Sept 27): paused for the night
 
 **Live and done (15), with Rank Math scores:**
