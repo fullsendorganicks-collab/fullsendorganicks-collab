@@ -126,7 +126,7 @@ Full page-by-page list: **`website/FIX_LIST.md`** (41 pages still carry old or f
 | 13 | `/tag-manager-real-roi/` | LIVE, **80** (slug kept). New post "Offline Conversion Tracking" (focus "offline conversion tracking"). `/30-day-retest-methodology-2/` will be rebuilt into its own new post (no redirect). |
 | 13b | `/salesforce-campaign-influence/` (was `/allocera-vs-salesforce/`) | LIVE, **89**. New post "Salesforce Campaign Influence". Slug changed; 301 = R7 in `website/REDIRECTS.md`. |
 | 13c | `/true-cac/` (merged `/true-cac-2/`) | LIVE, **81** (slug kept). New post "Customer Acquisition Cost Formula" + true CAC calculator. `/true-cac-2/` trashed; its 301 = R8 in `website/REDIRECTS.md`. |
-| 14 | `/marketing-margin-distortion-index/` | **Full rebuild (Nick: never retire).** Same URL, new honest page (80%, false Apex claim, "2026" in the title, unsourced stats all go). |
+| 14 | `/marketing-margin-distortion-index/` | **BUILT Sept 28, awaiting paste.** Rebuilt as "Average Cost Per Lead by Industry": every benchmark linked to WordStream/LocaliQ, plus lead-to-customer math. Recommended slug `average-cost-per-lead` (Nick's call). |
 | 15 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | **Full rebuilds (Nick: never retire; Apex was a real pilot).** Keep the pilot story where it's provable, lead with the validation, and give each page its own purpose. |
 | 16 | `/how-it-works/`, `/about/` | Full rebuilds |
 | 17 | `/dashboard/`, validation report, terms, newsletter welcome | Light cleans or quick fixes |
