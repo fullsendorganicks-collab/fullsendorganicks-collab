@@ -2,7 +2,7 @@
 
 **Nick's rules:**
 - **Never delete or retire a page.** Rebuild it so it adds reach, authority and trust.
-- **The blog page is last.** Redirects and link fixes are done at the end.
+- **Last, after every page is done (Nick, Sept 28):** all redirects, homepage updates, and the blog index page. During page work, only log them; never ask Nick to do them mid-way.
 - **Apex was a real pilot.** Keep it where it's true; the Sid and Rebecca homepage reviews stay.
 - **Nothing sensitive or proprietary.**
 - **Every page gets:**
@@ -37,7 +37,7 @@ Redirect details are in `REDIRECTS.md`.
 ## A. Fixes on pages already done (Nick, in WordPress; about 15 minutes, no new building)
 | # | Post ID / edit link | What's wrong (from the Sept 27 export) | Fix |
 |---|---|---|---|
-| A1 | https://alloceraintelligence.com/wp-admin/post.php?post=252&action=edit (live: /30-day-retest-methodology-2/) | The 30-Day Retest IS live here (score 82), but the slug is still `30-day-retest-methodology-2`. 7 pages link to `/30-day-retest-methodology/`. | Change the slug to `30-day-retest-methodology`. First check that Rank Math → Redirections has no redirect named `30-day-retest-methodology` (R12). Then add R11. |
+| A1 | https://alloceraintelligence.com/wp-admin/post.php?post=252&action=edit (live: /30-day-retest-methodology-2/) | The 30-Day Retest IS live here (score 82), but the slug is still `30-day-retest-methodology-2`. 7 pages link to `/30-day-retest-methodology/`. | Change the slug to `30-day-retest-methodology` (Nick did this Sept 28). The redirect checks (R11, R12) happen at the end with all the other redirects. |
 | A2 | https://alloceraintelligence.com/wp-admin/post.php?post=654&action=edit (live: /home-sample/northbeam-alternative/) | My rebuild (`pages/northbeam-alternative.html`) was never pasted. The old page with the fake 80% and "cost layers" is live (142 impressions, position 27.9, score 74). | Paste the existing file plus its Rank Math box. No new build. |
 | A3 | Featured image missing | 245 lead quality, 260 offline conversion, 267 contribution margin, 501 signed case, 506 avg cost per lead, 563 net marketing contribution, 850 validation report | Set each post's own image (the file names are in each RANKMATH box). |
 | A4 | https://alloceraintelligence.com/wp-admin/post.php?post=284&action=edit (live: /salesforce-campaign-influence/) | The WordPress title is still the old "Salesforce Marketing Cloud: The Margin Reconciliation Gap" | Change it to `Salesforce Campaign Influence: 4 Things Campaign ROI Misses` |
