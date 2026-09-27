@@ -1,5 +1,38 @@
 # Rank Math box: /30-day-retest-methodology/
 
+## Sept 28 restore: this post moves into post 252
+
+**What happened:** the Lead Quality post was pasted into post **245**, which is where this post lived. Post 245 is now `/lead-quality/` (score 83). This post (score 82) isn't live anywhere right now. 7 rebuilt pages link to `/30-day-retest-methodology/`:
+- marketing costs
+- ROAS calculator
+- offline conversion tracking
+- Salesforce campaign influence
+- true CAC
+- lead quality
+- the blog file
+
+Search Console's 38 impressions are on that URL too.
+
+**The fix (nothing is deleted, no content changes):** paste this post into **post 252** and give it back its original slug.
+
+1. **Rank Math → Redirections first.** If there's a redirect with source `30-day-retest-methodology` (Rank Math can create one automatically when a slug changes), **delete it**. Otherwise it sends visitors to Lead Quality instead of this post.
+2. Open `alloceraintelligence.com/wp-admin/post.php?post=252&action=edit`. Delete the old content (the leftover Tag Manager copy), paste in `30-day-retest-methodology.html` (or the `-copy-paste.txt` copy), and keep **Elementor Canvas**.
+3. WordPress title: `Marketing Measurement That Grades Its Own Decisions: The 30-Day Retest`
+4. **Permalink: change `30-day-retest-methodology-2` to `30-day-retest-methodology`.** It's free now that post 245 is `lead-quality`.
+5. **Featured and Social image:** `30-day-retest-marketing-measurement-timeline.png`. It should already be in Media, so upload it only if it's missing.
+6. Rank Math fields: use the table below (same as before).
+7. **Old fields to delete on post 252:**
+   - SEO title "Directive Accuracy: 30-Day Retest Beats Gut-Feel"
+   - focus keyword "directive accuracy"
+   - the old description with "80% accuracy"
+8. **Add the 301** from `30-day-retest-methodology-2` to `https://alloceraintelligence.com/30-day-retest-methodology/` (R11 in `website/REDIRECTS.md`).
+9. **Quick test:**
+   - `/30-day-retest-methodology/` should open this post, not Lead Quality.
+   - `/lead-quality/` should open Lead Quality.
+   - `/30-day-retest-methodology-2/` should land on this post.
+
+---
+
 Search Console (last 3 months): 11 impressions, 0 clicks, average position 9.2, all for "allocera intelligence". The old page carried the retired 80% claim, "seven cost layers", an unsourced "60–70% industry accuracy" stat, and a dated byline. This rebuild targets a real search term and is built around the validation.
 
 ## Where to find it
@@ -17,7 +50,7 @@ Posts → search "retest" (the old title starts "The 30-Day Retest"). Delete the
 | Focus Keyword | `marketing measurement` |
 | Secondary keywords | `30-day retest, marketing decision accuracy, measure marketing effectiveness, marketing attribution` |
 | SEO Title (57 chars) | `Marketing Measurement: Grading 8 Decisions Against Profit` (v2 after the first score of 79; adds a number) |
-| Permalink | `30-day-retest-methodology` (unchanged) |
+| Permalink | `30-day-retest-methodology` (the original slug; in post 252 it must be changed from `-2`, see step 4) |
 | Meta Description (142 chars) | `Most marketing measurement never checks its own calls. See how CDAI grades every decision against real profit, and the 89.5% validated result.` |
 | Schema | Article → Blog Post |
 

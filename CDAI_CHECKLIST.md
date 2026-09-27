@@ -75,7 +75,7 @@ Approval sheet: https://claude.ai/artifact/3hNXn12DXcbCd5Q8Nj3EyB · Full detail
 3. **Schema.** Set Rank Math → Schema → **Article → Blog Post** on the Northbeam, Rockerbox, and validation report (contribution-margin-marketing) pages. The Pages default was already changed to "None" on Sept 26.
 4. **Company info.** Rank Math → Titles & Meta → Local SEO: set Organization, "Allocera Intelligence", and the new logo.
 5. **Comments and pings.** Turn them off on every post.
-6. **No redirect for `/30-day-retest-methodology-2/`** (Nick: never delete). It gets rebuilt into a new post. Don't redirect `/seven-cost-layers/`; it's getting a new post.
+6. **Redirects:** the full list is in `website/REDIRECTS.md` section 0. Post 252 now holds the 30-day retest post at its original slug, and `/30-day-retest-methodology-2/` gets a 301 to it (R11). **Never** a redirect from `/30-day-retest-methodology/` to `/lead-quality/` (R12).
 7. **Delete "every two weeks"** from `/newsletter-welcome/` and `/roas-looks-good-campaigns-lose-money/`. No newsletter has been sent yet.
 8. **Turn on Rank Math → 404 Monitor.**
 9. **Search Console exports.** Click each reason and export its URL list:
@@ -121,14 +121,14 @@ Full page-by-page list: **`website/FIX_LIST.md`** (41 pages still carry old or f
 | 7 | `/cost-per-signed-case/` | LIVE, **90** |
 | 8 | `/blog/` (Nick's design, new content) | LIVE, **72** (normal for a directory page). **ON HOLD until the rebuild is done (Nick).** Pending list in `website/FIX_LIST.md` → "Blog page: pending changes". |
 | 9 | Homepage | LIVE, **81** (Nick: fine as is). Pasted Sept 26: Ask AI section back, F6S logo, tracking, the "What is true cost per lead?" FAQ. Rank Math box in `website/homepage-RANKMATH.md`. |
-| 10 | `/30-day-retest-methodology/` | LIVE, **82** (79 → 82 after the title v2; the last points need the keyword in the permalink, Nick's call). Built (`website/pages/30-day-retest-methodology.html` + RANKMATH). Focus keyword "marketing measurement". Every claim checked against the engine code. Includes GA4 tracking. |
+| 10 | `/30-day-retest-methodology/` | **Restore into post 252 (Sept 28)**, was LIVE at **82** (79 → 82 after the title v2; the last points need the keyword in the permalink, Nick's call). Built (`website/pages/30-day-retest-methodology.html` + RANKMATH). Focus keyword "marketing measurement". Every claim checked against the engine code. Includes GA4 tracking. |
 | 11 | `/marketing-costs/` (was `/seven-cost-layers/`) | LIVE, **89**. New post, focus keyword "marketing costs"; permalink changed + 301 from the old URL. Built (`website/pages/seven-cost-layers.html` + RANKMATH + image). No "layers" wording anywhere. Includes GA4 tracking. |
 | 12 | `/roas-calculator/` (was `/55-directives-study/`) | LIVE, **90**. Brand-new ROAS calculator page (not a 301, per Nick): working calculator with break-even ROAS + real profit for lead-gen. Focus "roas calculator" (1,300/mo). Slug changed; 301 from the old URL (R3 in `website/REDIRECTS.md`). GA4 tracking + `calculator_use` event. |
 | 13 | `/tag-manager-real-roi/` | LIVE, **80** (slug kept). New post "Offline Conversion Tracking" (focus "offline conversion tracking"). `/30-day-retest-methodology-2/` will be rebuilt into its own new post (no redirect). |
 | 13b | `/salesforce-campaign-influence/` (was `/allocera-vs-salesforce/`) | LIVE, **89**. New post "Salesforce Campaign Influence". Slug changed; 301 = R7 in `website/REDIRECTS.md`. |
 | 13c | `/true-cac/` (merged `/true-cac-2/`) | LIVE, **81** (slug kept). New post "Customer Acquisition Cost Formula" + true CAC calculator. `/true-cac-2/` trashed; its 301 = R8 in `website/REDIRECTS.md`. |
 | 14 | `/average-cost-per-lead/` (was `/marketing-margin-distortion-index/`) | LIVE, **83**. Rebuilt as "Average Cost Per Lead by Industry". Slug changed; 301 = R10 in `website/REDIRECTS.md`. |
-| 14b | `/30-day-retest-methodology-2/` (post 252) | **BUILT Sept 28, awaiting paste + score.** Rebuilt (not deleted) as a new post "Lead Quality" (focus "lead quality", 260/mo, ~$9/click); links to the live 30-day retest post instead of duplicating it. Recommended slug `lead-quality` (301 = R11 if changed). |
+| 14b | `/lead-quality/` (post 245) | LIVE, **83**. New post "Lead Quality". Pasted into post 245 (the retest post's home), so the 30-day retest post (#10) is restored into post 252 with its original slug `/30-day-retest-methodology/`. R11 (`-2` → retest) and R12 (make sure no `30-day-retest-methodology` → `lead-quality` redirect exists) in `website/REDIRECTS.md`. |
 | 15 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | **Full rebuilds (Nick: never retire; Apex was a real pilot).** Keep the pilot story where it's provable, lead with the validation, and give each page its own purpose. |
 | 16 | `/how-it-works/`, `/about/` | Full rebuilds |
 | 17 | `/dashboard/`, validation report, terms, newsletter welcome | Light cleans or quick fixes |

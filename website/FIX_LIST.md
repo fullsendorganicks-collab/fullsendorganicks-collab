@@ -21,21 +21,20 @@ This list comes from a scan of the WordPress export run on Sept 26 (all live pag
 | `/home-sample/northbeam-alternative/` | done | |
 | `/home-sample/rockerbox-alternative/` | done | |
 | `/cost-per-signed-case/` | done | |
-| `/30-day-retest-methodology/` | 82 | |
+| `/30-day-retest-methodology/` | 82 | **Not live right now:** restore into post 252 with its original slug (steps in its RANKMATH box; R11, R12) |
 | `/marketing-costs/` (was `/seven-cost-layers/`) | 89 | |
 | `/roas-calculator/` (was `/55-directives-study/`) | 90 | |
 | `/tag-manager-real-roi/` (now Offline Conversion Tracking) | 80 | Slug kept |
 | `/salesforce-campaign-influence/` (was `/allocera-vs-salesforce/`) | 89 | |
 | `/true-cac/` (Customer Acquisition Cost Formula; merged `-2`) | 81 | Slug kept |
 | `/average-cost-per-lead/` (was `/marketing-margin-distortion-index/`) | 83 | |
+| `/lead-quality/` (post 245, Sept 28) | 83 | Pasted into 245 (the retest post's home); retest post moves to 252 |
 
-**Now:** #3 built as "Lead Quality" (post 252), waiting on Nick's paste + score. **Next:** #8 proof pages (full rebuilds), then Tier 2.
+**Now:** restore the 30-day retest post into post 252 (its original slug). **Next:** #8 proof pages (full rebuilds), then Tier 2. Master URL/title/redirect table: `website/REDIRECTS.md` section 0.
 
 **Left to do: 30 items**
 - Tier 1:
-  - #6 true CAC merge
-  - #3 `/30-day-retest-methodology-2/` → new post "Lead Quality" (**built Sept 28, awaiting paste + score**)
-  - #7 margin distortion index (full rebuild)
+  - #3: Lead Quality is LIVE at `/lead-quality/` (83, post 245). Post 252 now takes the 30-day retest post back to `/30-day-retest-methodology/`.
   - #8 three proof/case-study pages (full rebuilds)
 - Tier 2:
   - #9 pricing (on hold)
@@ -73,7 +72,7 @@ Two kinds of fix:
 - [ ] Update card: Allocera and Salesforce → Salesforce Campaign Influence → `/salesforce-campaign-influence/`
 - [ ] Update card: True CAC → Customer Acquisition Cost Formula (final URL); remove any `/true-cac-2/` card
 - [ ] Update card: Margin Distortion Index → Average Cost Per Lead by Industry → `/average-cost-per-lead/`
-- [ ] Remove cards for pages that get 301'd (e.g. `/30-day-retest-methodology-2/`, `/true-cac-2/`) and update titles/descriptions for every rebuilt page
+- [ ] Add a card for `/lead-quality/`; remove cards for pages that get 301'd (e.g. `/30-day-retest-methodology-2/`, `/true-cac-2/`) and update titles/descriptions for every rebuilt page
 - [ ] Re-check every card link against the live URLs before handing over
 
 ## Tier 1: false claims (fix first)
@@ -81,7 +80,7 @@ Two kinds of fix:
 |---|---|---|---|
 | 1 | `/30-day-retest-methodology/` | 80%, "55 of 56", seven layers, $2,500 guarantee, wrong `/blog/` links, pasted head | **LIVE Sept 27, score 82.** |
 | 2 | `/55-directives-study/` | The whole page is the fake 80% | **LIVE Sept 27, score 90**, now at `/roas-calculator/` (brand-new ROAS calculator). 301 = R3 in `REDIRECTS.md`. |
-| 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **BUILT Sept 28: new post "Lead Quality: How to Measure It by What Each Lead Is Worth"** (focus "lead quality"). Files: `website/pages/30-day-retest-methodology-2*`. Recommended slug `lead-quality` (Nick's call; 301 = R11 if changed). |
+| 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **DONE Sept 28:** "Lead Quality" is LIVE at `/lead-quality/` (83), pasted into post 245. Post 252 now takes the 30-day retest post back to `/30-day-retest-methodology/` (R11, R12). Files: `website/pages/lead-quality*`. |
 | 4 | `/tag-manager-real-roi/` | 80%, seven layers, 14 unsourced stats, pasted head | **LIVE Sept 27, score 80**, slug kept. New post "Offline Conversion Tracking". |
 | 5 | `/allocera-vs-salesforce/` | 80%, seven layers, "cannot" claims about Salesforce, pasted head | **LIVE Sept 27, score 89**, now at `/salesforce-campaign-influence/`. 301 = R7. |
 | 6 | `/true-cac/` + `/true-cac-2/` | 80%, seven layers, duplicate pair | **LIVE Sept 28, score 81**, slug kept. `-2` trashed; 301 = R8. |

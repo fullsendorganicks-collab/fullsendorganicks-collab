@@ -1,6 +1,8 @@
-# Rank Math box: /30-day-retest-methodology-2/ (post ID 252), rebuilt as "Lead Quality"
+# Rank Math box: /lead-quality/ (post ID 245)
 
-**Status: ready to paste (Sept 28).**
+**LIVE Sept 28: score 83, slug `lead-quality`.** Nick pasted it into post **245**, which held the live 30-day retest post (`/30-day-retest-methodology/`, 82), not into post 252. Fix: the 30-day retest post moves into post 252 and takes back its original slug (see `30-day-retest-methodology-RANKMATH.md` → "Sept 28 restore" and R11/R12 in `website/REDIRECTS.md`). Nothing is lost: both posts stay live.
+
+_The notes below were written for post 252; the content, fields and claims are the same._
 
 **What this replaces:** post 252, titled "Directive Accuracy: 30-Day Retest Beats Gut-Feel". Its body was an old copy of the Tag Manager post, and it carried:
 - the fake 80% (in its meta description)
