@@ -1,4 +1,6 @@
-# Rank Math box: /allocera-vs-salesforce/ → new Salesforce Campaign Influence post
+# Rank Math box: /salesforce-campaign-influence/ (was /allocera-vs-salesforce/)
+
+**LIVE Sept 27: score 89.** Slug changed; 301 = R7 in `website/REDIRECTS.md`.
 
 **What this replaces:** "Allocera vs Salesforce Marketing Cloud: What Salesforce Cannot Show You". The old post carried:
 - the fake 80%
