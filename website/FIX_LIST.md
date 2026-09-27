@@ -35,6 +35,7 @@ Two kinds of fix:
 - [x] Add card: Marketing Costs → `/marketing-costs/`
 - [x] Add card: 30-Day Retest → `/30-day-retest-methodology/`
 - [ ] Add card: ROAS Calculator → `/roas-calculator/`
+- [ ] Update card: Tag Manager → Offline Conversion Tracking (new title + final URL)
 - [ ] Remove cards for pages that get 301'd (e.g. `/30-day-retest-methodology-2/`, `/true-cac-2/`) and update titles/descriptions for every rebuilt page
 - [ ] Re-check every card link against the live URLs before handing over
 
@@ -43,8 +44,8 @@ Two kinds of fix:
 |---|---|---|---|
 | 1 | `/30-day-retest-methodology/` | 80%, "55 of 56", seven layers, $2,500 guarantee, wrong `/blog/` links, pasted head | **REBUILT Sept 26 (night)**: `pages/30-day-retest-methodology.html` + RANKMATH. Waiting for Nick to paste it and report the score. |
 | 2 | `/55-directives-study/` | The whole page is the fake 80% | **LIVE Sept 27, score 90**, now at `/roas-calculator/` (brand-new ROAS calculator). 301 = R3 in `REDIRECTS.md`. |
-| 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **301** to `/tag-manager-real-roi/` |
-| 4 | `/tag-manager-real-roi/` | 80%, seven layers, 14 unsourced stats, pasted head | Full rebuild (it also ties into the GTM work) |
+| 3 | `/30-day-retest-methodology-2/` | Exact copy of the tag-manager page, and says 80% | **301 = R5 in `REDIRECTS.md`** → the new offline conversion tracking post's final URL; then trash the duplicate. |
+| 4 | `/tag-manager-real-roi/` | 80%, seven layers, 14 unsourced stats, pasted head | **BUILT Sept 27**: new post "Offline Conversion Tracking" (`pages/tag-manager-real-roi.html` + RANKMATH + image). Focus "offline conversion tracking" (~400/mo cluster, low competition, high ad value). Recommended slug `offline-conversion-tracking` + R6 (Nick's call). Waiting for paste + score. |
 | 5 | `/allocera-vs-salesforce/` | 80%, seven layers, "cannot" claims about Salesforce, pasted head | Full rebuild |
 | 6 | `/true-cac/` + `/true-cac-2/` | 80%, seven layers, duplicate pair | Merge into one full rebuild, then 301 the `-2` page |
 | 7 | `/marketing-margin-distortion-index/` | 80%, Apex, "2026" in the title, many unsourced stats, "measured using CDAI" claim | Full rebuild, or retire. **Nick decides.** |

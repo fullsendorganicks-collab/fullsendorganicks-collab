@@ -51,7 +51,7 @@ Approval sheet: https://claude.ai/artifact/3hNXn12DXcbCd5Q8Nj3EyB · Full detail
 3. **Schema.** Set Rank Math → Schema → **Article → Blog Post** on the Northbeam, Rockerbox, and validation report (contribution-margin-marketing) pages. The Pages default was already changed to "None" on Sept 26.
 4. **Company info.** Rank Math → Titles & Meta → Local SEO: set Organization, "Allocera Intelligence", and the new logo.
 5. **Comments and pings.** Turn them off on every post.
-6. **One redirect.** `/30-day-retest-methodology-2/` → `/tag-manager-real-roi/` (it's an exact copy). Don't redirect `/seven-cost-layers/`; it's getting a new post.
+6. **One redirect.** `/30-day-retest-methodology-2/` → the offline conversion tracking post's final URL (R5 in `website/REDIRECTS.md`; it's an exact copy). Don't redirect `/seven-cost-layers/`; it's getting a new post.
 7. **Delete "every two weeks"** from `/newsletter-welcome/` and `/roas-looks-good-campaigns-lose-money/`. No newsletter has been sent yet.
 8. **Turn on Rank Math → 404 Monitor.**
 9. **Search Console exports.** Click each reason and export its URL list:
@@ -100,7 +100,8 @@ Full page-by-page list: **`website/FIX_LIST.md`** (41 pages still carry old or f
 | 10 | `/30-day-retest-methodology/` | LIVE, **82** (79 → 82 after the title v2; the last points need the keyword in the permalink, Nick's call). Built (`website/pages/30-day-retest-methodology.html` + RANKMATH). Focus keyword "marketing measurement". Every claim checked against the engine code. Includes GA4 tracking. |
 | 11 | `/marketing-costs/` (was `/seven-cost-layers/`) | LIVE, **89**. New post, focus keyword "marketing costs"; permalink changed + 301 from the old URL. Built (`website/pages/seven-cost-layers.html` + RANKMATH + image). No "layers" wording anywhere. Includes GA4 tracking. |
 | 12 | `/roas-calculator/` (was `/55-directives-study/`) | LIVE, **90**. Brand-new ROAS calculator page (not a 301, per Nick): working calculator with break-even ROAS + real profit for lead-gen. Focus "roas calculator" (1,300/mo). Slug changed; 301 from the old URL (R3 in `website/REDIRECTS.md`). GA4 tracking + `calculator_use` event. |
-| 13 | `/tag-manager-real-roi/`, `/allocera-vs-salesforce/`, `/true-cac/` + `/true-cac-2/` (merge) | Full rebuilds (80%, seven layers, pasted head) |
+| 13 | `/tag-manager-real-roi/` | **BUILT Sept 27, awaiting paste.** New post "Offline Conversion Tracking" (focus "offline conversion tracking"). Recommended slug `offline-conversion-tracking` (Nick's call). `/30-day-retest-methodology-2/` gets a 301 to it (R5 in `website/REDIRECTS.md`). |
+| 13b | `/allocera-vs-salesforce/`, `/true-cac/` + `/true-cac-2/` (merge) | Full rebuilds (80%, seven layers, pasted head) |
 | 14 | `/marketing-margin-distortion-index/` | **Nick decides:** rebuild or retire (80%, Apex, "2026" in the title, unsourced stats) |
 | 15 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | **Nick decides:** these are the Apex story. Rewrite around the validation, or retire. |
 | 16 | `/how-it-works/`, `/about/` | Full rebuilds |
