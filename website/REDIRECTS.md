@@ -20,7 +20,7 @@ One place for every slug change, every redirect, and every internal link that po
 | Northbeam alternative | `/home-sample/northbeam-alternative/` | Northbeam Alternative | — | — | done |
 | Rockerbox alternative | `/home-sample/rockerbox-alternative/` | Rockerbox Alternative | — | — | done |
 | Cost per signed case | `/cost-per-signed-case/` | Cost Per Signed Case | — | — | 90 |
-| **Post 252** | `/30-day-retest-methodology/` **after the restore** (now `-2`) | Marketing Measurement That Grades Its Own Decisions: The 30-Day Retest | `/30-day-retest-methodology-2/` | R11 (+ R12 check) | 82 (re-check after the restore) |
+| **Post 252** | `/30-day-retest-methodology-2/` → change to `/30-day-retest-methodology/` (fix-list A1) | Marketing Measurement: Grading 8 Decisions Against Profit | `/30-day-retest-methodology-2/` | R11 (+ R12 check) | 82 (re-check after the restore) |
 | **Post 245** | `/lead-quality/` | Lead Quality: 6 Metrics to Measure It in Real Dollars | held `/30-day-retest-methodology/` until Sept 28 | none into it; R12 must not exist | 88 (featured image not set yet) |
 | Marketing costs | `/marketing-costs/` | Marketing Costs: What $10,000 in Ad Spend Really Costs You | `/seven-cost-layers/`, `/blog/seven-cost-layers` | R1, R2 | 89 |
 | ROAS calculator | `/roas-calculator/` | ROAS Calculator: Find Your Break-Even ROAS and Real Profit | `/55-directives-study/` | R3 | 90 |
@@ -29,15 +29,14 @@ One place for every slug change, every redirect, and every internal link that po
 | Customer acquisition cost formula | `/true-cac/` | Customer Acquisition Cost Formula: How to Calculate Your True CAC | `/true-cac-2/` (trashed) | R8 | 81 |
 | Average cost per lead | `/average-cost-per-lead/` | Average Cost Per Lead by Industry, and What a Customer Really Costs | `/marketing-margin-distortion-index/` | R10 | 83 |
 
-**Redirects Nick still has to add or confirm (8):**
-- R1: confirm
-- R2: add
-- R3: confirm
-- R4: check
-- R7: add
-- R8: confirm
-- R10: add
-- R11: add after the restore
+**Redirects Nick still has to add or confirm (the full list is in section 1, R1–R22):**
+- **Confirm they're in:** R1, R3, R8
+- **Check once:** R4
+- **Add now:**
+  - R7, R10, R13, R14, R15, R16
+  - R17 (regex; it covers R2), with R21 above it
+  - R18, R19, R20, R22
+- **Add right after fix-list A1:** R11
 
 Plus R12: check it does **not** exist.
 
@@ -52,7 +51,7 @@ In WordPress: **Rank Math → Redirections → Add New**, then type **301 Perman
 | # | Old URL (Source) | New URL (Destination) | Why | Status |
 |---|---|---|---|---|
 | R1 | `seven-cost-layers` | `https://alloceraintelligence.com/marketing-costs/` | Slug changed Sept 27 (score 89) | **Nick: confirm it's added** (instructions sent Sept 27) |
-| R2 | `blog/seven-cost-layers` | `https://alloceraintelligence.com/marketing-costs/` | 5 old posts link to this wrong path, which was already broken before the change; this rescues them | **To add** |
+| R2 | `blog/seven-cost-layers` | `https://alloceraintelligence.com/marketing-costs/` | 5 old posts link to this wrong path, which was already broken before the change; this rescues them | **Covered by R17** (add R2 only if you don't use the regex) |
 | R3 | `55-directives-study` | `https://alloceraintelligence.com/roas-calculator/` | Slug changed Sept 27 (score 90) | **Nick: confirm it's added** |
 | R5 | `30-day-retest-methodology-2` | — | **Cancelled (Nick, Sept 28): never delete a page.** Superseded: see R11 and R12. | Not needed |
 | R6 | `tag-manager-real-roi` | — | Slug kept (Nick, Sept 27) | Not needed |
@@ -60,8 +59,18 @@ In WordPress: **Rank Math → Redirections → Add New**, then type **301 Perman
 | R8 | `true-cac-2` | `https://alloceraintelligence.com/true-cac/` | Duplicate merged; Nick kept it trashed | **Nick adding it now (Sept 28)** |
 | R9 | `true-cac` | — | Slug kept (Nick, Sept 28) | Not needed |
 | R10 | `marketing-margin-distortion-index` | `https://alloceraintelligence.com/average-cost-per-lead/` | Slug changed Sept 28 (score 83) | **To add** |
-| R11 | `30-day-retest-methodology-2` | `https://alloceraintelligence.com/30-day-retest-methodology/` | Sept 28: the 30-day retest post moves into post 252 and takes back its original slug, so the -2 URL goes away | **To add, after the restore** (steps in `pages/30-day-retest-methodology-RANKMATH.md`) |
+| R11 | `30-day-retest-methodology-2` | `https://alloceraintelligence.com/30-day-retest-methodology/` | Sept 27 export: the 30-Day Retest IS live in post 252 (score 82). Only its slug still needs to change from `-2` (fix-list A1). | **To add, right after the A1 slug change** |
 | R12 | `30-day-retest-methodology` | — | **Must NOT exist.** If Rank Math auto-created a redirect from this to `/lead-quality/` when post 245's slug changed, delete it, or the restored retest post can't be reached. | **Nick: check and delete if present** |
+| R13 | `home-sample/allocera-intelligence-case-study-proof` | `https://alloceraintelligence.com/allocera-intelligence-case-study-proof/` | Link scan Sept 27: **21 live posts** link to this old path; the page now lives at the root | **To add** |
+| R14 | `home-sample/blog` | `https://alloceraintelligence.com/blog/` | 6 live pages link here (pricing, how it works, proof, dashboard, about, financing fees) | **To add** |
+| R15 | `home-sample/case-study-2-oauth-validation` | `https://alloceraintelligence.com/case-study-2-oauth-validation/` | Linked from the proof and case study pages | **To add** |
+| R16 | `northbeam-alternative` | `https://alloceraintelligence.com/home-sample/northbeam-alternative/` | The old Northbeam page links to itself at the wrong path | **To add** |
+| R17 | `blog/(.+)` (Rank Math: set match type to **Regex**) | `https://alloceraintelligence.com/$1/` | Posts 233 and 277 link to `/blog/<slug>` paths that don't exist. One regex covers all 9, and replaces R2. | **To add** |
+| R18 | `contribution-margin` | `https://alloceraintelligence.com/calculate-contribution-margin/` | Linked from posts 549 and 556; no such page | **To add** |
+| R19 | `salesforce-marketing-cloud` | `https://alloceraintelligence.com/salesforce-campaign-influence/` | Linked from post 588; no such page | **To add** |
+| R20 | `scale-hold-cut-pause` | `https://alloceraintelligence.com/scale-hold-cut-pause-framework/` | Linked from post 588; no such page | **To add** |
+| R21 | `blog/true-cost-closed-install-window-door` | `https://alloceraintelligence.com/true-cost-closed-install/` | Linked from post 233 (an old slug); add this **above** R17 | **To add** |
+| R22 | `about-us` | `https://alloceraintelligence.com/about/` | GA4 shows visits landing on this missing URL | **To add** |
 | R4 | `calculate-marketing-contribution-margin` | `https://alloceraintelligence.com/calculate-contribution-margin/` | Google still shows this old URL (1 impression, last 28 days). It isn't in the page list, so it's an old slug. | **Nick: open it once.** If it already lands on `/calculate-contribution-margin/`, mark done; if it shows a 404, add it. |
 
 **Planned (from the fix list, not done yet):**
@@ -83,42 +92,29 @@ In WordPress: **Rank Math → Redirections → Add New**, then type **301 Perman
 - `alloceraintelligence.com/30-day-retest-methodology-2/` → Marketing Measurement / 30-Day Retest
 - `alloceraintelligence.com/lead-quality/` → Lead Quality
 
-## 2. Internal links pointing at old URLs
+## 2. Internal links pointing at missing URLs (live-site scan of the Sept 27 export)
 
-**Rebuilt pages: 0 links to any old slug.** That covers the homepage, blog file, net marketing contribution, contribution margin, scale/hold/cut/pause, Triple Whale vs Rockerbox, Northbeam, Rockerbox, cost per signed case, 30-day retest, marketing costs and ROAS calculator. The blog file already uses `/marketing-costs/`.
+Every `href` on all 50 live posts and pages was checked against the live URLs.
 
-**Older pages that still link to `/seven-cost-layers/` (or the broken `/blog/seven-cost-layers`).** With R1 and R2 in place, every one of these links works. When each page gets its rebuild or light clean, the link is changed to point straight at `/marketing-costs/` (and its "seven cost layers" wording goes).
-
-| Page | Links to | Fixed when |
+| Missing URL | Linked from (post IDs) | Covered by |
 |---|---|---|
-| `/home-sample/contribution-margin-marketing/` (validation report) | `/seven-cost-layers/` | Fix list #13 (quick fix) |
-| `/true-cost-closed-install/` | `/blog/seven-cost-layers` | #19 |
-| `/reconciling-pace-greensky-service-finance/` | `/blog/seven-cost-layers` | #20 |
-| `/allocera-vs-salesforce/` | `/blog/seven-cost-layers` | #5 |
-| `/true-cac/` | `/blog/seven-cost-layers` | #6 |
-| `/true-cac-2/` | `/seven-cost-layers/` | #6 (gets a 301) |
-| `/financing-fees-home-services/` | `/seven-cost-layers/` | #21 |
-| `/true-cost-per-move-in/` | `/seven-cost-layers/` | #23 |
-| `/marketing-margin-distortion-index/` | `/seven-cost-layers/` | #7 |
-| `/roas-looks-good-campaigns-lose-money/` | `/seven-cost-layers/` | #17 |
-| `/cost-per-admission-addiction-treatment/` | `/seven-cost-layers/` | #24 |
-| `/cost-per-enrolled-member-medicare-advantage/` | `/seven-cost-layers/` | #25 |
-| `/chargebacks-marketing-cost/` | `/seven-cost-layers/` | #26 |
-| `/true-marketing-roi/` | `/seven-cost-layers/` | #22 |
-| `/tcpa-compliance-cost-for-law-firms/` | `/seven-cost-layers/` | #18 |
-| `/cost-per-booked-job-hvac-plumbing/` | `/seven-cost-layers/` | #32 |
-| `/angi-homeadvisor-lead-cost/` | `/seven-cost-layers/` | #37 |
+| `/30-day-retest-methodology/` | 228, 245, 260, 284, 294, 301, 850, 730, 772 | Fix-list A1 (slug change on 252) |
+| `/seven-cost-layers/` | 850, 315, 490, 530, 549, 556, 576, 588, 654, 739, 746, 765 | R1 |
+| `/true-cac-2/` | 576, 588, 703, 715, 722, 730, 746, 758, 765 | R8 |
+| `/marketing-margin-distortion-index/` | 187 (blog), 524, 530, 588, 703, 715 | R10 |
+| `/allocera-vs-salesforce/` | 187 (blog) | R7 |
+| `/55-directives-study/` | 654 | R3 |
+| `/home-sample/allocera-intelligence-case-study-proof/` | 21 posts (233 … 793), 342, 457 | R13 |
+| `/home-sample/blog/` | 315, 437, 451, 457, 478, 483 | R14 |
+| `/home-sample/case-study-2-oauth-validation/` | 133, 457 | R15 |
+| `/northbeam-alternative/` | 654 | R16 (and fix-list A2) |
+| `/blog/<slug>` (9 paths) | 233, 277 | R17 + R21 |
+| `/contribution-margin/` | 549, 556 | R18 |
+| `/salesforce-marketing-cloud/`, `/scale-hold-cut-pause/` | 588 | R19, R20 |
 
-**`/allocera-vs-salesforce/`:** after R7 these links work. Two places still link to it: the blog page (card updated at the end) and `/true-cost-closed-install/` (fixed in its light clean, #19). No rebuilt page links to it.
+**Rebuilt pages link only to final URLs.** The only exceptions are the blog (re-pasted at the end) and the validation report (fix-list B7). Each older post's links get corrected in its own rebuild, and the redirects cover them until then.
 
-**`/55-directives-study/`:** no live page links to it any more. The only links were on the old versions of the blog, Northbeam, Rockerbox and scale/hold/cut/pause pages, all since replaced.
-
-**What the scan can't see:**
-- WordPress menus (Appearance → Menus)
-- theme header/footer widgets
-- links from outside the site
-
-The redirects cover all of these. If a menu item points at an old URL, change it in the menu.
+**What the scan can't see:** WordPress menus, theme header/footer widgets, and links from other sites. The redirects cover those.
 
 ## 3. Final pass (at the end, with the blog)
 
