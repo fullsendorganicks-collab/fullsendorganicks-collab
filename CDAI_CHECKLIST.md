@@ -92,7 +92,7 @@ Full page-by-page list: **`website/FIX_LIST.md`** (41 pages still carry old or f
 | 8 | `/blog/` (Nick's design, new content) | LIVE, **72** (normal for a directory page) |
 | 9 | Homepage | LIVE, **81** (Nick: fine as is). Pasted Sept 26: Ask AI section back, F6S logo, tracking, the "What is true cost per lead?" FAQ. Rank Math box in `website/homepage-RANKMATH.md`. |
 | 10 | `/30-day-retest-methodology/` | LIVE, **82** (79 → 82 after the title v2; the last points need the keyword in the permalink, Nick's call). Built (`website/pages/30-day-retest-methodology.html` + RANKMATH). Focus keyword "marketing measurement". Every claim checked against the engine code. Includes GA4 tracking. |
-| 11 | `/seven-cost-layers/` | **BUILT Sept 27, awaiting paste.** New post, focus keyword "marketing costs" (`website/pages/seven-cost-layers.html` + RANKMATH + image). No "layers" wording anywhere. Recommended: permalink `marketing-costs` + 301 (Nick's call). Includes GA4 tracking. |
+| 11 | `/seven-cost-layers/` | **BUILT Sept 27, awaiting paste.** New post, focus keyword "marketing costs" (`website/pages/seven-cost-layers.html` + RANKMATH + image). No "layers" wording anywhere. Nick is changing the permalink to `marketing-costs` + 301 from the old URL. **After his score: update the blog page to list this post and the 30-Day Retest.** Includes GA4 tracking. |
 | 12 | `/55-directives-study/` | 301 to the validation report (the whole page is the fake 80%) |
 | 13 | `/tag-manager-real-roi/`, `/allocera-vs-salesforce/`, `/true-cac/` + `/true-cac-2/` (merge) | Full rebuilds (80%, seven layers, pasted head) |
 | 14 | `/marketing-margin-distortion-index/` | **Nick decides:** rebuild or retire (80%, Apex, "2026" in the title, unsourced stats) |

@@ -56,7 +56,7 @@ Listed in order of search impressions, then by how much is wrong.
 
 | # | Page | Fix |
 |---|---|---|
-| 16 | `/seven-cost-layers/` | **BUILT Sept 27**: new "marketing costs" post (`pages/seven-cost-layers.html` + RANKMATH). Waiting for Nick to paste it and report the score. Recommended: permalink `marketing-costs` + 301 (Nick's call). |
+| 16 | `/seven-cost-layers/` | **BUILT Sept 27**: new "marketing costs" post (`pages/seven-cost-layers.html` + RANKMATH). Waiting for Nick to paste it and report the score. Nick is moving it to `/marketing-costs/` + 301. Then update the blog page. |
 | 17 | `/roas-looks-good-campaigns-lose-money/` | Full rebuild ("every two weeks", 52 unsourced stats) |
 | 18 | `/tcpa-compliance-cost-for-law-firms/` | Full rebuild (99 impressions) |
 | 19 | `/true-cost-closed-install/` | Light clean (28 unsourced stats) |

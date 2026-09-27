@@ -18,13 +18,22 @@ Posts → search "seven" (the old post). Delete the old content, paste in the co
 | Focus Keyword | `marketing costs` |
 | Secondary keywords | `costs of marketing, examples of marketing costs, what are marketing costs, marketing campaign costs` |
 | SEO Title (54 chars) | `Marketing Costs: What $10,000 in Ad Spend Really Costs` (keyword first, with a number, which lifted the last page from 79 to 82) |
-| Permalink | `seven-cost-layers` (unchanged, per the rule) |
+| Permalink | `marketing-costs` (**Nick chose to change it**; add the 301 below) |
 | Meta Description (146 chars) | `Marketing costs go far beyond ad spend. See the full list, a $10,000 worked example, and how to count every cost per campaign to find real profit.` |
 | Schema | Article → Blog Post |
 
 **Keyword choice:** "marketing costs" gets about 260 US searches a month, with low competition and a high ad value (about $22 per click). The top Google results are budget guides, so this page answers the budget question too, then goes further: the costs a budget guide leaves out.
 
 **Expected score:** low-to-mid 80s. The keyword can't be in the permalink while we keep `seven-cost-layers`, and here the old slug actually works against the page because it names the retired idea. **Recommended, your call:** change the permalink to `marketing-costs` and add a 301 from `/seven-cost-layers/`. The old URL's impressions are all off-topic, so there's nothing to lose, and it should push the score toward 90.
+
+## Redirect (after you change the permalink)
+Go to **Rank Math → Redirections → Add New**:
+- Source URL: `seven-cost-layers`
+- Destination URL: `https://alloceraintelligence.com/marketing-costs/`
+- Redirection Type: **301 Permanent Move**
+- Click **Add Redirection**.
+
+No other rebuilt page links to `/seven-cost-layers/`, so no links need fixing. **To do after the score:** add this post and the 30-Day Retest to the blog page (neither is listed there yet).
 
 ## Checks
 - **Size:** about 2,100 words. The keyword appears 26 times (~1.2%), including in the H1, the first sentence, the SEO title, the description, the image alt text, and two H2s.
