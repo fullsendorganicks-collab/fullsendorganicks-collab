@@ -11,6 +11,8 @@
   - GA4 tracking, an image, and a claims table
 - **Never:** the fake 80%, "cost layers", "never assumes costs".
 
+**Delivery format (Nick, Sept 28): for each page or post, send only the old title, the HTML file, and the Rank Math box. Nothing else.** The research and checks go in the RANKMATH file, not in chat.
+
 **Paste rule (Nick, Sept 28): never send a title to search for.** Every page comes with exactly two things:
 1. **the full edit link to click**, e.g. `https://alloceraintelligence.com/wp-admin/post.php?post=654&action=edit`
 2. **the live URL**, so you can check that the permalink box shows the same address
@@ -45,7 +47,7 @@ Redirect details are in `REDIRECTS.md`.
 ## B. Pages not touched yet (12), in build order
 | Order | Post ID | Edit link (click this) | Live URL (check it matches) | Search (3 mo) | Job |
 |---|---|---|---|---|---|
-| B1 | 451 | https://alloceraintelligence.com/wp-admin/post.php?post=451&action=edit | https://alloceraintelligence.com/how-it-works/ | 28 impr | Full rebuild (has "cost layers") |
+| B1 | 451 | https://alloceraintelligence.com/wp-admin/post.php?post=451&action=edit | https://alloceraintelligence.com/how-it-works/ | 28 impr | **SENT Sept 28** (focus "marketing analytics software"). Waiting on score. |
 | B2 | 483 | https://alloceraintelligence.com/wp-admin/post.php?post=483&action=edit | https://alloceraintelligence.com/about/ | 46 impr, 2 clicks | Full rebuild (has "cost layers") |
 | B3 | 478 | https://alloceraintelligence.com/wp-admin/post.php?post=478&action=edit | https://alloceraintelligence.com/dashboard/ | 35 impr, 1 click | Rebuild (has "cost layers") |
 | B4 | 457 | https://alloceraintelligence.com/wp-admin/post.php?post=457&action=edit | https://alloceraintelligence.com/proof/ | 16 impr | Full rebuild: validation first, provable Apex pilot story |

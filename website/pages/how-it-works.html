@@ -1,0 +1,395 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+#hiw{font-variant-numeric:lining-nums;--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#E0566B;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+#hiw *{box-sizing:border-box}
+#hiw a{color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(222,187,106,.35)}
+#hiw a:hover{color:#fff;border-bottom-color:#fff}
+#hiw .hiw-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(1,9,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+#hiw .hiw-nav a{border:0}
+#hiw .hiw-brand{display:flex;align-items:center;gap:10px;color:var(--text)}
+#hiw .hiw-brand img{height:34px;width:auto;display:block}
+#hiw .hiw-brand span{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.02em}
+#hiw .hiw-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px);list-style:none;margin:0;padding:0}
+#hiw .hiw-links a{color:var(--dim);font-size:14px;font-weight:500}
+#hiw .hiw-links a:hover{color:#fff}
+#hiw .hiw-cta{background:var(--gold);color:#010914!important;font-weight:600;font-size:14px;padding:9px 18px;border-radius:2px}
+#hiw .hiw-cta:hover{background:var(--gold2)}
+#hiw .hiw-burger{display:none;background:none;border:1px solid var(--border2);color:var(--text);font-size:18px;padding:4px 10px;border-radius:2px;cursor:pointer}
+#hiw .hiw-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+#hiw .hiw-hero{padding:clamp(44px,8vh,84px) 0 clamp(20px,4vh,36px);border-bottom:1px solid var(--border)}
+#hiw .hiw-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:0 0 16px}
+#hiw h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 20px;color:#fff}
+#hiw .hiw-lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);line-height:1.65;margin:0 0 22px}
+#hiw .hiw-byline{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.04em}
+#hiw h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.15;color:#fff;margin:clamp(48px,7vh,68px) 0 16px;scroll-margin-top:90px}
+#hiw h3{font-family:'Inter',sans-serif;font-weight:600;font-size:19px;color:#fff;margin:30px 0 8px}
+#hiw p{margin:0 0 18px;color:var(--muted)}
+#hiw strong{color:#fff;font-weight:600}
+#hiw ul,#hiw ol{margin:0 0 20px;padding-left:22px;color:var(--muted)}
+#hiw li{margin:0 0 9px}
+#hiw .hiw-box{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--gold);border-radius:2px;padding:clamp(18px,3vw,28px);margin:26px 0}
+#hiw .hiw-box h3{margin-top:0}
+#hiw .hiw-box ul{margin-bottom:0}
+#hiw .hiw-toc{background:transparent;border:1px solid var(--border2);border-radius:2px;padding:20px 24px;margin:30px 0}
+#hiw .hiw-toc p{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
+#hiw .hiw-toc ol{margin:0;padding-left:20px}
+#hiw .hiw-toc li{margin:0 0 6px}
+#hiw .hiw-toc a{color:var(--dim);border:0}
+#hiw .hiw-toc a:hover{color:#fff}
+#hiw .hiw-formula{background:#04102a;border:1px solid var(--border2);border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.6vw,15px);line-height:1.9;color:#fff;overflow-x:auto}
+#hiw .hiw-formula .hiw-f-main{color:var(--gold2);font-size:clamp(14px,1.8vw,17px);font-weight:500}
+#hiw .hiw-formula .hiw-f-label{color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:10px}
+#hiw .hiw-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+#hiw .hiw-stat{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px;text-align:center}
+#hiw .hiw-stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,46px);font-weight:600;color:var(--green);line-height:1}
+#hiw .hiw-stat span{display:block;font-size:13px;color:var(--dim);margin-top:8px;line-height:1.45}
+#hiw .hiw-steps{counter-reset:s;list-style:none;padding:0}
+#hiw .hiw-steps li{counter-increment:s;position:relative;padding:0 0 4px 50px;margin:0 0 18px}
+#hiw .hiw-steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border:1px solid var(--gold);color:var(--gold2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px}
+#hiw .hiw-table-wrap{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--border2);border-radius:2px}
+#hiw table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+#hiw table.hiw-narrow{min-width:0}
+#hiw th{background:var(--surface);color:#fff;text-align:left;font-weight:600;padding:12px 14px;border-bottom:1px solid var(--border2);font-size:13px;letter-spacing:.02em}
+#hiw td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+#hiw tr:last-child td{border-bottom:0}
+#hiw td.hiw-num{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#hiw .hiw-pos{color:var(--green)!important;font-weight:600}
+#hiw .hiw-neg{color:var(--red)!important;font-weight:600}
+#hiw .hiw-total td{color:#fff;font-weight:600;background:rgba(196,160,64,.07)}
+#hiw .hiw-note{font-size:14px;color:var(--dim)}
+#hiw td.hiw-acc{min-width:210px}
+#hiw .hiw-mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+#hiw .hiw-cnt{font-size:14px;color:var(--dim);white-space:nowrap}
+#hiw .hiw-sub{display:block;font-size:14px;color:var(--dim);margin-top:4px;line-height:1.5}
+#hiw figure{margin:28px 0}
+#hiw figure img{width:100%;height:auto;display:block;border:1px solid var(--border2);border-radius:2px}
+#hiw figcaption{font-size:14px;color:var(--dim);margin-top:10px}
+#hiw blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--gold);font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,28px);line-height:1.35;color:#fff}
+#hiw .hiw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
+#hiw .hiw-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:18px 20px}
+#hiw .hiw-card h3{margin:0 0 6px;font-size:17px}
+#hiw .hiw-card p{margin:0;font-size:15px}
+#hiw details{border:1px solid var(--border2);border-radius:2px;margin:0 0 12px;background:var(--surface)}
+#hiw summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none}
+#hiw summary::-webkit-details-marker{display:none}
+#hiw summary::after{content:'+';float:right;color:var(--gold2);font-family:'JetBrains Mono',monospace}
+#hiw details[open] summary::after{content:'–'}
+#hiw details p{padding:0 20px 4px;margin:0 0 14px}
+#hiw .hiw-final{margin:clamp(56px,8vh,80px) 0 0;padding:clamp(28px,5vw,48px);background:linear-gradient(135deg,#071530,#04102a);border:1px solid var(--border2);border-top:3px solid var(--gold);border-radius:2px;text-align:center}
+#hiw .hiw-final h2{margin-top:0}
+#hiw .hiw-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+#hiw .hiw-btn{display:inline-block;padding:13px 24px;border-radius:2px;font-weight:600;font-size:15px;border:1px solid var(--gold)!important;color:var(--gold2)}
+#hiw .hiw-btn.hiw-primary{background:var(--gold);color:#010914!important}
+#hiw .hiw-btn:hover{background:var(--gold2);color:#010914!important}
+#hiw .hiw-footer{margin-top:clamp(56px,8vh,80px);padding:26px clamp(16px,4vw,48px);border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:13px;color:var(--dim)}
+#hiw .hiw-footer a{color:var(--dim);border:0}
+#hiw .hiw-footer img{height:26px;width:auto;vertical-align:middle;margin-right:8px}
+@media (max-width:900px){
+#hiw .hiw-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:#010914;border-bottom:1px solid var(--border);padding:14px 20px;gap:14px}
+#hiw .hiw-links.hiw-open{display:flex}
+#hiw .hiw-burger{display:block}
+}
+@media (max-width:640px){
+#hiw{font-size:16px}
+#hiw .hiw-stats,#hiw .hiw-grid{grid-template-columns:1fr}
+#hiw .hiw-cta{display:none}
+}
+</style>
+<div id="hiw">
+
+<nav class="hiw-nav">
+  <a class="hiw-brand" href="https://alloceraintelligence.com/">
+    <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence logo" width="34" height="34">
+    <span>Allocera Intelligence</span>
+  </a>
+  <ul class="hiw-links" id="hiwLinks">
+    <li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li>
+    <li><a href="https://alloceraintelligence.com/proof/">Proof</a></li>
+    <li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li>
+    <li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li>
+    <li><a href="https://alloceraintelligence.com/about/">About</a></li>
+    <li><a href="https://alloceraintelligence.com/blog/">The Margin Gap</a></li>
+    <li><a href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="hiw-cta" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <button class="hiw-burger" id="hiwBurger" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+
+<article class="hiw-wrap">
+
+<header class="hiw-hero">
+  <p class="hiw-eyebrow">How It Works &middot; CDAI Engine</p>
+  <h1>How It Works: Marketing Analytics Software That Shows What Every Campaign Made</h1>
+  <p class="hiw-lead">Most marketing analytics software stops at the dashboard: clicks, leads, and which channel gets credit. CDAI (Capital, Decision, Accuracy, Intelligence), the engine behind Allocera Intelligence, goes one step further. It connects your ad accounts and CRM, works out what each campaign really made after every cost, and gives you one clear decision for every campaign, every night. Here is exactly how, in four steps.</p>
+  <div class="hiw-btns" style="justify-content:flex-start">
+    <a class="hiw-btn hiw-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <a class="hiw-btn" href="https://alloceraintelligence.com/pricing/">See Pricing</a>
+  </div>
+</header>
+
+<div class="hiw-box">
+  <h3>The short version</h3>
+  <ul>
+    <li><strong>Connect:</strong> Meta, Google Ads, LinkedIn, HubSpot, and Salesforce connect in one click. Other tools connect by API key, CSV upload, or webhook.</li>
+    <li><strong>Calculate:</strong> every night, CDAI works out each campaign&rsquo;s real profit: the revenue it closed minus every real cost of winning it.</li>
+    <li><strong>Decide:</strong> one clear decision per campaign, such as scale, hold, cut, or pause, with a confidence level. You stay in control.</li>
+    <li><strong>Grade:</strong> CDAI checks its own math, stops on bad data, and grades its past decisions once the results are in.</li>
+  </ul>
+</div>
+
+<nav class="hiw-toc" aria-label="Table of contents">
+  <p>On this page</p>
+  <ol>
+    <li><a href="#gap">Where marketing analytics software stops</a></li>
+    <li><a href="#steps">How CDAI works in 4 steps</a></li>
+    <li><a href="#connect">What it connects to</a></li>
+    <li><a href="#calculate">What it calculates</a></li>
+    <li><a href="#decide">The nightly decision</a></li>
+    <li><a href="#grade">How it checks itself</a></li>
+    <li><a href="#compare">CDAI vs. typical marketing analytics software</a></li>
+    <li><a href="#start">Getting started</a></li>
+    <li><a href="#faq">FAQs</a></li>
+  </ol>
+</nav>
+
+<h2 id="gap">Where Most Marketing Analytics Software Stops</h2>
+<p><a href="https://improvado.io/blog/marketing-analytics-tools" target="_blank" rel="noopener">Improvado</a> describes marketing analytics tools as &ldquo;software platforms that collect and unify marketing data from ad platforms, CRM, and web analytics into a single&rdquo; view. <a href="https://www.hubspot.com/products/marketing/analytics" target="_blank" rel="noopener">HubSpot</a> says its analytics help you &ldquo;measure the performance of all your marketing campaigns in one place.&rdquo; That is genuinely useful. Seeing every channel together beats logging in to five dashboards.</p>
+<p>But for a business that runs on leads, the number that decides everything usually isn&rsquo;t in any of those dashboards. A campaign&rsquo;s leads may be bought through a partner who takes a payout. Some customers refund. Some payments are charged back weeks later. Compliance and fulfillment cost money on every sale. None of that lives in the ad account, so the dashboard can show a healthy return on a campaign that is losing money. Our guide to <a href="https://alloceraintelligence.com/marketing-costs/">marketing costs</a> walks through each cost the platforms can&rsquo;t see.</p>
+<p>CDAI was built for that gap. It&rsquo;s marketing analytics software for lead generation that answers the question the owner actually asks: <strong>did this campaign make money, and what should I do with it tomorrow?</strong></p>
+
+<h2 id="steps">How CDAI Works in 4 Steps</h2>
+<figure>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/marketing-analytics-software-how-cdai-works.png" alt="Marketing analytics software process: connect your ad accounts and CRM, calculate real profit per campaign, decide scale, hold, cut or pause, and grade past decisions" width="1600" height="800" loading="lazy">
+  <figcaption>Connect, calculate, decide, grade. The cycle repeats every night.</figcaption>
+</figure>
+<ol class="hiw-steps">
+  <li><strong>Connect.</strong> Link the ad accounts, CRM, and other tools you already use. Nothing about your campaigns has to change.</li>
+  <li><strong>Calculate.</strong> Every night, CDAI pulls fresh data and works out real profit, true cost per lead, and true customer acquisition cost for every campaign.</li>
+  <li><strong>Decide.</strong> For each campaign, it makes one clear call, with the numbers and a confidence level behind it.</li>
+  <li><strong>Grade.</strong> It rechecks its own math and, once enough time has passed, grades whether each past decision was right.</li>
+</ol>
+
+<h2 id="connect">What CDAI Connects To</h2>
+<p>A good marketing analytics software setup starts with the data you already have. CDAI has 10 built integrations, plus two ways to bring in anything else:</p>
+<div class="hiw-table-wrap">
+<table>
+  <thead><tr><th>How it connects</th><th>Tools</th></tr></thead>
+  <tbody>
+    <tr><td>One click</td><td>Meta, Google Ads, LinkedIn, HubSpot, Salesforce</td></tr>
+    <tr><td>API key or account credential</td><td>CallRail, Ringba, Boberdoo, Bing Ads, Stripe</td></tr>
+    <tr><td>CSV upload</td><td>Exports from 9 common platforms, recognized automatically</td></tr>
+    <tr><td>Webhook</td><td>Leads from any other CRM or form tool you already use</td></tr>
+  </tbody>
+</table>
+</div>
+<p>You don&rsquo;t need everything connected on day one. CDAI works with what you connect, and every added source makes each campaign&rsquo;s number more complete. If your closed deals live in your CRM, connecting it is the step that matters most. Our guide to <a href="https://alloceraintelligence.com/tag-manager-real-roi/">offline conversion tracking</a> explains why closed revenue is the missing piece in most setups.</p>
+
+<h2 id="calculate">What CDAI Calculates</h2>
+<p>This is the part most marketing analytics software skips. For every campaign, every night, CDAI calculates real profit:</p>
+<div class="hiw-formula">
+  <span class="hiw-f-main">Real profit = revenue closed &minus; ad spend &minus; fees &minus; partner payouts &minus; refunds &minus; chargebacks &minus; compliance costs &minus; operating costs you add</span>
+  <span class="hiw-f-label">From the same data it also works out</span>
+  True cost per lead &middot; True customer acquisition cost &middot; Margin per campaign
+</div>
+<p>Here is what that looks like for one campaign. This is an illustrative example, not client data.</p>
+<div class="hiw-table-wrap">
+<table class="hiw-narrow">
+  <thead><tr><th>One campaign, one month</th><th>Amount</th></tr></thead>
+  <tbody>
+    <tr><td>Revenue closed</td><td class="hiw-num">$30,000</td></tr>
+    <tr><td>Ad spend</td><td class="hiw-num">&minus;$10,000</td></tr>
+    <tr><td>Partner payouts</td><td class="hiw-num">&minus;$6,000</td></tr>
+    <tr><td>Fees</td><td class="hiw-num">&minus;$500</td></tr>
+    <tr><td>Refunds and chargebacks</td><td class="hiw-num">&minus;$3,500</td></tr>
+    <tr><td>Compliance costs</td><td class="hiw-num">&minus;$400</td></tr>
+    <tr><td>Operating costs you add (fulfillment)</td><td class="hiw-num">&minus;$6,000</td></tr>
+    <tr class="hiw-total"><td>Real profit</td><td class="hiw-num hiw-pos">$3,600</td></tr>
+  </tbody>
+</table>
+</div>
+<p>The ad dashboard would show a 3.0 return on ad spend ($30,000 &divide; $10,000) and call it a winner. The campaign did make money, but $3,600 on $30,000 of revenue is a very different story from what a 3.0 suggests, and a small rise in refunds would wipe it out. Try the math on your own numbers with our <a href="https://alloceraintelligence.com/roas-calculator/">ROAS calculator</a> or the <a href="https://alloceraintelligence.com/true-cac/">true CAC calculator</a>.</p>
+
+<h2 id="decide">The Nightly Decision</h2>
+<p>Numbers alone don&rsquo;t move budget, and that&rsquo;s where most marketing analytics software leaves you on your own. So after calculating, CDAI makes one clear decision for each campaign:</p>
+<div class="hiw-grid">
+  <div class="hiw-card"><h3>Scale</h3><p>The campaign is making real profit and the trend supports spending more.</p></div>
+  <div class="hiw-card"><h3>Hold</h3><p>It&rsquo;s working, but not clearly enough to add budget yet.</p></div>
+  <div class="hiw-card"><h3>Cut</h3><p>Profit is thin or slipping; reduce spend before it turns into a loss.</p></div>
+  <div class="hiw-card"><h3>Pause</h3><p>The campaign is losing money after every cost.</p></div>
+</div>
+<p>Each decision comes with the numbers behind it and a confidence level. CDAI also watches for early warning signs, like true cost per lead rising faster than the dashboard&rsquo;s, or close rates slipping, so problems show up before they reach your books. <strong>You stay in control of every move:</strong> CDAI recommends, and you decide what changes in your ad accounts. Our <a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">scale, hold, cut, pause framework</a> explains how to use each call when setting budgets.</p>
+
+<h2 id="grade">How CDAI Checks Itself</h2>
+<p>Any marketing analytics software that tells you what to do should be able to prove it&rsquo;s right. CDAI builds that in:</p>
+<ul>
+  <li><strong>It rechecks its own math</strong> every night, and it stops on bad data instead of making decisions from it.</li>
+  <li><strong>It grades its past decisions.</strong> Once your industry&rsquo;s sales cycle has passed, it compares what happened with what it recommended. Our <a href="https://alloceraintelligence.com/30-day-retest-methodology/">30-day retest</a> explains how that grading works.</li>
+</ul>
+<div class="hiw-stats">
+  <div class="hiw-stat"><b>89.5%</b><span>accurate overall (1,210 of 1,352 scored decisions)</span></div>
+  <div class="hiw-stat"><b>9</b><span>businesses across 7 industries in the validation</span></div>
+  <div class="hiw-stat"><b>100%</b><span>math match, checked two ways</span></div>
+</div>
+<p>Those figures come from CDAI&rsquo;s controlled validation before release. Every result is published in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>, and the <a href="https://alloceraintelligence.com/proof/">proof page</a> shows how it was tested.</p>
+
+<h2 id="compare">CDAI vs. Typical Marketing Analytics Software</h2>
+<p>CDAI doesn&rsquo;t replace every analytics tool. If you run an online store and want to know which channel drove a sale, attribution tools are built for that; see our comparisons of <a href="https://alloceraintelligence.com/triple-whale-vs-rockerbox-vs-allocera/">Triple Whale vs Rockerbox</a>, the <a href="https://alloceraintelligence.com/home-sample/northbeam-alternative/">Northbeam alternative</a>, and the <a href="https://alloceraintelligence.com/home-sample/rockerbox-alternative/">Rockerbox alternative</a>. Here is where the two approaches differ:</p>
+<div class="hiw-table-wrap">
+<table>
+  <thead><tr><th>Question</th><th>Typical marketing analytics software</th><th>CDAI</th></tr></thead>
+  <tbody>
+    <tr><td>What does it show?</td><td>Clicks, leads, conversions, and channel credit in one place</td><td>Real profit per campaign after every cost</td></tr>
+    <tr><td>Which costs are counted?</td><td>Mostly ad spend</td><td>Ad spend, fees, partner payouts, refunds, chargebacks, compliance, and operating costs you add</td></tr>
+    <tr><td>What do you get each day?</td><td>Dashboards and reports to interpret</td><td>One clear decision per campaign, with a confidence level</td></tr>
+    <tr><td>Does it check itself?</td><td>Varies by tool</td><td>Rechecks its math nightly and grades its past decisions</td></tr>
+    <tr><td>Who is it built for?</td><td>Most are built for online stores or broad marketing teams</td><td>Businesses that run on leads and closed deals</td></tr>
+  </tbody>
+</table>
+</div>
+<p>The right marketing analytics software depends on the question you need answered. Many teams use both: an attribution or web analytics tool to understand the customer journey, and CDAI to decide where the money goes.</p>
+
+<h2 id="start">Getting Started</h2>
+<ol class="hiw-steps">
+  <li><strong>Sign up</strong> and choose your industry, so decisions are graded against your real sales cycle.</li>
+  <li><strong>Connect</strong> your ad accounts and CRM. Add partner, call tracking, or payment tools when you&rsquo;re ready.</li>
+  <li><strong>Read your first results</strong> after the first nightly run, in the <a href="https://alloceraintelligence.com/dashboard/">dashboard</a> and your email summary.</li>
+</ol>
+<p>Want to see what your numbers look like first? Start with our guides to the <a href="https://alloceraintelligence.com/average-cost-per-lead/">average cost per lead</a> and <a href="https://alloceraintelligence.com/lead-quality/">lead quality</a>, or see <a href="https://alloceraintelligence.com/pricing/">pricing</a>.</p>
+
+<h2 id="faq">Marketing Analytics Software FAQs</h2>
+<details>
+  <summary>What does marketing analytics software do?</summary>
+  <p>It collects data from your ad platforms, CRM, and website so you can measure campaign performance in one place. Most tools focus on reporting and attribution. CDAI adds real profit per campaign and a clear decision for each one.</p>
+</details>
+<details>
+  <summary>What are the four main types of marketing analytics?</summary>
+  <p>Descriptive (what happened), diagnostic (why it happened), predictive (what will likely happen), and prescriptive (what to do next). Most dashboards are descriptive. CDAI is prescriptive: it tells you whether to scale, hold, cut, or pause each campaign, and shows why.</p>
+</details>
+<details>
+  <summary>Does CDAI change my ads automatically?</summary>
+  <p>No. CDAI makes a recommendation for each campaign with the numbers and a confidence level behind it. You decide what to change in your ad accounts.</p>
+</details>
+<details>
+  <summary>What if a tool I use isn&rsquo;t one of the built integrations?</summary>
+  <p>You can upload a CSV export, which CDAI recognizes automatically for 9 common platforms, or send leads from any CRM or form tool through a webhook.</p>
+</details>
+<details>
+  <summary>Do I need to connect everything before it works?</summary>
+  <p>No. CDAI works with what you connect. Your ad accounts and CRM are the core; adding partner payouts, refunds, and other costs makes each campaign&rsquo;s profit more complete.</p>
+</details>
+<details>
+  <summary>How accurate are CDAI&rsquo;s decisions?</summary>
+  <p>In a controlled validation before release, CDAI&rsquo;s decisions were 89.5% accurate overall (1,210 of 1,352 scored decisions) across 9 businesses in 7 industries, with the math matching 100% when checked two ways. The full results are in the validation report.</p>
+</details>
+
+<section class="hiw-final">
+  <h2>See What Every Campaign Really Made</h2>
+  <p>Marketing analytics software should end in a decision. Connect the ad accounts and CRM you already use. CDAI calculates real profit for every campaign and gives you one clear decision for each, every night.</p>
+  <div class="hiw-btns">
+    <a class="hiw-btn hiw-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
+    <a class="hiw-btn" href="https://alloceraintelligence.com/pricing/">See Pricing</a>
+    <a class="hiw-btn" href="https://alloceraintelligence.com/proof/">See the Proof</a>
+  </div>
+</section>
+
+</article>
+
+<footer class="hiw-footer">
+  <span><img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence" width="26" height="26">Allocera Intelligence &middot; CDAI Engine</span>
+  <span>&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/">Terms of Service</a></span>
+</footer>
+
+</div>
+<script>
+(function(){var b=document.getElementById('hiwBurger'),l=document.getElementById('hiwLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('hiw-open');});}})();
+</script>
+
+<!-- ============ Analytics: GA4 (G-29J4V3VQ7B) + Tag Manager-ready events (article pages) ============ -->
+<script>
+(function () {
+  var GA_ID = "G-29J4V3VQ7B";
+  var PAGE = (location.pathname || "/").replace(/^\/|\/$/g, "") || "home";
+  window.dataLayer = window.dataLayer || [];
+
+  // Load GA4 only if the site doesn't already load it (never double-counts page views).
+  var hasGtag = typeof window.gtag === "function";
+  var hasTagScript = !!document.querySelector('script[src*="googletagmanager.com/gtag/js"], script[src*="googletagmanager.com/gtm.js"]');
+  if (!hasGtag && !hasTagScript) {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA_ID);
+  }
+
+  // Pushes a Tag Manager event and sends the same GA4 event. No personal data is ever sent.
+  function track(name, params) {
+    params = params || {};
+    params.page_slug = PAGE;
+    var dl = { event: "cdai_" + name };
+    for (var k in params) { if (Object.prototype.hasOwnProperty.call(params, k)) dl[k] = params[k]; }
+    window.dataLayer.push(dl);
+    if (typeof window.gtag === "function") window.gtag("event", name, params);
+  }
+
+  function sectionOf(el) {
+    if (el.closest("nav")) return "nav";
+    if (el.closest("footer")) return "footer";
+    if (el.closest("[class$='-final']")) return "final_cta";
+    var h = null, node = el;
+    while (node && node !== document.body) {
+      var prev = node.previousElementSibling;
+      while (prev) { if (/^H2$/.test(prev.tagName) && prev.id) { h = prev.id; break; } prev = prev.previousElementSibling; }
+      if (h) break;
+      node = node.parentElement;
+    }
+    return h || "intro";
+  }
+  function label(el) { return (el.getAttribute("aria-label") || el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 80); }
+
+  // Every link and button click.
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest && e.target.closest("a, button, summary");
+    if (!el) return;
+    if (el.tagName === "SUMMARY") { track("faq_open", { question: label(el) }); return; }
+    var href = el.getAttribute("href") || "";
+    var p = { link_text: label(el), link_url: href, section: sectionOf(el) };
+    if (/cdai-portal\.vercel\.app\/signup/.test(href)) track("signup_click", p);
+    else if (/cdai-portal\.vercel\.app/.test(href)) track("portal_click", p);
+    else if (/\/pricing/.test(href)) track("pricing_click", p);
+    else if (/contribution-margin-marketing/.test(href)) track("validation_report_click", p);
+    else if (/^#/.test(href)) track("toc_click", p);
+    else if (/^https?:\/\//.test(href) && href.indexOf(location.hostname) === -1) track("outbound_click", p);
+    else if (href) track("internal_link_click", p);
+    else track("button_click", p);
+  }, true);
+
+  // How far people read (25/50/75/100%), each once per visit.
+  var marks = [25, 50, 75, 100], hit = {};
+  function onScroll() {
+    var doc = document.documentElement;
+    var pct = Math.round(((window.scrollY || doc.scrollTop) + window.innerHeight) / doc.scrollHeight * 100);
+    marks.forEach(function (m) { if (pct >= m && !hit[m]) { hit[m] = true; track("scroll_depth", { percent: m }); } });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Which sections people reach (each H2, once per visit).
+  if ("IntersectionObserver" in window) {
+    var seen = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var id = en.target.id;
+        if (en.isIntersecting && id && !seen[id]) { seen[id] = true; track("section_view", { section: id }); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll("h2[id]").forEach(function (h) { io.observe(h); });
+  }
+})();
+</script>
+<!-- ============ /Analytics ============ -->
