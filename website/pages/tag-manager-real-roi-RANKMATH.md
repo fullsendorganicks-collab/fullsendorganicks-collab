@@ -1,5 +1,7 @@
 # Rank Math box: /tag-manager-real-roi/ → new Offline Conversion Tracking post
 
+**LIVE Sept 27: score 80, slug kept (`tag-manager-real-roi`).** The main gap is the keyword not being in the permalink.
+
 **What this replaces:** "Why Tag Manager Will Never Show You Real ROI". The old post carried:
 - the fake 80%
 - "seven cost layers"
