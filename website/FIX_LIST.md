@@ -8,7 +8,7 @@ This list comes from a scan of the WordPress export run on Sept 26 (all live pag
 
 ## Where we are (end of Sept 27): paused for the night
 
-**Live and done (14), with Rank Math scores:**
+**Live and done (15), with Rank Math scores:**
 
 | Page | Score | Notes |
 |---|---|---|
@@ -27,8 +27,9 @@ This list comes from a scan of the WordPress export run on Sept 26 (all live pag
 | `/tag-manager-real-roi/` (now Offline Conversion Tracking) | 80 | Slug kept |
 | `/salesforce-campaign-influence/` (was `/allocera-vs-salesforce/`) | 89 | |
 | `/true-cac/` (Customer Acquisition Cost Formula; merged `-2`) | 81 | Slug kept |
+| `/average-cost-per-lead/` (was `/marketing-margin-distortion-index/`) | 83 | |
 
-**Next:** #7 built (waiting for paste), then #3 (the -2 duplicate becomes a new post), then #8 proof pages, then Tier 2. Then #7 and #8 need Nick's decision (rebuild or retire), then Tier 2.
+**Next:** #3 (the -2 duplicate becomes a new post), then #8 proof pages, then Tier 2. Then #7 and #8 need Nick's decision (rebuild or retire), then Tier 2.
 
 **Left to do: 30 items**
 - Tier 1:
@@ -71,7 +72,7 @@ Two kinds of fix:
 - [ ] Update card: Tag Manager → Offline Conversion Tracking → `/tag-manager-real-roi/` (slug kept)
 - [ ] Update card: Allocera and Salesforce → Salesforce Campaign Influence → `/salesforce-campaign-influence/`
 - [ ] Update card: True CAC → Customer Acquisition Cost Formula (final URL); remove any `/true-cac-2/` card
-- [ ] Update card: Margin Distortion Index → Average Cost Per Lead by Industry (final URL)
+- [ ] Update card: Margin Distortion Index → Average Cost Per Lead by Industry → `/average-cost-per-lead/`
 - [ ] Remove cards for pages that get 301'd (e.g. `/30-day-retest-methodology-2/`, `/true-cac-2/`) and update titles/descriptions for every rebuilt page
 - [ ] Re-check every card link against the live URLs before handing over
 
@@ -84,7 +85,7 @@ Two kinds of fix:
 | 4 | `/tag-manager-real-roi/` | 80%, seven layers, 14 unsourced stats, pasted head | **LIVE Sept 27, score 80**, slug kept. New post "Offline Conversion Tracking". |
 | 5 | `/allocera-vs-salesforce/` | 80%, seven layers, "cannot" claims about Salesforce, pasted head | **LIVE Sept 27, score 89**, now at `/salesforce-campaign-influence/`. 301 = R7. |
 | 6 | `/true-cac/` + `/true-cac-2/` | 80%, seven layers, duplicate pair | **LIVE Sept 28, score 81**, slug kept. `-2` trashed; 301 = R8. |
-| 7 | `/marketing-margin-distortion-index/` | 80%, Apex numbers, "2026" in the title, many unsourced stats, "measured using CDAI" claim | **BUILT Sept 28**: rebuilt as "Average Cost Per Lead by Industry" (`pages/marketing-margin-distortion-index.html` + RANKMATH + image). Focus "average cost per lead" (~$44/click). Recommended slug `average-cost-per-lead` (Nick's call). Waiting for paste + score. |
+| 7 | `/marketing-margin-distortion-index/` | 80%, Apex numbers, "2026" in the title, many unsourced stats | **LIVE Sept 28, score 83**, now at `/average-cost-per-lead/`. 301 = R10. |
 | 8 | `/proof/`, `/allocera-intelligence-case-study-proof/`, `/case-study-2-oauth-validation/` | Apex story with unprovable numbers | **Full rebuilds (Nick: never retire; Apex was a real pilot).** Keep the pilot story where it's provable, lead with the validation, one clear purpose per page. |
 
 ## Tier 2: pages people use to decide

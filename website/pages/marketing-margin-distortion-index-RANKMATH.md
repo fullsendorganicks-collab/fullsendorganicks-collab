@@ -1,4 +1,6 @@
-# Rank Math box: /marketing-margin-distortion-index/ → new "Average Cost Per Lead by Industry" page
+# Rank Math box: /average-cost-per-lead/ (was /marketing-margin-distortion-index/)
+
+**LIVE Sept 28: score 83.** Slug changed; 301 = R10 in `website/REDIRECTS.md`.
 
 **What this replaces:** "The 2026 Marketing Margin Distortion Index". It claimed to be the "first published benchmark", "measured across verticals using the CDAI engine". It carried:
 - the fake 80%

@@ -19,9 +19,9 @@ In WordPress: **Rank Math → Redirections → Add New**, then type **301 Perman
 | R5 | `30-day-retest-methodology-2` | — | **Cancelled (Nick, Sept 28): never delete a page.** It gets rebuilt into a new post instead (fix list #3). | Not needed |
 | R6 | `tag-manager-real-roi` | — | Slug kept (Nick, Sept 27) | Not needed |
 | R7 | `allocera-vs-salesforce` | `https://alloceraintelligence.com/salesforce-campaign-influence/` | Slug changed Sept 27 (score 89) | **To add** |
-| R8 | `true-cac-2` | `https://alloceraintelligence.com/true-cac/` | Nick trashed the duplicate himself Sept 28 (before the never-delete rule was restated). **Ask Nick:** restore it and rebuild it as a new post, or keep it trashed with this 301. | **To add** unless Nick restores it |
+| R8 | `true-cac-2` | `https://alloceraintelligence.com/true-cac/` | Duplicate merged; Nick kept it trashed | **Nick adding it now (Sept 28)** |
 | R9 | `true-cac` | — | Slug kept (Nick, Sept 28) | Not needed |
-| R10 | `marketing-margin-distortion-index` | `https://alloceraintelligence.com/average-cost-per-lead/` | Only if Nick changes the slug | Pending Nick's slug decision |
+| R10 | `marketing-margin-distortion-index` | `https://alloceraintelligence.com/average-cost-per-lead/` | Slug changed Sept 28 (score 83) | **To add** |
 | R4 | `calculate-marketing-contribution-margin` | `https://alloceraintelligence.com/calculate-contribution-margin/` | Google still shows this old URL (1 impression, last 28 days). It isn't in the page list, so it's an old slug. | **Nick: open it once.** If it already lands on `/calculate-contribution-margin/`, mark done; if it shows a 404, add it. |
 
 **Planned (from the fix list, not done yet):**
@@ -38,6 +38,7 @@ In WordPress: **Rank Math → Redirections → Add New**, then type **301 Perman
 - `alloceraintelligence.com/55-directives-study/` → ROAS Calculator
 - `alloceraintelligence.com/allocera-vs-salesforce/` → Salesforce Campaign Influence
 - `alloceraintelligence.com/true-cac-2/` → Customer Acquisition Cost Formula
+- `alloceraintelligence.com/marketing-margin-distortion-index/` → Average Cost Per Lead
 
 ## 2. Internal links pointing at old URLs
 
