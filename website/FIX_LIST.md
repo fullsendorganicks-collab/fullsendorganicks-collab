@@ -102,7 +102,7 @@ All 21 still have "cost layers" wording, and most link to old URLs (`/seven-cost
 
 ## D. End of rebuild (after B and C)
 - **Off-site profiles:** F6S says "Cost Distortion Attribution Intelligence" (the site says Capital, Decision, Accuracy, Intelligence); beehiiv says "biweekly". Fix both to match the site.
-- **OpenRush:** Search Console and GA4 need reconnecting (the account showed nothing connected on Sept 28).
+- **OpenRush:** reconnected Sept 28. alloceraintelligence.com website_id is now `f9537dcd-637d-47aa-81c3-f387bd43b96b`; the old id `bb564dff…` no longer works.
 1. **Redirects:** add every row in `REDIRECTS.md` (R1–R20).
 2. **Link check:** re-run the live-link scan on a fresh export. It must find 0 links to missing URLs.
 3. **Blog page:** re-paste with final URLs (pending list below).
