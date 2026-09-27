@@ -1,6 +1,15 @@
 # Rank Math box: /home-sample/northbeam-alternative/
 
-Page type: **Page**, ID 654, titled "Best Northbeam Alternative for Lead Gen Margin Reconciliation". Built Sept 26 2026.
+**Sept 28 check:** the Sept 27 export shows this rebuild was never pasted. The old page (fake 80%, "cost layers", score 74) is still live.
+
+**Updated Sept 28 to current rules:**
+- GA4 tracking added
+- dated byline removed
+- the old "Free Distortion Audit" button changed to "See Pricing"
+
+**Open:** https://alloceraintelligence.com/wp-admin/post.php?post=654&action=edit. The permalink box should show `/home-sample/northbeam-alternative/`.
+
+**Live Google check (Sept 28):** every "Northbeam alternatives" list in the top results (Capterra, G2, ThoughtMetric, SegmentStream, Ringly, Littledata) is written for Shopify/DTC brands. None covers lead generation, which is this page's angle.
 
 **Search Console, last 3 months:** 143 impressions at an average position of 28, from searches like "northbeam alternative", "northbeam alternatives", and "northbeam pricing".
 
@@ -10,15 +19,8 @@ Page type: **Page**, ID 654, titled "Best Northbeam Alternative for Lead Gen Mar
    - After uploading, confirm the URL is `https://alloceraintelligence.com/wp-content/uploads/2026/09/northbeam-alternative-credit-vs-profit.png`.
 2. Set it as the **Featured image** and the Facebook/X image.
 
-## URL (recommended, your call)
-The slug `northbeam-alternative` stays the same. What changes is the parent: the page currently sits under the `/home-sample/` template path.
-1. In **Page Attributes**, set **Parent** to "(no parent)". The URL becomes `/northbeam-alternative/`.
-2. Add a redirect in **Rank Math → Redirections**:
-   - Source: `home-sample/northbeam-alternative`
-   - Destination: `https://alloceraintelligence.com/northbeam-alternative/`
-   - Type: 301
-
-If you'd rather not move it, paste the block anyway. It works at either URL.
+## URL
+Keep it as is (`/home-sample/northbeam-alternative/`). Any URL or redirect changes happen at the end with all the others.
 
 ## Rank Math fields
 | Field | Value |

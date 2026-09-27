@@ -126,7 +126,7 @@
   <p class="nba-eyebrow">The Margin Gap &middot; Tool Comparisons</p>
   <h1>Northbeam Alternative for Lead Generation: When You Need Profit, Not Just Attribution</h1>
   <p class="nba-lead">Looking for a Northbeam alternative usually means something isn&rsquo;t fitting. For ecommerce brands, the fix is often a different attribution tool. For lead generation and service businesses, the real gap is different: you need to know which campaigns made money after partner payouts, refunds, and fees, not just which ones earned the credit. This guide explains what Northbeam does well, the most common alternatives, and when you need a profit layer instead.</p>
-  <p class="nba-byline">By Nick Baum, Founder of Allocera Intelligence &middot; Updated September 2026 &middot; 12 min read</p>
+  <p class="nba-byline">By Nick Baum, Founder of Allocera Intelligence &middot; 12 min read</p>
 </header>
 
 <div class="nba-box">
@@ -319,7 +319,7 @@
   <p>Looking for a Northbeam alternative because the numbers don&rsquo;t match your bank account? Keep the tools you like and add the profit layer. CDAI connects to the CRM and ad accounts you already use and tells you, every night, whether each campaign made money and what to do next.</p>
   <div class="nba-btns">
     <a class="nba-btn nba-primary" href="https://cdai-portal.vercel.app/signup/">Get Started</a>
-    <a class="nba-btn" href="https://alloceraintelligence.com/pricing/">Get a Free Distortion Audit</a>
+    <a class="nba-btn" href="https://alloceraintelligence.com/pricing/">See Pricing</a>
     <a class="nba-btn" href="https://alloceraintelligence.com/dashboard/">See the Dashboard</a>
   </div>
 </section>
@@ -335,3 +335,89 @@
 <script>
 (function(){var b=document.getElementById('nbaBurger'),l=document.getElementById('nbaLinks');if(b&&l){b.addEventListener('click',function(){l.classList.toggle('nba-open');});}})();
 </script>
+
+<!-- ============ Analytics: GA4 (G-29J4V3VQ7B) + Tag Manager-ready events (article pages) ============ -->
+<script>
+(function () {
+  var GA_ID = "G-29J4V3VQ7B";
+  var PAGE = (location.pathname || "/").replace(/^\/|\/$/g, "") || "home";
+  window.dataLayer = window.dataLayer || [];
+
+  // Load GA4 only if the site doesn't already load it (never double-counts page views).
+  var hasGtag = typeof window.gtag === "function";
+  var hasTagScript = !!document.querySelector('script[src*="googletagmanager.com/gtag/js"], script[src*="googletagmanager.com/gtm.js"]');
+  if (!hasGtag && !hasTagScript) {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA_ID);
+  }
+
+  // Pushes a Tag Manager event and sends the same GA4 event. No personal data is ever sent.
+  function track(name, params) {
+    params = params || {};
+    params.page_slug = PAGE;
+    var dl = { event: "cdai_" + name };
+    for (var k in params) { if (Object.prototype.hasOwnProperty.call(params, k)) dl[k] = params[k]; }
+    window.dataLayer.push(dl);
+    if (typeof window.gtag === "function") window.gtag("event", name, params);
+  }
+
+  function sectionOf(el) {
+    if (el.closest("nav")) return "nav";
+    if (el.closest("footer")) return "footer";
+    if (el.closest("[class$='-final']")) return "final_cta";
+    var h = null, node = el;
+    while (node && node !== document.body) {
+      var prev = node.previousElementSibling;
+      while (prev) { if (/^H2$/.test(prev.tagName) && prev.id) { h = prev.id; break; } prev = prev.previousElementSibling; }
+      if (h) break;
+      node = node.parentElement;
+    }
+    return h || "intro";
+  }
+  function label(el) { return (el.getAttribute("aria-label") || el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 80); }
+
+  // Every link and button click.
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest && e.target.closest("a, button, summary");
+    if (!el) return;
+    if (el.tagName === "SUMMARY") { track("faq_open", { question: label(el) }); return; }
+    var href = el.getAttribute("href") || "";
+    var p = { link_text: label(el), link_url: href, section: sectionOf(el) };
+    if (/cdai-portal\.vercel\.app\/signup/.test(href)) track("signup_click", p);
+    else if (/cdai-portal\.vercel\.app/.test(href)) track("portal_click", p);
+    else if (/\/pricing/.test(href)) track("pricing_click", p);
+    else if (/contribution-margin-marketing/.test(href)) track("validation_report_click", p);
+    else if (/^#/.test(href)) track("toc_click", p);
+    else if (/^https?:\/\//.test(href) && href.indexOf(location.hostname) === -1) track("outbound_click", p);
+    else if (href) track("internal_link_click", p);
+    else track("button_click", p);
+  }, true);
+
+  // How far people read (25/50/75/100%), each once per visit.
+  var marks = [25, 50, 75, 100], hit = {};
+  function onScroll() {
+    var doc = document.documentElement;
+    var pct = Math.round(((window.scrollY || doc.scrollTop) + window.innerHeight) / doc.scrollHeight * 100);
+    marks.forEach(function (m) { if (pct >= m && !hit[m]) { hit[m] = true; track("scroll_depth", { percent: m }); } });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Which sections people reach (each H2, once per visit).
+  if ("IntersectionObserver" in window) {
+    var seen = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var id = en.target.id;
+        if (en.isIntersecting && id && !seen[id]) { seen[id] = true; track("section_view", { section: id }); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll("h2[id]").forEach(function (h) { io.observe(h); });
+  }
+})();
+</script>
+<!-- ============ /Analytics ============ -->
