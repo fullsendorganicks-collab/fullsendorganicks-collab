@@ -28,7 +28,7 @@ This list comes from a scan of the WordPress export run on Sept 26 (all live pag
 | `/salesforce-campaign-influence/` (was `/allocera-vs-salesforce/`) | 89 | |
 | `/true-cac/` (Customer Acquisition Cost Formula; merged `-2`) | 81 | Slug kept |
 | `/average-cost-per-lead/` (was `/marketing-margin-distortion-index/`) | 83 | |
-| `/lead-quality/` (post 245, Sept 28) | 83 | Pasted into 245 (the retest post's home); retest post moves to 252 |
+| `/lead-quality/` (post 245, Sept 28) | 88 | Pasted into 245 (the retest post's home); retest post moves to 252 |
 
 **Now:** restore the 30-day retest post into post 252 (its original slug). **Next:** #8 proof pages (full rebuilds), then Tier 2. Master URL/title/redirect table: `website/REDIRECTS.md` section 0.
 

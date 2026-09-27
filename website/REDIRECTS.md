@@ -21,7 +21,7 @@ One place for every slug change, every redirect, and every internal link that po
 | Rockerbox alternative | `/home-sample/rockerbox-alternative/` | Rockerbox Alternative | — | — | done |
 | Cost per signed case | `/cost-per-signed-case/` | Cost Per Signed Case | — | — | 90 |
 | **Post 252** | `/30-day-retest-methodology/` **after the restore** (now `-2`) | Marketing Measurement That Grades Its Own Decisions: The 30-Day Retest | `/30-day-retest-methodology-2/` | R11 (+ R12 check) | 82 (re-check after the restore) |
-| **Post 245** | `/lead-quality/` | Lead Quality: How to Measure It by What Each Lead Is Worth | held `/30-day-retest-methodology/` until Sept 28 | none into it; R12 must not exist | 83 |
+| **Post 245** | `/lead-quality/` | Lead Quality: 6 Metrics to Measure It in Real Dollars | held `/30-day-retest-methodology/` until Sept 28 | none into it; R12 must not exist | 88 (featured image not set yet) |
 | Marketing costs | `/marketing-costs/` | Marketing Costs: What $10,000 in Ad Spend Really Costs You | `/seven-cost-layers/`, `/blog/seven-cost-layers` | R1, R2 | 89 |
 | ROAS calculator | `/roas-calculator/` | ROAS Calculator: Find Your Break-Even ROAS and Real Profit | `/55-directives-study/` | R3 | 90 |
 | Offline conversion tracking | `/tag-manager-real-roi/` | Offline Conversion Tracking: Connect Ad Clicks to Closed Revenue | — (slug kept) | — | 80 |

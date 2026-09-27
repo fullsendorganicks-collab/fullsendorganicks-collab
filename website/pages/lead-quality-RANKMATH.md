@@ -1,6 +1,6 @@
 # Rank Math box: /lead-quality/ (post ID 245)
 
-**LIVE Sept 28: score 83, slug `lead-quality`.** Nick pasted it into post **245**, which held the live 30-day retest post (`/30-day-retest-methodology/`, 82), not into post 252. Fix: the 30-day retest post moves into post 252 and takes back its original slug (see `30-day-retest-methodology-RANKMATH.md` → "Sept 28 restore" and R11/R12 in `website/REDIRECTS.md`). Nothing is lost: both posts stay live.
+**LIVE Sept 28: score 88, slug `lead-quality`. Featured image still to set.** Nick pasted it into post **245**, which held the live 30-day retest post (`/30-day-retest-methodology/`, 82), not into post 252. Fix: the 30-day retest post moves into post 252 and takes back its original slug (see `30-day-retest-methodology-RANKMATH.md` → "Sept 28 restore" and R11/R12 in `website/REDIRECTS.md`). Nothing is lost: both posts stay live.
 
 _The notes below were written for post 252; the content, fields and claims are the same._
 
