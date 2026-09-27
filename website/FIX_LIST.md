@@ -48,7 +48,7 @@ Redirect details are in `REDIRECTS.md`.
 | Order | Post ID | Edit link (click this) | Live URL (check it matches) | Search (3 mo) | Job |
 |---|---|---|---|---|---|
 | B1 | 451 | https://alloceraintelligence.com/wp-admin/post.php?post=451&action=edit | https://alloceraintelligence.com/how-it-works/ | 28 impr | **DONE Sept 28: LIVE, score 80.** |
-| B2 | 483 | https://alloceraintelligence.com/wp-admin/post.php?post=483&action=edit | https://alloceraintelligence.com/about/ | 46 impr, 2 clicks | Full rebuild (has "cost layers") |
+| B2 | 483 | https://alloceraintelligence.com/wp-admin/post.php?post=483&action=edit | https://alloceraintelligence.com/about/ | 46 impr, 2 clicks | **SENT Sept 28** (focus "Allocera Intelligence"). Waiting on score. |
 | B3 | 478 | https://alloceraintelligence.com/wp-admin/post.php?post=478&action=edit | https://alloceraintelligence.com/dashboard/ | 35 impr, 1 click | Rebuild (has "cost layers") |
 | B4 | 457 | https://alloceraintelligence.com/wp-admin/post.php?post=457&action=edit | https://alloceraintelligence.com/proof/ | 16 impr | Full rebuild: validation first, provable Apex pilot story |
 | B5 | 133 | https://alloceraintelligence.com/wp-admin/post.php?post=133&action=edit | https://alloceraintelligence.com/allocera-intelligence-case-study-proof/ | 23 impr | Full rebuild (has "cost layers"); its own purpose |
@@ -101,6 +101,8 @@ All 21 still have "cost layers" wording, and most link to old URLs (`/seven-cost
 | C21 | 530 | https://alloceraintelligence.com/wp-admin/post.php?post=530&action=edit | https://alloceraintelligence.com/roas-looks-good-campaigns-lose-money/ | 2 impr |
 
 ## D. End of rebuild (after B and C)
+- **Off-site profiles:** F6S says "Cost Distortion Attribution Intelligence" (the site says Capital, Decision, Accuracy, Intelligence); beehiiv says "biweekly". Fix both to match the site.
+- **OpenRush:** Search Console and GA4 need reconnecting (the account showed nothing connected on Sept 28).
 1. **Redirects:** add every row in `REDIRECTS.md` (R1–R20).
 2. **Link check:** re-run the live-link scan on a fresh export. It must find 0 links to missing URLs.
 3. **Blog page:** re-paste with final URLs (pending list below).
