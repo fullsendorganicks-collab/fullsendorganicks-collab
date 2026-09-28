@@ -56,7 +56,7 @@ Redirect details are in `REDIRECTS.md`.
 | B2 | 483 | https://alloceraintelligence.com/wp-admin/post.php?post=483&action=edit | https://alloceraintelligence.com/about/ | 46 impr, 2 clicks | **DONE Sept 28: LIVE, score 82.** |
 | B3 | 478 | https://alloceraintelligence.com/wp-admin/post.php?post=478&action=edit | https://alloceraintelligence.com/dashboard/ | 35 impr, 1 click | **DONE Sept 28: LIVE, score 84** (v2, in the site's design). |
 | B4 | 457 | https://alloceraintelligence.com/wp-admin/post.php?post=457&action=edit | https://alloceraintelligence.com/proof/ | 16 impr | **DONE Sept 28: LIVE, score 79** (site design). |
-| B5 | 133 | https://alloceraintelligence.com/wp-admin/post.php?post=133&action=edit | https://alloceraintelligence.com/allocera-intelligence-case-study-proof/ | 23 impr | Full rebuild (has "cost layers"); its own purpose |
+| B5 | 133 | https://alloceraintelligence.com/wp-admin/post.php?post=133&action=edit | https://alloceraintelligence.com/allocera-intelligence-case-study-proof/ | 23 impr | **BUILT Sept 28** (site design): keyword `data driven marketing`. Waiting on Nick's paste and score. |
 | B6 | 342 | https://alloceraintelligence.com/wp-admin/post.php?post=342&action=edit | https://alloceraintelligence.com/case-study-2-oauth-validation/ | 12 impr | Full rebuild; its own purpose |
 | B7 | 850 | https://alloceraintelligence.com/wp-admin/post.php?post=850&action=edit | https://alloceraintelligence.com/home-sample/contribution-margin-marketing/ | — | Quick fix: remove "cost layers", fix the `/seven-cost-layers/` link |
 | B8 | 162 | https://alloceraintelligence.com/wp-admin/post.php?post=162&action=edit | https://alloceraintelligence.com/home-sample/terms/ | — | Quick fix (one "cost layers" mention) |
