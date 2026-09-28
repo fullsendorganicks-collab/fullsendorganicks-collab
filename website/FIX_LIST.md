@@ -32,7 +32,7 @@ If they don't match, stop before deleting anything.
 Redirect details are in `REDIRECTS.md`.
 
 ## Scoreboard
-- **Done and live:** 22
+- **Done and live:** 23
   - 15 rebuilt posts/pages
   - the homepage
   - the blog (which gets a final re-paste)
@@ -56,7 +56,7 @@ Redirect details are in `REDIRECTS.md`.
 | B2 | 483 | https://alloceraintelligence.com/wp-admin/post.php?post=483&action=edit | https://alloceraintelligence.com/about/ | 46 impr, 2 clicks | **DONE Sept 28: LIVE, score 82.** |
 | B3 | 478 | https://alloceraintelligence.com/wp-admin/post.php?post=478&action=edit | https://alloceraintelligence.com/dashboard/ | 35 impr, 1 click | **DONE Sept 28: LIVE, score 84** (v2, in the site's design). |
 | B4 | 457 | https://alloceraintelligence.com/wp-admin/post.php?post=457&action=edit | https://alloceraintelligence.com/proof/ | 16 impr | **DONE Sept 28: LIVE, score 79** (site design). |
-| B5 | 133 | https://alloceraintelligence.com/wp-admin/post.php?post=133&action=edit | https://alloceraintelligence.com/allocera-intelligence-case-study-proof/ | 23 impr | **BUILT Sept 28** (site design): keyword `data driven marketing`. Waiting on Nick's paste and score. |
+| B5 | 133 | https://alloceraintelligence.com/wp-admin/post.php?post=133&action=edit | https://alloceraintelligence.com/allocera-intelligence-case-study-proof/ | 23 impr | **DONE Sept 28: LIVE, score 71** (site design). SEO title: Data Driven Marketing Case Study: 2 Tests, Zero Guesses. |
 | B6 | 342 | https://alloceraintelligence.com/wp-admin/post.php?post=342&action=edit | https://alloceraintelligence.com/case-study-2-oauth-validation/ | 12 impr | Full rebuild; its own purpose |
 | B7 | 850 | https://alloceraintelligence.com/wp-admin/post.php?post=850&action=edit | https://alloceraintelligence.com/home-sample/contribution-margin-marketing/ | — | Quick fix: remove "cost layers", fix the `/seven-cost-layers/` link |
 | B8 | 162 | https://alloceraintelligence.com/wp-admin/post.php?post=162&action=edit | https://alloceraintelligence.com/home-sample/terms/ | — | Quick fix (one "cost layers" mention) |
@@ -135,18 +135,23 @@ All 21 still have "cost layers" wording, and most link to old URLs (`/seven-cost
 | 245 | `/lead-quality/` | 88 | **missing** |
 | 543 | `/true-cac-2/` | trashed (merged into 294) | — |
 
-## Blog page: pending changes (ON HOLD until the rebuild is done, per Nick)
+## Blog page and homepage: updated Sept 28 (Nick asked to do them now)
+- **Blog:** all items below are done, plus a new "Proof and Case Studies" group (/proof/, page 133, validation report). Every card link was checked against the Sept 27 export (0 missing).
+- **Homepage:** 4 new cards in "Go deeper" (Proof, Case Study 133, ROAS Calculator, Marketing Costs); in-text links to marketing costs, lead quality, ROAS calculator and average cost per lead; a proof link after the reviews; trailing slashes on all internal links. The hero, reviews and prices are unchanged.
+- **Still to do:** re-paste both again after page 342 and the old posts are done, so the new titles show up.
+
+### Blog checklist
 `pages/blog.html` already has the first two. Paste only when Nick says the rebuild is finished.
 - [x] Add card: Marketing Costs → `/marketing-costs/`
 - [x] Add card: 30-Day Retest → `/30-day-retest-methodology/`
-- [ ] Add card: ROAS Calculator → `/roas-calculator/`
-- [ ] Update card: Tag Manager → Offline Conversion Tracking → `/tag-manager-real-roi/` (slug kept)
-- [ ] Update card: Allocera and Salesforce → Salesforce Campaign Influence → `/salesforce-campaign-influence/`
-- [ ] Update card: True CAC → Customer Acquisition Cost Formula (final URL); remove any `/true-cac-2/` card
-- [ ] Update card: Margin Distortion Index → Average Cost Per Lead by Industry → `/average-cost-per-lead/`
-- [ ] Add a card for `/lead-quality/`; remove cards for pages that get 301'd (e.g. `/30-day-retest-methodology-2/`, `/true-cac-2/`) and update titles/descriptions for every rebuilt page
-- [ ] Re-check every card link against the live URLs before handing over
-- [ ] Remove the `/allocera-vs-salesforce/` and `/marketing-margin-distortion-index/` links the live blog still has (link scan, Sept 27)
+- [x] Add card: ROAS Calculator → `/roas-calculator/`
+- [x] Update card: Tag Manager → Offline Conversion Tracking → `/tag-manager-real-roi/` (slug kept)
+- [x] Update card: Allocera and Salesforce → Salesforce Campaign Influence → `/salesforce-campaign-influence/`
+- [x] Update card: True CAC → Customer Acquisition Cost Formula (final URL); remove any `/true-cac-2/` card
+- [x] Update card: Margin Distortion Index → Average Cost Per Lead by Industry → `/average-cost-per-lead/`
+- [x] Add a card for `/lead-quality/`; remove cards for pages that get 301'd (e.g. `/30-day-retest-methodology-2/`, `/true-cac-2/`) and update titles/descriptions for every rebuilt page
+- [x] Re-check every card link against the live URLs before handing over
+- [x] Remove the `/allocera-vs-salesforce/` and `/marketing-margin-distortion-index/` links the live blog still has (link scan, Sept 27)
 
 ---
 
