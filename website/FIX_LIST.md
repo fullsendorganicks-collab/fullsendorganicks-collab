@@ -1,5 +1,7 @@
 # Website master to-do (rebuilt Sept 28 from the Sept 27 WordPress exports)
 
+**Start here: `website/REMAINING.md` has the full list of what is left (Sept 28).**
+
 **Nick's rules:**
 - **Never delete or retire a page.** Rebuild it so it adds reach, authority and trust.
 - **Last, after every page is done (Nick, Sept 28):** all redirects, homepage updates, and the blog index page. During page work, only log them; never ask Nick to do them mid-way.
