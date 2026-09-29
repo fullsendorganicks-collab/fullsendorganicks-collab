@@ -215,3 +215,32 @@ Listed in order of search impressions, then by how much is wrong.
 ## Suggested pace
 - 1 full rebuild or 3–4 light cleans per session.
 - Tier 1 first (about 6 sessions), then Tier 2, then Tier 3.
+
+
+## E. Blended-accuracy fix (Sept 29, Nick approved): re-paste these 22 pages
+**Rule (Nick): no single blended accuracy number anywhere.** Every "89.5% accurate overall (1,210 of 1,352)" headline is replaced by "98.0% accurate on scale calls and 95.2% on hold calls across 1,352 scored decisions" (or a plain "1,352 scored decisions" tile). The per-decision table on each page is unchanged. Branch `fix/remove-blended-accuracy-sept29`. Files: `website/pages/<file>` (html or `-copy-paste.txt`, same content). Not pasted until Nick does it.
+
+| # | Post ID | Edit link (click this) | Live URL (check it matches) | File | Note |
+|---|---|---|---|---|---|
+| E1 | 850 | https://alloceraintelligence.com/wp-admin/post.php?post=850&action=edit | https://alloceraintelligence.com/home-sample/contribution-margin-marketing/ | `contribution-margin-marketing.html` | 1st. Also removes "cost layers" (6 spots) and fixes the /seven-cost-layers/ link. Page appears twice in the export; both copies fixed. Rank Math unchanged. |
+| E2 | 457 | https://alloceraintelligence.com/wp-admin/post.php?post=457&action=edit | https://alloceraintelligence.com/proof/ | `proof.html` | 2nd. SEO title changes to `Marketing Case Study: 1,352 Decisions, Every Result` (see proof-RANKMATH.md). |
+| E3 | 451 | https://alloceraintelligence.com/wp-admin/post.php?post=451&action=edit | https://alloceraintelligence.com/how-it-works/ | `how-it-works.html` | 3rd. |
+| E4 | 133 | https://alloceraintelligence.com/wp-admin/post.php?post=133&action=edit | https://alloceraintelligence.com/allocera-intelligence-case-study-proof/ | `allocera-intelligence-case-study-proof.html` | 4th. |
+| E5 | 252 | https://alloceraintelligence.com/wp-admin/post.php?post=252&action=edit | https://alloceraintelligence.com/30-day-retest-methodology/ | `30-day-retest-methodology.html` | Meta description changes (see 30-day-retest-methodology-RANKMATH.md). |
+| E6 | 483 | https://alloceraintelligence.com/wp-admin/post.php?post=483&action=edit | https://alloceraintelligence.com/about/ | `about.html` |  |
+| E7 | 478 | https://alloceraintelligence.com/wp-admin/post.php?post=478&action=edit | https://alloceraintelligence.com/dashboard/ | `dashboard.html` |  |
+| E8 | 187 | https://alloceraintelligence.com/wp-admin/post.php?post=187&action=edit | https://alloceraintelligence.com/blog/ | `blog.html` | Re-paste at the end with the other blog updates. |
+| E9 | 228 | https://alloceraintelligence.com/wp-admin/post.php?post=228&action=edit | https://alloceraintelligence.com/roas-calculator/ | `55-directives-study.html` |  |
+| E10 | 284 | https://alloceraintelligence.com/wp-admin/post.php?post=284&action=edit | https://alloceraintelligence.com/salesforce-campaign-influence/ | `allocera-vs-salesforce.html` |  |
+| E11 | 267 | https://alloceraintelligence.com/wp-admin/post.php?post=267&action=edit | https://alloceraintelligence.com/calculate-contribution-margin/ | `calculate-contribution-margin.html` |  |
+| E12 | 501 | https://alloceraintelligence.com/wp-admin/post.php?post=501&action=edit | https://alloceraintelligence.com/cost-per-signed-case/ | `cost-per-signed-case.html` |  |
+| E13 | 245 | https://alloceraintelligence.com/wp-admin/post.php?post=245&action=edit | https://alloceraintelligence.com/lead-quality/ | `lead-quality.html` |  |
+| E14 | 322 | https://alloceraintelligence.com/wp-admin/post.php?post=322&action=edit | https://alloceraintelligence.com/scale-hold-cut-pause-framework/ | `marketing-budget-allocation.html` |  |
+| E15 | 506 | https://alloceraintelligence.com/wp-admin/post.php?post=506&action=edit | https://alloceraintelligence.com/average-cost-per-lead/ | `marketing-margin-distortion-index.html` |  |
+| E16 | 563 | https://alloceraintelligence.com/wp-admin/post.php?post=563&action=edit | https://alloceraintelligence.com/net-marketing-contribution/ | `net-marketing-contribution.html` |  |
+| E17 | 654 | https://alloceraintelligence.com/wp-admin/post.php?post=654&action=edit | https://alloceraintelligence.com/home-sample/northbeam-alternative/ | `northbeam-alternative.html` |  |
+| E18 | 646 | https://alloceraintelligence.com/wp-admin/post.php?post=646&action=edit | https://alloceraintelligence.com/home-sample/rockerbox-alternative/ | `rockerbox-alternative.html` |  |
+| E19 | 301 | https://alloceraintelligence.com/wp-admin/post.php?post=301&action=edit | https://alloceraintelligence.com/marketing-costs/ | `seven-cost-layers.html` |  |
+| E20 | 260 | https://alloceraintelligence.com/wp-admin/post.php?post=260&action=edit | https://alloceraintelligence.com/tag-manager-real-roi/ | `tag-manager-real-roi.html` |  |
+| E21 | 308 | https://alloceraintelligence.com/wp-admin/post.php?post=308&action=edit | https://alloceraintelligence.com/triple-whale-vs-rockerbox-vs-allocera/ | `triple-whale-vs-rockerbox.html` |  |
+| E22 | 294 | https://alloceraintelligence.com/wp-admin/post.php?post=294&action=edit | https://alloceraintelligence.com/true-cac/ | `true-cac.html` |  |

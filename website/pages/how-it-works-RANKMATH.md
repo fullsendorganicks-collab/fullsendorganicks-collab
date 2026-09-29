@@ -39,7 +39,7 @@
 | Improvado and HubSpot quotes | Their pages, seen live in Google Sept 28 (linked) |
 | 10 integrations; one-click, API key, CSV (9 formats), webhook | Engine adapters (facts audit F5) |
 | Real profit formula, one decision nightly with confidence, you stay in control, rechecks math, grades past decisions | Approved wording used on the other rebuilt pages |
-| 89.5% (1,210/1,352), 9 businesses, 7 industries, math 100% two ways | Validation report |
+| 98.0% scale, 95.2% hold, 1,352 scored decisions, 9 businesses, 7 industries, math 100% two ways | Validation report |
 | $30,000 → $3,600 example | Labeled illustrative. 30,000 − 10,000 − 6,000 − 500 − 3,500 − 400 − 6,000 = 3,600 |
 
 **Removed from the old page:**

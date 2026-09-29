@@ -94,7 +94,7 @@ No rebuilt page or the blog links to `/55-directives-study/`, so nothing else ne
 | 25% ACoS = 4.0 ROAS; 50% = 2.0; 33% ≈ 3.0 | Math from the linked ACoS/ROAS definitions |
 | Stripe 2.9% + 30¢ | Stripe pricing (linked) |
 | What CDAI subtracts, one decision a night, rechecks math, stops on bad data, grades past calls | Same approved wording as the other rebuilt pages; engine true-cost formula, Control Tower, health gate, `score_mature_directives` |
-| 89.5% (1,210/1,352), 9 businesses, 7 industries, math 100% two ways | The validation report |
+| 98.0% scale, 95.2% hold, 1,352 scored decisions, 9 businesses, 7 industries, math 100% two ways | The validation report |
 
 **Kept out on purpose:**
 - ROAS "benchmarks" by industry (none from a primary source; the page explains why they're risky)

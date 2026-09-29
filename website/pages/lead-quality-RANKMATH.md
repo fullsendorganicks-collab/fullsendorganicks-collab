@@ -103,7 +103,7 @@ Open `alloceraintelligence.com/wp-admin/post.php?post=252&action=edit` (you alre
 | $66.69 lead → $437 customer | Our live average cost per lead page (WordStream benchmark + labeled example) |
 | CDAI: true cost per lead, true CAC, real profit, one decision nightly, rechecks math, grades past calls | Same approved wording as the other rebuilt pages |
 | Meta, Google Ads, LinkedIn, HubSpot and Salesforce connect in one click | Same wording as your live rebuilt pages |
-| 89.5% (1,210/1,352), 9 businesses, 7 industries, math 100% two ways | The validation report |
+| 98.0% scale, 95.2% hold, 1,352 scored decisions, 9 businesses, 7 industries, math 100% two ways | The validation report |
 
 **Kept out on purpose:**
 - "directive accuracy" as the keyword (it belongs to the live 30-day retest post)

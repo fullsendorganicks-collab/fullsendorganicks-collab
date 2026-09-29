@@ -73,7 +73,7 @@ No other rebuilt page links to `/seven-cost-layers/`, so no links need fixing. *
 | Stripe 2.9% + 30¢; $15 per dispute | stripe.com pricing and Chargebacks 101 (same) |
 | What CDAI subtracts: ad spend, fees, partner payouts, refunds, chargebacks, compliance costs and operating costs you add | Engine true-cost formula; the same sentence already runs on the contribution margin and net marketing contribution pages |
 | Rechecks its math, stops on bad data, grades past decisions, advisory only | Control Tower math check; health gate; `score_mature_directives`; engine `CLAUDE.md` |
-| 89.5% (1,210/1,352), 9 businesses, 7 industries, math matched 100% two ways | The validation report; same wording as the other rebuilt pages |
+| 98.0% scale, 95.2% hold, 1,352 scored decisions, 9 businesses, 7 industries, math matched 100% two ways | The validation report; same wording as the other rebuilt pages |
 
 **Kept out on purpose:**
 - any "N costs" or "layers" framing

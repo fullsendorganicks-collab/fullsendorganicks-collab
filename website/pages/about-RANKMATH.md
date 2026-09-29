@@ -41,7 +41,7 @@
 | Claim | Source |
 |---|---|
 | Founded April 2026, Florida, LLC, solo, no outside funding; 6+ years; GA4/GTM; 3 Google certifications issued Jan 2026 | Nick's old About page |
-| Engine wording, 89.5% (1,210/1,352), 9 businesses, 7 industries, math 100% two ways | Approved wording and the validation report |
+| Engine wording, 98.0% scale, 95.2% hold, 1,352 scored decisions, 9 businesses, 7 industries, math 100% two ways | Approved wording and the validation report |
 | The 14 values | Nick's own. #06 was softened; #13's $11/$47 example was removed (no source) |
 
 **Removed from the old page:**

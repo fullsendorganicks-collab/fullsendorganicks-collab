@@ -51,7 +51,7 @@ Posts → search "retest" (the old title starts "The 30-Day Retest"). Delete the
 | Secondary keywords | `30-day retest, marketing decision accuracy, measure marketing effectiveness, marketing attribution` |
 | SEO Title (57 chars) | `Marketing Measurement: Grading 8 Decisions Against Profit` (v2 after the first score of 79; adds a number) |
 | Permalink | `30-day-retest-methodology` (the original slug; in post 252 it must be changed from `-2`, see step 4) |
-| Meta Description (142 chars) | `Most marketing measurement never checks its own calls. See how CDAI grades every decision against real profit, and the 89.5% validated result.` |
+| Meta Description (142 chars) | `Most marketing measurement never checks its own calls. See how CDAI grades every decision against real profit, and the validated results.` |
 | Schema | Article → Blog Post |
 
 **Keyword choice:** "marketing measurement" gets about 170 US searches a month, with a high ad value (about $46 per click), and the page answers it honestly. "Incrementality testing" gets more searches, but it's a different method CDAI doesn't use, so the page explains the difference instead of targeting it.
@@ -89,7 +89,7 @@ Posts → search "retest" (the old title starts "The 30-Day Retest"). Delete the
 | Each grade is stored with its method version; old and new never blended | `directive_outcomes.methodology_version` |
 | Flags are never counted wrong (82 neutral) | code (a flag is correct or neutral only) + the validation |
 | Math rechecked nightly; bad data stops decisions; advisory only | Control Tower math check; health gate; engine `CLAUDE.md` |
-| 89.5% (1,210/1,352) and the per-decision table; math 100%, checked two ways | the validation report; same wording as the other rebuilt pages |
+| 98.0% scale, 95.2% hold, 1,352 scored decisions and the per-decision table; math 100%, checked two ways | the validation report; same wording as the other rebuilt pages |
 
 **Kept out on purpose:** the exact grading thresholds (proprietary), any "guarantee", and any comparison accuracy figures for other tools (none could be sourced).
 

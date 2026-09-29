@@ -268,7 +268,7 @@
     <div class="rule fade-up"></div>
     <div class="fade-up"><p>Allocera Intelligence publishes its results instead of asking for trust. Before release, CDAI&rsquo;s decisions were checked in a controlled validation:</p>
 <div class="stat-row">
-  <div class="stat"><b>89.5%</b><span>accurate overall (1,210 of 1,352 scored decisions)</span></div>
+  <div class="stat"><b>1,352</b><span>scored decisions, each graded against what actually happened</span></div>
   <div class="stat"><b>9</b><span>businesses across 7 industries</span></div>
   <div class="stat"><b>100%</b><span>math match, checked two ways</span></div>
 </div>

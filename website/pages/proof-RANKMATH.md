@@ -6,7 +6,7 @@
 |---|---|
 | Page title / H1 | `Marketing Case Study: How CDAI Proves Its Numbers Before They Reach You` |
 | Focus keyword | `marketing case study` |
-| SEO title (55) | `Marketing Case Study: 89.5% Accurate on 1,352 Decisions` |
+| SEO title (55) | `Marketing Case Study: 1,352 Decisions, Every Result` |
 | Description (142) | `See the CDAI marketing case study: a validation of 1,352 decisions with every dollar checked twice, and a real pilot with Apex Care Solutions.` |
 | Permalink | `proof` (unchanged) |
 | Schema | Article → Article (FAQ schema is built into the page) |
@@ -46,7 +46,7 @@
 ## Claims
 | Claim | Source |
 |---|---|
-| 89.5% (1,210/1,352), 9 businesses, 7 industries, 860 simulated days, math 100% two ways | Validation report (Sept 24) |
+| 98.0% scale, 95.2% hold, 1,352 scored decisions, 9 businesses, 7 industries, 860 simulated days, math 100% two ways | Validation report (Sept 24) |
 | Scale 98.0%, Hold 95.2% | Validation after the SCALE fix; same figures as the live homepage |
 | Bugs found and fixed before release, including a grading gap | Validation report §7; same wording as the homepage |
 | Validation used simulated businesses | Validation report methodology, stated plainly on the page |

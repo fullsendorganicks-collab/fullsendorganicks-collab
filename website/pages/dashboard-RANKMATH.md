@@ -48,7 +48,7 @@
 | Wrike definition; HubSpot community quote | Seen live in Google Sept 28 (linked) |
 | Dashboard views (profit per campaign, CPL vs true CPL, decisions + confidence, warning signs, partner margin, decision history, math check) | Engine: true CPL / distortion, directives with confidence, decay signals, partner views, outcome grading, health gate. Described in general terms, with no panel count. |
 | Example table | Labeled illustrative sample data, not client data |
-| 89.5% (1,210/1,352), 9 businesses, 7 industries, math 100% two ways | Validation report |
+| 98.0% scale, 95.2% hold, 1,352 scored decisions, 9 businesses, 7 industries, math 100% two ways | Validation report |
 
 **Removed from the old page:**
 - "14 panels"

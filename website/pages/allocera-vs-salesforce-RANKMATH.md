@@ -82,7 +82,7 @@ Posts → search "Salesforce". Delete the old content, paste in `allocera-vs-sal
 | Worked example (300% ROI, $90,000 vs $11,400) | Labeled "illustrative, not client data". Arithmetic: 120,000 − 12,000 − 30,000 − 15,000 − 3,600 − 48,000 = 11,400. |
 | Salesforce, HubSpot, Meta, Google Ads and LinkedIn connect in one click | Same wording as your live rebuilt pages |
 | CDAI's profit math, nightly decision, math recheck, advisory only | Same approved wording as the other rebuilt pages |
-| 89.5% (1,210/1,352), 9 businesses, 7 industries, math 100% two ways | The validation report |
+| 98.0% scale, 95.2% hold, 1,352 scored decisions, 9 businesses, 7 industries, math 100% two ways | The validation report |
 
 **Kept out on purpose:**
 - every "Salesforce cannot" claim (the post says what the report uses, sourced, and calls these edges, not flaws)

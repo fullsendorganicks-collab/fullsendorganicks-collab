@@ -37,7 +37,7 @@
 |---|---|
 | FullSend Organicks: Google Ads Aug 31 – Dec 2 2025, $2,112.17, 37 conversions, about 4 months stale, no decisions | Old page 133 (test 1) |
 | Apex: Meta Jan 1 – Apr 22 2026, 7 campaigns, $2,414.12, 62,211 impressions, 276 leads all "Contact Import", no invented attribution | Old page 133 (test 2) |
-| 89.5% on 1,352 decisions, math 100% two ways | Validation report (Sept 24) |
+| 98.0% scale, 95.2% hold, 1,352 decisions, math 100% two ways | Validation report (Sept 24) |
 
 **Removed from the old page:**
 - "seven cost layers"

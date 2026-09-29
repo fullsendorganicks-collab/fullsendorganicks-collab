@@ -324,7 +324,7 @@
 <p>It works alongside your CRM and attribution tools, not instead of them. They tell you who the customer is and which touchpoint gets credit. CDAI tells you whether the campaign made money after every cost.</p>
 
 <h3>Validated before release</h3>
-<p>Before release, CDAI&rsquo;s decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>89.5% accurate overall (1,210 of 1,352 scored decisions)</strong>, with the underlying math matching 100%. Every decision type:</p>
+<p>Before release, CDAI&rsquo;s decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>98.0% accurate on scale calls and 95.2% on hold calls across 1,352 scored decisions</strong>, with the underlying math matching 100%. Every decision type:</p>
 <div class="ccm-table-wrap">
 <table>
   <thead><tr><th>Decision</th><th>What it tells you</th><th>Accuracy</th></tr></thead>

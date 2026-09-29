@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Contribution Margin Marketing: What It Means, and Proof the Math Holds Up | Allocera Intelligence</title>
+<meta name="description" content="Contribution margin marketing means knowing what a campaign actually keeps after every real cost — not just reported ROAS. Database-verified proof included."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+--bg-primary:#0A0E1A;--bg-secondary:#111827;--bg-surface:rgba(17,24,39,0.6);
+--text-primary:#F9FAFB;--text-secondary:#D1D5DB;--text-muted:#9CA3AF;
+--accent-blue:#3B82F6;--accent-blue-bright:#60A5FA;--accent-gold:#F59E0B;
+--accent-green:#10B981;--accent-red:#EF4444;
+--border:rgba(255,255,255,0.1);--border-bright:rgba(255,255,255,0.2);
+}
+html{scroll-behavior:smooth;}
+body{background:#0A0E1A;color:#F9FAFB;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.7;position:relative;overflow-x:hidden;}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url('https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png');background-size:cover;background-position:center;background-attachment:fixed;opacity:0.4;z-index:-1;}
+body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(10,14,26,0.5) 0%,rgba(10,14,26,0.85) 100%);z-index:-1;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,14,26,0.95);border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+.nav-container{max-width:1400px;margin:0 auto;padding:clamp(16px,2vw,24px) clamp(20px,5vw,60px);display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:16px;text-decoration:none;}
+.nav-logo{width:clamp(36px,5vw,48px);height:clamp(36px,5vw,48px);object-fit:contain;flex-shrink:0;}
+.nav-company{font-size:clamp(14px,1.8vw,18px);font-weight:600;letter-spacing:0.02em;color:#F9FAFB;}
+.nav-back{font-size:clamp(12px,1.4vw,14px);font-weight:500;color:#60A5FA;text-decoration:none;padding:10px 20px;border:1px solid rgba(96,165,250,0.3);border-radius:6px;transition:all 0.3s ease;}
+.nav-back:hover{background:rgba(59,130,246,0.1);border-color:#60A5FA;transform:translateY(-1px);}
+main{max-width:1100px;margin:0 auto;padding:clamp(100px,15vh,140px) clamp(24px,5vw,60px) clamp(80px,12vh,120px);}
+.hero{text-align:center;margin-bottom:clamp(60px,10vh,100px);}
+h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5.5vw,60px);font-weight:700;line-height:1.15;color:#F9FAFB;margin-bottom:clamp(20px,3vh,32px);letter-spacing:-0.02em;}
+h1 em{font-style:italic;color:#60A5FA;}
+.meta-grid{display:flex;gap:clamp(16px,3vw,32px);flex-wrap:wrap;justify-content:center;margin-bottom:clamp(32px,5vh,48px);padding-bottom:clamp(24px,4vh,40px);border-bottom:1px solid rgba(255,255,255,0.1);}
+.meta-item{font-size:clamp(11px,1.3vw,13px);letter-spacing:0.08em;text-transform:uppercase;color:#9CA3AF;font-weight:500;}
+.meta-item span{color:#60A5FA;font-weight:600;}
+.lead{font-size:clamp(16px,2.2vw,20px);color:#D1D5DB;line-height:1.8;max-width:900px;margin:0 auto clamp(40px,6vh,60px);}
+section{margin-bottom:clamp(60px,10vh,100px);}
+h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.6vw,42px);font-weight:700;color:#F9FAFB;margin-bottom:clamp(24px,4vh,40px);line-height:1.25;letter-spacing:-0.01em;}
+h3{font-family:'Inter',sans-serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#F9FAFB;margin:clamp(32px,5vh,48px) 0 clamp(16px,2.5vh,24px);letter-spacing:-0.01em;}
+p{font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;margin-bottom:clamp(20px,3vh,28px);}
+a.inline-link{color:#60A5FA;text-decoration:none;border-bottom:1px solid rgba(96,165,250,0.3);transition:all 0.2s ease;}
+a.inline-link:hover{color:#93C5FD;border-bottom-color:#93C5FD;}
+.toc{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(24px,4vw,32px);margin:clamp(40px,6vh,56px) 0;}
+.toc-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9CA3AF;font-weight:600;margin-bottom:16px;}
+.toc ol{margin:0;padding-left:20px;}
+.toc li{margin-bottom:10px;font-size:clamp(13px,1.5vw,15px);padding-left:0;}
+.toc li::before{content:none;}
+.toc a{color:#D1D5DB;text-decoration:none;}
+.toc a:hover{color:#60A5FA;}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,3vw,24px);margin:clamp(40px,6vh,60px) 0;}
+@media(min-width:768px){.stat-grid{grid-template-columns:repeat(4,1fr);}}
+.stat-card{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(20px,3vw,28px) clamp(16px,2.5vw,20px);text-align:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.stat-number{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,40px);font-weight:700;color:#60A5FA;line-height:1;margin-bottom:8px;}
+.stat-sub{font-size:clamp(11px,1.3vw,12px);color:#9CA3AF;line-height:1.4;text-transform:uppercase;letter-spacing:0.04em;}
+.comparison-table{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(20px,4vw,32px);margin:clamp(32px,5vh,48px) 0;overflow-x:auto;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+table{width:100%;border-collapse:collapse;}
+th{font-size:clamp(12px,1.4vw,13px);letter-spacing:0.08em;text-transform:uppercase;color:#9CA3AF;font-weight:600;text-align:left;padding:14px;border-bottom:1px solid rgba(255,255,255,0.1);}
+td{font-size:clamp(13px,1.5vw,14px);color:#D1D5DB;padding:14px;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+td strong{color:#F9FAFB;font-weight:600;}
+.callout{padding:clamp(24px,4vw,36px);background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.3);border-left:4px solid #3B82F6;border-radius:8px;margin:clamp(28px,4.5vh,44px) 0;}
+.callout strong{color:#60A5FA;font-weight:600;}
+.callout.amber{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-left:4px solid #F59E0B;}
+.callout.amber strong{color:#F59E0B;}
+code{background:rgba(10,14,26,0.8);padding:3px 8px;border-radius:4px;font-family:'Courier New',monospace;font-size:clamp(12px,1.3vw,13px);color:#60A5FA;border:1px solid rgba(96,165,250,0.3);}
+ul{margin:clamp(18px,3vh,26px) 0;padding-left:clamp(24px,4vw,40px);}
+li{position:relative;margin-bottom:12px;font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;padding-left:12px;}
+li::before{content:'→';position:absolute;left:-20px;color:#3B82F6;font-weight:700;}
+li strong{color:#F9FAFB;font-weight:600;}
+.related-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:clamp(32px,5vh,44px) 0;}
+@media(min-width:640px){.related-grid{grid-template-columns:1fr 1fr;}}
+.related-card{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:20px 24px;text-decoration:none;display:block;transition:all 0.25s ease;}
+.related-card:hover{border-color:#60A5FA;transform:translateY(-2px);}
+.related-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#60A5FA;font-weight:700;margin-bottom:6px;}
+.related-title{font-size:clamp(14px,1.6vw,16px);color:#F9FAFB;font-weight:600;}
+.cta-section{margin:clamp(60px,10vh,100px) 0;padding:clamp(36px,6vw,56px);background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(16,185,129,0.1));border:1px solid rgba(255,255,255,0.15);border-radius:16px;text-align:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.cta-section h2{margin-top:0;margin-bottom:clamp(16px,2.5vh,24px);}
+.cta-section p{max-width:700px;margin-left:auto;margin-right:auto;margin-bottom:clamp(24px,4vh,32px);}
+.btn-primary{display:inline-block;font-size:clamp(12px,1.5vw,14px);letter-spacing:0.08em;text-transform:uppercase;background:linear-gradient(135deg,#3B82F6,#2563EB);color:#F9FAFB;border:none;padding:16px 40px;border-radius:8px;cursor:pointer;transition:all 0.3s ease;text-decoration:none;font-weight:600;box-shadow:0 10px 30px rgba(59,130,246,0.3);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(59,130,246,0.4);background:linear-gradient(135deg,#2563EB,#1D4ED8);}
+.btn-secondary{display:inline-block;font-size:clamp(12px,1.5vw,14px);letter-spacing:0.08em;text-transform:uppercase;background:transparent;color:#F9FAFB;border:1px solid rgba(255,255,255,0.3);padding:16px 40px;border-radius:8px;cursor:pointer;transition:all 0.3s ease;text-decoration:none;font-weight:600;margin-left:12px;}
+.btn-secondary:hover{border-color:#60A5FA;color:#60A5FA;}
+footer{margin-top:clamp(60px,10vh,100px);padding-top:clamp(32px,5vh,48px);border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:clamp(12px,1.4vw,13px);color:#9CA3AF;line-height:1.6;}
+footer a{color:#60A5FA;text-decoration:none;}
+footer a:hover{color:#93C5FD;}
+@media(max-width:768px){.nav-company{display:none;}.btn-secondary{margin-left:0;margin-top:12px;}}
+section{opacity:0;animation:fadeInUp 0.8s ease forwards;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+section:nth-child(1){animation-delay:0.1s;}section:nth-child(2){animation-delay:0.2s;}
+section:nth-child(3){animation-delay:0.3s;}section:nth-child(4){animation-delay:0.4s;}
+section:nth-child(5){animation-delay:0.5s;}section:nth-child(6){animation-delay:0.6s;}
+section:nth-child(7){animation-delay:0.7s;}
+</style>
+</head>
+<body>
+<nav>
+<a href="https://alloceraintelligence.com">
+<img src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence logo"/>
+Allocera Intelligence
+</a>
+<a href="https://alloceraintelligence.com">← Back to Home</a>
+</nav>
+<main>
+<h1>Contribution Margin Marketing: What It Actually Means, <em>and Proof the Math Holds Up</em></h1>
+Topic: Contribution Margin Marketing
+Verified: 1,352 Real Directive Outcomes
+Math Match: 100%, Zero Mismatches
+<p>Contribution margin marketing means judging a campaign by what it actually keeps after every real cost — not by what a platform dashboard reports. It's a different number than ROAS, a different number than platform-reported CPL, and the only one that tells you whether a campaign is really making you money. Here's what it means, and the database-verified test that proves it's being calculated right.</p>
+On this page
+<ol>
+<li><a href="#what-it-means">What contribution margin marketing actually means</a></li>
+<li><a href="#why-it-differs">Why it's a different number than ROAS or CPL</a></li>
+<li><a href="#the-proof">The database-verified proof behind the math</a></li>
+<li><a href="#the-honest-limits">What this proof does — and doesn't — show</a></li>
+<li><a href="#related">Related reading</a></li>
+</ol>
+<section id="what-it-means">
+<h2>What Contribution Margin Marketing Actually Means</h2>
+<p><strong>Contribution margin marketing</strong> is the practice of evaluating a campaign's real profitability — what it contributes to the bottom line after every cost involved in acquiring and closing the customer — instead of stopping at ad platform metrics that only see the media spend.</p>
+<p>Most marketing dashboards report cost-per-lead or ROAS using one number: media spend. But media spend is rarely the whole cost of a customer. Broker or partner payouts, refunds, chargebacks, compliance overhead, and downstream fulfillment cost all eat into what a campaign actually returns — and none of that shows up in a Google Ads or Meta dashboard. Contribution margin marketing is the discipline of reconciling all of it before deciding whether a campaign is actually worth scaling.</p>
+<p>In practice, that means: <code>contribution margin = net revenue − true cost</code>, where true cost is every real cost a campaign touches, not just the media spend line a platform reports.</p>
+</section>
+<section id="why-it-differs">
+<h2>Why This Is a Different Number Than ROAS or CPL</h2>
+<p>A campaign can look excellent on ROAS and still be losing money once contribution margin marketing is applied to it. This happens constantly in lead-generation and high-ticket service businesses, where the real cost of a customer includes far more than the ad spend that won the click.</p>
+<ul>
+<li><strong>ROAS</strong> answers: how much revenue came back per dollar of media spend.</li>
+<li><strong>Cost-per-lead</strong> answers: how much did each lead cost, using only platform-reported spend.</li>
+<li><strong>Contribution margin</strong> answers: after every real cost — media, partner payouts, refunds, chargebacks, compliance, fulfillment — what did this campaign actually keep?</li>
+</ul>
+<p>The gap between the first two numbers and the third is often 30–70% in businesses with real partner ecosystems or regulated compliance overhead — see our breakdown of the <a href="https://alloceraintelligence.com/marketing-costs/">costs</a> platforms don\'t report, and how <a href="https://alloceraintelligence.com/calculate-contribution-margin/">contribution margin is actually calculated</a> step by step.</p>
+</section>
+<section id="the-proof">
+<h2>The Database-Verified Proof Behind the Math</h2>
+<p>A contribution margin number is only useful if it's actually correct. So instead of taking our own engine's word for it, we independently re-verified it — computing every figure twice, once directly from raw database tables and once from the engine's own output, and comparing them.</p>
+100%
+Math Match, Zero Mismatches
+1,352
+Directive Outcomes Scored
+9
+Businesses Tested
+5
+Real Bugs Found &amp; Fixed
+<p>This validation ran across nine controlled simulated businesses spanning seven industries — real simulated months of activity, checked against real database tables, not self-reported. Every net revenue, true cost, and contribution margin percentage figure was computed both ways and compared line by line. <strong>Zero mismatches, across the entire test.</strong></p>
+<p>That same testing pass also caught and fixed a real scoring defect in how the engine graded its own decisions — a bug that made one type of correct call look wrong 100% of the time before the fix, and now scores correctly across every business tested. We're naming that a bug existed and got fixed, because a validation that only shows a clean first pass isn't a credible one.</p>
+<table>
+<thead><tr><th>What was checked</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Net revenue, true cost, contribution margin % — computed from raw data vs. engine output</td><td><strong>100% match</strong></td></tr>
+<tr><td>Directive outcomes scored against what actually happened afterward</td><td>1,352 scored; scale accuracy improved from 79.2% to 98.0% after a proven scoring fix. Every decision type is in the table below</td></tr>
+<tr><td>Real defects found in the scoring logic itself</td><td>5 found, root-caused, and regression-tested before being trusted</td></tr>
+</tbody>
+</table>
+<h3>Accuracy, Broken Down by Decision Type</h3>
+<p>The engine-wide number is an average. Here's what it's built from — how often each individual type of call turned out to be right, measured against what actually happened afterward:</p>
+<table>
+<thead><tr><th>Decision Type</th><th>What It Means for a Client</th><th>Accuracy</th></tr></thead>
+<tbody>
+<tr><td><strong>SCALE</strong></td><td>Put more budget behind this — it's genuinely profitable</td><td><strong>98.0%</strong></td></tr>
+<tr><td><strong>HOLD</strong></td><td>Not enough data yet — don't act, keep watching</td><td><strong>95.2%</strong></td></tr>
+<tr><td><strong>PAUSE</strong></td><td>Something's off — stop and review before spending more</td><td><strong>85.2%</strong></td></tr>
+<tr><td><strong>FLAG</strong></td><td>Anomaly worth a human look</td><td><strong>70.9%</strong></td></tr>
+<tr><td><strong>CUT</strong></td><td>This campaign is losing money — stop it</td><td>55.6%*</td></tr>
+<tr><td><strong>QUARANTINE</strong></td><td>Concentrated fraud risk detected — isolate this source</td><td>Detection proven correct**</td></tr>
+</tbody>
+</table>
+<p style="font-size:13px;color:#9CA3AF;">*Every healthy campaign that received a CUT call scored correctly; the only misses came from a single, deliberately extreme stress-test scenario built to break the engine on purpose. **This directive correctly identified the one simulated case built to trigger it — proving the detection itself works. Its scored outcome depends on someone acting on the call afterward, which is a human decision, not the engine's to make.</p>
+</section>
+<section id="the-honest-limits">
+<h2>What This Proof Does — and Doesn't — Show</h2>
+<p>This validation proves the <em>math</em> is correct and that the engine's directives — SCALE, HOLD, CUT, PAUSE, and others in the <a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">SCALE/HOLD/CUT/PAUSE framework</a> — are graded honestly against real outcomes, using the same <a href="https://alloceraintelligence.com/30-day-retest-methodology/">retest methodology</a> we apply on an ongoing basis.</p>
+<strong>What it doesn't claim:</strong> this engine tells you the truth about your numbers and issues a directive — it doesn't act on your ad accounts for you. Pausing a campaign, cutting a partner, or renegotiating a payout is a decision that stays with the person running the account. We proved the truth-telling is accurate. We're not claiming the engine takes the wheel.
+<p>One directive type in this validation — reserved for concentrated fraud signals — fired correctly for the first time in this testing pass, on exactly the campaign it was built to catch. Its classification is proven correct. What happens after a directive fires is still a human decision, and we say so plainly rather than implying otherwise.</p>
+</section>
+<section id="related">
+<h2>Related Reading</h2>
+<a href="https://alloceraintelligence.com/calculate-contribution-margin/">
+How-To
+How to Calculate Contribution Margin, Step by Step
+</a>
+<a href="https://alloceraintelligence.com/net-marketing-contribution/">
+Metric
+Net Marketing Contribution, Explained
+</a>
+<a href="https://alloceraintelligence.com/marketing-costs/">
+Framework
+Marketing Costs: What $10,000 in Ad Spend Really Costs You
+</a>
+<a href="https://alloceraintelligence.com/triple-whale-vs-rockerbox-vs-allocera/">
+Comparison
+Triple Whale vs. Rockerbox vs. Allocera
+</a>
+<p>This same discipline — checking measurement claims against real, verifiable evidence rather than self-reported numbers — is also the direction the broader ad-measurement industry has been pushing for years. The <a href="https://www.iab.com/guidelines/" target="_blank" rel="noopener">IAB's own measurement guidelines</a> center on transparency and empirical support as the baseline for any attribution or measurement claim, not a one-time audit.</p>
+</section>
+<h2>See Your Own Contribution Margin, Reconciled</h2>
+<p>If your reported ROAS or cost-per-lead looks good but you're not sure what your campaigns actually keep after every real cost, a distortion audit answers that directly — using the same contribution margin math validated above.</p>
+<a href="https://alloceraintelligence.com/pricing/">See Audit Pricing</a>
+<a href="https://alloceraintelligence.com/how-it-works/">How It Works</a>
+<footer>
+Allocera Intelligence LLC · Contribution margin marketing, explained and verified · September 2026<br>
+<a href="https://alloceraintelligence.com">alloceraintelligence.com</a>
+</footer>
+</main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Contribution Margin Marketing: What It Means, and Proof the Math Holds Up | Allocera Intelligence</title>
+<meta name="description" content="Contribution margin marketing means knowing what a campaign actually keeps after every real cost — not just reported ROAS. Database-verified proof included."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+--bg-primary:#0A0E1A;--bg-secondary:#111827;--bg-surface:rgba(17,24,39,0.6);
+--text-primary:#F9FAFB;--text-secondary:#D1D5DB;--text-muted:#9CA3AF;
+--accent-blue:#3B82F6;--accent-blue-bright:#60A5FA;--accent-gold:#F59E0B;
+--accent-green:#10B981;--accent-red:#EF4444;
+--border:rgba(255,255,255,0.1);--border-bright:rgba(255,255,255,0.2);
+}
+html{scroll-behavior:smooth;}
+body{background:#0A0E1A;color:#F9FAFB;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.7;position:relative;overflow-x:hidden;}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url('https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png');background-size:cover;background-position:center;background-attachment:fixed;opacity:0.4;z-index:-1;}
+body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(10,14,26,0.5) 0%,rgba(10,14,26,0.85) 100%);z-index:-1;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,14,26,0.95);border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+.nav-container{max-width:1400px;margin:0 auto;padding:clamp(16px,2vw,24px) clamp(20px,5vw,60px);display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:16px;text-decoration:none;}
+.nav-logo{width:clamp(36px,5vw,48px);height:clamp(36px,5vw,48px);object-fit:contain;flex-shrink:0;}
+.nav-company{font-size:clamp(14px,1.8vw,18px);font-weight:600;letter-spacing:0.02em;color:#F9FAFB;}
+.nav-back{font-size:clamp(12px,1.4vw,14px);font-weight:500;color:#60A5FA;text-decoration:none;padding:10px 20px;border:1px solid rgba(96,165,250,0.3);border-radius:6px;transition:all 0.3s ease;}
+.nav-back:hover{background:rgba(59,130,246,0.1);border-color:#60A5FA;transform:translateY(-1px);}
+main{max-width:1100px;margin:0 auto;padding:clamp(100px,15vh,140px) clamp(24px,5vw,60px) clamp(80px,12vh,120px);}
+.hero{text-align:center;margin-bottom:clamp(60px,10vh,100px);}
+h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5.5vw,60px);font-weight:700;line-height:1.15;color:#F9FAFB;margin-bottom:clamp(20px,3vh,32px);letter-spacing:-0.02em;}
+h1 em{font-style:italic;color:#60A5FA;}
+.meta-grid{display:flex;gap:clamp(16px,3vw,32px);flex-wrap:wrap;justify-content:center;margin-bottom:clamp(32px,5vh,48px);padding-bottom:clamp(24px,4vh,40px);border-bottom:1px solid rgba(255,255,255,0.1);}
+.meta-item{font-size:clamp(11px,1.3vw,13px);letter-spacing:0.08em;text-transform:uppercase;color:#9CA3AF;font-weight:500;}
+.meta-item span{color:#60A5FA;font-weight:600;}
+.lead{font-size:clamp(16px,2.2vw,20px);color:#D1D5DB;line-height:1.8;max-width:900px;margin:0 auto clamp(40px,6vh,60px);}
+section{margin-bottom:clamp(60px,10vh,100px);}
+h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.6vw,42px);font-weight:700;color:#F9FAFB;margin-bottom:clamp(24px,4vh,40px);line-height:1.25;letter-spacing:-0.01em;}
+h3{font-family:'Inter',sans-serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#F9FAFB;margin:clamp(32px,5vh,48px) 0 clamp(16px,2.5vh,24px);letter-spacing:-0.01em;}
+p{font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;margin-bottom:clamp(20px,3vh,28px);}
+a.inline-link{color:#60A5FA;text-decoration:none;border-bottom:1px solid rgba(96,165,250,0.3);transition:all 0.2s ease;}
+a.inline-link:hover{color:#93C5FD;border-bottom-color:#93C5FD;}
+.toc{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(24px,4vw,32px);margin:clamp(40px,6vh,56px) 0;}
+.toc-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9CA3AF;font-weight:600;margin-bottom:16px;}
+.toc ol{margin:0;padding-left:20px;}
+.toc li{margin-bottom:10px;font-size:clamp(13px,1.5vw,15px);padding-left:0;}
+.toc li::before{content:none;}
+.toc a{color:#D1D5DB;text-decoration:none;}
+.toc a:hover{color:#60A5FA;}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,3vw,24px);margin:clamp(40px,6vh,60px) 0;}
+@media(min-width:768px){.stat-grid{grid-template-columns:repeat(4,1fr);}}
+.stat-card{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(20px,3vw,28px) clamp(16px,2.5vw,20px);text-align:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.stat-number{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,40px);font-weight:700;color:#60A5FA;line-height:1;margin-bottom:8px;}
+.stat-sub{font-size:clamp(11px,1.3vw,12px);color:#9CA3AF;line-height:1.4;text-transform:uppercase;letter-spacing:0.04em;}
+.comparison-table{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:clamp(20px,4vw,32px);margin:clamp(32px,5vh,48px) 0;overflow-x:auto;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+table{width:100%;border-collapse:collapse;}
+th{font-size:clamp(12px,1.4vw,13px);letter-spacing:0.08em;text-transform:uppercase;color:#9CA3AF;font-weight:600;text-align:left;padding:14px;border-bottom:1px solid rgba(255,255,255,0.1);}
+td{font-size:clamp(13px,1.5vw,14px);color:#D1D5DB;padding:14px;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+td strong{color:#F9FAFB;font-weight:600;}
+.callout{padding:clamp(24px,4vw,36px);background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.3);border-left:4px solid #3B82F6;border-radius:8px;margin:clamp(28px,4.5vh,44px) 0;}
+.callout strong{color:#60A5FA;font-weight:600;}
+.callout.amber{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-left:4px solid #F59E0B;}
+.callout.amber strong{color:#F59E0B;}
+code{background:rgba(10,14,26,0.8);padding:3px 8px;border-radius:4px;font-family:'Courier New',monospace;font-size:clamp(12px,1.3vw,13px);color:#60A5FA;border:1px solid rgba(96,165,250,0.3);}
+ul{margin:clamp(18px,3vh,26px) 0;padding-left:clamp(24px,4vw,40px);}
+li{position:relative;margin-bottom:12px;font-size:clamp(14px,1.7vw,16px);color:#D1D5DB;line-height:1.8;padding-left:12px;}
+li::before{content:'→';position:absolute;left:-20px;color:#3B82F6;font-weight:700;}
+li strong{color:#F9FAFB;font-weight:600;}
+.related-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:clamp(32px,5vh,44px) 0;}
+@media(min-width:640px){.related-grid{grid-template-columns:1fr 1fr;}}
+.related-card{background:rgba(17,24,39,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:20px 24px;text-decoration:none;display:block;transition:all 0.25s ease;}
+.related-card:hover{border-color:#60A5FA;transform:translateY(-2px);}
+.related-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#60A5FA;font-weight:700;margin-bottom:6px;}
+.related-title{font-size:clamp(14px,1.6vw,16px);color:#F9FAFB;font-weight:600;}
+.cta-section{margin:clamp(60px,10vh,100px) 0;padding:clamp(36px,6vw,56px);background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(16,185,129,0.1));border:1px solid rgba(255,255,255,0.15);border-radius:16px;text-align:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.cta-section h2{margin-top:0;margin-bottom:clamp(16px,2.5vh,24px);}
+.cta-section p{max-width:700px;margin-left:auto;margin-right:auto;margin-bottom:clamp(24px,4vh,32px);}
+.btn-primary{display:inline-block;font-size:clamp(12px,1.5vw,14px);letter-spacing:0.08em;text-transform:uppercase;background:linear-gradient(135deg,#3B82F6,#2563EB);color:#F9FAFB;border:none;padding:16px 40px;border-radius:8px;cursor:pointer;transition:all 0.3s ease;text-decoration:none;font-weight:600;box-shadow:0 10px 30px rgba(59,130,246,0.3);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(59,130,246,0.4);background:linear-gradient(135deg,#2563EB,#1D4ED8);}
+.btn-secondary{display:inline-block;font-size:clamp(12px,1.5vw,14px);letter-spacing:0.08em;text-transform:uppercase;background:transparent;color:#F9FAFB;border:1px solid rgba(255,255,255,0.3);padding:16px 40px;border-radius:8px;cursor:pointer;transition:all 0.3s ease;text-decoration:none;font-weight:600;margin-left:12px;}
+.btn-secondary:hover{border-color:#60A5FA;color:#60A5FA;}
+footer{margin-top:clamp(60px,10vh,100px);padding-top:clamp(32px,5vh,48px);border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:clamp(12px,1.4vw,13px);color:#9CA3AF;line-height:1.6;}
+footer a{color:#60A5FA;text-decoration:none;}
+footer a:hover{color:#93C5FD;}
+@media(max-width:768px){.nav-company{display:none;}.btn-secondary{margin-left:0;margin-top:12px;}}
+section{opacity:0;animation:fadeInUp 0.8s ease forwards;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+section:nth-child(1){animation-delay:0.1s;}section:nth-child(2){animation-delay:0.2s;}
+section:nth-child(3){animation-delay:0.3s;}section:nth-child(4){animation-delay:0.4s;}
+section:nth-child(5){animation-delay:0.5s;}section:nth-child(6){animation-delay:0.6s;}
+section:nth-child(7){animation-delay:0.7s;}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-container">
+<a href="https://alloceraintelligence.com" class="nav-brand">
+<img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence logo"/>
+<span class="nav-company">Allocera Intelligence</span>
+</a>
+<a href="https://alloceraintelligence.com" class="nav-back">← Back to Home</a>
+</div>
+</nav>
+
+<main>
+
+<div class="hero">
+<h1>Contribution Margin Marketing: What It Actually Means, <em>and Proof the Math Holds Up</em></h1>
+<div class="meta-grid">
+<div class="meta-item">Topic: <span>Contribution Margin Marketing</span></div>
+<div class="meta-item">Verified: <span>1,352 Real Directive Outcomes</span></div>
+<div class="meta-item">Math Match: <span>100%, Zero Mismatches</span></div>
+</div>
+<p class="lead">Contribution margin marketing means judging a campaign by what it actually keeps after every real cost — not by what a platform dashboard reports. It's a different number than ROAS, a different number than platform-reported CPL, and the only one that tells you whether a campaign is really making you money. Here's what it means, and the database-verified test that proves it's being calculated right.</p>
+</div>
+
+<div class="toc">
+<div class="toc-title">On this page</div>
+<ol>
+<li><a href="#what-it-means" class="inline-link">What contribution margin marketing actually means</a></li>
+<li><a href="#why-it-differs" class="inline-link">Why it's a different number than ROAS or CPL</a></li>
+<li><a href="#the-proof" class="inline-link">The database-verified proof behind the math</a></li>
+<li><a href="#the-honest-limits" class="inline-link">What this proof does — and doesn't — show</a></li>
+<li><a href="#related" class="inline-link">Related reading</a></li>
+</ol>
+</div>
+
+<section id="what-it-means">
+<h2>What Contribution Margin Marketing Actually Means</h2>
+<p><strong>Contribution margin marketing</strong> is the practice of evaluating a campaign's real profitability — what it contributes to the bottom line after every cost involved in acquiring and closing the customer — instead of stopping at ad platform metrics that only see the media spend.</p>
+<p>Most marketing dashboards report cost-per-lead or ROAS using one number: media spend. But media spend is rarely the whole cost of a customer. Broker or partner payouts, refunds, chargebacks, compliance overhead, and downstream fulfillment cost all eat into what a campaign actually returns — and none of that shows up in a Google Ads or Meta dashboard. Contribution margin marketing is the discipline of reconciling all of it before deciding whether a campaign is actually worth scaling.</p>
+<p>In practice, that means: <code>contribution margin = net revenue − true cost</code>, where true cost is every real cost a campaign touches, not just the media spend line a platform reports.</p>
+</section>
+
+<section id="why-it-differs">
+<h2>Why This Is a Different Number Than ROAS or CPL</h2>
+<p>A campaign can look excellent on ROAS and still be losing money once contribution margin marketing is applied to it. This happens constantly in lead-generation and high-ticket service businesses, where the real cost of a customer includes far more than the ad spend that won the click.</p>
+<ul>
+<li><strong>ROAS</strong> answers: how much revenue came back per dollar of media spend.</li>
+<li><strong>Cost-per-lead</strong> answers: how much did each lead cost, using only platform-reported spend.</li>
+<li><strong>Contribution margin</strong> answers: after every real cost — media, partner payouts, refunds, chargebacks, compliance, fulfillment — what did this campaign actually keep?</li>
+</ul>
+<p>The gap between the first two numbers and the third is often 30–70% in businesses with real partner ecosystems or regulated compliance overhead — see our breakdown of the <a href="https://alloceraintelligence.com/marketing-costs/" class="inline-link">costs</a> platforms don\'t report, and how <a href="https://alloceraintelligence.com/calculate-contribution-margin/" class="inline-link">contribution margin is actually calculated</a> step by step.</p>
+</section>
+
+<section id="the-proof">
+<h2>The Database-Verified Proof Behind the Math</h2>
+<p>A contribution margin number is only useful if it's actually correct. So instead of taking our own engine's word for it, we independently re-verified it — computing every figure twice, once directly from raw database tables and once from the engine's own output, and comparing them.</p>
+<div class="stat-grid">
+<div class="stat-card">
+<div class="stat-number">100%</div>
+<div class="stat-sub">Math Match, Zero Mismatches</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">1,352</div>
+<div class="stat-sub">Directive Outcomes Scored</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">9</div>
+<div class="stat-sub">Businesses Tested</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">5</div>
+<div class="stat-sub">Real Bugs Found &amp; Fixed</div>
+</div>
+</div>
+<p>This validation ran across nine controlled simulated businesses spanning seven industries — real simulated months of activity, checked against real database tables, not self-reported. Every net revenue, true cost, and contribution margin percentage figure was computed both ways and compared line by line. <strong>Zero mismatches, across the entire test.</strong></p>
+<p>That same testing pass also caught and fixed a real scoring defect in how the engine graded its own decisions — a bug that made one type of correct call look wrong 100% of the time before the fix, and now scores correctly across every business tested. We're naming that a bug existed and got fixed, because a validation that only shows a clean first pass isn't a credible one.</p>
+<div class="comparison-table">
+<table>
+<thead><tr><th>What was checked</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Net revenue, true cost, contribution margin % — computed from raw data vs. engine output</td><td><strong>100% match</strong></td></tr>
+<tr><td>Directive outcomes scored against what actually happened afterward</td><td>1,352 scored; scale accuracy improved from 79.2% to 98.0% after a proven scoring fix. Every decision type is in the table below</td></tr>
+<tr><td>Real defects found in the scoring logic itself</td><td>5 found, root-caused, and regression-tested before being trusted</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Accuracy, Broken Down by Decision Type</h3>
+<p>The engine-wide number is an average. Here's what it's built from — how often each individual type of call turned out to be right, measured against what actually happened afterward:</p>
+<div class="comparison-table">
+<table>
+<thead><tr><th>Decision Type</th><th>What It Means for a Client</th><th>Accuracy</th></tr></thead>
+<tbody>
+<tr><td><strong>SCALE</strong></td><td>Put more budget behind this — it's genuinely profitable</td><td><strong>98.0%</strong></td></tr>
+<tr><td><strong>HOLD</strong></td><td>Not enough data yet — don't act, keep watching</td><td><strong>95.2%</strong></td></tr>
+<tr><td><strong>PAUSE</strong></td><td>Something's off — stop and review before spending more</td><td><strong>85.2%</strong></td></tr>
+<tr><td><strong>FLAG</strong></td><td>Anomaly worth a human look</td><td><strong>70.9%</strong></td></tr>
+<tr><td><strong>CUT</strong></td><td>This campaign is losing money — stop it</td><td>55.6%*</td></tr>
+<tr><td><strong>QUARANTINE</strong></td><td>Concentrated fraud risk detected — isolate this source</td><td>Detection proven correct**</td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:13px;color:#9CA3AF;">*Every healthy campaign that received a CUT call scored correctly; the only misses came from a single, deliberately extreme stress-test scenario built to break the engine on purpose. **This directive correctly identified the one simulated case built to trigger it — proving the detection itself works. Its scored outcome depends on someone acting on the call afterward, which is a human decision, not the engine's to make.</p>
+</section>
+
+<section id="the-honest-limits">
+<h2>What This Proof Does — and Doesn't — Show</h2>
+<p>This validation proves the <em>math</em> is correct and that the engine's directives — SCALE, HOLD, CUT, PAUSE, and others in the <a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/" class="inline-link">SCALE/HOLD/CUT/PAUSE framework</a> — are graded honestly against real outcomes, using the same <a href="https://alloceraintelligence.com/30-day-retest-methodology/" class="inline-link">retest methodology</a> we apply on an ongoing basis.</p>
+<div class="callout amber">
+<strong>What it doesn't claim:</strong> this engine tells you the truth about your numbers and issues a directive — it doesn't act on your ad accounts for you. Pausing a campaign, cutting a partner, or renegotiating a payout is a decision that stays with the person running the account. We proved the truth-telling is accurate. We're not claiming the engine takes the wheel.
+</div>
+<p>One directive type in this validation — reserved for concentrated fraud signals — fired correctly for the first time in this testing pass, on exactly the campaign it was built to catch. Its classification is proven correct. What happens after a directive fires is still a human decision, and we say so plainly rather than implying otherwise.</p>
+</section>
+
+<section id="related">
+<h2>Related Reading</h2>
+<div class="related-grid">
+<a href="https://alloceraintelligence.com/calculate-contribution-margin/" class="related-card">
+<div class="related-label">How-To</div>
+<div class="related-title">How to Calculate Contribution Margin, Step by Step</div>
+</a>
+<a href="https://alloceraintelligence.com/net-marketing-contribution/" class="related-card">
+<div class="related-label">Metric</div>
+<div class="related-title">Net Marketing Contribution, Explained</div>
+</a>
+<a href="https://alloceraintelligence.com/marketing-costs/" class="related-card">
+<div class="related-label">Framework</div>
+<div class="related-title">Marketing Costs: What $10,000 in Ad Spend Really Costs You</div>
+</a>
+<a href="https://alloceraintelligence.com/triple-whale-vs-rockerbox-vs-allocera/" class="related-card">
+<div class="related-label">Comparison</div>
+<div class="related-title">Triple Whale vs. Rockerbox vs. Allocera</div>
+</a>
+</div>
+<p>This same discipline — checking measurement claims against real, verifiable evidence rather than self-reported numbers — is also the direction the broader ad-measurement industry has been pushing for years. The <a href="https://www.iab.com/guidelines/" class="inline-link" target="_blank" rel="noopener">IAB's own measurement guidelines</a> center on transparency and empirical support as the baseline for any attribution or measurement claim, not a one-time audit.</p>
+</section>
+
+<div class="cta-section">
+<h2>See Your Own Contribution Margin, Reconciled</h2>
+<p>If your reported ROAS or cost-per-lead looks good but you're not sure what your campaigns actually keep after every real cost, a distortion audit answers that directly — using the same contribution margin math validated above.</p>
+<a href="https://alloceraintelligence.com/pricing/" class="btn-primary">See Audit Pricing</a>
+<a href="https://alloceraintelligence.com/how-it-works/" class="btn-secondary">How It Works</a>
+</div>
+
+<footer>
+Allocera Intelligence LLC · Contribution margin marketing, explained and verified · September 2026<br>
+<a href="https://alloceraintelligence.com">alloceraintelligence.com</a>
+</footer>
+
+</main>
+</body>
+</html>

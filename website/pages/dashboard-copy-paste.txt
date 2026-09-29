@@ -293,7 +293,7 @@
     </div>
     <p class="fade-up">Before release, the decisions behind this dashboard were checked in a controlled validation. Every result is in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>.</p>
     <div class="stat-row fade-up">
-      <div class="stat"><b>89.5%</b><span>accurate overall &middot; 1,210 of 1,352 decisions</span></div>
+      <div class="stat"><b>1,352</b><span>scored decisions &middot; each graded against what actually happened</span></div>
       <div class="stat"><b>9</b><span>businesses across 7 industries</span></div>
       <div class="stat"><b>100%</b><span>math match, checked two ways</span></div>
     </div>

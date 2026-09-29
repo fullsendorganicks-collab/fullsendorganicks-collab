@@ -135,7 +135,7 @@
     <li>Every CDAI decision (scale, hold, cut, pause, and the rest) is stored with the numbers behind it, then graded once enough time has passed to judge it.</li>
     <li>The grading window is 30 days by default and matches your sales cycle: 21 days for insurance, 90 for senior care, 150 for clinical trials.</li>
     <li>Each decision type has its own test. A hold is judged differently from a cut, because they&rsquo;re trying to do different things.</li>
-    <li>Before release, CDAI&rsquo;s decisions were checked in a controlled validation: <strong>89.5% accurate overall</strong> across 1,352 scored decisions, with the math matching 100%.</li>
+    <li>Before release, CDAI&rsquo;s decisions were checked in a controlled validation: <strong>98.0% accurate on scale calls and 95.2% on hold calls</strong> across 1,352 scored decisions, with the math matching 100%.</li>
   </ul>
 </div>
 
@@ -227,9 +227,9 @@
 <p>Judging on the wrong timeline is one of the most common ways marketing measurement goes wrong. A campaign graded before its deals could close looks like a failure when it isn&rsquo;t. Matching the window to the sales cycle is what keeps the grade fair.</p>
 
 <h2 id="results">The Results: Validated Before Release</h2>
-<p>Before release, CDAI&rsquo;s decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>89.5% accurate overall (1,210 of 1,352 scored decisions)</strong>. The underlying math was checked two ways and matched 100%. Here is every decision type, with nothing left out:</p>
+<p>Before release, CDAI&rsquo;s decisions were checked in a controlled validation across 9 businesses in 7 industries: <strong>98.0% accurate on scale calls and 95.2% on hold calls across 1,352 scored decisions</strong>. The underlying math was checked two ways and matched 100%. Here is every decision type, with nothing left out:</p>
 <div class="rtm-stats">
-  <div class="rtm-stat"><b>89.5%</b><span>accurate overall across 1,352 scored decisions</span></div>
+  <div class="rtm-stat"><b>1,352</b><span>scored decisions, each graded against what actually happened</span></div>
   <div class="rtm-stat"><b>9</b><span>businesses in 7 industries</span></div>
   <div class="rtm-stat"><b>100%</b><span>of the math matched, checked two ways</span></div>
 </div>
@@ -301,7 +301,7 @@
   <p>No. CDAI recommends and you decide. Every decision is advice with the numbers behind it. Nothing changes in your ad accounts unless a person on your team acts on it.</p>
 </details>
 <details>
-  <summary>Is 89.5% a guarantee of future accuracy?</summary>
+  <summary>Are these accuracy results a guarantee of future accuracy?</summary>
   <p>No. It&rsquo;s the result of a controlled validation across 9 businesses in 7 industries, before release. It shows how the decision rules performed on that data. Your own scorecard builds up as CDAI grades its decisions for your business.</p>
 </details>
 <details>

@@ -95,7 +95,7 @@ Posts → search "Tag Manager". Delete the old content, paste in `tag-manager-re
 | Meta's Offline Conversions API discontinued May 2025; events now via the Conversions API | Meta developer community (linked); several ranking guides say the same |
 | Tag Manager can't see CRM events; offline tracking reports revenue, not profit | How the tools work, as explained on the page (no statistics claimed) |
 | What CDAI does; nothing changes in ad accounts unless a person acts | Same approved wording as the other rebuilt pages; engine is advisory (`CLAUDE.md`) |
-| 89.5% (1,210/1,352), 9 businesses, 7 industries, math 100% two ways | The validation report |
+| 98.0% scale, 95.2% hold, 1,352 scored decisions, 9 businesses, 7 industries, math 100% two ways | The validation report |
 
 **Kept out on purpose:**
 - the old post's "30–70% gap" and every other unsourced number

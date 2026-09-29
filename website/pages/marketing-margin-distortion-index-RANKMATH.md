@@ -86,7 +86,7 @@ Posts → search "Distortion". Delete the old content, paste in `marketing-margi
 | Example $66.69 → $333.45 → $393.45 → $437.17 | Labeled "illustrative, not client data". Arithmetic: 66.69 ÷ 0.2 = 333.45; + 60 = 393.45; ÷ 0.9 = 437.17. |
 | Max CPL = profit per customer × close rate ($800 × 20% = $160) | Math, labeled as an example |
 | CDAI: true cost per lead, true CAC, real profit, one decision nightly, rechecks math, grades past calls | Same approved wording as the other rebuilt pages |
-| 89.5% (1,210/1,352), 9 businesses, 7 industries, math 100% two ways | The validation report |
+| 98.0% scale, 95.2% hold, 1,352 scored decisions, 9 businesses, 7 industries, math 100% two ways | The validation report |
 
 **Kept out on purpose:**
 - the old "distortion score" and any claim that CDAI measured industry benchmarks

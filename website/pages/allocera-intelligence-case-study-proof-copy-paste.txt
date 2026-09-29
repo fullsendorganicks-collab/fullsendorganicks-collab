@@ -282,7 +282,7 @@
   </tbody>
 </table>
 </div>
-<p>The same check runs every night for every client today: CDAI rechecks its own math and stops on bad data instead of making decisions from it. When the data is good, the decisions are graded later against what actually happened. Across 1,352 scored decisions in its validation, CDAI was 89.5% accurate, with the math matching 100% when checked two ways; see the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">validation report</a>.</p></div>
+<p>The same check runs every night for every client today: CDAI rechecks its own math and stops on bad data instead of making decisions from it. When the data is good, the decisions are graded later against what actually happened. Across 1,352 scored decisions in its validation, CDAI was 98.0% accurate on scale calls and 95.2% on hold calls, with the math matching 100% when checked two ways; see the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">validation report</a>.</p></div>
   </div>
 </section>
 

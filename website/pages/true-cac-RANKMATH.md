@@ -109,7 +109,7 @@ Posts → search "True CAC". Open the **`/true-cac/`** post (the one without "-2
 | Example: $250 vs $458 (+83%), $50 CPL, max-CAC example ($800, $342, −$100) | Labeled "illustrative, not client data". Arithmetic: 16,500 ÷ 36 = 458.33; 10,000 ÷ 40 = 250; 10,000 ÷ 200 = 50; 2,000 − 1,200 = 800. |
 | CDAI calculates true cost per lead, true CAC, real profit; one decision a night; rechecks math; grades past calls | Same approved wording as the other rebuilt pages |
 | Meta, Google Ads, LinkedIn, HubSpot and Salesforce connect in one click | Same wording as your live rebuilt pages |
-| 89.5% (1,210/1,352), 9 businesses, 7 industries, math 100% two ways | The validation report |
+| 98.0% scale, 95.2% hold, 1,352 scored decisions, 9 businesses, 7 industries, math 100% two ways | The validation report |
 
 **Kept out on purpose:**
 - the old "30–70%" and "20–60%" gaps
