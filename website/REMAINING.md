@@ -1,5 +1,5 @@
 # Everything left to finish: alloceraintelligence.com
-Updated Sept 29, 2026. **Done and live: 23 pages and posts, plus the chatbot.** This file lists everything still to do, in order.
+Updated Sept 29, 2026 (afternoon). **Done and live: 23 pages and posts, plus the chatbot.** Built and waiting for Nick to paste: the blended-accuracy fix on 22 pages (section 0). This file lists everything still to do, in order.
 
 **To pick up again, tell Claude:** "Open website/REMAINING.md and do the next item."
 
@@ -27,6 +27,8 @@ Updated Sept 29, 2026. **Done and live: 23 pages and posts, plus the chatbot.** 
   - touch Apex data
   - give away anything sensitive or proprietary
   - use the fake 80%, "cost layers" or "never assumes costs"
+  - quote one blended accuracy number (Nick, Sept 29). Per-decision numbers only: scale 98.0%, hold 95.2%, pause 85.2%, flag 70.9%, cut 55.6%*, investigate 100% (n=2), renegotiate 100% (n=1). The old 89.5% (and 77.9% to 89.5%) is retired.
+  - say "CallRail Partner", or put CallRail's logo on the site, until CallRail approves it in writing
 - **For each page or post, Claude sends only:**
   - the old title
   - the edit link (by post ID)
@@ -42,12 +44,38 @@ Updated Sept 29, 2026. **Done and live: 23 pages and posts, plus the chatbot.** 
 
 ---
 
+## 0. Blended-accuracy fix: paste these first (built Sept 29, branch `fix/remove-blended-accuracy-sept29`)
+Nick's rule: **no single blended accuracy number anywhere.** The live site still shows "89.5% accurate overall" until these are pasted. Every edit link and live URL is in `FIX_LIST.md` section E. Order matters because the CallRail email links to the first four.
+
+| Paste order | Post ID | Live URL | File |
+|---|---|---|---|
+| 1 | 850 | /home-sample/contribution-margin-marketing/ | `pages/contribution-margin-marketing.html` (also removes "cost layers"; replaces item 2 below) |
+| 2 | 457 | /proof/ | `pages/proof.html` (Rank Math SEO title changes) |
+| 3 | 451 | /how-it-works/ | `pages/how-it-works.html` |
+| 4 | 133 | /allocera-intelligence-case-study-proof/ | `pages/allocera-intelligence-case-study-proof.html` |
+| 5 to 22 | 252, 483, 478, 228, 284, 267, 501, 245, 322, 506, 563, 654, 646, 301, 260, 308, 294, 187 | see `FIX_LIST.md` E5 to E22 | matching files in `website/pages/` (252 also changes its Rank Math meta description; 187 is the blog, re-paste at the end) |
+
+- [ ] Nick pastes pages 1 to 4 (before the CallRail email goes out)
+- [ ] Nick pastes pages 5 to 22
+- [ ] Claude re-scans a fresh export: 0 matches for "89.5", "77.9", "1,210"
+
+---
+
+## 0b. CallRail (Sept 29 call; waiting on Nick and CallRail)
+- [ ] **Follow-up email to Karina and Eric:** draft v4 is ready. Nick sends it after section 0 pages 1 to 4 are live.
+- [ ] **CallRail page and logo on the homepage: on hold.** Wait for CallRail's written OK, their brand and logo guidelines, and the API/sandbox access. Never write "CallRail Partner" before then. When approved: one homepage pass, then a CallRail page, both on Nick's approve/reject list first.
+- [ ] **Text-only mention that CDAI connects to CallRail** (true today: the nightly sync is built). Claude checks the homepage first and proposes it for the next homepage pass.
+- [ ] **Demo org numbers** (cdai-portal demo login): Nick wants forced sample numbers that show the real accuracy. Claude proposes the exact change; never touch Demo or Apex data before Nick approves.
+- [ ] **Saved:** the founder-approved capability list is in `docs/CDAI_CAPABILITIES_LIST.md` in cdai-engine (merged to main).
+
+---
+
 ## 1. Pages left (6 to build, 1 on hold)
 
 | # | Post ID | Current title | Edit link | Live URL | Job |
 |---|---|---|---|---|---|
 | 1 | 342 | CDAI Engine OAuth validation (score 76) | https://alloceraintelligence.com/wp-admin/post.php?post=342&action=edit | https://alloceraintelligence.com/case-study-2-oauth-validation/ | **Next up.** Full rebuild in site design as the connection case study. Keep: May 23, 2026 HubSpot one-click connection, 47 contacts, empty UTMs flagged, no decisions issued. Drop the multi-tenant and "zero PII" claims. |
-| 2 | 850 | Contribution Margin Marketing: What It Means, and Proof the Math Holds Up (77) | https://alloceraintelligence.com/wp-admin/post.php?post=850&action=edit | https://alloceraintelligence.com/home-sample/contribution-margin-marketing/ | Quick fix: remove "cost layers", point the `/seven-cost-layers/` link to `/marketing-costs/`, set the featured image. |
+| 2 | 850 | **Built Sept 29, waiting to paste (section 0).** Contribution Margin Marketing: What It Means, and Proof the Math Holds Up (77) | https://alloceraintelligence.com/wp-admin/post.php?post=850&action=edit | https://alloceraintelligence.com/home-sample/contribution-margin-marketing/ | Quick fix, done in `pages/contribution-margin-marketing.html`: removed "cost layers", pointed the `/seven-cost-layers/` link to `/marketing-costs/`, replaced the blended accuracy row. Still to do: set the featured image. |
 | 3 | 162 | Terms (5) | https://alloceraintelligence.com/wp-admin/post.php?post=162&action=edit | https://alloceraintelligence.com/home-sample/terms/ | Quick fix: remove the one "cost layers" mention; match site design. |
 | 4 | 524 | Newsletter Welcome (10) | https://alloceraintelligence.com/wp-admin/post.php?post=524&action=edit | https://alloceraintelligence.com/newsletter-welcome/ | Quick fix: remove "every two weeks" and "cost layers", fix the old link; match site design. |
 | 5 | 155 | Privacy Policy (5) | https://alloceraintelligence.com/wp-admin/post.php?post=155&action=edit | https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/ | Check only: fix anything wrong, match site design. |
