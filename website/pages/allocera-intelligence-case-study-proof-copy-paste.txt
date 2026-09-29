@@ -216,8 +216,8 @@
 <p>CDAI was built against that failure. Every night, before it makes a single decision, it checks whether the data is fresh, complete, and consistent. If it isn&rsquo;t, no decisions go out, and you&rsquo;re told what&rsquo;s missing.</p>
 
 <figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/data-driven-marketing-case-study-cdai.png" alt="Data-driven marketing case study: CDAI made no decisions on stale Google Ads data and refused to guess attribution for 276 CRM leads" width="1600" height="800" loading="lazy">
-  <figcaption>Two real data problems, one response: no decisions until the data can support them.</figcaption>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Data-driven marketing case study: the CDAI client portal, where decisions appear only when the data supports them" loading="lazy">
+  <figcaption>The CDAI client portal: decisions only when the data can back them.</figcaption>
 </figure></div>
   </div>
 </section>

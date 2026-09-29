@@ -227,11 +227,7 @@
     <h2 class="section-title fade-up">Marketing dashboard <em>example.</em></h2>
     <div class="rule gold fade-up"></div>
     <p class="fade-up">This is an illustrative example with sample numbers, not client data. It shows the core view: every campaign on one row, with the platform&rsquo;s number next to the real one and tonight&rsquo;s decision.</p>
-    <figure class="fade-up">
-      <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/marketing-dashboard-example-profit-per-campaign.png" alt="Marketing dashboard example showing dashboard cost per lead, true cost per lead, real profit and a scale, hold, cut or pause decision for four campaigns" width="1600" height="800" loading="lazy">
-      <figcaption>Illustrative marketing dashboard example with sample data.</figcaption>
-    </figure>
-    <div class="table-wrap fade-up">
+        <div class="table-wrap fade-up">
     <table>
       <thead><tr><th>Campaign</th><th>Dashboard CPL</th><th>True CPL</th><th>Real profit (30 days)</th><th>Decision</th><th>Confidence</th></tr></thead>
       <tbody>

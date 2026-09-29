@@ -12,8 +12,8 @@
 | Description (156) | `A marketing dashboard should show if each campaign made money. See an example of the CDAI dashboard: real profit, true cost per lead and a nightly decision.` |
 | Permalink | `dashboard` (unchanged) |
 | Schema | Article → Article |
-| Featured image | `marketing-dashboard-example-profit-per-campaign.png` |
-| Alt text | `Marketing dashboard example showing dashboard cost per lead, true cost per lead, real profit and a scale, hold, cut or pause decision for four campaigns` |
+| Featured image | Already in your Media library (nothing to upload): `AC777057-09D7-4B2F-8F6D-784127A8530A.png` |
+| Alt text | `CDAI marketing dashboard screenshot showing campaign profit, cost per lead and nightly decisions` |
 
 **Old fields to delete:**
 - keyword "dashboard"

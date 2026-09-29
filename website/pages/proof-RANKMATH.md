@@ -10,8 +10,8 @@
 | Description (142) | `See the CDAI marketing case study: a validation of 1,352 decisions with every dollar checked twice, and a real pilot with Apex Care Solutions.` |
 | Permalink | `proof` (unchanged) |
 | Schema | Article → Article (FAQ schema is built into the page) |
-| Featured image | `marketing-case-study-cdai-proof.png` |
-| Alt text | `Marketing case study results for CDAI: 89.5% accurate across 1,352 decisions, 98.0% on scale decisions, 100% math match, and a real pilot with Apex Care Solutions` |
+| Featured image | Already in your Media library (nothing to upload): `Client-portal-for-cdai-example.png` |
+| Alt text | `Marketing case study: the CDAI client portal showing real profit and a decision for every campaign` |
 
 **Old fields to delete:**
 - keyword "paid advertising case study"

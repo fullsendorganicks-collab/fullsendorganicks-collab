@@ -10,8 +10,8 @@
 | Description (149) | `See a data driven marketing case study: 2 real businesses, stale ad data and 276 unattributed leads, and why CDAI made no decisions it couldn't back.` |
 | Permalink | `allocera-intelligence-case-study-proof` (unchanged) |
 | Schema | Article → Article (FAQ schema is built into the page) |
-| Featured image | `data-driven-marketing-case-study-cdai.png` |
-| Alt text | `Data-driven marketing case study: CDAI made no decisions on stale Google Ads data and refused to guess attribution for 276 CRM leads` |
+| Featured image | Already in your Media library (nothing to upload): `Client-portal-for-cdai-example.png` |
+| Alt text | `Data-driven marketing case study: the CDAI client portal, where decisions appear only when the data supports them` |
 
 **Old fields to delete:**
 - keyword "CDAI Engine Validation"

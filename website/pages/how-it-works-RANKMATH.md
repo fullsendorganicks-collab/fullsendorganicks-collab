@@ -13,8 +13,8 @@
 | Description (147) | `Marketing analytics software usually stops at dashboards. See how CDAI finds real profit per campaign and gives you one clear decision every night.` |
 | Permalink | `how-it-works` (unchanged) |
 | Schema | Article → Article |
-| Featured image | `marketing-analytics-software-how-cdai-works.png` |
-| Alt text | `Marketing analytics software process: connect your ad accounts and CRM, calculate real profit per campaign, decide scale, hold, cut or pause, and grade past decisions` |
+| Featured image | Already in your Media library (nothing to upload): `B4457BA3-CEE4-42D0-88F9-7865404DB840.png` |
+| Alt text | `Marketing analytics software process: how CDAI connects your data, calculates real profit and decides every campaign` |
 
 **Old fields to delete:**
 - keyword "how to calculate true cost per lead" (it competes with the homepage)

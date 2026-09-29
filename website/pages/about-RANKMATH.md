@@ -13,8 +13,8 @@
 | Description (153) | `Allocera Intelligence is the company behind CDAI. Meet founder Nick Baum, see how the engine finds real profit per campaign, and the 14 rules it runs on.` |
 | Permalink | `about` (unchanged) |
 | Schema | Article → Article |
-| Featured image | `about-allocera-intelligence.png` |
-| Alt text | `About Allocera Intelligence: founded April 2026 in Florida by Nick Baum, builder of the CDAI engine, 89.5% accuracy in pre-release validation` |
+| Featured image | Already in your Media library (nothing to upload): `Client-portal-for-cdai-example.png` |
+| Alt text | `Allocera Intelligence client portal showing real profit and one clear decision for every campaign` |
 
 **Old fields to delete:**
 - keyword "CDAI Engine"

@@ -238,10 +238,9 @@
     <div class="rule fade-up"></div>
     <div class="fade-up"><p>The fair way to test a decision engine without putting a client&rsquo;s money at risk is to run it on businesses where the right answer is known. CDAI was run on 9 simulated businesses across 7 industries for 860 simulated days. Every decision was later graded against what actually happened to that campaign&rsquo;s margin, and every dollar was checked against the raw data independently of the engine&rsquo;s own math.</p>
 <figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/marketing-case-study-cdai-proof.png" alt="Marketing case study results for CDAI: 89.5% accurate across 1,352 decisions, 98.0% on scale decisions, 100% math match, and a real pilot with Apex Care Solutions" width="1600" height="800" loading="lazy">
-  <figcaption>CDAI marketing case study results at a glance.</figcaption>
-</figure>
-<div class="stat-row">
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Marketing case study: the CDAI client portal showing real profit and a decision for every campaign" loading="lazy">
+  <figcaption>The CDAI client portal.</figcaption>
+</figure><div class="stat-row">
   <div class="stat"><b>89.5%</b><span>accurate overall (1,210 of 1,352 scored decisions)</span></div>
   <div class="stat"><b>98.0%</b><span>accurate telling you to spend more</span></div>
   <div class="stat"><b>100%</b><span>math match, checked two ways</span></div>

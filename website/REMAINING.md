@@ -80,7 +80,9 @@ All 21 have "cost layers" wording, and most link to old URLs. Each rebuild gets 
 
 ## 3. Quick WordPress fixes (Nick, about 15 minutes, any time)
 
-- [ ] **FIRST, before Oct 1: upload `upload-these-images.zip` (11 images).** Unzip it, then go to Media → Add New and drop all 11 in. The pages already point to `/wp-content/uploads/2026/09/<name>.png`, so the broken "?" boxes fix themselves with no re-paste. After Oct 1, WordPress files uploads under /2026/10/ and the paths won't match. If WordPress renames any file (for example `-1` on the end), tell Claude and it will update the page.
+- [ ] **Broken image boxes (Nick, Sept 29): no made-up images.** Only real images already on the site are used, never AI images, and no numbers in images.
+  - DONE: About, How It Works, Dashboard, Proof and 133 now use real images. Re-paste those 5.
+  - TO DO when you're back on the site: the same swap for 6 posts (Lead Quality, Offline Conversion Tracking, Contribution Margin, Cost Per Signed Case, Average Cost Per Lead, Net Marketing Contribution).
 
 - [ ] **Featured images missing:** set each post's own image (the file name is in each RANKMATH box).
   - 245 lead quality
