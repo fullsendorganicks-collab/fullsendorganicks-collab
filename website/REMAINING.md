@@ -1,12 +1,27 @@
 # Everything left to finish: alloceraintelligence.com
-Updated Sept 28, 2026. **Done and live: 23.** This file lists everything still to do, in order.
+Updated Sept 29, 2026. **Done and live: 23 pages and posts, plus the chatbot.** This file lists everything still to do, in order.
 
 **To pick up again, tell Claude:** "Open website/REMAINING.md and do the next item."
 
-## The rules (unchanged)
+## The rules
+- **Wait for Nick's go.** When Nick replies, stop and wait for his permission before doing anything. Answer the question he asked, and nothing more.
+- **Pages vs posts:** a "post" is a blog article, and a page is a page. Never mix the two words up.
 - **Pages:**
-  - use the site's own design: nav, hero background, blue buttons, fade-ins, footer, real videos and screenshots, FAQ schema, intake form
+  - Use the site's own design: nav, hero background, blue buttons, fade-ins, footer, FAQ schema, intake form.
+  - Keep the original page's artwork, videos, screenshots, style and links. Nothing from the original gets dropped without asking Nick.
 - **Posts:** keep the article style.
+- **Images (Sept 29):**
+  - Only use images already in the WordPress Media library:
+    - client portal screenshot `2026/09/Client-portal-for-cdai-example.png`
+    - dashboard screenshot `2026/06/AC777057-…png`
+    - process diagram `2026/06/B4457BA3-…png`
+    - portal video and its still frame, logo, hero background
+  - Never make new images, never use AI images, never put numbers in an image.
+  - If a page needs a new image, stop and ask Nick.
+- **Check before sending:** run `python3 website/check_images.py <file>` on every page or post. It must report 0 image links not on the live site, or the file does not go out.
+- **Business voice:**
+  - The chatbot is VINDEX, speaking for Allocera Intelligence. It never uses Nick's name or personal email.
+  - Anywhere else, Nick's name stays or goes only on Nick's say.
 - **Never:**
   - delete or retire a page
   - touch Apex data
@@ -16,12 +31,12 @@ Updated Sept 28, 2026. **Done and live: 23.** This file lists everything still t
   - the old title
   - the edit link (by post ID)
   - the live URL
-  - the HTML
+  - the HTML file
   - the Rank Math box
 - **Before deleting anything in WordPress:** check that the permalink matches the live URL.
 - **Every build uses the tools:**
   - keyword research, live Google results, Search Console
-  - an image, internal and external links, GA4
+  - a real image already in Media, internal and external links, GA4
   - a render check, a claims table
 - **Order:** highest ROI first. Redirects, the final homepage and blog paste, and the link re-scan come last.
 
@@ -83,15 +98,7 @@ All 21 have "cost layers" wording, and most link to old URLs. Each rebuild gets 
 - [x] **Broken image boxes (Nick, Sept 29): no made-up images.** Only real images already on the site are used, never AI images, and no numbers in images.
   - DONE and re-pasted by Nick Sept 29: all 20. That's the 5 pages (About, How It Works, Dashboard, Proof, 133), 13 blog posts, and the Northbeam and Rockerbox pages. They now use the real portal screenshot, dashboard screenshot or diagram. No file on the site points to an image that isn't in Media.
 
-- [ ] **Featured images missing:** set each post's own image (the file name is in each RANKMATH box).
-  - 245 lead quality
-  - 260 offline conversion tracking
-  - 267 contribution margin
-  - 501 cost per signed case
-  - 506 average cost per lead
-  - 563 net marketing contribution
-  - 850 validation report
-  - 133 (`data-driven-marketing-case-study-cdai.png`), if it's not set yet
+- [x] **Featured images:** set to the real portal screenshot during the Sept 29 image swaps. Still missing: 850, the validation report page. It gets set when that page is fixed in section 1.
 - [ ] **Post 284 WordPress title:** https://alloceraintelligence.com/wp-admin/post.php?post=284&action=edit. Change it to `Salesforce Campaign Influence: 4 Things Campaign ROI Misses`.
 - [ ] **Paste the updated homepage (post 9) and blog (post 187)** sent Sept 28, if you haven't yet.
 
@@ -135,7 +142,19 @@ All 21 have "cost layers" wording, and most link to old URLs. Each rebuild gets 
 
 ---
 
-## 5. Not website (waiting on Nick)
+## 5. Chatbot (VINDEX)
+- [x] **Sept 29, live:** [cdai-engine PR #47](https://github.com/fullsendorganicks-collab/cdai-engine/pull/47) was merged to main.
+  - business voice, no personal name
+  - links to 23 live pages
+  - public Apex pilot facts and reviews
+  - not pitched to law firms, mass tort or insurance
+  - lead emails go to alloceraintelligence@gmail.com
+  - fixed the blank "rephrase" answers
+  - Sonnet 5.5
+- [ ] **Only on the homepage.** Add the chat to every page. Waiting on Nick's OK.
+- [ ] **Calculator results email** (`calculator_leads.py`) still says "speak with Nick directly" and shows the phone number. Waiting on Nick's call.
+
+## 6. Not website (waiting on Nick)
 - **S1 security issue:** waiting on Nick's approval to fix it first.
 - **D11:** PR #37 vs the cloud branches. Waiting on Nick's decision.
 
@@ -143,7 +162,8 @@ All 21 have "cost layers" wording, and most link to old URLs. Each rebuild gets 
 | What | Where |
 |---|---|
 | Built pages, Rank Math boxes, research | `website/pages/` (`<slug>.html`, `-copy-paste.txt`, `-RANKMATH.md`) |
-| Images | `website/pages/images/` |
+| Old made-up chart images (**not used on the site, never upload**) | `website/pages/images/` |
 | Originals of every page (for recovery) | `website/originals/page-<ID>.html` |
 | Full history and scores | `website/FIX_LIST.md` |
 | Redirect details | `website/REDIRECTS.md` |
+| Image check (run before sending) | `website/check_images.py` |
