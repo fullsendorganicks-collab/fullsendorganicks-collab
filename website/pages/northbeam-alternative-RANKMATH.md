@@ -68,3 +68,9 @@ Keep it as is (`/home-sample/northbeam-alternative/`). Any URL or redirect chang
 - **Old example cost:** "platform fees (3%)". Meta and Google don't charge advertisers this.
 - **Outdated offer:** the "$2,500 audit" pricing row.
 - **Leftovers:** the pasted `<head>` (doubled title).
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `Northbeam alternative: the CDAI client portal showing real profit and a decision for every campaign`

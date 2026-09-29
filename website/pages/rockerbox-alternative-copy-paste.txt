@@ -285,8 +285,8 @@
     <div class="rule fade-up"></div>
     <div class="fade-up"><p>This illustrative example shows why a Rockerbox alternative for lead generation has to measure profit per partner. Two lead partners each deliver leads that close for $60,000 in revenue. Both pay the same $15,000 for leads. Attribution gives them identical credit. Follow the money:</p>
 <figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/rockerbox-alternative-partner-profit.png" alt="Rockerbox alternative example showing two lead partners with the same credit and different profit" width="1200" height="630" loading="lazy">
-  <figcaption>A Rockerbox alternative built on profit shows what attribution can&rsquo;t: Partner A earns six times what Partner B does.</figcaption>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Rockerbox alternative: the CDAI client portal showing real profit and a decision for every campaign" loading="lazy">
+  <figcaption>The CDAI client portal: real profit and one decision per campaign.</figcaption>
 </figure>
 <div class="table-wrap">
 <table>

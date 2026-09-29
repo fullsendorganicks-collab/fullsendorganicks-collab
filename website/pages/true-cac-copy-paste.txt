@@ -225,8 +225,8 @@
 
 <h2 id="steps">Using the Customer Acquisition Cost Formula: 4 Steps to True CAC</h2>
 <figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/customer-acquisition-cost-formula-basic-vs-true-cac.png" alt="Customer acquisition cost formula example: basic CAC of $250 from ad spend divided by 40 customers, versus true CAC of $458 from all acquisition costs divided by 36 customers kept" width="1600" height="800" loading="lazy">
-  <figcaption>Illustrative example. Same campaign, two versions of the customer acquisition cost formula.</figcaption>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Customer acquisition cost formula applied per campaign in the CDAI client portal" loading="lazy">
+  <figcaption>True customer acquisition cost for every campaign in the CDAI client portal.</figcaption>
 </figure>
 <ol class="cac-steps">
   <li><strong>Pick one campaign and one period.</strong> Match the period to your sales cycle. If deals take two months to close, a two-week CAC will look worse than it is. Our <a href="https://alloceraintelligence.com/30-day-retest-methodology/">30-day retest</a> explains why the window matters.</li>

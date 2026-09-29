@@ -244,8 +244,8 @@
     <div class="rule fade-up"></div>
     <div class="fade-up"><p>Allocera isn&rsquo;t a copy of Northbeam, and it isn&rsquo;t trying to be. As a Northbeam alternative for lead generation, it answers a different question. Here is the comparison in one view.</p>
 <figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/northbeam-alternative-credit-vs-profit.png" alt="Northbeam alternative for lead generation comparing attribution credit and campaign profit" width="1200" height="630" loading="lazy">
-  <figcaption>Choosing a Northbeam alternative for lead generation starts here: attribution credit and campaign profit can point in opposite directions.</figcaption>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Northbeam alternative: the CDAI client portal showing real profit and a decision for every campaign" loading="lazy">
+  <figcaption>The CDAI client portal: real profit and one decision per campaign.</figcaption>
 </figure>
 <div class="table-wrap">
 <table>

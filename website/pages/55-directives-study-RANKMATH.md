@@ -110,3 +110,9 @@ The whole page is replaced:
 
 ## Blog (on hold, per Nick)
 When the rebuild is done, the blog gets a card for this page (at `/roas-calculator/` if the slug changes). This is tracked in the blog to-do list.
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `ROAS calculator results next to real profit per campaign in the CDAI client portal`

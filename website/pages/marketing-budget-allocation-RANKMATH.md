@@ -85,3 +85,9 @@ WordPress usually redirects a post's old slug on its own. The Rank Math redirect
 - **Current top results:** LinkedIn, Cometly, The Growth Bully, Adobe, and template sites. All of them split budgets by channel percentage.
 - **Our edge:** the only page showing how to allocate budget campaign by campaign based on real profit.
 - **People Also Ask, answered in the FAQs:** "What is the 70/20/10 rule in marketing?" and "What percentage of my budget should be allocated to marketing?"
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `Marketing budget allocation in the CDAI client portal: a scale, hold, cut or pause decision for every campaign`

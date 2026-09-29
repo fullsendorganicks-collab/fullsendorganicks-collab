@@ -87,3 +87,9 @@ No other rebuilt page links to `/seven-cost-layers/`, so no links need fixing. *
 The whole old post is replaced:
 - the "seven cost layers" framing throughout
 - the old pasted `<head>` and second `<title>`
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `Marketing costs counted per campaign in the CDAI client portal, beyond ad spend`

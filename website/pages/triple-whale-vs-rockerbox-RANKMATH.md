@@ -73,3 +73,9 @@ Replace **everything** in the Elementor HTML widget with `triple-whale-vs-rocker
   - "triple whale competitors": 50/mo, $80 cost per click
   - "triple whale pricing": 260/mo. Not covered, because pricing can't be verified and changes often.
 - **Brand terms:** "triple whale" 8,100/mo and "rockerbox" 1,600/mo. Mostly people looking for the vendors themselves.
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `Triple Whale vs Rockerbox alternative: the CDAI client portal showing real profit and a decision for every campaign`

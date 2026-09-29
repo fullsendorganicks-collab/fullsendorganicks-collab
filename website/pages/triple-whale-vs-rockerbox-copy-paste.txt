@@ -160,8 +160,8 @@
 <h2 id="glance">Triple Whale vs Rockerbox at a Glance</h2>
 <p>Triple Whale and Rockerbox both help marketers understand which spending works, but they were built for different companies and different questions. Here is the Triple Whale vs Rockerbox comparison in one view, with Allocera alongside so you can see where each tool fits.</p>
 <figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/triple-whale-vs-rockerbox-comparison.png" alt="Triple Whale vs Rockerbox vs Allocera comparison of the question each tool answers" width="1200" height="630" loading="lazy">
-  <figcaption>Triple Whale vs Rockerbox is really a question of focus: store growth, channel measurement, or campaign profit.</figcaption>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Triple Whale vs Rockerbox alternative: the CDAI client portal showing real profit and a decision for every campaign" loading="lazy">
+  <figcaption>The CDAI client portal: real profit and one decision per campaign.</figcaption>
 </figure>
 <div class="twr-table-wrap">
 <table>

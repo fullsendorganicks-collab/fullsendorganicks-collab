@@ -173,8 +173,8 @@
 <p>Profit here means contribution margin: the revenue a campaign actually kept, minus every real cost of winning it. That includes ad spend, fees, partner payouts, refunds, chargebacks, and compliance costs. If you&rsquo;re new to the idea, start with <a href="https://alloceraintelligence.com/calculate-contribution-margin/">how to calculate contribution margin</a> or our explainer on <a href="https://alloceraintelligence.com/net-marketing-contribution/">net marketing contribution</a>.</p>
 
 <figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/30-day-retest-marketing-measurement-timeline.png" alt="Marketing measurement timeline: a decision is recorded, its window plays out, then margin before and after is compared and the call is graded" width="1600" height="800" loading="lazy">
-  <figcaption>The retest compares the campaign&rsquo;s margin in the window after a decision with the same-length window before it.</figcaption>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Marketing measurement in the CDAI client portal: every decision graded against the profit that followed" loading="lazy">
+  <figcaption>Past decisions graded against real profit in the CDAI client portal.</figcaption>
 </figure>
 
 <h2 id="how">How the Retest Works, Step by Step</h2>

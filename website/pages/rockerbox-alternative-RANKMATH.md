@@ -38,3 +38,9 @@ Page type: **Page**, ID 646. Search Console: 106 impressions in the last 3 month
   - "NO" table rows
   - the $2,500 audit
   - the pasted `<head>`
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `Rockerbox alternative: the CDAI client portal showing real profit and a decision for every campaign`

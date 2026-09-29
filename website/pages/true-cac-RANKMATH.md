@@ -125,3 +125,9 @@ Posts → search "True CAC". Open the **`/true-cac/`** post (the one without "-2
 - the "$47 / $89" senior care anecdote
 - the "May 19, 2026" byline
 - both pasted `<head>`s
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `Customer acquisition cost formula applied per campaign in the CDAI client portal`

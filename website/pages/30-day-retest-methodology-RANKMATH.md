@@ -100,3 +100,9 @@ Posts → search "retest" (the old title starts "The 30-Day Retest"). Delete the
 - "none of them measure whether they were right" about named competitors
 - "no human override" (a person decides on every call)
 - the "June 5, 2026" byline date
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `Marketing measurement in the CDAI client portal: every decision graded against the profit that followed`
