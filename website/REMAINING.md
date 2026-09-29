@@ -80,9 +80,8 @@ All 21 have "cost layers" wording, and most link to old URLs. Each rebuild gets 
 
 ## 3. Quick WordPress fixes (Nick, about 15 minutes, any time)
 
-- [ ] **Broken image boxes (Nick, Sept 29): no made-up images.** Only real images already on the site are used, never AI images, and no numbers in images.
-  - DONE and re-pasted by Nick Sept 29: the 5 PAGES (About, How It Works, Dashboard, Proof, 133).
-  - TO DO when you're back on the site: the same swap for 6 POSTS (blog articles) (Lead Quality, Offline Conversion Tracking, Contribution Margin, Cost Per Signed Case, Average Cost Per Lead, Net Marketing Contribution).
+- [x] **Broken image boxes (Nick, Sept 29): no made-up images.** Only real images already on the site are used, never AI images, and no numbers in images.
+  - DONE and re-pasted by Nick Sept 29: all 20. That's the 5 pages (About, How It Works, Dashboard, Proof, 133), 13 blog posts, and the Northbeam and Rockerbox pages. They now use the real portal screenshot, dashboard screenshot or diagram. No file on the site points to an image that isn't in Media.
 
 - [ ] **Featured images missing:** set each post's own image (the file name is in each RANKMATH box).
   - 245 lead quality
