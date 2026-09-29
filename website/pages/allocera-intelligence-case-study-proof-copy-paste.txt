@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 #vcx *{box-sizing:border-box;margin:0;padding:0}
-#vcx{--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#9AAECE;--dim:#4A6488;--deep:#1C3050;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#D63050}
+#vcx{--bg:#010914;--surface:#071530;--border:#102040;--border2:#1A3060;--text:#EBF0FF;--muted:#E6EDFB;--dim:#CFDCF2;--deep:#1C3050;--blue:#1655D8;--blue2:#4080F0;--gold:#C4A040;--gold2:#DEBB6A;--green:#0BAF92;--red:#D63050}
 #vcx{background:#010914!important;color:#ebf0ff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 #vcx nav{position:fixed;top:0;left:0;right:0;z-index:100;height:clamp(52px,7vh,64px);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,64px);background:rgba(1,9,20,.95);border-bottom:1px solid #102040;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 #vcx .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
@@ -11,9 +11,9 @@
 #vcx .nav-name{font-size:clamp(12px,1.7vw,14px);font-weight:600;letter-spacing:.04em;color:#ebf0ff}
 #vcx .nav-right{display:flex;align-items:center;gap:12px}
 #vcx .nav-links{display:flex;align-items:center;gap:clamp(16px,2.5vw,32px);list-style:none}
-#vcx .nav-links a{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;text-decoration:none;transition:color .2s}
+#vcx .nav-links a{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#cfdcf2;text-decoration:none;transition:color .2s}
 #vcx .nav-links a:hover,#vcx .nav-links a.active{color:#c4a040}
-#vcx .nav-cta{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:#1655d8;color:#ebf0ff;border:none;padding:9px 18px;border-radius:2px;cursor:pointer;transition:background .2s;text-decoration:none;white-space:nowrap}
+#vcx .nav-cta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:#1655d8;color:#ebf0ff;border:none;padding:9px 18px;border-radius:2px;cursor:pointer;transition:background .2s;text-decoration:none;white-space:nowrap}
 #vcx .nav-cta:hover{background:#1d67f0}
 #vcx .nav-portal{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4080f0;border:1px solid rgba(64,128,240,.35);padding:8px 16px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
 #vcx .nav-portal:hover{background:rgba(64,128,240,.1);border-color:#4080f0}
@@ -24,7 +24,7 @@
 #vcx .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 #vcx .mobile-menu{display:none;position:fixed;top:clamp(52px,7vh,64px);left:0;right:0;z-index:99;background:rgba(1,9,20,.98);border-bottom:1px solid #102040;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;padding:16px 24px 24px;gap:4px}
 #vcx .mobile-menu.open{display:flex}
-#vcx .mobile-menu a{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#9aaece;text-decoration:none;padding:14px 0;border-bottom:1px solid #102040;transition:color .2s}
+#vcx .mobile-menu a{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#e6edfb;text-decoration:none;padding:14px 0;border-bottom:1px solid #102040;transition:color .2s}
 #vcx .mobile-menu a:last-child{border-bottom:none}
 #vcx .mobile-menu a:hover{color:#ebf0ff}
 #vcx .mobile-menu .mobile-cta{margin-top:12px;background:#1655d8;color:#fff;text-align:center;padding:16px;border-radius:2px;font-size:13px;font-weight:700;border:none;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
@@ -32,7 +32,7 @@
 @media(max-width:768px){#vcx .nav-links{display:none}
 #vcx .nav-hamburger{display:flex}
 #vcx .nav-cta{display:none}}
-@media(max-width:480px){#vcx .nav-portal{font-size:9px;padding:7px 12px}}
+@media(max-width:480px){#vcx .nav-portal{font-size:11px;padding:7px 12px}}
 #vcx section{width:100%;padding:clamp(72px,11vh,130px) clamp(16px,5vw,80px);position:relative;background:#010914!important}
 #vcx section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 0,rgba(22,85,216,.04) 0,transparent 60%);pointer-events:none}
 #vcx .section-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
@@ -44,7 +44,7 @@
 #vcx h2.section-title em{font-style:italic;color:#8ab8ff}
 #vcx .rule{width:36px;height:1px;background:#1655d8;margin-bottom:clamp(16px,3vh,28px);display:block}
 #vcx .rule.gold{background:#c4a040}
-#vcx .lead-text{font-size:clamp(14px,1.8vw,17px);color:#b8c9e0;line-height:1.8;max-width:720px;margin-bottom:clamp(16px,3vh,28px);font-weight:300}
+#vcx .lead-text{font-size:clamp(14px,1.8vw,17px);color:#e6edfb;line-height:1.8;max-width:720px;margin-bottom:clamp(16px,3vh,28px);font-weight:300}
 #vcx #page-hero{padding:calc(clamp(52px,7vh,64px) + clamp(60px,10vh,100px)) clamp(16px,5vw,80px) clamp(60px,10vh,100px);background:#010914;position:relative;border-bottom:1px solid #1a3060}
 #vcx #page-hero::before{content:'';position:absolute;inset:0;background-image:url(https://alloceraintelligence.com/wp-content/uploads/2026/05/9B191F1B-ED21-4418-8DA4-1FA6CF67E206.png);background-size:cover;background-position:center;opacity:.18;z-index:0;pointer-events:none}
 #vcx #page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 50%,rgba(22,85,216,.08) 0,transparent 70%);pointer-events:none}
@@ -60,26 +60,26 @@
 @media(max-width:500px){#vcx .panel-grid{grid-template-columns:1fr}}
 #vcx .panel-card{background:#010914;padding:clamp(16px,2vw,22px);position:relative;transition:background .2s}
 #vcx .panel-card:hover{background:#050d1e}
-#vcx .panel-live-badge{position:absolute;top:12px;right:12px;font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.1em;color:#0baf92;background:rgba(11,175,146,.1);border:1px solid rgba(11,175,146,.2);padding:2px 6px;border-radius:1px}
-#vcx .panel-name{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#4a6488;display:block;margin-bottom:8px;padding-right:44px}
+#vcx .panel-live-badge{position:absolute;top:12px;right:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#0baf92;background:rgba(11,175,146,.1);border:1px solid rgba(11,175,146,.2);padding:2px 6px;border-radius:1px}
+#vcx .panel-name{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#cfdcf2;display:block;margin-bottom:8px;padding-right:44px}
 #vcx .panel-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(14px,2vw,20px);font-weight:400;line-height:1.2;display:block;margin-bottom:6px;color:#ebf0ff}
 #vcx .panel-headline.blue{color:#4080f0}
 #vcx .panel-headline.green{color:#0baf92}
 #vcx .panel-headline.gold{color:#debb6a}
 #vcx .panel-headline.red{color:#d63050}
-#vcx .panel-desc{font-size:clamp(10px,1.1vw,12px);color:#4a6488;line-height:1.6}
-#vcx .dir-badge{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.08em;padding:2px 6px;border-radius:1px;font-weight:600;display:inline-block;margin:2px 2px 2px 0}
+#vcx .panel-desc{font-size:clamp(10px,1.1vw,12px);color:#cfdcf2;line-height:1.6}
+#vcx .dir-badge{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;padding:2px 6px;border-radius:1px;font-weight:600;display:inline-block;margin:2px 2px 2px 0}
 #vcx .dir-badge.scale{background:rgba(11,175,146,.15);color:#0baf92;border:1px solid rgba(11,175,146,.3)}
 #vcx .dir-badge.hold{background:rgba(196,160,64,.12);color:#debb6a;border:1px solid rgba(196,160,64,.25)}
 #vcx .dir-badge.cut{background:rgba(214,48,80,.12);color:#d63050;border:1px solid rgba(214,48,80,.25)}
 #vcx .dir-badge.pause{background:rgba(64,128,240,.1);color:#4080f0;border:1px solid rgba(64,128,240,.2)}
 #vcx .dir-badge.flag{background:rgba(196,160,64,.08);color:#c4a040;border:1px solid rgba(196,160,64,.15)}
 #vcx .int-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:clamp(20px,3vh,32px)}
-#vcx .int-chip{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:.3rem .9rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:#9aaece;letter-spacing:.05em;transition:border-color .2s}
-#vcx .int-chip:hover{border-color:rgba(22,85,216,.35);color:#b8c9e0}
+#vcx .int-chip{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:.3rem .9rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:#e6edfb;letter-spacing:.05em;transition:border-color .2s}
+#vcx .int-chip:hover{border-color:rgba(22,85,216,.35);color:#e6edfb}
 #vcx .faq-item{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;padding:clamp(16px,2.5vw,24px);margin-bottom:clamp(10px,1.5vh,14px)}
 #vcx .faq-q{font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#ebf0ff;margin-bottom:10px}
-#vcx .faq-a{font-size:clamp(11px,1.3vw,13px);color:#9aaece;line-height:1.75}
+#vcx .faq-a{font-size:clamp(11px,1.3vw,13px);color:#e6edfb;line-height:1.75}
 #vcx #intake{background:#071530!important;border-top:1px solid #102040}
 #vcx #intake::before{display:none}
 #vcx .intake-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,80px)}
@@ -87,17 +87,17 @@
 #vcx .intake-info h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,32px);font-weight:300;color:#ebf0ff;margin-bottom:clamp(12px,2vh,20px);line-height:1.25}
 #vcx .intake-steps{display:flex;flex-direction:column;gap:clamp(10px,1.5vh,14px);margin-top:clamp(20px,3vh,32px)}
 #vcx .intake-step{display:flex;gap:14px;align-items:flex-start;padding:clamp(12px,1.5vh,16px);background:#010914;border:1px solid #102040;border-radius:2px}
-#vcx .intake-step-num{font-family:'JetBrains Mono',monospace;font-size:9px;color:#1655d8;flex-shrink:0;padding-top:1px}
+#vcx .intake-step-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:#6ea3ff;flex-shrink:0;padding-top:1px}
 #vcx .intake-step-title{font-size:clamp(12px,1.4vw,13px);font-weight:500;color:#ebf0ff;display:block;margin-bottom:3px}
-#vcx .intake-step-desc{font-size:clamp(11px,1.2vw,12px);color:#7a95b8;line-height:1.55}
+#vcx .intake-step-desc{font-size:clamp(11px,1.2vw,12px);color:#cfdcf2;line-height:1.55}
 #vcx .intake-form{display:flex;flex-direction:column;gap:clamp(12px,2vh,16px)}
 #vcx .form-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.5vw,14px)}
 @media(max-width:560px){#vcx .form-row{grid-template-columns:1fr}}
 #vcx .form-group{display:flex;flex-direction:column;gap:6px}
-#vcx .form-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#4a6488}
+#vcx .form-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#cfdcf2}
 #vcx .form-input,#vcx .form-select,#vcx .form-textarea{background:#010914;border:1px solid #1a3060;border-radius:2px;color:#ebf0ff;font-family:'Inter',sans-serif;font-size:clamp(12px,1.4vw,13px);padding:clamp(9px,1.3vh,12px) clamp(12px,1.5vw,14px);transition:border-color .2s,box-shadow .2s;width:100%;-webkit-appearance:none;appearance:none}
 #vcx .form-input:focus,#vcx .form-select:focus,#vcx .form-textarea:focus{outline:0;border-color:#1655d8;box-shadow:0 0 0 2px rgba(22,85,216,.15)}
-#vcx .form-input::placeholder,#vcx .form-textarea::placeholder{color:#1c3050}
+#vcx .form-input::placeholder,#vcx .form-textarea::placeholder{color:#9fb2d1}
 #vcx .form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234A6488'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;cursor:pointer}
 #vcx .form-select option{background:#010914;color:#ebf0ff}
 #vcx .form-textarea{resize:vertical;min-height:100px}
@@ -107,43 +107,43 @@
 #vcx .form-submit:disabled{opacity:.5;cursor:default}
 #vcx .form-success{display:none;text-align:center;padding:clamp(24px,4vh,40px);background:rgba(11,175,146,.06);border:1px solid rgba(11,175,146,.2);border-radius:2px}
 #vcx .form-success h4{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,28px);font-weight:300;color:#0baf92;margin-bottom:8px}
-#vcx .form-success p{font-size:clamp(12px,1.4vw,14px);color:#7a95b8}
-#vcx .form-error{display:none;font-family:'JetBrains Mono',monospace;font-size:9px;color:#d63050;letter-spacing:.06em;padding:10px 14px;background:rgba(214,48,80,.06);border:1px solid rgba(214,48,80,.2);border-radius:2px}
-#vcx .contact-phone{font-family:'JetBrains Mono',monospace;font-size:10px;color:#4a6488;letter-spacing:.08em;margin-bottom:16px}
+#vcx .form-success p{font-size:clamp(12px,1.4vw,14px);color:#cfdcf2}
+#vcx .form-error{display:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:#d63050;letter-spacing:.06em;padding:10px 14px;background:rgba(214,48,80,.06);border:1px solid rgba(214,48,80,.2);border-radius:2px}
+#vcx .contact-phone{font-family:'JetBrains Mono',monospace;font-size:10px;color:#cfdcf2;letter-spacing:.08em;margin-bottom:16px}
 #vcx footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #102040;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#010914}
 #vcx .footer-brand{display:flex;align-items:center;gap:10px}
 #vcx .footer-logo{width:18px;height:18px;object-fit:contain;flex-shrink:0}
-#vcx .footer-text{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.08em}
-#vcx .footer-right{font-family:'JetBrains Mono',monospace;font-size:9px;color:#4a6488;letter-spacing:.06em;text-align:right}
+#vcx .footer-text{font-family:'JetBrains Mono',monospace;font-size:11px;color:#cfdcf2;letter-spacing:.08em}
+#vcx .footer-right{font-family:'JetBrains Mono',monospace;font-size:11px;color:#cfdcf2;letter-spacing:.06em;text-align:right}
 #vcx .fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 #vcx .fade-up.visible{opacity:1;transform:translateY(0)}
 @media(max-width:768px){#vcx .fade-up{opacity:1;transform:translateY(0)}}
 #vcx{background:#010914;color:#ebf0ff;font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
 #vcx a{color:#c4a040}
 #vcx .prose{max-width:820px}
-#vcx .prose p{font-size:clamp(14px,1.7vw,16px);color:#b8c9e0;line-height:1.8;margin-bottom:18px;font-weight:300}
+#vcx .prose p{font-size:clamp(14px,1.7vw,16px);color:#e6edfb;line-height:1.8;margin-bottom:18px;font-weight:300}
 #vcx .prose p strong,#vcx .prose li strong{color:#ebf0ff;font-weight:600}
 #vcx .prose a,#vcx .faq-a a,#vcx .panel-desc a{color:#c4a040;text-decoration:none;border-bottom:1px solid rgba(196,160,64,.3)}
-#vcx .prose ul,#vcx .prose ol{margin:0 0 20px 20px;color:#b8c9e0;font-size:clamp(14px,1.7vw,16px);line-height:1.8;font-weight:300}
+#vcx .prose ul,#vcx .prose ol{margin:0 0 20px 20px;color:#e6edfb;font-size:clamp(14px,1.7vw,16px);line-height:1.8;font-weight:300}
 #vcx .prose li{margin-bottom:8px}
 #vcx .steps{list-style:none;margin:0 0 24px 0;padding:0;counter-reset:s;display:flex;flex-direction:column;gap:12px}
-#vcx .steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;padding:clamp(12px,1.5vh,16px);background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;color:#b8c9e0;font-size:clamp(13px,1.5vw,15px);line-height:1.7}
+#vcx .steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;padding:clamp(12px,1.5vh,16px);background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-radius:2px;color:#e6edfb;font-size:clamp(13px,1.5vw,15px);line-height:1.7}
 #vcx .steps li::before{content:counter(s,decimal-leading-zero);font-family:'JetBrains Mono',monospace;font-size:10px;color:#4080f0;flex-shrink:0;padding-top:4px}
 #vcx .table-wrap{overflow-x:auto;border:1px solid #1a3060;border-radius:3px;margin:clamp(20px,3vh,32px) 0;background:rgba(7,21,48,.5)}
 #vcx table{width:100%;border-collapse:collapse;font-size:clamp(12px,1.4vw,14px);min-width:560px}
 #vcx table.narrow{min-width:0}
-#vcx th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#4a6488;padding:12px 14px;border-bottom:1px solid #1a3060;font-weight:500}
-#vcx td{padding:12px 14px;border-bottom:1px solid #102040;color:#b8c9e0;vertical-align:top}
+#vcx th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#cfdcf2;padding:12px 14px;border-bottom:1px solid #1a3060;font-weight:500}
+#vcx td{padding:12px 14px;border-bottom:1px solid #102040;color:#e6edfb;vertical-align:top}
 #vcx tr:last-child td{border-bottom:none}
 #vcx td.num{font-family:'JetBrains Mono',monospace;color:#ebf0ff;white-space:nowrap}
 #vcx .pos{color:#0baf92!important}#vcx .neg{color:#d63050!important}
 #vcx figure{margin:clamp(24px,4vh,40px) 0}
 #vcx figure img{width:100%;display:block;border-radius:3px;border:1px solid #1a3060;box-shadow:0 0 64px rgba(22,85,216,.12)}
-#vcx figcaption{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:#4a6488;margin-top:10px}
+#vcx figcaption{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:#cfdcf2;margin-top:10px}
 #vcx .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#102040;border:1px solid #102040;border-radius:3px;overflow:hidden;margin:clamp(24px,4vh,40px) 0}
 #vcx .stat{background:#010914;padding:clamp(18px,2.5vw,28px);text-align:center}
 #vcx .stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:300;color:#0baf92;line-height:1}
-#vcx .stat span{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#4a6488;margin-top:10px;line-height:1.6}
+#vcx .stat span{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#cfdcf2;margin-top:10px;line-height:1.6}
 @media(max-width:600px){#vcx .stat-row{grid-template-columns:1fr}}
 #vcx details.faq-item summary{list-style:none;cursor:pointer;font-size:clamp(13px,1.5vw,15px);font-weight:600;color:#ebf0ff}
 #vcx details.faq-item summary::-webkit-details-marker{display:none}
@@ -155,12 +155,12 @@
 #vcx .keybox ul{margin-bottom:0}
 #vcx .formula{background:#04102a;border:1px solid #1a3060;border-radius:2px;padding:clamp(18px,3vw,28px);margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:clamp(12px,1.5vw,14px);line-height:1.9;color:#ebf0ff;overflow-x:auto}
 #vcx .formula .f-main{color:#debb6a;display:block}
-#vcx .formula .f-label{color:#4a6488;font-size:9px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:10px}
+#vcx .formula .f-label{color:#cfdcf2;font-size:11px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:10px}
 #vcx tr.total td{color:#ebf0ff;font-weight:600;background:rgba(196,160,64,.06)}
-#vcx .byline-site{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:#4a6488;margin-bottom:clamp(16px,3vh,24px)}
-#vcx .note,#vcx .sub,#vcx .cnt{font-size:13px;color:#7a95b8}
+#vcx .byline-site{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:#cfdcf2;margin-bottom:clamp(16px,3vh,24px)}
+#vcx .note,#vcx .sub,#vcx .cnt{font-size:13px;color:#cfdcf2}
 #vcx .panel-grid h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20px;color:#debb6a;margin-bottom:6px}
-#vcx .panel-card .panel-desc{color:#9aaece}
+#vcx .panel-card .panel-desc{color:#e6edfb}
 #vcx section.alt{padding-top:clamp(40px,6vh,64px);padding-bottom:0}
 #vcx blockquote{background:rgba(7,21,48,.7);border:1px solid rgba(64,128,240,.15);border-left:2px solid #c4a040;border-radius:2px;padding:clamp(18px,3vw,28px);margin:0 0 clamp(14px,2vh,20px);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2.2vw,22px);line-height:1.5;color:#ebf0ff}
 #vcx .final-cta{text-align:center}
@@ -172,7 +172,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is data-driven marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Using data from your ad platforms, CRM, and other sources to decide where to spend and what to change. It only works when that data is fresh, complete, and connected to real outcomes like closed revenue."}}, {"@type": "Question", "name": "What are the 5 steps of data-driven decision making?", "acceptedAnswer": {"@type": "Answer", "text": "Collect the data, check that it’s trustworthy, calculate what it means, decide what to do, and grade the decision once results are in. CDAI automates all five, nightly."}}, {"@type": "Question", "name": "What is an example of data-driven marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Cutting budget from a campaign because its leads cost more than the customers they produce are worth, based on real closed revenue and every cost, rather than on clicks or platform-reported conversions."}}, {"@type": "Question", "name": "What happens when CDAI’s data isn’t good enough?", "acceptedAnswer": {"@type": "Answer", "text": "It makes no decisions and tells you what’s wrong, such as stale data or leads with no campaign source, so you can fix it. It never fills the gap with a guess."}}, {"@type": "Question", "name": "Were these real businesses?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. FullSend Organicks LLC (owned by Allocera’s founder) and Apex Care Solutions LLC (CDAI’s pilot client) both gave permission to publish."}}]}</script>
 
 <nav>
-  <a class="nav-brand" href="https://alloceraintelligence.com/"><img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence CDAI Engine"><span class="nav-name">Allocera Intelligence</span></a>
+  <a class="nav-brand" href="https://alloceraintelligence.com/"><img width="26" height="26" style="width:26px;height:26px;max-width:26px;object-fit:contain" class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence CDAI Engine"><span class="nav-name">Allocera Intelligence</span></a>
   <div class="nav-right">
     <ul class="nav-links"><li><a href="https://alloceraintelligence.com/#problem">The Problem</a></li><li><a href="https://alloceraintelligence.com/how-it-works/">How It Works</a></li><li><a href="https://alloceraintelligence.com/proof/" class="active">Proof</a></li><li><a href="https://alloceraintelligence.com/dashboard/">Dashboard</a></li><li><a href="https://alloceraintelligence.com/pricing/">Pricing</a></li><li><a href="https://alloceraintelligence.com/about/">About</a></li><li><a href="https://alloceraintelligence.com/blog/">Blog</a></li></ul>
     <a class="nav-portal" href="https://cdai-portal.vercel.app" target="_blank" rel="noopener">Client Portal</a>
@@ -372,7 +372,7 @@
 </section>
 
 <footer>
-  <div class="footer-brand"><img class="footer-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence"><span class="footer-text">Allocera Intelligence &middot; CDAI Engine &middot; alloceraintelligence.com</span></div>
+  <div class="footer-brand"><img width="18" height="18" style="width:18px;height:18px;max-width:18px;object-fit:contain" class="footer-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/09/new-allocera-Intelligence-logo.png" alt="Allocera Intelligence"><span class="footer-text">Allocera Intelligence &middot; CDAI Engine &middot; alloceraintelligence.com</span></div>
   <span class="footer-right">&copy; 2026 Allocera Intelligence &middot; <a href="https://alloceraintelligence.com/home-sample/privacy-policy-and-terms-and-conditions/" style="color:var(--dim);text-decoration:none">Privacy Policy</a> &middot; <a href="https://alloceraintelligence.com/home-sample/terms/" style="color:var(--dim);text-decoration:none">Terms of Service</a> &middot; Built by <a href="https://fullsendorganicks.com/" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none">FSO</a></span>
 </footer>
 </div>
