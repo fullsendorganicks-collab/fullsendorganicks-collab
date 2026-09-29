@@ -55,7 +55,7 @@ Nick's rule: **no single blended accuracy number anywhere.** The live site still
 | 4 | 133 | /allocera-intelligence-case-study-proof/ | `pages/allocera-intelligence-case-study-proof.html` |
 | 5 to 22 | 252, 483, 478, 228, 284, 267, 501, 245, 322, 506, 563, 654, 646, 301, 260, 308, 294, 187 | see `FIX_LIST.md` E5 to E22 | matching files in `website/pages/` (252 also changes its Rank Math meta description; 187 is the blog, re-paste at the end) |
 
-- [ ] Nick pastes pages 1 to 4 (before the CallRail email goes out)
+- [x] Nick pastes pages 1 to 4 (done Sept 29). The four were rebuilt the same afternoon on the homepage's own styles (gold logo, readable text, working form); use the newest files on branch `fix/remove-blended-accuracy-sept29`. **After pasting: submit each page's form once to confirm Formspree.**
 - [ ] Nick pastes pages 5 to 22
 - [ ] Claude re-scans a fresh export: 0 matches for "89.5", "77.9", "1,210"
 
@@ -65,7 +65,7 @@ Nick's rule: **no single blended accuracy number anywhere.** The live site still
 - [ ] **Follow-up email to Karina and Eric:** draft v4 is ready. Nick sends it after section 0 pages 1 to 4 are live.
 - [ ] **CallRail page and logo on the homepage: on hold.** Wait for CallRail's written OK, their brand and logo guidelines, and the API/sandbox access. Never write "CallRail Partner" before then. When approved: one homepage pass, then a CallRail page, both on Nick's approve/reject list first.
 - [ ] **Text-only mention that CDAI connects to CallRail** (true today: the nightly sync is built). Claude checks the homepage first and proposes it for the next homepage pass.
-- [ ] **Demo org numbers** (cdai-portal demo login): Nick wants forced sample numbers that show the real accuracy. Claude proposes the exact change; never touch Demo or Apex data before Nick approves.
+- [x] **Demo org fees zeroed Sept 29** (assumed platform fees $15,904.55 and compliance cost $1,225.25 set to $0, Demo org only; backup table `zz_demo_fee_backup_20260929` for rollback). Nick to look at the Demo dashboard cards.
 - [ ] **Saved:** the founder-approved capability list is in `docs/CDAI_CAPABILITIES_LIST.md` in cdai-engine (merged to main).
 
 ---
@@ -132,6 +132,7 @@ All 21 have "cost layers" wording, and most link to old URLs. Each rebuild gets 
   - **Bigger player:** Claude makes the video box wider on large screens and adds a click-to-enlarge (full screen). This is a code change only, and the same video stays.
   - Best result: both.
 - [ ] **Post 284 WordPress title:** https://alloceraintelligence.com/wp-admin/post.php?post=284&action=edit. Change it to `Salesforce Campaign Influence: 4 Things Campaign ROI Misses`.
+- [ ] **Change the contact email in the legal documents (Nick, Sept 29).** The Terms and Privacy pages (posts 162 and 155, `originals/`) still show baumnicholas@gmail.com. Change it to nick@alloceraintelligence.com. Claude prepares the exact replacement text once Nick says go.
 - [ ] **Paste the updated homepage (post 9) and blog (post 187)** sent Sept 28, if you haven't yet.
 
 ---
@@ -183,10 +184,14 @@ All 21 have "cost layers" wording, and most link to old URLs. Each rebuild gets 
   - lead emails go to alloceraintelligence@gmail.com
   - fixed the blank "rephrase" answers
   - Sonnet 5.5
+- [x] **Proof page keeps its Apex Care Solutions pilot section (Nick, Sept 29).**
 - [ ] **Only on the homepage.** Add the chat to every page. Waiting on Nick's OK.
 - [ ] **Calculator results email** (`calculator_leads.py`) still says "speak with Nick directly" and shows the phone number. Waiting on Nick's call.
 
 ## 6. Not website (waiting on Nick)
+- **Full test suite on the webhook fix (Nick's other session):** run `python cdai_test_suite.py` on branch `fix/webhook-compliance-default-zero` with production database access. Target: 70 pass, 0 fail. If it passes, Claude merges. The fix removes the last assumed $0.25 default (`ingestion_pipeline.py:221`).
+- **Render `STRIPE_MODE` (Nick):** Render → cdai-engine web service → Environment → look at the value of `STRIPE_MODE`. It must be `live` for real customers and `test` only while testing checkout. The code defaults to `live` (`billing.py:65`) when it is unset. The five Stripe keys are present.
+- **Ad-spend sync for one-click Meta, Google and LinkedIn clients (engine change; waiting on Nick's go).** Today a self-serve client can connect Meta in one click, but their ad spend is never pulled, because the nightly sync only runs for orgs whose `orgs.api_sync_config` has a meta/google/linkedin block, and nothing writes that block. Proposed fix: on connect, find the ad account, get or create the channel, save the config, and run the first pull in the background. Design decision: which ad account when a client has several.
 - **S1 security issue:** waiting on Nick's approval to fix it first.
 - **D11:** PR #37 vs the cloud branches. Waiting on Nick's decision.
 
