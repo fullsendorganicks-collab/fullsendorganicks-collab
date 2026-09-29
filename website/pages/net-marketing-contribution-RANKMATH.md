@@ -44,3 +44,9 @@ Open the post in Elementor. Replace **everything** in its HTML widget with `net-
 - **Search Console:** "net marketing contribution formula" (32 US impressions, position 12.7) and "net marketing contribution" (31, position 18) over 6 months. Globally the page averaged position 6.7 over 3 months.
 - **Keyword tool:** about 20 US searches a month for each, low competition.
 - **Current top results:** homework sites (Quizlet, Chegg, Brainly), one Medium post, and the textbook's own site. No software company has a strong page yet.
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `Net marketing contribution per campaign in the CDAI client portal, beyond ROAS`

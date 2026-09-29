@@ -180,8 +180,8 @@
 <h2 id="example">Example: Why Lead Quality Beats a Cheap Cost Per Lead</h2>
 <p>This is an illustrative example, not client data. A business buys 100 leads from each of two sources. Each customer it keeps is worth $900 in profit before lead costs.</p>
 <figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/lead-quality-profit-per-lead-example.png" alt="Lead quality example: $30 leads from Source A earn $6 profit per lead, while $80 leads from Source B earn $46 profit per lead" width="1600" height="800" loading="lazy">
-  <figcaption>Illustrative example. The cheaper lead source earns less per lead.</figcaption>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Lead quality measured as profit per lead in the CDAI client portal" loading="lazy">
+  <figcaption>Lead quality, measured as real profit per lead in the CDAI client portal.</figcaption>
 </figure>
 <div class="lqm-table-wrap">
 <table class="lqm-narrow">

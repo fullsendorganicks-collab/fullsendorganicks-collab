@@ -215,8 +215,8 @@
 <h2 id="example">Cost Per Signed Case Example: Three Channels, One Month</h2>
 <p>This illustrative example uses round numbers, not client data. A firm spends $105,000 across three channels in a month and assumes $25 of intake cost for every lead it screens.</p>
 <figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/cost-per-signed-case-channels.png" alt="Cost per signed case example comparing Google Ads, Local Services Ads, and a lead vendor for a personal injury firm" width="1200" height="630" loading="lazy">
-  <figcaption>The channel with the cheapest leads isn&rsquo;t the channel with the cheapest cases, or the most profitable ones.</figcaption>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Cost per signed case by campaign in the CDAI client portal" loading="lazy">
+  <figcaption>True cost per campaign in the CDAI client portal.</figcaption>
 </figure>
 <div class="cps-table-wrap">
 <table>

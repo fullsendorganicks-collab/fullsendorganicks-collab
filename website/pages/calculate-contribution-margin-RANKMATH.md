@@ -61,3 +61,9 @@ Open the post in Elementor. Replace **everything** in its HTML widget with `calc
 - **Current top results:** Wall Street Prep, Investopedia, Omni Calculator, Xero. All cover products and units only.
 - **Our edge:** the only page that also shows how to calculate contribution margin for a marketing campaign, with a working calculator for it.
 - **People Also Ask, answered in the FAQs:** "Is 30% contribution margin good?" and "What does a 40% contribution margin mean?"
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `How to calculate contribution margin per campaign: the CDAI client portal showing real profit for every campaign`

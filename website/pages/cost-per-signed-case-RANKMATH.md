@@ -38,3 +38,9 @@ Post ID 501. Search Console: 82 impressions and 2 clicks in the last 3 months, a
   - unsourced claims such as "PI firms reject 75–85% at intake" and "$2,500–$3,000 true CPSC"
   - the made-up channel CPSC table
   - the old byline date
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `Cost per signed case by campaign in the CDAI client portal`

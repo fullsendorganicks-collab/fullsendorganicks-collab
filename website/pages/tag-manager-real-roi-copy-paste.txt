@@ -193,8 +193,8 @@
 
 <h2 id="steps">How to Set Up Offline Conversion Tracking: 5 Steps</h2>
 <figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/offline-conversion-tracking-click-to-closed-deal.png" alt="Offline conversion tracking flow: ad click, form or call captured with click ID, CRM stages from lead to closed deal, result sent back to the ad platform, then a profit check for refunds, payouts and delivery costs" width="1600" height="800" loading="lazy">
-  <figcaption>The loop: capture the click, follow the lead in your CRM, send the result back, then check profit.</figcaption>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Offline conversion tracking results in the CDAI client portal, connecting ad clicks to closed revenue" loading="lazy">
+  <figcaption>Offline conversions tied back to each campaign in the CDAI client portal.</figcaption>
 </figure>
 <ol class="oct-steps">
   <li><strong>Capture the click ID with every lead.</strong> When someone clicks an ad, the platform adds an identifier to the landing page URL (for Google Ads, the GCLID). <a href="https://support.google.com/google-ads/answer/2998031?hl=en" target="_blank" rel="noopener">Google&rsquo;s offline conversion import guide</a> tells you to save these IDs along with the lead information you collect. A common way is a hidden form field filled in by Google Tag Manager or a small script. Keep your UTM parameters too.</li>

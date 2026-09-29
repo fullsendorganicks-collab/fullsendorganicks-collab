@@ -116,3 +116,9 @@ Open `alloceraintelligence.com/wp-admin/post.php?post=252&action=edit` (you alre
 - the fake 80%
 - the duplicate title and keyword
 - the copied Tag Manager body, with its pasted `<head>`
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `Lead quality measured as profit per lead in the CDAI client portal`

@@ -103,3 +103,9 @@ Posts → search "Distortion". Delete the old content, paste in `marketing-margi
 - "2.3x" and "25–45%"
 - the Apex case-study numbers
 - the pasted `<head>`
+
+
+## Image update (Sept 29)
+The made-up chart image was removed; it now uses the real client portal screenshot already in Media.
+- **Featured image:** `Client-portal-for-cdai-example.png` (nothing to upload)
+- **Alt text:** `Average cost per lead next to the true cost per customer in the CDAI client portal`

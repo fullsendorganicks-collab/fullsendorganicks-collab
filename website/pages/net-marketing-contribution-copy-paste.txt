@@ -231,8 +231,8 @@
 <blockquote>ROAS measures revenue. Net marketing contribution measures profit.</blockquote>
 <p>Here is what that difference looks like across four campaigns. To keep it simple, ad spend is the only marketing cost here, so NMC as a share of revenue is your gross margin % minus (1 &divide; ROAS).</p>
 <figure>
-  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/net-marketing-contribution-vs-roas.png" alt="Net marketing contribution vs ROAS for four campaigns" width="1200" height="630" loading="lazy">
-  <figcaption>Ranked by ROAS, Campaign A looks like the winner. Ranked by net marketing contribution, it is the only campaign losing money.</figcaption>
+  <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Net marketing contribution per campaign in the CDAI client portal, beyond ROAS" loading="lazy">
+  <figcaption>Net marketing contribution for every campaign in the CDAI client portal.</figcaption>
 </figure>
 <div class="nmc-table-wrap">
 <table>
