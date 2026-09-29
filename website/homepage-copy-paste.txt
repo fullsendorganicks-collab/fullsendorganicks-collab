@@ -1176,7 +1176,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
       el.textContent = "→ Start Setup";
     } else if (action.type === "lead_captured") {
       el = document.createElement("div");
-      el.textContent = "✓ Got it — noted for Nick.";
+      el.textContent = "✓ Got it — the Allocera Intelligence team will follow up.";
     } else {
       return;
     }
@@ -1237,7 +1237,7 @@ footer{padding:clamp(24px,4vh,40px) clamp(16px,5vw,64px);border-top:1px solid #1
       })
       .catch(function () {
         typing.remove();
-        addMessage("assistant", "Something didn't go through — try again, or email nick@alloceraintelligence.com directly.");
+        addMessage("assistant", "Something didn't go through — try again, or use the form at the bottom of this page and the Allocera Intelligence team will follow up.");
       })
       .finally(function () { setBusy(false); input.focus(); });
   }
