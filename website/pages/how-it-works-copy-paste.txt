@@ -168,7 +168,7 @@
 #hws .final-cta .btn-row{justify-content:center}
 </style>
 <div id="hws">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does marketing analytics software do?", "acceptedAnswer": {"@type": "Answer", "text": "It collects data from your ad platforms, CRM, and website so you can measure campaign performance in one place. Most tools focus on reporting and attribution. CDAI adds real profit per campaign and a clear decision for each one."}}, {"@type": "Question", "name": "What are the four main types of marketing analytics?", "acceptedAnswer": {"@type": "Answer", "text": "Descriptive (what happened), diagnostic (why it happened), predictive (what will likely happen), and prescriptive (what to do next). Most dashboards are descriptive. CDAI is prescriptive: it tells you whether to scale, hold, cut, or pause each campaign, and shows why."}}, {"@type": "Question", "name": "Does CDAI change my ads automatically?", "acceptedAnswer": {"@type": "Answer", "text": "No. CDAI makes a recommendation for each campaign with the numbers and a confidence level behind it. You decide what to change in your ad accounts."}}, {"@type": "Question", "name": "What if a tool I use isn’t one of the built integrations?", "acceptedAnswer": {"@type": "Answer", "text": "You can upload a CSV export, which CDAI recognizes automatically for 9 common platforms, or send leads from any CRM or form tool through a webhook."}}, {"@type": "Question", "name": "Do I need to connect everything before it works?", "acceptedAnswer": {"@type": "Answer", "text": "No. CDAI works with what you connect. Your ad accounts and CRM are the core; adding partner payouts, refunds, and other costs makes each campaign’s profit more complete."}}, {"@type": "Question", "name": "How accurate are CDAI’s decisions?", "acceptedAnswer": {"@type": "Answer", "text": "In a controlled validation before release, CDAI’s decisions were 89.5% accurate overall (1,210 of 1,352 scored decisions) across 9 businesses in 7 industries, with the math matching 100% when checked two ways. The full results are in the validation report."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does marketing analytics software do?", "acceptedAnswer": {"@type": "Answer", "text": "It collects data from your ad platforms, CRM, and website so you can measure campaign performance in one place. Most tools focus on reporting and attribution. CDAI adds real profit per campaign and a clear decision for each one."}}, {"@type": "Question", "name": "What are the four main types of marketing analytics?", "acceptedAnswer": {"@type": "Answer", "text": "Descriptive (what happened), diagnostic (why it happened), predictive (what will likely happen), and prescriptive (what to do next). Most dashboards are descriptive. CDAI is prescriptive: it tells you whether to scale, hold, cut, or pause each campaign, and shows why."}}, {"@type": "Question", "name": "Does CDAI change my ads automatically?", "acceptedAnswer": {"@type": "Answer", "text": "No. CDAI makes a recommendation for each campaign with the numbers and a confidence level behind it. You decide what to change in your ad accounts. Every decision is advisory."}}, {"@type": "Question", "name": "What if a tool I use isn’t one of the built integrations?", "acceptedAnswer": {"@type": "Answer", "text": "You can upload a CSV export, which CDAI recognizes automatically for 9 common platforms, or send leads from any CRM or form tool through a webhook."}}, {"@type": "Question", "name": "Do I need to connect everything before it works?", "acceptedAnswer": {"@type": "Answer", "text": "No. CDAI works with what you connect. Your ad accounts and CRM are the core; adding partner payouts, refunds, and other costs makes each campaign’s profit more complete."}}, {"@type": "Question", "name": "How accurate are CDAI’s decisions?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the decision type. In the September 2026 validation: Scale 98.0% (818 of 835), Hold 95.2% (40 of 42), Pause 85.2% (144 of 169), Flag 70.9% (200 of 282), Cut 55.6% (5 of 9, all misses from one deliberately extreme stress-test business), Investigate 100% (2 of 2), and Renegotiate 100% (1 of 1). Quarantine detection was correct in 12 of 12, but it scores 0 of 12 because outcome scoring needs a person to act on the call. The math matched 100% when checked two ways."}}]}</script>
 
 <nav>
   <a class="nav-brand" href="https://alloceraintelligence.com/"><img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence CDAI Engine"><span class="nav-name">Allocera Intelligence</span></a>
@@ -214,7 +214,8 @@
     <div class="rule fade-up"></div>
     <div class="fade-up"><p><a href="https://improvado.io/blog/marketing-analytics-tools" target="_blank" rel="noopener">Improvado</a> describes marketing analytics tools as &ldquo;software platforms that collect and unify marketing data from ad platforms, CRM, and web analytics into a single&rdquo; view. <a href="https://www.hubspot.com/products/marketing/analytics" target="_blank" rel="noopener">HubSpot</a> says its analytics help you &ldquo;measure the performance of all your marketing campaigns in one place.&rdquo; That is genuinely useful. Seeing every channel together beats logging in to five dashboards.</p>
 <p>But for a business that runs on leads, the number that decides everything usually isn&rsquo;t in any of those dashboards. A campaign&rsquo;s leads may be bought through a partner who takes a payout. Some customers refund. Some payments are charged back weeks later. Compliance and fulfillment cost money on every sale. None of that lives in the ad account, so the dashboard can show a healthy return on a campaign that is losing money. Our guide to <a href="https://alloceraintelligence.com/marketing-costs/">marketing costs</a> walks through each cost the platforms can&rsquo;t see.</p>
-<p>CDAI was built for that gap. It&rsquo;s marketing analytics software for lead generation that answers the question the owner actually asks: <strong>did this campaign make money, and what should I do with it tomorrow?</strong></p></div>
+<p>CDAI was built for that gap. It&rsquo;s marketing analytics software for lead generation that answers the question the owner actually asks: <strong>did this campaign make money, and what should I do with it tomorrow?</strong></p>
+<p>CDAI doesn&rsquo;t compete with your CRM or call tracking. It sits above them and reconciles everything into one number per campaign, then tells you what to do.</p></div>
   </div>
 </section>
 
@@ -227,6 +228,21 @@
   <li><span><strong>Calculate.</strong> Every night, CDAI pulls fresh data and works out real profit, true cost per lead, and true customer acquisition cost for every campaign.</span></li>
   <li><span><strong>Decide.</strong> For each campaign, it makes one clear call, with the numbers and a confidence level behind it.</span></li>
   <li><span><strong>Grade.</strong> It rechecks its own math and, once enough time has passed, grades whether each past decision was right.</span></li>
+</ol>
+<p><strong>What happens every night, in this order:</strong></p>
+<ol class="steps">
+  <li><span><strong>Ingest.</strong> CDAI pulls in your data from the platforms you connected. It is built for 10 platforms, plus CSV import and a generic webhook, and it reads a rolling window matched to your sales cycle (30 days by default).</span></li>
+  <li><span><strong>Build each campaign&rsquo;s profit and loss.</strong> Ad spend, fees, partner payouts, refunds, chargebacks, compliance costs, and operating costs you add, against the revenue it closed.</span></li>
+  <li><span><strong>Check for risk.</strong> It watches for rising cost per lead, lead-quality decay, fraud concentrating in a campaign, chargeback spikes, shrinking margins, and partner payouts that eat too much of the revenue.</span></li>
+  <li><span><strong>Project the close-rate trend.</strong> It tracks each campaign&rsquo;s weekly close rate and projects it forward, so a collapse is flagged before it reaches your margin.</span></li>
+  <li><span><strong>Make the decision.</strong> One of eight for each campaign: Scale, Hold, Cut, Pause, Quarantine, Renegotiate, Investigate, or Flag.</span></li>
+  <li><span><strong>Gate it.</strong> Every decision carries a confidence level, thin data can&rsquo;t produce a Scale, and a stability gate stops decisions from flip-flopping night to night.</span></li>
+  <li><span><strong>Grade past decisions.</strong> Once a sales cycle has passed, CDAI scores whether each earlier decision was right, with the dollar impact.</span></li>
+  <li><span><strong>Lock attribution at first touch.</strong> A lead&rsquo;s campaign doesn&rsquo;t drift on re-sync, and revenue that can&rsquo;t be tied to a campaign is kept separate, never forced into one.</span></li>
+  <li><span><strong>Run data-health checks.</strong> Stale or broken feeds are caught before they skew a decision.</span></li>
+  <li><span><strong>Update the partner scorecard.</strong> Close rate, payouts, refunds, chargebacks, and a risk tier for every lead partner.</span></li>
+  <li><span><strong>Update the budget model.</strong> An estimate of how much spend could move from Cut campaigns to Scale campaigns. It is an estimate, not a forecast.</span></li>
+  <li><span><strong>Send the nightly digest.</strong> The decisions arrive in your email as well as your dashboard.</span></li>
 </ol></div>
   </div>
 </section>
@@ -285,14 +301,19 @@
   <div class="section-inner">
     <h2 class="section-title fade-up">The <em>Nightly Decision</em></h2>
     <div class="rule fade-up"></div>
-    <div class="fade-up"><p>Numbers alone don&rsquo;t move budget, and that&rsquo;s where most marketing analytics software leaves you on your own. So after calculating, CDAI makes one clear decision for each campaign:</p>
+    <div class="fade-up"><p>Numbers alone don&rsquo;t move budget, and that&rsquo;s where most marketing analytics software leaves you on your own. So after calculating, CDAI makes one clear decision for each campaign, chosen from eight:</p>
 <div class="panel-grid">
-  <div class="panel-card"><span class="panel-headline gold">Scale</span><div class="panel-desc">The campaign is making real profit and the trend supports spending more.</div></div>
-  <div class="panel-card"><span class="panel-headline gold">Hold</span><div class="panel-desc">It&rsquo;s working, but not clearly enough to add budget yet.</div></div>
-  <div class="panel-card"><span class="panel-headline gold">Cut</span><div class="panel-desc">Profit is thin or slipping; reduce spend before it turns into a loss.</div></div>
-  <div class="panel-card"><span class="panel-headline gold">Pause</span><div class="panel-desc">The campaign is losing money after every cost.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">Scale</span><div class="panel-desc">The campaign is profitable, has no risk signals, and has enough data behind it. Add budget.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">Hold</span><div class="panel-desc">The default. Keep the budget steady. This also covers campaigns whose deals haven&rsquo;t closed yet, or where there isn&rsquo;t enough data to confirm a Scale.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">Cut</span><div class="panel-desc">The campaign is losing money on real closed revenue. Reduce or stop spend. CDAI never cuts a campaign just because deals haven&rsquo;t closed yet.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">Pause</span><div class="panel-desc">An emergency stop for extreme fraud, severe losses, or a chargeback surge.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">Quarantine</span><div class="panel-desc">Fraud is concentrating in this campaign&rsquo;s leads. Isolate it and check the source.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">Renegotiate</span><div class="panel-desc">A partner&rsquo;s payouts are taking too much of the revenue. Renegotiate the terms.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">Investigate</span><div class="panel-desc">Lead quality is slipping, or the close rate is projected to collapse. Review the partner or traffic source.</div></div>
+  <div class="panel-card"><span class="panel-headline gold">Flag</span><div class="panel-desc">The data doesn&rsquo;t add up, so a person checks before anyone acts.</div></div>
 </div>
-<p>Each decision comes with the numbers behind it and a confidence level. CDAI also watches for early warning signs, like true cost per lead rising faster than the dashboard&rsquo;s, or close rates slipping, so problems show up before they reach your books. <strong>You stay in control of every move:</strong> CDAI recommends, and you decide what changes in your ad accounts. Our <a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">scale, hold, cut, pause framework</a> explains how to use each call when setting budgets.</p></div>
+</div>
+<p>Each decision comes with the numbers behind it and a confidence level. CDAI also watches for early warning signs, like true cost per lead rising faster than the dashboard&rsquo;s, or close rates slipping, so problems show up before they reach your books. <strong>You stay in control of every move:</strong> CDAI recommends, and you decide what changes in your ad accounts. Cut, Pause, and Quarantine are advisory like every other decision: CDAI never changes your ad accounts, and a person acts on the call. Our <a href="https://alloceraintelligence.com/scale-hold-cut-pause-framework/">scale, hold, cut, pause framework</a> explains how to use each call when setting budgets.</p></div>
   </div>
 </section>
 
@@ -305,12 +326,24 @@
   <li><strong>It rechecks its own math</strong> every night, and it stops on bad data instead of making decisions from it.</li>
   <li><strong>It grades its past decisions.</strong> Once your industry&rsquo;s sales cycle has passed, it compares what happened with what it recommended. Our <a href="https://alloceraintelligence.com/30-day-retest-methodology/">30-day retest</a> explains how that grading works.</li>
 </ul>
-<div class="stat-row">
-  <div class="stat"><b>89.5%</b><span>accurate overall (1,210 of 1,352 scored decisions)</span></div>
-  <div class="stat"><b>9</b><span>businesses across 7 industries in the validation</span></div>
-  <div class="stat"><b>100%</b><span>math match, checked two ways</span></div>
+<p><strong>Accuracy by decision type, from the September 2026 validation</strong></p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Decision</th><th>Accuracy</th><th>Scored</th></tr></thead>
+  <tbody>
+    <tr><td>Scale</td><td class="num">98.0%</td><td class="num">818 of 835</td></tr>
+    <tr><td>Hold</td><td class="num">95.2%</td><td class="num">40 of 42</td></tr>
+    <tr><td>Pause</td><td class="num">85.2%</td><td class="num">144 of 169</td></tr>
+    <tr><td>Flag</td><td class="num">70.9%</td><td class="num">200 of 282</td></tr>
+    <tr><td>Cut</td><td class="num">55.6%*</td><td class="num">5 of 9</td></tr>
+    <tr><td>Investigate</td><td class="num">100%</td><td class="num">2 of 2</td></tr>
+    <tr><td>Renegotiate</td><td class="num">100%</td><td class="num">1 of 1</td></tr>
+  </tbody>
+</table>
 </div>
-<p>Those figures come from CDAI&rsquo;s controlled validation before release. Every result is published in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>, and the <a href="https://alloceraintelligence.com/proof/">proof page</a> shows how it was tested.</p></div>
+<p class="note">* Cut: every miss came from one deliberately extreme stress-test business.</p>
+<p>Quarantine detection was correct in 12 of 12 cases. It scores 0 of 12 because outcome scoring needs a person to act on the call. The math matched 100% when every dollar was checked two ways.</p>
+<p>Those figures come from CDAI&rsquo;s controlled validation before release, on 9 simulated businesses across 7 industries. Every result is published in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>, and the <a href="https://alloceraintelligence.com/proof/">proof page</a> shows how it was validated.</p></div>
   </div>
 </section>
 
@@ -355,10 +388,10 @@
     <div class="rule fade-up"></div>
     <div class="fade-up"><details class="faq-item"><summary>What does marketing analytics software do?</summary><div class="faq-a">It collects data from your ad platforms, CRM, and website so you can measure campaign performance in one place. Most tools focus on reporting and attribution. CDAI adds real profit per campaign and a clear decision for each one.</div></details>
 <details class="faq-item"><summary>What are the four main types of marketing analytics?</summary><div class="faq-a">Descriptive (what happened), diagnostic (why it happened), predictive (what will likely happen), and prescriptive (what to do next). Most dashboards are descriptive. CDAI is prescriptive: it tells you whether to scale, hold, cut, or pause each campaign, and shows why.</div></details>
-<details class="faq-item"><summary>Does CDAI change my ads automatically?</summary><div class="faq-a">No. CDAI makes a recommendation for each campaign with the numbers and a confidence level behind it. You decide what to change in your ad accounts.</div></details>
+<details class="faq-item"><summary>Does CDAI change my ads automatically?</summary><div class="faq-a">No. CDAI makes a recommendation for each campaign with the numbers and a confidence level behind it. You decide what to change in your ad accounts. Every decision is advisory.</div></details>
 <details class="faq-item"><summary>What if a tool I use isn&rsquo;t one of the built integrations?</summary><div class="faq-a">You can upload a CSV export, which CDAI recognizes automatically for 9 common platforms, or send leads from any CRM or form tool through a webhook.</div></details>
 <details class="faq-item"><summary>Do I need to connect everything before it works?</summary><div class="faq-a">No. CDAI works with what you connect. Your ad accounts and CRM are the core; adding partner payouts, refunds, and other costs makes each campaign&rsquo;s profit more complete.</div></details>
-<details class="faq-item"><summary>How accurate are CDAI&rsquo;s decisions?</summary><div class="faq-a">In a controlled validation before release, CDAI&rsquo;s decisions were 89.5% accurate overall (1,210 of 1,352 scored decisions) across 9 businesses in 7 industries, with the math matching 100% when checked two ways. The full results are in the validation report.</div></details></div>
+<details class="faq-item"><summary>How accurate are CDAI&rsquo;s decisions?</summary><div class="faq-a">It depends on the decision type. In the September 2026 validation: Scale 98.0% (818 of 835), Hold 95.2% (40 of 42), Pause 85.2% (144 of 169), Flag 70.9% (200 of 282), Cut 55.6% (5 of 9, all misses from one deliberately extreme stress-test business), Investigate 100% (2 of 2), and Renegotiate 100% (1 of 1). Quarantine detection was correct in 12 of 12, but it scores 0 of 12 because outcome scoring needs a person to act on the call. The math matched 100% when checked two ways.</div></details></div>
   </div>
 </section>
 

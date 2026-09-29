@@ -169,7 +169,7 @@
 #prs .final-cta .btn-row{justify-content:center}
 </style>
 <div id="prs">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a marketing case study?", "acceptedAnswer": {"@type": "Answer", "text": "A detailed look at a real challenge, the solution used, and the measurable results. This one covers how CDAI’s math and decisions were tested, and a real pilot with Apex Care Solutions."}}, {"@type": "Question", "name": "Was the validation run on real client data?", "acceptedAnswer": {"@type": "Answer", "text": "No, and that’s deliberate. It used simulated businesses where the right answer was known, so a real client’s budget was never at risk while the engine was being proven. The Apex pilot is the real-client part of this case study."}}, {"@type": "Question", "name": "How accurate are CDAI’s decisions?", "acceptedAnswer": {"@type": "Answer", "text": "89.5% overall across 1,352 scored decisions, 98.0% when it says spend more, and 95.2% when it says hold steady. Accuracy for every decision type is in the validation report."}}, {"@type": "Question", "name": "What did Apex Care Solutions connect?", "acceptedAnswer": {"@type": "Answer", "text": "Its HubSpot CRM and its Meta ad account. That was enough for CDAI to calculate true cost against closed revenue and issue nightly decisions."}}, {"@type": "Question", "name": "How do you write a case study for marketing?", "acceptedAnswer": {"@type": "Answer", "text": "State the challenge, explain the solution, and show results the reader can check, including how they were measured. The strongest case studies also show what didn’t work."}}, {"@type": "Question", "name": "How do I see CDAI on my own campaigns?", "acceptedAnswer": {"@type": "Answer", "text": "Sign up, choose your industry, and connect your ad accounts and CRM. Your first numbers arrive after the first nightly run. See pricing for plans."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a marketing case study?", "acceptedAnswer": {"@type": "Answer", "text": "A detailed look at a real challenge, the solution used, and the measurable results. This one covers how CDAI’s math and decisions were validated, decision type by decision type."}}, {"@type": "Question", "name": "Was the validation run on real client data?", "acceptedAnswer": {"@type": "Answer", "text": "No, and that’s deliberate. It used simulated businesses where the right answer was known, so a real client’s budget was never at risk while the engine was being proven."}}, {"@type": "Question", "name": "How accurate are CDAI’s decisions?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the decision type. In the September 2026 validation: Scale 98.0% (818 of 835), Hold 95.2% (40 of 42), Pause 85.2% (144 of 169), Flag 70.9% (200 of 282), Cut 55.6% (5 of 9, all misses from one deliberately extreme stress-test business), Investigate 100% (2 of 2), and Renegotiate 100% (1 of 1). Quarantine detection was correct in 12 of 12, but it scores 0 of 12 because outcome scoring needs a person to act on the call. The math matched 100% when checked two ways."}}, {"@type": "Question", "name": "Does CDAI change my ads?", "acceptedAnswer": {"@type": "Answer", "text": "No. CDAI is advisory. It recommends, and a person makes every change in the ad accounts."}}, {"@type": "Question", "name": "How do you write a case study for marketing?", "acceptedAnswer": {"@type": "Answer", "text": "State the challenge, explain the solution, and show results the reader can check, including how they were measured. The strongest case studies also show what didn’t work."}}, {"@type": "Question", "name": "How do I see CDAI on my own campaigns?", "acceptedAnswer": {"@type": "Answer", "text": "Sign up, choose your industry, and connect your ad accounts and CRM. Your first numbers arrive after the first nightly run. See pricing for plans."}}]}</script>
 
 <nav>
   <a class="nav-brand" href="https://alloceraintelligence.com/"><img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence CDAI Engine"><span class="nav-name">Allocera Intelligence</span></a>
@@ -190,7 +190,7 @@
   <div class="section-inner">
     <div class="eyebrow">Proof</div>
     <h1 class="page-title">Marketing Case Study: <em>How CDAI Proves Its Numbers Before They Reach You</em></h1>
-    <p class="lead-text" style="color:#d0daf0">A marketing case study should show the challenge, the solution, and results you can check. This page does that for CDAI (Capital, Decision, Accuracy, Intelligence), the engine behind Allocera Intelligence, in two parts: a controlled validation of 1,352 decisions with every dollar checked twice, and a real pilot with Apex Care Solutions, including what their team said.</p>
+    <p class="lead-text" style="color:#d0daf0">1,352 scored decisions, 9 businesses, 7 industries. That is the validation behind CDAI (Capital, Decision, Accuracy, Intelligence), the engine behind Allocera Intelligence. This page shows how each type of decision scored, how the math was checked, and where the engine misses.</p>
     <div class="btn-row">
       <a href="https://cdai-portal.vercel.app/signup/" class="btn-primary">Get Started</a>
       <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/" class="btn-gold-outline">Read the Validation Report &rarr;</a>
@@ -201,10 +201,10 @@
 <section class="alt"><div class="section-inner prose fade-up"><div class="keybox">
   <h3>The proof at a glance</h3>
   <ul>
-    <li><strong>89.5% accurate overall</strong> across 1,352 scored decisions, in 9 businesses from 7 industries.</li>
-    <li><strong>98.0%</strong> accurate when it says spend more, and <strong>95.2%</strong> when it says hold steady.</li>
+    <li><strong>1,352 scored decisions</strong> across 9 simulated businesses in 7 industries.</li>
+    <li><strong>Results by decision type,</strong> never one blended number. The full table is below.</li>
     <li><strong>100% math match:</strong> every dollar calculated two separate ways, with zero mismatches.</li>
-    <li><strong>A real pilot:</strong> Apex Care Solutions, a senior care company in North Carolina, ran CDAI on its own CRM and ad account.</li>
+    <li><strong>Advisory only:</strong> CDAI recommends; a person makes every change.</li>
   </ul>
 </div></div></section>
 
@@ -233,31 +233,41 @@
 
 <section id="validation">
   <div class="section-inner prose">
-    <div class="eyebrow fade-up">Case Study 1</div>
-    <h2 class="section-title fade-up">Case Study 1: <em>The Controlled Validation</em></h2>
+    <div class="eyebrow fade-up">The Validation</div>
+    <h2 class="section-title fade-up">The Controlled <em>Validation</em></h2>
     <div class="rule fade-up"></div>
-    <div class="fade-up"><p>The fair way to test a decision engine without putting a client&rsquo;s money at risk is to run it on businesses where the right answer is known. CDAI was run on 9 simulated businesses across 7 industries for 860 simulated days. Every decision was later graded against what actually happened to that campaign&rsquo;s margin, and every dollar was checked against the raw data independently of the engine&rsquo;s own math.</p>
+    <div class="fade-up"><p>The fair way to check a decision engine without putting a client&rsquo;s money at risk is to run it on businesses where the right answer is known. CDAI was run on 9 simulated businesses across 7 industries for 860 simulated days. Every decision was later graded against what actually happened to that campaign&rsquo;s margin, and every dollar was checked against the raw data independently of the engine&rsquo;s own math.</p>
 <figure>
   <img src="https://alloceraintelligence.com/wp-content/uploads/2026/09/Client-portal-for-cdai-example.png" alt="Marketing case study: the CDAI client portal showing real profit and a decision for every campaign" loading="lazy">
   <figcaption>The CDAI client portal.</figcaption>
-</figure><div class="stat-row">
-  <div class="stat"><b>89.5%</b><span>accurate overall (1,210 of 1,352 scored decisions)</span></div>
-  <div class="stat"><b>98.0%</b><span>accurate telling you to spend more</span></div>
-  <div class="stat"><b>100%</b><span>math match, checked two ways</span></div>
+</figure>
+<p><strong>Accuracy by decision type, from the September 2026 validation</strong></p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Decision</th><th>Accuracy</th><th>Scored</th></tr></thead>
+  <tbody>
+    <tr><td>Scale</td><td class="num">98.0%</td><td class="num">818 of 835</td></tr>
+    <tr><td>Hold</td><td class="num">95.2%</td><td class="num">40 of 42</td></tr>
+    <tr><td>Pause</td><td class="num">85.2%</td><td class="num">144 of 169</td></tr>
+    <tr><td>Flag</td><td class="num">70.9%</td><td class="num">200 of 282</td></tr>
+    <tr><td>Cut</td><td class="num">55.6%*</td><td class="num">5 of 9</td></tr>
+    <tr><td>Investigate</td><td class="num">100%</td><td class="num">2 of 2</td></tr>
+    <tr><td>Renegotiate</td><td class="num">100%</td><td class="num">1 of 1</td></tr>
+  </tbody>
+</table>
 </div>
-<p>The validation also did what a good test should: it found problems. Along the way it uncovered real bugs, including a gap in how one type of decision was graded. Each was found, fixed, and proven fixed before the engine reached a client. Every result, by decision type, is published in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>, and the <a href="https://alloceraintelligence.com/allocera-intelligence-case-study-proof/">full validation case study</a> walks through the method.</p></div>
+<p class="note">* Cut: every miss came from one deliberately extreme stress-test business.</p>
+<p>Quarantine detection was correct in 12 of 12 cases. It scores 0 of 12 because outcome scoring needs a person to act on the call. The math matched 100% when every dollar was checked two ways.</p>
+<p>The validation also did what validation is for: it found problems. Along the way it uncovered real bugs, including a gap in how one type of decision was graded. Each was found, fixed, and proven fixed before the engine reached a client. Every result is published in the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">contribution margin marketing validation report</a>, and the <a href="https://alloceraintelligence.com/allocera-intelligence-case-study-proof/">data-driven marketing case study</a> shows what CDAI does when the data isn&rsquo;t good enough.</p></div>
   </div>
 </section>
 
 <section id="pilot" style="background:#071530!important;border-top:1px solid #102040;border-bottom:1px solid #102040">
   <div class="section-inner prose">
-    <div class="eyebrow fade-up">Case Study 2</div>
-    <h2 class="section-title fade-up">Case Study 2: <em>The Apex Care Solutions Pilot</em></h2>
+    <div class="eyebrow fade-up">Client Reviews</div>
+    <h2 class="section-title fade-up">What Clients <em>Say</em></h2>
     <div class="rule fade-up"></div>
-    <div class="fade-up"><p><strong>The client:</strong> Apex Care Solutions, a senior care company in North Carolina, was CDAI&rsquo;s pilot client.</p>
-<p><strong>The setup:</strong> Apex connected two things: its HubSpot CRM and its Meta ad account, both in one click. No partner feeds, no payment data, no spreadsheets.</p>
-<p><strong>What it showed:</strong> CDAI doesn&rsquo;t need every integration to be useful. With just a CRM and one ad platform connected, it pulled the data automatically each night, calculated true cost against real closed revenue, and issued live decisions for the team to review. Every other cost source adds precision when it&rsquo;s connected; none is required to start. The <a href="https://alloceraintelligence.com/case-study-2-oauth-validation/">connection case study</a> covers how the one-click setup was verified.</p>
-<blockquote>&ldquo;CDAI gave us visibility into our paid acquisition that we simply didn&rsquo;t have before. Instead of looking at separate numbers across our advertising and CRM systems, we could see the actual economics of our campaigns and get a clear directive on what needed attention. The fact that the engine runs automatically and bases its decisions on the underlying data made it especially useful for our team.&rdquo;<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:#4a6488;font-style:normal">SID SMITH &middot; APEX CARE SOLUTIONS LLC</span></blockquote>
+    <div class="fade-up"><blockquote>&ldquo;CDAI gave us visibility into our paid acquisition that we simply didn&rsquo;t have before. Instead of looking at separate numbers across our advertising and CRM systems, we could see the actual economics of our campaigns and get a clear directive on what needed attention. The fact that the engine runs automatically and bases its decisions on the underlying data made it especially useful for our team.&rdquo;<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:#4a6488;font-style:normal">SID SMITH &middot; APEX CARE SOLUTIONS LLC</span></blockquote>
 <blockquote>&ldquo;What stood out to me about Allocera was that it wasn&rsquo;t just another reporting dashboard. CDAI connected the data, reconciled the numbers, and surfaced campaigns that needed attention without us having to manually dig through multiple platforms. Having a clear, data-driven directive made it much easier to understand where our advertising dollars were actually going.&rdquo;<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:#4a6488;font-style:normal">REBECCA ACER &middot; APEX CARE SOLUTIONS LLC</span></blockquote></div>
   </div>
 </section>
@@ -266,7 +276,7 @@
   <div class="section-inner prose">
     <h2 class="section-title fade-up">See the <em>Client Portal</em></h2>
     <div class="rule fade-up"></div>
-    <div class="fade-up"><p>This is the CDAI client portal the pilot team worked from: every campaign&rsquo;s real numbers and its nightly decision in one place.</p>
+    <div class="fade-up"><p>This is the CDAI client portal: every campaign&rsquo;s numbers and its nightly decision in one place.</p>
 <div class="dash-video-wrap">
   <video autoplay muted loop playsinline controls preload="metadata" poster="https://alloceraintelligence.com/wp-content/uploads/2026/09/cdai-portal-video-poster.jpg">
     <source src="https://alloceraintelligence.com/wp-content/uploads/2026/09/cdai-portal-video.mp4" type="video/mp4">
@@ -286,9 +296,9 @@
   <thead><tr><th>Question</th><th>Answer</th><th>Where to check it</th></tr></thead>
   <tbody>
     <tr><td>Is the math right?</td><td>Yes. 100% match, every dollar calculated two separate ways.</td><td><a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">Validation report</a></td></tr>
-    <tr><td>Are the decisions right?</td><td>89.5% overall; 98.0% on scale and 95.2% on hold.</td><td><a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">Validation report</a></td></tr>
+    <tr><td>Are the decisions right?</td><td>It depends on the decision type. Scale 98.0% and Hold 95.2%; every type is in the table above.</td><td><a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">Validation report</a></td></tr>
     <tr><td>Does it grade itself?</td><td>Yes. Every past decision is graded once its sales cycle has passed.</td><td><a href="https://alloceraintelligence.com/30-day-retest-methodology/">30-day retest</a></td></tr>
-    <tr><td>Does it work on a real business?</td><td>Yes. The Apex pilot ran on a real CRM and ad account.</td><td>The reviews above</td></tr>
+    <tr><td>How was it checked?</td><td>On 9 simulated businesses across 7 industries, so the right answer was known.</td><td><a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">Validation report</a></td></tr>
     <tr><td>Does it change my ads?</td><td>No. It recommends; you decide every change.</td><td><a href="https://alloceraintelligence.com/how-it-works/">How it works</a></td></tr>
   </tbody>
 </table>
@@ -302,10 +312,10 @@
     <div class="eyebrow fade-up">Common Questions</div>
     <h2 class="section-title fade-up">Marketing Case <em>Study FAQs</em></h2>
     <div class="rule fade-up"></div>
-    <div class="fade-up"><details class="faq-item"><summary>What is a marketing case study?</summary><div class="faq-a">A detailed look at a real challenge, the solution used, and the measurable results. This one covers how CDAI&rsquo;s math and decisions were tested, and a real pilot with Apex Care Solutions.</div></details>
-<details class="faq-item"><summary>Was the validation run on real client data?</summary><div class="faq-a">No, and that&rsquo;s deliberate. It used simulated businesses where the right answer was known, so a real client&rsquo;s budget was never at risk while the engine was being proven. The Apex pilot is the real-client part of this case study.</div></details>
-<details class="faq-item"><summary>How accurate are CDAI&rsquo;s decisions?</summary><div class="faq-a">89.5% overall across 1,352 scored decisions, 98.0% when it says spend more, and 95.2% when it says hold steady. Accuracy for every decision type is in the validation report.</div></details>
-<details class="faq-item"><summary>What did Apex Care Solutions connect?</summary><div class="faq-a">Its HubSpot CRM and its Meta ad account. That was enough for CDAI to calculate true cost against closed revenue and issue nightly decisions.</div></details>
+    <div class="fade-up"><details class="faq-item"><summary>What is a marketing case study?</summary><div class="faq-a">A detailed look at a real challenge, the solution used, and the measurable results. This one covers how CDAI&rsquo;s math and decisions were validated, decision type by decision type.</div></details>
+<details class="faq-item"><summary>Was the validation run on real client data?</summary><div class="faq-a">No, and that&rsquo;s deliberate. It used simulated businesses where the right answer was known, so a real client&rsquo;s budget was never at risk while the engine was being proven.</div></details>
+<details class="faq-item"><summary>How accurate are CDAI&rsquo;s decisions?</summary><div class="faq-a">It depends on the decision type. In the September 2026 validation: Scale 98.0% (818 of 835), Hold 95.2% (40 of 42), Pause 85.2% (144 of 169), Flag 70.9% (200 of 282), Cut 55.6% (5 of 9, all misses from one deliberately extreme stress-test business), Investigate 100% (2 of 2), and Renegotiate 100% (1 of 1). Quarantine detection was correct in 12 of 12, but it scores 0 of 12 because outcome scoring needs a person to act on the call. The math matched 100% when checked two ways.</div></details>
+<details class="faq-item"><summary>Does CDAI change my ads?</summary><div class="faq-a">No. CDAI is advisory. It recommends, and a person makes every change in the ad accounts.</div></details>
 <details class="faq-item"><summary>How do you write a case study for marketing?</summary><div class="faq-a">State the challenge, explain the solution, and show results the reader can check, including how they were measured. The strongest case studies also show what didn&rsquo;t work.</div></details>
 <details class="faq-item"><summary>How do I see CDAI on my own campaigns?</summary><div class="faq-a">Sign up, choose your industry, and connect your ad accounts and CRM. Your first numbers arrive after the first nightly run. See <a href="https://alloceraintelligence.com/pricing/">pricing</a> for plans.</div></details></div>
   </div>
@@ -317,7 +327,7 @@
       <div class="intake-info fade-up">
         <div class="eyebrow">Get Started</div>
         <h3>See What Your Campaigns Really Made</h3>
-        <p class="lead-text" style="font-size:clamp(13px,1.6vw,15px)">The same engine that passed the validation and ran the Apex pilot can run on your data. Connect your ad accounts and CRM and get real profit and one clear decision for every campaign, every night. Questions first? Send us a note and we&rsquo;ll get back to you.</p>
+        <p class="lead-text" style="font-size:clamp(13px,1.6vw,15px)">The same engine that went through the validation can run on your data. Connect your ad accounts and CRM and get real profit and one clear decision for every campaign, every night. Questions first? Send us a note and we&rsquo;ll get back to you.</p>
         <div class="btn-row" style="margin-bottom:clamp(20px,3vh,28px)"><a href="https://cdai-portal.vercel.app/signup/" class="btn-primary">Get Started</a></div>
         <div class="intake-steps">
           <div class="intake-step"><span class="intake-step-num">01</span><div><span class="intake-step-title">Sign up and choose your industry</span><span class="intake-step-desc">Decisions are graded against your real sales cycle.</span></div></div>

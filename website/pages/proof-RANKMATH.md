@@ -6,8 +6,8 @@
 |---|---|
 | Page title / H1 | `Marketing Case Study: How CDAI Proves Its Numbers Before They Reach You` |
 | Focus keyword | `marketing case study` |
-| SEO title (55) | `Marketing Case Study: 89.5% Accurate on 1,352 Decisions` |
-| Description (142) | `See the CDAI marketing case study: a validation of 1,352 decisions with every dollar checked twice, and a real pilot with Apex Care Solutions.` |
+| SEO title (52) | `Marketing Case Study: 1,352 Decisions Scored by Type` |
+| Description (119) | `See the CDAI marketing case study: 1,352 decisions scored by type, with the math checked two ways and the misses shown.` |
 | Permalink | `proof` (unchanged) |
 | Schema | Article → Article (FAQ schema is built into the page) |
 | Featured image | Already in your Media library (nothing to upload): `Client-portal-for-cdai-example.png` |
@@ -46,11 +46,11 @@
 ## Claims
 | Claim | Source |
 |---|---|
-| 89.5% (1,210/1,352), 9 businesses, 7 industries, 860 simulated days, math 100% two ways | Validation report (Sept 24) |
+| 1,352 scored decisions, 9 simulated businesses, 7 industries, 860 simulated days, math 100% two ways | Validation report (Sept 24) |
 | Scale 98.0%, Hold 95.2% | Validation after the SCALE fix; same figures as the live homepage |
 | Bugs found and fixed before release, including a grading gap | Validation report §7; same wording as the homepage |
 | Validation used simulated businesses | Validation report methodology, stated plainly on the page |
-| Apex: senior care, North Carolina, pilot client; connected HubSpot + Meta; CDAI ran nightly and issued live decisions with only a CRM and one ad platform | Old proof page + engine facts (a live org with 1 CRM + 1 ad platform issued live directives, Sept 18) |
+| Sid Smith and Rebecca Acer reviews, word for word, credited to Apex Care Solutions LLC. No pilot or case-study claims. | Homepage reviews |
 | Sid Smith and Rebecca Acer reviews | Word for word from the homepage |
 
 **Removed from the old page (not provable here):**
@@ -60,3 +60,8 @@
 - the old audit prices in the form
 
 If you have a screenshot proving the Apex zero-customer finding, it can be added back.
+
+
+## Sept 29 update: rules applied
+Blended accuracy figures, the Apex pilot section, "tests" wording and unverifiable numbers were removed. Results are shown per decision type, from the Sept 2026 validation on 9 simulated businesses.
+Per-decision numbers: Scale 98.0% (818/835), Hold 95.2% (40/42), Pause 85.2% (144/169), Flag 70.9% (200/282), Cut 55.6% (5/9), Investigate 100% (2/2), Renegotiate 100% (1/1); Quarantine detection 12/12, scored 0/12.

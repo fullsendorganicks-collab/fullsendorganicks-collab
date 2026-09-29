@@ -169,7 +169,7 @@
 #vcx .final-cta .btn-row{justify-content:center}
 </style>
 <div id="vcx">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is data-driven marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Using data from your ad platforms, CRM, and other sources to decide where to spend and what to change. It only works when that data is fresh, complete, and connected to real outcomes like closed revenue."}}, {"@type": "Question", "name": "What are the 5 steps of data-driven decision making?", "acceptedAnswer": {"@type": "Answer", "text": "Collect the data, check that it’s trustworthy, calculate what it means, decide what to do, and grade the decision once results are in. CDAI automates all five, nightly."}}, {"@type": "Question", "name": "What is an example of data-driven marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Cutting budget from a campaign because its leads cost more than the customers they produce are worth, based on real closed revenue and every cost, rather than on clicks or platform-reported conversions."}}, {"@type": "Question", "name": "What happens when CDAI’s data isn’t good enough?", "acceptedAnswer": {"@type": "Answer", "text": "It makes no decisions and tells you what’s wrong, such as stale data or leads with no campaign source, so you can fix it. It never fills the gap with a guess."}}, {"@type": "Question", "name": "Were these real businesses?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. FullSend Organicks LLC (owned by Allocera’s founder) and Apex Care Solutions LLC (CDAI’s pilot client) both gave permission to publish."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is data-driven marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Using data from your ad platforms, CRM, and other sources to decide where to spend and what to change. It only works when that data is fresh, complete, and connected to real outcomes like closed revenue."}}, {"@type": "Question", "name": "What are the 5 steps of data-driven decision making?", "acceptedAnswer": {"@type": "Answer", "text": "Collect the data, check that it’s trustworthy, calculate what it means, decide what to do, and grade the decision once results are in. CDAI automates all five, nightly."}}, {"@type": "Question", "name": "What is an example of data-driven marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Cutting budget from a campaign because its leads cost more than the customers they produce are worth, based on real closed revenue and every cost, rather than on clicks or platform-reported conversions."}}, {"@type": "Question", "name": "What happens when CDAI’s data isn’t good enough?", "acceptedAnswer": {"@type": "Answer", "text": "It makes no decisions and tells you what’s wrong, such as stale data or leads with no campaign source, so you can fix it. It never fills the gap with a guess."}}, {"@type": "Question", "name": "Was this run on real client data?", "acceptedAnswer": {"@type": "Answer", "text": "No. The validation used 9 simulated businesses across 7 industries, so the right answer was known and no client’s budget was at risk."}}, {"@type": "Question", "name": "How accurate are CDAI’s decisions?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the decision type. In the September 2026 validation: Scale 98.0% (818 of 835), Hold 95.2% (40 of 42), Pause 85.2% (144 of 169), Flag 70.9% (200 of 282), Cut 55.6% (5 of 9, all misses from one deliberately extreme stress-test business), Investigate 100% (2 of 2), and Renegotiate 100% (1 of 1). Quarantine detection was correct in 12 of 12, but it scores 0 of 12 because outcome scoring needs a person to act on the call. The math matched 100% when checked two ways."}}]}</script>
 
 <nav>
   <a class="nav-brand" href="https://alloceraintelligence.com/"><img class="nav-logo" src="https://alloceraintelligence.com/wp-content/uploads/2026/03/cropped-0942C3D4-237F-4FEF-9FA1-F725FC321FDA-e1774768712164.png" alt="Allocera Intelligence CDAI Engine"><span class="nav-name">Allocera Intelligence</span></a>
@@ -188,9 +188,9 @@
 
 <section id="page-hero">
   <div class="section-inner">
-    <div class="eyebrow">Proof · Validation Case Study</div>
+    <div class="eyebrow">Proof · Validation</div>
     <h1 class="page-title">Data-Driven Marketing Case Study: <em>The Engine That Refuses to Guess</em></h1>
-    <p class="lead-text" style="color:#d0daf0">Data-driven marketing only works when the data is good enough to decide on. This case study shows what CDAI (Capital, Decision, Accuracy, Intelligence) does when it isn&rsquo;t: two real businesses, two real data problems, and the same response both times. The engine said so, and it made no decisions it couldn&rsquo;t stand behind.</p>
+    <p class="lead-text" style="color:#d0daf0">Data-driven marketing only works when the data is good enough to decide on. This page shows what CDAI (Capital, Decision, Accuracy, Intelligence) does when it isn&rsquo;t, and how its decisions scored in the September 2026 validation: 1,352 scored decisions across 9 simulated businesses in 7 industries.</p>
     <div class="btn-row">
       <a href="https://cdai-portal.vercel.app/signup/" class="btn-primary">Get Started</a>
       <a href="https://alloceraintelligence.com/proof/" class="btn-gold-outline">See All Proof &rarr;</a>
@@ -201,9 +201,9 @@
 <section class="alt"><div class="section-inner prose fade-up"><div class="keybox">
   <h3>What this case study shows</h3>
   <ul>
-    <li><strong>Test 1, stale data:</strong> a finished Google Ads campaign, about four months old. CDAI loaded it exactly as exported and refused to make decisions on it.</li>
-    <li><strong>Test 2, missing attribution:</strong> 276 CRM leads with no campaign source. CDAI refused to invent the missing link and flagged it as the finding.</li>
-    <li><strong>Same safety check both times:</strong> CDAI checks data every night before deciding, and stops when the data can&rsquo;t support a decision.</li>
+    <li><strong>Bad data means no decision:</strong> stale data, or leads with no campaign source, stop that night&rsquo;s decisions.</li>
+    <li><strong>Results by decision type:</strong> from the September 2026 validation on 9 simulated businesses across 7 industries, never one blended number.</li>
+    <li><strong>Math checked two ways:</strong> a 100% match, with zero mismatches.</li>
   </ul>
 </div></div></section>
 
@@ -224,69 +224,53 @@
 
 <section id="test1" style="background:#071530!important;border-top:1px solid #102040;border-bottom:1px solid #102040">
   <div class="section-inner prose">
-    <div class="eyebrow fade-up">Test 1</div>
-    <h2 class="section-title fade-up">Test 1: <em>Stale Data (FullSend Organicks)</em></h2>
+    <div class="eyebrow fade-up">The Safeguards</div>
+    <h2 class="section-title fade-up">What CDAI Does <em>When the Data Isn&rsquo;t Good Enough</em></h2>
     <div class="rule fade-up"></div>
-    <div class="fade-up"><p><strong>The business:</strong> FullSend Organicks LLC, an e-commerce company owned by Allocera Intelligence founder Nick Baum, who gave permission to publish.</p>
-<p><strong>The data:</strong> a completed Google Search Ads campaign that ran from August 31 to December 2, 2025: $2,112.17 in spend and 37 reported conversions, loaded from the real Google Ads export. By test time the data was about four months old.</p>
+    <div class="fade-up"><p>Before CDAI makes a decision, it checks the data. These are the situations it is built to catch:</p>
 <div class="table-wrap">
-<table class="narrow">
-  <thead><tr><th>Step</th><th>What CDAI did</th></tr></thead>
-  <tbody>
-    <tr><td>Load</td><td>Loaded the real export with every value exactly as exported</td></tr>
-    <tr><td>Calculate</td><td>Ran the full calculation without errors, using only the costs it was given</td></tr>
-    <tr><td>Check</td><td>Flagged the data as about four months stale</td></tr>
-    <tr class="total"><td>Decide</td><td>Made no decisions: the data wasn&rsquo;t safe to act on</td></tr>
-  </tbody>
-</table>
-</div>
-<p><strong>Why that&rsquo;s the right answer:</strong> a &ldquo;scale&rdquo; decision on four-month-old data would tell a business to spend more on conditions that may no longer exist. No decision is better than a confident wrong one.</p></div>
-  </div>
-</section>
-
-<section id="test2">
-  <div class="section-inner prose">
-    <div class="eyebrow fade-up">Test 2</div>
-    <h2 class="section-title fade-up">Test 2: <em>Missing Attribution (Apex Care Solutions)</em></h2>
-    <div class="rule fade-up"></div>
-    <div class="fade-up"><p><strong>The business:</strong> Apex Care Solutions LLC, a senior care company in North Carolina and CDAI&rsquo;s pilot client, which gave permission to publish as part of the pilot.</p>
-<p><strong>The data:</strong> Meta ad exports from January 1 to April 22, 2026, covering 7 campaigns, $2,414.12 in spend, and 62,211 impressions, plus a CRM file of 276 leads.</p>
-<p><strong>The problem:</strong> every one of the 276 leads listed its source as &ldquo;Contact Import.&rdquo; Not one was tied to the campaign that produced it.</p>
-<div class="table-wrap">
-<table class="narrow">
-  <thead><tr><th>Step</th><th>What CDAI did</th></tr></thead>
-  <tbody>
-    <tr><td>Load</td><td>Loaded all 7 campaigns and their spend exactly as exported</td></tr>
-    <tr><td>Check</td><td>Found that no lead carried a campaign source</td></tr>
-    <tr><td>Refuse to guess</td><td>Did not invent campaign assignments or fill the gap with a rule of thumb</td></tr>
-    <tr class="total"><td>Decide</td><td>Made no campaign decisions and flagged the missing attribution as the finding</td></tr>
-  </tbody>
-</table>
-</div>
-<p><strong>Why that&rsquo;s the right answer:</strong> without knowing which campaign produced each lead, there&rsquo;s no honest way to calculate cost per lead by campaign, let alone say which campaign to cut. A weaker tool would have spread the leads across campaigns by a formula and shown a clean chart anyway. The useful output here was the gap itself: fix lead attribution, and campaign-level decisions become possible. Our guide to <a href="https://alloceraintelligence.com/tag-manager-real-roi/">offline conversion tracking</a> covers how to connect leads to campaigns.</p></div>
-  </div>
-</section>
-
-<section id="proves" style="background:#071530!important;border-top:1px solid #102040;border-bottom:1px solid #102040">
-  <div class="section-inner prose">
-    <h2 class="section-title fade-up">What This Data-Driven <em>Marketing Case Study Proves</em></h2>
-    <div class="rule fade-up"></div>
-    <div class="fade-up"><div class="table-wrap">
 <table>
-  <thead><tr><th>Claim</th><th>Evidence</th></tr></thead>
+  <thead><tr><th>Situation</th><th>What CDAI does</th></tr></thead>
   <tbody>
-    <tr><td>CDAI doesn&rsquo;t change your numbers</td><td>Both exports were loaded exactly as exported, with nothing filled in</td></tr>
-    <tr><td>CDAI doesn&rsquo;t act on stale data</td><td>Test 1: four-month-old data, no decisions</td></tr>
-    <tr><td>CDAI doesn&rsquo;t invent attribution</td><td>Test 2: 276 unattributed leads, no invented campaign links</td></tr>
-    <tr><td>The safety check catches different problems</td><td>Two different triggers (age and missing attribution), same response</td></tr>
+    <tr><td>Ad or CRM data is stale</td><td>Flags the feed before it can skew a decision</td></tr>
+    <tr><td>Leads arrive with no campaign source</td><td>Keeps that revenue separate instead of forcing it into a campaign, and warns you when coverage gets low</td></tr>
+    <tr><td>Revenue with no recorded spend, or a campaign missing from the ad platform</td><td>Flags it for a person to check</td></tr>
+    <tr class="total"><td>A serious data problem</td><td>Stops that night&rsquo;s decisions instead of making them from bad data</td></tr>
   </tbody>
 </table>
 </div>
-<p>The same check runs every night for every client today: CDAI rechecks its own math and stops on bad data instead of making decisions from it. When the data is good, the decisions are graded later against what actually happened. Across 1,352 scored decisions in its validation, CDAI was 89.5% accurate, with the math matching 100% when checked two ways; see the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">validation report</a>.</p></div>
+<p><strong>Why that&rsquo;s the right answer:</strong> a Scale decision on stale data tells a business to spend more on conditions that may no longer exist. No decision is better than a confident wrong one. And without knowing which campaign produced each lead, there&rsquo;s no honest way to calculate cost per lead by campaign, so CDAI shows the gap instead of guessing. Our guide to <a href="https://alloceraintelligence.com/tag-manager-real-roi/">offline conversion tracking</a> covers how to connect leads to campaigns.</p></div>
   </div>
 </section>
 
-<section id="steps">
+
+<section id="proves">
+  <div class="section-inner prose">
+    <h2 class="section-title fade-up">How the Decisions <em>Scored in the Validation</em></h2>
+    <div class="rule fade-up"></div>
+    <div class="fade-up"><p>CDAI was run on 9 simulated businesses across 7 industries, so the right answer was known for every decision. Each one was graded against what actually happened to that campaign&rsquo;s margin.</p>
+<p><strong>Accuracy by decision type, from the September 2026 validation</strong></p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Decision</th><th>Accuracy</th><th>Scored</th></tr></thead>
+  <tbody>
+    <tr><td>Scale</td><td class="num">98.0%</td><td class="num">818 of 835</td></tr>
+    <tr><td>Hold</td><td class="num">95.2%</td><td class="num">40 of 42</td></tr>
+    <tr><td>Pause</td><td class="num">85.2%</td><td class="num">144 of 169</td></tr>
+    <tr><td>Flag</td><td class="num">70.9%</td><td class="num">200 of 282</td></tr>
+    <tr><td>Cut</td><td class="num">55.6%*</td><td class="num">5 of 9</td></tr>
+    <tr><td>Investigate</td><td class="num">100%</td><td class="num">2 of 2</td></tr>
+    <tr><td>Renegotiate</td><td class="num">100%</td><td class="num">1 of 1</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">* Cut: every miss came from one deliberately extreme stress-test business.</p>
+<p>Quarantine detection was correct in 12 of 12 cases. It scores 0 of 12 because outcome scoring needs a person to act on the call. The math matched 100% when every dollar was checked two ways.</p>
+<p>The same safeguards run every night for every client today: CDAI rechecks its own math and stops on bad data instead of making decisions from it. When the data is good, the decisions are graded later against what actually happened. See the <a href="https://alloceraintelligence.com/home-sample/contribution-margin-marketing/">validation report</a> for the full results.</p></div>
+  </div>
+</section>
+
+<section id="steps" style="background:#071530!important;border-top:1px solid #102040;border-bottom:1px solid #102040">
   <div class="section-inner prose">
     <h2 class="section-title fade-up">The 5 Steps of Data-Driven <em>Decision Making, the CDAI Way</em></h2>
     <div class="rule fade-up"></div>
@@ -301,7 +285,7 @@
   </div>
 </section>
 
-<section id="ready" style="background:#071530!important;border-top:1px solid #102040;border-bottom:1px solid #102040">
+<section id="ready">
   <div class="section-inner prose">
     <h2 class="section-title fade-up">How to Make <em>Your Marketing Data Decision-Ready</em></h2>
     <div class="rule fade-up"></div>
@@ -323,7 +307,8 @@
 <details class="faq-item"><summary>What are the 5 steps of data-driven decision making?</summary><div class="faq-a">Collect the data, check that it&rsquo;s trustworthy, calculate what it means, decide what to do, and grade the decision once results are in. CDAI automates all five, nightly.</div></details>
 <details class="faq-item"><summary>What is an example of data-driven marketing?</summary><div class="faq-a">Cutting budget from a campaign because its leads cost more than the customers they produce are worth, based on real closed revenue and every cost, rather than on clicks or platform-reported conversions.</div></details>
 <details class="faq-item"><summary>What happens when CDAI&rsquo;s data isn&rsquo;t good enough?</summary><div class="faq-a">It makes no decisions and tells you what&rsquo;s wrong, such as stale data or leads with no campaign source, so you can fix it. It never fills the gap with a guess.</div></details>
-<details class="faq-item"><summary>Were these real businesses?</summary><div class="faq-a">Yes. FullSend Organicks LLC (owned by Allocera&rsquo;s founder) and Apex Care Solutions LLC (CDAI&rsquo;s pilot client) both gave permission to publish.</div></details></div>
+<details class="faq-item"><summary>Was this run on real client data?</summary><div class="faq-a">No. The validation used 9 simulated businesses across 7 industries, so the right answer was known and no client&rsquo;s budget was at risk.</div></details>
+<details class="faq-item"><summary>How accurate are CDAI&rsquo;s decisions?</summary><div class="faq-a">It depends on the decision type. In the September 2026 validation: Scale 98.0% (818 of 835), Hold 95.2% (40 of 42), Pause 85.2% (144 of 169), Flag 70.9% (200 of 282), Cut 55.6% (5 of 9, all misses from one deliberately extreme stress-test business), Investigate 100% (2 of 2), and Renegotiate 100% (1 of 1). Quarantine detection was correct in 12 of 12, but it scores 0 of 12 because outcome scoring needs a person to act on the call. The math matched 100% when checked two ways.</div></details></div>
   </div>
 </section>
 

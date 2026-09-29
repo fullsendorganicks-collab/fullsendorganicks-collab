@@ -6,8 +6,8 @@
 |---|---|
 | Page title / H1 | `Data-Driven Marketing Case Study: The Engine That Refuses to Guess` |
 | Focus keyword | `data driven marketing` |
-| SEO title (55) | `Data Driven Marketing Case Study: 2 Tests, Zero Guesses` |
-| Description (149) | `See a data driven marketing case study: 2 real businesses, stale ad data and 276 unattributed leads, and why CDAI made no decisions it couldn't back.` |
+| SEO title (57) | `Data Driven Marketing Case Study: 7 Decision Types Scored` |
+| Description (139) | `See a data driven marketing case study: how CDAI stops on bad data instead of guessing, and how each type of decision scored in validation.` |
 | Permalink | `allocera-intelligence-case-study-proof` (unchanged) |
 | Schema | Article → Article (FAQ schema is built into the page) |
 | Featured image | Already in your Media library (nothing to upload): `Client-portal-for-cdai-example.png` |
@@ -35,11 +35,17 @@
 ## Claims
 | Claim | Source |
 |---|---|
-| FullSend Organicks: Google Ads Aug 31 – Dec 2 2025, $2,112.17, 37 conversions, about 4 months stale, no decisions | Old page 133 (test 1) |
-| Apex: Meta Jan 1 – Apr 22 2026, 7 campaigns, $2,414.12, 62,211 impressions, 276 leads all "Contact Import", no invented attribution | Old page 133 (test 2) |
-| 89.5% on 1,352 decisions, math 100% two ways | Validation report (Sept 24) |
+| Bad-data safeguards: stale feeds flagged, unattributed revenue kept separate, serious data problems stop that night's decisions | Engine behavior, described in general terms |
+| (removed) the two real-data case stories and their dollar and lead figures | Not in the validation report, so left out |
+| Per-decision accuracy table, 9 simulated businesses, 7 industries, math 100% two ways | Validation report (Sept 24) |
 
 **Removed from the old page:**
 - "seven cost layers"
 - "margin improved" (not provable)
 - the free-audit offer
+
+
+## Sept 29 update: rules applied
+Blended accuracy figures, the Apex pilot section, "tests" wording and unverifiable numbers were removed. Results are shown per decision type, from the Sept 2026 validation on 9 simulated businesses.
+
+**Left out as UNVERIFIED (not in the validation report):** the FullSend Organicks and Apex real-data stories: $2,112.17 spend, 37 conversions, $2,414.12 spend, 62,211 impressions, 276 leads, 7 campaigns, "about four months stale". The page now describes the safeguards in general terms instead.
