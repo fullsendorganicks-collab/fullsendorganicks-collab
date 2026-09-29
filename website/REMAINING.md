@@ -99,6 +99,10 @@ All 21 have "cost layers" wording, and most link to old URLs. Each rebuild gets 
   - DONE and re-pasted by Nick Sept 29: all 20. That's the 5 pages (About, How It Works, Dashboard, Proof, 133), 13 blog posts, and the Northbeam and Rockerbox pages. They now use the real portal screenshot, dashboard screenshot or diagram. No file on the site points to an image that isn't in Media.
 
 - [x] **Featured images:** set to the real portal screenshot during the Sept 29 image swaps. Still missing: 850, the validation report page. It gets set when that page is fixed in section 1.
+- [ ] **Redo the homepage portal video (Nick, Sept 29).** On a big desktop screen, the hero video and screenshot show the whole portal shrunk into a small box, so nothing in it can be read (Nick's screenshot). Options for Nick to pick, nothing done until he does:
+  - **New recording (Nick):** zoom the browser in on the portal and record short clips of one thing at a time (the decision list, one campaign's numbers, the grade), instead of the whole screen at once. Use sample data only.
+  - **Bigger player:** Claude makes the video box wider on large screens and adds a click-to-enlarge (full screen). This is a code change only, and the same video stays.
+  - Best result: both.
 - [ ] **Post 284 WordPress title:** https://alloceraintelligence.com/wp-admin/post.php?post=284&action=edit. Change it to `Salesforce Campaign Influence: 4 Things Campaign ROI Misses`.
 - [ ] **Paste the updated homepage (post 9) and blog (post 187)** sent Sept 28, if you haven't yet.
 
