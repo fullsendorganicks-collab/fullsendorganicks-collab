@@ -1,4 +1,48 @@
-# STATE OF PLAY — Oct 5, 2026 (updated ~01:45 UTC, replaces the status line and punch list further down)
+# NICK'S REQUIREMENTS, EXPECTATIONS AND GAME PLAN -- read this first (quotes are verbatim, Oct 5, 2026)
+
+> "It is not a fucking toy. It is a enterprise level truth engine."
+> "get everything fixed. Make sure that all the CRON jobs are ready to rock and ready for me to trigger and do not miss a single thing again not one no gaps no holes nothing"
+> "the accuracy number is the math number the true CPL the true CAC all of it needs to be 100% accurate and viable if a CFO looks at the report reports that are produced after this test and they find any gaps or anything I'm screwed, which means it cannot happen"
+> "there will be no assumptions or guessing everything must be proven, tried true and tested"
+> "We can update all the stuff inside the database and everything else later all I care about is being ready for Tuesday."
+> "Is this really fixing and making it all ready or is it forcing it to achieve a task fast?"
+> "Remember to take your time don't rush follow the rules and check your work as you go."
+
+Earlier and still binding: "I'm done with gaps. This needs to be market ready by Tuesday." Nick is a solo bootstrapped founder; on Tuesday Oct 6, 2026 he must be able to stop building and sell
+(Starter $1,500 + paid design partners; Growth $3,500 / Scale $8,000; Enterprise $15,000+ and investor diligence). A CFO or diligence reader will look for gaps in the reports; one gap is fatal.
+
+## A. What "done" means (the acceptance tests I hold myself to)
+1. **Every cron click works the first time.** For each job: exact first log lines (including the exact `days=` value), exit codes, and what a red flag looks like (`docs/RETEST-CHECKLIST-oct5.md`). I read the logs from Render within minutes of each click and say so; unit tests alone are not proof the cron path works.
+2. **Reports a CFO cannot find a gap in.** Every figure is read from snapshot rows (`simulation/report_figures.py`) and cross-checked:
+   a. *Reconciliation bridge* (world ground truth -> database) for leads, spend, payouts, sales, refunds, chargebacks, per org. Every difference lands in a NAMED category (sale still pending by sales delay, +/-1-day boundary, unattributed lead, dropped by design); no unexplained residual. **[NOT BUILT]**
+   b. *True CPL and true CAC*: the engine/dashboard value equals an independent recompute from the world ledger within a stated tolerance, per campaign and per org. **[NOT BUILT; partial: the collector's `math` section compares DB-derived vs engine values only, and it lists ground-truth gross vs DB net without a bridge -- in the local test truth gross was $848k vs DB net $396k, unexplained in the output]**
+   c. *Two numbers, never blended.* (i) Directive accuracy: hit rate per directive type on matured outcomes, Wilson 95% intervals, rows / campaigns / episodes reported separately, FLAG counts only, attribution coverage beside every figure **[tooling built and tested: accuracy_stats.py, collect_report_v3.py]**. (ii) Math accuracy: share of checked metrics where engine == independent recompute == ground truth; its exact definition, tolerance, and what it does and does not prove must be written in the collector docstring BEFORE the run **[NOT DEFINED YET]**.
+   d. ROI for the simulated client and every figure on the Vercel client dashboard path: dashboard value == report value **[not cross-checked yet]**.
+3. No claim without a tag ([CODE] [DB] [RAN] [RENDER] [RENDER-LOG] [UNVERIFIED]); nothing reported as passed that was not run.
+4. Database clean-up, migrations not yet applied, replacing the retired public numbers: later, with Nick's approval (merge plan). Not on the critical path to Tuesday. No merge to `main` without his explicit OK.
+
+## B. Honest answer to "is this really fixing it, or forcing a task through fast?"
+**Real fixes (evidence exists):** invalid-retest causes found and fixed (production maturity rule bypassed; no-CRM businesses emitting CRM leads; mixed real/simulated clock; real-CRM data not cleaned) [RAN, tests + DB queries]; closed-loop experiment pre-registered before any result and run (verdict: no value claim) [RAN]; Google Ads adapter defects fixed [RAN, 22 checks]; scheduler API-key syncs wired dormant [RAN, 26 checks]; report/collector/claims tooling [RAN, 41 + 39 checks]; every mutation survivor became an assertion.
+**NOT yet proven (and I will not call it ready until it is):**
+* The cron path with the NEW code (tag/seeds/fidelity/preflight) has never executed end to end -- not locally (mitmdump will not import here; unresolved) and not on Render. Only unit tests exist for it.
+* The reconciliation bridge, true CPL/CAC ground-truth comparison and the math-accuracy number (A.2a-c) do not exist yet. Without them a CFO could ask "why does ground truth not equal the database?" and the report would have no answer.
+* Render env values cannot be read back; every env claim is verified only by the first log lines after a click.
+* The real-CRM clean-up (`clean_real_crm.py`) has never run against the real HubSpot / Salesforce APIs; the rehearsal on Render is the first proof.
+* The full suite on Render (`cdai_test_suite.py`) has not been run on the final code; locally 22 PASS / 6 FAIL / 20 SKIP with the same failure set as the pre-change baseline (all environmental).
+**Defect in my own set-up found Oct 5 ~01:30 UTC while preparing the URL list [CODE] [RENDER]:** the Distressed cron's start command exports `DISTRESSED_RUN_DAYS=90` and `cloud_runner_distressed.py:77` resolves `SIM_RUN_DAYS or DISTRESSED_RUN_DAYS or 150`. An unset or empty `SIM_RUN_DAYS` would have run Distressed for 90 days -- the length that "matured nothing" on Oct 4 -- while the click list said 150. The handoff itself contradicted itself (section 5 said SIM_RUN_DAYS=150 on that cron, the env line said empty). Fix: `SIM_RUN_DAYS=150` set on the cron (merge mode) at 01:34 UTC and the redeploy went live 01:35:53 UTC [RENDER]. The value cannot be read back: **the first Distressed log line must show `days=150`; if it shows 90, cancel the run and tell me.**
+
+## C. Exact remaining work, in order (a line is done only with raw output pasted into WORKLOG)
+1. DONE -- Distressed run length pinned (above). Click list re-issued with the expected `days=` per business and a do-not-click list.
+2. Prove the cron path locally with the new code: `cloud_runner.py` one business, 1 seed, a few sim days, real adapters through the mock vendor + mitmdump, on a throw-away local Postgres. Needs a working `mitmdump` (use a clean venv). Any defect found is fixed on the follow-ups branch and, if it is in code the run crons execute, carried to the validation branch BEFORE Nick clicks (pushing there only while no run cron is running).
+3. Build the reconciliation bridge + ground-truth true CPL/CAC + math-accuracy definition in `simulation/collect_report_v3.py` (+ tests, mutation sweep). Prove it on a local world where every difference is explained.
+4. Nick clicks; I watch (first-line checks, day counters, HALTING, exit codes 5/6/7); rehearsal -> I flip `SIM_PREFLIGHT=0` on StormShield/Pinnacle -> real runs -> verifier crons after the fidelity passes.
+5. After runs finish: merge follow-ups into the validation branch (collector, claims, ledger, scheduler, Google fixes), re-run the full local sweep (`tools/run_all_local_tests.sh`), Nick clicks `cdai-verify-db-retry-fix` and `cdai-full-report-data-v1` (set `SIM_RUN_TAG=v3` first).
+6. Phase 5 deliverables rebuilt from the rerun only; merge plan with rollback + smoke tests; wait for Nick's approval; then the one-time closing message.
+Still open from earlier: item 11 load-test plan, HubSpot/Salesforce 5xx retry audit, scheduler heartbeat, `sens-utm06` / `sens-utm10` evidence.
+
+---
+
+# STATE OF PLAY — Oct 5, 2026 (updated ~01:50 UTC, replaces the status line and punch list further down)
 
 _Everything in this section was verified by the session that wrote it; tags: [CODE] read in the repo, [DB] queried live (Supabase project
 `cdaiwdebsdfgttntxyfp`), [RAN] executed with output, [RENDER] read through the Render MCP, [UNVERIFIED] not provable from here. The sections below
@@ -55,14 +99,14 @@ Workspace crons, all `branch=validation/full-revalidation-sept-2026`, autoDeploy
 | run | cdai-run-sunpeak-65days | crn-db0stjqd0e5s73d2opo0 | 90 x 3 |
 | run | cdai-run-westbridge-125days | crn-db0stlegekts73b5cdqg | 120 x 3 |
 | run | cdai-run-harborview-115days | crn-db0stknavr4c7396ton0 | 150 x 3 |
-| run | cdai-run-distressed-partner-90days | crn-db0strmgekts73b5d54g | 150 x 3; `SIM_RUN_DAYS=150` overrides the inline `DISTRESSED_RUN_DAYS=90` |
+| run | cdai-run-distressed-partner-90days | crn-db0strmgekts73b5d54g | 150 x 3. Start command exports `DISTRESSED_RUN_DAYS=90`; `SIM_RUN_DAYS=150` re-set explicitly 01:34 UTC Oct 5 (redeploy live 01:35:53) because an empty `SIM_RUN_DAYS` lets the 90 win. Not readable back: first log line must show `days=150` |
 | run | cdai-run-apex-230days | crn-db0stm2d0e5s73d2p1k0 | 210 x 3 |
 | run + real CRM | cdai-run-stormshield-80days-v2 | crn-db09jelg1s2s73d54fug | 90 x 3 no-CRM, then 45 real-HubSpot days (`[v3-f]`). **Currently `SIM_PREFLIGHT=1` (dry run only); set it to `0` after the rehearsal is read OK** |
 | run + real CRM | cdai-run-pinnacle-115days | crn-db0r2dfavr4c738vpm00 | 105 x 3 no-CRM, then 45 real-Salesforce days. Same preflight switch |
 | verifier | cdai-verify-stormshield-hubspot / cdai-verify-pinnacle-salesforce | crn-db0upgmgekts73bcnet0 / crn-db0uphc9v7es73d49780 | `VERIFY_RUN_TAG=v3-f` picks the fidelity org |
 | full suite | cdai-verify-db-retry-fix | crn-db0t64lg1s2s73fi9un0 | runs `test_db_retry.py` + `cdai_test_suite.py` against production Supabase |
 | collector | cdai-full-report-data-v1 | crn-db0vqgou01pc73c63aqg | runs `simulation/run_full_report_data.py` (still the Oct 4 version -- rewrite first, §7) |
-Env set on the 8 run crons: `SIM_RUN_TAG=v3`, `SIM_SEEDS=1,2,3`, `SIM_REAL_CRM=0`, `SHADOW_RULES=1`, `SIM_RUN_DAYS` empty (distressed 150), `SIM_FIDELITY_DAYS` empty (StormShield/Pinnacle 45), `SIM_PREFLIGHT=0` (StormShield/Pinnacle 1). Builds of `bcc6820` + the env redeploy finished 00:53 UTC.
+Env set on the 8 run crons: `SIM_RUN_TAG=v3`, `SIM_SEEDS=1,2,3`, `SIM_REAL_CRM=0`, `SHADOW_RULES=1`, `SIM_RUN_DAYS` empty on the other run crons (their code default is the intended length) and `150` on the Distressed cron, `SIM_FIDELITY_DAYS` empty (StormShield/Pinnacle 45), `SIM_PREFLIGHT=0` (StormShield/Pinnacle 1). Builds of `bcc6820` + the env redeploy finished 00:53 UTC.
 Orgs created: `[SIM] <Business> [v3-s1|s2|s3]`, `[SIM] <Business> [v3-f]`. `run_plan.sim_org_name` / `report_figures.orgs_for_tag("v3")` find them. An untagged run halts (exit 6); exit 5 = no real CRM token to carry over; exit 7 = real-CRM clean-up failed.
 Healthy-run log lines and durations are in `docs/RETEST-CHECKLIST-oct5.md`. Pace estimates: 15-45 s per mocked sim-day (Oct 4 on Render ~10-20 s); real HubSpot ~375 s and Salesforce ~131 s per sim-day (Oct 4 ingestion timestamps [DB]).
 Decision recorded: StormShield and Pinnacle are run concurrently, not strictly sequentially (different vendors, separate portals, independent clean-ups; sequencing would add up to ~6 h). Nick can reverse it by clicking Pinnacle later.
@@ -106,4 +150,3 @@ Tag every claim; never report an unrun test as passed; after each item run the t
 Local test runner: `tools/run_all_local_tests.sh <outdir>` (every test plain; DB-dependent ones re-run on a throw-away Postgres; then `cdai_test_suite.py` locally).
 
 ---
-
