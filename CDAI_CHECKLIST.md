@@ -300,6 +300,17 @@ Tested in a browser Sept 26: all events fired with 0 errors.
   - Math re-verified: all 1,352 validation grades reproduced exactly.
   - PAUSE 85.2%: keep quoting it (Nick).
 - [x] Former cofounder fully offboarded (PR #16).
+- [x] **Nov 3, 2026 (separate from CDAI engine): HubSpot/Salesforce detection
+  scanner built for Nick's own cold-outreach prospecting.** Standalone tool, not
+  part of the CDAI product, delivered to Nick directly as `scanner_final.py`
+  (v14.0.0). Full writeup: `HANDOFF-crm-detection-scanner-nov3-2026.md`. 8 code-review
+  bugs found and fixed (SSRF gap, a NameError, imprecise career-page evidence,
+  testimonial-card misattribution, incomplete robots.txt precedence, sitemap
+  recursion, duplicate-signal double-counting, batch-cleanup-on-interrupt), plus
+  one more found live after merging Nick's own additions (a Google-link classifier
+  false positive). 36/36 self-tests, 3/3 live regression against real companies.
+  G2/Capterra/TrustRadius/Google/Facebook review scraping explicitly evaluated and
+  declined — their own Terms of Use prohibit it.
 
 **Verified facts to reuse:**
 - 89.5% overall (1,210/1,352), math 100%.
