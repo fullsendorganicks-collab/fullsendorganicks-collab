@@ -15,7 +15,7 @@ Nick's running list. Claude keeps it current and checks items off as they ship.
 - **Every page is built with the live tools** (Search Console, GA4, keyword research, live Google results), aimed at ranking in Google and winning clients, not just a Rank Math score. Each ships with a Rank Math box, GA4 tracking, an image, and a claims table.
 - **No "N layers" framing, no fake 80%, no claim that CDAI never assumes costs** (until F5 is merged).
 
-_Last updated: Sept 26, 2026 (night), after the engine fix build in the cloud session. **New session: read `HANDOFF-engine-fixes-sept26.md` (this repo) first.**_
+_Last updated: Nov 6, 2026, after the GoHighLevel marketplace-app work (section I2). **New session: read `HANDOFF-engine-fixes-sept26.md` (this repo) first.**_
 
 ---
 
@@ -257,6 +257,25 @@ Tested in a browser Sept 26: all events fired with 0 errors.
 
 ---
 
+## I2. GoHighLevel marketplace app (Nov 6, 2026)
+
+Cross-repo work (cdai-engine + cdai-portal); nothing here touches this repo's own code. Design record: `docs/ops/GHL-APP-DESIGN-RECORD-nov4-2026.md` §26 in `cdai-engine` (not in this repo).
+
+**Shipped today:**
+- [x] **cdai-engine PR #189 (merged to `main`).** Fixed a real test-coverage gap in `test_cdai_app_sso.py` (a Python chained-comparison `a != b != c` that silently skips the `a != c` check, which could let a per-user sign-in identity collision go undetected — the production code was already correct, the test just couldn't see a regression). Fixed a real production bug in `cdai_app_orgs.py`: `_SAFE_ID.match()` → `.fullmatch()`, closing a trailing-newline bypass into a URL path (found by independent review, not self-reported). Both fixes shipped with new tests and mutation testing: 75/75 and 66/66 mutants killed.
+- [x] **cdai-portal PR #20 (open, green, awaiting Nick's merge — not merged by Claude per standing rule).** `/ghl.html`'s sign-in relay (from PR #18, which its own commit message marked "untested yet") had test/mutant coverage sitting on an unmerged branch (`claude/project-thread-qjwyvz`) that never reached `main`. PR #20 adds just those two test files: 21/21 tests, 17/17 mutants, **zero relay code changed**. Getting it green surfaced and fixed three unrelated pre-existing CI infra bugs (each explained in its own PR comment): (a) `runs-on: ubuntu-latest` had silently moved to ubuntu-26.04, which pinned `playwright@1.56.1` doesn't support — pinned the runner to `ubuntu-24.04` rather than bump Playwright; (b) the new test file's "portal untouched" check runs `git diff ... origin/main`, which doesn't exist under GitHub Actions' shallow checkout — added an explicit `git fetch --depth=1 origin main` step; (c) `key_reveal_s1.test.js` hardcoded a stale Chromium path instead of the `CHROMIUM_PATH` env var the workflow already exports (a sibling test file already did this correctly) — matched it.
+- [x] **Render env vars flipped on `cdai-engine` (`srv-d79inaaa214c73asbnl0`):** `CDAI_APP_ENABLED=on`, `CDAI_APP_ORGS_ENABLED=on`, `CDAI_APP_SSO_ENABLED=on`. **Deliberately left off:** `CDAI_APP_PAID_TIERS` (gated behind further verification per the design record's founder-approval sequence). Deploy confirmed live; `/health` returns 200 after the flip.
+- [x] **Live-probed production** (`https://cdai-engine.onrender.com`) to check which GoHighLevel secrets are actually set, since no tool reads env var values directly: `POST /sso/cdai-app` and `GET /oauth/cdai-app/callback`. Confirmed `GHL_CLIENT_ID` and `GHL_CLIENT_SECRET` **are** set (the OAuth callback proceeds to a real token-exchange attempt). Confirmed `GHL_APP_SHARED_SECRET` is **NOT** set — the sign-in endpoint returns 503 "shared secret not configured" on every attempt. This is a current, real, blocking gap: nobody can sign in to CDAI from inside GoHighLevel until it's set.
+
+**Open, gated on Nick (not done):**
+- [ ] **Set `GHL_APP_SHARED_SECRET` on Render** (`cdai-engine`), from Nick's GoHighLevel developer portal app settings ("Shared Secret"). Blocks every sign-in attempt until set.
+- [ ] **Tick the `users.readonly` scope** in the GoHighLevel developer portal and reinstall the app on Nick's test sub-account. Without it, sign-in refuses every attempt with `ghl_forbidden` even once the shared secret above is set.
+- [ ] **Get `GHL_APP_ID` (not secret) and the 5 remaining GoHighLevel plan IDs** (Entry/Starter/Growth/Scale/Enterprise — only the Free plan ID was previously captured) from Nick's dev portal, needed for `CDAI_APP_PLAN_MAP` and the `GHL_APP_ID` env var.
+- [ ] **Submit the public marketplace listing for GoHighLevel's own review.** Entirely GoHighLevel's process, not controllable by Nick or Claude. GoHighLevel states "within 10 business days"; real-world developer reports run more like 2-4 weeks. This is an expected wait once submitted, not a problem to chase.
+- [ ] **Merge cdai-portal PR #20** (fully green, 5/5 checks, waiting on Nick — never auto-merged).
+
+---
+
 ## I. Partnerships
 
 - [x] CallRail email sent Sept 25, with the logo and listing description. The call with Karina and Eric is **booked**.
@@ -300,6 +319,7 @@ Tested in a browser Sept 26: all events fired with 0 errors.
   - Math re-verified: all 1,352 validation grades reproduced exactly.
   - PAUSE 85.2%: keep quoting it (Nick).
 - [x] Former cofounder fully offboarded (PR #16).
+- [x] **Nov 6, 2026: GoHighLevel marketplace app — real bugs fixed, three env vars flipped live, one new blocker found.** Full detail in section I2 above. Summary: cdai-engine PR #189 merged (a test-blind-spot and a real `.fullmatch()` production fix, 75/75 + 66/66 mutants); cdai-portal PR #20 opened and made fully green (test coverage for the `/ghl.html` relay plus 3 unrelated CI infra fixes), awaiting Nick's merge; `CDAI_APP_ENABLED`/`CDAI_APP_ORGS_ENABLED`/`CDAI_APP_SSO_ENABLED` flipped on on Render (`cdai-engine`), `/health` verified 200; live probe of production found `GHL_APP_SHARED_SECRET` is not set, blocking every sign-in — reported to Nick, needs his action.
 - [x] **Nov 3, 2026 (separate from CDAI engine): HubSpot/Salesforce detection
   scanner built for Nick's own cold-outreach prospecting.** Standalone tool, not
   part of the CDAI product, delivered to Nick directly as `scanner_final.py`
