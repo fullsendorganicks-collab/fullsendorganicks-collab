@@ -279,8 +279,8 @@ Cross-repo work (`cdai-engine` + `cdai-portal`); nothing here touches this repo'
 3. [ ] **Digest-recipient gate** (a GHL sign-in's identity is a private synthetic address that can't receive mail — needs a real contact e-mail captured somewhere before any paid GHL org gets the nightly digest).
 4. [ ] **Apply migration `20261105100000`**, then set `CDAI_APP_PAID_TIERS=retainer` — turns real billing mapping on. Needs Nick's explicit yes; this is the actual "GHL clients start getting charged and served" switch.
 5. [ ] **Untick unused OAuth scopes** in the dev portal (several were requested for later features, never used; least-privilege cleanup) and **set the 5 real paid plan IDs** (Entry/Starter/Growth/Scale/Enterprise — only Free's was captured) for `CDAI_APP_PLAN_MAP`.
-6. [ ] **Listing assets, lawyer review of the GoHighLevel developer agreement, terms/privacy wording, the E5 Wheels pilot friend's written OK.** Nothing here is built — see Listing section below.
-7. [ ] **Nick submits the public listing for GoHighLevel's own review** (their process: "within 10 business days," real reports run 2-4 weeks — expected wait, not a problem to chase). App stays DRAFT until this and everything above it is done.
+6. [ ] **Listing assets, lawyer review of the GoHighLevel developer agreement.** Terms/privacy wording is **done** (Nov 7, GHL-specific clauses added to the live Terms of Service and Privacy Policy — see I3 below). Lawyer review and the E5 Wheels pilot friend's written OK are still open.
+7. [x] **Nick submitted the public listing for GoHighLevel's own review, Nov 7 2026.** App version 1.0.0, status In Review, 2 installs recorded at submission. (Their process: "within 10 business days," real reports run 2-4 weeks — expected wait, not a problem to chase.)
 
 ---
 
@@ -295,16 +295,18 @@ Cross-repo work (`cdai-engine` + `cdai-portal`); nothing here touches this repo'
 
 ---
 
-## I3. GoHighLevel marketplace listing copy (status as of Nov 6, re-confirmed Nov 7 — unchanged tonight, not worked on)
+## I3. GoHighLevel marketplace listing copy (status as of Nov 7, 2026 — submission day, worked on)
 
-Location: `docs/listing/` in `cdai-engine` (not this repo). **DRAFT ONLY — never published, pasted, or submitted.**
+Location: `docs/listing/` in `cdai-engine` (not this repo). **Terms, privacy, and homepage are done and live. The listing itself was submitted to GoHighLevel Nov 7 (In Review) — see I above, item 7.**
 
 - [x] Research done; one draft file written: `01-listing-draft.md` (name, tagline, description, how it works, plans, data/permissions, FAQ).
-- [ ] **Not started:** site copy for the listing (02), pricing-page copy for GHL clients (03), terms draft (04), privacy draft (05), social posts (06).
-- [ ] **Lawyer review** of GoHighLevel's developer agreement, terms, and privacy wording — not done, flagged as required before anything is submitted.
+- [x] **Terms draft (04) and privacy draft (05): done, Nov 7 2026.** GHL-specific clauses added to the live Terms of Service (section 9.2) and Privacy Policy (section 9 bullet + section 6 sentence), delivered to Nick as complete files and pasted live. Confirmed done by Nick.
+- [x] **Homepage: done, Nov 7 2026.** GoHighLevel added to the "Built for the tools you already use" integrations row (real live favicon, same method as every other logo there). Delivered to Nick, pasted live. Confirmed done by Nick.
+- [ ] **Not started:** site copy for the listing (02), pricing-page copy for GHL clients (03), social posts (06).
+- [ ] **Lawyer review** of GoHighLevel's developer agreement — not done, flagged as required before anything is submitted. (Terms/privacy wording itself is done; the lawyer review of that wording, and of the developer agreement, is still open.)
 - [ ] **E5 Wheels pilot friend's written OK** and free-pilot terms — not obtained.
 - [ ] Four open questions for Nick sitting in the listing folder's own README, unanswered: (1) how "one campaign" is enforced for the free audit, (2) uninstall data retention (keep vs delete after N days — affects privacy-policy wording), (3) whether CDAI checks ad spend against a GHL plan's spend band, (4) whether GoHighLevel's listing has specific asset-size/field requirements — not yet read.
-- **Why this is blocked, not just slow:** the listing copy can't be finalized responsibly until the app itself actually works end to end (GHL gameplan steps 1-5 above) — otherwise the copy would describe capabilities not yet proven, which is exactly what the founder's proof-bar rule forbids. This is sequential by design, not an oversight.
+- **Remaining copy items (02, 03, 06) are not blocking the submission** that already happened — they're follow-on polish, not required for GoHighLevel's review.
 
 ---
 
