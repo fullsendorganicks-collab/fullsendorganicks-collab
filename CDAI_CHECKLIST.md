@@ -284,6 +284,17 @@ Cross-repo work (`cdai-engine` + `cdai-portal`); nothing here touches this repo'
 
 ---
 
+## I4. Cross-platform self-serve disconnect (Nick, Nov 7 2026 — new, not started, not GHL-specific)
+
+**Checked, not assumed:** no platform (Salesforce, HubSpot, Meta, Google, LinkedIn, GoHighLevel) requires CDAI itself to provide a disconnect button — every one of them already lets the client revoke access from that platform's own settings regardless of what CDAI offers. `cdai-portal/index.html`'s existing Salesforce "Disconnect" button (`POST /oauth/salesforce/disconnect`, Oct 7 2026) was a convenience add-on, not a platform requirement.
+
+**The real issue: consistency.** A client sees "Reconnect" for Meta/Google/LinkedIn/HubSpot but no "Disconnect" — only Salesforce has one. That's a real, if non-urgent, trust/UX gap worth closing.
+- [ ] Build the same self-serve disconnect for HubSpot, Meta, Google, LinkedIn, following the exact Salesforce pattern (`disconnectButtonHtml()` already takes a `platform` param — it's gated to `'salesforce'` only and needs the condition widened, plus one engine endpoint per platform that revokes the token and deletes the stored connection, mirroring `POST /oauth/salesforce/disconnect`).
+- [ ] Each platform's own token-revocation call differs (Meta/Google/LinkedIn OAuth revoke endpoints, HubSpot's) — needs its own real design pass per IC8 rule (read the real revoke API for each, test, mutant, independent review), not a copy-paste.
+- GoHighLevel needs none of this — see `cdai-engine` handoff §41: disconnect happens by uninstalling inside GoHighLevel itself, already built.
+
+---
+
 ## I3. GoHighLevel marketplace listing copy (status as of Nov 6, re-confirmed Nov 7 — unchanged tonight, not worked on)
 
 Location: `docs/listing/` in `cdai-engine` (not this repo). **DRAFT ONLY — never published, pasted, or submitted.**
