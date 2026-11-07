@@ -15,7 +15,9 @@ Nick's running list. Claude keeps it current and checks items off as they ship.
 - **Every page is built with the live tools** (Search Console, GA4, keyword research, live Google results), aimed at ranking in Google and winning clients, not just a Rank Math score. Each ships with a Rank Math box, GA4 tracking, an image, and a claims table.
 - **No "N layers" framing, no fake 80%, no claim that CDAI never assumes costs** (until F5 is merged).
 
-_Last updated: Nov 6, 2026, after the GoHighLevel marketplace-app work (section I2). **New session: read `HANDOFF-engine-fixes-sept26.md` (this repo) first.**_
+_Last updated: Nov 7, 2026 ~04:40 UTC, after a full night of GoHighLevel marketplace-app work (section I2 rewritten below — everything in it as of Nov 6 is superseded). **New session: read `cdai-engine` repo's `docs/HANDOFF-oct13-2026-go-live.md` §38-39.5 first for GHL state; this file's own `HANDOFF-engine-fixes-sept26.md` is Sept-era engine/website work, separate track.**_
+
+**Scope note (Nov 7):** sections A-H and the "Done" list below this point are UNVERIFIED tonight — they were not re-checked against current Render/GitHub/Supabase state in this session. Only section I2 (GoHighLevel) was fully re-verified. Website work (sections A, B, C) has had no dedicated session since the Sept 27 pause noted below, aside from the unrelated $497 Entry-plan pricing change (handoff §29, live Oct 17) and the blog-build-rules addition (`docs/website/PAGE-BUILD-RULES-nick-oct31-2026.md`, Oct 31) — neither updated this checklist at the time. Treat every website status line below as "as of Sept 27-28" unless a later date is named.
 
 ---
 
@@ -257,22 +259,41 @@ Tested in a browser Sept 26: all events fired with 0 errors.
 
 ---
 
-## I2. GoHighLevel marketplace app (Nov 6, 2026)
+## I2. GoHighLevel marketplace app (Nov 6-7, 2026 — rewritten Nov 7 ~04:40 UTC, everything above this point in I2 is superseded)
 
-Cross-repo work (cdai-engine + cdai-portal); nothing here touches this repo's own code. Design record: `docs/ops/GHL-APP-DESIGN-RECORD-nov4-2026.md` §26 in `cdai-engine` (not in this repo).
+Cross-repo work (`cdai-engine` + `cdai-portal`); nothing here touches this repo's own code. Full detail: `cdai-engine` repo `docs/HANDOFF-oct13-2026-go-live.md` §38-39.5 and `docs/ops/GHL-APP-DESIGN-RECORD-nov4-2026.md`.
 
-**Shipped today:**
-- [x] **cdai-engine PR #189 (merged to `main`).** Fixed a real test-coverage gap in `test_cdai_app_sso.py` (a Python chained-comparison `a != b != c` that silently skips the `a != c` check, which could let a per-user sign-in identity collision go undetected — the production code was already correct, the test just couldn't see a regression). Fixed a real production bug in `cdai_app_orgs.py`: `_SAFE_ID.match()` → `.fullmatch()`, closing a trailing-newline bypass into a URL path (found by independent review, not self-reported). Both fixes shipped with new tests and mutation testing: 75/75 and 66/66 mutants killed.
-- [x] **cdai-portal PR #20 (open, green, awaiting Nick's merge — not merged by Claude per standing rule).** `/ghl.html`'s sign-in relay (from PR #18, which its own commit message marked "untested yet") had test/mutant coverage sitting on an unmerged branch (`claude/project-thread-qjwyvz`) that never reached `main`. PR #20 adds just those two test files: 21/21 tests, 17/17 mutants, **zero relay code changed**. Getting it green surfaced and fixed three unrelated pre-existing CI infra bugs (each explained in its own PR comment): (a) `runs-on: ubuntu-latest` had silently moved to ubuntu-26.04, which pinned `playwright@1.56.1` doesn't support — pinned the runner to `ubuntu-24.04` rather than bump Playwright; (b) the new test file's "portal untouched" check runs `git diff ... origin/main`, which doesn't exist under GitHub Actions' shallow checkout — added an explicit `git fetch --depth=1 origin main` step; (c) `key_reveal_s1.test.js` hardcoded a stale Chromium path instead of the `CHROMIUM_PATH` env var the workflow already exports (a sibling test file already did this correctly) — matched it.
-- [x] **Render env vars flipped on `cdai-engine` (`srv-d79inaaa214c73asbnl0`):** `CDAI_APP_ENABLED=on`, `CDAI_APP_ORGS_ENABLED=on`, `CDAI_APP_SSO_ENABLED=on`. **Deliberately left off:** `CDAI_APP_PAID_TIERS` (gated behind further verification per the design record's founder-approval sequence). Deploy confirmed live; `/health` returns 200 after the flip.
-- [x] **Live-probed production** (`https://cdai-engine.onrender.com`) to check which GoHighLevel secrets are actually set, since no tool reads env var values directly: `POST /sso/cdai-app` and `GET /oauth/cdai-app/callback`. Confirmed `GHL_CLIENT_ID` and `GHL_CLIENT_SECRET` **are** set (the OAuth callback proceeds to a real token-exchange attempt). Confirmed `GHL_APP_SHARED_SECRET` is **NOT** set — the sign-in endpoint returns 503 "shared secret not configured" on every attempt. This is a current, real, blocking gap: nobody can sign in to CDAI from inside GoHighLevel until it's set.
+**Shipped overnight Nov 6-7 (all merged, all verified — tests, mutants, independent review, each per IC8 gate):**
+- [x] Engine: `free_plan` sign-in message — a confirmed admin on an unpaid sub-account gets a distinct "CDAI is on the Free plan" answer instead of the generic failure (cdai-engine PR #195, portal message PR #23 on `cdai-portal`). A real client-side bug (reading the response body only on HTTP success, so the engine's actual 403 response was never read) was caught by independent review before merge and fixed.
+- [x] Engine PR #196: handoff doc recording the above, retroactively verified.
+- [x] Engine PR #197: handoff doc — first real admin-confirmation attempt against the live GoHighLevel API found a new, real blocker (next item).
+- [x] **Engine PR #198 (merged): fixed `GET /users/{id}` sending the wrong GoHighLevel API version header.** This call — which confirms a sign-in claimant really is an admin of the real sub-account, the security-critical step — had NEVER actually been exercised against the real GoHighLevel API before tonight (an older code path always refused before reaching it). First real attempt got HTTP 400 on every try. Root cause: the call sent `Version: 2021-07-28` (correct for the engine's other, older GoHighLevel endpoints — contacts, opportunities — already proven live), but GoHighLevel's own current docs for this specific endpoint require `Version: v3`, a separate, newer API generation running in parallel. Fixed, tested (regression test + 82/82 mutants), independently reviewed. **Deployed; not yet re-tried live** — next real sign-in attempt will show whether `v3` is the whole fix or whether another gap is under it (the fix is doc-based, not yet proven against the real API).
+- [x] Investigated "Open the CDAI portal link goes to Demo Lead Gen" (Nick's live report) — **not a bug, not a security issue.** Zero Supabase identities of the GHL-sign-in shape exist yet (no GHL sign-in has ever actually succeeded, for anyone); the link just opens the portal homepage, and Nick's own browser was already logged into his own Demo account. Confirmed via direct Supabase/Render evidence, not inference.
+- [x] Confirmed via GoHighLevel's own dev-portal Testing tab: "CDAI Test Agency" (`D2ez121Jz46ooatsAzGA`) IS GoHighLevel's real Sandbox/App Test Account mechanism — Active, CDAI connected, expires May 3 2027. No new test account needed for the billing test below.
 
-**Open, gated on Nick (not done):**
-- [ ] **Set `GHL_APP_SHARED_SECRET` on Render** (`cdai-engine`), from Nick's GoHighLevel developer portal app settings ("Shared Secret"). Blocks every sign-in attempt until set.
-- [ ] **Tick the `users.readonly` scope** in the GoHighLevel developer portal and reinstall the app on Nick's test sub-account. Without it, sign-in refuses every attempt with `ghl_forbidden` even once the shared secret above is set.
-- [ ] **Get `GHL_APP_ID` (not secret) and the 5 remaining GoHighLevel plan IDs** (Entry/Starter/Growth/Scale/Enterprise — only the Free plan ID was previously captured) from Nick's dev portal, needed for `CDAI_APP_PLAN_MAP` and the `GHL_APP_ID` env var.
-- [ ] **Submit the public marketplace listing for GoHighLevel's own review.** Entirely GoHighLevel's process, not controllable by Nick or Claude. GoHighLevel states "within 10 business days"; real-world developer reports run more like 2-4 weeks. This is an expected wait once submitted, not a problem to chase.
-- [ ] **Merge cdai-portal PR #20** (fully green, 5/5 checks, waiting on Nick — never auto-merged).
+**Still gated exactly as designed — nothing bills, nothing goes live:** `CDAI_APP_SSO_ENABLED` is ON (live, that's how tonight's bugs were caught); `CDAI_APP_PAID_TIERS` and `CDAI_APP_ORGS_ENABLED`'s paid-marking path stay OFF. App form stays DRAFT.
+
+**Open, in strict order (don't skip ahead — each unblocks the next):**
+1. [ ] **Verify the Nov 7 `v3` fix against a real sign-in attempt.** Needs Nick to open the CDAI page on sub-account `49617 US-550` again. If it still fails, the error class returned (now logged) narrows down whether it's a scope, parameter, or response-shape problem next — not another blind guess.
+2. [ ] **P4: one real test payment + refund**, on the GoHighLevel Sandbox account, cheapest plan (Entry, $497/mo). **Blocked on one unresolved question Claude could not verify from GoHighLevel's docs: whether a paid-plan subscription inside the Sandbox account triggers a real charge.** Nick's call once step 1 is confirmed working: try it and watch closely, or ask GoHighLevel support first. This settles `CDAI_GHL_AMOUNT_UNIT` and the real PlanChange event shape.
+3. [ ] **Digest-recipient gate** (a GHL sign-in's identity is a private synthetic address that can't receive mail — needs a real contact e-mail captured somewhere before any paid GHL org gets the nightly digest).
+4. [ ] **Apply migration `20261105100000`**, then set `CDAI_APP_PAID_TIERS=retainer` — turns real billing mapping on. Needs Nick's explicit yes; this is the actual "GHL clients start getting charged and served" switch.
+5. [ ] **Untick unused OAuth scopes** in the dev portal (several were requested for later features, never used; least-privilege cleanup) and **set the 5 real paid plan IDs** (Entry/Starter/Growth/Scale/Enterprise — only Free's was captured) for `CDAI_APP_PLAN_MAP`.
+6. [ ] **Listing assets, lawyer review of the GoHighLevel developer agreement, terms/privacy wording, the E5 Wheels pilot friend's written OK.** Nothing here is built — see Listing section below.
+7. [ ] **Nick submits the public listing for GoHighLevel's own review** (their process: "within 10 business days," real reports run 2-4 weeks — expected wait, not a problem to chase). App stays DRAFT until this and everything above it is done.
+
+---
+
+## I3. GoHighLevel marketplace listing copy (status as of Nov 6, re-confirmed Nov 7 — unchanged tonight, not worked on)
+
+Location: `docs/listing/` in `cdai-engine` (not this repo). **DRAFT ONLY — never published, pasted, or submitted.**
+
+- [x] Research done; one draft file written: `01-listing-draft.md` (name, tagline, description, how it works, plans, data/permissions, FAQ).
+- [ ] **Not started:** site copy for the listing (02), pricing-page copy for GHL clients (03), terms draft (04), privacy draft (05), social posts (06).
+- [ ] **Lawyer review** of GoHighLevel's developer agreement, terms, and privacy wording — not done, flagged as required before anything is submitted.
+- [ ] **E5 Wheels pilot friend's written OK** and free-pilot terms — not obtained.
+- [ ] Four open questions for Nick sitting in the listing folder's own README, unanswered: (1) how "one campaign" is enforced for the free audit, (2) uninstall data retention (keep vs delete after N days — affects privacy-policy wording), (3) whether CDAI checks ad spend against a GHL plan's spend band, (4) whether GoHighLevel's listing has specific asset-size/field requirements — not yet read.
+- **Why this is blocked, not just slow:** the listing copy can't be finalized responsibly until the app itself actually works end to end (GHL gameplan steps 1-5 above) — otherwise the copy would describe capabilities not yet proven, which is exactly what the founder's proof-bar rule forbids. This is sequential by design, not an oversight.
 
 ---
 
